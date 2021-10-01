@@ -1,0 +1,33 @@
+/* ------------------------------------------------------------ *\
+Shell
+\* ------------------------------------------------------------ */
+
+.shell {
+  max-width: calc( #{$shell-max-width} + #{$shell-gutter} * 2 );
+  padding-left: $shell-gutter;
+  padding-right: $shell-gutter;
+  margin: auto;
+  width: 100%;
+}
+
+/* Shell Fluid */
+
+.shell--fluid {
+  max-width: none;
+}
+
+/* Shell alt */
+
+.shell--alt {
+  max-width: 158rem;
+  margin: 0 auto;
+  padding: 0 6.4rem;
+
+  @include breakpoint-down(large-desktop) {
+    padding: 0 4rem;
+  }
+
+  @include breakpoint-down(mobile) {
+    padding: 0 2rem;
+  }
+}

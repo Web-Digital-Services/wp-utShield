@@ -1,0 +1,13 @@
+/* ------------------------------------------------------------ *\
+	Events
+\* ------------------------------------------------------------ */
+
+.events {
+	.events__item + .events__item {
+		margin-top: 2.2rem;
+
+		@include breakpoint-down(tablet) {
+			margin-top: 2.6rem;
+		}
+	}
+}

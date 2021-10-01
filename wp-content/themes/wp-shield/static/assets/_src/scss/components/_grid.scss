@@ -1,0 +1,25 @@
+/* ------------------------------------------------------------ *\
+	Grid
+\* ------------------------------------------------------------ */
+
+.grid {
+	display: flex;
+	flex-flow: row wrap;
+
+	.grid__col {
+		max-width: 100%;
+		flex: 1;
+	}
+
+	/*  Grid col 1of2  */
+	.grid__col--1of2 {
+		max-width: 50%;
+		flex: 0 0 50%;
+	}
+
+	/*  Grid col 1of3  */
+	.grid__col--1of3 {
+		max-width: calc(100% / 3);
+		flex: 0 0 calc(100% / 3);
+	}
+}

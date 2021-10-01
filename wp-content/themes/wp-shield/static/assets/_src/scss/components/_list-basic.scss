@@ -1,0 +1,45 @@
+/* ------------------------------------------------------------ *\
+List basic
+\* ------------------------------------------------------------ */
+
+.list-basic {
+  list-style: none;
+  color: #635853;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+
+  @include breakpoint-down(mobile) {
+    font-size: 1.4rem;
+  }
+
+  a {
+    transition: color .3s ease;
+
+    &:hover {
+      color: $c-orange;
+    }
+
+    &:focus {
+      color: $c-orange;
+    }
+  }
+
+  li + li {
+  margin-top: .4rem;
+
+    @include breakpoint-down(tablet) {
+      margin-top: .6rem;
+    }
+  }
+}
+
+/* List basic alt */
+
+.list-basic--alt {
+  columns: 2;
+
+  @include breakpoint-down(mobile) {
+    columns: 1;
+  }
+}

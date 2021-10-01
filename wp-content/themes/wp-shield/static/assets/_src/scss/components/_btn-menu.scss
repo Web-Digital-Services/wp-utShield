@@ -1,0 +1,86 @@
+/* ------------------------------------------------------------ *\
+Btn menu
+\* ------------------------------------------------------------ */
+
+.btn-menu {
+  position: relative;
+  display: inline-block;
+  width: 3.4rem;
+  height: 2rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: center;
+
+  @include breakpoint-down(mobile) {
+    width: 3.2rem;
+  }
+
+  span {
+    position: absolute;
+    display: block;
+    height: .2rem;
+    width: 100%;
+    background: $c-offblack;
+    transform: translateY(.3rem);
+    transition: top .2s .25s, left .2s .25s, opacity .2s .25s, transform .2s 0s;
+
+    &:nth-child(1) {
+      top: 0;
+    }
+
+    &:nth-child(2) {
+      top: .8rem;
+    }
+
+    &:nth-child(3) {
+      top: 1.6rem;
+    }
+  }
+
+  &.active span {
+    transition: background .2s, top .2s, left .2s, opacity .2s, transform .2s .25s;
+
+    &:nth-child(3),
+    &:nth-child(1) {
+      top: 1.2rem;
+    }
+
+    &:nth-child(2) {
+      opacity: 0;
+    }
+
+    &:nth-child(1) {
+      transform: rotate(45deg);
+    }
+
+    &:nth-child(3) {
+      transform: rotate(-45deg);
+    }
+  }
+
+  p {
+    margin-top: 2.8rem;
+  }
+
+  .btn__open {
+    display: none;
+  }
+}
+
+.btn-menu.active {
+  .btn__open {
+    display: block;
+  }
+
+  .btn__closed {
+    display: none;
+  }
+}
+
+.btn-menu:hover {
+  color: $c-offblack !important;
+}
+
+.btn-menu:focus {
+  color: $c-offblack !important;
+}

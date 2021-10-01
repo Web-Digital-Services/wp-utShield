@@ -1,0 +1,324 @@
+/* ------------------------------------------------------------ *\
+Hero
+\* ------------------------------------------------------------ */
+
+.hero {
+  position: relative;
+  min-height: 95.2rem;
+  padding-top: 13rem;
+  overflow: hidden;
+
+  @include breakpoint-down(mobile) {
+    padding-top: 12.4rem;
+    min-height: 100%;
+  }
+
+  h1 {
+    letter-spacing: -0.05em;
+    line-height: 1;
+    color: $c-orange;
+    font-weight: 500;
+    margin: 0;
+    
+    .final {      
+      .hero__heading-line {
+        position: absolute;
+        top: 50%; right: -2rem;
+        width: 90%;
+        transform: translateY(-57%);
+        
+        svg {
+          width: 100%;
+        }
+      }
+    }
+    
+    @include breakpoint-down(xlarge-desktop-alt) {
+      font-size: 11rem;
+      
+      .final {      
+        .hero__heading-line {
+          right: -1.75rem;
+          width: 91%;
+          transform: translateY(-52%);
+        }
+      }  
+    }
+
+    @include breakpoint-down(large-desktop) {
+      font-size: 8rem;
+      
+      .final {      
+        .hero__heading-line {
+          right: -1rem;
+          width: 95%;
+          transform: translateY(-45%);
+        }
+      }
+    }
+
+    @include breakpoint-down(tablet) {
+      font-size: 10rem;
+      
+      .final {      
+        .hero__heading-line {
+          right: -1.5rem;
+          width: 92%;
+          transform: translateY(-52%);
+        }
+      }
+    }
+
+    @include breakpoint-down(mobile) {
+      font-size: 6rem;
+      
+      .final {      
+        .hero__heading-line {
+          right: -1rem;
+          width: 100%;
+          transform: translateY(-42%);
+        }
+      }
+    }
+  }
+
+  h6 {
+    letter-spacing: 0.1em;
+    margin-bottom: 2.5rem;
+
+    @include breakpoint-down(mobile) {
+      font-size: 1.2rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.7rem;
+    }
+  }
+
+  .hero__heading {
+    position: relative;
+    margin-bottom: 3.2rem;
+  }
+
+  .hero__heading-element {
+    position: absolute;
+    top: 12rem;
+    right: 0;
+
+    @include breakpoint-down(large-desktop) {
+      max-width: 33rem;
+      top: 7rem;
+      right: 2.5rem;
+    }
+
+    @include breakpoint-down(tablet) {
+      max-width: none;
+      top: 12rem;
+      left: 0;
+      right: auto;
+    }
+
+    @include breakpoint-down(mobile) {
+      max-width: 20rem;
+      top: 4rem;
+    }
+  }
+
+  .hero__inner {
+    display: block;
+    position: relative;
+    padding: 8.6rem 0;
+
+    @include breakpoint-down(mobile) {
+      padding: 0;
+      min-height: 60rem;
+    }
+  }
+
+  .hero__menu {
+    max-width: 95rem;
+    margin: 0 auto;
+    position: relative;
+    padding: 8.6rem 0;
+  }
+
+  .hero__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero__background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero__image {
+    max-width: 87rem;
+    position: absolute;
+    right: -13rem;
+    top: -2rem;
+    max-height: 95.2rem;
+
+    @include breakpoint-down(large-desktop) {
+      right: -26rem;
+    }
+
+    @include breakpoint-down(small-desktop) {
+      right: -33rem;
+    }
+
+    @include breakpoint-down(tablet) {
+      max-width: none;
+      position: relative;
+      right: auto;
+      top: auto;
+      max-height: 65rem;
+    }
+
+    @include breakpoint-down(mobile) {
+      margin: 0 auto;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      max-height: none;
+      max-width: 33rem;
+    }
+  }
+
+  .hero__content {
+    padding: 0 0 0 5.6rem;
+    max-width: 66rem;
+
+    @include breakpoint-down(large-desktop) {
+      padding: 0 0 0 3rem;
+      max-width: 42rem;
+    }
+
+    @include breakpoint-down(tablet) {
+      max-width: none;
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+  .hero__chat {
+    position: absolute;
+    bottom: 2.5rem;
+    right: 2.5rem;
+    z-index: 4;
+
+    @include breakpoint-down(mobile) {
+      display: none;
+    }
+  }
+
+  .hero__entry {
+    font-weight: 500;
+    font-size: 2rem;
+    max-width: 49rem;
+    line-height: 1.7;
+
+    @include breakpoint-down(tablet) {
+      visibility: hidden;
+    }
+  }
+
+  .hero__actions {
+    margin-top: 5rem;
+
+    @include breakpoint-down(tablet) {
+      visibility: hidden;
+    }
+
+    @include breakpoint-down(mobile) {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 5;
+      visibility: visible;
+    }
+  }
+
+  .hero__actions a {
+    @include breakpoint-down(mobile) {
+      width: 100%;
+      border-radius: 0;
+      font-size: 1.4rem;
+      color: $c-white;
+      min-height: 5.6rem;
+      background-color: $c-orange;
+      border-color: $c-orange;
+    }
+  }
+
+  .hero__actions a:hover {
+    @include breakpoint-down(mobile) {
+      background-color: $c-darkorange;
+      border-color: $c-darkorange;
+    }
+  }
+
+  .hero__actions a figure {
+    @include breakpoint-down(mobile) {
+      display: none;
+    }
+  }
+
+  .hero__menu {
+    display: none;
+  }
+
+  .hero__menu-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero__menu-background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.hero.menu-open {
+  .hero__menu {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    max-width: none;
+    padding: 13rem 2rem 0 10.5rem;
+
+    @include breakpoint-down(small-desktop) {
+      padding: 18rem 2rem 0 10.5rem;
+    }
+
+    @include breakpoint-down(tablet) {
+      padding: 18rem 2rem 0 9rem;
+    }
+
+    @include breakpoint-down(mobile) {
+      padding: 13rem 2rem 0 2rem;
+    }
+  }
+
+  .hero__inner {
+    display: none;
+  }
+}

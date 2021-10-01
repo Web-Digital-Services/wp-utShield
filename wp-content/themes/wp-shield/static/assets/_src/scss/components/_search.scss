@@ -1,0 +1,69 @@
+/* ------------------------------------------------------------ *\
+	Search
+\* ------------------------------------------------------------ */
+
+.search {
+	position: relative;
+
+	form {
+		position: relative;
+	}
+
+	input {
+		box-shadow: none;
+		border: .1rem solid #D4CEC4;
+		border-radius: 4rem;
+		padding: 0 4rem 0 9.3rem;
+		min-height: 8rem;
+		width: 100%;
+		font-weight: 500;
+		font-size: 2rem;
+
+		@include breakpoint-down(mobile) {
+			font-size: 1.4rem;
+			padding: 0 2rem 0 5rem;
+			min-height: 6.4rem;
+		}
+	}
+
+	input:focus {
+		box-shadow: none;
+	}
+
+	input::placeholder {
+		opacity: .6;
+	}
+
+	.search__icon {
+		position: absolute;
+		top: 50%;
+		left: 4rem;
+		transform: translateY(-50%);
+
+		@include breakpoint-down(mobile) {
+			max-width: 1.6rem;
+			left: 1.6rem;
+		}
+	}
+
+	.search__btn {
+		position: absolute;
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+	}
+}
+
+/* Search find */
+
+.search--find {
+	input {
+		padding: 0 4.5rem;
+
+		@include breakpoint-down(tablet) {
+			padding: 0 2rem;
+			font-size: 1.4rem;
+			min-height: 4.8rem;
+		}
+	}
+}

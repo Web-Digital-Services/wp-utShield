@@ -1,0 +1,55 @@
+/* ------------------------------------------------------------ *\
+	Sidebar
+\* ------------------------------------------------------------ */
+
+.sidebar {
+	position: fixed;
+	margin-left: -8.5rem;
+	height: 100%;
+	padding: 5rem 2.5rem;
+	text-align: right;
+	border-right: .1rem solid $c-mediumdarkbeige;
+	z-index: 20;
+	background-color: $c-white;
+
+	&:after {
+		content: '';
+		width: 100vw;
+		height: 100%;
+		background-color: $c-white;
+		position: absolute;
+		right: 8rem;
+		top: 0;
+		z-index: 5;
+	}
+
+	@include breakpoint-down(tablet) {
+		padding: 5rem 1.8rem;
+		margin-left: -7rem;
+	}
+
+	@include breakpoint-down(mobile) {
+		display: none;
+	}
+
+	.sidebar__title {
+		text-transform: uppercase;
+		font-size: 1.4rem;
+		color: $c-extradarkbeige;
+		letter-spacing: 0.2em;
+		font-weight: 500;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%) rotate(-90deg);
+		min-width: 23rem;
+	    right: -7rem;
+
+	    @include breakpoint-down(tablet) {
+			right: -8rem;
+		}
+	}
+
+	.sidebar__button {
+		position: sticky;
+	}
+}

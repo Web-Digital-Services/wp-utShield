@@ -1,0 +1,43 @@
+/* ------------------------------------------------------------ *\
+	Blockquote
+\* ------------------------------------------------------------ */
+
+.blockquote {
+	font-size: 2.8rem;
+	line-height: 1.8;
+	padding-right: 2rem;
+
+	@include breakpoint-down(mobile) {
+		font-size: 2rem;
+	}
+
+	blockquote {
+		border: 0;
+		padding: 0;
+	}
+
+	p {
+		line-height: 1.8;
+		color: $c-white;
+		margin: 0;
+	}
+
+	cite {
+		color: $c-white;
+		font-size: 1.6rem;
+		font-style: normal;
+		letter-spacing: .02em;
+
+		&:before {
+			display: none;
+		}
+	}
+
+	.blockquote__list {
+		margin: 2.4rem 0 1.7rem 0;
+
+		@include breakpoint-down(mobile) {
+			margin: 2.4rem 0 1.5rem 0;
+		}
+	}
+}
