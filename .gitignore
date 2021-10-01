@@ -1,0 +1,87 @@
+# Ignore everything #
+**
+!.github/
+.github/**
+!.github/workflows/
+.github/workflows/**
+!wp-content/
+wp-content/**
+!wp-content/mu-plugins/
+!wp-content/plugins/
+!wp-content/themes/
+wp-content/mu-plugins/**
+wp-content/plugins/**
+wp-content/themes/**
+
+# Add two rules for each Theme or Plugin you want to include:
+# 1. !folder-name/    <-- includes the Plugin and top level files
+# 2. !folder-name/**  <-- includes the Plugin and sub level files recursively, except for the "Ignore some other system generated files" rules below
+###############################
+
+# Start editing!
+
+# GitHub Actions
+!.github/workflows/wpengine-production.yml
+
+# MU Plugins
+!wp-content/mu-plugins/wp-kses-svg-ruleset.php
+
+# Plugins
+!wp-content/plugins/core/
+!wp-content/plugins/core/**
+
+# Theme
+!wp-content/themes/wp-shield/
+!wp-content/themes/wp-shield/**
+
+# Stop editing!
+
+############################################
+# Ignore some other system generated files #
+############################################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.mp4
+*.ogv
+*.rar
+*.tar
+*.log
+*.sql
+*.sqlite
+*.webm
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+bower_components
+config.codekit
+ehthumbs.db
+node_modules
+Thumbs.db
+.codekit-cache
+.sass-cache
+# PhpStorm
+.idea/
+# Sublime
+*.sublime-project
+*.sublime-workspace
+
+# Always include the build script #
+###################################
+!.gitignore
+# Temporarily include auth.json till dotenv / variable substitution figured out.
+!auth.json
+!build.sh
+!composer.json
+!composer.lock
+!README.md
+!CHANGELOG.md

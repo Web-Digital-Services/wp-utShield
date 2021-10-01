@@ -1,0 +1,201 @@
+footer {
+    color: $off-white;
+    background-color: $dark-grey;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    position: relative;
+    margin-top: rem-calc(60px);
+
+    &.flatten {
+        margin-top: 0;
+    }
+
+    .alamo {
+        position: absolute;
+        top: rem-calc(-60px);
+        width: 100%;
+        text-align: center;
+
+        svg {
+            width: rem-calc(200px);
+            fill: $dark-grey;
+        }
+    }
+
+    h2 {
+        font-size: rem-calc(30px);
+        font-weight: 800;
+    }
+
+    h3 {
+        font-size: rem-calc(22px);
+        margin-top: rem-calc(-25px);
+        margin-bottom: rem-calc(40px);
+        font-weight: 500;
+        font-family: $sans-serif-font;
+    }
+
+    p {
+        margin-bottom: rem-calc(12px);
+
+        &.large-text {
+            font-family: $serif-font;
+            font-size: rem-calc(20px);
+        }
+    }
+
+    a {
+        color: $grey-link;
+        font-weight: 900 !important;
+
+        &:hover {
+            color: $grey-link;
+        }
+
+        &.arrow::after {
+            color: $grey-link;
+        }
+        &.arrow:hover:after {
+            color: $grey-link;
+        }
+    }
+
+    p>a {
+        background-image: linear-gradient($grey-link, $grey-link) !important;
+        color: $grey-link !important;
+
+        &:hover {
+            background-color: $grey-link;
+            color: $grey-90 !important;
+        }
+    }
+
+    ul {
+        list-style: none;
+        margin-left: 0;
+
+        li {
+            margin-bottom: 0.625rem;
+        }
+    }
+
+    .contact {
+        display: flex;
+        align-items: center;
+        margin-bottom: rem-calc(30px);
+
+        .fa-stack {
+            margin-right: rem-calc(10px);
+
+            a:hover {
+                color: $off-white !important;
+            }
+        }
+    }
+
+    .status {
+        display: flex;
+        align-items: center;
+
+        i {
+            font-size: 36px;
+            color: $grey-30;
+            margin-right: rem-calc(10px);
+        }
+    }
+
+    .shield {
+        background-image: url('../../images/half-shield.svg');
+        background-repeat: no-repeat;
+        position: relative;
+        background-position: right center;
+
+        @media screen and (max-width:1159px) { //temporary solution
+            background: none;
+        }
+    }
+
+    .bleed {
+        background-color: $grey-90;
+        color: $off-white;
+    }
+
+    &.mission {
+        background-color: $pure-white;
+        color: $off-black;
+        margin-top: rem-calc(-45px);
+
+        & hr {
+            margin: rem-calc(50px 0);
+            max-width: none;
+        }
+    
+        & hr:after {
+            content: url('../../images/orange-shield.svg');
+            left: 50%;
+            position: absolute;
+            transform: translateY(-50%) translateX(-50%);
+            padding: rem-calc(20px);
+            background: #fff;
+        }
+        
+        a {
+            color: $orange;
+            &:hover {
+                color: $dark-orange !important;
+            }
+        }
+
+        .social {
+            li {
+                a {
+                    color: $orange;
+                }
+            }
+        }
+        .columns {
+            -webkit-columns: 2 290px;
+            -moz-columns: 2 290px;
+            columns: 2 290px;
+        }
+
+        .bleed {
+            background-color: $orange;
+            color: $off-white;
+
+            a {
+                color: $off-white;
+            }
+        }
+    }
+
+    @media screen and (max-width:639px) { 
+        h2 {
+            font-size: 1.25rem;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.1875rem;
+            text-align: center;
+            margin-top: rem-calc(-20px);
+        }
+
+        .social {
+            text-align: center;
+            margin-top: rem-calc(45px);
+            margin-bottom: rem-calc(34px);
+
+            li {
+                margin-right: rem-calc(14px);
+            }
+        }
+
+        ul {
+            li {
+                margin-bottom: rem-calc(20px);
+            }
+        }
+
+    }
+}

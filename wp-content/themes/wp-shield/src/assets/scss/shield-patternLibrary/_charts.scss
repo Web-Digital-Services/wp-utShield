@@ -1,0 +1,42 @@
+.blue {
+    .charts-css {
+        --color-1: #004661 !important; /*$blue-80*/
+        --color-2: #0C607B !important; /*$blue-70*/
+        --color-3: #257994 !important; /*$blue*/
+        --color-4: #3F93AE !important; /*$blue-50*/
+        --color-5: #58ACC7 !important; /*$blue-40*/
+        --color-6: #004661 !important; /*$blue-80*/
+        --color-7: #0C607B !important; /*$blue-70*/
+        --color-8: #257994 !important; /*$blue*/
+        --color-9: #3F93AE !important; /*$blue-50*/
+        --color-10: #58ACC7 !important; /*$blue-40*/
+    }
+}
+
+.orange {
+    .charts-css {
+        --color-1: #E07533 !important; /*$orange-40*/
+        --color-2: #C75C1A !important; /*$orange-50*/
+        --color-3: #AD4200 !important; /*$orange*/
+        --color-4: #942900 !important; /*$orange-70*/
+        --color-5: #7A0F00 !important; /*$dark-orange*/
+        --color-6: #E07533 !important; /*$orange-40*/
+        --color-7: #C75C1A !important; /*$orange-50*/
+        --color-8: #AD4200 !important; /*$orange*/
+        --color-9: #942900 !important; /*$orange-70*/
+        --color-10: #7A0F00 !important; /*$dark-orange*/
+    }
+}
+
+table.charts-css {
+    &.column {
+        height: rem-calc(300px);
+    }
+}
+
+ul.charts-css {
+    &.legend {
+        justify-content: center;
+        margin-top: rem-calc(10px);
+    }
+}

@@ -1,0 +1,91 @@
+/* ============================================================
+HORIZONTAL
+============================================================ */
+.grid-x {
+    &.factoids {
+        padding: .5rem;
+
+        i {
+            color: $blue;
+        }
+
+        .supersize,
+        .h1,
+        .h2,
+        .h3 {
+            font-weight: 900;
+            font-family: $sans-serif-font;
+        }
+
+        .fa-5x {
+            @media screen and (max-width: 639px) {
+                font-size: 3.5rem;
+            }
+        }
+    }
+}
+
+.bleed.color {
+    .factoids {
+        i {
+            color: $off-white;
+        }
+    }
+}
+
+/* ============================================================
+VERTICAL
+============================================================ */
+
+.callout {
+    .grid-y {
+        &.factoids {
+
+            h4,
+            h5,
+            .h4,
+            .h5 {
+                font-weight: 900;
+                font-family: $sans-serif-font;
+                color: $dark-orange;
+                margin-bottom: .12rem;
+            }
+        }
+        .cell {
+
+            h3,
+            .h3,
+            .h4 {
+                padding-top: 0;
+                padding-bottom: 0.12rem;
+                border-bottom: #808a8f rem-calc(1px) solid;
+            }
+
+
+        }
+
+    }
+
+    &.color {
+        .grid-y {
+            &.factoids {
+
+            h4,
+            h5,
+            .h4,
+            .h5 {
+                color: $off-white;
+                margin-bottom: .12rem;
+            }
+        }
+            .cell {
+
+                h3 {
+                    border-bottom: $off-white rem-calc(1px) solid;
+                }
+
+                
+            }
+        }
+    }
+}

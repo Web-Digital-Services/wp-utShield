@@ -1,0 +1,25 @@
+/* ============================================================
+    MODAL
+============================================================ */
+
+.close-button {
+    color: $orange;
+    font-weight: 900;
+}
+
+.reveal-overlay {
+    background-color: hsla(0, 0%, 4%, .75);
+}
+
+.reveal {
+    &.modal {
+        padding: 30px !important;
+        /*padding:rem-calc(30px) !important*/
+    }
+    &.modal-image {
+        padding: none !important;
+        &img {
+            height: 100%;
+        }
+    }
+}

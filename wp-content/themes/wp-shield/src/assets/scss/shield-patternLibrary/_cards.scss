@@ -1,0 +1,227 @@
+/* ============================================================
+    CARDS
+============================================================ */
+
+//Similar to .nested but .framed is placed on parent div
+div.cell.nested {
+    border-radius: rem-calc(6px) !important;
+    background-color: $beige;
+
+    &.color {
+        background-color: $blue;
+
+        &.orange {
+            background-color: $orange;
+        }
+
+        &.darken {
+            background-color: $dark-orange;
+        }
+
+        &.grey {
+            background-color: $grey;
+        }
+
+        &.dark-grey {
+            background-color: $dark-grey;
+        }
+    }
+
+    a.card {
+        margin: 1rem;
+        background-color: $off-white;
+
+        h4 {
+            text-align: center;
+        }
+    }
+}
+
+a.card {
+    padding: 0 !important; //Overrides the bleed padding for <a>
+    border-radius: rem-calc(6px) !important;
+    font-weight: 600 !important;
+    border: 0;
+    @extend %jump-base;
+    position: relative;
+    color: $off-black !important;
+
+    &:hover {
+        @extend %jump-hover;
+        color: $off-black !important;
+    }
+
+    .card-section {
+        margin-bottom: rem-calc(60px);
+
+        &:after {
+            position: absolute;
+            display: block;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            font-size: rem-calc(60px);
+            content: "\f105";
+            margin-right: .5rem;
+            margin-bottom: -.5rem;
+            right: 0;
+            bottom: 0;
+            color: $orange;
+        }
+    }
+
+    &.color {
+        color: $off-white !important;
+
+        .card-section:after {
+            color: $blue-10 !important;
+        }
+
+        &.orange .card-section:after {
+            color: $beige !important;
+        }
+
+        &.darken .card-section:after {
+            color: $dark-beige !important;
+        }
+
+        &.grey .card-section:after {
+            color: $off-white !important;
+        }
+
+        &.dark-grey .card-section:after {
+            color: $light-grey !important;
+        }
+
+        &:hover {
+            color: $off-white !important;
+        }
+    }
+
+    .grid-x {
+        &:after {
+            position: absolute;
+            display: block;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            font-size: rem-calc(60px);
+            content: "\f105";
+            right: 0;
+            color: $orange;
+            margin-right: .5rem;
+
+        }
+    }
+
+    &.postcard {
+        position: relative;
+
+        img {
+            transform: scale(1);
+            transition: .4s ease-in-out;
+        }
+
+        .card-section {
+            position: absolute;
+            bottom: 0;
+            background: rgba(23, 23, 23, 0.7);
+            color: $off-white;
+            width: 100%;
+            height: 100%;
+            padding: rem-calc(30px);
+            margin-bottom: 0;
+            opacity: 100%;
+            transition: .4s ease-in-out;
+
+            h2,
+            h3,
+            h4,
+            p {
+                transition: .4s ease-in-out;
+            }
+
+
+
+            &:after {
+                color: $light-grey;
+            }
+        }
+
+        &:hover {
+            .card-section {
+                background: none;
+                left: var(--mouse-x);
+                top: var(--mouse-y);
+
+                h2,
+                h3,
+                h4,
+                p {
+                    opacity: 0%;
+                }
+
+            }
+
+            img {
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+
+@media screen and (max-width:450px) {
+
+    a.card.postcard {
+        p {
+            display: none;
+        }
+    }
+}
+
+.card-section img+* {
+    margin-top: 1rem;
+}
+
+.card {
+    &.popout {
+        overflow: visible;
+        margin-top: 4.375rem;
+
+        img {
+            margin-top: -4.375rem;
+        }
+    }
+
+    &.popout.border img {
+        border-top: solid 1rem $blue;
+    }
+
+    &.popout.border.color img {
+        border-top: solid 1rem $blue-30;
+    }
+
+    &.popout.border.gold img {
+        border-top: solid 1rem $gold;
+    }
+
+    &.popout.border.orange img {
+        border-top: solid 1rem $orange;
+    }
+}
+
+.hero {
+    &.card {
+        background-color: $blue;
+        color: $off-white;
+        margin-bottom: rem-calc(-60px);
+
+        img {
+            margin-bottom: 0;
+            width:100%;
+            height: auto;
+        }
+
+        .card-section {
+            padding: rem-calc(20px);
+        }
+    }
+}

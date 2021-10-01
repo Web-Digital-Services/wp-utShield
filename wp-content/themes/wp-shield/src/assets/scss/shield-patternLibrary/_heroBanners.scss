@@ -1,0 +1,27 @@
+
+/* ============================================================
+    HERO BANNERS
+============================================================ */
+
+.hero {
+    &.img-fill {
+        background-color: transparent !important;
+    }
+    & .callout {
+        padding: rem-calc(30px);
+        background: rgba(26, 36, 41, 0.85);
+        color: $off-white;
+        &.grey {
+            background-color: rgba(26, 36, 41, 0.85);
+            color: $off-white !important;
+        }
+        &.white {
+            background: rgba(241, 245, 247, 0.85);
+            color: $off-black !important;
+        }
+        &.orange {
+            background: rgba(148, 41, 0, 0.85);
+            color: $off-white !important;
+        }
+    }
+}

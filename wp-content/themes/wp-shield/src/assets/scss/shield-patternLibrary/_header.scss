@@ -1,0 +1,262 @@
+/* ============================================================
+    HEADER COMPONENTS
+============================================================ */
+
+// ======= Global Bar
+.title-bar {
+    &.global-bar {
+        background-color: $dark-grey;
+        padding: rem-calc(5px 10px);
+
+        p {
+            margin-bottom: 0;
+        }
+
+        a {
+            font-weight: 900;
+
+            background-image: none;
+            color: $off-white;
+
+            &:hover {
+                color: $grey-link;
+            }
+        }
+    } 
+    &.quicklinks {
+        background-color: $dark-grey;
+        color: $off-white;
+        .arrow ul li:before{
+            color: $off-white;
+        }
+        
+        a {
+            color: $off-white;
+        }
+        h2,h3,h4,h5,h6 {
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
+            color: $gold;
+        }
+        
+        .search {
+            margin-bottom: rem-calc(15px);
+        }
+    }
+}
+
+.off-canvas {
+    background-color: $dark-grey;
+
+    &.position-left {
+        width: rem-calc(300px);
+    }
+}
+
+.js-off-canvas-overlay {
+    background: rgba(23, 23, 23, 0.8)
+}
+
+.off-canvas-content {
+    &.is-open-left {
+        .title-bar.global-bar {
+            p {
+                visibility: hidden;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:770px) {
+    .title-bar.global-bar {
+        display: none !important;
+    }
+}
+
+// ======= Mission Bar
+.top-bar.mission-bar {
+    background-color: $light-grey;
+
+    a {
+        color: $dark-grey;
+        text-decoration: underline;
+        font-weight: 700;
+    }
+
+    li {
+        border-right: rem-calc(1px) solid $dark-grey;
+    }
+}
+
+// ======= Header
+
+header {
+    img {
+        width: rem-calc(300px);
+
+        @media screen and (max-width:770px) {
+            width: rem-calc(145px);
+        }
+    }
+
+    &.title-bar {
+        @media screen and (max-width:770px) {
+            background-color: $orange;
+            display: flex !important;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            position: -webkit-sticky;
+            top: 0;
+            padding: rem-calc(15px 12px);
+            //box-shadow: rem-calc(0px 2px 5px 0) rgba(23, 23, 23, 0.5);
+            z-index: 1;
+            margin-bottom: rem-calc(-33px);
+
+            .menu-icon {
+                color: $off-white;
+                font-weight: 900;
+                width: unset;
+            }
+    
+            .menu-icon::before {
+                font-family: "Font Awesome 5 Free solid";
+                content: "\f0c9";
+                margin-right: rem-calc(7px);
+            }
+    
+            .menu-icon::after {
+                content: unset;
+            }
+        }
+    }
+
+    &#mission {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: rem-calc(30px 0px);
+        max-width: rem-calc(1440px); //%
+        margin-right: auto;
+        margin-left: auto;
+
+        @media screen and (max-width:770px) {
+            margin-bottom: 0;
+            justify-content: center;
+
+            .logo {
+                display: none;
+            }
+        }
+    }
+
+    &#regular {
+        @media screen and (max-width:770px) {
+            display: block;
+            //padding: rem-calc(15px);
+            margin-bottom: 0;
+            background: $orange;
+            top: 100px;
+            position: sticky;
+            position: -webkit-sticky;
+            z-index: 1;
+        }
+        
+        .group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: rem-calc(30px 0px);
+            max-width: rem-calc(1440px); //%
+            margin-right: auto;
+            margin-left: auto;
+
+            /*@media print, screen and (min-width: 40em) {
+                padding-right: 0.9375rem;
+                padding-left: 0.9375rem;
+            }*/
+
+            @media screen and (max-width:770px) {
+                margin-bottom: 0;
+                justify-content: center;
+            }
+            /*@media screen and (max-width:770px) {
+                display: block;
+                padding: rem-calc(15px);
+                margin-bottom: 0;
+                background: $orange;
+                top: 100px;
+                position: sticky;
+                position: -webkit-sticky;
+                z-index: 1;
+            }*/
+
+            .right {
+                @media screen and (max-width:770px) {
+                    padding: rem-calc(15px) 0;
+                }
+            }
+        }
+        
+        .logo {
+            display: flex;
+            align-items: baseline;
+
+            &.pipe {
+                img {
+                padding-right: rem-calc(30px);
+                border-right: rem-calc(2px) solid $dark-grey;
+                }
+
+                p {
+                    padding-left: rem-calc(30px);
+                    font-weight: 700;
+                    font-size: rem-calc(26px);
+                }
+            }
+            
+            @media screen and (max-width:770px) {
+                display: none;
+            }
+        }
+        
+        .search {
+            margin: rem-calc(30px 0px);
+            @media screen and (max-width:770px) {
+                margin: 0 0 rem-calc(20px) 0;
+            }
+        }
+
+        .circle-icons {
+            //width: rem-calc(400px);
+            text-align: right;
+
+            a:first-child {
+                margin-right: rem-calc(30px);
+            }
+
+            @media screen and (max-width:770px) {
+                text-align: center;
+                //width: auto;
+                align-items: center;
+                display: flex;
+
+                a:first-child {
+                    margin-right: rem-calc(15px);
+                }
+
+                a {
+                    color: $off-white;
+
+                    span.fa-stack {
+                        .fa-stack-2x, .fa-stack-1x {
+                            color: $off-white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
