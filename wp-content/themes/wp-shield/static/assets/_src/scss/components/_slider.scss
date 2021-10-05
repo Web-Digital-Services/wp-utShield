@@ -214,6 +214,18 @@ $perpage: 3;
   }
 }
 
+.callout-slider-nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  top: auto; bottom: 5%; right: auto; left: 50%;
+  transform: translateX(-50%);
+  
+  li {
+    display: inline-flex;
+  }
+}
+
 @keyframes stroke {
   0%   { stroke-dashoffset: 63; opacity: 0; }
   10%  { stroke-dashoffset: 0; opacity: .35; }

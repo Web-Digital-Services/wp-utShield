@@ -35,7 +35,8 @@ Button
       background-color: $c-extralightbeige;
       
       &:hover {
-        background-color: $c-orange;
+        background-color: $c-darkorange;
+        border-color: $c-darkorange;
         color: $c-white !important;
       }
     }
@@ -57,6 +58,18 @@ Button
       background-color: $c-white;
       border-color: $c-white;
       color: $c-orange;
+
+      &:hover {
+        background-color: $c-darkorange;
+        border-color: $c-darkorange;
+        color: $c-white;
+      }
+    }
+    
+    &--white-outline {
+      background-color: transparent;
+      border-color: $c-white;
+      color: $c-white;
 
       &:hover {
         background-color: $c-darkorange;

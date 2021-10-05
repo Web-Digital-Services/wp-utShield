@@ -544,7 +544,6 @@ blockquote:last-child {
 Cursors
 \* ------------------------------------------------------------ */
 a.video-cursor-hover {
-  position: relative;
   display: block; }
   a.video-cursor-hover::before {
     content: "";
@@ -1028,7 +1027,8 @@ Button
       color: #C0511B;
       background-color: #FBF9F7; }
       .btn-rounded--outline:hover {
-        background-color: #C0511B;
+        background-color: #7A0F00;
+        border-color: #7A0F00;
         color: #fff !important; }
     .btn-rounded--trans {
       padding: 0 2.4rem;
@@ -1044,6 +1044,14 @@ Button
       border-color: #fff;
       color: #C0511B; }
       .btn-rounded--white:hover {
+        background-color: #7A0F00;
+        border-color: #7A0F00;
+        color: #fff; }
+    .btn-rounded--white-outline {
+      background-color: transparent;
+      border-color: #fff;
+      color: #fff; }
+      .btn-rounded--white-outline:hover {
         background-color: #7A0F00;
         border-color: #7A0F00;
         color: #fff; }
@@ -1090,32 +1098,32 @@ Button
 /* ------------------------------------------------------------ *\
 Callout basic
 \* ------------------------------------------------------------ */
-.callout-basic {
+.callout--basic {
   position: relative;
   color: #fff;
   margin: 8rem 0 4rem;
   overflow: hidden; }
   @media (max-width: 1023px) {
-    .callout-basic {
+    .callout--basic {
       margin: 11rem 0 4rem; } }
   @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-    .callout-basic {
+    .callout--basic {
       margin: 2.2rem 0;
       padding: 12rem 0 13rem; } }
-  .callout-basic .callout__background {
+  .callout--basic .callout__background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%; }
-  .callout-basic .callout__background img {
+  .callout--basic .callout__background img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover; }
-  .callout-basic .callout__element {
+  .callout--basic .callout__element {
     max-width: 46.5rem;
     position: absolute;
     top: 0;
@@ -1123,14 +1131,14 @@ Callout basic
     opacity: .25;
     mix-blend-mode: multiply; }
     @media (max-width: 1023px) {
-      .callout-basic .callout__element {
+      .callout--basic .callout__element {
         left: -8rem;
         bottom: 0;
         top: auto; } }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .callout-basic .callout__element {
+      .callout--basic .callout__element {
         left: -18rem; } }
-  .callout-basic .callout__inner {
+  .callout--basic .callout__inner {
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -1138,36 +1146,36 @@ Callout basic
     min-height: 55rem;
     padding: 0 12.5rem; }
     @media (max-width: 1023px) {
-      .callout-basic .callout__inner {
+      .callout--basic .callout__inner {
         padding: 0;
         min-height: 65rem; } }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .callout-basic .callout__inner {
+      .callout--basic .callout__inner {
         min-height: 0;
         flex-wrap: wrap; } }
-  .callout-basic .callout__entry {
+  .callout--basic .callout__entry {
     font-size: 2.8rem;
     padding-right: 1rem; }
     @media (max-width: 1599px) {
-      .callout-basic .callout__entry {
+      .callout--basic .callout__entry {
         padding-right: 3rem; } }
     @media (max-width: 1023px) {
-      .callout-basic .callout__entry {
+      .callout--basic .callout__entry {
         max-width: none;
         width: 63%; } }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .callout-basic .callout__entry {
+      .callout--basic .callout__entry {
         width: 100%;
         font-size: 2rem;
         padding: 0; } }
-  .callout-basic .callout__entry p {
+  .callout--basic .callout__entry p {
     line-height: 1.8; }
   @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-    .callout-basic .callout__actions {
+    .callout--basic .callout__actions {
       margin-top: 4rem; } }
 
 /* ------------------------------------------------------------ *\
-	Callout
+Callout
 \* ------------------------------------------------------------ */
 .callout {
   padding: 15.2rem 0 5rem;
@@ -1224,7 +1232,7 @@ Callout basic
         left: -6rem; } }
   .callout .callout__inner {
     position: relative;
-    margin-left: -7.4rem;
+    margin-left: -4rem;
     display: flex;
     align-items: center;
     justify-content: space-between; }
@@ -1257,6 +1265,53 @@ Callout basic
     width: 100%;
     height: 100%;
     object-fit: cover; }
+  .callout .callout__slider-contain {
+    max-width: 77.8rem;
+    position: relative;
+    bottom: 0;
+    margin-bottom: -14rem;
+    min-height: 88rem;
+    z-index: 2;
+    box-shadow: 0 1.6rem 4rem -0.8rem rgba(0, 0, 0, 0.25); }
+    .callout .callout__slider-contain .tns-ovh {
+      overflow: hidden; }
+    .callout .callout__slider-contain figure {
+      position: relative;
+      min-height: 88rem;
+      width: 100%;
+      height: 100%; }
+      .callout .callout__slider-contain figure img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
+    @media (max-width: 1399px) {
+      .callout .callout__slider-contain {
+        min-height: 60rem; }
+        .callout .callout__slider-contain figure {
+          min-height: 70rem; } }
+    @media (max-width: 1199px) {
+      .callout .callout__slider-contain {
+        width: 50%; } }
+    @media (max-width: 1023px) {
+      .callout .callout__slider-contain {
+        margin: 0;
+        max-width: none;
+        position: relative;
+        min-height: 50rem; }
+        .callout .callout__slider-contain figure {
+          min-height: 50rem; } }
+    @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
+      .callout .callout__slider-contain {
+        width: 100%;
+        margin: 0; } }
+    @media (max-width: 575px) {
+      .callout .callout__slider-contain {
+        min-height: 32.2rem; }
+        .callout .callout__slider-contain figure {
+          min-height: 32.2rem; } }
   .callout .callout__image {
     max-width: 77.8rem;
     position: relative;
@@ -1301,18 +1356,18 @@ Callout basic
   .callout .callout__image.animated img {
     width: 100%; }
   .callout .callout__content {
-    max-width: 60rem;
+    max-width: 66rem;
     padding: 0 6rem 0 2rem; }
     @media (max-width: 1599px) {
       .callout .callout__content {
-        padding: 0 2rem; } }
+        padding: 0 2rem 0 4rem; } }
     @media (max-width: 1199px) {
       .callout .callout__content {
         width: 48%; } }
     @media (max-width: 1023px) {
       .callout .callout__content {
         max-width: none;
-        padding: 20rem 0 0 4.4rem; } }
+        padding: 20rem 0 0 4rem; } }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
       .callout .callout__content {
         width: 100%;
@@ -1324,15 +1379,15 @@ Callout basic
       .callout .callout__entry p {
         line-height: 1.8; } }
   .callout .callout__actions {
-    margin-top: 4.8rem; }
+    margin-top: 3.8rem; }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
       .callout .callout__actions {
-        margin-top: 3.3rem; } }
+        margin-top: 2.3rem; } }
   .callout .callout__actions a {
-    min-width: 16.8rem; }
-    @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .callout .callout__actions a {
-        min-width: 0; } }
+    margin-top: 1rem;
+    margin-right: .8rem; }
+    .callout .callout__actions a:last-child {
+      margin-right: 0; }
 
 /* Callout alt */
 .callout--alt {
@@ -1344,7 +1399,7 @@ Callout basic
       padding: 15.5rem 0 2rem; } }
   @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
     .callout--alt {
-      padding: 1rem 0 6.5rem; } }
+      padding: 4.5rem 0 6.5rem; } }
   .callout--alt h6 {
     color: #635853; }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
@@ -1373,9 +1428,11 @@ Callout basic
     align-items: center;
     justify-content: center;
     transform: rotate(-180deg);
-    writing-mode: vertical-lr;
+    writing-mode: vertical-rl;
+    text-align: right;
     text-orientation: mixed;
-    margin: 0; }
+    margin: 0;
+    color: #171717; }
     @media (max-width: 1023px) {
       .callout--alt .callout__title {
         left: 2rem; } }
@@ -1425,31 +1482,22 @@ Callout basic
     box-shadow: none !important;
     padding: 0;
     min-height: 47.6rem;
-    width: 100%; }
+    width: 90%; }
     @media (max-width: 1599px) {
       .callout--alt .callout__image {
         margin-right: 0; } }
-    @media (max-width: 1199px) {
-      .callout--alt .callout__image {
-        width: 100%; } }
     @media (max-width: 1023px) {
       .callout--alt .callout__image {
-        max-width: 39rem;
-        width: 100%; } }
+        max-width: 39rem; } }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
       .callout--alt .callout__image {
         bottom: 0;
-        left: -9rem;
         max-width: 38rem;
         min-height: 31rem; } }
     @media (max-width: 575px) {
       .callout--alt .callout__image {
-        max-width: 25.6rem;
-        min-height: 23.6rem;
-        left: -7.5rem; } }
-    @media (max-width: 374px) {
-      .callout--alt .callout__image {
-        left: -6rem; } }
+        max-width: 30rem;
+        min-height: 30rem; } }
   .callout--alt .callout__image--person {
     position: absolute;
     top: 0;
@@ -1501,37 +1549,12 @@ Callout basic
       max-width: 27rem; } }
   .callout--alt .callout__inner {
     align-items: flex-start; }
+  .callout--alt-large .callout__entry {
+    font-size: 2.8rem;
+    line-height: 1.8; }
     @media (max-width: 1023px) {
-      .callout--alt .callout__inner {
-        margin-left: -6rem; } }
-    @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .callout--alt .callout__inner {
-        margin: 0; } }
-  .callout--alt .callout__btn {
-    padding: 0 3rem; }
-  @media (max-width: 1199px) {
-    .callout--alt .callout__actions {
-      max-width: 28.4rem; } }
-  @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-    .callout--alt .callout__actions {
-      max-width: 24rem; } }
-  @media (max-width: 1599px) {
-    .callout--alt .callout__actions a {
-      min-width: 0;
-      padding: 0 2rem; } }
-  @media (max-width: 1199px) {
-    .callout--alt .callout__actions a {
-      width: 100%;
-      padding: 0 1.5rem;
-      text-align: center; } }
-  .callout--alt .callout__actions a + a {
-    margin-left: 3rem; }
-    @media (max-width: 1599px) {
-      .callout--alt .callout__actions a + a {
-        margin-left: .8rem; } }
-    @media (max-width: 1199px) {
-      .callout--alt .callout__actions a + a {
-        margin: 2.4rem 0 0 0; } }
+      .callout--alt-large .callout__entry {
+        font-size: 1.8rem; } }
   .callout--alt .callout__content {
     padding: 2.7rem 2rem 0; }
     @media (max-width: 1599px) {
@@ -1594,7 +1617,8 @@ Callout basic
     align-items: center;
     justify-content: center;
     transform: rotate(-180deg);
-    writing-mode: vertical-lr;
+    writing-mode: vertical-rl;
+    text-align: right;
     text-orientation: mixed;
     margin: 0;
     z-index: 2;
@@ -1628,45 +1652,14 @@ Callout basic
   .callout--large .callout__background {
     left: 0; }
   .callout--large .callout__inner {
-    align-items: center;
-    padding-left: 5rem; }
+    align-items: center; }
     @media (max-width: 1023px) {
       .callout--large .callout__inner {
         flex-direction: column-reverse;
         flex-wrap: wrap;
-        padding: 0;
         margin: 0; } }
-    @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .callout--large .callout__inner {
-        padding: 0; } }
   .callout--large .callout__btn {
     padding: 0 3rem; }
-  .callout--large .callout__actions {
-    margin-top: 5.4rem; }
-    @media (max-width: 1199px) {
-      .callout--large .callout__actions {
-        max-width: 28.4rem; } }
-    @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .callout--large .callout__actions {
-        max-width: 24rem; } }
-  .callout--large .callout__actions a {
-    min-width: 14.8rem; }
-    @media (max-width: 1599px) {
-      .callout--large .callout__actions a {
-        min-width: 0;
-        padding: 0 2rem; } }
-    @media (max-width: 1199px) {
-      .callout--large .callout__actions a {
-        width: 100%;
-        padding: 0 1.5rem; } }
-  .callout--large .callout__actions a + a {
-    margin-left: 3rem; }
-    @media (max-width: 1599px) {
-      .callout--large .callout__actions a + a {
-        margin-left: 1rem; } }
-    @media (max-width: 1199px) {
-      .callout--large .callout__actions a + a {
-        margin: 2.4rem 0 0 0; } }
   .callout--large .callout__content {
     padding: 2.7rem 2rem 0; }
     @media (max-width: 1023px) {
@@ -1730,29 +1723,31 @@ Callout basic
     display: none; }
   .callout--reversed .callout__image {
     box-shadow: none;
-    margin: 0 -10rem 0 0; }
-    @media (max-width: 1023px) {
-      .callout--reversed .callout__image {
-        min-height: 40rem; } }
+    margin: 0 -10rem 0 0;
+    padding-top: 51.03%;
+    min-height: 0; }
     @media (max-width: 1023px) {
       .callout--reversed .callout__image {
         margin: 0;
         max-width: none;
         position: relative;
-        z-index: 2;
-        min-height: 50rem;
-        margin-top: 4rem; } }
+        z-index: 2; } }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
       .callout--reversed .callout__image {
-        width: 100%; } }
-    @media (max-width: 575px) {
-      .callout--reversed .callout__image {
-        min-height: 40rem; } }
+        width: 100%;
+        padding-top: 102.06%;
+        margin-top: 4rem; } }
   .callout--reversed .callout__image img {
-    box-shadow: none; }
+    box-shadow: none;
+    object-fit: contain;
+    width: 100%; }
   .callout--reversed .callout__inner {
     flex-direction: row-reverse;
-    margin-left: 0; }
+    margin-left: 0;
+    align-items: center; }
+    @media (max-width: 1023px) {
+      .callout--reversed .callout__inner {
+        align-items: flex-start; } }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
       .callout--reversed .callout__inner {
         flex-direction: column-reverse; } }
@@ -1763,20 +1758,14 @@ Callout basic
     @media (max-width: 1023px) {
       .callout--reversed .callout__heading-element {
         max-width: 28rem; } }
-  .callout--reversed .callout__heading-element--circle {
-    max-width: none; }
-    @media (max-width: 1023px) {
-      .callout--reversed .callout__heading-element--circle {
-        max-width: 40rem; } }
-    @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .callout--reversed .callout__heading-element--circle {
-        max-width: 26rem; } }
   .callout--reversed .callout__background-element {
     position: absolute;
-    top: 5%;
-    left: 38%;
-    transform: translateX(-50%);
-    max-width: 46.5rem; }
+    top: 3%;
+    left: 49%;
+    transform: translateX(-50%); }
+    @media (max-width: 1023px) {
+      .callout--reversed .callout__background-element {
+        left: 50%; } }
 
 /* ------------------------------------------------------------ *\
 	Checkbox
@@ -3355,6 +3344,18 @@ Slider
     .slider-nav li.tns-nav-active .circle .outer-circle-grow {
       opacity: 1;
       animation: strokeSlow 10s ease-out forwards; }
+
+.callout-slider-nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  top: auto;
+  bottom: 5%;
+  right: auto;
+  left: 50%;
+  transform: translateX(-50%); }
+  .callout-slider-nav li {
+    display: inline-flex; }
 
 @keyframes stroke {
   0% {

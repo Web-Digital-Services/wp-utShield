@@ -59,7 +59,7 @@ if (document.querySelectorAll('.js-slider-testimonials').length > 0) {
     container: ".js-slider-testimonials",
     mode: "gallery",
     controlsContainer: ".slider-controls",
-    navContainer: ".slider-nav",
+    navContainer: ".testimonial-slider-nav",
     autoplay: true,
     autoplayButtonOutput: false,
     autoplayTimeout: 10000,
@@ -92,6 +92,26 @@ if (document.querySelectorAll('.js-slider-news').length > 0) {
     },
     swipeAngle: false,
     speed: 400
+  });
+}
+
+
+/**
+ * Slider callout.
+ */
+
+if (document.querySelectorAll('.js-slider-callout').length > 0) {
+  const sliderFeed = tns({
+    container: ".js-slider-callout",
+    loop: false,
+    controls: false,
+    items: 1,
+    navContainer: ".callout-slider-nav",
+    autoplay: true,
+    autoplayButtonOutput: false,
+    autoplayTimeout: 10000,
+    swipeAngle: false,
+    speed: 500
   });
 }
 
