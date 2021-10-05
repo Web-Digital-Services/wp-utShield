@@ -16,6 +16,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/dist/assets/css/main.css">
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/dist/assets/webfonts/all.min.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css2?family=Lora&family=Nunito+Sans:wght@300;400;900&display=swap" rel="stylesheet"> 
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
