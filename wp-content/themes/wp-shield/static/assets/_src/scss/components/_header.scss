@@ -1,0 +1,198 @@
+/* ------------------------------------------------------------ *\
+Header
+\* ------------------------------------------------------------ */
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  padding: 2.5rem 0;
+  transition: none;
+
+  @include breakpoint-up(xxlarge-desktop) {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @include breakpoint-down(custom-desktop) {
+    padding: 2.5rem 0 .5rem;
+  }
+
+  @include breakpoint-down(mobile) {
+    position: fixed;
+    background-color: $c-white;
+    padding: 1rem 0;
+  }
+
+  .header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header__logo {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    
+    img {
+      width: 22rem;
+    }
+    
+    &::after {
+      content: "Patient Care";
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: $c-darkorange;
+      margin-left: 2em;
+      white-space: nowrap;
+    }
+    
+    @include breakpoint-down(mobile) {
+      max-width: 16rem;
+      margin: 0 auto;
+      transform: translateX(-1.6rem);
+      
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .header__logo--mobile {
+    display: none;
+    
+
+    @include breakpoint-down(mobile) {
+      display: block;
+    }
+  }
+
+  .header__aside {
+    display: flex;
+    align-items: center;
+
+    @include breakpoint-down(mobile) {
+      display: none;
+    }
+  }
+
+  .header__button {
+    order: 1;
+    margin-left: 5.1rem;
+    
+    @include breakpoint-down(mobile) {
+      order: 0;
+      margin-left: 0;
+    }
+  }
+  
+  .side-menu & {
+    .header__button {
+      display: none;
+    }
+    
+    @include breakpoint-down(mobile) {
+      .header__button {
+        display: block;
+      }
+    }
+  }
+
+  .header__actions {
+    margin-left: 2rem;
+    
+    @include breakpoint-down(small-desktop) {
+      margin-left: .5rem;
+    }
+  }
+
+  .header__nav {
+    @include breakpoint-down(custom-desktop) {
+      display: none;
+    }
+  }
+}
+
+.header.fixed {
+  background-color: $c-white;
+  position: fixed;
+  top: auto;
+  left: auto;
+  width: 100%;
+  transition: background-color .3s .3s ease; 
+  
+  .side-menu & {
+    width: calc(100% - 8.5rem);  
+    
+    @include breakpoint-up(xxlarge-desktop) {
+      padding-left: 8.5rem;
+    }
+    
+    @include breakpoint-down(tablet) {
+      width: calc(100% - 7rem);
+    }
+    
+    @include breakpoint-down(mobile) {
+      width: 100%;
+    }
+  }
+
+  @include breakpoint-up(xxlarge-desktop) {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+  }
+
+  @include breakpoint-down(tablet) {
+    
+    padding-right: 0;
+  }
+
+  @include breakpoint-down(mobile) {
+    width: 100%;
+    padding: 1rem 0;
+  }
+}
+
+.header.modal-open {
+  position: fixed;
+  top: auto;
+  left: auto;
+  width: 100%;
+  
+  .side-menu & {
+    width: calc(100% - 8.5rem);
+    
+    @include breakpoint-up(xxlarge-desktop) {
+      padding-left: 8.5rem;
+    }
+
+    @include breakpoint-down(tablet) {
+      width: calc(100% - 7rem);
+    }
+  }
+
+  @include breakpoint-up(xxlarge-desktop) {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+  }
+
+  @include breakpoint-down(tablet) {
+    padding-right: 0;
+  }
+
+  @include breakpoint-down(mobile) {
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .header__actions a {
+    background-color: $c-mediumdarkbeige;
+    border-color: $c-mediumdarkbeige;
+    color: $c-offblack !important;
+  }
+}

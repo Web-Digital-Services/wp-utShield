@@ -1,0 +1,30 @@
+/* ------------------------------------------------------------ *\
+	List about
+\* ------------------------------------------------------------ */
+
+.list-about {
+	list-style: none;
+	font-size: 1.5rem;
+	font-weight: 500;
+	margin: 0;
+
+	@include breakpoint-down(mobile) {
+		font-size: 1.4rem;
+	}
+
+	li a {
+		color: $c-orange;
+	}
+
+	li a:hover {
+		text-decoration: underline;
+	}
+
+	li p span {
+		color: $c-orange;
+	}
+
+	.list__location {
+		margin: 1.4rem 0;
+	}
+}

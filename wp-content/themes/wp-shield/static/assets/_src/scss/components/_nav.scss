@@ -1,0 +1,71 @@
+/* ------------------------------------------------------------ *\
+Nav
+\* ------------------------------------------------------------ */
+
+.nav {
+  ul {
+    display: flex;
+    font-size: 1.6rem;
+    font-weight: 700;
+    align-items: center;
+    margin: 0;
+  }
+
+  li + li {
+    margin-left: .5rem;
+  }
+  
+  &--basic {
+    ul {
+      display: block;
+      letter-spacing: -.01em;
+
+      @include breakpoint-down(mobile) {
+        font-size: 1.5rem;
+      }
+    }
+
+    li + li {
+      margin: .4rem 0 0 0;
+
+      @include breakpoint-down(mobile) {
+        margin: .5rem 0 0 0;
+      }
+    }
+
+    a {
+      display: block;
+      border-radius: .8rem;
+      padding: 1.4rem 1rem 1.4rem 0;
+      transition: all .3s ease;
+
+      &:hover {
+        padding-left: 1.6rem;
+        color: $c-orange; 
+        background: $c-lightbeige;
+      }
+    }
+  }
+  
+  &--mobile {
+    ul {
+      display: block;
+      font-size: 1.8rem;
+      color: $c-extradarkbeige;
+      font-weight: 700;
+    }
+
+    li + li {
+      margin: 3rem 0 0 0;
+    }
+
+    a {
+      padding: 0;
+      transition: color .3s ease;
+
+      &:hover {
+        color: $c-orange;  
+      }
+    }
+  }
+}

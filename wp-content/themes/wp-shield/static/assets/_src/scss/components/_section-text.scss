@@ -1,0 +1,62 @@
+/* ------------------------------------------------------------ *\
+	Section text
+\* ------------------------------------------------------------ */
+
+.section-text {
+	position: relative;
+	min-height: 40rem;
+	padding: 15.5rem 0 7rem;
+
+	@include breakpoint-down(tablet) {
+		padding: 7.5rem 0;
+		min-height: 26rem;
+	}
+
+	@include breakpoint-down(mobile) {
+		padding: 3rem 0;
+		min-height: 13.5rem;
+	}
+
+	h2 {
+		padding-left: 16.8rem;
+		font-size: 13.6rem;
+		color: #D4CEC4;
+		letter-spacing: -.044em;
+		position: absolute;
+		right: -150rem;
+		padding: 0;
+
+		@include breakpoint-down(large-desktop) {
+			right: -130rem;
+			right: -115rem;
+			font-size: 12rem;
+		}
+
+		@include breakpoint-down(custom-desktop) {
+			right: -100rem;
+			font-size: 11rem;
+		}
+
+		@include breakpoint-down(tablet) {
+			font-size: 8rem;
+			padding-left: 7.5rem;
+			letter-spacing: -0.055em;
+			right: -80rem;
+			padding: 0;
+		}
+
+		@include breakpoint-down(tablet-custom) {
+			font-size: 7rem;
+			right: -75rem;
+		}
+
+		@include breakpoint-down(mobile) {
+			font-size: 4.8rem;
+			letter-spacing: -.02em;
+		}
+
+		@include breakpoint-down(mobile-small) {
+			right: -80rem;
+		}
+	}
+}

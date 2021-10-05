@@ -1,0 +1,85 @@
+/* ------------------------------------------------------------ *\
+	Vendor
+\* ------------------------------------------------------------ */
+
+@import 'vendor/magnific-popup.css';
+@import 'vendor/fontawesome.css';
+@import 'vendor/aos.css';
+
+/* ------------------------------------------------------------ *\
+	Generic
+\* ------------------------------------------------------------ */
+
+@import 'generic/variables';
+@import 'generic/functions';
+@import 'generic/mixins';
+@import 'generic/reset';
+@import 'generic/fonts';
+@import 'generic/base';
+@import 'generic/helpers';
+@import 'generic/hero-animate';
+@import 'generic/marker-animate';
+
+/* ------------------------------------------------------------ *\
+	Components
+\* ------------------------------------------------------------ */
+
+@import 'components/cursors';
+
+@import 'components/accordion';
+
+@import 'components/article-news';
+@import 'components/bar-progress';
+@import 'components/blockquote';
+
+@import 'components/btn-chat';
+@import 'components/btn-menu';
+@import 'components/btn';
+
+@import 'components/callout-basic';
+@import 'components/callout';
+
+@import 'components/checkbox';
+@import 'components/copyright';
+
+@import 'components/event';
+@import 'components/events';
+
+@import 'components/field';
+@import 'components/footer';
+@import 'components/grid';
+@import 'components/header';
+@import 'components/hero';
+@import 'components/icons';
+
+@import 'components/list-about';
+@import 'components/list-basic';
+@import 'components/list-persons';
+@import 'components/list-stars';
+
+@import 'components/logo';
+
+@import 'components/main';
+
+@import 'components/menu-find';
+@import 'components/menu';
+
+@import 'components/nav';
+@import 'components/person';
+@import 'components/popup';
+@import 'components/radio';
+@import 'components/search';
+
+@import 'components/section-events';
+@import 'components/section-news';
+@import 'components/section-testimonials';
+@import 'components/section-text';
+
+@import 'components/select';
+@import 'components/shell';
+@import 'components/sidebar';
+
+@import 'components/slider';
+
+@import 'components/socials';
+@import 'components/wrapper';

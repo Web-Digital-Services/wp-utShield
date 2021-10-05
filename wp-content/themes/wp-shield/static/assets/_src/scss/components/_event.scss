@@ -1,0 +1,90 @@
+/* ------------------------------------------------------------ *\
+Event
+\* ------------------------------------------------------------ */
+
+.event {
+  display: flex;
+  align-items: stretch;
+  min-height: 10rem;
+  border: .1rem solid $c-beige;
+  border-radius: .3rem;
+  transition: box-shadow .3s ease;
+
+  @include breakpoint-down(mobile) {
+    min-height: 9rem;
+  }
+
+  .event__aside {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F0ECE2;
+    min-width: 11.2rem;
+
+    @include breakpoint-down(mobile) {
+      min-width: 6.8rem;
+    }
+  }
+
+  .event__date {
+    text-align: center;
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: #635853;
+
+    @include breakpoint-down(mobile) {
+      font-size: 2.4rem;
+    }
+  }
+
+  .event__date p {
+    line-height: 1;
+  }
+
+  .event__date h6 {
+    color: $c-orange;
+    text-transform: none;
+    margin-bottom: 0;
+    font-size: 1.6rem;
+    letter-spacing: -0.01em;
+
+    @include breakpoint-down(mobile) {
+      font-size: 1.4rem;
+      letter-spacing: 0;
+    }
+  }
+
+  .event__content {
+    display: flex;
+    align-items: center;
+    padding: 1rem 3.2rem;
+    line-height: 1.3;
+    font-size: 1.8rem;
+    font-weight: 700;
+    background-color: #FBF9F7;
+    width: 100%;
+    line-height: 1.4;
+
+    @include breakpoint-down(tablet) {
+      padding: 2rem 3.2rem;
+    }
+
+    @include breakpoint-down(mobile) {
+      padding: 2.4rem 1.6rem;
+      font-size: 1.6rem;
+      line-height: 1.2;
+    }
+  }
+
+  .event__content span {
+    transition: color .3s;
+  }
+  
+  &:hover {
+    box-shadow: 0 .8rem 1.6rem 0 rgba(black, .05);
+    
+    .event__content span {
+      color: $c-orange;
+    }
+  }
+}

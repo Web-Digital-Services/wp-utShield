@@ -1,0 +1,16 @@
+/* ------------------------------------------------------------ *\
+	Wrapper
+\* ------------------------------------------------------------ */
+
+.wrapper {
+	overflow: hidden;
+	position: relative;
+	min-height: 100vh;
+}
+
+.wrapper.menu-open,
+.wrapper.modal-open {
+	@include breakpoint-down(tablet) {
+		padding: 0;
+	}
+}

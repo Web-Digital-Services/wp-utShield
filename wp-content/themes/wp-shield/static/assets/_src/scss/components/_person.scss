@@ -1,0 +1,39 @@
+/* ------------------------------------------------------------ *\
+	Person
+\* ------------------------------------------------------------ */
+
+.person {
+	display: flex;
+	align-items: center;
+	min-height: 5.2rem;
+	padding: .6rem .8rem;
+	transition: background-color .3s, padding .3s;
+	border-radius: .8rem;
+	font-size: 1.6rem;
+	font-weight: 500;
+
+	figure {
+		max-width: 4.4rem;
+		margin-right: 1.5rem;
+	}
+
+	span {
+		color: $c-extradarkbeige;
+	}
+}
+
+.person:hover {
+	background-color: $c-lightbeige;
+	padding: .6rem 1.6rem;
+	color: $c-orange !important;
+}
+
+/* Person alt */
+
+.person--alt {
+	font-weight: 700;
+}
+
+.person--alt:hover {
+	color: $c-orange;
+}

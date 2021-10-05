@@ -1,0 +1,44 @@
+/* ------------------------------------------------------------ *\
+Socials
+\* ------------------------------------------------------------ */
+
+.socials {
+  ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+  } 
+  
+  a {   
+    padding: 0;
+    
+    img {
+      transition: transform .3s ease;
+    }
+
+    &:hover {          
+      img {
+        transform: scale(1.2);
+      }
+    }
+  }
+  
+  li {
+    max-width: 4.8rem;
+    padding-right: 2.4rem;
+
+    &:last-child {
+      padding-right: 0;
+    }
+    
+    @include breakpoint-down(small-desktop) {
+      max-width: 3.4rem;
+      padding-right: 1rem;
+    }
+
+    @include breakpoint-down(tablet) {
+      max-width: 4.8rem;
+      padding-right: 2.4rem;
+    }
+  }
+}
