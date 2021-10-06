@@ -12,31 +12,25 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      #      - name: Install project dependencies
+      #        run: composer install --no-dev --optimize-autoloader
       - name: Switch to theme directory
         run: |
-          cd wp-content/themes/wp-shield
-#      - name: Install composer dependencies
-#        uses: php-actions/composer@v6
-#        with:
-#          dev: no
-      - name: Setup node
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
+            ls
+            cd wp-content/themes/wp-shield
+            ls
       - name: npm install
-        run: |
-          npm install
+        run: npm install
       - name: npm run build
-        run: |
-          npm run build
+        run: npm run build
       - name: Switch back to root directory
         run: |
-          cd ../../../
-      - name: GitHub Deploy to WP Engine
-        uses: wpengine/github-action-wpe-site-deploy@main
+        cd ../../../
+      - name: SSH Deploy to WP Engine
+        uses: bowiedev/github-action-wpengine-ssh-deploy@master
         env:
           WPE_ENV_NAME: utphysicians
-          WPE_SSHG_KEY_PUBLIC: ${{ secrets.WPE_SSH_KEY_PUBLIC }}
-          WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSH_KEY_PRIVATE }}
+          WPE_SSHG_KEY_PUBLIC: ${{ secrets.WPENGINE_SSH_KEY_PUBLIC }}
+          WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPENGINE_SSH_KEY_PRIVATE }}
           TPO_SRC_PATH: ""
           TPO_PATH: ""
