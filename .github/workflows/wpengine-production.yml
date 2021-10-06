@@ -19,10 +19,11 @@ jobs:
         uses: php-actions/composer@v6
         with:
           dev: no
-      - name: Install npm and build
+      - name: Setup node
         uses: actions/setup-node@v2
         with:
           node-version: '14'
+      - name: npm install + build
         run: npm install && npm run build
       - name: Switch back to root directory
         run: |
