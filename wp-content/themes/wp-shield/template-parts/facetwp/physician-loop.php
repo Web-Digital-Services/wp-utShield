@@ -1,11 +1,13 @@
 <div class="grid-x grid-margin-x">
 	<?php
+		$physician_Last_name = types_render_field("last-name"); 
+
 		$physician_args = 
 			array(
 			'posts_per_page' => 12,
 			'post_type' => 'physicians-profile',
 			'post__not_in'   => array( $post->ID ),
-			'orderby'        => 'title',
+			'orderby'        => $physician_Last_name,
 			'order'          => 'ASC'
 		);
 		
