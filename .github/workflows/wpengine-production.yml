@@ -14,11 +14,12 @@ jobs:
       - uses: actions/checkout@v2
       #      - name: Install project dependencies
       #        run: composer install --no-dev --optimize-autoloader
+      - name: Check current directory
+        run: ls
       - name: Switch to theme directory
-        run: |
-            ls
-            cd wp-content/themes/wp-shield
-            ls
+        run: cd wp-content/themes/wp-shield
+      - name: Check current directory (again)
+        run: ls
       - name: npm install
         run: npm install
       - name: npm run build
