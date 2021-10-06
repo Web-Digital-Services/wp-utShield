@@ -75,9 +75,10 @@ get_header(); ?>
 
 				<?php else : ?>
 					<?php get_template_part( 'template-parts/content', 'none' ); ?>
-
 				<?php endif; // End have_posts() check. ?>
+
 			</div>
+			<?php echo do_shortcode('[facetwp facet="pager_"]'); ?>
 		</div>
 	</div>
 </main>
