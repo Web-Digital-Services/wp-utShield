@@ -14,16 +14,11 @@ jobs:
       - uses: actions/checkout@v2
       #      - name: Install project dependencies
       #        run: composer install --no-dev --optimize-autoloader
-      - name: Check current directory
-        run:
-          working-directory: ./wp-content/themes/wp-shield
-      - name: npm install
-        run: npm install
-      - name: npm run build
-        run: npm run build
-      - name: Switch back to root directory
-        run:
-          working-directory: ./
+      - name: npm
+        run: |
+          npm install
+          npm run build
+        working-directory: wp-content/themes/wp-shield
       - name: SSH Deploy to WP Engine
         uses: bowiedev/github-action-wpengine-ssh-deploy@master
         env:
