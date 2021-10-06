@@ -27,7 +27,7 @@
 
 							<?php 
 							if($physician_Accepting_New == 'Accepting New Patients'){
-								echo '<p><span class="fa-stack outline">';
+								echo '<p class="colorized"><span class="fa-stack outline">';
 								echo '<i class="far fa-circle fa-stack-2x"></i>';
 								echo '<i class="fas fa-check  fa-stack-1x fa-inverse"></i>';
 								echo '</span>Accepting New Patients</p>';
@@ -36,7 +36,6 @@
 								echo '<i class="far fa-circle fa-stack-2x"></i>';
 								echo '<i class="fas fa-times  fa-stack-1x fa-inverse"></i>';
 								echo '</span>Not Accepting New Patients</p>';
-								echo $physician_Accepting_New;
 								}
 							?>
 							<?php 
