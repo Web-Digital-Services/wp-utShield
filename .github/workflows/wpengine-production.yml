@@ -15,10 +15,10 @@ jobs:
       - name: Switch to theme directory
         run: |
           cd wp-content/themes/wp-shield
-      - name: Install composer dependencies
-        uses: php-actions/composer@v6
-        with:
-          dev: no
+#      - name: Install composer dependencies
+#        uses: php-actions/composer@v6
+#        with:
+#          dev: no
       - name: Setup node
         uses: actions/setup-node@v2
         with:
