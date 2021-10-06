@@ -8,7 +8,8 @@
 			'post_type' => 'physicians-profile',
 			'post__not_in'   => array( $post->ID ),
 			'orderby'        => $physician_Last_name,
-			'order'          => 'ASC'
+			'order'          => 'ASC',
+			'facetwp' => true,
 		);
 		
 		$query_physicians = new WP_Query($physician_args); 
