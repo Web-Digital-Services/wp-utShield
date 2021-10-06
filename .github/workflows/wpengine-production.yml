@@ -17,7 +17,7 @@ jobs:
       - name: Check current directory
         run: ls
       - name: Switch to theme directory
-        run: cd /wp-content/themes/wp-shield
+        run: cd wp-content/themes/wp-shield
       - name: Check current directory (again)
         run: ls
       - name: npm install
