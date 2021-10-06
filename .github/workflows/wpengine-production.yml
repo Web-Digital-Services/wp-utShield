@@ -24,8 +24,7 @@ jobs:
       - name: npm run build
         run: npm run build
       - name: Switch back to root directory
-        run: |
-        cd ../../../
+        run: cd ../../../
       - name: SSH Deploy to WP Engine
         uses: bowiedev/github-action-wpengine-ssh-deploy@master
         env:
