@@ -7,7 +7,7 @@
 						the_post_thumbnail('medium');
 					}
 					else {
-						echo '<img alt="This provider does not have a picture" src="https://utphysicians.wpengine.com/wp-content/uploads/2021/09/uthealth-provider-profile-fallback-mobile_0.jpg">';
+						echo '<img alt="This provider does not have a picture" src="https://utphysicians.wpengine.com/wp-content/uploads/2021/09/fall-back-location-image.jpg">';
 					}
 				?>
 				<div class="card-section">
