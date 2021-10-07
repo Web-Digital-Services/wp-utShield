@@ -35,6 +35,7 @@ Header
   .header__logo {
     display: flex;
     align-items: center;
+    
     margin-right: auto;
     
     img {
@@ -45,15 +46,37 @@ Header
       content: "Patient Care";
       font-size: 1.6rem;
       font-weight: 700;
+      margin-left: 2rem;
       color: $c-darkorange;
-      margin-left: 2em;
+      
       white-space: nowrap;
     }
     
     @include breakpoint-down(mobile) {
-      max-width: 16rem;
-      margin: 0 auto;
+      max-width: none;
+      margin-left: 2rem;
+      
+      img {
+        width: 16rem;
+      }
+    }
+    
+    @include breakpoint-down(mobile-medium) {  
+      flex: 1;
+      padding-left: 2rem;
+      justify-content: space-between;
+      margin: 0;
+      
+      &::after {
+        font-size: 1.4rem;
+      }
+    }
+    
+    @include breakpoint-down(mobile-small) {   
       transform: translateX(-1.6rem);
+      margin: 0 auto;
+      max-width: 16rem;
+      padding-left: 0;
       
       &::after {
         display: none;

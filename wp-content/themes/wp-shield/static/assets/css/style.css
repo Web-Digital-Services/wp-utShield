@@ -2018,14 +2018,29 @@ Header
       content: "Patient Care";
       font-size: 1.6rem;
       font-weight: 700;
+      margin-left: 2rem;
       color: #7A0F00;
-      margin-left: 2em;
       white-space: nowrap; }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
       .header .header__logo {
-        max-width: 16rem;
+        max-width: none;
+        margin-left: 2rem; }
+        .header .header__logo img {
+          width: 16rem; } }
+    @media (max-width: 575px) {
+      .header .header__logo {
+        flex: 1;
+        padding-left: 2rem;
+        justify-content: space-between;
+        margin: 0; }
+        .header .header__logo::after {
+          font-size: 1.4rem; } }
+    @media (max-width: 374px) {
+      .header .header__logo {
+        transform: translateX(-1.6rem);
         margin: 0 auto;
-        transform: translateX(-1.6rem); }
+        max-width: 16rem;
+        padding-left: 0; }
         .header .header__logo::after {
           display: none; } }
   .header .header__logo--mobile {
