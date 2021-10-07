@@ -1847,7 +1847,7 @@ Event
       color: #C0511B; }
 
 /* ------------------------------------------------------------ *\
-	Events
+Events
 \* ------------------------------------------------------------ */
 .events .events__item + .events__item {
   margin-top: 2.2rem; }
@@ -2630,7 +2630,8 @@ Menu
   .menu .menu__footer h6 {
     color: #635853;
     font-weight: 500;
-    margin-bottom: 1.2rem; }
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.2rem; }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
       .menu .menu__footer h6 {
         font-size: 1.3rem;
@@ -2848,7 +2849,7 @@ Section events
   .section-events h6 {
     color: #635853;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.2rem;
     font-size: 1.4rem;
     margin-bottom: 2rem; }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
@@ -2984,7 +2985,7 @@ Section news
       margin-right: -2rem; } }
 
 /* ------------------------------------------------------------ *\
-	Section testimonials
+Section testimonials
 \* ------------------------------------------------------------ */
 .section-testimonials {
   position: relative;
@@ -2998,12 +2999,11 @@ Section news
     font-size: 1.4rem;
     text-transform: uppercase;
     font-weight: 700;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.2rem;
     margin-bottom: 4rem; }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
       .section-testimonials h6 {
         font-size: 1.2rem;
-        letter-spacing: .166em;
         margin-bottom: 2.5rem; } }
   @media (max-width: 1399px) {
     .section-testimonials .section__inner {
