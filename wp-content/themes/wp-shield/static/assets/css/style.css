@@ -2793,7 +2793,7 @@ Nav
 	Radio
 \* ------------------------------------------------------------ */
 /* ------------------------------------------------------------ *\
-	Search
+Search
 \* ------------------------------------------------------------ */
 .search {
   position: relative; }
@@ -2807,14 +2807,16 @@ Nav
     min-height: 8rem;
     width: 100%;
     font-weight: 500;
-    font-size: 2rem; }
+    font-size: 2rem;
+    box-shadow: 0 0 2.4rem rgba(0, 0, 0, 0.04); }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
       .search input {
         font-size: 1.4rem;
         padding: 0 2rem 0 5rem;
         min-height: 6.4rem; } }
   .search input:focus {
-    box-shadow: none; }
+    box-shadow: none;
+    border-color: #C0511B; }
   .search input::placeholder {
     opacity: .6; }
   .search .search__icon {
