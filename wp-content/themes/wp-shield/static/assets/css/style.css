@@ -1847,7 +1847,7 @@ Event
       color: #C0511B; }
 
 /* ------------------------------------------------------------ *\
-	Events
+Events
 \* ------------------------------------------------------------ */
 .events .events__item + .events__item {
   margin-top: 2.2rem; }
@@ -2848,7 +2848,7 @@ Section events
   .section-events h6 {
     color: #635853;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.2rem;
     font-size: 1.4rem;
     margin-bottom: 2rem; }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
