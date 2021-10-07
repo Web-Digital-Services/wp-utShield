@@ -2630,7 +2630,8 @@ Menu
   .menu .menu__footer h6 {
     color: #635853;
     font-weight: 500;
-    margin-bottom: 1.2rem; }
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.2rem; }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
       .menu .menu__footer h6 {
         font-size: 1.3rem;
