@@ -2984,7 +2984,7 @@ Section news
       margin-right: -2rem; } }
 
 /* ------------------------------------------------------------ *\
-	Section testimonials
+Section testimonials
 \* ------------------------------------------------------------ */
 .section-testimonials {
   position: relative;
@@ -2998,12 +2998,11 @@ Section news
     font-size: 1.4rem;
     text-transform: uppercase;
     font-weight: 700;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.2rem;
     margin-bottom: 4rem; }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
       .section-testimonials h6 {
         font-size: 1.2rem;
-        letter-spacing: .166em;
         margin-bottom: 2.5rem; } }
   @media (max-width: 1399px) {
     .section-testimonials .section__inner {
