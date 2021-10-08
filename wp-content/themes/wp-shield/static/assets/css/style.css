@@ -1205,7 +1205,7 @@ Callout
       padding: 6.3rem 0; } }
   .callout h6 {
     color: #EFE1CC;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.2em;
     margin-bottom: 2.2rem;
     text-transform: uppercase; }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
@@ -1432,7 +1432,7 @@ Callout
         font-size: 3.2rem; } }
   .callout--alt .callout__title {
     position: absolute;
-    top: 0;
+    top: -2rem;
     left: 6.5rem;
     font-size: 1.8rem;
     font-weight: 500;
@@ -1502,7 +1502,8 @@ Callout
         margin-right: 0; } }
     @media (max-width: 1023px) {
       .callout--alt .callout__image {
-        max-width: 39rem; } }
+        max-width: 39rem;
+        bottom: 10rem; } }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
       .callout--alt .callout__image {
         bottom: 0;
