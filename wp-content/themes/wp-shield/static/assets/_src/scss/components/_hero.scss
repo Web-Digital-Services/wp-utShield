@@ -4,13 +4,21 @@ Hero
 
 .hero {
   position: relative;
-  min-height: 95.2rem;
+  height: 95.2rem;
   padding-top: 13rem;
   overflow: hidden;
+  
+  @include breakpoint-down(tablet) {
+    height: 100rem;
+  }
 
   @include breakpoint-down(mobile) {
     padding-top: 12.4rem;
-    min-height: 100%;
+    height: 74.4rem;
+  }
+  
+  .shell {
+    height: 100%;
   }
 
   h1 {
@@ -70,7 +78,7 @@ Hero
     }
 
     @include breakpoint-down(mobile) {
-      font-size: 6rem;
+      font-size: 7.5rem;
       
       .final {      
         .hero__heading-line {
@@ -80,10 +88,18 @@ Hero
         }
       }
     }
+    
+    @include breakpoint-down(mobile-medium) {
+      font-size: 5.5rem;
+    }
+    
+    @include breakpoint-down(mobile-small) {
+      font-size: 4.5rem;
+    }
   }
 
   h6 {
-    letter-spacing: 0.1em;
+    letter-spacing: 0.2rem;
     margin-bottom: 2.5rem;
 
     @include breakpoint-down(mobile) {
@@ -123,13 +139,45 @@ Hero
   }
 
   .hero__inner {
-    display: block;
+    display: flex;
+    justify-content: space-between;
     position: relative;
-    padding: 8.6rem 0;
+    height: 100%;
 
     @include breakpoint-down(mobile) {
+      display: flex;
+      flex-direction: column;
       padding: 0;
       min-height: 60rem;
+      
+      .hero__image {
+        height: 60%;
+        margin-top: -6rem;
+        margin-right: -10rem;
+        max-width: 45rem;
+        margin-left: auto;
+        
+        img {
+          width: 100%; height: 100%;
+          object-fit: cover;
+          object-position: top left;
+        }
+      }
+    }
+    
+    @include breakpoint-down(mobile-medium) {
+      .hero__image {
+        height: 60%;
+        margin-top: 4rem;
+        max-width: 45rem;
+        margin-left: auto;
+        
+        img {
+          width: 100%; height: 100%;
+          object-fit: cover;
+          object-position: top left;
+        }
+      }    
     }
   }
 
@@ -157,53 +205,65 @@ Hero
     object-fit: cover;
   }
 
+//  .hero__image {
+//    max-width: 87rem;
+//    position: absolute;
+//    right: -13rem;
+//    top: -2rem;
+//    max-height: 95.2rem;
+//
+//    @include breakpoint-down(large-desktop) {
+//      right: -26rem;
+//    }
+//
+//    @include breakpoint-down(small-desktop) {
+//      right: -33rem;
+//    }
+//
+//    @include breakpoint-down(tablet) {
+//      max-width: none;
+//      position: relative;
+//      right: auto;
+//      top: auto;
+//      max-height: 65rem;
+//    }
+//
+//    @include breakpoint-down(mobile) {
+//      margin: 0 auto;
+//      position: absolute;
+//      bottom: 0;
+//      left: 50%;
+//      transform: translateX(-50%);
+//      max-height: none;
+//      max-width: 33rem;
+//    }
+//  }
+  
   .hero__image {
-    max-width: 87rem;
-    position: absolute;
-    right: -13rem;
-    top: -2rem;
-    max-height: 95.2rem;
-
-    @include breakpoint-down(large-desktop) {
-      right: -26rem;
-    }
-
-    @include breakpoint-down(small-desktop) {
-      right: -33rem;
-    }
-
+    width: 160%;
+    max-width: 86.8rem;  
+    margin-left: -8rem;
+    
     @include breakpoint-down(tablet) {
-      max-width: none;
-      position: relative;
-      right: auto;
-      top: auto;
-      max-height: 65rem;
-    }
-
-    @include breakpoint-down(mobile) {
-      margin: 0 auto;
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      max-height: none;
-      max-width: 33rem;
+      width: 100%;
+      margin: 0;
     }
   }
 
   .hero__content {
-    padding: 0 0 0 5.6rem;
+    padding: 8.6rem 0 0 5.6rem;
     max-width: 66rem;
 
     @include breakpoint-down(large-desktop) {
-      padding: 0 0 0 3rem;
+      padding: 8.6rem 0 0 3rem;
       max-width: 42rem;
     }
 
     @include breakpoint-down(tablet) {
       max-width: none;
       width: 100%;
-      padding: 0;
+      padding: 5rem 0 0;
+      max-width: 36rem;
     }
   }
 
@@ -225,7 +285,8 @@ Hero
     line-height: 1.7;
 
     @include breakpoint-down(tablet) {
-      visibility: hidden;
+      visibility: collapse;
+      height: 0;
     }
   }
 
@@ -233,10 +294,12 @@ Hero
     margin-top: 5rem;
 
     @include breakpoint-down(tablet) {
-      visibility: hidden;
+      visibility: collapse;
+      margin-top: 0;        
     }
 
     @include breakpoint-down(mobile) {
+      display: block;
       position: fixed;
       bottom: 0;
       left: 0;
@@ -247,6 +310,10 @@ Hero
   }
 
   .hero__actions a {
+    @include breakpoint-down(tablet) {
+      display: none;
+    }
+    
     @include breakpoint-down(mobile) {
       width: 100%;
       border-radius: 0;
@@ -267,12 +334,51 @@ Hero
 
   .hero__actions a figure {
     @include breakpoint-down(mobile) {
-      display: none;
+      visibility: hidden;
     }
   }
 
   .hero__menu {
-    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 92.5rem;
+    pointer-events: none;
+    transition: opacity .3s ease, height .3s .3s ease;
+    padding: 13rem 4rem 0;
+    max-width: none;
+
+    @include breakpoint-down(small-desktop) {
+      padding: 18rem 4rem 0;
+    }
+
+    @include breakpoint-down(tablet) {
+      padding: 18rem 4rem 0;
+    }
+
+    @include breakpoint-down(mobile) {
+      padding: 15rem 2rem 0;
+    }
+  }
+  
+  .side-menu & {
+    .hero__menu {
+      padding: 13rem 12rem 0 20.5rem;
+
+      @include breakpoint-down(small-desktop) {
+        padding: 18rem 4rem 0 12.5rem;
+      }
+
+      @include breakpoint-down(tablet) {
+        padding: 18rem 4rem 0 11rem;
+      }
+
+      @include breakpoint-down(mobile) {
+        padding: 15rem 2rem 0 2rem;
+      }
+    }  
   }
 
   .hero__menu-background {
@@ -295,30 +401,9 @@ Hero
 
 .hero.menu-open {
   .hero__menu {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    opacity: 1;
+    pointer-events: inherit;
     z-index: 5;
-    max-width: none;
-    padding: 13rem 2rem 0 10.5rem;
-
-    @include breakpoint-down(small-desktop) {
-      padding: 18rem 2rem 0 10.5rem;
-    }
-
-    @include breakpoint-down(tablet) {
-      padding: 18rem 2rem 0 9rem;
-    }
-
-    @include breakpoint-down(mobile) {
-      padding: 13rem 2rem 0 2rem;
-    }
-  }
-
-  .hero__inner {
-    display: none;
+    height: 100vh;
   }
 }
