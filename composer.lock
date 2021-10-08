@@ -1,0 +1,1052 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "6d4b419568efc509ee5d3a7fc0a3fae8",
+    "packages": [
+        {
+            "name": "brightnucleus/config",
+            "version": "v0.4.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/brightnucleus/config.git",
+                "reference": "0c5b53ac52f89018c94366e8751a5039bba617f1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/brightnucleus/config/zipball/0c5b53ac52f89018c94366e8751a5039bba617f1",
+                "reference": "0c5b53ac52f89018c94366e8751a5039bba617f1",
+                "shasum": ""
+            },
+            "require": {
+                "brightnucleus/exceptions": ">=0.2",
+                "symfony/options-resolver": ">=2.8"
+            },
+            "require-dev": {
+                "malukenho/docheader": "^0.1.5",
+                "mikey179/vfsstream": "^1.6",
+                "phpunit/phpunit": "^4.0|^5.0",
+                "squizlabs/php_codesniffer": "^2.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "BrightNucleus\\Config\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alain Schlesser",
+                    "email": "alain.schlesser@gmail.com"
+                }
+            ],
+            "description": "Minimal, reusable Config component.",
+            "support": {
+                "issues": "https://github.com/brightnucleus/config/issues",
+                "source": "https://github.com/brightnucleus/config/tree/master"
+            },
+            "time": "2019-10-16T14:26:37+00:00"
+        },
+        {
+            "name": "brightnucleus/contracts",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/brightnucleus/contracts.git",
+                "reference": "dee397db41a602ab57c0829c05ecfdafb5460464"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/brightnucleus/contracts/zipball/dee397db41a602ab57c0829c05ecfdafb5460464",
+                "reference": "dee397db41a602ab57c0829c05ecfdafb5460464",
+                "shasum": ""
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "~2.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "BrightNucleus\\Contract\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Alain Schlesser",
+                    "email": "alain.schlesser@gmail.com"
+                }
+            ],
+            "description": "Set of segregated interfaces that are reused across different Bright Nucleus components.",
+            "support": {
+                "issues": "https://github.com/brightnucleus/contracts/issues",
+                "source": "https://github.com/brightnucleus/contracts/tree/v0.1.1"
+            },
+            "time": "2016-02-17T11:46:26+00:00"
+        },
+        {
+            "name": "brightnucleus/custom-content",
+            "version": "v0.1.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/brightnucleus/custom-content.git",
+                "reference": "75e1a7cfb909dc86cf5ccd672761937a20d5b7ee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/brightnucleus/custom-content/zipball/75e1a7cfb909dc86cf5ccd672761937a20d5b7ee",
+                "reference": "75e1a7cfb909dc86cf5ccd672761937a20d5b7ee",
+                "shasum": ""
+            },
+            "require": {
+                "brightnucleus/config": ">=0.4.3",
+                "brightnucleus/contracts": ">=0.1.1",
+                "brightnucleus/exceptions": ">=0.2.5",
+                "brightnucleus/localization": ">=0.1.0",
+                "doctrine/collections": ">=1.3"
+            },
+            "require-dev": {
+                "brain/monkey": "^1",
+                "phpunit/phpunit": "~5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "BrightNucleus\\CustomContent\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alain Schlesser",
+                    "email": "alain.schlesser@gmail.com"
+                }
+            ],
+            "description": "Config-driven WordPress Custom Content Definitions (Custom Post Types, Custom Taxonomies).",
+            "support": {
+                "issues": "https://github.com/brightnucleus/custom-content/issues",
+                "source": "https://github.com/brightnucleus/custom-content/tree/master"
+            },
+            "time": "2020-07-07T13:47:57+00:00"
+        },
+        {
+            "name": "brightnucleus/exceptions",
+            "version": "v0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/brightnucleus/exceptions.git",
+                "reference": "7eb528cd2cb71b045ced235c7b1b933d8cfe36a8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/brightnucleus/exceptions/zipball/7eb528cd2cb71b045ced235c7b1b933d8cfe36a8",
+                "reference": "7eb528cd2cb71b045ced235c7b1b933d8cfe36a8",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4",
+                "squizlabs/php_codesniffer": "~2.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "BrightNucleus\\Exception\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alain Schlesser",
+                    "email": "alain.schlesser@gmail.com"
+                }
+            ],
+            "description": "Exceptions shared across Bright Nucleus components.",
+            "support": {
+                "issues": "https://github.com/brightnucleus/exceptions/issues",
+                "source": "https://github.com/brightnucleus/exceptions/tree/v0.3.0"
+            },
+            "time": "2017-04-11T06:19:00+00:00"
+        },
+        {
+            "name": "brightnucleus/localization",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/brightnucleus/localization.git",
+                "reference": "8705bcccf54f4b19d50ed871364d6a6c2b8cffcd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/brightnucleus/localization/zipball/8705bcccf54f4b19d50ed871364d6a6c2b8cffcd",
+                "reference": "8705bcccf54f4b19d50ed871364d6a6c2b8cffcd",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "BrightNucleus\\Localization\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alain Schlesser",
+                    "email": "alain.schlesser@gmail.com"
+                }
+            ],
+            "description": "WordPress localization for Bright Nucleus components.",
+            "support": {
+                "issues": "https://github.com/brightnucleus/localization/issues",
+                "source": "https://github.com/brightnucleus/localization/tree/v0.1.0"
+            },
+            "time": "2016-08-15T08:28:21+00:00"
+        },
+        {
+            "name": "brightnucleus/view",
+            "version": "v0.4.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/brightnucleus/view.git",
+                "reference": "b5b26dd4c0aeecf8e33bf1e9bc3d64882b769b98"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/brightnucleus/view/zipball/b5b26dd4c0aeecf8e33bf1e9bc3d64882b769b98",
+                "reference": "b5b26dd4c0aeecf8e33bf1e9bc3d64882b769b98",
+                "shasum": ""
+            },
+            "require": {
+                "brightnucleus/config": ">=0.4",
+                "brightnucleus/exceptions": ">=0.2",
+                "doctrine/collections": "^1.3",
+                "symfony/finder": "^3.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~5",
+                "squizlabs/php_codesniffer": "~2.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "BrightNucleus\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alain Schlesser",
+                    "email": "alain.schlesser@gmail.com"
+                }
+            ],
+            "description": "Reusable View component, that can provide different implementations.",
+            "support": {
+                "issues": "https://github.com/brightnucleus/view/issues",
+                "source": "https://github.com/brightnucleus/view/tree/v0.4.9"
+            },
+            "time": "2019-06-10T10:24:13+00:00"
+        },
+        {
+            "name": "doctrine/collections",
+            "version": "1.6.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/collections.git",
+                "reference": "1958a744696c6bb3bb0d28db2611dc11610e78af"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/1958a744696c6bb3bb0d28db2611dc11610e78af",
+                "reference": "1958a744696c6bb3bb0d28db2611dc11610e78af",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3 || ^8.0"
+            },
+            "require-dev": {
+                "doctrine/coding-standard": "^9.0",
+                "phpstan/phpstan": "^0.12",
+                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.1.5",
+                "vimeo/psalm": "^4.2.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Doctrine\\Common\\Collections\\": "lib/Doctrine/Common/Collections"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                }
+            ],
+            "description": "PHP Doctrine Collections library that adds additional functionality on top of PHP arrays.",
+            "homepage": "https://www.doctrine-project.org/projects/collections.html",
+            "keywords": [
+                "array",
+                "collections",
+                "iterators",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/doctrine/collections/issues",
+                "source": "https://github.com/doctrine/collections/tree/1.6.8"
+            },
+            "time": "2021-08-10T18:51:53+00:00"
+        },
+        {
+            "name": "symfony/deprecation-contracts",
+            "version": "v2.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/deprecation-contracts.git",
+                "reference": "5f38c8804a9e97d23e0c8d63341088cd8a22d627"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/5f38c8804a9e97d23e0c8d63341088cd8a22d627",
+                "reference": "5f38c8804a9e97d23e0c8d63341088cd8a22d627",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "2.4-dev"
+                },
+                "thanks": {
+                    "name": "symfony/contracts",
+                    "url": "https://github.com/symfony/contracts"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "function.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "A generic function and convention to trigger deprecation notices",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/deprecation-contracts/tree/v2.4.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-03-23T23:28:01+00:00"
+        },
+        {
+            "name": "symfony/finder",
+            "version": "v3.4.47",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/finder.git",
+                "reference": "b6b6ad3db3edb1b4b1c1896b1975fb684994de6e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/b6b6ad3db3edb1b4b1c1896b1975fb684994de6e",
+                "reference": "b6b6ad3db3edb1b4b1c1896b1975fb684994de6e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5.9|>=7.0.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Finder\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Finder Component",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/finder/tree/v3.4.47"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-11-16T17:02:08+00:00"
+        },
+        {
+            "name": "symfony/options-resolver",
+            "version": "v5.3.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/options-resolver.git",
+                "reference": "4b78e55b179003a42523a362cc0e8327f7a69b5e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/options-resolver/zipball/4b78e55b179003a42523a362cc0e8327f7a69b5e",
+                "reference": "4b78e55b179003a42523a362cc0e8327f7a69b5e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/deprecation-contracts": "^2.1",
+                "symfony/polyfill-php73": "~1.0",
+                "symfony/polyfill-php80": "^1.16"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\OptionsResolver\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides an improved replacement for the array_replace PHP function",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "config",
+                "configuration",
+                "options"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/options-resolver/tree/v5.3.7"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-08-04T21:20:46+00:00"
+        },
+        {
+            "name": "symfony/polyfill-php73",
+            "version": "v1.23.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-php73.git",
+                "reference": "fba8933c384d6476ab14fb7b8526e5287ca7e010"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-php73/zipball/fba8933c384d6476ab14fb7b8526e5287ca7e010",
+                "reference": "fba8933c384d6476ab14fb7b8526e5287ca7e010",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.23-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php73\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ],
+                "classmap": [
+                    "Resources/stubs"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill backporting some PHP 7.3+ features to lower PHP versions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-php73/tree/v1.23.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-02-19T12:13:01+00:00"
+        },
+        {
+            "name": "symfony/polyfill-php80",
+            "version": "v1.23.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-php80.git",
+                "reference": "1100343ed1a92e3a38f9ae122fc0eb21602547be"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/1100343ed1a92e3a38f9ae122fc0eb21602547be",
+                "reference": "1100343ed1a92e3a38f9ae122fc0eb21602547be",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.23-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php80\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ],
+                "classmap": [
+                    "Resources/stubs"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ion Bazan",
+                    "email": "ion.bazan@gmail.com"
+                },
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill backporting some PHP 8.0+ features to lower PHP versions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.23.1"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-07-28T13:41:28+00:00"
+        },
+        {
+            "name": "tenadams/everything-it-takes",
+            "version": "dev-nick/add-blocks",
+            "dist": {
+                "type": "path",
+                "url": "wp-content/plugins/everything-it-takes",
+                "reference": "b31d0f9bd7175b12bbcf75a0342b33f640131b94"
+            },
+            "require": {
+                "brightnucleus/custom-content": "^0.1.8",
+                "brightnucleus/view": "^0.4.9"
+            },
+            "type": "wordpress-plugin",
+            "autoload": {
+                "psr-4": {
+                    "EverythingItTakes\\Plugin\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ten Adams",
+                    "email": "digital@tenadams.com"
+                }
+            ],
+            "description": "Core functionality for EverythingItTakes.com",
+            "transport-options": {
+                "relative": true
+            }
+        }
+    ],
+    "packages-dev": [
+        {
+            "name": "composer/installers",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/installers.git",
+                "reference": "a241e78aaeb09781f5f5b92ac01ffd13ab43e5e8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/installers/zipball/a241e78aaeb09781f5f5b92ac01ffd13ab43e5e8",
+                "reference": "a241e78aaeb09781f5f5b92ac01ffd13ab43e5e8",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0 || ^2.0",
+                "php": "^7.2 || ^8.0"
+            },
+            "require-dev": {
+                "composer/composer": "1.6.* || ^2.0",
+                "composer/semver": "^1 || ^3",
+                "phpstan/phpstan": "^0.12.55",
+                "phpstan/phpstan-phpunit": "^0.12.16",
+                "symfony/phpunit-bridge": "^5.3",
+                "symfony/process": "^5"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Composer\\Installers\\Plugin",
+                "branch-alias": {
+                    "dev-main": "2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\Installers\\": "src/Composer/Installers"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kyle Robinson Young",
+                    "email": "kyle@dontkry.com",
+                    "homepage": "https://github.com/shama"
+                }
+            ],
+            "description": "A multi-framework Composer library installer",
+            "homepage": "https://composer.github.io/installers/",
+            "keywords": [
+                "Dolibarr",
+                "Eliasis",
+                "Hurad",
+                "ImageCMS",
+                "Kanboard",
+                "Lan Management System",
+                "MODX Evo",
+                "MantisBT",
+                "Mautic",
+                "Maya",
+                "OXID",
+                "Plentymarkets",
+                "Porto",
+                "RadPHP",
+                "SMF",
+                "Starbug",
+                "Thelia",
+                "Whmcs",
+                "WolfCMS",
+                "agl",
+                "annotatecms",
+                "attogram",
+                "bitrix",
+                "cakephp",
+                "chef",
+                "cockpit",
+                "codeigniter",
+                "concrete5",
+                "croogo",
+                "dokuwiki",
+                "drupal",
+                "eZ Platform",
+                "elgg",
+                "expressionengine",
+                "fuelphp",
+                "grav",
+                "installer",
+                "itop",
+                "known",
+                "kohana",
+                "laravel",
+                "lavalite",
+                "lithium",
+                "magento",
+                "majima",
+                "mako",
+                "mediawiki",
+                "miaoxing",
+                "modulework",
+                "modx",
+                "moodle",
+                "osclass",
+                "pantheon",
+                "phpbb",
+                "piwik",
+                "ppi",
+                "processwire",
+                "puppet",
+                "pxcms",
+                "reindex",
+                "roundcube",
+                "shopware",
+                "silverstripe",
+                "sydes",
+                "sylius",
+                "tastyigniter",
+                "wordpress",
+                "yawik",
+                "zend",
+                "zikula"
+            ],
+            "support": {
+                "issues": "https://github.com/composer/installers/issues",
+                "source": "https://github.com/composer/installers/tree/v2.0.1"
+            },
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/composer",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-09-13T08:21:20+00:00"
+        },
+        {
+            "name": "kint-php/kint",
+            "version": "3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kint-php/kint.git",
+                "reference": "335ac1bcaf04d87df70d8aa51e8887ba2c6d203b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kint-php/kint/zipball/335ac1bcaf04d87df70d8aa51e8887ba2c6d203b",
+                "reference": "335ac1bcaf04d87df70d8aa51e8887ba2c6d203b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.6"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.0",
+                "phpunit/phpunit": "^4.0",
+                "seld/phar-utils": "^1.0",
+                "symfony/finder": "^2.0 || ^3.0 || ^4.0",
+                "vimeo/psalm": "^3.0"
+            },
+            "suggest": {
+                "ext-ctype": "Simple data type tests",
+                "ext-iconv": "Provides fallback detection for ambiguous legacy string encodings such as the Windows and ISO 8859 code pages",
+                "ext-mbstring": "Provides string encoding detection",
+                "kint-php/kint-js": "Provides a simplified dump to console.log()",
+                "kint-php/kint-twig": "Provides d() and s() functions in twig templates",
+                "symfony/polyfill-ctype": "Replacement for ext-ctype if missing",
+                "symfony/polyfill-iconv": "Replacement for ext-iconv if missing",
+                "symfony/polyfill-mbstring": "Replacement for ext-mbstring if missing"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "init.php"
+                ],
+                "psr-4": {
+                    "Kint\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathan Vollebregt",
+                    "homepage": "https://github.com/jnvsor"
+                },
+                {
+                    "name": "Rokas Šleinius",
+                    "homepage": "https://github.com/raveren"
+                },
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/kint-php/kint/graphs/contributors"
+                }
+            ],
+            "description": "Kint - debugging tool for PHP developers",
+            "homepage": "https://kint-php.github.io/kint/",
+            "keywords": [
+                "debug",
+                "kint",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/kint-php/kint/issues",
+                "source": "https://github.com/kint-php/kint/tree/master"
+            },
+            "time": "2019-10-17T18:05:24+00:00"
+        },
+        {
+            "name": "tracy/tracy",
+            "version": "v2.8.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nette/tracy.git",
+                "reference": "8e708de7c611f626c8792d43f1c78812ea24e6f6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nette/tracy/zipball/8e708de7c611f626c8792d43f1c78812ea24e6f6",
+                "reference": "8e708de7c611f626c8792d43f1c78812ea24e6f6",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-session": "*",
+                "php": ">=7.2 <8.2"
+            },
+            "conflict": {
+                "nette/di": "<3.0"
+            },
+            "require-dev": {
+                "latte/latte": "^2.5",
+                "nette/di": "^3.0",
+                "nette/mail": "^3.0",
+                "nette/tester": "^2.2",
+                "nette/utils": "^3.0",
+                "phpstan/phpstan": "^0.12",
+                "psr/log": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.8-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src"
+                ],
+                "files": [
+                    "src/Tracy/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "David Grudl",
+                    "homepage": "https://davidgrudl.com"
+                },
+                {
+                    "name": "Nette Community",
+                    "homepage": "https://nette.org/contributors"
+                }
+            ],
+            "description": "😎  Tracy: the addictive tool to ease debugging PHP code for cool developers. Friendly design, logging, profiler, advanced features like debugging AJAX calls or CLI support. You will love it.",
+            "homepage": "https://tracy.nette.org",
+            "keywords": [
+                "Xdebug",
+                "debug",
+                "debugger",
+                "nette",
+                "profiler"
+            ],
+            "support": {
+                "issues": "https://github.com/nette/tracy/issues",
+                "source": "https://github.com/nette/tracy/tree/v2.8.7"
+            },
+            "time": "2021-08-24T16:26:27+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/query-monitor",
+            "version": "3.7.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/query-monitor/",
+                "reference": "tags/3.7.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.7.1.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0 || ~2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/query-monitor/"
+        }
+    ],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": [],
+    "prefer-stable": true,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "platform-overrides": {
+        "php": "7.4"
+    },
+    "plugin-api-version": "2.1.0"
+}
