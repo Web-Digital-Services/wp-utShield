@@ -717,18 +717,11 @@ Accordion find
   align-items: center;
   min-height: 8rem;
   padding: 1.6rem .6rem;
-  transition: background-color .3s, border-color .3s, color .3s, padding .3s;
-  cursor: pointer;
-  border-bottom: 0.2rem solid #D4CEC4; }
+  transition: background-color .3s ease, color .3s, padding .3s ease;
+  cursor: pointer; }
   @media (max-width: 1199px) {
     .accordion-find .accordion__head {
       justify-content: space-between; } }
-
-.accordion-find .accordion__head:hover {
-  color: #C0511B;
-  background-color: #FBF9F7;
-  border-color: #FBF9F7;
-  padding: 1.6rem; }
 
 .accordion-find .accordion__head:hover svg path {
   stroke: #C0511B; }
@@ -773,8 +766,29 @@ Accordion find
 .accordion-find .accordion__section.is-current .accordion__head h6 span + span {
   display: block; }
 
-.accordion-find .accordion__section:last-child .accordion__head {
-  border-bottom: none; }
+.accordion-find .accordion__section {
+  border-top: 0.2rem solid #F0ECE2;
+  transition: border .3s ease; }
+  .accordion-find .accordion__section:first-child {
+    border-top: none; }
+  .accordion-find .accordion__section:hover {
+    border-color: transparent; }
+    .accordion-find .accordion__section:hover + .accordion__section {
+      border-color: transparent; }
+    .accordion-find .accordion__section:hover .accordion__head {
+      color: #C0511B;
+      background-color: #FBF9F7;
+      padding: 1.6rem;
+      border-radius: .8rem; }
+  .accordion-find .accordion__section.is-current {
+    border-top: none; }
+    .accordion-find .accordion__section.is-current .accordion__head {
+      border-bottom: 0.2rem solid #F0ECE2;
+      background-color: transparent;
+      border-radius: 0;
+      padding: 1.6rem .6rem; }
+    .accordion-find .accordion__section.is-current:hover {
+      border-color: #F0ECE2; }
 
 .accordion-find.open .accordion__section {
   display: none; }
@@ -2119,6 +2133,9 @@ Header
     @media (max-width: 1023px) {
       .side-menu .header.modal-open {
         width: calc(100% - 7rem); } }
+    @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
+      .side-menu .header.modal-open {
+        width: 100%; } }
   @media (min-width: 1999.02px) {
     .header.modal-open {
       left: 50%;
@@ -2141,13 +2158,18 @@ Hero
 \* ------------------------------------------------------------ */
 .hero {
   position: relative;
-  min-height: 95.2rem;
+  height: 95.2rem;
   padding-top: 13rem;
   overflow: hidden; }
+  @media (max-width: 1023px) {
+    .hero {
+      height: 100rem; } }
   @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
     .hero {
       padding-top: 12.4rem;
-      min-height: 100%; } }
+      height: 74.4rem; } }
+  .hero .shell {
+    height: 100%; }
   .hero h1 {
     letter-spacing: -0.05em;
     line-height: 1;
@@ -2185,13 +2207,19 @@ Hero
           transform: translateY(-52%); } }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
       .hero h1 {
-        font-size: 6rem; }
+        font-size: 7.5rem; }
         .hero h1 .final .hero__heading-line {
           right: -1rem;
           width: 100%;
           transform: translateY(-42%); } }
+    @media (max-width: 575px) {
+      .hero h1 {
+        font-size: 5.5rem; } }
+    @media (max-width: 374px) {
+      .hero h1 {
+        font-size: 4.5rem; } }
   .hero h6 {
-    letter-spacing: 0.1em;
+    letter-spacing: 0.2rem;
     margin-bottom: 2.5rem; }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
       .hero h6 {
@@ -2221,13 +2249,14 @@ Hero
         max-width: 20rem;
         top: 4rem; } }
   .hero .hero__inner {
-    display: block;
+    display: flex;
+    justify-content: space-between;
     position: relative;
-    padding: 8.6rem 0; }
+    height: 100%; }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
       .hero .hero__inner {
-        padding: 0;
-        min-height: 60rem; } }
+        display: flex;
+        padding: 0; } }
   .hero .hero__menu {
     max-width: 95rem;
     margin: 0 auto;
@@ -2247,45 +2276,35 @@ Hero
     height: 100%;
     object-fit: cover; }
   .hero .hero__image {
-    max-width: 87rem;
-    position: absolute;
-    right: -13rem;
-    top: -2rem;
-    max-height: 95.2rem; }
-    @media (max-width: 1399px) {
-      .hero .hero__image {
-        right: -26rem; } }
-    @media (max-width: 1199px) {
-      .hero .hero__image {
-        right: -33rem; } }
+    width: 160%;
+    max-width: 86.8rem;
+    margin-left: -8rem; }
     @media (max-width: 1023px) {
       .hero .hero__image {
-        max-width: none;
-        position: relative;
-        right: auto;
-        top: auto;
-        max-height: 65rem; } }
+        width: 130%;
+        margin-right: -22rem;
+        margin-top: -6rem;
+        margin-left: auto;
+        max-width: 70rem; } }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
       .hero .hero__image {
-        margin: 0 auto;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        max-height: none;
-        max-width: 33rem; } }
+        width: 150%;
+        margin-right: -10rem;
+        margin-top: -3rem;
+        max-width: 60rem; } }
   .hero .hero__content {
-    padding: 0 0 0 5.6rem;
+    padding: 8.6rem 0 0 5.6rem;
     max-width: 66rem; }
     @media (max-width: 1399px) {
       .hero .hero__content {
-        padding: 0 0 0 3rem;
+        padding: 8.6rem 0 0 3rem;
         max-width: 42rem; } }
     @media (max-width: 1023px) {
       .hero .hero__content {
         max-width: none;
         width: 100%;
-        padding: 0; } }
+        padding: 5rem 0 0;
+        max-width: 36rem; } }
   .hero .hero__chat {
     position: absolute;
     bottom: 2.5rem;
@@ -2301,22 +2320,29 @@ Hero
     line-height: 1.7; }
     @media (max-width: 1023px) {
       .hero .hero__entry {
-        visibility: hidden; } }
+        visibility: collapse;
+        height: 0; } }
   .hero .hero__actions {
     margin-top: 5rem; }
     @media (max-width: 1023px) {
       .hero .hero__actions {
-        visibility: hidden; } }
+        visibility: collapse;
+        margin-top: 0; } }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
       .hero .hero__actions {
+        display: block;
         position: fixed;
         bottom: 0;
         left: 0;
         width: 100%;
         z-index: 5;
         visibility: visible; } }
+  @media (max-width: 1023px) {
+    .hero .hero__actions a {
+      display: none; } }
   @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
     .hero .hero__actions a {
+      display: block;
       width: 100%;
       border-radius: 0;
       font-size: 1.4rem;
@@ -2330,9 +2356,45 @@ Hero
       border-color: #7A0F00; } }
   @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
     .hero .hero__actions a figure {
-      display: none; } }
+      visibility: hidden; } }
   .hero .hero__menu {
-    display: none; }
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 95.2rem;
+    pointer-events: none;
+    transition: opacity .2s ease, height .3s .2s ease;
+    padding: 13rem 4rem 0;
+    max-width: none; }
+    .hero .hero__menu .menu-find {
+      opacity: 0;
+      transform: translateY(-2rem);
+      transition: opacity .3s ease, transform .3s ease;
+      transition-delay: .1s; }
+    @media (max-width: 1199px) {
+      .hero .hero__menu {
+        padding: 18rem 4rem 0; } }
+    @media (max-width: 1023px) {
+      .hero .hero__menu {
+        height: 100rem;
+        padding: 18rem 4rem 0; } }
+    @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
+      .hero .hero__menu {
+        height: 74.4rem;
+        padding: 15rem 2rem 0; } }
+  .side-menu .hero .hero__menu {
+    padding: 13rem 12rem 0 20.5rem; }
+    @media (max-width: 1199px) {
+      .side-menu .hero .hero__menu {
+        padding: 18rem 4rem 0 12.5rem; } }
+    @media (max-width: 1023px) {
+      .side-menu .hero .hero__menu {
+        padding: 18rem 4rem 0 11rem; } }
+    @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
+      .side-menu .hero .hero__menu {
+        padding: 15rem 2rem 0 2rem; } }
   .hero .hero__menu-background {
     position: absolute;
     top: 0;
@@ -2348,27 +2410,13 @@ Hero
     object-fit: cover; }
 
 .hero.menu-open .hero__menu {
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  opacity: 1;
+  pointer-events: inherit;
   z-index: 5;
-  max-width: none;
-  padding: 13rem 2rem 0 10.5rem; }
-  @media (max-width: 1199px) {
-    .hero.menu-open .hero__menu {
-      padding: 18rem 2rem 0 10.5rem; } }
-  @media (max-width: 1023px) {
-    .hero.menu-open .hero__menu {
-      padding: 18rem 2rem 0 9rem; } }
-  @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-    .hero.menu-open .hero__menu {
-      padding: 13rem 2rem 0 2rem; } }
-
-.hero.menu-open .hero__inner {
-  display: none; }
+  height: 100vh; }
+  .hero.menu-open .hero__menu .menu-find {
+    opacity: 1;
+    transform: none; }
 
 /* ------------------------------------------------------------ *\
 	Icons
@@ -2425,7 +2473,7 @@ List basic
       columns: 1; } }
 
 /* ------------------------------------------------------------ *\
-	List persons
+List persons
 \* ------------------------------------------------------------ */
 .list-persons {
   list-style: none;
@@ -2439,7 +2487,6 @@ List basic
     align-items: center;
     color: #C0511B; }
   .list-persons .list__more a:hover {
-    text-decoration: underline;
     color: #7A0F00; }
 
 /* ------------------------------------------------------------ *\
@@ -2483,7 +2530,7 @@ Main
     position: relative; }
 
 /* ------------------------------------------------------------ *\
-	Menu find
+Menu find
 \* ------------------------------------------------------------ */
 .menu-find {
   position: relative;
@@ -2515,7 +2562,8 @@ Main
         padding: 0 1rem; } }
   .menu-find .menu__list + .menu__list {
     margin-top: .8rem;
-    border-top: 0.2rem solid #D4CEC4; }
+    padding-top: .8rem;
+    border-top: 0.2rem solid #F0ECE2; }
   .menu-find .menu__close {
     position: absolute;
     height: 4.8rem;
