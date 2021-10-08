@@ -96,6 +96,9 @@
                       <a href="#">Find a Provider</a>
                     </li>
                     <li>
+                      <a href="#">Access MyChart</a>
+                    </li>
+                    <li>
                       <a href="#">Conditions and Treatments</a>
                     </li>
                     <li>
@@ -217,7 +220,10 @@
           <span></span>
         </a>
       </div><!-- /.header__button -->
-      <a href="#" class="logo header__logo"><img src="../assets/img/svg/logo.svg" alt="Logo"></a>
+      <div class="logo header__logo">
+        <a href="#"><img src="../assets/img/svg/logo.svg" alt="Logo"></a>
+        <a href="#" class="page__title">Patient Care</a>
+      </div>
       <aside class="header__aside">
         <nav class="nav header__nav">
           <ul>
@@ -294,8 +300,10 @@
           </a>
         </div><!-- /.hero__actions -->
       </div><!-- /.hero__content -->
-
-      <figure class="hero__image cell"><img src="../assets/img/temp/hero-image2.png" alt="Image"></figure><!-- /.hero__image -->
+      
+      <div class="hero__image-contain cell large-6 small-12">
+        <figure class="hero__image"><img src="../assets/img/temp/hero-image2.png" alt="Image"></figure><!-- /.hero__image -->
+      </div><!-- /.hero__image-contain -->
     </div><!-- /.hero__inner -->
 
     <div class="hero__menu">
@@ -445,17 +453,17 @@
               <ul class="list-persons list-persons--alt">
                 <li>
                   <a href="#" class="person person--alt">
-                    <p>Search Term in Specialties</p>
+                    <p>Search Term <span>in Specialties</span></p>
                   </a>
                 </li>
                 <li>
                   <a href="#" class="person person--alt">
-                    <p>Search Term in Specialties</p>
+                    <p>Search Term <span>in Specialties</span></p>
                   </a>
                 </li>
                 <li>
                   <a href="#" class="person person--alt">
-                    <p>Search Term in Specialties</p>
+                    <p>Search Term <span>in Specialties</span></p>
                   </a>
                 </li>
                 <li class="list__more">
@@ -468,17 +476,17 @@
               <ul class="list-persons list-persons--alt">
                 <li>
                   <a href="#" class="person person--alt">
-                    <p>Search Term in Locations</p>
+                    <p>Search Term <span>in Locations</span></p>
                   </a>
                 </li>
                 <li>
                   <a href="#" class="person person--alt">
-                    <p>Search Term in Locations</p>
+                    <p>Search Term <span>in Locations</span></p>
                   </a>
                 </li>
                 <li>
                   <a href="#" class="person person--alt">
-                    <p>Search Term in Locations</p>
+                    <p>Search Term <span>in Locations</span></p>
                   </a>
                 </li>
                 <li class="list__more">
@@ -491,40 +499,17 @@
               <ul class="list-persons list-persons--alt">
                 <li>
                   <a href="#" class="person person--alt">
-                    <p>Search Term in Conditions</p>
+                    <p>Search Term <span>in Conditions</span></p>
                   </a>
                 </li>
                 <li>
                   <a href="#" class="person person--alt">
-                    <p>Search Term in Conditions</p>
+                    <p>Search Term <span>in Conditions</span></p>
                   </a>
                 </li>
                 <li>
                   <a href="#" class="person person--alt">
-                    <p>Search Term in Conditions</p>
-                  </a>
-                </li>
-                <li class="list__more">
-                  <a href="#">See more Conditions ...</a>
-                </li>
-              </ul><!-- /.list-persons -->
-            </div><!-- /.menu__list -->
-
-            <div class="menu__list">
-              <ul class="list-persons list-persons--alt">
-                <li>
-                  <a href="#" class="person person--alt">
-                    <p>Search Term in Conditions</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="person person--alt">
-                    <p>Search Term in Conditions</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="person person--alt">
-                    <p>Search Term in Conditions</p>
+                    <p>Search Term <span>in Conditions</span></p>
                   </a>
                 </li>
                 <li class="list__more">
@@ -638,8 +623,8 @@
         </div><!-- /.callout__entry -->
 
         <div class="callout__actions" data-aos="fade-up">
-          <a href="#" class="btn btn-rounded btn-rounded--white callout__btn">Find a Provider</a>
-          <a href="#" class="btn btn-rounded btn-rounded--white-outline callout__btn">Find a Location</a>
+          <a href="#" class="btn btn-rounded btn-rounded--white callout__btn">View UT Health San Antonio Physicians</a>
+          <a href="#" class="btn btn-rounded btn-rounded--white-outline callout__btn">Find Dental Care</a>
         </div><!-- /.callout__actions -->
       </div><!-- /.callout__content -->
     </div><!-- /.callout__inner -->
@@ -987,7 +972,7 @@
   <div class="shell shell--alt grid-container">
     <div class="callout__inner grid-x">
       <div class="callout__entry cell large-8 medium-8 small-12" data-aos="fade-up">
-        <p>Making lives better through excellence in advanced academics, life-saving research and comprehensive clinical care including health, dental and cancer services.</p>
+        <p>Making lives better through excellence in advanced <a href="#">academics</a>, life-saving <a href="#">research</a> and comprehensive <a href="#">clinical care</a> including <a href="#">health</a>, <a href="#">dental</a> and <a href="#">cancer</a> services.</p>
       </div><!-- /.callout__entry -->
 
       <div class="callout__actions cell large-2 medium-4 small-12" data-aos="fade-up">
@@ -1002,7 +987,9 @@
     <div class="footer__inner">
       <div class="footer__content grid-x">
         <div class="footer__group cell large-3 medium-6 small-12 footer__group--alt" data-aos="fade-up">
-          <figure class="footer__logo"><img src="../assets/img/svg/logo.svg" alt="Logo"></figure><!-- /.footer__logo -->
+          <a href="http://uthscsa.edu">
+            <figure class="footer__logo"><img src="../assets/img/svg/logo.svg" alt="Logo"></figure><!-- /.footer__logo -->
+          </a>
           <div class="footer__list footer__list--alt">
             <ul class="list-about">
               <li>
@@ -1012,7 +999,7 @@
                 <p>San Antonio, Texas 78229-3900</p>
               </li>
               <li>
-                <p>210-567-7000</p>
+                <p><a href="tel:210-567-7000">210-567-7000</a></p>
               </li>
               <li class="list__location">
                 <a href="#">Map and directions</a>

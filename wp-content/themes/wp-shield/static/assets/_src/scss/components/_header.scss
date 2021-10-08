@@ -42,7 +42,7 @@ Header
       width: 22rem;
     }
     
-    &::after {
+    .page__title {
       content: "Patient Care";
       font-size: 1.6rem;
       font-weight: 700;
@@ -67,7 +67,7 @@ Header
       justify-content: space-between;
       margin: 0;
       
-      &::after {
+      .page__title {
         font-size: 1.4rem;
       }
     }
@@ -78,7 +78,7 @@ Header
       max-width: 16rem;
       padding-left: 0;
       
-      &::after {
+      .page__title {
         display: none;
       }
     }
@@ -195,6 +195,10 @@ Header
 
     @include breakpoint-down(tablet) {
       width: calc(100% - 7rem);
+    }
+    
+    @include breakpoint-down(mobile) {
+      width: 100%;
     }
   }
 

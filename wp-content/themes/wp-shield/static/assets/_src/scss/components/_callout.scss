@@ -19,7 +19,7 @@ Callout
 
   h6 {
     color: $c-darkbeige;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.2em;
     margin-bottom: 2.2rem;
     text-transform: uppercase;
 
@@ -280,7 +280,7 @@ Callout
 
   .callout__actions a {
     margin-top: 1rem;
-    margin-right: .8rem;
+    margin-right: 1.6rem;
     
     &:last-child {
       margin-right: 0;
@@ -328,7 +328,7 @@ Callout
 
   .callout__title {
     position: absolute;
-    top: 0;
+    top: -2rem;
     left: 6.5rem;
     font-size: 1.8rem;
     font-weight: 500;
@@ -417,6 +417,7 @@ Callout
 
     @include breakpoint-down(tablet) {
       max-width: 39rem;
+      bottom: 10rem;
     }
 
     @include breakpoint-down(mobile) {
