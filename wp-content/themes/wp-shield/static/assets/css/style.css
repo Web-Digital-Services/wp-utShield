@@ -2028,7 +2028,7 @@ Header
     margin-right: auto; }
     .header .header__logo img {
       width: 22rem; }
-    .header .header__logo::after {
+    .header .header__logo .page__title {
       content: "Patient Care";
       font-size: 1.6rem;
       font-weight: 700;
@@ -2047,7 +2047,7 @@ Header
         padding-left: 2rem;
         justify-content: space-between;
         margin: 0; }
-        .header .header__logo::after {
+        .header .header__logo .page__title {
           font-size: 1.4rem; } }
     @media (max-width: 374px) {
       .header .header__logo {
@@ -2055,7 +2055,7 @@ Header
         margin: 0 auto;
         max-width: 16rem;
         padding-left: 0; }
-        .header .header__logo::after {
+        .header .header__logo .page__title {
           display: none; } }
   .header .header__logo--mobile {
     display: none; }
