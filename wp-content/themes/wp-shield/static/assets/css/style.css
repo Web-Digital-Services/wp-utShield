@@ -2422,7 +2422,7 @@ Hero
 	Icons
 \* ------------------------------------------------------------ */
 /* ------------------------------------------------------------ *\
-	List about
+List about
 \* ------------------------------------------------------------ */
 .list-about {
   list-style: none;
@@ -2433,6 +2433,7 @@ Hero
     .list-about {
       font-size: 1.4rem; } }
   .list-about li a {
+    text-underline-offset: .2rem;
     color: #C0511B; }
   .list-about li a:hover {
     text-decoration: underline; }
@@ -2454,9 +2455,11 @@ List basic
     .list-basic {
       font-size: 1.4rem; } }
   .list-basic a {
+    text-underline-offset: .2rem;
     transition: color .3s ease; }
     .list-basic a:hover {
-      color: #C0511B; }
+      color: #C0511B;
+      text-decoration: underline; }
     .list-basic a:focus {
       color: #C0511B; }
   .list-basic li + li {
