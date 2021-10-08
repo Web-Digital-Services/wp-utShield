@@ -2550,10 +2550,10 @@ Menu find
   .menu-find .menu__head {
     margin: 0; }
   .menu-find .menu__body {
-    padding: 3.2rem 6.2rem; }
+    padding: .6rem 6.2rem 3.2rem; }
     @media (max-width: 1199px) {
       .menu-find .menu__body {
-        padding: 2rem 1rem; } }
+        padding: .6rem 1rem 2rem; } }
   .menu-find .menu__foot {
     display: none;
     padding: 0 6rem 3rem;
@@ -2791,7 +2791,7 @@ Nav
     color: #C0511B; }
 
 /* ------------------------------------------------------------ *\
-	Person
+Person
 \* ------------------------------------------------------------ */
 .person {
   display: flex;
@@ -2801,12 +2801,13 @@ Nav
   transition: background-color .3s, padding .3s;
   border-radius: .8rem;
   font-size: 1.6rem;
-  font-weight: 500; }
+  font-weight: 700; }
   .person figure {
     max-width: 4.4rem;
     margin-right: 1.5rem; }
   .person span {
-    color: #635853; }
+    color: #635853;
+    font-weight: 500; }
 
 .person:hover {
   background-color: #F7F5F0;

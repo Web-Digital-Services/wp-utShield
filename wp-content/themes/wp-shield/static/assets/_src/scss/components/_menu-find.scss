@@ -22,10 +22,10 @@ Menu find
   }
 
   .menu__body {
-    padding: 3.2rem 6.2rem;
+    padding: .6rem 6.2rem 3.2rem;
 
     @include breakpoint-down(small-desktop) {
-      padding: 2rem 1rem;
+      padding: .6rem 1rem 2rem;
     }
   }
 
