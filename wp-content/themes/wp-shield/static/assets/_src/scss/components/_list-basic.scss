@@ -14,10 +14,12 @@ List basic
   }
 
   a {
+    text-underline-offset: .2rem;
     transition: color .3s ease;
 
     &:hover {
       color: $c-orange;
+      text-decoration: underline;
     }
 
     &:focus {
