@@ -1184,6 +1184,11 @@ Callout basic
         padding: 0; } }
   .callout--basic .callout__entry p {
     line-height: 1.8; }
+    .callout--basic .callout__entry p a {
+      text-underline-offset: .4rem;
+      text-decoration: underline; }
+      .callout--basic .callout__entry p a:hover {
+        color: #fff; }
   @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
     .callout--basic .callout__actions {
       margin-top: 4rem; } }
