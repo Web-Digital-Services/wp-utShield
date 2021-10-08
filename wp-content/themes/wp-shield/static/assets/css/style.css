@@ -717,18 +717,11 @@ Accordion find
   align-items: center;
   min-height: 8rem;
   padding: 1.6rem .6rem;
-  transition: background-color .3s, border-color .3s, color .3s, padding .3s;
-  cursor: pointer;
-  border-bottom: 0.2rem solid #D4CEC4; }
+  transition: background-color .3s ease, color .3s, padding .3s ease;
+  cursor: pointer; }
   @media (max-width: 1199px) {
     .accordion-find .accordion__head {
       justify-content: space-between; } }
-
-.accordion-find .accordion__head:hover {
-  color: #C0511B;
-  background-color: #FBF9F7;
-  border-color: #FBF9F7;
-  padding: 1.6rem; }
 
 .accordion-find .accordion__head:hover svg path {
   stroke: #C0511B; }
@@ -773,8 +766,29 @@ Accordion find
 .accordion-find .accordion__section.is-current .accordion__head h6 span + span {
   display: block; }
 
-.accordion-find .accordion__section:last-child .accordion__head {
-  border-bottom: none; }
+.accordion-find .accordion__section {
+  border-top: 0.2rem solid #F0ECE2;
+  transition: border .3s ease; }
+  .accordion-find .accordion__section:first-child {
+    border-top: none; }
+  .accordion-find .accordion__section:hover {
+    border-color: transparent; }
+    .accordion-find .accordion__section:hover + .accordion__section {
+      border-color: transparent; }
+    .accordion-find .accordion__section:hover .accordion__head {
+      color: #C0511B;
+      background-color: #FBF9F7;
+      padding: 1.6rem;
+      border-radius: .8rem; }
+  .accordion-find .accordion__section.is-current {
+    border-top: none; }
+    .accordion-find .accordion__section.is-current .accordion__head {
+      border-bottom: 0.2rem solid #F0ECE2;
+      background-color: transparent;
+      border-radius: 0;
+      padding: 1.6rem .6rem; }
+    .accordion-find .accordion__section.is-current:hover {
+      border-color: #F0ECE2; }
 
 .accordion-find.open .accordion__section {
   display: none; }
@@ -2242,31 +2256,7 @@ Hero
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
       .hero .hero__inner {
         display: flex;
-        flex-direction: column;
-        padding: 0;
-        min-height: 60rem; }
-        .hero .hero__inner .hero__image {
-          height: 60%;
-          margin-top: -6rem;
-          margin-right: -10rem;
-          max-width: 45rem;
-          margin-left: auto; }
-          .hero .hero__inner .hero__image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: top left; } }
-    @media (max-width: 575px) {
-      .hero .hero__inner .hero__image {
-        height: 60%;
-        margin-top: 4rem;
-        max-width: 45rem;
-        margin-left: auto; }
-        .hero .hero__inner .hero__image img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          object-position: top left; } }
+        padding: 0; } }
   .hero .hero__menu {
     max-width: 95rem;
     margin: 0 auto;
@@ -2291,8 +2281,17 @@ Hero
     margin-left: -8rem; }
     @media (max-width: 1023px) {
       .hero .hero__image {
-        width: 100%;
-        margin: 0; } }
+        width: 130%;
+        margin-right: -22rem;
+        margin-top: -6rem;
+        margin-left: auto;
+        max-width: 70rem; } }
+    @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
+      .hero .hero__image {
+        width: 150%;
+        margin-right: -10rem;
+        margin-top: -3rem;
+        max-width: 60rem; } }
   .hero .hero__content {
     padding: 8.6rem 0 0 5.6rem;
     max-width: 66rem; }
@@ -2343,6 +2342,7 @@ Hero
       display: none; } }
   @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
     .hero .hero__actions a {
+      display: block;
       width: 100%;
       border-radius: 0;
       font-size: 1.4rem;
@@ -2363,19 +2363,26 @@ Hero
     left: 0;
     opacity: 0;
     width: 100%;
-    height: 92.5rem;
+    height: 95.2rem;
     pointer-events: none;
-    transition: opacity .3s ease, height .3s .3s ease;
+    transition: opacity .2s ease, height .3s .2s ease;
     padding: 13rem 4rem 0;
     max-width: none; }
+    .hero .hero__menu .menu-find {
+      opacity: 0;
+      transform: translateY(-2rem);
+      transition: opacity .3s ease, transform .3s ease;
+      transition-delay: .1s; }
     @media (max-width: 1199px) {
       .hero .hero__menu {
         padding: 18rem 4rem 0; } }
     @media (max-width: 1023px) {
       .hero .hero__menu {
+        height: 100rem;
         padding: 18rem 4rem 0; } }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
       .hero .hero__menu {
+        height: 74.4rem;
         padding: 15rem 2rem 0; } }
   .side-menu .hero .hero__menu {
     padding: 13rem 12rem 0 20.5rem; }
@@ -2407,6 +2414,9 @@ Hero
   pointer-events: inherit;
   z-index: 5;
   height: 100vh; }
+  .hero.menu-open .hero__menu .menu-find {
+    opacity: 1;
+    transform: none; }
 
 /* ------------------------------------------------------------ *\
 	Icons
@@ -2463,7 +2473,7 @@ List basic
       columns: 1; } }
 
 /* ------------------------------------------------------------ *\
-	List persons
+List persons
 \* ------------------------------------------------------------ */
 .list-persons {
   list-style: none;
@@ -2477,7 +2487,6 @@ List basic
     align-items: center;
     color: #C0511B; }
   .list-persons .list__more a:hover {
-    text-decoration: underline;
     color: #7A0F00; }
 
 /* ------------------------------------------------------------ *\
@@ -2521,7 +2530,7 @@ Main
     position: relative; }
 
 /* ------------------------------------------------------------ *\
-	Menu find
+Menu find
 \* ------------------------------------------------------------ */
 .menu-find {
   position: relative;
@@ -2553,7 +2562,8 @@ Main
         padding: 0 1rem; } }
   .menu-find .menu__list + .menu__list {
     margin-top: .8rem;
-    border-top: 0.2rem solid #D4CEC4; }
+    padding-top: .8rem;
+    border-top: 0.2rem solid #F0ECE2; }
   .menu-find .menu__close {
     position: absolute;
     height: 4.8rem;

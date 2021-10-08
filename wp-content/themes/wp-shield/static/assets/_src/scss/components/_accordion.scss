@@ -153,20 +153,12 @@ Accordion find
     align-items: center;
     min-height: 8rem;
     padding: 1.6rem .6rem;
-    transition: background-color .3s, border-color .3s, color .3s, padding .3s;
+    transition: background-color .3s ease, color .3s, padding .3s ease;
     cursor: pointer;
-    border-bottom: .2rem solid $c-mediumdarkbeige;
 
     @include breakpoint-down(small-desktop) {
       justify-content: space-between;
     }
-  }
-
-  .accordion__head:hover {
-    color: $c-orange;
-    background-color: $c-extralightbeige;
-    border-color: $c-extralightbeige;
-    padding: 1.6rem;
   }
 
   .accordion__head:hover svg path {
@@ -223,8 +215,43 @@ Accordion find
     display: block;
   }
 
-  .accordion__section:last-child .accordion__head {
-    border-bottom: none;
+  .accordion__section {
+    border-top: .2rem solid $c-beige;
+    transition: border .3s ease;
+    
+    &:first-child {
+      border-top: none;
+    }
+    
+    &:hover {
+      border-color: transparent;
+      
+      &+ .accordion__section {
+        border-color: transparent;  
+      }
+      
+      .accordion__head {
+        color: $c-orange;
+        background-color: $c-extralightbeige;
+        padding: 1.6rem;
+        border-radius: .8rem;
+      }  
+    }
+    
+    &.is-current {
+      border-top: none;
+      
+      .accordion__head {
+        border-bottom: .2rem solid $c-beige;
+        background-color: transparent;
+        border-radius: 0;
+        padding: 1.6rem .6rem;
+      }
+      
+      &:hover {
+        border-color: $c-beige;  
+      }
+    }
   }
 }
 
