@@ -1028,7 +1028,7 @@ Button
     display: block; }
   .btn-rounded {
     min-height: 5.6rem;
-    padding: 0 3.2rem;
+    padding: 0 3rem;
     font-weight: 700;
     font-size: 1.6rem;
     transition: all .3s ease;
@@ -1399,7 +1399,7 @@ Callout
         margin-top: 2.3rem; } }
   .callout .callout__actions a {
     margin-top: 1rem;
-    margin-right: .8rem; }
+    margin-right: 1.6rem; }
     .callout .callout__actions a:last-child {
       margin-right: 0; }
 
