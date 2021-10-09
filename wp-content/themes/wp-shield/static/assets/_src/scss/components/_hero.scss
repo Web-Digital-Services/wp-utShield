@@ -14,7 +14,7 @@ Hero
 
   @include breakpoint-down(mobile) {
     padding-top: 12.4rem;
-    height: 74.4rem;
+    height: 80rem;
   }
   
   .shell {
@@ -232,8 +232,8 @@ Hero
     line-height: 1.7;
 
     @include breakpoint-down(tablet) {
-      visibility: collapse;
-      height: 0;
+      font-size: 1.5rem;
+      margin-bottom: 3rem;
     }
   }
 
@@ -315,7 +315,7 @@ Hero
     }
 
     @include breakpoint-down(mobile) {
-      height: 74.4rem;
+      height: 80rem;
       padding: 15rem 2rem 0;
     }
   }
