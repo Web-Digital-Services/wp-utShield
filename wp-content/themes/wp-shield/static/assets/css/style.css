@@ -1,9 +1,9 @@
 /* ------------------------------------------------------------ *\
 	Vendor
 \* ------------------------------------------------------------ */
-@import url(vendor/magnific-popup.css);
-@import url(vendor/fontawesome.css);
-@import url(vendor/aos.css);
+@import url(third-party/magnific-popup.css);
+@import url(third-party/fontawesome.css);
+@import url(third-party/aos.css);
 /* ------------------------------------------------------------ *\
 	Generic
 \* ------------------------------------------------------------ */
