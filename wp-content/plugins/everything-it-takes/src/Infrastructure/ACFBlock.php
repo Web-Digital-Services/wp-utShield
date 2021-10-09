@@ -25,13 +25,13 @@ abstract class ACFBlock implements Block, Registerable {
 		$args = $this->get_args();
 
 		if ( is_admin() ) :
-			include FS_PLUGIN_DIR . 'views/blocks/admin.php';
+			include EIT_PLUGIN_DIR . 'views/blocks/admin.php';
 
 			return;
 
 		endif;
 
-		include FS_PLUGIN_DIR . 'views/blocks/' . str_replace( [ 'nd_', '_' ], [
+		include EIT_PLUGIN_DIR . 'views/blocks/' . str_replace( [ 'nd_', '_' ], [
 				'',
 				'-'
 			], $this->get_slug() ) . '.php';
@@ -71,6 +71,28 @@ abstract class ACFBlock implements Block, Registerable {
 
 	protected function get_title(): string {
 		return '';
+	}
+
+	public function register_block(): void {
+		acf_register_block_type( array(
+			'title'           => $this->get_title(),
+			'name'            => $this->get_slug(),
+			'category'        => Blocks::CATEGORY,
+			'icon'            => Blocks::ICON,
+			'render_callback' => [ $this, 'render' ],
+			'mode'            => 'auto',
+			'supports'        => [
+				'align'           => false,
+				'anchor'          => true,
+				'customClassName' => true,
+				'jsx'             => true,
+				'mode'            => false, // Disable switch to 'edit' mode.
+			]
+		) );
+	}
+
+	public function register_fields(): void {
+		$this->register_field_group( $this->get_slug(), $this->get_title(), $this->get_fields() );
 	}
 
 	/**

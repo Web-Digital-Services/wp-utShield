@@ -15,7 +15,9 @@ namespace EverythingItTakes\Plugin;
 use BrightNucleus\Views;
 use BrightNucleus\View\Location\FilesystemLocation;
 use EverythingItTakes\Plugin\Infrastructure\Blocks;
+use EverythingItTakes\Plugin\Infrastructure\BlocksAssetLoader;
 use EverythingItTakes\Plugin\Infrastructure\PostTypes\Review;
+use EverythingItTakes\Plugin\Infrastructure\Taxonomy\ReviewRatingTaxonomy;
 
 final class Plugin {
 	public function run(): void {
@@ -44,13 +46,17 @@ final class Plugin {
 		// Application
 
 		// Infrastructure
+		Blocks::class,
+		BlocksAssetLoader::class,
 
 		// Infrastructure/Blocks
-		Blocks::class,
 		Blocks\Reviews::class,
 
 		// Infrastructure/PostTypes
 		Review::class,
+
+		// Infrastructure/Taxonomy
+		ReviewRatingTaxonomy::class,
 
 		// UI
 

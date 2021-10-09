@@ -10,14 +10,14 @@
  * @copyright 2021 Ten Adams
  */
 
-namespace EverythingItTakes\Plugin\Infrastructure\Blocks;
+namespace EverythingItTakes\Plugin\Infrastructure\Taxonomy;
 
 use BrightNucleus\Config\ConfigFactory;
 use BrightNucleus\Config\ConfigInterface;
 use BrightNucleus\CustomContent\CustomTaxonomy;
 use BrightNucleus\CustomContent\CustomTaxonomy\Argument;
 use BrightNucleus\CustomContent\CustomTaxonomy\Name;
-use EverythingItTakes\Plugin\Infrastructure\PostType\Review;
+use EverythingItTakes\Plugin\Infrastructure\PostTypes\Review;
 use EverythingItTakes\Plugin\Registerable;
 
 final class ReviewRatingTaxonomy implements Registerable {

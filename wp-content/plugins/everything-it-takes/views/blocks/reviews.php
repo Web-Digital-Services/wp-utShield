@@ -1,9 +1,9 @@
 <section class="section-testimonials">
-	<figure class="section__background"><img src="../assets/img/background-noise-cyan.jpg" alt="Background"></figure><!-- /.section__background -->
+	<figure class="section__background"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/background-noise-cyan.jpg" alt="Background"></figure><!-- /.section__background -->
 
 	<div class="shell grid-container">
 		<div class="section__inner grid-x">
-			<figure class="section__element"><img src="../assets/img/svg/icons/quote-mark.svg" alt="Quote icon"></figure><!-- /.section__element -->
+			<figure class="section__element"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/icons/quote-mark.svg" alt="Quote icon"></figure><!-- /.section__element -->
 
 			<h6 data-aos="fade-up">WHAT OUR PATIENTS SAY</h6>
 
@@ -20,11 +20,11 @@
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.</p>
 
 									<ul class="list-stars blockquote__list">
-										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
-										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
-										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
-										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
-										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
 									</ul><!-- /.list-stars -->
 
 									<cite>Patient Name</cite>
@@ -40,11 +40,11 @@
 									<p>Nullam id dolor id nibh ultricies vehicula ut id elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
 
 									<ul class="list-stars blockquote__list">
-										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
-										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
-										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
-										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
-										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
 									</ul><!-- /.list-stars -->
 
 									<cite>Patient Name</cite>
@@ -60,11 +60,11 @@
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.</p>
 
 									<ul class="list-stars blockquote__list">
-										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
-										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
-										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
-										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
-										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
 									</ul><!-- /.list-stars -->
 
 									<cite>Patient Name</cite>
@@ -80,11 +80,11 @@
 									<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
 
 									<ul class="list-stars blockquote__list">
-										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
-										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
-										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
-										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
-										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
 									</ul><!-- /.list-stars -->
 
 									<cite>Patient Name</cite>
