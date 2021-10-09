@@ -25,20 +25,20 @@ final class Blocks implements Registerable {
 		add_filter( 'block_categories', [ $this, 'register_category' ] );
 
 		add_action( 'after_setup_theme', [ $this, 'removeCorePatterns' ] );
-//		add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_admin_block_styles' ] );
+		add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_admin_block_styles' ] );
 	}
 
 	public static function get_brand_icon(): string {
 		return self::ICON;
 	}
 
-//	public function enqueue_admin_block_styles(): void {
-//		$css_path    = 'css/admin/blocks.css';
-//		$css_url     = EIT_PLUGIN_URL . '/' . $css_path;
-//		$css_version = filemtime( EIT_PLUGIN_DIR . $css_path );
-//
-//		wp_enqueue_style( 'nd-admin-blocks', $css_url, array(), $css_version, 'all' );
-//	}
+	public function enqueue_admin_block_styles(): void {
+		$css_path    = 'css/admin/blocks.css';
+		$css_url     = EIT_PLUGIN_URL . '/' . $css_path;
+		$css_version = filemtime( EIT_PLUGIN_DIR . $css_path );
+
+		wp_enqueue_style( 'nd-admin-blocks', $css_url, array(), $css_version, 'all' );
+	}
 
 	/**
 	 *

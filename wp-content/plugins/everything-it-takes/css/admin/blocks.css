@@ -1,0 +1,32 @@
+.block-placeholder {
+    margin: 0;
+}
+
+.block-placeholder .block-form {
+    border-left: none;
+    background: #f7f5f1;
+    padding: 22px 0 22px 22px;
+    font-size: .8125rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.block-placeholder .block-form h3 {
+    color: #111;
+    font-size: 1rem;
+    margin: 0;
+    flex: 1 1 100%
+}
+
+.block-placeholder .block-form h3 svg {
+    position: relative;
+    top: -3px;
+    margin-right: 4px;
+    transform: scale(.5);
+    vertical-align: middle;
+}
+
+.block-placeholder .block-form p {
+    font-size: 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
