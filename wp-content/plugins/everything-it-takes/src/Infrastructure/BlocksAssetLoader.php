@@ -17,21 +17,24 @@ use EverythingItTakes\Plugin\Registerable;
 final class BlocksAssetLoader implements Registerable {
 
 	public function register(): void {
-//		add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_fonts' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_fonts' ] );
-
-//		add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_styles' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_styles' ] );
-
-//		add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_scripts' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
 	}
 
-	function enqueue_fonts() {
+	public function enqueue_fonts() {
+		if ( ! is_page_template( 'page-templates/blocks.php' ) ) {
+			return;
+		}
+
 		wp_enqueue_style( 'eit-blocks-google-fonts', '//fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap' );
 	}
 
-	function enqueue_styles() {
+	public function enqueue_styles() {
+		if ( ! is_page_template( 'page-templates/blocks.php' ) ) {
+			return;
+		}
+
 		wp_enqueue_style(
 			'eit-blocks-foundation',
 			'//cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css',
@@ -46,7 +49,11 @@ final class BlocksAssetLoader implements Registerable {
 		);
 	}
 
-	function enqueue_scripts() {
+	public function enqueue_scripts() {
+		if ( ! is_page_template( 'page-templates/blocks.php' ) ) {
+			return;
+		}
+
 		wp_enqueue_script(
 			'eit-blocks-vendor',
 			get_stylesheet_directory_uri() . '/static/assets/js/vendor.js',
