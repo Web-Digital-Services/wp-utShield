@@ -14,7 +14,7 @@ namespace EverythingItTakes\Plugin\Infrastructure\Blocks;
 
 use EverythingItTakes\Plugin\Infrastructure\ACFBlock;
 use EverythingItTakes\Plugin\Infrastructure\Blocks;
-use EverythingItTakes\Plugin\Infrastructure\PostType\Review;
+use EverythingItTakes\Plugin\Infrastructure\PostTypes\Review;
 
 final class Reviews extends ACFBlock {
 

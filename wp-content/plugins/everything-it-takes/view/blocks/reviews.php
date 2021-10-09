@@ -1,0 +1,131 @@
+<section class="section-testimonials">
+	<figure class="section__background"><img src="../assets/img/background-noise-cyan.jpg" alt="Background"></figure><!-- /.section__background -->
+
+	<div class="shell grid-container">
+		<div class="section__inner grid-x">
+			<figure class="section__element"><img src="../assets/img/svg/icons/quote-mark.svg" alt="Quote icon"></figure><!-- /.section__element -->
+
+			<h6 data-aos="fade-up">WHAT OUR PATIENTS SAY</h6>
+
+			<div class="slider-testimonials section__slider cell" data-aos="fade-up">
+				<div class="slider-controls">
+					<button class="controls-prev" tabindex="-1">prev</button>
+					<button class="controls-next" tabindex="-1">next</button>
+				</div>
+				<div class="slider-testimonials-slider js-slider-testimonials">
+					<div class="slider__slide">
+						<div class="testimonial">
+							<div class="blockquote testimonial__blockquote">
+								<blockquote>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.</p>
+
+									<ul class="list-stars blockquote__list">
+										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+									</ul><!-- /.list-stars -->
+
+									<cite>Patient Name</cite>
+								</blockquote>
+							</div><!-- /.blockquote -->
+						</div><!-- /.testimonial -->
+					</div><!-- /.slider__slide -->
+
+					<div class="slider__slide">
+						<div class="testimonial">
+							<div class="blockquote testimonial__blockquote">
+								<blockquote>
+									<p>Nullam id dolor id nibh ultricies vehicula ut id elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+									<ul class="list-stars blockquote__list">
+										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+									</ul><!-- /.list-stars -->
+
+									<cite>Patient Name</cite>
+								</blockquote>
+							</div><!-- /.blockquote -->
+						</div><!-- /.testimonial -->
+					</div><!-- /.slider__slide -->
+
+					<div class="slider__slide">
+						<div class="testimonial">
+							<div class="blockquote testimonial__blockquote">
+								<blockquote>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.</p>
+
+									<ul class="list-stars blockquote__list">
+										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+									</ul><!-- /.list-stars -->
+
+									<cite>Patient Name</cite>
+								</blockquote>
+							</div><!-- /.blockquote -->
+						</div><!-- /.testimonial -->
+					</div><!-- /.slider__slide -->
+
+					<div class="slider__slide">
+						<div class="testimonial">
+							<div class="blockquote testimonial__blockquote">
+								<blockquote>
+									<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+
+									<ul class="list-stars blockquote__list">
+										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+										<li><figure><img src="../assets/img/svg/icons/star.svg" alt="Star icon"></figure></li>
+									</ul><!-- /.list-stars -->
+
+									<cite>Patient Name</cite>
+								</blockquote>
+							</div><!-- /.blockquote -->
+						</div><!-- /.testimonial -->
+					</div><!-- /.slider__slide -->
+				</div><!-- /.slider -->
+
+				<ul class="slider-nav testimonial-slider-nav">
+					<li>
+						<svg class="circle" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<circle class="outer-circle" cx="11" cy="11" r="10" stroke="#273252" stroke-width="2"/>
+							<circle class="outer-circle-grow" cx="11" cy="11" r="10" stroke="#273252" stroke-width="2"/>
+							<circle class="inner-circle" cx="11" cy="11" r="4" fill="#273252"/>
+						</svg>
+					</li>
+					<li>
+						<svg class="circle" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<circle class="outer-circle" cx="11" cy="11" r="10" stroke="#273252" stroke-width="2"/>
+							<circle class="outer-circle-grow" cx="11" cy="11" r="10" stroke="#273252" stroke-width="2"/>
+							<circle class="inner-circle" cx="11" cy="11" r="4" fill="#273252"/>
+						</svg>
+					</li>
+					<li>
+						<svg class="circle" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<circle class="outer-circle" cx="11" cy="11" r="10" stroke="#273252" stroke-width="2"/>
+							<circle class="outer-circle-grow" cx="11" cy="11" r="10" stroke="#273252" stroke-width="2"/>
+							<circle class="inner-circle" cx="11" cy="11" r="4" fill="#273252"/>
+						</svg>
+					</li>
+					<li>
+						<svg class="circle" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<circle class="outer-circle" cx="11" cy="11" r="10" stroke="#273252" stroke-width="2"/>
+							<circle class="outer-circle-grow" cx="11" cy="11" r="10" stroke="#273252" stroke-width="2"/>
+							<circle class="inner-circle" cx="11" cy="11" r="4" fill="#273252"/>
+						</svg>
+					</li>
+				</ul><!-- /.slider-nav -->
+
+			</div><!-- /.slider-testimonials -->
+		</div><!-- /.section__inner -->
+	</div><!-- /.shell -->
+</section><!-- /.section-testimonials -->

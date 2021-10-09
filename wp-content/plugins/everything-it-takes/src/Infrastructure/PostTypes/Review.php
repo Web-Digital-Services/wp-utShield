@@ -10,7 +10,7 @@
  * @copyright 2021 Ten Adams
  */
 
-namespace EverythingItTakes\Plugin\Infrastructure\PostType;
+namespace EverythingItTakes\Plugin\Infrastructure\PostTypes;
 
 use BrightNucleus\Config\ConfigFactory;
 use BrightNucleus\Config\ConfigInterface;
@@ -18,9 +18,9 @@ use BrightNucleus\CustomContent\CustomPostType;
 use BrightNucleus\CustomContent\CustomPostType\Argument;
 use BrightNucleus\CustomContent\CustomPostType\Feature;
 use BrightNucleus\CustomContent\CustomPostType\Name;
-use EverythingItTakes\Plugin\Registerable;
+use EverythingItTakes\Plugin\Infrastructure\WPPostType;
 
-final class Review implements Registerable {
+final class Review extends WPPostType {
 
 	const SLUG = 'tadxp-review';
 
@@ -65,7 +65,7 @@ final class Review implements Registerable {
 				],
 
 				Argument::IS_PUBLIC => false,
-				Argument::SHOW_UI => true,
+				Argument::SHOW_UI   => true,
 				Argument::MENU_ICON => 'dashicons-star-half',
 			],
 		] );
