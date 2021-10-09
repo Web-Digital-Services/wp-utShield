@@ -508,7 +508,7 @@ blockquote:last-child {
   display: inline-block; }
   .marker-line .section__heading-line {
     position: absolute;
-    bottom: -1rem;
+    bottom: .25rem;
     left: -1rem;
     width: calc(100% + 2rem);
     height: 1rem; }
