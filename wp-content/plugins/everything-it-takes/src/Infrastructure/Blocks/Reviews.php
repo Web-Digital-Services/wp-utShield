@@ -12,6 +12,7 @@
 
 namespace EverythingItTakes\Plugin\Infrastructure\Blocks;
 
+use EverythingItTakes\Plugin\Domain\ReviewRepository;
 use EverythingItTakes\Plugin\Infrastructure\ACFBlock;
 use EverythingItTakes\Plugin\Infrastructure\PostTypes\Review;
 
@@ -23,6 +24,16 @@ final class Reviews extends ACFBlock {
 
 	protected function get_title(): string {
 		return 'Reviews';
+	}
+
+	public function get_args(): array {
+		$args = parent::get_args();
+
+		$post_ids = get_field( 'post_ids' ) ?: [];
+
+		$args['reviews'] = ( new ReviewRepository() )->find_by_post_ids( $post_ids );
+
+		return $args;
 	}
 
 	public function get_fields(): array {
