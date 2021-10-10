@@ -21,9 +21,10 @@
 .block-placeholder .block-form h3 svg {
     position: relative;
     top: -3px;
-    margin-right: 4px;
-    transform: scale(.5);
+    margin-right: 15px;
+    height: auto;
     vertical-align: middle;
+    width: 25px;
 }
 
 .block-placeholder .block-form p {
