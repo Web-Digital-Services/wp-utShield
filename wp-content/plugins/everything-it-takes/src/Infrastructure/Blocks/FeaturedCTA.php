@@ -51,11 +51,13 @@ final class FeaturedCTA extends ACFBlock {
 				'key'   => 'cta_1',
 				'label' => 'CTA #1',
 				'type'  => 'link',
+				'width' => 50,
 			],
 			[
 				'key'   => 'cta_2',
 				'label' => 'CTA #2',
 				'type'  => 'link',
+				'width' => 50,
 			],
 		];
 	}
@@ -82,13 +84,13 @@ final class FeaturedCTA extends ACFBlock {
 					'min'               => 0,
 					'max'               => 0,
 					'layout'            => 'table',
-					'button_label'      => 'Add Media',
+					'button_label'      => 'Add Slide',
 					'sub_fields'        => array(
 						array(
 							'key'               => 'field_61641fb920c0f',
 							'label'             => 'Image',
 							'name'              => 'image_id',
-							'type'              => 'text',
+							'type'              => 'image',
 							'instructions'      => '',
 							'required'          => 1,
 							'conditional_logic' => 0,
@@ -127,7 +129,7 @@ final class FeaturedCTA extends ACFBlock {
 					array(
 						'param'    => 'block',
 						'operator' => '==',
-						'value'    => 'acf/nd-care-spotlight',
+						'value'    => 'acf/nd-featured-cta',
 					),
 				),
 			),

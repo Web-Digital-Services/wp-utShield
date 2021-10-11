@@ -73,10 +73,10 @@
 			</div><!-- /.callout__slider-contain -->
 
 			<div class="callout__content cell large-6">
-				<h6 data-aos="fade-up">PATIENT CARE</h6>
+				<h6 data-aos="fade-up"><?= esc_html( $this->eyebrow ); ?></h6>
 
 				<div class="callout__heading marker-circle marker-circle--darkorange" data-aos="fade-up">
-					<h2>We make <br> lives better</h2>
+					<h2><?= nl2br( esc_html( $this->title ) ); ?></h2>
 					<figure class="section__heading-circle">
 						<!-- @@include('./marker-circle.html') -->
                         <svg viewbox="0 0 539 143" preserveAspectRatio="none" width="539" height="143" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -94,12 +94,16 @@
 				</div><!-- /.callout__heading -->
 
 				<div class="callout__entry" data-aos="fade-up">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					<p><?= wp_kses_post( $this->text ); ?></p>
 				</div><!-- /.callout__entry -->
 
 				<div class="callout__actions" data-aos="fade-up">
-					<a href="#" class="btn btn-rounded btn-rounded--white callout__btn">View UT Health San Antonio Physicians</a>
-					<a href="#" class="btn btn-rounded btn-rounded--white-outline callout__btn">Find Dental Care</a>
+                    <?php if ( ! empty( $this->cta_1 ) ) : ?>
+					    <a href="<?= esc_url( $this->cta_1['url'] ); ?>" class="btn btn-rounded btn-rounded--white callout__btn" target="<?= esc_attr( $this->cta_1['target'] ); ?>"><?= esc_html( $this->cta_1['title'] ); ?></a>
+					<?php endif; ?>
+					<?php if ( ! empty( $this->cta_2 ) ) : ?>
+                        <a href="<?= esc_url( $this->cta_1['url'] ); ?>" class="btn btn-rounded btn-rounded--white-outline callout__btn" target="<?= esc_attr( $this->cta_2['target'] ); ?>"><?= esc_html( $this->cta_2['title'] ); ?></a>
+                    <?php endif; ?>
 				</div><!-- /.callout__actions -->
 			</div><!-- /.callout__content -->
 		</div><!-- /.callout__inner -->
