@@ -14,14 +14,14 @@ namespace EverythingItTakes\Plugin\Infrastructure\Blocks;
 
 use EverythingItTakes\Plugin\Infrastructure\ACFBlock;
 
-final class Events extends ACFBlock {
+final class CareSpotlightService extends ACFBlock {
 
 	public function get_slug(): string {
-		return 'nd_events';
+		return 'nd_care_spotlight_service';
 	}
 
 	public function get_title(): string {
-		return 'Events';
+		return 'Care Spotlight (Service)';
 	}
 
 }

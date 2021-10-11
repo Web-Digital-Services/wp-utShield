@@ -42,10 +42,11 @@ final class Plugin {
 		Menus::class,
 
 		// Infrastructure/Blocks
-//		Blocks\Events::class,
+		Blocks\CareSpotlightService::class,
+		Blocks\Events::class,
 		Blocks\FeaturedCTA::class,
 		Blocks\MarqueeText::class,
-//		Blocks\News::class,
+		Blocks\News::class,
 		Blocks\Reviews::class,
 
 		// Infrastructure/PostTypes
