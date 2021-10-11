@@ -12,7 +12,9 @@
 
 namespace EverythingItTakes\Plugin\Infrastructure\Blocks;
 
-final class News {
+use EverythingItTakes\Plugin\Infrastructure\ACFBlock;
+
+final class News extends ACFBlock {
 
 	public function get_slug(): string {
 		return 'nd_news';
