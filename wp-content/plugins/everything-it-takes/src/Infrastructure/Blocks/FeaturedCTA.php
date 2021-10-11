@@ -22,6 +22,14 @@ final class FeaturedCTA extends ACFBlock {
 		add_action( 'acf/init', [ $this, 'register_repeater_fields' ] );
 	}
 
+	public function get_args(): array {
+		$args = parent::get_args();
+
+		$args['slides'] = get_field( 'gallery' ) ?: [];
+
+		return $args;
+	}
+
 	public function get_slug(): string {
 		return 'nd_featured_cta';
 	}
@@ -104,12 +112,13 @@ final class FeaturedCTA extends ACFBlock {
 							'prepend'           => '',
 							'append'            => '',
 							'maxlength'         => '',
+							'return_format'     => 'id',
 						),
 						array(
 							'key'               => 'field_61641fccb5c4f',
 							'label'             => 'Video',
 							'name'              => 'video',
-							'type'              => 'oembed',
+							'type'              => 'url',
 							'instructions'      => '',
 							'required'          => 0,
 							'conditional_logic' => 0,
