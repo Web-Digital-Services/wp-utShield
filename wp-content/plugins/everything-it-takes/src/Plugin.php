@@ -16,6 +16,7 @@ use BrightNucleus\Views;
 use BrightNucleus\View\Location\FilesystemLocation;
 use EverythingItTakes\Plugin\Infrastructure\Blocks;
 use EverythingItTakes\Plugin\Infrastructure\BlocksAssetLoader;
+use EverythingItTakes\Plugin\Infrastructure\ImageSizes;
 use EverythingItTakes\Plugin\Infrastructure\Menus;
 use EverythingItTakes\Plugin\Infrastructure\PostTypes\Review;
 use EverythingItTakes\Plugin\Infrastructure\Taxonomy\ReviewRatingTaxonomy;
@@ -31,27 +32,20 @@ final class Plugin {
 		$this->register_views();
 	}
 
-	public function register_views(): void {
-		$folders = [
-			get_stylesheet_directory() . '/partials',
-			get_template_directory() . '/partials',
-			EIT_PLUGIN_DIR . 'views',
-		];
-
-		foreach ( $folders as $folder ) {
-			Views::addLocation( new FilesystemLocation( $folder ) );
-		}
-	}
-
 	protected array $services = [
 		// Application
 
 		// Infrastructure
 		Blocks::class,
 		BlocksAssetLoader::class,
+		ImageSizes::class,
 		Menus::class,
 
 		// Infrastructure/Blocks
+//		Blocks\Events::class,
+		Blocks\FeaturedCTA::class,
+		Blocks\MarqueeText::class,
+//		Blocks\News::class,
 		Blocks\Reviews::class,
 
 		// Infrastructure/PostTypes
@@ -63,4 +57,16 @@ final class Plugin {
 		// UI
 
 	];
+
+	public function register_views(): void {
+		$folders = [
+			get_stylesheet_directory() . '/partials',
+			get_template_directory() . '/partials',
+			EIT_PLUGIN_DIR . 'views',
+		];
+
+		foreach ( $folders as $folder ) {
+			Views::addLocation( new FilesystemLocation( $folder ) );
+		}
+	}
 }

@@ -9,7 +9,7 @@
                         src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/icons/quote-mark.svg"
                         alt="Quote icon"></figure><!-- /.section__element -->
 
-            <h6 data-aos="fade-up"><?= esc_html( $args['title'] ); ?></h6>
+            <h6 data-aos="fade-up"><?= esc_html( $this->title ); ?></h6>
 
             <div class="slider-testimonials section__slider cell" data-aos="fade-up">
                 <div class="slider-controls">
@@ -18,7 +18,7 @@
                 </div>
                 <div class="slider-testimonials-slider js-slider-testimonials">
 
-					<?php foreach ( $args['reviews'] as $review ) : ?>
+					<?php foreach ( $this->reviews as $review ) : ?>
                         <div class="slider__slide">
                             <div class="testimonial">
                                 <div class="blockquote testimonial__blockquote">
@@ -47,7 +47,7 @@
                 </div><!-- /.slider -->
 
                 <ul class="slider-nav testimonial-slider-nav">
-	                <?php foreach ( $args['reviews'] as $review ) : ?>
+	                <?php foreach ( $this->reviews as $review ) : ?>
                         <li>
                             <svg class="circle" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle class="outer-circle" cx="11" cy="11" r="10" stroke="#273252" stroke-width="2"/>

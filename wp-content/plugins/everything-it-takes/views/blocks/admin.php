@@ -8,6 +8,6 @@
                     <path d="M321.755 553.916L287.641 447.421L376.802 381.538H266.611L232.594 275.043V488.033L321.755 553.916Z" fill="white"/>
                 </g>
             </svg>
-            <?= esc_html( $block['title'] ); ?> <?= isset( $args['title'] ) && ! empty( $args['title'] ) ? '<em>(' . esc_html( $args['title'] ) . ')</em>' : ''; ?></h3>
+            <?= esc_html( $this->block_title ); ?> <?= isset( $this->title ) && ! empty( $this->title ) ? '<em>(' . esc_html( $this->title ) . ')</em>' : ''; ?></h3>
 	</div>
 </div>

@@ -12,6 +12,7 @@
 
 namespace EverythingItTakes\Plugin\Infrastructure;
 
+use BrightNucleus\Views;
 use EverythingItTakes\Plugin\Registerable;
 
 abstract class ACFBlock implements Block, Registerable {
@@ -22,19 +23,20 @@ abstract class ACFBlock implements Block, Registerable {
 	}
 
 	public function render( array $block ): void {
-		$args = $this->get_args();
+		$args                = $this->get_args();
+		$args['block_title'] = $block['title'];
 
 		if ( is_admin() ) :
-			include EIT_PLUGIN_DIR . 'views/blocks/admin.php';
+			echo Views::render( 'blocks/admin', $args );
 
 			return;
 
 		endif;
 
-		include EIT_PLUGIN_DIR . 'views/blocks/' . str_replace( [ 'nd_', '_' ], [
+		echo Views::render( 'blocks/' . str_replace( [ 'nd_', '_' ], [
 				'',
 				'-'
-			], $this->get_slug() ) . '.php';
+			], $this->get_slug() ), $args );
 	}
 
 	protected function get_args(): array {
