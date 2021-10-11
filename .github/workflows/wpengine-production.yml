@@ -12,8 +12,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      #      - name: Install project dependencies
-      #        run: composer install --no-dev --optimize-autoloader
+      - name: Install project dependencies
+        run: composer install --no-dev --optimize-autoloader
       - name: npm
         run: |
           npm install
