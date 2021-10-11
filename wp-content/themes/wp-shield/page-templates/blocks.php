@@ -14,6 +14,8 @@
 
 namespace EverythingItTakes\Theme;
 
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,27 +39,12 @@ namespace EverythingItTakes\Theme;
 				</a>
 			</div><!-- /.header__button -->
 			<div class="logo header__logo">
-				<a href="#"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/logo.svg" alt="Logo"></a>
-				<a href="#" class="page__title">Patient Care</a>
+				<a href="<?= esc_url( get_site_url() ); ?>"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/logo.svg" alt="Logo"></a>
+				<a href="<?= get_the_permalink( get_the_ID() ); ?>" class="page__title"><?= the_title(); ?></a>
 			</div>
 			<aside class="header__aside">
-				<nav class="nav header__nav">
-					<ul>
-						<li>
-							<a href="#" class="btn btn-rounded btn-rounded--trans">Academics</a>
-						</li>
-						<li>
-							<a href="#" class="btn btn-rounded btn-rounded--trans">Patient Care</a>
-						</li>
-						<li>
-							<a href="#" class="btn btn-rounded btn-rounded--trans">Research</a>
-						</li>
-					</ul>
-				</nav><!-- /.nav -->
-
-				<div class="header__actions">
-					<a href="#" class="btn btn-rounded btn-rounded--outline js-button-find">Find a Provider</a>
-				</div><!-- /.header__actions -->
+				<?php do_action( 'eit_header_right_menu' ); ?>
+				<?php do_action( 'eit_header_right_cta_menu' ); ?>
 			</aside><!-- /.header__aside -->
 		</div><!-- /.header__inner -->
 	</div><!-- /.shell -->

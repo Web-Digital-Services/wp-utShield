@@ -16,6 +16,7 @@ use BrightNucleus\Views;
 use BrightNucleus\View\Location\FilesystemLocation;
 use EverythingItTakes\Plugin\Infrastructure\Blocks;
 use EverythingItTakes\Plugin\Infrastructure\BlocksAssetLoader;
+use EverythingItTakes\Plugin\Infrastructure\Menus;
 use EverythingItTakes\Plugin\Infrastructure\PostTypes\Review;
 use EverythingItTakes\Plugin\Infrastructure\Taxonomy\ReviewRatingTaxonomy;
 
@@ -48,6 +49,7 @@ final class Plugin {
 		// Infrastructure
 		Blocks::class,
 		BlocksAssetLoader::class,
+		Menus::class,
 
 		// Infrastructure/Blocks
 		Blocks\Reviews::class,
