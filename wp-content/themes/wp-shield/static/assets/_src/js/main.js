@@ -1,3 +1,5 @@
+jQuery(function ($) {
+
 const $window = $(window);
 const $document = $(document);
 const $body = $('body');
@@ -396,4 +398,6 @@ $(window).scroll(function() {
 	        transform: "translateX(-" + scroll / 10 + "%)"
 	    })
 	}
+});
+
 });

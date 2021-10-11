@@ -1,0 +1,22 @@
+{
+  "name": "tenadams/everything-it-takes",
+  "description": "Core functionality for EverythingItTakes.com",
+  "type": "wordpress-plugin",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ten Adams",
+      "email": "digital@tenadams.com"
+    }
+  ],
+  "require": {
+    "brightnucleus/view": "^0.4.9",
+    "brightnucleus/custom-content": "^0.1.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "EverythingItTakes\\Plugin\\": "src/"
+    }
+  }
+}

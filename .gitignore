@@ -27,8 +27,8 @@ wp-content/themes/**
 !wp-content/mu-plugins/wp-kses-svg-ruleset.php
 
 # Plugins
-!wp-content/plugins/core/
-!wp-content/plugins/core/**
+!wp-content/plugins/everything-it-takes/
+!wp-content/plugins/everything-it-takes/**
 
 # Theme
 !wp-content/themes/wp-shield/

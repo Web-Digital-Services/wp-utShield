@@ -1,0 +1,51 @@
+{
+  "name": "web-digital-services/wp-utshield",
+  "description": "WordPress website",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Nick Davis",
+      "email": "ndavis@tenadams.com"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org",
+      "only": [
+        "wpackagist-plugin/*",
+        "wpackagist-theme/*"
+      ]
+    },
+    {
+      "type": "path",
+      "url": "wp-content/plugins/everything-it-takes"
+    }
+  ],
+  "require": {
+    "tenadams/everything-it-takes": "*"
+  },
+  "require-dev": {
+    "kint-php/kint": "^3.3",
+    "tracy/tracy": "^2.8",
+    "wpackagist-plugin/query-monitor": "^3.7"
+  },
+  "config": {
+    "platform": {
+      "php": "7.4"
+    },
+    "vendor-dir": "wp-content/vendor"
+  },
+  "extra": {
+    "installer-paths": {
+      "wp-content/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "wp-content/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
+    }
+  }
+}
