@@ -18,6 +18,7 @@ jobs:
         run: |
           npm install
           npm run build
+          rm -r node_modules
         working-directory: wp-content/themes/wp-shield
       - name: SSH Deploy to WP Engine
         uses: bowiedev/github-action-wpengine-ssh-deploy@master
