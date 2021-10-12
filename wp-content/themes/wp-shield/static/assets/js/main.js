@@ -36,21 +36,25 @@ $(".video-cursor-hover").each(function () {
   });
 });
 
-sliderPrev.addEventListener("mouseover", () => {
-  document.body.classList.add("slider-cursor-hover--on");
-  document.body.classList.add("slider-cursor-prev");
-});
-sliderPrev.addEventListener("mouseleave", () => {
-  document.body.classList.remove("slider-cursor-hover--on");
-  document.body.classList.remove("slider-cursor-prev");
-});
+if ( null !== sliderPrev ) {
+  sliderPrev.addEventListener("mouseover", () => {
+    document.body.classList.add("slider-cursor-hover--on");
+    document.body.classList.add("slider-cursor-prev");
+  });
+  sliderPrev.addEventListener("mouseleave", () => {
+    document.body.classList.remove("slider-cursor-hover--on");
+    document.body.classList.remove("slider-cursor-prev");
+  });
+}
 
-sliderNext.addEventListener("mouseover", () => {
-  document.body.classList.add("slider-cursor-hover--on");
-});
-sliderNext.addEventListener("mouseleave", () => {
-  document.body.classList.remove("slider-cursor-hover--on");
-});
+if ( null !== sliderNext ) {
+  sliderNext.addEventListener("mouseover", () => {
+    document.body.classList.add("slider-cursor-hover--on");
+  });
+  sliderNext.addEventListener("mouseleave", () => {
+    document.body.classList.remove("slider-cursor-hover--on");
+  });
+}
 
 
 /**
