@@ -1,0 +1,31 @@
+<section class="callout callout--large">
+	<h6 class="callout__title">Peter Andrew  Guarnero<br>PhD, RN, MSc</h6><!-- /.callout__title -->
+
+	<div class="shell shell--alt callout__shell grid-container">
+		<figure class="callout__background"><img src="../assets/img/background-noise.jpg" alt="Background"></figure><!-- /.callout__background -->
+
+		<div class="callout__inner grid-x">
+			<figure class="callout__image cell large-6 medium-12 small-12"><img src="../assets/img/hero/hero-img-3.png" srcset="../assets/img/hero/hero-img-3.png, ../assets/img/hero/hero-img-3-2x.png 2x" alt="Image"></figure><!-- /.callout__image -->
+
+			<div class="callout__content cell large-6 medium-12 small-12">
+				<h6 data-aos="fade-up">Care Spotlight</h6>
+
+				<div class="callout__heading marker-line marker-line--orange" data-aos="fade-up">
+					<h2>Advancing <br> Patient Care</h2>
+					<figure class="section__heading-line">
+						@@include('./marker-line.html')
+					</figure><!-- /.callout__heading-figure -->
+				</div><!-- /.callout__heading -->
+
+				<div class="callout__entry" data-aos="fade-up">
+					<p>“I provide the students with an experience that challenges previously held beliefs about mental illness, how to interact with patients and how to advocate for the most vulnerable.”</p>
+				</div><!-- /.callout__entry -->
+
+				<div class="callout__actions" data-aos="fade-up">
+					<a href="#" class="btn btn-rounded btn-rounded--orange callout__btn">View Profile</a>
+					<a href="#" class="btn btn-rounded btn-rounded--outline callout__btn">Secondary CTA</a>
+				</div><!-- /.callout__actions -->
+			</div><!-- /.callout__content -->
+		</div><!-- /.callout__inner -->
+	</div><!-- /.shell -->
+</section><!-- /.callout -->
