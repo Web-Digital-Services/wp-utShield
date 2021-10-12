@@ -127,6 +127,10 @@ abstract class ACFBlock implements Block, Registerable {
 				$acf_field_args['choices'] = $field['choices'];
 			}
 
+			if ( 'textarea' === $field['type'] && ! empty( $field['rows'] ) ) {
+				$acf_field_args['rows'] = $field['rows'];
+			}
+
 //			if ( 'select' === $field['type'] && ! empty( $field['default_value'] ) ) {
 //				$acf_field_args['default_value'] = $field['default_value'];
 //			}

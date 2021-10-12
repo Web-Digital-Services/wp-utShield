@@ -1,25 +1,21 @@
 <?php use BrightNucleus\Views; ?>
 
-<section class="callout callout--alt callout--alt-large">
+<section class="callout callout--large">
 	<h6 class="callout__title"><?= nl2br( esc_html( $this->title_left ) ); ?></h6><!-- /.callout__title -->
 
 	<div class="shell shell--alt callout__shell grid-container">
+		<figure class="callout__background"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/background-noise.jpg" alt="Background"></figure><!-- /.callout__background -->
+
 		<div class="callout__inner grid-x">
-			<div class="callout__images cell large-6 medium-6">
+			<figure class="callout__image cell large-6 medium-12 small-12"><?= wp_get_attachment_image( $this->image_id, 'eit-featured-cta-large' ); ?></figure><!-- /.callout__image -->
 
-                <figure class="callout__image js-image"><?= wp_get_attachment_image( $this->image_id_1, 'eit-featured-cta-small' ); ?></figure><!-- /.callout__image -->
-
-                <figure class="callout__image callout__image--person js-image"><?= wp_get_attachment_image( $this->image_id_2, 'eit-featured-cta-medium' ); ?></figure><!-- /.callout__image -->
-
-			</div><!-- /.callout__images -->
-
-			<div class="callout__content cell large-6 medium-6">
+			<div class="callout__content cell large-6 medium-12 small-12">
 				<h6 data-aos="fade-up"><?= esc_html( $this->eyebrow ); ?></h6>
 
 				<div class="callout__heading marker-line marker-line--orange" data-aos="fade-up">
 					<h2><?= nl2br( esc_html( $this->title ) ); ?></h2>
 					<figure class="section__heading-line">
-                        <?= Views::render( 'icons/marker-line' ); ?>
+						<?= Views::render( 'icons/marker-line' ); ?>
 					</figure><!-- /.callout__heading-figure -->
 				</div><!-- /.callout__heading -->
 

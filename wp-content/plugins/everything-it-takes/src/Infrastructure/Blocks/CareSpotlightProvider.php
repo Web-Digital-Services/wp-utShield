@@ -14,14 +14,14 @@ namespace EverythingItTakes\Plugin\Infrastructure\Blocks;
 
 use EverythingItTakes\Plugin\Infrastructure\ACFBlock;
 
-final class CareSpotlightService extends ACFBlock {
+final class CareSpotlightProvider extends ACFBlock {
 
 	public function get_slug(): string {
-		return 'nd_care_spotlight_service';
+		return 'nd_care_spotlight_provider';
 	}
 
 	public function get_title(): string {
-		return 'Care Spotlight (Service)';
+		return 'Care Spotlight (Provider)';
 	}
 
 	public function get_fields(): array {
@@ -30,19 +30,12 @@ final class CareSpotlightService extends ACFBlock {
 				'key'   => 'title_left',
 				'label' => 'Title (Left)',
 				'type'  => 'textarea',
-				'rows'  => 2,
+				'rows' => 2,
 			],
 			[
-				'key'   => 'image_id_1',
-				'label' => 'Image #1',
+				'key'   => 'image_id',
+				'label' => 'Image',
 				'type'  => 'image',
-				'width' => 50,
-			],
-			[
-				'key'   => 'image_id_2',
-				'label' => 'Image #2',
-				'type'  => 'image',
-				'width' => 50,
 			],
 			[
 				'key'   => 'eyebrow',
@@ -53,7 +46,7 @@ final class CareSpotlightService extends ACFBlock {
 				'key'   => 'title',
 				'label' => 'Title',
 				'type'  => 'textarea',
-				'rows'  => 2
+				'rows'  => 2,
 			],
 			[
 				'key'   => 'text',
