@@ -45,7 +45,9 @@
   vertical-align: middle;
   margin: 0 auto;
   text-align: left;
-  z-index: 1045; }
+  z-index: 1045;
+  border-radius: .4rem;
+}
 
 .mfp-inline-holder .mfp-content,
 .mfp-ajax-holder .mfp-content {
@@ -83,7 +85,7 @@
 .mfp-hide {
   display: none !important; }
 
-.mfp-preloader {
+.mfp-preloader { 
   color: #CCC;
   position: absolute;
   top: 50%;
@@ -222,7 +224,7 @@ button::-moz-focus-inner {
   .mfp-iframe-holder .mfp-content {
     line-height: 0;
     width: 100%;
-    max-width: 900px; }
+    max-width: 1200px; }
   .mfp-iframe-holder .mfp-close {
     top: -40px; }
 
@@ -239,6 +241,7 @@ button::-moz-focus-inner {
     width: 100%;
     height: 100%;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    border-radius: .4rem;
     background: #000; }
 
 /* Main image in popup */
