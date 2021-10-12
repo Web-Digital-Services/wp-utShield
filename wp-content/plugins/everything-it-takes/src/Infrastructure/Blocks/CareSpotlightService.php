@@ -24,4 +24,57 @@ final class CareSpotlightService extends ACFBlock {
 		return 'Care Spotlight (Service)';
 	}
 
+	public function get_fields(): array {
+		return [
+			[
+				[
+					'key'   => 'title_left',
+					'label' => 'Title (Left)',
+					'type'  => 'textarea',
+					'rows'  => 2,
+				],
+				[
+					'key'   => 'image_id_1',
+					'label' => 'Image #1',
+					'type'  => 'image',
+					'width' => 50,
+				],
+				[
+					'key'   => 'image_id_2',
+					'label' => 'Image #2',
+					'type'  => 'image',
+					'width' => 50,
+				],
+				[
+					'key'   => 'eyebrow',
+					'label' => 'Eyebrow',
+					'type'  => 'text'
+				],
+				[
+					'key'   => 'title',
+					'label' => 'Title',
+					'type'  => 'textarea',
+					'rows'  => 2
+				],
+				[
+					'key'   => 'text',
+					'label' => 'Text',
+					'type'  => 'textarea'
+				],
+				[
+					'key'   => 'cta_1',
+					'label' => 'CTA #1',
+					'type'  => 'link',
+					'width' => 50,
+				],
+				[
+					'key'   => 'cta_2',
+					'label' => 'CTA #2',
+					'type'  => 'link',
+					'width' => 50,
+				],
+			]
+		];
+	}
+
 }
