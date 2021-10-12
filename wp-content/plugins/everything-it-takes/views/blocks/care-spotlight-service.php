@@ -6,8 +6,11 @@
 	<div class="shell shell--alt callout__shell grid-container">
 		<div class="callout__inner grid-x">
 			<div class="callout__images cell large-6 medium-6">
-				<figure class="callout__image js-image"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/callout/callout-img-4.jpg" srcset="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/callout/callout-img-4.jpg, <?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/callout/callout-img-4-2x.jpg 2x" alt="Image"></figure><!-- /.callout__image -->
-				<figure class="callout__image callout__image--person js-image"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/callout/callout-img-6.jpg" srcset="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/callout/callout-img-6.jpg, <?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/callout/callout-img-6-2x.jpg 2x" alt="Image"></figure><!-- /.callout__image -->
+
+                <figure class="callout__image js-image"><?= wp_get_attachment_image( $this->image_id_1, 'eit-featured-cta-small' ); ?></figure><!-- /.callout__image -->
+
+                <figure class="callout__image callout__image--person js-image"><?= wp_get_attachment_image( $this->image_id_2, 'eit-featured-cta-medium' ); ?></figure><!-- /.callout__image -->
+
 			</div><!-- /.callout__images -->
 
 			<div class="callout__content cell large-6 medium-6">

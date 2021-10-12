@@ -7,7 +7,7 @@
 		<figure class="callout__background"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/background-noise.jpg" alt="Background"></figure><!-- /.callout__background -->
 
 		<div class="callout__inner grid-x">
-			<figure class="callout__image cell large-6 medium-12 small-12"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/hero/hero-img-3.png" srcset="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/hero/hero-img-3.png, <?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/hero/hero-img-3-2x.png 2x" alt="Image"></figure><!-- /.callout__image -->
+			<figure class="callout__image cell large-6 medium-12 small-12"><?= wp_get_attachment_image( $this->image_id, 'eit-featured-cta-large' ); ?></figure><!-- /.callout__image -->
 
 			<div class="callout__content cell large-6 medium-12 small-12">
 				<h6 data-aos="fade-up"><?= esc_html( $this->eyebrow ); ?></h6>
