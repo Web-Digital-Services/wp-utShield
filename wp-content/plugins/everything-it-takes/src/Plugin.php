@@ -46,6 +46,7 @@ final class Plugin {
 		Blocks\CareSpotlightService::class,
 		Blocks\Events::class,
 		Blocks\FeaturedCTA::class,
+		Blocks\FeaturedCTABasic::class,
 		Blocks\MarqueeText::class,
 		Blocks\News::class,
 		Blocks\Reviews::class,
