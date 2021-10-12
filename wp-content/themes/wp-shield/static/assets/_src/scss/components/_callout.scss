@@ -506,7 +506,7 @@ Callout
   }
   
   &-large .callout__entry {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     line-height: 1.8;
 
     @include breakpoint-down(tablet) {
@@ -577,7 +577,7 @@ Callout
   }
 
   .callout__entry {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     line-height: 1.8;
 
     @include breakpoint-down(tablet) {
