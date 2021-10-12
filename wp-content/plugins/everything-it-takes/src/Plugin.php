@@ -42,6 +42,7 @@ final class Plugin {
 		Menus::class,
 
 		// Infrastructure/Blocks
+		Blocks\CareSpotlightProvider::class,
 		Blocks\CareSpotlightService::class,
 		Blocks\Events::class,
 		Blocks\FeaturedCTA::class,
