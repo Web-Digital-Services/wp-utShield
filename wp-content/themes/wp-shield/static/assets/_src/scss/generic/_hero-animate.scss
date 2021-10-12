@@ -4,7 +4,7 @@
 
 .hero__entry, .hero__actions {
   opacity: 0;
-  animation: fadeUp .5s 6.5s linear forwards;
+  animation: fadeUp .5s 3.25s linear forwards;
 }
 
 .hero__heading {
@@ -25,28 +25,28 @@
         display: block;
         color: $c-offblack;
         opacity: 0;
-        animation: slideUpOut 1.5s 1s linear forwards;
+        animation: slideUpOut .5s 1s linear forwards;
       }
       
       &:nth-child(2) {
         &> span {
-          animation-delay: 2.5s;
+          animation-delay: 1.5s;
         }
       }
       
       &:nth-child(3) {
         &> span {
-          animation-delay: 4s;
+          animation-delay: 2s;
         }
       }
       
       &:last-of-type {
         opacity: 0;
-        animation: fadeIn .3s 5.5s linear forwards;
+        animation: fadeIn .3s 2.5s linear forwards;
         
         &> span {
           color: $c-orange;
-          animation: slideUp 2s 5.5s linear forwards;
+          animation: slideUp 2s 2.5s linear forwards;
         }
       }
     }
@@ -55,14 +55,14 @@
       stroke-dasharray: 600;
       stroke-dashoffset: 00;
       stroke-width: 40;
-      animation: linePath .4s 5.5s linear forwards;
+      animation: linePath .4s 2.5s linear forwards;
     }
 
     .line-path-2 {
       stroke-dasharray: 300;
       stroke-dashoffset: 300;
       stroke-width: 40;
-      animation: linePath2 .2s 6s linear forwards;
+      animation: linePath2 .2s 3s linear forwards;
     }
   }
 }

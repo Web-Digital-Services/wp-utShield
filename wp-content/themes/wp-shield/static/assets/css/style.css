@@ -381,7 +381,7 @@ blockquote:last-child {
 
 .hero__entry, .hero__actions {
   opacity: 0;
-  animation: fadeUp .5s 6.5s linear forwards; }
+  animation: fadeUp .5s 3.25s linear forwards; }
 
 .hero__heading {
   position: relative;
@@ -396,27 +396,27 @@ blockquote:last-child {
       display: block;
       color: #171717;
       opacity: 0;
-      animation: slideUpOut 1.5s 1s linear forwards; }
+      animation: slideUpOut .5s 1s linear forwards; }
     .hero__heading .intro > span:nth-child(2) > span {
-      animation-delay: 2.5s; }
+      animation-delay: 1.5s; }
     .hero__heading .intro > span:nth-child(3) > span {
-      animation-delay: 4s; }
+      animation-delay: 2s; }
     .hero__heading .intro > span:last-of-type {
       opacity: 0;
-      animation: fadeIn .3s 5.5s linear forwards; }
+      animation: fadeIn .3s 2.5s linear forwards; }
       .hero__heading .intro > span:last-of-type > span {
         color: #C0511B;
-        animation: slideUp 2s 5.5s linear forwards; }
+        animation: slideUp 2s 2.5s linear forwards; }
   .hero__heading .intro .line-path {
     stroke-dasharray: 600;
     stroke-dashoffset: 00;
     stroke-width: 40;
-    animation: linePath .4s 5.5s linear forwards; }
+    animation: linePath .4s 2.5s linear forwards; }
   .hero__heading .intro .line-path-2 {
     stroke-dasharray: 300;
     stroke-dashoffset: 300;
     stroke-width: 40;
-    animation: linePath2 .2s 6s linear forwards; }
+    animation: linePath2 .2s 3s linear forwards; }
 
 @keyframes fadeUp {
   0% {
@@ -1570,7 +1570,7 @@ Callout
   .callout--alt .callout__inner {
     align-items: flex-start; }
   .callout--alt-large .callout__entry {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     line-height: 1.8; }
     @media (max-width: 1023px) {
       .callout--alt-large .callout__entry {
@@ -1618,7 +1618,7 @@ Callout
   .callout--large .callout__heading-element {
     margin-top: -1rem; }
   .callout--large .callout__entry {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     line-height: 1.8; }
     @media (max-width: 1023px) {
       .callout--large .callout__entry {
@@ -2177,52 +2177,63 @@ Hero
   .hero .shell {
     height: 100%; }
   .hero h1 {
+    font-size: 1.4rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 2.2rem;
+    text-transform: uppercase; }
+  .hero h2 {
     letter-spacing: -0.05em;
     line-height: 1;
     color: #C0511B;
+    font-size: 12.8rem;
     font-weight: 500;
     margin: 0; }
-    .hero h1 .final .hero__heading-line {
+    .hero h2 sup {
+      font-size: .095em;
+      letter-spacing: 0;
+      top: -.75em;
+      vertical-align: super; }
+    .hero h2 .final .hero__heading-line {
       position: absolute;
       top: 50%;
       right: -2rem;
       width: 90%;
       transform: translateY(-57%); }
-      .hero h1 .final .hero__heading-line svg {
+      .hero h2 .final .hero__heading-line svg {
         width: 100%; }
     @media (max-width: 1699px) {
-      .hero h1 {
+      .hero h2 {
         font-size: 11rem; }
-        .hero h1 .final .hero__heading-line {
+        .hero h2 .final .hero__heading-line {
           right: -1.75rem;
           width: 91%;
           transform: translateY(-52%); } }
     @media (max-width: 1399px) {
-      .hero h1 {
+      .hero h2 {
         font-size: 8rem; }
-        .hero h1 .final .hero__heading-line {
+        .hero h2 .final .hero__heading-line {
           right: -1rem;
           width: 95%;
           transform: translateY(-45%); } }
     @media (max-width: 1023px) {
-      .hero h1 {
+      .hero h2 {
         font-size: 10rem; }
-        .hero h1 .final .hero__heading-line {
+        .hero h2 .final .hero__heading-line {
           right: -1.5rem;
           width: 92%;
           transform: translateY(-52%); } }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .hero h1 {
+      .hero h2 {
         font-size: 7.5rem; }
-        .hero h1 .final .hero__heading-line {
+        .hero h2 .final .hero__heading-line {
           right: -1rem;
           width: 100%;
           transform: translateY(-42%); } }
     @media (max-width: 575px) {
-      .hero h1 {
+      .hero h2 {
         font-size: 5.5rem; } }
     @media (max-width: 374px) {
-      .hero h1 {
+      .hero h2 {
         font-size: 4.5rem; } }
   .hero h6 {
     letter-spacing: 0.2rem;
