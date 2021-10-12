@@ -30,7 +30,7 @@
                            target="<?= esc_attr( $this->cta_1['target'] ); ?>"><?= esc_html( $this->cta_1['title'] ); ?></a>
 					<?php endif; ?>
 					<?php if ( ! empty( $this->cta_2 ) ) : ?>
-                        <a href="<?= esc_url( $this->cta_1['url'] ); ?>"
+                        <a href="<?= esc_url( $this->cta_2['url'] ); ?>"
                            class="btn btn-rounded btn-rounded--outline callout__btn"
                            target="<?= esc_attr( $this->cta_2['target'] ); ?>"><?= esc_html( $this->cta_2['title'] ); ?></a>
 					<?php endif; ?>
