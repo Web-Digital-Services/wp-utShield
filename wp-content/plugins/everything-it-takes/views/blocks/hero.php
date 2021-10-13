@@ -1,10 +1,14 @@
+<?php use BrightNucleus\Views; ?>
+
 <section class="hero js-hero">
 	<figure class="hero__background"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/temp/background-noise.jpg" alt="Background"></figure><!-- /.hero__background -->
 
 	<div class="shell shell--alt grid-container">
 		<div class="hero__inner grid-x">
 			<div class="hero__content cell large-6 small-12">
-				<h6 class="hero__subheading">UT HEALTH SAN ANTONIO PATIENT CARE</h6>
+                <?php if ( ! empty( $this->eyebrow ) ) : ?>
+				    <h6 class="hero__subheading"><?= esc_html( $this->eyebrow ); ?></h6>
+                <?php endif; ?>
 
 				<div class="hero__heading">
 					<h1 class="placeholder">Everything <br> It Takes</h1>
@@ -15,20 +19,22 @@
 						<span class="final">
               Everything<span>It Takes</span>
               <figure class="hero__heading-line">
-                @@include('./marker-hero.html')
+                <?= Views::render( 'icons/marker-hero' ); ?>
               </figure><!-- /.hero__heading-line -->
             </span>
 					</h1>
 				</div><!-- /.hero__heading -->
 
 				<div class="hero__entry">
-					<p>With over 800 providers committed to healing, find a provider that’s willing to do everything it takes.</p>
+					<?php if ( ! empty( $this->eyebrow ) ) : ?>
+					    <p><?= esc_html( $this->text ); ?></p>
+                    <?php endif; ?>
 				</div><!-- /.hero__entry -->
 
 				<div class="hero__actions">
 					<a href="#" class="btn btn-rounded btn-rounded--search js-button-find">
 						<figure><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17.001L22 22.001" stroke="#C0511B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="10.001" r="8.75" stroke="#C0511B" stroke-width="2.5"/></svg></figure>
-						<span>Find a Provider</span>
+						<span><?= esc_html( $this->text ?: 'Find a Provider' ); ?></span>
 					</a>
 				</div><!-- /.hero__actions -->
 			</div><!-- /.hero__content -->
