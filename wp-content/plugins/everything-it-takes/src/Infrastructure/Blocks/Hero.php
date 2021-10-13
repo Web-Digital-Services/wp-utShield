@@ -24,4 +24,35 @@ class Hero extends ACFBlock {
 		return 'Hero';
 	}
 
+	public function get_fields(): array {
+		return [
+			[
+				'key'   => 'eyebrow',
+				'label' => 'Eyebrow',
+				'type'  => 'text'
+			],
+//			[
+//				'key'   => 'title',
+//				'label' => 'Title',
+//				'type'  => 'textarea',
+//				'rows'  => 2
+//			],
+			[
+				'key'   => 'text',
+				'label' => 'Text',
+				'type'  => 'textarea'
+			],
+//			[
+//				'key'   => 'image_id',
+//				'label' => 'Image',
+//				'type'  => 'image',
+//			],
+			[
+				'key'   => 'cta_text',
+				'label' => 'CTA Text',
+				'type'  => 'text',
+			],
+		];
+	}
+
 }
