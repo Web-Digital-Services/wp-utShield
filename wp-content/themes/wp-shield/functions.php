@@ -19,8 +19,10 @@ require_once( 'library/wp-shield/customizer/logo-uploader.php' );
 require_once( 'library/wp-shield/customizer/customizr-tweaks.php' );
 require_once( 'library/wp-shield/customizer/register-menus.php' );
 require_once( 'library/wp-shield/customizer/theme-design-switch.php' );
+require_once( 'library/wp-shield/customizer/footer.php' );
 require_once( 'library/wp-shield/banners/metaboxes-page-banners.php' );
 require_once( 'library/wp-shield/wpbakery/wp-importer.php' );
+require_once( 'library/wp-shield/shortcodes/social_media_footer.php' );
 require_once( 'library/wp-shield/physicians-loop/alter-physician-loop.php' );
 
 /** MODIFYING CORE FOUNDATION PRESS FILES */
