@@ -16,7 +16,7 @@ add_action( 'customize_register', 'FoundationPress_Logo_customizer' );
 function ut_display_logo(){
     if(empty(esc_url( get_theme_mod( 'FoundationPress_logo'))))
     {
-        echo  get_template_directory_uri() . '/assets/images/core/logo.png';
+        echo  get_template_directory_uri() . 'dist/assets/images/core/ut-health-san-antonio-logo.png';
     }else{
         echo esc_url( get_theme_mod( 'FoundationPress_logo' ) );
     }
