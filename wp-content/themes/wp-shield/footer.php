@@ -9,6 +9,13 @@
  */
 ?>
 <?php 
+    $uth_footer_phone = get_theme_mod( 'uth_footer_phone' );
+    $uth_footer_address = get_theme_mod( 'uth_footer_address' );
+    $uth_footer_email = get_theme_mod( 'uth_footer_email' );
+    $uth_footer_map = get_theme_mod( 'uth_footer_map' );
+    
+    $site_title = get_bloginfo ( 'description' );
+
 	$disable_alamo_footer_Page_setting = get_post_meta( get_the_ID(), 'disable_alamo_footer', true );
 	$UTH_speaker_details = get_post_meta( get_the_ID(), 'speaker_details', true );
 	$UTH_footer_grant_info = get_theme_mod( 'UTH_footer_grant_info');
@@ -37,7 +44,11 @@
             <div class="grid-x grid-margin-x align-center">
                 <div class="cell large-12">
                     <h2>UT Health San Antonio</h2>
-                    <h3>Teresa R. & Joe Lozano Long School of Medicine</h3>
+                    <?php 
+                        if (!empty($site_title)){
+                            echo '<h3>' . $site_title . '</h3>';
+                        }
+                    ?>
                 </div>
 				<?php dynamic_sidebar( 'footer-widgets' ); ?>
 
@@ -47,46 +58,57 @@
                             <i class="fas fa-circle fa-stack-2x"></i>
                             <i class="fas fa-phone fa-stack-1x fa-inverse"></i>
                         </a>
-                        <a href="#">210-450-0000</a> 
+                        <?php if (empty($uth_footer_phone)){
+                            echo '<a href="tel:210-450-0000">210-450-0000</a>';
+                        }else{
+                            echo '<a href="tel:' . $uth_footer_phone . '">' . $uth_footer_phone . '</a>';
+                        }?>
+                        
                     </div>
                     <div class="contact">
                         <a href="#" class="fa-stack">
                             <i class="fas fa-circle fa-stack-2x"></i>
                             <i class="fas fa-map-marker-alt fa-stack-1x fa-inverse"></i>
                         </a> 
-                    
-                        <address>
-                            7703 Floyd Curl Drive<br>
-                            San Antonio, TX 78226<br>
-                            <a href="#" class="arrow">Map and directions</a>
-                        </address>
+                        <?php if (empty($uth_footer_map)){
+                            $map_url = 'https://www.uthscsa.edu/university/campus-maps';
+                        }else{
+                            $map_url = $uth_footer_map;
+                        }
+                        if (empty($uth_footer_address)){
+                            echo '<address>7703 Floyd Curl Drive<br>San Antonio, TX 78229<br>
+                            <a href="' . $map_url . '" class="arrow">Map and directions</a>
+                        </address>';
+                        }else{
+                            echo '<address>' . $uth_footer_address . '<br>
+                            <a href="' . $map_url . '" class="arrow">Map and directions</a>
+                        </address>';
+                        }
+                        ?>
                     </div>
-                    <div class="contact">
+                    <?php if(!empty($uth_footer_email)) {
+                    echo '<div class="contact">
                         <a href="#" class="fa-stack">
                             <i class="fas fa-circle fa-stack-2x"></i>
                             <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
                         </a>
-                        <a href="#">email@uthscsa.edu</a> 
-                    </div>
+                        <a href="mailto:' . $uth_footer_email . '">' . $uth_footer_email . '</a> 
+                    </div>';
+                    }
+                    ?>
                     
                 </div>
                 <div class="cell large-3 medium-4 small-10">
                     <ul>
-                        <li><a href="#" class="arrow">About us</a></li>
-                        <li><a href="#" class="arrow">Contact us</a></li>
-                        <li><a href="#" class="arrow">Faculty directory</a></li>
-                        <li><a href="#" class="arrow">Job opernings</a></li>
-                        <li><a href="#" class="arrow">Newsroom</a></li>
+                        <li><a href="https://www.uthscsa.edu/university/about-us" class="arrow">About us</a></li>
+                        <li><a href="https://www.uthscsa.edu/university/contact-us" class="arrow">Contact us</a></li>
+                        <li><a href="https://directory.uthscsa.edu/" class="arrow">Faculty directory</a></li>
+                        <li><a href="https://wp.uthscsa.edu/careers/" class="arrow">Job opernings</a></li>
+                        <li><a href="https://news.uthscsa.edu/" class="arrow">Newsroom</a></li>
                     </ul>
 
                     <div class="social">
-                        <ul>
-                            <li><a href="#"><i class="fab fa-facebook-square fa-2x"></i></a></li>
-                            <li><a href="#"><i class="fab fa-instagram-square fa-2x"></i></a></li>
-                            <li><a href="#"><i class="fab fa-linkedin fa-2x"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter-square fa-2x"></i></a></li>
-                            <li><a href="#"><i class="fab fa-youtube-square fa-2x"></i></a></li>
-                        </ul>
+                        <?php echo do_shortcode('[UTH_social_links]'); ?>
                     </div>
                 </div>
                 <div class="cell large-5 medium-4 small-10">
