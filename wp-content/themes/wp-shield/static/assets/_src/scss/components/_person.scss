@@ -13,8 +13,14 @@ Person
   font-weight: 700;
 
   figure {
+    border-radius: 50%;
     max-width: 4.4rem;
     margin-right: 1.5rem;
+    overflow: hidden;
+    
+    img {
+      display: block;
+    }
   }
 
   span {
