@@ -2847,8 +2847,12 @@ Person
   font-size: 1.6rem;
   font-weight: 700; }
   .person figure {
+    border-radius: 50%;
     max-width: 4.4rem;
-    margin-right: 1.5rem; }
+    margin-right: 1.5rem;
+    overflow: hidden; }
+    .person figure img {
+      display: block; }
   .person span {
     color: #635853;
     font-weight: 500; }
