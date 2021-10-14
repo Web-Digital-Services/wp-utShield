@@ -80,7 +80,7 @@ load_theme_design('header'); ?>
 	<div class="main-grid">
 		<main class="page-content">
 			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'template-parts/content', 'page' ); ?>
+				<?php the_content(); ?>
 			<?php endwhile; ?>
 		</main>
 	</div>
