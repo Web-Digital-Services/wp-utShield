@@ -678,7 +678,7 @@ Callout
 /* Callout reversed */
 
 .callout--reversed {
-  padding: 15.2rem 0 0;
+  padding: 10rem 0 0;
   color: $c-offblack;
 
   @include breakpoint-down(tablet) {
@@ -743,6 +743,60 @@ Callout
 
   .callout__background {
     display: none;
+  }
+  
+  .callout__images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 5.7rem 0;
+    
+    .image {
+      display: flex;
+      width: 47%;
+      margin: 3% 0;
+      
+      img {
+        box-shadow: 0 1.6rem 4rem -.8rem rgba(0, 0, 0, .25);
+      }
+      
+      &:first-child {
+        align-items: flex-end;
+        justify-content: flex-end;
+        
+        img {
+          box-shadow: none;
+          max-width: 80%;
+        }
+      }
+      
+      &:nth-child(2n+1) {
+        transform: translateY(-5.7rem);
+      } 
+      
+      &:nth-child(2n) {
+        transform: translateY(5.7rem);
+      } 
+      
+      &:nth-child(2) {
+        img {
+          max-width: 85%;
+        }
+      }
+      
+      &:last-child {
+        align-items: flex-start;
+        justify-content: flex-start;
+        
+        img {
+          box-shadow: none;
+        }
+      }
+    }
+    
+    @include breakpoint-down(mobile) {
+      width: 100%;
+    }
   }
 
   .callout__image {

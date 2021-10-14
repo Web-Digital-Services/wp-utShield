@@ -1687,7 +1687,7 @@ Callout
 
 /* Callout reversed */
 .callout--reversed {
-  padding: 15.2rem 0 0;
+  padding: 10rem 0 0;
   color: #171717; }
   @media (max-width: 1023px) {
     .callout--reversed {
@@ -1737,6 +1737,37 @@ Callout
         margin: 0; } }
   .callout--reversed .callout__background {
     display: none; }
+  .callout--reversed .callout__images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 5.7rem 0; }
+    .callout--reversed .callout__images .image {
+      display: flex;
+      width: 47%;
+      margin: 3% 0; }
+      .callout--reversed .callout__images .image img {
+        box-shadow: 0 1.6rem 4rem -0.8rem rgba(0, 0, 0, 0.25); }
+      .callout--reversed .callout__images .image:first-child {
+        align-items: flex-end;
+        justify-content: flex-end; }
+        .callout--reversed .callout__images .image:first-child img {
+          box-shadow: none;
+          max-width: 80%; }
+      .callout--reversed .callout__images .image:nth-child(2n+1) {
+        transform: translateY(-5.7rem); }
+      .callout--reversed .callout__images .image:nth-child(2n) {
+        transform: translateY(5.7rem); }
+      .callout--reversed .callout__images .image:nth-child(2) img {
+        max-width: 85%; }
+      .callout--reversed .callout__images .image:last-child {
+        align-items: flex-start;
+        justify-content: flex-start; }
+        .callout--reversed .callout__images .image:last-child img {
+          box-shadow: none; }
+    @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
+      .callout--reversed .callout__images {
+        width: 100%; } }
   .callout--reversed .callout__image {
     box-shadow: none;
     margin: 0 -10rem 0 0;
