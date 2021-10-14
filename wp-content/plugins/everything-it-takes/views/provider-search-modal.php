@@ -10,7 +10,7 @@
 					<div class="search__inner">
 						<form action="#" method="get">
 							<label for="find" class="hidden"></label>
-							<input type="text" placeholder="Browse Providers by name, specialty, location or condition" name="find" id="find" value="" class="search__field js-find"/>
+							<input type="text" placeholder="Browse Providers by name, specialty or location" name="find" id="find" value="" class="search__field js-find"/>
 							<input type="submit" value="GO" class="search__btn"/>
 						</form>
 					</div><!-- /.search__inner -->
@@ -60,7 +60,7 @@
                                         <?php /** @var WP_Term $specialty */ ?>
 										<?php foreach ( $this->specialties as $specialty ) : ?>
                                             <li>
-                                                <a href="<?= esc_url( get_site_url() . 'provider-directory?_specialty_filter=' . $specialty->slug ); ?>" class="person" target="_blank">
+                                                <a href="<?= esc_url( get_site_url() . '/provider-directory?_specialty_filter=' . $specialty->slug ); ?>" class="person" target="_blank">
                                                     <p><?= esc_html( $specialty->name ); ?></p>
                                                 </a>
                                             </li>
@@ -70,39 +70,52 @@
 							</div><!-- /.accordion__body -->
 						</div><!-- /.accordion__section -->
 
-						<div class="accordion__section">
-							<div class="accordion__head">
-								<h6>
-									<span>Browse by location</span>
-									<span>Back to all categories</span>
-								</h6>
+						<?php if ( ! empty( $this->locations ) ) : ?>
+                            <div class="accordion__section">
+                                <div class="accordion__head">
+                                    <h6>
+                                        <span>Browse by location</span>
+                                        <span>Back to all categories</span>
+                                    </h6>
 
-								<figure><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 6L15 11.8571L9 18" stroke="#635853" stroke-width="1.5" stroke-linecap="round"/></svg></figure>
-							</div><!-- /.accordion__head -->
+                                    <figure><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 6L15 11.8571L9 18" stroke="#635853" stroke-width="1.5" stroke-linecap="round"/></svg></figure>
+                                </div><!-- /.accordion__head -->
 
-							<div class="accordion__body">
-								<div class="accordion__content">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum magni, assumenda. Velit numquam, tempora alias id amet eum eveniet, ipsam sequi dolores nisi, repellendus, autem necessitatibus odio sint. Cupiditate, dolorem.</p>
-								</div><!-- /.accordion__content -->
-							</div><!-- /.accordion__body -->
-						</div><!-- /.accordion__section -->
+                                <div class="accordion__body">
+                                    <div class="accordion__content">
+                                        <ul class="list-persons">
+		                                    <?php /** @var WP_Post $location */ ?>
+		                                    <?php foreach ( $this->locations as $location ) : ?>
+                                                <li>
+                                                    <a href="<?= esc_url( get_site_url() . '/provider-directory?_p=' . $location->ID ); ?>" class="person" target="_blank">
+                                                        <p><?= esc_html( $location->post_title ); ?></p>
+                                                    </a>
+                                                </li>
+		                                    <?php endforeach; ?>
+                                        </ul><!-- /.list-persons -->
+                                    </div><!-- /.accordion__content -->
+                                </div><!-- /.accordion__body -->
+                            </div><!-- /.accordion__section -->
+                        <?php endif; ?>
 
-						<div class="accordion__section">
-							<div class="accordion__head">
-								<h6>
-									<span>Browse by condition</span>
-									<span>Back to all categories</span>
-								</h6>
+                        <?php if ( ! empty( $this->conditions ) ) : ?>
+						    <div class="accordion__section">
+                                <div class="accordion__head">
+                                    <h6>
+                                        <span>Browse by condition</span>
+                                        <span>Back to all categories</span>
+                                    </h6>
 
-								<figure><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 6L15 11.8571L9 18" stroke="#635853" stroke-width="1.5" stroke-linecap="round"/></svg></figure>
-							</div><!-- /.accordion__head -->
+                                    <figure><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 6L15 11.8571L9 18" stroke="#635853" stroke-width="1.5" stroke-linecap="round"/></svg></figure>
+                                </div><!-- /.accordion__head -->
 
-							<div class="accordion__body">
-								<div class="accordion__content">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum magni, assumenda. Velit numquam, tempora alias id amet eum eveniet, ipsam sequi dolores nisi, repellendus, autem necessitatibus odio sint. Cupiditate, dolorem.</p>
-								</div><!-- /.accordion__content -->
-							</div><!-- /.accordion__body -->
-						</div><!-- /.accordion__section -->
+                                <div class="accordion__body">
+                                    <div class="accordion__content">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum magni, assumenda. Velit numquam, tempora alias id amet eum eveniet, ipsam sequi dolores nisi, repellendus, autem necessitatibus odio sint. Cupiditate, dolorem.</p>
+                                    </div><!-- /.accordion__content -->
+                                </div><!-- /.accordion__body -->
+						    </div><!-- /.accordion__section -->
+                        <?php endif; ?>
 					</div><!-- /.accordion -->
 				</div><!-- /.menu__lists -->
 			</div><!-- /.menu__body -->
