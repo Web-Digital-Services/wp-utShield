@@ -18,7 +18,7 @@ header#regular .search {
     }
 }
 //Footer Fixes
-a:visited:not(.button), a:focus {
+footer a:visited:not(.button), footer a:focus {
     color: $beige !important;
 }
 footer[role=contentinfo]{
