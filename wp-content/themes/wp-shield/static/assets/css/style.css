@@ -540,6 +540,7 @@ blockquote:last-child {
 Cursors
 \* ------------------------------------------------------------ */
 a.video-cursor-hover {
+  position: relative;
   display: block; }
   a.video-cursor-hover::before {
     content: "";
