@@ -26,7 +26,7 @@
 				</div><!-- /.hero__heading -->
 
 				<div class="hero__entry">
-					<?php if ( ! empty( $this->eyebrow ) ) : ?>
+					<?php if ( ! empty( $this->text ) ) : ?>
 					    <p><?= esc_html( $this->text ); ?></p>
                     <?php endif; ?>
 				</div><!-- /.hero__entry -->
@@ -34,7 +34,7 @@
 				<div class="hero__actions">
 					<a href="#" class="btn btn-rounded btn-rounded--search js-button-find">
 						<figure><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17.001L22 22.001" stroke="#C0511B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="10.001" r="8.75" stroke="#C0511B" stroke-width="2.5"/></svg></figure>
-						<span><?= esc_html( $this->text ?: 'Find a Provider' ); ?></span>
+						<span><?= esc_html( $this->cta_text ?: 'Find a Provider' ); ?></span>
 					</a>
 				</div><!-- /.hero__actions -->
 			</div><!-- /.hero__content -->
