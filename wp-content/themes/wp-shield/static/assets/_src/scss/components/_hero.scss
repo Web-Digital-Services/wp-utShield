@@ -20,13 +20,28 @@ Hero
   .shell {
     height: 100%;
   }
-
+  
   h1 {
+    font-size: 1.4rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 2.2rem;
+    text-transform: uppercase;
+  }
+
+  h2 {
     letter-spacing: -0.05em;
     line-height: 1;
     color: $c-orange;
+    font-size: 12.8rem;
     font-weight: 500;
     margin: 0;
+    
+    sup {
+      font-size: .095em;
+      letter-spacing: 0;
+      top: -.75em;
+      vertical-align: super;
+    }
     
     .final {      
       .hero__heading-line {

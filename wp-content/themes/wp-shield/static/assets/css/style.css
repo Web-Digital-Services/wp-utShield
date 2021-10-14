@@ -2,7 +2,6 @@
 	Vendor
 \* ------------------------------------------------------------ */
 @import url(third-party/magnific-popup.css);
-@import url(third-party/fontawesome.css);
 @import url(third-party/aos.css);
 /* ------------------------------------------------------------ *\
 	Generic
@@ -178,9 +177,6 @@ textarea {
   :root {
     scroll-behavior: smooth; } }
 
-/* ------------------------------------------------------------ *\
-    Fonts
-\* ------------------------------------------------------------ */
 /* ------------------------------------------------------------ *\
 	Base
 \* ------------------------------------------------------------ */
@@ -381,7 +377,7 @@ blockquote:last-child {
 
 .hero__entry, .hero__actions {
   opacity: 0;
-  animation: fadeUp .5s 6.5s linear forwards; }
+  animation: fadeUp .5s 3.25s linear forwards; }
 
 .hero__heading {
   position: relative;
@@ -396,27 +392,27 @@ blockquote:last-child {
       display: block;
       color: #171717;
       opacity: 0;
-      animation: slideUpOut 1.5s 1s linear forwards; }
+      animation: slideUpOut .5s 1s linear forwards; }
     .hero__heading .intro > span:nth-child(2) > span {
-      animation-delay: 2.5s; }
+      animation-delay: 1.5s; }
     .hero__heading .intro > span:nth-child(3) > span {
-      animation-delay: 4s; }
+      animation-delay: 2s; }
     .hero__heading .intro > span:last-of-type {
       opacity: 0;
-      animation: fadeIn .3s 5.5s linear forwards; }
+      animation: fadeIn .3s 2.5s linear forwards; }
       .hero__heading .intro > span:last-of-type > span {
         color: #C0511B;
-        animation: slideUp 2s 5.5s linear forwards; }
+        animation: slideUp 2s 2.5s linear forwards; }
   .hero__heading .intro .line-path {
     stroke-dasharray: 600;
     stroke-dashoffset: 00;
     stroke-width: 40;
-    animation: linePath .4s 5.5s linear forwards; }
+    animation: linePath .4s 2.5s linear forwards; }
   .hero__heading .intro .line-path-2 {
     stroke-dasharray: 300;
     stroke-dashoffset: 300;
     stroke-width: 40;
-    animation: linePath2 .2s 6s linear forwards; }
+    animation: linePath2 .2s 3s linear forwards; }
 
 @keyframes fadeUp {
   0% {
@@ -1496,7 +1492,6 @@ Callout
     bottom: 14rem;
     left: 0;
     max-width: 52rem;
-    opacity: .6;
     transform: none;
     box-shadow: none !important;
     padding: 0;
@@ -1570,7 +1565,7 @@ Callout
   .callout--alt .callout__inner {
     align-items: flex-start; }
   .callout--alt-large .callout__entry {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     line-height: 1.8; }
     @media (max-width: 1023px) {
       .callout--alt-large .callout__entry {
@@ -1618,7 +1613,7 @@ Callout
   .callout--large .callout__heading-element {
     margin-top: -1rem; }
   .callout--large .callout__entry {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     line-height: 1.8; }
     @media (max-width: 1023px) {
       .callout--large .callout__entry {
@@ -1691,7 +1686,7 @@ Callout
 
 /* Callout reversed */
 .callout--reversed {
-  padding: 15.2rem 0 0;
+  padding: 10rem 0 0;
   color: #171717; }
   @media (max-width: 1023px) {
     .callout--reversed {
@@ -1741,6 +1736,37 @@ Callout
         margin: 0; } }
   .callout--reversed .callout__background {
     display: none; }
+  .callout--reversed .callout__images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 5.7rem 0; }
+    .callout--reversed .callout__images .image {
+      display: flex;
+      width: 47%;
+      margin: 3% 0; }
+      .callout--reversed .callout__images .image img {
+        box-shadow: 0 1.6rem 4rem -0.8rem rgba(0, 0, 0, 0.25); }
+      .callout--reversed .callout__images .image:first-child {
+        align-items: flex-end;
+        justify-content: flex-end; }
+        .callout--reversed .callout__images .image:first-child img {
+          box-shadow: none;
+          max-width: 80%; }
+      .callout--reversed .callout__images .image:nth-child(2n+1) {
+        transform: translateY(-5.7rem); }
+      .callout--reversed .callout__images .image:nth-child(2n) {
+        transform: translateY(5.7rem); }
+      .callout--reversed .callout__images .image:nth-child(2) img {
+        max-width: 85%; }
+      .callout--reversed .callout__images .image:last-child {
+        align-items: flex-start;
+        justify-content: flex-start; }
+        .callout--reversed .callout__images .image:last-child img {
+          box-shadow: none; }
+    @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
+      .callout--reversed .callout__images {
+        width: 100%; } }
   .callout--reversed .callout__image {
     box-shadow: none;
     margin: 0 -10rem 0 0;
@@ -2177,52 +2203,63 @@ Hero
   .hero .shell {
     height: 100%; }
   .hero h1 {
+    font-size: 1.4rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 2.2rem;
+    text-transform: uppercase; }
+  .hero h2 {
     letter-spacing: -0.05em;
     line-height: 1;
     color: #C0511B;
+    font-size: 12.8rem;
     font-weight: 500;
     margin: 0; }
-    .hero h1 .final .hero__heading-line {
+    .hero h2 sup {
+      font-size: .095em;
+      letter-spacing: 0;
+      top: -.75em;
+      vertical-align: super; }
+    .hero h2 .final .hero__heading-line {
       position: absolute;
       top: 50%;
       right: -2rem;
       width: 90%;
       transform: translateY(-57%); }
-      .hero h1 .final .hero__heading-line svg {
+      .hero h2 .final .hero__heading-line svg {
         width: 100%; }
     @media (max-width: 1699px) {
-      .hero h1 {
+      .hero h2 {
         font-size: 11rem; }
-        .hero h1 .final .hero__heading-line {
+        .hero h2 .final .hero__heading-line {
           right: -1.75rem;
           width: 91%;
           transform: translateY(-52%); } }
     @media (max-width: 1399px) {
-      .hero h1 {
+      .hero h2 {
         font-size: 8rem; }
-        .hero h1 .final .hero__heading-line {
+        .hero h2 .final .hero__heading-line {
           right: -1rem;
           width: 95%;
           transform: translateY(-45%); } }
     @media (max-width: 1023px) {
-      .hero h1 {
+      .hero h2 {
         font-size: 10rem; }
-        .hero h1 .final .hero__heading-line {
+        .hero h2 .final .hero__heading-line {
           right: -1.5rem;
           width: 92%;
           transform: translateY(-52%); } }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .hero h1 {
+      .hero h2 {
         font-size: 7.5rem; }
-        .hero h1 .final .hero__heading-line {
+        .hero h2 .final .hero__heading-line {
           right: -1rem;
           width: 100%;
           transform: translateY(-42%); } }
     @media (max-width: 575px) {
-      .hero h1 {
+      .hero h2 {
         font-size: 5.5rem; } }
     @media (max-width: 374px) {
-      .hero h1 {
+      .hero h2 {
         font-size: 4.5rem; } }
   .hero h6 {
     letter-spacing: 0.2rem;
@@ -2556,6 +2593,8 @@ Menu find
   .menu-find .menu__head {
     margin: 0; }
   .menu-find .menu__body {
+    max-height: calc(100vh - 30rem);
+    overflow-y: auto;
     padding: .6rem 6.2rem 3.2rem; }
     @media (max-width: 1199px) {
       .menu-find .menu__body {
@@ -2564,7 +2603,7 @@ Menu find
     display: none;
     padding: 0 6rem 3rem;
     overflow-y: auto;
-    max-height: 52rem;
+    max-height: calc(100vh - 30rem);
     margin-top: 3.5rem; }
     @media (max-width: 1023px) {
       .menu-find .menu__foot {
@@ -2809,11 +2848,26 @@ Person
   font-size: 1.6rem;
   font-weight: 700; }
   .person figure {
-    max-width: 4.4rem;
-    margin-right: 1.5rem; }
+    border-radius: 50%;
+    width: 4.4rem;
+    height: 4.4rem;
+    margin-right: 1.5rem;
+    overflow: hidden; }
+    .person figure img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block; }
+  .person p {
+    flex: 1; }
   .person span {
     color: #635853;
     font-weight: 500; }
+  @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
+    .person figure {
+      width: 3rem;
+      height: 3rem; } }
 
 .person:hover {
   background-color: #F7F5F0;
@@ -3541,6 +3595,9 @@ Slider testimonials
       opacity: 0; }
       .slider-testimonials .slider-controls button.controls-next {
         left: 50%; }
+
+.fw-image img {
+  width: 100%; }
 
 /* ------------------------------------------------------------ *\
 Socials
