@@ -9,6 +9,11 @@ $light-beige:#F7F5F0;
 .nav-bar .top-bar .top-bar-left ul.desktop-menu li.current_page_item, .nav-bar .top-bar .top-bar-left ul.desktop-menu li.current-page-ancestor{
 	background: $dark-orange !important;
 }
+@media only screen and (max-width: 600px)  {
+    .desktop-menu, .site-navigation .top-bar-left {
+        display: block !important;
+    }
+}
 //Fix Footer Links
 a:visited:not(.button), a:focus {
     color: $beige !important;
