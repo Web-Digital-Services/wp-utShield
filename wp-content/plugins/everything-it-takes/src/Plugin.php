@@ -18,8 +18,9 @@ use EverythingItTakes\Plugin\Infrastructure\Blocks;
 use EverythingItTakes\Plugin\Infrastructure\BlocksAssetLoader;
 use EverythingItTakes\Plugin\Infrastructure\ImageSizes;
 use EverythingItTakes\Plugin\Infrastructure\Menus;
-use EverythingItTakes\Plugin\Infrastructure\PostTypes\Review;
+use EverythingItTakes\Plugin\Infrastructure\PostTypes\ReviewPostType;
 use EverythingItTakes\Plugin\Infrastructure\Taxonomy\ReviewRatingTaxonomy;
+use EverythingItTakes\Plugin\UI\ProviderSearchModal;
 
 final class Plugin {
 	public function run(): void {
@@ -53,13 +54,13 @@ final class Plugin {
 		Blocks\Reviews::class,
 
 		// Infrastructure/PostTypes
-		Review::class,
+		ReviewPostType::class,
 
 		// Infrastructure/Taxonomy
 		ReviewRatingTaxonomy::class,
 
 		// UI
-
+		ProviderSearchModal::class
 	];
 
 	public function register_views(): void {

@@ -12,7 +12,7 @@
 
 namespace EverythingItTakes\Plugin\Domain;
 
-use EverythingItTakes\Plugin\Infrastructure\PostTypes\Review;
+use EverythingItTakes\Plugin\Infrastructure\PostTypes\ReviewPostType;
 use WP_Query;
 
 final class ReviewRepository implements Repository {
@@ -21,10 +21,10 @@ final class ReviewRepository implements Repository {
 	 * Find a single element by its ID.
 	 *
 	 * @param int $id ID of the element to find.
-	 * @return Review
+	 * @return ReviewPostType
 	 */
-	public function find( int $id ): ?Review {
-		return new Review( get_post( $id ) );
+	public function find( int $id ): ?ReviewPostType {
+		return new ReviewPostType( get_post( $id ) );
 	}
 
 	/**
@@ -44,7 +44,7 @@ final class ReviewRepository implements Repository {
 	 */
 	public function find_by( array $args ): ReviewCollection {
 		$default_args = [
-			'post_type'              => Review::SLUG,
+			'post_type'              => ReviewPostType::SLUG,
 			'no_found_rows'          => true,
 			'update_post_meta_cache' => false,
 			'update_post_term_cache' => false
@@ -60,9 +60,9 @@ final class ReviewRepository implements Repository {
 	 * Find a single element that fits a given set of criteria.
 	 *
 	 * @param array $args Arguments to query by.
-	 * @return Review
+	 * @return ReviewPostType
 	 */
-	public function find_one_by( array $args ): ?Review {
+	public function find_one_by( array $args ): ?ReviewPostType {
 		// TODO: Implement find_one_by() method.
 	}
 
