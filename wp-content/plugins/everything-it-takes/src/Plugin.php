@@ -48,6 +48,7 @@ final class Plugin {
 		Blocks\Events::class,
 		Blocks\FeaturedCTA::class,
 		Blocks\FeaturedCTABasic::class,
+		Blocks\FullWidthImage::class,
 		Blocks\Hero::class,
 		Blocks\MarqueeText::class,
 		Blocks\News::class,

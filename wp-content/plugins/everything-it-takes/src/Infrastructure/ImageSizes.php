@@ -25,6 +25,7 @@ final class ImageSizes implements Registerable {
 		add_image_size( 'eit-featured-cta-small', 332, 456, true );
 		add_image_size( 'eit-featured-cta-small', 332, 456, true );
 		add_image_size( 'eit-featured-cta-large', 1000, 1532, true );
+		add_image_size( 'eit-full-width-image', 1915, 943, true );
 		add_image_size( 'eit-provider-icon', 44, 44, true );
 	}
 }
