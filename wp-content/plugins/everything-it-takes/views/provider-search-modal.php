@@ -34,7 +34,7 @@
 									<ul class="list-persons">
                                         <?php foreach ( $this->providers as $provider ) : ?>
                                             <li>
-                                                <a href="<?= esc_url( $provider->get_url() ); ?>" class="person">
+                                                <a href="<?= esc_url( $provider->get_url() ); ?>" class="person" target="_blank">
                                                     <figure><?= wp_kses_post( $provider->get_featured_image() ); ?></figure>
                                                     <p><?= esc_html( $provider->get_title() ); ?> <span>in <?= esc_html( $provider->get_specialty_name() ); ?></span></p>
                                                 </a>
@@ -56,8 +56,17 @@
 
 							<div class="accordion__body">
 								<div class="accordion__content">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum magni, assumenda. Velit numquam, tempora alias id amet eum eveniet, ipsam sequi dolores nisi, repellendus, autem necessitatibus odio sint. Cupiditate, dolorem.</p>
-								</div><!-- /.accordion__content -->
+                                    <ul class="list-persons">
+                                        <?php /** @var WP_Term $specialty */ ?>
+										<?php foreach ( $this->specialties as $specialty ) : ?>
+                                            <li>
+                                                <a href="<?= esc_url( get_site_url() . 'provider-directory?_specialty_filter=' . $specialty->slug ); ?>" class="person" target="_blank">
+                                                    <p><?= esc_html( $specialty->name ); ?></p>
+                                                </a>
+                                            </li>
+										<?php endforeach; ?>
+                                    </ul><!-- /.list-persons -->
+                                </div><!-- /.accordion__content -->
 							</div><!-- /.accordion__body -->
 						</div><!-- /.accordion__section -->
 
