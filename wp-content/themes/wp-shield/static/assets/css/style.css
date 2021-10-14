@@ -2850,14 +2850,25 @@ Person
   font-weight: 700; }
   .person figure {
     border-radius: 50%;
-    max-width: 4.4rem;
+    width: 4.4rem;
+    height: 4.4rem;
     margin-right: 1.5rem;
     overflow: hidden; }
     .person figure img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
       display: block; }
+  .person p {
+    flex: 1; }
   .person span {
     color: #635853;
     font-weight: 500; }
+  @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
+    .person figure {
+      width: 3rem;
+      height: 3rem; } }
 
 .person:hover {
   background-color: #F7F5F0;
