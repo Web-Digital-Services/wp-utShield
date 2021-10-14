@@ -17,7 +17,11 @@ header#regular .search {
         display: block !important;
     }
 }
-//Fix Footer Links
+//Footer Fixes
 a:visited:not(.button), a:focus {
     color: $beige !important;
+}
+footer[role=contentinfo]{
+    //hide margin for mini orage footer info
+	margin-top: 0rem !important;
 }
