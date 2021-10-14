@@ -7,12 +7,12 @@
 		<div class="hero__inner grid-x">
 			<div class="hero__content cell large-6 small-12">
                 <?php if ( ! empty( $this->eyebrow ) ) : ?>
-				    <h6 class="hero__subheading"><?= esc_html( $this->eyebrow ); ?></h6>
+				    <h1 class="hero__subheading"><?= esc_html( $this->eyebrow ); ?></h1>
                 <?php endif; ?>
 
 				<div class="hero__heading">
-					<h1 class="placeholder">Everything <br> It Takes</h1>
-					<h1 class="intro">
+					<h2 class="placeholder">Everything <br> It Takes</h2>
+					<h2 class="intro">
 						<span>Every<span>Discovery</span></span>
 						<span>Every<span>Breakthrough</span></span>
 						<span>Every<span>Patient</span></span>
@@ -22,7 +22,7 @@
                 <?= Views::render( 'icons/marker-hero' ); ?>
               </figure><!-- /.hero__heading-line -->
             </span>
-					</h1>
+					</h2>
 				</div><!-- /.hero__heading -->
 
 				<div class="hero__entry">
