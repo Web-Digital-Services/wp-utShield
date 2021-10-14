@@ -4,7 +4,10 @@ $dark-orange: #7A0F00;
 $dark-beige: #EFE1CC;
 $beige:#F0ECE2;
 $light-beige:#F7F5F0;
-
+//Search Bar Fixes
+header#regular .search {
+    min-width: 287px;
+}
 //Menu Fixes
 .nav-bar .top-bar .top-bar-left ul.desktop-menu li.current_page_item, .nav-bar .top-bar .top-bar-left ul.desktop-menu li.current-page-ancestor{
 	background: $dark-orange !important;
