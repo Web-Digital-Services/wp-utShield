@@ -3586,6 +3586,9 @@ Slider testimonials
       .slider-testimonials .slider-controls button.controls-next {
         left: 50%; }
 
+.fw-image img {
+  width: 100%; }
+
 /* ------------------------------------------------------------ *\
 Socials
 \* ------------------------------------------------------------ */
