@@ -15,6 +15,8 @@ namespace EverythingItTakes\Plugin\UI;
 use BrightNucleus\Views;
 use EverythingItTakes\Plugin\Domain\ProviderCollection;
 use EverythingItTakes\Plugin\Domain\ProviderRepository;
+use EverythingItTakes\Plugin\Infrastructure\PostTypes\LocationPostType;
+use EverythingItTakes\Plugin\Infrastructure\Taxonomy\SpecialtyTaxonomy;
 use EverythingItTakes\Plugin\Registerable;
 use WP_Query;
 
@@ -30,7 +32,10 @@ final class ProviderSearchModal implements Registerable {
 
 	private function get_args(): array {
 		return [
-			'providers' => $this->get_provider_data()
+			'providers'   => $this->get_provider_data(),
+			'specialties' => $this->get_specialty_data(),
+			'locations'   => $this->get_location_data(),
+			'conditions'  => $this->get_condition_data()
 		];
 	}
 
@@ -38,12 +43,27 @@ final class ProviderSearchModal implements Registerable {
 		return ( new ProviderRepository() )->find_all();
 	}
 
-//	private function get_specialty_data(): array {
-//
-//	}
-//
-//	private function get_location_data(): array {
-//
-//	}
+	private function get_specialty_data(): array {
+		$specialties = get_terms( SpecialtyTaxonomy::SLUG );
+
+		return is_array( $specialties ) ? $specialties : [];
+	}
+
+	private function get_location_data(): array {
+		$args = [
+			'post_type'      => LocationPostType::SLUG,
+			'posts_per_page' => 500,
+			'order'          => 'ASC',
+			'orderby'        => 'title',
+		];
+
+		$query = new WP_Query( $args );
+
+		return $query->posts;
+	}
+
+	private function get_condition_data(): array {
+		return [];
+	}
 
 }
