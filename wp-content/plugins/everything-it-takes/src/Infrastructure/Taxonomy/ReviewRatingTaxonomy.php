@@ -17,7 +17,7 @@ use BrightNucleus\Config\ConfigInterface;
 use BrightNucleus\CustomContent\CustomTaxonomy;
 use BrightNucleus\CustomContent\CustomTaxonomy\Argument;
 use BrightNucleus\CustomContent\CustomTaxonomy\Name;
-use EverythingItTakes\Plugin\Infrastructure\PostTypes\Review;
+use EverythingItTakes\Plugin\Infrastructure\PostTypes\ReviewPostType;
 use EverythingItTakes\Plugin\Registerable;
 
 final class ReviewRatingTaxonomy implements Registerable {
@@ -60,7 +60,7 @@ final class ReviewRatingTaxonomy implements Registerable {
 				// Here, we register the taxonomy with our previously created custom
 				// post type.
 				Argument::POST_TYPES        => [
-					Review::SLUG
+					ReviewPostType::SLUG
 				],
 				Argument::SHOW_ADMIN_COLUMN => false,
 

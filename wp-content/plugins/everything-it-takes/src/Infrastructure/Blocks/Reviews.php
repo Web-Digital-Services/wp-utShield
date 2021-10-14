@@ -14,7 +14,7 @@ namespace EverythingItTakes\Plugin\Infrastructure\Blocks;
 
 use EverythingItTakes\Plugin\Domain\ReviewRepository;
 use EverythingItTakes\Plugin\Infrastructure\ACFBlock;
-use EverythingItTakes\Plugin\Infrastructure\PostTypes\Review;
+use EverythingItTakes\Plugin\Infrastructure\PostTypes\ReviewPostType;
 
 final class Reviews extends ACFBlock {
 
@@ -48,7 +48,7 @@ final class Reviews extends ACFBlock {
 				'label'     => 'Testimonials',
 				'type'      => 'post_object',
 				'post_type' => array(
-					0 => Review::SLUG,
+					0 => ReviewPostType::SLUG,
 				),
 				'multiple'  => 1,
 			),

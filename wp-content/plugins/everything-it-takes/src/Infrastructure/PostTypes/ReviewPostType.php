@@ -20,7 +20,7 @@ use BrightNucleus\CustomContent\CustomPostType\Feature;
 use BrightNucleus\CustomContent\CustomPostType\Name;
 use EverythingItTakes\Plugin\Infrastructure\WPPostType;
 
-final class Review extends WPPostType {
+final class ReviewPostType extends WPPostType {
 
 	const SLUG = 'tadxp-review';
 
