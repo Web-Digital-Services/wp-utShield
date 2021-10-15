@@ -10,7 +10,7 @@
 					<div class="search__inner">
 						<form action="#" method="get">
 							<label for="find" class="hidden"></label>
-							<input type="text" placeholder="Browse Providers by name, specialty or location" name="find" id="find" value="" class="search__field js-find" data-swplive="true"/>
+							<input type="text" placeholder="Browse Providers by name, specialty or location" name="find" id="find" value="" class="search__field js-find" data-swplive="true" data-swpparentel="#menu__foot"/>
 							<input type="submit" value="GO" class="search__btn"/>
 						</form>
 					</div><!-- /.search__inner -->
@@ -119,6 +119,8 @@
 					</div><!-- /.accordion -->
 				</div><!-- /.menu__lists -->
 			</div><!-- /.menu__body -->
+
+            <div id="menu__foot" class="menu__foot"></div>
 
 		</div><!-- /.menu__inner -->
 	</div><!-- /.menu-find -->

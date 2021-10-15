@@ -40,7 +40,7 @@ $searchwp_query = new \SearchWP\Query( $query, [
 $search_results = $searchwp_query->get_results();
 ?>
 
-<div class="menu__searchwp">
+<!--<div class="menu__searchwp">-->
 	<div class="menu__list">
 		<ul class="list-persons list-persons--alt">
 			<?php if ( ! empty( $search_results ) ) : ?>
@@ -87,4 +87,4 @@ $search_results = $searchwp_query->get_results();
 
 		</ul><!-- /.list-persons -->
 	</div><!-- /.menu__list -->
-</div>
+<!--</div>-->

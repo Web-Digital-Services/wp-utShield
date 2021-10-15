@@ -10,7 +10,16 @@ final class SearchWP implements Registerable {
 		add_filter( 'searchwp_live_search_get_search_form_engine', [ $this, 'set_live_search_engine' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $this, 'remove_live_search_css_except_positioning' ], 20 );
-//		add_filter( 'searchwp_live_search_base_styles', '__return_false' );
+
+		/**
+		 * Disables positioning styles of SearchWP Live Ajax Search results.
+		 *
+		 * Not needed because we are putting the results inside the #menu__foot
+		 * element via the data attribute on the form input for it.
+		 *
+		 * @url https://searchwp.com/extensions/live-search/
+		 */
+		add_filter( 'searchwp_live_search_base_styles', '__return_false' );
 
 		/**
 		 * Enables matching any word in terms.
