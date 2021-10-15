@@ -19,6 +19,7 @@ use EverythingItTakes\Plugin\Infrastructure\BlocksAssetLoader;
 use EverythingItTakes\Plugin\Infrastructure\ImageSizes;
 use EverythingItTakes\Plugin\Infrastructure\Menus;
 use EverythingItTakes\Plugin\Infrastructure\PostTypes\ReviewPostType;
+use EverythingItTakes\Plugin\Infrastructure\SearchWP;
 use EverythingItTakes\Plugin\Infrastructure\Taxonomy\ReviewRatingTaxonomy;
 use EverythingItTakes\Plugin\UI\ProviderSearchModal;
 
@@ -41,6 +42,7 @@ final class Plugin {
 		BlocksAssetLoader::class,
 		ImageSizes::class,
 		Menus::class,
+		SearchWP::class,
 
 		// Infrastructure/Blocks
 		Blocks\CareSpotlightProvider::class,

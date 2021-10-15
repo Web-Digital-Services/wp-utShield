@@ -3641,3 +3641,8 @@ Socials
   .wrapper.menu-open,
   .wrapper.modal-open {
     padding: 0; } }
+
+.searchwp-live-search-result--focused .person {
+  background-color: #F7F5F0;
+  padding: .6rem 1.6rem;
+  color: #C0511B !important; }
