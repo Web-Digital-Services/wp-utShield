@@ -10,7 +10,7 @@
 					<div class="search__inner">
 						<form action="#" method="get">
 							<label for="find" class="hidden"></label>
-							<input type="text" placeholder="Browse Providers by name, specialty or location" name="find" id="find" value="" class="search__field js-find"/>
+							<input type="text" placeholder="Browse Providers by name, specialty or location" name="find" id="find" value="" class="search__field js-find" data-swplive="true"/>
 							<input type="submit" value="GO" class="search__btn"/>
 						</form>
 					</div><!-- /.search__inner -->
@@ -120,102 +120,6 @@
 				</div><!-- /.menu__lists -->
 			</div><!-- /.menu__body -->
 
-			<div class="menu__foot">
-				<div class="menu__list">
-					<ul class="list-persons list-persons--alt">
-						<li>
-							<a href="#" class="person person--alt">
-								<figure><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/temp/ico-person.png" alt="Person image"></figure>
-								<p>Search Term <span>in Physicians</span></p>
-							</a>
-						</li>
-						<li>
-							<a href="#" class="person person--alt">
-								<figure><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/temp/ico-person.png" alt="Person image"></figure>
-								<p>Search Term <span>in Physicians</span></p>
-							</a>
-						</li>
-						<li>
-							<a href="#" class="person person--alt">
-								<figure><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/temp/ico-person.png" alt="Person image"></figure>
-								<p>Search Term <span>in Physicians</span></p>
-							</a>
-						</li>
-						<li class="list__more">
-							<a href="#">See more Providers ...</a>
-						</li>
-					</ul><!-- /.list-persons -->
-				</div><!-- /.menu__list -->
-
-				<div class="menu__list">
-					<ul class="list-persons list-persons--alt">
-						<li>
-							<a href="#" class="person person--alt">
-								<p>Search Term <span>in Specialties</span></p>
-							</a>
-						</li>
-						<li>
-							<a href="#" class="person person--alt">
-								<p>Search Term <span>in Specialties</span></p>
-							</a>
-						</li>
-						<li>
-							<a href="#" class="person person--alt">
-								<p>Search Term <span>in Specialties</span></p>
-							</a>
-						</li>
-						<li class="list__more">
-							<a href="#">See more Specialties ...</a>
-						</li>
-					</ul><!-- /.list-persons -->
-				</div><!-- /.menu__list -->
-
-				<div class="menu__list">
-					<ul class="list-persons list-persons--alt">
-						<li>
-							<a href="#" class="person person--alt">
-								<p>Search Term <span>in Locations</span></p>
-							</a>
-						</li>
-						<li>
-							<a href="#" class="person person--alt">
-								<p>Search Term <span>in Locations</span></p>
-							</a>
-						</li>
-						<li>
-							<a href="#" class="person person--alt">
-								<p>Search Term <span>in Locations</span></p>
-							</a>
-						</li>
-						<li class="list__more">
-							<a href="#">See more Locations ...</a>
-						</li>
-					</ul><!-- /.list-persons -->
-				</div><!-- /.menu__list -->
-
-				<div class="menu__list">
-					<ul class="list-persons list-persons--alt">
-						<li>
-							<a href="#" class="person person--alt">
-								<p>Search Term <span>in Conditions</span></p>
-							</a>
-						</li>
-						<li>
-							<a href="#" class="person person--alt">
-								<p>Search Term <span>in Conditions</span></p>
-							</a>
-						</li>
-						<li>
-							<a href="#" class="person person--alt">
-								<p>Search Term <span>in Conditions</span></p>
-							</a>
-						</li>
-						<li class="list__more">
-							<a href="#">See more Conditions ...</a>
-						</li>
-					</ul><!-- /.list-persons -->
-				</div><!-- /.menu__list -->
-			</div><!-- /.menu__foot -->
 		</div><!-- /.menu__inner -->
 	</div><!-- /.menu-find -->
 </div><!-- /.hero__menu -->

@@ -309,6 +309,8 @@ $findButton.on('click', function(event) {
 
 $menuClose.on('click', function(event) {
     event.preventDefault();
+    $('.js-find').val('');
+    $menuFind.removeClass('open');
     $hero.removeClass('menu-open');
     body.removeClass('menu-open');
     body.removeClass('modal-open');
