@@ -12,7 +12,7 @@
 
 namespace EverythingItTakes\Plugin\Infrastructure\Blocks;
 
-use EverythingItTakes\Plugin\Domain\Event;
+use EverythingItTakes\Plugin\Application\EventImporter;
 use EverythingItTakes\Plugin\Infrastructure\ACFBlock;
 
 final class Events extends ACFBlock {
@@ -28,10 +28,12 @@ final class Events extends ACFBlock {
 	public function get_args(): array {
 		$args = parent::get_args();
 
-		$args['events'] = $this->get_events();
+		if ( ! is_admin() ) {
+			$args['events'] = EventImporter::get();
 
-//		\Kint::dump( $args['events'] );
-//		die();
+			\Kint::dump( $args['events'] );
+			die();
+		}
 
 		return $args;
 	}
@@ -59,28 +61,6 @@ final class Events extends ACFBlock {
 				'type'  => 'link',
 			],
 		];
-	}
-
-	private function get_events(): array {
-		$events_data = json_decode( file_get_contents( 'https://news.uthscsa.edu/wp-json/wp/v2/events' ) );
-
-		$event_count = 0;
-		$events      = [];
-
-		foreach ( $events_data as $event ) {
-			if ( ! is_a( $event, 'stdClass' ) ) {
-				continue;
-			}
-
-			$events[] = new Event( $event );
-			$event_count ++;
-
-			if ( 3 === $event_count ) {
-				return $events;
-			}
-		}
-
-		return $events_data;
 	}
 
 }
