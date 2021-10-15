@@ -56,7 +56,7 @@ class uth_subnav extends WPBakeryShortCode {
                     array(
                         'type' => 'checkbox',
                         'holder' => '',
-                        'heading' => __( 'Disable Panel Title', 'wp-shield' ),
+                        'heading' => __( 'Disable Callout Title', 'wp-shield' ),
                         'param_name' => 'disable_title',
                         'value' => __( '', 'wp-shield' ),
                         'admin_label' => false,
@@ -86,12 +86,12 @@ class uth_subnav extends WPBakeryShortCode {
                     array(
                         'type'       => 'dropdown',
                         'class'      => '',
-                        'heading'    => 'Panel Design',
-                        'param_name' => 'subnav_panel_design',
+                        'heading'    => 'Callout Design',
+                        'param_name' => 'subnav_callout_design',
                         'group' => 'Design Options',
                         'value'      => array(
-                            'Panel Outline'  => '',
-                            'Panel Basic'  => 'panel',
+                            'Callout Outline'  => '',
+                            'Callout Basic'  => 'callout',
                             'No Wrapper'  => 'null',
                         )
                     ),
@@ -200,15 +200,15 @@ class uth_subnav extends WPBakeryShortCode {
                     'icon_openiconic' => '',
                     'icon_fontawesome' => '',
                     'icon_uthealth' => '',
-                    'subnav_panel_design' => '',
+                    'subnav_callout_design' => '',
                     'menu_title_override' => '',
                 ), 
                 $atts
             )
         );
         $icon_render = '';
-        if (empty($subnav_panel_design)){
-            $subnav_panel_design = 'panel outline';
+        if (empty($subnav_callout_design)){
+            $subnav_callout_design = 'callout outline';
         }
         if ($enable_icon == true){
             //The first drop down option in dropdown params are always empty.. Adding a the enque 
@@ -263,7 +263,7 @@ class uth_subnav extends WPBakeryShortCode {
                 'menu'           => $uth_menu_id, //Get the menu name from the shortcode attributes
                 'menu_class'     => 'subnav',
                 'theme_location' => $uth_menu_id,
-                'items_wrap'     => '<div class="' . $subnav_panel_design . '"><nav aria-label="' . $menu_name . ' sub-navigation" class="collapsible subnav">' . $menu_name_render . '<ul id="%1$s" class="%2$s vertical menu accordion-menu" data-accordion-menu>%3$s</ul></nav></div>',
+                'items_wrap'     => '<div class="' . $subnav_callout_design . '"><nav aria-label="' . $menu_name . ' sub-navigation" class="collapsible subnav">' . $menu_name_render . '<ul id="%1$s" class="%2$s vertical menu accordion-menu" data-accordion-menu>%3$s</ul></nav></div>',
                 'fallback_cb'    => false,
             
             )
@@ -271,7 +271,7 @@ class uth_subnav extends WPBakeryShortCode {
         return ob_get_clean();
 
         }else{
-            return '<div class="panel alert"><strong>ERROR: </strong>This menu does has not been created in WordPress. Please check the menu selection or create a service ticket for assistance.</div>';
+            return '<div class="callout alert"><strong>ERROR: </strong>This menu does has not been created in WordPress. Please check the menu selection or create a service ticket for assistance.</div>';
         }
     }
      
