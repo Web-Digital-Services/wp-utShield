@@ -64,7 +64,7 @@ $search_results = $searchwp_query->get_results();
 									<a href="<?= esc_url( get_site_url() . '/provider-directory?_p=' . $post->get_id() ); ?>"
 										 class="person"
 										 target="_blank">
-										<p><?= esc_html( $post->get_title() ); ?> in Locations</p>
+										<p><?= esc_html( $post->get_title() ); ?> <span>in Locations</span></p>
 									</a>
 									<?php
 								}
