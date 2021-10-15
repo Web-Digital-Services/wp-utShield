@@ -27,6 +27,9 @@ final class SearchWP implements Registerable {
 		 * @url https://searchwp.com/extensions/term-archive-priority/
 		 */
 		add_filter( 'searchwp_tax_term_or_logic', '__return_true' );
+
+		add_filter( 'searchwp\query\partial_matches\wildcard_before', '__return_true' );
+		add_filter( 'searchwp\query\partial_matches\wildcard_after', '__return_false' );
 	}
 
 	/**
