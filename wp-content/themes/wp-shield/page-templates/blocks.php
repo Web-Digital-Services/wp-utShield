@@ -114,101 +114,9 @@ namespace EverythingItTakes\Theme;
 
 						<div class="menu__body">
 							<div class="accordion accordion-menu js-accordion menu__accordion">
-								<div class="accordion__section">
-									<div class="accordion__head">
-										<h5>Find Care</h5>
-										<figure><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/ico-chevron.svg" alt="Icon"></figure>
-									</div><!-- /.accordion__head -->
-
-									<div class="accordion__body">
-										<div class="accordion__content">
-											<nav class="nav nav--basic">
-												<ul>
-													<li>
-														<a href="#">Find a Provider</a>
-													</li>
-													<li>
-														<a href="#">Access MyChart</a>
-													</li>
-													<li>
-														<a href="#">Conditions and Treatments</a>
-													</li>
-													<li>
-														<a href="#">Locations</a>
-													</li>
-													<li>
-														<a href="#">Patient and Visitor Information</a>
-													</li>
-													<li>
-														<a href="#">Appointments</a>
-													</li>
-												</ul>
-											</nav><!-- /.nav -->
-										</div><!-- /.accordion__content -->
-									</div><!-- /.accordion__body -->
-								</div><!-- /.accordion__section -->
-
-								<div class="accordion__section">
-									<div class="accordion__head">
-										<h5>About Us</h5>
-										<figure><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/ico-chevron.svg" alt="Icon"></figure>
-									</div><!-- /.accordion__head -->
-
-									<div class="accordion__body">
-										<div class="accordion__content">
-											<nav class="nav nav--basic">
-												<ul>
-													<li>
-														<a href="#">About UT Health San Antonio</a>
-													</li>
-													<li>
-														<a href="#">News and Stories</a>
-													</li>
-													<li>
-														<a href="#">Careers</a>
-													</li>
-													<li>
-														<a href="#">Academics and Education</a>
-													</li>
-													<li>
-														<a href="#">Contact Us</a>
-													</li>
-												</ul>
-											</nav><!-- /.nav -->
-										</div><!-- /.accordion__content -->
-									</div><!-- /.accordion__body -->
-								</div><!-- /.accordion__section -->
-
-								<div class="accordion__section">
-									<div class="accordion__head">
-										<h5>How To Help</h5>
-										<figure><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/ico-chevron.svg" alt="Icon"></figure>
-									</div><!-- /.accordion__head -->
-
-									<div class="accordion__body">
-										<div class="accordion__content">
-											<nav class="nav nav--basic">
-												<ul>
-													<li>
-														<a href="#">COVID-19 Information</a>
-													</li>
-													<li>
-														<a href="#">Give</a>
-													</li>
-													<li>
-														<a href="#">Volunteer</a>
-													</li>
-													<li>
-														<a href="#">Clinical Trials and Research</a>
-													</li>
-													<li>
-														<a href="#">Support UT Health San Antonio</a>
-													</li>
-												</ul>
-											</nav><!-- /.nav -->
-										</div><!-- /.accordion__content -->
-									</div><!-- /.accordion__body -->
-								</div><!-- /.accordion__section -->
+								<?php do_action( 'eit_main_menu_1' ); ?>
+								<?php do_action( 'eit_main_menu_2' ); ?>
+								<?php do_action( 'eit_main_menu_3' ); ?>
 							</div><!-- /.accordion -->
 
 							<div class="socials socials--menu menu__socials">
@@ -278,24 +186,7 @@ namespace EverythingItTakes\Theme;
 
 							<div class="footer__group cell large-3 medium-6 small-12" data-aos="fade-up">
 								<div class="footer__list">
-									<h6>Connect with us</h6>
-									<ul class="list-basic">
-										<li>
-											<a href="#">About us</a>
-										</li>
-										<li>
-											<a href="#">Contact us</a>
-										</li>
-										<li>
-											<a href="#">Faculty directory</a>
-										</li>
-										<li>
-											<a href="#">Job openings</a>
-										</li>
-										<li>
-											<a href="#">Newsroom</a>
-										</li>
-									</ul><!-- /.list-basic -->
+									<?php do_action( 'eit_footer_1_col_menu' ); ?>
 
 									<div class="socials footer__socials">
 										<ul>
@@ -321,63 +212,7 @@ namespace EverythingItTakes\Theme;
 
 							<div class="footer__group cell large-6 medium-12 small-12" data-aos="fade-up">
 								<div class="footer__list">
-									<h6>Resources</h6>
-									<ul class="list-basic list-basic--alt">
-										<li>
-											<a href="#">Accessibility</a>
-										</li>
-										<li>
-											<a href="#">Compact with Texans</a>
-										</li>
-										<li>
-											<a href="#">Compliance hotline</a>
-										</li>
-										<li>
-											<a href="#">Language assistance</a>
-										</li>
-										<li>
-											<a href="#">Legal</a>
-										</li>
-										<li>
-											<a href="#">Nondiscrimination and Title IX</a>
-										</li>
-										<li>
-											<a href="#">Patient right and responsibilities</a>
-										</li>
-										<li>
-											<a href="#">Policies</a>
-										</li>
-										<li>
-											<a href="#">Public/personal information</a>
-										</li>
-										<li>
-											<a href="#">Report fraud</a>
-										</li>
-										<li>
-											<a href="#">SACSCOC member</a>
-										</li>
-										<li>
-											<a href="#">Sexual misconduct policy and reporting</a>
-										</li>
-										<li>
-											<a href="#">State Auditor’s Office hotline</a>
-										</li>
-										<li>
-											<a href="#">State of Texas</a>
-										</li>
-										<li>
-											<a href="#">Student mental health resources</a>
-										</li>
-										<li>
-											<a href="#">Texas Homeland Security</a>
-										</li>
-										<li>
-											<a href="#">Texas records and information locator</a>
-										</li>
-										<li>
-											<a href="#">Veterans portal</a>
-										</li>
-									</ul><!-- /.list-basic -->
+									<?php do_action( 'eit_footer_2_col_menu' ); ?>
 								</div><!-- /.footer__list -->
 							</div><!-- /.footer__group -->
 						</div><!-- /.footer__content -->
