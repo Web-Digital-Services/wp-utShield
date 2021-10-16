@@ -120,23 +120,7 @@ namespace EverythingItTakes\Theme;
 							</div><!-- /.accordion -->
 
 							<div class="socials socials--menu menu__socials">
-								<ul>
-									<li>
-										<a href="#"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/social/facebook.svg" alt="Facebook"></a>
-									</li>
-									<li>
-										<a href="#"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/social/twitter.svg" alt="Twitter"></a>
-									</li>
-									<li>
-										<a href="#"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/social/instagram.svg" alt="Instagram"></a>
-									</li>
-									<li>
-										<a href="#"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/social/youtube.svg" alt="Youtube"></a>
-									</li>
-									<li>
-										<a href="#"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/social/linkedin.svg" alt="LinkedIn"></a>
-									</li>
-								</ul>
+								<?php do_action( 'eit_social_menu' ); ?>
 							</div><!-- /.socials -->
 						</div><!-- /.menu__body -->
 
@@ -189,23 +173,7 @@ namespace EverythingItTakes\Theme;
 									<?php do_action( 'eit_footer_1_col_menu' ); ?>
 
 									<div class="socials footer__socials">
-										<ul>
-											<li>
-												<a href="#"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/social/facebook.svg" alt="Facebook"></a>
-											</li>
-											<li>
-												<a href="#"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/social/twitter.svg" alt="Twitter"></a>
-											</li>
-											<li>
-												<a href="#"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/social/instagram.svg" alt="Instagram"></a>
-											</li>
-											<li>
-												<a href="#"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/social/youtube.svg" alt="Youtube"></a>
-											</li>
-											<li>
-												<a href="#"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/social/linkedin.svg" alt="LinkedIn"></a>
-											</li>
-										</ul>
+										<?php do_action( 'eit_social_menu' ); ?>
 									</div><!-- /.socials -->
 								</div><!-- /.footer__list -->
 							</div><!-- /.footer__group -->
