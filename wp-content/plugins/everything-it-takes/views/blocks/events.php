@@ -4,77 +4,58 @@
 	<div class="shell shell--alt grid-container">
 		<div class="section__inner grid-x">
 			<div class="section__content cell large-5 medium-6 small-12">
-				<h6 data-aos="fade-up">EVENTS</h6>
+				<h6 data-aos="fade-up"><?= esc_html( $this->eyebrow ); ?></h6>
 
 				<div class="section__heading marker-circle" data-aos="fade-up">
-					<h3>Happening now at <br> UT Health San Antonio</h3>
+					<h3><?= nl2br( esc_html( $this->title ) ); ?></h3>
 					<figure class="section__heading-circle">
     					<?= Views::render( 'icons/marker-circle' ); ?>
 					</figure><!-- /.section__heading-circle -->
 				</div><!-- /.section__heading -->
 
 				<div class="section__entry" data-aos="fade-up">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					<p><?= esc_html( $this->text ); ?></p>
 				</div><!-- /.section__entry -->
 
-				<div class="section__actions" data-aos="fade-up">
-					<a href="#" class="btn btn-rounded btn-rounded--outline">View All Events</a>
-				</div><!-- /.section__actions -->
+				<?php if ( ! empty( $this->cta ) ) : ?>
+                    <div class="section__actions" data-aos="fade-up">
+                        <a href="<?= esc_url( $this->cta['url'] ); ?>"
+                           class="btn btn-rounded btn-rounded--outline"
+                           target="<?= esc_attr( $this->cta['target'] ); ?>"><?= esc_html( $this->cta['title'] ); ?></a>
+                    </div><!-- /.section__actions -->
+				<?php endif; ?>
 			</div><!-- /.section__content -->
 
 			<aside class="section__aside cell large-5 medium-6 small-12">
 				<div class="events">
 					<div class="events__items">
+                        <?php foreach ( $this->events as $event ) : ?>
 						<div class="events__item" data-aos="fade-up">
-							<a href="#" class="event">
+							<a href="<?= esc_url( $event->get_url() ); ?>" class="event" target="_blank">
 								<aside class="event__aside">
 									<div class="event__date">
-										<h6>Sept</h6>
-										<p>7</p>
+										<h6><?= esc_html( $event->get_month() ); ?></h6>
+										<p><?= esc_html( $event->get_day() ); ?></p>
 									</div><!-- /.event__date -->
 								</aside><!-- /.event__aside -->
 
 								<div class="event__content">
-									<span>Mays Cancer Center Annual Research Symposium</span>
+									<span><?= esc_html( $event->get_title() ); ?></span>
 								</div><!-- /.event__content -->
 							</a><!-- /.event -->
 						</div><!-- /.events__item -->
-
-						<div class="events__item" data-aos="fade-up">
-							<a href="#" class="event">
-								<aside class="event__aside">
-									<div class="event__date">
-										<h6>Sept</h6>
-										<p>18</p>
-									</div><!-- /.event__date -->
-								</aside><!-- /.event__aside -->
-
-								<div class="event__content">
-									<span>Lorem ipsum dolor sit amet consectetur</span>
-								</div><!-- /.event__content -->
-							</a><!-- /.event -->
-						</div><!-- /.events__item -->
-
-						<div class="events__item" data-aos="fade-up">
-							<a href="#" class="event">
-								<aside class="event__aside">
-									<div class="event__date">
-										<h6>Oct</h6>
-										<p>16</p>
-									</div><!-- /.event__date -->
-								</aside><!-- /.event__aside -->
-
-								<div class="event__content">
-									<span>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu</span>
-								</div><!-- /.event__content -->
-							</a><!-- /.event -->
-						</div><!-- /.events__item -->
+                        <?php endforeach; ?>
 					</div><!-- /.events__items -->
 				</div><!-- /.events -->
 
-				<div class="section__actions" data-aos="fade-up">
-					<a href="#" class="btn btn-rounded btn-rounded--outline">View All Events</a>
-				</div><!-- /.section__actions -->
+				<?php if ( ! empty( $this->cta ) ) : ?>
+                    <div class="section__actions" data-aos="fade-up">
+                        <a href="<?= esc_url( $this->cta['url'] ); ?>"
+                           class="btn btn-rounded btn-rounded--outline"
+                           target="<?= esc_attr( $this->cta['target'] ); ?>"><?= esc_html( $this->cta['title'] ); ?></a>
+                    </div><!-- /.section__actions -->
+				<?php endif; ?>
+
 			</aside><!-- /.section__aside -->
 		</div><!-- /.section__inner -->
 	</div><!-- /.shell -->
