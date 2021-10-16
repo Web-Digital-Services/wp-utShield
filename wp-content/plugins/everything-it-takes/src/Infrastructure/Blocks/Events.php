@@ -31,8 +31,8 @@ final class Events extends ACFBlock {
 		if ( ! is_admin() ) {
 			$args['events'] = EventImporter::get();
 
-			\Kint::dump( $args['events'] );
-			die();
+//			\Kint::dump( $args['events'] );
+//			die();
 		}
 
 		return $args;

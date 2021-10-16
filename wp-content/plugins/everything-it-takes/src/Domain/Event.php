@@ -38,7 +38,7 @@ final class Event {
 		return date( "j", strtotime( $this->get_date() ) );
 	}
 
-	private function get_date(): string {
+	public function get_date(): string {
 		return $this->event->{'event-alt-date'} ?: '';
 	}
 
