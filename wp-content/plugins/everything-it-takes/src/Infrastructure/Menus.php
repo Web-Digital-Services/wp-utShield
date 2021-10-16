@@ -41,6 +41,8 @@ final class Menus implements Registerable {
 
 		add_action( 'eit_footer_1_col_menu', [ $this, 'render_footer_1_col_menu' ] );
 		add_action( 'eit_footer_2_col_menu', [ $this, 'render_footer_2_col_menu' ] );
+
+		add_action( 'eit_social_menu', [ $this, 'render_social_menu' ] );
 	}
 
 	public function register_menus() {
@@ -85,6 +87,10 @@ final class Menus implements Registerable {
 
 	public function render_footer_2_col_menu(): void {
 		$this->render_menu( self::FOOTER_2_COL );
+	}
+
+	public function render_social_menu(): void {
+		$this->render_menu( self::SOCIAL_MENU );
 	}
 
 	private function render_menu( string $menu_slug ): void {
