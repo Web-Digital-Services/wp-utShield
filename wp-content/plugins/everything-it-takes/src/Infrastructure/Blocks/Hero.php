@@ -42,11 +42,11 @@ class Hero extends ACFBlock {
 				'label' => 'Text',
 				'type'  => 'textarea'
 			],
-//			[
-//				'key'   => 'image_id',
-//				'label' => 'Image',
-//				'type'  => 'image',
-//			],
+			[
+				'key'   => 'image_id',
+				'label' => 'Image',
+				'type'  => 'image',
+			],
 			[
 				'key'   => 'cta_text',
 				'label' => 'CTA Text',
