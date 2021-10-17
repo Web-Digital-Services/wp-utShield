@@ -14,7 +14,7 @@ namespace EverythingItTakes\Plugin\Domain;
 
 use EverythingItTakes\Plugin\Infrastructure\Taxonomy\ReviewRatingTaxonomy;
 
-final class Review extends Post {
+final class Review extends WPPost {
 
 	public function get_source(): string {
 		return 'google';

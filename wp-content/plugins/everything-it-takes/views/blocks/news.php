@@ -2,48 +2,31 @@
 	<div class="shell shell--alt grid-container">
 		<div class="section__inner grid-x">
 			<div class="section__head cell">
-				<h6 data-aos="fade-up">NEWS</h6>
-				<h3 data-aos="fade-up">Our Latest News</h3>
+                <?php if ( ! empty( $this->eyebrow ) ) : ?>
+				    <h6 data-aos="fade-up"><?= esc_html( $this->eyebrow ); ?></h6>
+                <?php endif; ?>
+				<?php if ( ! empty( $this->eyebrow ) ) : ?>
+				    <h3 data-aos="fade-up"><?= nl2br( esc_html( $this->title ) ); ?></h3>
+				<?php endif; ?>
 			</div><!-- /.section__head -->
 
 			<div class="section__body cell">
 				<div class="slider-news section__slider" data-aos="fade-up">
 					<div class="slider-news-slider js-slider-news">
-						<div class="slider__slide">
-							<article class="article-news">
-								<a href="#" class="article__link"></a>
-								<figure class="article__image"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/temp/news-image1.jpg" alt="Article image"></figure><!-- /.article__image -->
-								<h5>Delta variant facts from UT Health San Antonio experts</h5>
-								<span class="article__meta">August 10, 2021</span>
-							</article><!-- /.article-news -->
-						</div><!-- /.slider__slide -->
 
-						<div class="slider__slide">
-							<article class="article-news">
-								<a href="#" class="article__link"></a>
-								<figure class="article__image"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/temp/news-image2.jpg" alt="Article image"></figure><!-- /.article__image -->
-								<h5>School of Health Professions: Helping people breathe, move, communicate and live better</h5>
-								<span class="article__meta">July 9, 2021</span>
-							</article><!-- /.article-news -->
-						</div><!-- /.slider__slide -->
+                        <?php foreach ( $this->posts as $post ) : ?>
 
-						<div class="slider__slide">
-							<article class="article-news">
-								<a href="#" class="article__link"></a>
-								<figure class="article__image"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/temp/news-image3.jpg" alt="Article image"></figure><!-- /.article__image -->
-								<h5>Partnership allows employees to support veterans through mentorship program</h5>
-								<span class="article__meta">July 5, 2021</span>
-							</article><!-- /.article-news -->
-						</div><!-- /.slider__slide -->
+                            <div class="slider__slide">
+                                <article class="article-news">
+                                    <a href="<?= esc_url( $post->get_url() ); ?>" class="article__link" target="_blank"></a>
+                                    <figure class="article__image"><img src="<?= esc_url( $post->get_featured_image() ); ?>" alt="<?= esc_attr( $post->get_title() ); ?>"></figure><!-- /.article__image -->
+                                    <h5><?= esc_html( $post->get_title() ); ?></h5>
+                                    <span class="article__meta"><?= esc_html( $post->get_date() ); ?></span>
+                                </article><!-- /.article-news -->
+                            </div><!-- /.slider__slide -->
 
-						<div class="slider__slide">
-							<article class="article-news">
-								<a href="#" class="article__link"></a>
-								<figure class="article__image"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/temp/news-image2.jpg" alt="Article image"></figure><!-- /.article__image -->
-								<h5>UT Health San Antonio to provide student health services at UTSA</h5>
-								<span class="article__meta">June 7, 2021</span>
-							</article><!-- /.article-news -->
-						</div><!-- /.slider__slide -->
+                        <?php endforeach; ?>
+
 					</div><!-- /.slider -->
 
 					<div class="slider__navigation">
@@ -53,9 +36,14 @@
 				</div><!-- /.slider-news -->
 			</div><!-- /.section__body -->
 
-			<div class="section__actions cell" data-aos="fade-up">
-				<a href="#" class="btn btn-rounded btn-rounded--outline">View All News</a>
-			</div><!-- /.section__actions -->
+			<?php if ( ! empty( $this->cta ) ) : ?>
+                <div class="section__actions cell" data-aos="fade-up">
+                    <a href="<?= esc_url( $this->cta['url'] ); ?>"
+                       class="btn btn-rounded btn-rounded--outline"
+                       target="<?= esc_attr( $this->cta['target'] ); ?>"><?= esc_html( $this->cta['title'] ); ?></a>
+                </div><!-- /.section__actions -->
+			<?php endif; ?>
+
 		</div><!-- /.section__inner -->
 	</div><!-- /.shell -->
 </section><!-- /.section-news -->

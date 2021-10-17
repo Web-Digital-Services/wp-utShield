@@ -12,6 +12,6 @@
 
 namespace EverythingItTakes\Plugin\Domain;
 
-final class Location extends Post {
+final class Location extends WPPost {
 
 }
