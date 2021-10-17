@@ -38,7 +38,7 @@ final class NewsImporter {
 			}
 
 			$image_object = self::get_featured_image( $post->featured_media );
-			$image_url    = null !== $image_object ? $image_object->source_url : '';
+			$image_url    = null !== $image_object ? $image_object->media_details->sizes->croppedLarge->source_url : '';
 
 			/**
 			 * Option 2: Include posts without featured image.
