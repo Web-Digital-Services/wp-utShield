@@ -1,5 +1,10 @@
 <?php use BrightNucleus\Views; ?>
 
+<?php
+//\Kint::dump( $this );
+//die();
+?>
+
 <section class="hero js-hero">
 	<figure class="hero__background"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/temp/background-noise.jpg" alt="Background"></figure><!-- /.hero__background -->
 
@@ -40,7 +45,7 @@
 			</div><!-- /.hero__content -->
 
 			<div class="hero__image-contain cell large-6 small-12">
-				<figure class="hero__image"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/temp/hero-image2.png" alt="Image"></figure><!-- /.hero__image -->
+                <figure class="hero__image"><?= wp_get_attachment_image( $this->image_id, 'eit-hero' ); ?></figure><!-- /.hero__image -->
 			</div><!-- /.hero__image-contain -->
 		</div><!-- /.hero__inner -->
 
