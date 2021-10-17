@@ -15,7 +15,7 @@ namespace EverythingItTakes\Plugin\Domain;
 use EverythingItTakes\Plugin\Infrastructure\PostTypes\ProviderPostType;
 use EverythingItTakes\Plugin\Infrastructure\Taxonomy\SpecialtyTaxonomy;
 
-final class Provider extends Post {
+final class Provider extends WPPost {
 
 	public function get_featured_image( string $image_size = 'eit-provider-icon' ): string {
 		return get_the_post_thumbnail( $this->post->ID, $image_size );
