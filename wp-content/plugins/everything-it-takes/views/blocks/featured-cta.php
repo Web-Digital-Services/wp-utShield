@@ -13,18 +13,16 @@
 					<?php foreach ( $this->slides as $slide ) : ?>
 
                         <div class="slide">
-                            <figure>
-								<?php if ( ! empty( $slide['video'] ) ) : ?>
-                                <a class="js-popup-video popup callout__popup video-cursor-hover"
-                                   href="<?= esc_url( $slide['video'] ); ?>">
-									<?php endif; ?>
-
+							<?php if ( ! empty( $slide['video'] ) ) : ?>
+                            <a class="js-popup-video popup callout__popup video-cursor-hover"
+                               href="<?= esc_url( $slide['video'] ); ?>">
+								<?php endif; ?>
+                                <figure>
 									<?= wp_get_attachment_image( $slide['image_id'], 'eit-care-spotlight' ); ?>
-
-									<?php if ( ! empty( $slide['video'] ) ) : ?>
-                                </a>
-							<?php endif; ?>
-                            </figure><!-- /.callout__image -->
+                                </figure>
+								<?php if ( ! empty( $slide['video'] ) ) : ?>
+                            </a>
+						<?php endif; ?>
                         </div><!-- /.slide -->
 
 					<?php endforeach; ?>
@@ -32,17 +30,18 @@
                 </div><!-- /.callout-slider -->
                 <ul class="slider-nav callout-slider-nav">
 
-	                <?php foreach ( $this->slides as $slide ) : ?>
+					<?php foreach ( $this->slides as $slide ) : ?>
 
                         <li>
                             <svg class="circle" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle class="outer-circle" cx="11" cy="11" r="10" stroke="#273252" stroke-width="2"/>
-                                <circle class="outer-circle-grow" cx="11" cy="11" r="10" stroke="#273252" stroke-width="2"/>
+                                <circle class="outer-circle-grow" cx="11" cy="11" r="10" stroke="#273252"
+                                        stroke-width="2"/>
                                 <circle class="inner-circle" cx="11" cy="11" r="4" fill="#273252"/>
                             </svg>
                         </li>
 
-	                <?php endforeach; ?>
+					<?php endforeach; ?>
 
                 </ul><!-- /.callout-slider-nav -->
             </div><!-- /.callout__slider-contain -->
@@ -53,7 +52,7 @@
                 <div class="callout__heading marker-circle marker-circle--darkorange" data-aos="fade-up">
                     <h2><?= nl2br( esc_html( $this->title ) ); ?></h2>
                     <figure class="section__heading-circle">
-	                    <?= Views::render( 'icons/marker-circle' ); ?>
+						<?= Views::render( 'icons/marker-circle' ); ?>
                     </figure><!-- /.callout__heading-figure -->
                 </div><!-- /.callout__heading -->
 
