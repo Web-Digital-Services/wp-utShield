@@ -103,10 +103,11 @@ namespace EverythingItTakes\Theme;
 
 						<div class="search menu__search">
 							<div class="search__inner">
-								<form action="#" method="get">
+								<form action="https://www.uthscsa.edu/university/search-results" method="get">
+									<input type="hidden" name="cx" value="010437378810256615478:b-bydlxgrme">
 									<figure class="search__icon"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/ico-google.svg" alt="Google icon"></figure><!-- /.search__icon -->
 									<label for="search" class="hidden"></label>
-									<input type="text" placeholder="Search UT Health San Antonio" name="search" id="search" value="" class="search__field"/>
+									<input type="text" placeholder="Search UT Health San Antonio" name="as_q" id="as_q" value="" class="search__field"/>
 									<input type="submit" value="GO" class="search__btn"/>
 								</form>
 							</div><!-- /.search__inner -->
