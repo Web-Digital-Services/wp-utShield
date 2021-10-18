@@ -112,7 +112,13 @@ final class Menus implements Registerable {
 	private function get_menu_by_location( string $menu_location_slug ): ?\WP_Term {
 		$menu_locations = get_nav_menu_locations();
 
-		return wp_get_nav_menu_object( $menu_locations[ $menu_location_slug ] ) ?: null;
+		if ( ! isset( $menu_locations[ $menu_location_slug ] ) ) {
+			return null;
+		}
+
+		$menu = wp_get_nav_menu_object( $menu_locations[ $menu_location_slug ] );
+
+		return false !== $menu ? $menu : null;
 	}
 
 	private function get_menu_items_by_location( string $menu_location_slug ): array {
