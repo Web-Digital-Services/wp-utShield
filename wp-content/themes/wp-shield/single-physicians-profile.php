@@ -25,30 +25,34 @@ get_header(); ?>
 					<div class="grid-x grid-margin-x">
 						<div class="cell small-12 medium-6 large-4 small-order-3 medium-order-3 large-order-1">
 							<h2 class="h4"> Practice Locations</h2>
-							<address>
-								<div class="loose-list">
-									<ul>
-										<li><a>Neurosurgery - Medical Arts and Research Center - MARC</a></li>
-										<li><a>210-450-9060</a></li>
-									</ul>
-								</div>
-							</address>
-							<address>
-								<div class="loose-list">
-									<ul>
-										<li><a>Neurosurgery - Medical Arts and Research Center - MARC</a></li>
-										<li><a>210-450-9060</a></li>
-									</ul>
-								</div>
-							</address>
-							<address>
-								<div class="loose-list">
-									<ul>
-										<li><a>Neurosurgery - Medical Arts and Research Center - MARC</a></li>
-										<li><a>210-450-9060</a></li>
-									</ul>
-								</div>
-							</address>
+							<?php
+								$physician_locations = get_field('physician_locations_relationship');
+								if( $physician_locations ): ?>
+									<?php 
+										foreach( $physician_locations as $location ): 
+										// Setup this post for WP functions (variable must be named $post).
+										setup_postdata($location); ?>
+											<address>
+												<div class="loose-list">
+													<?php 
+														$location = get_post($location); 
+														$location_url = types_render_field( "url-location", array( "separator" => ", ", "id" => $location, "raw" => "true" )); 
+														$phone_number = types_render_field( "phone-number-locations", array( "separator" => ", ", "id" => $location )); 
+														if(  preg_match( '/^\+\d(\d{3})(\d{3})(\d{4})$/', $phone_number,  $matches ) ){
+															$rendered_phone_number = $matches[1] . '-' .$matches[2] . '-' . $matches[3];
+														}
+													?>
+													<ul>
+														<li><a href="<?php echo $location_url; ?>"><?php echo get_the_title( $location->ID ); ?></a></li>
+														<li><a href="tel:<?php echo $phone_number; ?>"><?php echo $rendered_phone_number;?></a></li>
+													</ul>
+												</div>
+											</address>
+									<?php endforeach; ?>
+									<?php 
+									// Reset the global post object so that the rest of the page works correctly.
+									wp_reset_postdata(); ?>
+								<?php endif; ?>
 						</div>
 						<div class="cell small-12 medium-6 large-4 small-order-1 medium-order-1 large-order-2">
 							<?php 
