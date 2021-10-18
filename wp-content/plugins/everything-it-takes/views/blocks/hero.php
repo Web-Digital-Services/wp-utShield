@@ -5,7 +5,7 @@
 //die();
 ?>
 
-<section class="hero js-hero<?= $this->is_random ? ' js-random-hero' : ''; ?>" data-block-type="hero">
+<section class="hero js-hero<?= $this->is_random ? ' js-random-block js-random-hero' : ''; ?>" data-block-type="hero">
 	<figure class="hero__background"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/temp/background-noise.jpg" alt="Background"></figure><!-- /.hero__background -->
 
 	<div class="shell shell--alt grid-container">
