@@ -4,6 +4,11 @@ $dark-orange: #7A0F00;
 $dark-beige: #EFE1CC;
 $beige:#F0ECE2;
 $light-beige:#F7F5F0;
+
+//Global Tweaks
+.page-content {
+    min-width: 100%;
+}
 //Search Bar Fixes
 header#regular .search {
     min-width: 287px;
