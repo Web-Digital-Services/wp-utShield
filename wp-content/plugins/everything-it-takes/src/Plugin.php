@@ -14,6 +14,7 @@ namespace EverythingItTakes\Plugin;
 
 use BrightNucleus\Views;
 use BrightNucleus\View\Location\FilesystemLocation;
+use EverythingItTakes\Plugin\Application\BlockRandomizer;
 use EverythingItTakes\Plugin\Infrastructure\Blocks;
 use EverythingItTakes\Plugin\Infrastructure\BlocksAssetLoader;
 use EverythingItTakes\Plugin\Infrastructure\ImageSizes;
@@ -36,6 +37,7 @@ final class Plugin {
 
 	protected array $services = [
 		// Application
+		BlockRandomizer::class,
 
 		// Infrastructure
 		Blocks::class,
