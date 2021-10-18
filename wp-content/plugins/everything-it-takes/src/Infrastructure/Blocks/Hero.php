@@ -12,6 +12,7 @@
 
 namespace EverythingItTakes\Plugin\Infrastructure\Blocks;
 
+use EverythingItTakes\Plugin\Application\BlockRandomizer;
 use EverythingItTakes\Plugin\Infrastructure\ACFBlock;
 
 class Hero extends ACFBlock {
@@ -22,6 +23,14 @@ class Hero extends ACFBlock {
 
 	public function get_title(): string {
 		return 'Hero';
+	}
+
+	public function get_args(): array {
+		$args = parent::get_args();
+
+		$args['is_random'] = BlockRandomizer::is_block_random();
+
+		return $args;
 	}
 
 	public function get_fields(): array {
