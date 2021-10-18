@@ -406,4 +406,13 @@ $(window).scroll(function() {
 	}
 });
 
+  /**
+   * Disable enter key on search input.
+   */
+  $('#find').keypress(function(event) {
+    if (event.keyCode == 13) {
+      event.preventDefault();
+    }
+  });
+
 });
