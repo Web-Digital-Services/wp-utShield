@@ -10,6 +10,12 @@ jQuery(function ($) {
     if ( heroes.length !== 0 ) {
         const random_hero = getRandomInt(heroes.length);
         heroes[random_hero].style.display = 'block';
+        heroes[random_hero].classList.remove('js-random-hero');
+
+        const heroes_to_remove = document.querySelectorAll('.js-random-hero');
+        heroes_to_remove.forEach(function (item, index) {
+            item.remove();
+        });
     }
 
     if ( spotlights.length !== 0 ) {
