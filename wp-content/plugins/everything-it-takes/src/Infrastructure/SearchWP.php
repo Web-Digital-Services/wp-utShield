@@ -1,4 +1,14 @@
-<?php
+<?php declare( strict_types=1 );
+
+/**
+ * EverythingItTakes.com Plugin.
+ *
+ * @package   EverythingItTakes\Plugin
+ * @author    Ten Adams <digital@tenadams.com>
+ * @license   MIT
+ * @link      https://tenadams.com/
+ * @copyright 2021 Ten Adams
+ */
 
 namespace EverythingItTakes\Plugin\Infrastructure;
 
@@ -27,13 +37,21 @@ final class SearchWP implements Registerable {
 		 * @url https://searchwp.com/extensions/term-archive-priority/
 		 */
 		add_filter( 'searchwp_tax_term_or_logic', '__return_true' );
-		
+
 		/**
 		 * Enable partial and fuzzy matches.
 		 *
 		 * @url https://searchwp.com/documentation/hooks/searchwp-query-partial_matches/
 		 */
 		add_filter( 'searchwp\query\partial_matches', '__return_true' );
+
+		/**
+		 * Enable debugging (because Advanced tab shows nothing on live site, so
+		 * can't turn on).
+		 *
+		 * @url https://searchwp.com/documentation/hooks/searchwp-debug/
+		 */
+		add_filter( 'searchwp\debug', '__return_true' );
 	}
 
 	/**
