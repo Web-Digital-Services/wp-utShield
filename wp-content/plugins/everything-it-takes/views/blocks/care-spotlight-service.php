@@ -1,6 +1,6 @@
 <?php use BrightNucleus\Views; ?>
 
-<section class="callout callout--alt callout--alt-large<?= $this->is_random ? ' js-random-care-spotlight' : ''; ?>">
+<section class="callout callout--alt callout--alt-large<?= $this->is_random ? ' js-random-block js-random-care-spotlight' : ''; ?>">
 	<h6 class="callout__title"><?= nl2br( esc_html( $this->title_left ) ); ?></h6><!-- /.callout__title -->
 
 	<div class="shell shell--alt callout__shell grid-container">
