@@ -961,13 +961,14 @@ Btn menu
   position: relative;
   display: inline-block;
   width: 3.4rem;
-  height: 2rem;
+  height: 4.6rem;
   font-size: 1.3rem;
   font-weight: 700;
   text-align: center; }
   @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
     .btn-menu {
-      width: 3.2rem; } }
+      width: 3.2rem;
+      height: 2.4rem; } }
   .btn-menu span {
     position: absolute;
     display: block;
@@ -2732,15 +2733,18 @@ Menu
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
       .menu .menu__accordion {
         margin-bottom: 4.3rem; } }
-  .menu .menu__body {
+  .menu .menu__body, .menu .menu__footer {
     margin-bottom: 8.4rem; }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .menu .menu__body {
+      .menu .menu__body, .menu .menu__footer {
         margin-bottom: 4.4rem; } }
   .menu .menu__footer {
     color: #635853;
     font-size: 1.4rem;
     font-weight: 500; }
+    @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
+      .menu .menu__footer {
+        margin-bottom: 0; } }
   .menu .menu__footer h6 {
     color: #635853;
     font-weight: 500;

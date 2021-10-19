@@ -6,13 +6,14 @@ Btn menu
   position: relative;
   display: inline-block;
   width: 3.4rem;
-  height: 2rem;
+  height: 4.6rem;
   font-size: 1.3rem;
   font-weight: 700;
   text-align: center;
 
   @include breakpoint-down(mobile) {
     width: 3.2rem;
+    height: 2.4rem;
   }
 
   span {
@@ -82,5 +83,5 @@ Btn menu
 }
 
 .btn-menu:focus {
-  color: $c-offblack !important;
+  color: $c-offblack !important; 
 }
