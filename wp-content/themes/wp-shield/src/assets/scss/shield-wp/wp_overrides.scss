@@ -4,6 +4,7 @@ $dark-orange: #7A0F00;
 $dark-beige: #EFE1CC;
 $beige:#F0ECE2;
 $light-beige:#F7F5F0;
+$mobile: 600px;
 
 //Global Tweaks
 .page-content {
@@ -17,7 +18,7 @@ header#regular .search {
 .nav-bar .top-bar .top-bar-left ul.desktop-menu li.current_page_item, .nav-bar .top-bar .top-bar-left ul.desktop-menu li.current-page-ancestor{
 	background: $dark-orange !important;
 }
-@media only screen and (max-width: 600px)  {
+@media only screen and (max-width: $mobile)  {
     .desktop-menu, .site-navigation .top-bar-left {
         display: block !important;
     }
@@ -29,4 +30,13 @@ footer a:visited:not(.button), footer a:focus {
 footer[role=contentinfo]{
     //hide margin for mini orage footer info
 	margin-top: 0rem !important;
+}
+// Sidebar Filter
+@media only screen and (max-width: $mobile)  {
+	.filters{
+		display:none;
+	}
+		.filters.active{
+		display: block;
+	}
 }
