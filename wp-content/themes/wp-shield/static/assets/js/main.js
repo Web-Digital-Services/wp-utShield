@@ -333,8 +333,9 @@ $videoPopup.magnificPopup({
     type: 'iframe',
 });
 
-
-AOS.init();
+AOS.init({
+  once: true
+});
 
 /**
  * Handle animations on scroll.
@@ -368,8 +369,6 @@ $imageToAnimate.each(function() {
 	    const scroll = $(window).scrollTop();
 		   if ($this.isOnScreen() == true) {
 				$this.addClass('animated');
-		   } else {
-				$this.removeClass('animated');
 		   }
 	});
 
