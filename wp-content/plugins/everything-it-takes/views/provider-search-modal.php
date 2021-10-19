@@ -36,7 +36,7 @@
                                             <li>
                                                 <a href="<?= esc_url( $provider->get_url() ); ?>" class="person" target="_blank">
                                                     <figure><?= wp_kses_post( $provider->get_featured_image() ); ?></figure>
-                                                    <p><?= esc_html( $provider->get_title() ); ?> <span>in <?= esc_html( $provider->get_specialty_name() ); ?></span></p>
+                                                    <p><?= esc_html( $provider->get_title() ); ?><span>, <?= esc_html( $provider->get_specialty_name() ); ?></span></p>
                                                 </a>
                                             </li>
                                         <?php endforeach; ?>
