@@ -38,7 +38,25 @@ final class NewsImporter {
 			}
 
 			$image_object = self::get_featured_image( $post->featured_media );
-			$image_url    = null !== $image_object ? $image_object->media_details->sizes->croppedLarge->source_url : '';
+
+			if ( 'application/pdf' === $image_object->mime_type ) {
+				continue;
+			}
+
+			$image_url = '';
+
+			if ( null !== $image_object ) {
+
+				if ( isset( $image_object->media_details->sizes->croppedLarge->source_url ) ) {
+					$image_url = $image_object->media_details->sizes->croppedLarge->source_url;
+//				} elseif ( isset( $image_object->media_details->sizes->large->source_url ) ) {
+//					$image_url = $image_object->media_details->sizes->large->source_url;
+				}
+			}
+
+			if ( empty( $image_url ) ) {
+				continue;
+			}
 
 			/**
 			 * Option 2: Include posts without featured image.
