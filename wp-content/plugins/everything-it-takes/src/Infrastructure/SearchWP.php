@@ -52,6 +52,21 @@ final class SearchWP implements Registerable {
 		 * @url https://searchwp.com/documentation/hooks/searchwp-debug/
 		 */
 		add_filter( 'searchwp\debug', '__return_true' );
+
+		add_filter( 'searchwp\swp_query\args', [ $this, 'short_circuit_ajax_engine' ] );
+		add_filter( 'searchwp_term_archive_enabled', [ $this, 'enable_term_archives_in_results' ], 10, 2 );
+
+		/**
+		 * Elio from SearchWP support suggested adding on 19 Oct 2021 to prevent
+		 * providers / locations, showing for taxonomy search terms, but posts still
+		 * showing currently.
+		 *
+		 * '[T]o prevent the posts to be found by the taxonomy terms, you can use this
+		 * code to prevent the indexing of the taxonomy terms data'.
+		 */
+		add_filter( 'searchwp\source\post\attributes\taxonomy\term', function( $term_data ){
+			return [];
+		});
 	}
 
 	/**
@@ -68,6 +83,42 @@ final class SearchWP implements Registerable {
 
 	public function remove_live_search_css_except_positioning() {
 		wp_dequeue_style( 'searchwp-live-search' );
+	}
+
+	/**
+	 * Elio from SearchWP support suggested adding on 19 Oct 2021 to fix term
+	 * archives not showing on SearchWP live search results.
+	 *
+	 * @url https://gist.github.com/BrElio/00e8f9f9dbbd373d6763ab86322df89e#file-swp_11902-php-L4-L17
+	 *
+	 * @param $args
+	 * @return mixed
+	 */
+	public function short_circuit_ajax_engine( $args ) {
+		if ( wp_doing_ajax() ) {
+			// Short circuit.
+			$args['engine'] = '';
+		}
+
+		return $args;
+	}
+
+	/**
+	 * Elio from SearchWP support suggested adding on 19 Oct 2021 to fix term
+	 * archives not showing on SearchWP live search results.
+	 *
+	 * @url https://gist.github.com/BrElio/00e8f9f9dbbd373d6763ab86322df89e#file-swp_11902-php-L4-L17
+	 *
+	 * @param $enabled
+	 * @param $engine
+	 * @return bool|mixed
+	 */
+	public function enable_term_archives_in_results( $enabled, $engine ) {
+		if ( isset( $_REQUEST['action'] ) && 'searchwp_live_search' == $_REQUEST['action'] ) {
+			$enabled = true;
+		}
+
+		return $enabled;
 	}
 
 }
