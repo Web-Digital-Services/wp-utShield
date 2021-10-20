@@ -122,6 +122,17 @@ if (document.querySelectorAll('.js-slider-callout').length > 0) {
 }
 
 
+/**
+ * Mobile placeholder text.
+ */
+
+$(window).on('load resize', function () {  
+  if ($(window).width() < 700) {
+    $(".js-find").attr("placeholder", "Browse all Providers");
+    } else {
+    $(".js-find").attr("placeholder", "Browse Providers by name, specialty or location");
+  }
+});
 
 
 /**
