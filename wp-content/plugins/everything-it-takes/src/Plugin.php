@@ -19,9 +19,12 @@ use EverythingItTakes\Plugin\Infrastructure\Blocks;
 use EverythingItTakes\Plugin\Infrastructure\BlocksAssetLoader;
 use EverythingItTakes\Plugin\Infrastructure\ImageSizes;
 use EverythingItTakes\Plugin\Infrastructure\Menus;
+use EverythingItTakes\Plugin\Infrastructure\Options\FooterOptions;
+use EverythingItTakes\Plugin\Infrastructure\Options\SiteOptions;
 use EverythingItTakes\Plugin\Infrastructure\PostTypes\ReviewPostType;
 use EverythingItTakes\Plugin\Infrastructure\SearchWP;
 use EverythingItTakes\Plugin\Infrastructure\Taxonomy\ReviewRatingTaxonomy;
+use EverythingItTakes\Plugin\UI\Footer;
 use EverythingItTakes\Plugin\UI\ProviderSearchModal;
 
 final class Plugin {
@@ -58,6 +61,10 @@ final class Plugin {
 		Blocks\News::class,
 		Blocks\Reviews::class,
 
+		// Infrastructure/Options
+		FooterOptions::class,
+		SiteOptions::class,
+
 		// Infrastructure/PostTypes
 		ReviewPostType::class,
 
@@ -65,6 +72,7 @@ final class Plugin {
 		ReviewRatingTaxonomy::class,
 
 		// UI
+		Footer::class,
 		ProviderSearchModal::class
 	];
 
