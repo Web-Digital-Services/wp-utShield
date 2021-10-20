@@ -63,10 +63,21 @@ final class SearchWP implements Registerable {
 		 *
 		 * '[T]o prevent the posts to be found by the taxonomy terms, you can use this
 		 * code to prevent the indexing of the taxonomy terms data'.
+		 *
+		 * NB. You must re-index SearchWP after applying this change.
 		 */
 		add_filter( 'searchwp\source\post\attributes\taxonomy\term', function( $term_data ){
 			return [];
 		});
+
+		/**
+		 * Enable regex pattern match tokenization in SearchWP.
+		 *
+		 * Added here, because Advanced tab not showing on live site.
+		 *
+		 * @url https://searchwp.com/documentation/hooks/searchwp-tokens-tokenize_pattern_matches/
+		 */
+		add_filter( 'searchwp\tokens\tokenize_pattern_matches', '__return_true' );
 	}
 
 	/**
