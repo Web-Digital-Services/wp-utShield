@@ -66,9 +66,9 @@ final class SearchWP implements Registerable {
 		 *
 		 * NB. You must re-index SearchWP after applying this change.
 		 */
-		add_filter( 'searchwp\source\post\attributes\taxonomy\term', function( $term_data ){
+		add_filter( 'searchwp\source\post\attributes\taxonomy\term', function ( $term_data ) {
 			return [];
-		});
+		} );
 
 		/**
 		 * Enable regex pattern match tokenization in SearchWP.
@@ -78,6 +78,12 @@ final class SearchWP implements Registerable {
 		 * @url https://searchwp.com/documentation/hooks/searchwp-tokens-tokenize_pattern_matches/
 		 */
 		add_filter( 'searchwp\tokens\tokenize_pattern_matches', '__return_true' );
+
+		add_filter( 'searchwp_term_archive_term_args', function ( $args ) {
+			do_action( 'searchwp\debug\log', 'Term Archive args: ' . print_r( $args, true ), 'Ticket 1462719' );
+
+			return $args;
+		} );
 	}
 
 	/**
