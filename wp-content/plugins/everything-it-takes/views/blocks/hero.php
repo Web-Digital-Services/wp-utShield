@@ -9,8 +9,8 @@
 	<figure class="hero__background"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/temp/background-noise.jpg" alt="Background"></figure><!-- /.hero__background -->
 
 	<div class="shell shell--alt grid-container">
-		<div class="hero__inner grid-x">
-			<div class="hero__content cell large-6 small-12">
+		<div class="hero__inner">
+			<div class="hero__content">
                 <?php if ( ! empty( $this->eyebrow ) ) : ?>
 				    <h1 class="hero__subheading"><?= esc_html( $this->eyebrow ); ?></h1>
                 <?php endif; ?>
@@ -44,7 +44,7 @@
 				</div><!-- /.hero__actions -->
 			</div><!-- /.hero__content -->
 
-			<div class="hero__image-contain cell large-6 small-12">
+			<div class="hero__image-contain">
                 <figure class="hero__image"><?= wp_get_attachment_image( $this->image_id, 'eit-hero' ); ?></figure><!-- /.hero__image -->
 			</div><!-- /.hero__image-contain -->
 		</div><!-- /.hero__inner -->
