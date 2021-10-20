@@ -2407,18 +2407,22 @@ Hero
         left: 0;
         width: 100%;
         z-index: 5;
-        visibility: visible; } }
+        visibility: visible;
+        background: #F7F5F0;
+        border-top: 1px solid #D4CEC4;
+        padding: 1.3rem 2rem;
+        box-shadow: 0 -0.4rem 0.8rem rgba(23, 23, 23, 0.1); } }
   @media (max-width: 1023px) {
     .hero .hero__actions a {
       display: none; } }
   @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
     .hero .hero__actions a {
-      display: block;
-      width: 100%;
-      border-radius: 0;
+      display: inline-block;
       font-size: 1.4rem;
+      padding: 1.2rem 2.4rem;
       color: #fff;
-      min-height: 5.6rem;
+      width: auto;
+      min-height: 0;
       background-color: #C0511B;
       border-color: #C0511B; } }
   @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
@@ -2427,7 +2431,7 @@ Hero
       border-color: #7A0F00; } }
   @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
     .hero .hero__actions a figure {
-      visibility: hidden; } }
+      display: none; } }
   .hero .hero__menu {
     position: fixed;
     top: 0;

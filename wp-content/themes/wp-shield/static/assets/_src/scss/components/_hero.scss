@@ -291,6 +291,10 @@ Hero
       width: 100%;
       z-index: 5;
       visibility: visible;
+      background: $c-lightbeige;
+      border-top: 1px solid $c-mediumdarkbeige;
+      padding: 1.3rem 2rem;
+      box-shadow: 0 -.4rem .8rem rgba($c-offblack, 0.1);
     }
   }
 
@@ -300,12 +304,12 @@ Hero
     }
     
     @include breakpoint-down(mobile) {
-      display: block;
-      width: 100%;
-      border-radius: 0;
+      display: inline-block;
       font-size: 1.4rem;
+      padding: 1.2rem 2.4rem;
       color: $c-white;
-      min-height: 5.6rem;
+      width: auto;
+      min-height: 0;
       background-color: $c-orange;
       border-color: $c-orange;
     }
@@ -320,7 +324,7 @@ Hero
 
   .hero__actions a figure {
     @include breakpoint-down(mobile) {
-      visibility: hidden;
+      display: none;
     }
   }
 
