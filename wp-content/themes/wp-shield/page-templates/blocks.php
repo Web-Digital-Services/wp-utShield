@@ -141,7 +141,7 @@ namespace EverythingItTakes\Theme;
 				<div class="shell shell--alt grid-container">
 					<div class="footer__inner">
 						<div class="footer__content grid-x">
-							<div class="footer__group cell large-3 medium-6 small-12 footer__group--alt" data-aos="fade-up">
+							<div class="footer__group cell large-3 medium-6 small-12 footer__group--alt">
 								<a href="http://uthscsa.edu">
 									<figure class="footer__logo"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/logo.svg" alt="Logo"></figure><!-- /.footer__logo -->
 								</a>
@@ -169,7 +169,7 @@ namespace EverythingItTakes\Theme;
 								</div><!-- /.footer__list -->
 							</div><!-- /.footer__group -->
 
-							<div class="footer__group cell large-3 medium-6 small-12" data-aos="fade-up">
+							<div class="footer__group cell large-3 medium-6 small-12">
 								<div class="footer__list">
 									<?php do_action( 'eit_footer_1_col_menu' ); ?>
 
@@ -179,7 +179,7 @@ namespace EverythingItTakes\Theme;
 								</div><!-- /.footer__list -->
 							</div><!-- /.footer__group -->
 
-							<div class="footer__group cell large-6 medium-12 small-12" data-aos="fade-up">
+							<div class="footer__group cell large-6 medium-12 small-12">
 								<div class="footer__list">
 									<?php do_action( 'eit_footer_2_col_menu' ); ?>
 								</div><!-- /.footer__list -->
@@ -188,7 +188,7 @@ namespace EverythingItTakes\Theme;
 
 						<aside class="footer__aside">
 							<div class="footer__aside-inner grid-x">
-								<div class="footer__entry cell" data-aos="fade-up">
+								<div class="footer__entry cell">
 									<p>Links from websites affiliated with The University of Texas Health Science Center at San Antonio's website (uthscsa.edu) to other websites do not constitute or imply university endorsement of those sites, their content, or products and services associated with those sites. The content on this website is intended to be used for informational purposes only. Health information on this site is not meant to be used to diagnose or treat conditions. Consult a health care provider if you are in need of treatment.</p>
 								</div><!-- /.footer__entry -->
 								<div class="copyright footer__copyright cell">

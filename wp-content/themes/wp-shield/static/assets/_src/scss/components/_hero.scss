@@ -14,7 +14,11 @@ Hero
 
   @include breakpoint-down(mobile) {
     padding-top: 12.4rem;
-    height: 80rem;
+    height: 82rem;
+  }
+  
+  @include breakpoint-down(mobile-medium) {
+    height: 67rem;
   }
   
   .shell {
@@ -23,9 +27,15 @@ Hero
   
   h1 {
     font-size: 1.4rem;
-    letter-spacing: 0.2em;
+    letter-spacing: .2rem;
     margin-bottom: 2.2rem;
     text-transform: uppercase;
+    
+    @include breakpoint-down(mobile) {
+      letter-spacing: .05rem;
+      font-size: 1.3rem;
+      margin-bottom: 1.6rem;
+    }
   }
 
   h2 {
@@ -127,6 +137,10 @@ Hero
   .hero__heading {
     position: relative;
     margin-bottom: 3.2rem;
+    
+    @include breakpoint-down(mobile) {
+      margin-bottom: 1.6rem;
+    }
   }
 
   .hero__heading-element {
@@ -159,8 +173,8 @@ Hero
     position: relative;
     height: 100%;
 
-    @include breakpoint-down(mobile) {
-      display: flex;
+    @include breakpoint-down(tablet) {
+      flex-direction: column;
       padding: 0;
       
     }
@@ -197,18 +211,23 @@ Hero
     
     @include breakpoint-down(tablet) {
       width: 130%;
-      margin-right: -22rem;
-      margin-top: -6rem;
-      margin-left: auto;
+      margin: -18rem -22rem 0 auto;
       max-width: 70rem;
     }
     
+    @include breakpoint-down(tablet-custom) {
+      margin: 0 -14rem 0 auto;  
+      max-width: 65rem;
+    }
+    
     @include breakpoint-down(mobile) {
-      width: 150%;
-      margin-right: -10rem;
-      
-      margin-top: -3rem;
-      max-width: 60rem;
+      width: 100%;
+      margin: 0 0 0 auto;
+      max-width: 50rem;
+    }
+    
+    @include breakpoint-down(mobile-medium) {
+      max-width: 40rem;
     }
   }
 
@@ -224,8 +243,12 @@ Hero
     @include breakpoint-down(tablet) {
       max-width: none;
       width: 100%;
-      padding: 5rem 0 0;
-      max-width: 36rem;
+      padding: 5rem 0 0; 
+      max-width: 38rem;
+    }
+    
+    @include breakpoint-down(mobile) {
+      padding: 0;
     }
   }
 
@@ -243,7 +266,7 @@ Hero
   .hero__entry {
     font-weight: 500;
     font-size: 2rem;
-    max-width: 49rem;
+    max-width: 50rem;
     line-height: 1.7;
 
     @include breakpoint-down(tablet) {
@@ -330,8 +353,12 @@ Hero
     }
 
     @include breakpoint-down(mobile) {
-      height: 80rem;
+      height: 82rem;
       padding: 15rem 2rem 0;
+    }
+    
+    @include breakpoint-down(mobile-medium) {
+      height: 67rem;
     }
   }
   

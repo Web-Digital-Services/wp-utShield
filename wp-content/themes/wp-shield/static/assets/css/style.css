@@ -16,7 +16,6 @@
 * {
   padding: 0;
   margin: 0;
-  outline: 0;
   box-sizing: border-box; }
 
 *:before,
@@ -961,13 +960,14 @@ Btn menu
   position: relative;
   display: inline-block;
   width: 3.4rem;
-  height: 2rem;
+  height: 4.6rem;
   font-size: 1.3rem;
   font-weight: 700;
   text-align: center; }
   @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
     .btn-menu {
-      width: 3.2rem; } }
+      width: 3.2rem;
+      height: 2.4rem; } }
   .btn-menu span {
     position: absolute;
     display: block;
@@ -1114,6 +1114,13 @@ Callout basic
   color: #fff;
   margin: 8rem 0 4rem;
   overflow: hidden; }
+  .callout--basic::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: #C0511B; }
   @media (max-width: 1023px) {
     .callout--basic {
       margin: 11rem 0 4rem; } }
@@ -2202,14 +2209,22 @@ Hero
   @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
     .hero {
       padding-top: 12.4rem;
-      height: 80rem; } }
+      height: 82rem; } }
+  @media (max-width: 575px) {
+    .hero {
+      height: 67rem; } }
   .hero .shell {
     height: 100%; }
   .hero h1 {
     font-size: 1.4rem;
-    letter-spacing: 0.2em;
+    letter-spacing: .2rem;
     margin-bottom: 2.2rem;
     text-transform: uppercase; }
+    @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
+      .hero h1 {
+        letter-spacing: .05rem;
+        font-size: 1.3rem;
+        margin-bottom: 1.6rem; } }
   .hero h2 {
     letter-spacing: -0.05em;
     line-height: 1;
@@ -2275,6 +2290,9 @@ Hero
   .hero .hero__heading {
     position: relative;
     margin-bottom: 3.2rem; }
+    @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
+      .hero .hero__heading {
+        margin-bottom: 1.6rem; } }
   .hero .hero__heading-element {
     position: absolute;
     top: 12rem;
@@ -2299,9 +2317,9 @@ Hero
     justify-content: space-between;
     position: relative;
     height: 100%; }
-    @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
+    @media (max-width: 1023px) {
       .hero .hero__inner {
-        display: flex;
+        flex-direction: column;
         padding: 0; } }
   .hero .hero__menu {
     max-width: 95rem;
@@ -2328,16 +2346,20 @@ Hero
     @media (max-width: 1023px) {
       .hero .hero__image {
         width: 130%;
-        margin-right: -22rem;
-        margin-top: -6rem;
-        margin-left: auto;
+        margin: -18rem -22rem 0 auto;
         max-width: 70rem; } }
+    @media (max-width: 899px) {
+      .hero .hero__image {
+        margin: 0 -14rem 0 auto;
+        max-width: 65rem; } }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
       .hero .hero__image {
-        width: 150%;
-        margin-right: -10rem;
-        margin-top: -3rem;
-        max-width: 60rem; } }
+        width: 100%;
+        margin: 0 0 0 auto;
+        max-width: 50rem; } }
+    @media (max-width: 575px) {
+      .hero .hero__image {
+        max-width: 40rem; } }
   .hero .hero__content {
     padding: 8.6rem 0 0 5.6rem;
     max-width: 66rem; }
@@ -2350,7 +2372,10 @@ Hero
         max-width: none;
         width: 100%;
         padding: 5rem 0 0;
-        max-width: 36rem; } }
+        max-width: 38rem; } }
+    @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
+      .hero .hero__content {
+        padding: 0; } }
   .hero .hero__chat {
     position: absolute;
     bottom: 2.5rem;
@@ -2362,7 +2387,7 @@ Hero
   .hero .hero__entry {
     font-weight: 500;
     font-size: 2rem;
-    max-width: 49rem;
+    max-width: 50rem;
     line-height: 1.7; }
     @media (max-width: 1023px) {
       .hero .hero__entry {
@@ -2428,8 +2453,11 @@ Hero
         padding: 18rem 4rem 0; } }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
       .hero .hero__menu {
-        height: 80rem;
+        height: 82rem;
         padding: 15rem 2rem 0; } }
+    @media (max-width: 575px) {
+      .hero .hero__menu {
+        height: 67rem; } }
   .side-menu .hero .hero__menu {
     padding: 13rem 12rem 0 20.5rem; }
     @media (max-width: 1199px) {
@@ -2732,15 +2760,18 @@ Menu
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
       .menu .menu__accordion {
         margin-bottom: 4.3rem; } }
-  .menu .menu__body {
+  .menu .menu__body, .menu .menu__footer {
     margin-bottom: 8.4rem; }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .menu .menu__body {
+      .menu .menu__body, .menu .menu__footer {
         margin-bottom: 4.4rem; } }
   .menu .menu__footer {
     color: #635853;
     font-size: 1.4rem;
     font-weight: 500; }
+    @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
+      .menu .menu__footer {
+        margin-bottom: 0; } }
   .menu .menu__footer h6 {
     color: #635853;
     font-weight: 500;
@@ -2816,10 +2847,10 @@ Nav
 .nav--basic a {
   display: block;
   border-radius: .8rem;
-  padding: 1.4rem 1rem 1.4rem 0;
+  padding: 1.4rem 2.6rem 1.4rem 0;
   transition: all .3s ease; }
   .nav--basic a:hover {
-    padding-left: 1.6rem;
+    padding: 1.4rem 1.6rem;
     color: #C0511B;
     background: #F7F5F0; }
 
@@ -3123,6 +3154,14 @@ Section testimonials
   position: relative;
   padding: 20rem 0 15rem;
   color: #fff; }
+  .section-testimonials::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: #27829E; }
   @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
     .section-testimonials {
       padding: 8rem 0; } }

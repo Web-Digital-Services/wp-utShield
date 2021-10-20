@@ -116,7 +116,7 @@ Menu
     }
   }
 
-  .menu__body {
+  .menu__body, .menu__footer {
     margin-bottom: 8.4rem;
 
     @include breakpoint-down(mobile) {
@@ -128,6 +128,10 @@ Menu
     color: $c-extradarkbeige;
     font-size: 1.4rem;
     font-weight: 500;
+
+    @include breakpoint-down(mobile) {
+      margin-bottom: 0;
+    }
   }
 
   .menu__footer h6 {
