@@ -188,12 +188,8 @@ namespace EverythingItTakes\Theme;
 
 						<aside class="footer__aside">
 							<div class="footer__aside-inner grid-x">
-								<div class="footer__entry cell">
-									<p>Links from websites affiliated with The University of Texas Health Science Center at San Antonio's website (uthscsa.edu) to other websites do not constitute or imply university endorsement of those sites, their content, or products and services associated with those sites. The content on this website is intended to be used for informational purposes only. Health information on this site is not meant to be used to diagnose or treat conditions. Consult a health care provider if you are in need of treatment.</p>
-								</div><!-- /.footer__entry -->
-								<div class="copyright footer__copyright cell">
-									<p>Copyright 2021 UT Health San Antonio</p>
-								</div><!-- /.copyright -->
+								<?php do_action( 'eit_footer_text' ); ?>
+								<?php do_action( 'eit_footer_copyright' ); ?>
 							</div><!-- /.footer__aside-inner -->
 						</aside><!-- /.footer__aside -->
 					</div><!-- /.footer__inner -->
