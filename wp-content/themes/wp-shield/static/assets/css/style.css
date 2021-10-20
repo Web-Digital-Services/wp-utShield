@@ -1114,6 +1114,13 @@ Callout basic
   color: #fff;
   margin: 8rem 0 4rem;
   overflow: hidden; }
+  .callout--basic::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: #C0511B; }
   @media (max-width: 1023px) {
     .callout--basic {
       margin: 11rem 0 4rem; } }
@@ -3147,6 +3154,14 @@ Section testimonials
   position: relative;
   padding: 20rem 0 15rem;
   color: #fff; }
+  .section-testimonials::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: #27829E; }
   @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
     .section-testimonials {
       padding: 8rem 0; } }
