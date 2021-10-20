@@ -71,7 +71,7 @@ $search_results = $searchwp_query->get_results();
 								wp_reset_postdata();
 								break;
 							case 'SearchWPTermResult': ?>
-								<a href="<?= esc_url( $search_result->link ); ?>" class="person person--alt" target="_blank">
+								<a href="<?= esc_url( get_site_url() . '/provider-directory/?_' . $search_result->taxonomy . '_filter=' . $search_result->slug ); ?>" class="person person--alt" target="_blank">
 									<p><?= esc_html( $search_result->name ); ?> in <span><?= esc_html( ucfirst( $search_result->taxonomy ) ); ?></span></p>
 								</a>
 								<?php break; ?>
