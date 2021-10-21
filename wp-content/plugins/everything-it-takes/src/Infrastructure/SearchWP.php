@@ -51,7 +51,16 @@ final class SearchWP implements Registerable {
 		 *
 		 * @url https://searchwp.com/documentation/hooks/searchwp-debug/
 		 */
-		add_filter( 'searchwp\debug', '__return_true' );
+//		add_filter( 'searchwp\debug', '__return_true' );
+
+		/**
+		 * Debug term archive partial matching.
+		 */
+//		add_filter( 'searchwp_term_archive_term_args', function ( $args ) {
+//			do_action( 'searchwp\debug\log', 'Term Archive args: ' . print_r( $args, true ), 'Ticket 1462719' );
+//
+//			return $args;
+//		} );
 
 		add_filter( 'searchwp\swp_query\args', [ $this, 'short_circuit_ajax_engine' ] );
 		add_filter( 'searchwp_term_archive_enabled', [ $this, 'enable_term_archives_in_results' ], 10, 2 );
@@ -79,11 +88,17 @@ final class SearchWP implements Registerable {
 		 */
 		add_filter( 'searchwp\tokens\tokenize_pattern_matches', '__return_true' );
 
-		add_filter( 'searchwp_term_archive_term_args', function ( $args ) {
-			do_action( 'searchwp\debug\log', 'Term Archive args: ' . print_r( $args, true ), 'Ticket 1462719' );
-
+		/**
+		 * Via Elio from SearchWP (21 Oct 2021).
+		 *
+		 * To fix partial searches not matching taxonomy terms on live site.
+		 */
+		add_filter( 'searchwp_term_archive_term_args', function( $args, $engine ){
+			if( isset( $args['search'] ) && isset( $_REQUEST['swpquery'] ) ){
+				$args['search'] = trim( sanitize_text_field( $_REQUEST['swpquery'] ) );
+			}
 			return $args;
-		} );
+		}, 10, 2 );
 	}
 
 	/**
