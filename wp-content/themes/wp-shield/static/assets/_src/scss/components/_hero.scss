@@ -315,10 +315,16 @@ Hero
     }
   }
 
-  .hero__actions a:hover {
+  .hero__actions a {
     @include breakpoint-down(mobile) {
-      background-color: $c-darkorange;
-      border-color: $c-darkorange;
+      &:focus {
+        color: $c-white !important;
+      }
+      
+      &:hover {
+        background-color: $c-darkorange;
+        border-color: $c-darkorange;
+      }
     }
   }
 

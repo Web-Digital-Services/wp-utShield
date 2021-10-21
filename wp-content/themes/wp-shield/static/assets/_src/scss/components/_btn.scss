@@ -11,6 +11,7 @@ Button
   cursor: pointer;
   text-decoration: none;
   appearance: none;
+  transition: color .3s ease, background .3s ease, border .3s ease;
   
   figure svg {
     display: block;
@@ -21,23 +22,26 @@ Button
     padding: 0 3rem;
     font-weight: 700;
     font-size: 1.6rem;
-    transition: all .3s ease;
     border: .1rem solid transparent; 
     border-radius: 2.8rem;
-    
-    &:focus {
-      color: $c-orange !important;
-    }
     
     &--outline {
       border-color: $c-orange;
       color: $c-orange;
       background-color: $c-extralightbeige;
       
+      &:focus {
+        color: $c-orange !important;  
+      }
+      
       &:hover {
         background-color: $c-darkorange;
         border-color: $c-darkorange;
         color: $c-white !important;
+        
+        &:focus {
+          color: $c-white !important;  
+        }
       }
     }
     
@@ -58,11 +62,20 @@ Button
       background-color: $c-white;
       border-color: $c-white;
       color: $c-orange;
+      
+      &:focus {
+        outline-color: $c-white;
+        color: $c-orange !important;
+      }
 
       &:hover {
         background-color: $c-darkorange;
         border-color: $c-darkorange;
         color: $c-white;
+        
+        &:focus {
+          color: $c-white !important;
+        }
       }
     }
     
@@ -70,11 +83,20 @@ Button
       background-color: transparent;
       border-color: $c-white;
       color: $c-white;
+      
+      &:focus {
+        outline-color: $c-white;
+        color: $c-white !important;
+      }
 
       &:hover {
         background-color: $c-darkorange;
         border-color: $c-darkorange;
         color: $c-white;
+        
+        &:focus {
+          color: $c-white !important;
+        }
       }
     }
     
@@ -82,14 +104,14 @@ Button
       background-color: $c-orange;
       border-color: $c-orange;
       color: $c-white;
+      
+      &:focus {
+        color: $c-white !important;
+      }
 
       &:hover {
         background-color: $c-darkorange;
         border-color: $c-darkorange;
-        color: $c-white !important;
-      }
-
-      &:focus {
         color: $c-white !important;
       }
     }
@@ -111,6 +133,10 @@ Button
       circle {
         transition: stroke .3s;
       }
+      
+      &:focus {
+        color: $c-offblack !important;
+      }
 
       &:hover {
         background-color: $c-orange;
@@ -122,10 +148,10 @@ Button
         circle {
           stroke: $c-white;
         }
-      }
-
-      &:focus {
-        color: $c-offblack !important;
+        
+        &:focus {
+          color: $c-white !important;
+        }
       }
     }
 

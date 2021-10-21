@@ -155,22 +155,24 @@ Accordion find
     padding: 1.6rem .6rem;
     transition: background-color .3s ease, color .3s, padding .3s ease;
     cursor: pointer;
+    
+    svg path {
+      transition: stroke .3s;
+    }
+    
+    &:hover {
+      svg path {
+        stroke: $c-orange;
+      }  
+      
+      figure {
+        margin-left: 2rem;
+      }
+    }
 
     @include breakpoint-down(small-desktop) {
       justify-content: space-between;
     }
-  }
-
-  .accordion__head:hover svg path {
-    stroke: $c-orange;
-  }
-
-  .accordion__head:hover figure {
-    margin-left: 2rem;
-  }
-
-  .accordion__head svg path {
-    transition: stroke .3s;
   }
 
   .accordion__head h6 {

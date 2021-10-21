@@ -4,7 +4,7 @@ List basic
 
 .list-basic {
   list-style: none;
-  color: #635853;
+  color: $c-extradarkbeige;
   font-size: 1.5rem;
   font-weight: 500;
   margin: 0;
@@ -16,14 +16,18 @@ List basic
   a {
     text-underline-offset: .2rem;
     transition: color .3s ease;
+    
+    &:focus {
+      color: $c-extradarkbeige !important;
+    }
 
     &:hover {
       color: $c-orange;
       text-decoration: underline;
-    }
-
-    &:focus {
-      color: $c-orange;
+      
+      &:focus {
+        color: $c-orange !important;
+      }
     }
   }
 

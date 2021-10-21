@@ -260,6 +260,13 @@ Slider news
     top: -10.3rem;
     right: 0;
     display: flex;
+    outline: transparent dotted .2rem;
+    outline-offset: .2rem;
+    border-radius: 4rem;
+
+    &:focus {
+      outline-color: $c-orange; 
+    }    
 
     @include breakpoint-down(tablet) {
       right: 6rem;

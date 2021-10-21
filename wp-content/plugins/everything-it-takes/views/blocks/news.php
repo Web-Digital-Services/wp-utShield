@@ -12,6 +12,10 @@
 
 			<div class="section__body cell">
 				<div class="slider-news section__slider" data-aos="fade-up">
+      <div class="slider__navigation">
+						<div class="slider__prev"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/ico-arrow-left.svg" alt="Arrow icon"></div>
+						<div class="slider__next"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/ico-arrow-right.svg" alt="Arrow icon"></div>
+					</div><!-- /.slider__navigation -->
 					<div class="slider-news-slider js-slider-news">
 
                         <?php foreach ( $this->posts as $post ) : ?>
@@ -29,10 +33,7 @@
 
 					</div><!-- /.slider -->
 
-					<div class="slider__navigation">
-						<div class="slider__prev"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/ico-arrow-left.svg" alt="Arrow icon"></div>
-						<div class="slider__next"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/ico-arrow-right.svg" alt="Arrow icon"></div>
-					</div><!-- /.slider__navigation -->
+					
 				</div><!-- /.slider-news -->
 			</div><!-- /.section__body -->
 
