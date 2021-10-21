@@ -62,15 +62,15 @@ final class BlocksAssetLoader implements Registerable {
 			return;
 		}
 
-		if ( is_page_template( 'page-templates/blocks.php' ) ) {
-			wp_enqueue_script(
-				'eit-blocks-vendor',
-				get_stylesheet_directory_uri() . '/static/assets/js/vendor.js',
-				[ 'jquery' ],
-				filemtime( get_stylesheet_directory() . '/static/assets/js/vendor.js' ),
-				true
-			);
+		wp_enqueue_script(
+			'eit-blocks-vendor',
+			get_stylesheet_directory_uri() . '/static/assets/js/vendor.js',
+			[ 'jquery' ],
+			filemtime( get_stylesheet_directory() . '/static/assets/js/vendor.js' ),
+			true
+		);
 
+		if ( is_page_template( 'page-templates/blocks.php' ) ) {
 			wp_enqueue_script(
 				'eit-blocks-foundation',
 				'//cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js',
@@ -92,7 +92,7 @@ final class BlocksAssetLoader implements Registerable {
 	private function get_script_dependencies(): array {
 		return is_page_template( 'page-templates/blocks.php' )
 			? [ 'jquery', 'eit-blocks-vendor', 'eit-blocks-foundation' ]
-			: [];
+			: [ 'jquery', 'foundation', 'eit-blocks-vendor' ];
 	}
 
 	private function is_eit_style(): bool {
