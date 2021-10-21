@@ -109,7 +109,6 @@ if (document.querySelectorAll('.js-slider-news').length > 0) {
 if (document.querySelectorAll('.js-slider-callout').length > 0) {
   const sliderFeed = tns({
     container: ".js-slider-callout",
-    loop: false,
     controls: false,
     items: 1,
     navContainer: ".callout-slider-nav",
