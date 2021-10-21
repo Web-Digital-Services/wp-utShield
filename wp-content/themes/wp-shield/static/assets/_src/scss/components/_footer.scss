@@ -5,6 +5,10 @@ Footer
 .footer {
   overflow: hidden;
   padding: 2.4rem 0 0;
+  
+  a {
+    border-radius: .5rem;
+  }
 
   @include breakpoint-down(mobile) {
     padding: 3rem 0;

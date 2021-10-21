@@ -58,7 +58,6 @@ async function buildAndReload() {
   await includeHTML();
   await compileSass();
   await copyJS();
-  await imgMin();
   reload();
 }
 

@@ -6,7 +6,7 @@
 	position: fixed;
 	margin-left: -8.5rem;
 	height: 100%;
-	padding: 5rem 2.5rem;
+	padding: 5rem 2.3rem;
 	text-align: right;
 	border-right: .1rem solid $c-mediumdarkbeige;
 	z-index: 20;
@@ -24,7 +24,7 @@
 	}
 
 	@include breakpoint-down(tablet) {
-		padding: 5rem 1.8rem;
+		padding: 5rem 1.6rem;
 		margin-left: -7rem;
 	}
 

@@ -38,6 +38,10 @@ Header
     
     margin-right: auto;
     
+    a {
+      border-radius: .5rem;
+    }
+    
     img {
       width: 22rem;
     }
@@ -47,8 +51,7 @@ Header
       font-size: 1.6rem;
       font-weight: 700;
       margin-left: 2rem;
-      color: $c-darkorange;
-      
+      color: $c-darkorange;    
       white-space: nowrap;
     }
     

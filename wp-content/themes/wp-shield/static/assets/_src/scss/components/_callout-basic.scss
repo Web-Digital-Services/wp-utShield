@@ -106,6 +106,12 @@ Callout basic
     a {
       text-underline-offset: .4rem;
       text-decoration: underline;
+      border-radius: .5rem;
+      
+      &:focus {
+        outline-color: $c-white;
+        color: $c-white !important;
+      }
       
       &:hover {
         color: $c-white;
