@@ -45,13 +45,13 @@
   
   .section__heading-line {
     position: absolute;
-    bottom: .25rem; left: -1rem;
-    width: calc(100% + 2rem); height: 1rem; 
+    top: calc(100% - 2rem); left: -1rem;
+    width: calc(100% + 2rem); height: 3.4rem; 
     
     svg {
       position: absolute;
       top: 0; left: 0;
-      width: 100%; height: auto;
+      width: 100%; height: 100%;
     }
     
     .line-path {

@@ -410,16 +410,16 @@ h1[class], h2[class], h3[class], h4[class], h5[class], h6[class], h1:last-child,
   display: inline-block; }
   .marker-line .section__heading-line {
     position: absolute;
-    bottom: .25rem;
+    top: calc(100% - 2rem);
     left: -1rem;
     width: calc(100% + 2rem);
-    height: 1rem; }
+    height: 3.4rem; }
     .marker-line .section__heading-line svg {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: auto; }
+      height: 100%; }
     .marker-line .section__heading-line .line-path {
       stroke-dasharray: 340;
       stroke-dashoffset: 340;
