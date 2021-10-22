@@ -153,3 +153,32 @@ Footer
     margin-top: 2rem;
   }
 }
+
+.eit-non-blocks .footer {
+  background-color: $c-white;
+}
+
+.eit-non-blocks .footer__list .list-about li a {
+  background: none !important;
+  color: $c-orange !important;
+  font-size: 1.5rem !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+}
+
+.eit-non-blocks .footer__list .list-about li a:hover {
+  text-decoration: underline !important;
+}
+
+.eit-non-blocks .footer__list .list-basic a {
+  color: $c-extradarkbeige;
+  font-weight: 500 !important;
+}
+
+.eit-non-blocks .footer .footer__list h6 {
+  color: $c-offblack;
+}
+
+.eit-non-blocks .footer__aside-inner {
+  color: $c-offblack;
+}
