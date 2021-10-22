@@ -40,15 +40,15 @@
 							</a>
 						</div><!-- /.header__button -->
 						<div class="logo header__logo">
-							<?php 
+							<?php
 								if ( is_page_template( 'page-templates/hero-secondary.php' ) ) {
 									echo '<a href="' . esc_url( get_site_url() ) . '"><img src="' . esc_url( get_stylesheet_directory_uri() ) . '/dist/assets/images/core/UTHSA_logo_H_Color-White.png" alt="Logo"></a>';
 								}else{
 									echo '<a href="' . esc_url( get_site_url() ) . '"><img src="' . esc_url( get_stylesheet_directory_uri() ) . '/dist/assets/images/core/logo-black.svg" alt="Logo"></a>';
 								}
-								// Dont show page title if not on the home page. 
-								if ( is_front_page() ) {    
-        							echo'<a href="' . get_the_permalink( get_the_ID() ) . '" class="page__title">' .  the_title() . '</a>';
+								// Dont show page title if not on the home page.
+								if ( is_front_page() ) {
+        							echo'<a href="' . get_the_permalink( get_the_ID() ) . '" class="page__title">' .  get_the_title() . '</a>';
     							}
 							?>
 						</div>
