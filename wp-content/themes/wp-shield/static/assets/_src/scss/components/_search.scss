@@ -6,7 +6,7 @@ Search
   position: relative;
 
   form {
-    position: relative; 
+    position: relative;
   }
 
   input {
@@ -68,4 +68,12 @@ Search
       min-height: 4.8rem;
     }
   }
+}
+
+.eit-non-blocks .search__inner {
+  width: 100%;
+}
+
+.eit-non-blocks .search input {
+  background: none;
 }
