@@ -29,7 +29,7 @@
 								<figure><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 6L15 11.8571L9 18" stroke="#635853" stroke-width="1.5" stroke-linecap="round"/></svg></figure>
 							</div><!-- /.accordion__head -->
 
-							<div class="accordion__body">
+							<div class="accordion__body" style="display: none;">
 								<div class="accordion__content">
 									<ul class="list-persons">
                                         <?php foreach ( $this->providers as $provider ) : ?>
