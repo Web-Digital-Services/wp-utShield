@@ -9,6 +9,7 @@ Article news
   h5 {
     margin-bottom: 1.4rem;
     line-height: 1.4;
+    text-underline-offset: .2rem;
     transition: color .3s ease;
 
     @include breakpoint-down(tablet) {
@@ -60,6 +61,7 @@ Article news
   &:hover {
     h5 {
       color: $c-orange;
+      text-decoration: underline;
     }
     
     .article__image {

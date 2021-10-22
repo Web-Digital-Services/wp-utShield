@@ -705,6 +705,7 @@ Article news
   .article-news h5 {
     margin-bottom: 1.4rem;
     line-height: 1.4;
+    text-underline-offset: .2rem;
     transition: color .3s ease; }
     @media (max-width: 1023px) {
       .article-news h5 {
@@ -740,7 +741,8 @@ Article news
       .article-news .article__meta {
         font-size: 1.3rem; } }
   .article-news:hover h5 {
-    color: #C0511B; }
+    color: #C0511B;
+    text-decoration: underline; }
   .article-news:hover .article__image img {
     transform: scale(1.05); }
 
@@ -1792,7 +1794,7 @@ Event
   .event .event__date p {
     line-height: 1; }
   .event .event__date h6 {
-    color: #C0511B;
+    color: #AD4200;
     text-transform: none;
     margin-bottom: 0;
     font-size: 1.6rem;
