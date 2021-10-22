@@ -5,7 +5,7 @@ Footer
 .footer {
   overflow: hidden;
   padding: 2.4rem 0 0;
-  
+
   a {
     border-radius: .5rem;
   }
@@ -168,6 +168,11 @@ Footer
 
 .eit-non-blocks .footer__list .list-about li a:hover {
   text-decoration: underline !important;
+}
+
+.eit-non-blocks footer a:focus,
+.eit-non-blocks footer a:visited:not(.button) {
+  color: $c-extradarkbeige !important;
 }
 
 .eit-non-blocks .footer__list .list-basic a {

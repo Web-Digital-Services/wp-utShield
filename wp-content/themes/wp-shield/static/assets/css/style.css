@@ -1958,6 +1958,10 @@ Footer
 .eit-non-blocks .footer__list .list-about li a:hover {
   text-decoration: underline !important; }
 
+.eit-non-blocks footer a:focus,
+.eit-non-blocks footer a:visited:not(.button) {
+  color: #635853 !important; }
+
 .eit-non-blocks .footer__list .list-basic a {
   color: #635853;
   font-weight: 500 !important; }
