@@ -40,3 +40,14 @@ footer[role=contentinfo]{
 		display: block;
 	}
 }
+// Quick Compatability fixes for 10 Adams Designs. 
+body.theme-tenadams .hero__secondary{min-height:600px;}
+.chonky {
+    padding-top: 25rem;
+}
+body.theme-tenadams .card a.button{
+    font-size: 1.7rem !important;
+}
+body.theme-tenadams .card h5{
+	font-size: 1.5em
+}
