@@ -2781,6 +2781,9 @@ Menu
       display: block;
       border-bottom: 0.1rem solid #D4CEC4; }
 
+body.eit-non-blocks.menu-open.page-template-hero-secondary.theme-tenadams nav.header__nav a {
+  color: #171717 !important; }
+
 .eit-non-blocks .menu__search {
   background: none;
   border: 0; }
