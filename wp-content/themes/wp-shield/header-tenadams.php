@@ -40,8 +40,17 @@
 							</a>
 						</div><!-- /.header__button -->
 						<div class="logo header__logo">
-							<a href="<?= esc_url( get_site_url() ); ?>"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/logo.svg" alt="Logo"></a>
-							<a href="<?= get_the_permalink( get_the_ID() ); ?>" class="page__title"><?= the_title(); ?></a>
+							<?php 
+								if ( is_page_template( 'page-templates/hero-secondary.php' ) ) {
+									echo '<a href="' . esc_url( get_site_url() ) . '"><img src="' . esc_url( get_stylesheet_directory_uri() ) . '/dist/assets/images/core/UTHSA_logo_H_Color-White.png" alt="Logo"></a>';
+								}else{
+									echo '<a href="' . esc_url( get_site_url() ) . '"><img src="' . esc_url( get_stylesheet_directory_uri() ) . '/dist/assets/images/core/logo-black.svg" alt="Logo"></a>';
+								}
+								// Dont show page title if not on the home page. 
+								if ( is_front_page() ) {    
+        							echo'<a href="' . get_the_permalink( get_the_ID() ) . '" class="page__title">' .  the_title() . '</a>';
+    							}
+							?>
 						</div>
 						<aside class="header__aside">
 							<?php do_action( 'eit_header_right_menu' ); ?>
