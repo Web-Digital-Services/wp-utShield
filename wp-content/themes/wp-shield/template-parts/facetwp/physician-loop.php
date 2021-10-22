@@ -1,7 +1,7 @@
 <div class="grid-x grid-margin-x">
 	<?php
         if ( have_posts() ) { while ( have_posts() ) { the_post();?>
-			<div class="card cell small-12 medium-4 large-4 flex-container flex-dir-column">
+			<div class="card cell small-12 medium-5 large-3 flex-container flex-dir-column">
 				<?php
 					$physician_name = get_the_title();
 					$getSpecialtyList = get_the_terms( $post->ID, 'specialty' );
@@ -19,7 +19,7 @@
 				<div class="card-section flex-child-grow">
 					<?php 
 						if (!empty($physician_Profile_Url)){
-							echo '<h5><a href="' . $physician_Profile_Url . '" title="' . $physician_name . '">' . $physician_name . ' </a></h5>';
+							echo '<a href="' . $physician_Profile_Url . '" title="' . $physician_name . '"><h5 class="close">' . $physician_name . ' </h5></a>';
 						}else{
 							echo '<h5>' . $physician_name . '</h5>';
 						}
