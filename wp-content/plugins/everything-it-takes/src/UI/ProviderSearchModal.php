@@ -27,7 +27,16 @@ final class ProviderSearchModal implements Registerable {
 	}
 
 	public function render(): void {
-		echo Views::render( 'provider-search-modal', $this->get_args() );
+		if ( false !== get_transient( 'nd_provider_search_modal' ) ) {
+			echo get_transient( 'nd_provider_search_modal' );
+			return;
+		}
+
+		$view = Views::render( 'provider-search-modal', $this->get_args() );
+
+		set_transient( 'nd_provider_search_modal', $view, DAY_IN_SECONDS );
+
+		echo $view;
 	}
 
 	private function get_args(): array {
