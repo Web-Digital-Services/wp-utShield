@@ -24,6 +24,7 @@ abstract class ACFBlock implements Block, Registerable {
 
 	public function render( array $block ): void {
 		$args                = $this->get_args();
+		$args['block_id']    = $block['id'];
 		$args['block_title'] = $block['title'];
 
 		if ( is_admin() ) :

@@ -15,7 +15,7 @@
 				<div class="callout__heading marker-line marker-line--orange" data-aos="fade-up">
 					<h2><?= nl2br( esc_html( $this->title ) ); ?></h2>
 					<figure class="section__heading-line">
-						<?= Views::render( 'icons/marker-line' ); ?>
+						<?= Views::render( 'icons/marker-line', [ 'block_id' => $this->block_id ] ); ?>
 					</figure><!-- /.callout__heading-figure -->
 				</div><!-- /.callout__heading -->
 
