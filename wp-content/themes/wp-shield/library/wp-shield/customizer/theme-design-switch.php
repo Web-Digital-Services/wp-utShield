@@ -72,33 +72,28 @@ function load_theme_design($header_or_footer){
 		echo 'Error: Please select a header or footer in this template files';
 	}
 }
-/** Add specific CSS class by filter.
+// Add specific CSS class by filter.
 add_filter( 'body_class', function( $classes ) {
 	$theme_design_selection = get_theme_mod( 'wp_shield_theme_switch_control' );
     
     switch ( $theme_design_selection ) {
-        case 'theme1':
+        case 'standard':
 			//Load Theme Purple (Institutional));
-			array_push($classes, "theme-institutional");
+			array_push($classes, "theme-standard");
         break;
-        case 'theme2':
+        case 'mission':
 			//Load Theme Blue (Acade)
-			array_push($classes, "theme-patientcare");
+			array_push($classes, "theme-mission");
         break;
-        case 'theme3':
+        case 'tenadams':
 		//Load Theme Green (Reserch)
-			array_push($classes, "theme-academics");
-        break;
-		case 'theme4':
-			//Load Theme Brown
-			array_push($classes, 'theme-research');
+			array_push($classes, "theme-tenadams");
         break;
 		default: 
-			array_push($classes, 'theme-institutional');
+			array_push($classes, "theme-standard");
         break;
 	}
 	
     return $classes;	
 	} 
 );
-**/
