@@ -1,7 +1,7 @@
 <div class="grid-x grid-margin-x">
 	<?php
         if ( have_posts() ) { while ( have_posts() ) { the_post();?>
-			<div class="card cell small-12 medium-5 large-3 flex-container flex-dir-column">
+			<div class="card cell small-12 medium-6 large-4 flex-container flex-dir-column">
 				<?php
 					$physician_name = get_the_title();
 					$getSpecialtyList = get_the_terms( $post->ID, 'specialty' );
@@ -13,7 +13,7 @@
 						the_post_thumbnail('medium', array('class' => 'stretch-image'));
 					}
 					else {
-						echo '<img alt="This provider does not have a picture" src="https://utphysicians.wpengine.com/wp-content/uploads/2021/10/fall-back-location-image.jpg">';
+						echo '<img alt="This provider does not have a picture" src="' . get_site_url() . '/wp-content/uploads/2021/10/fall-back-location-image.jpg">';
 					}
 				?>
 				<div class="card-section flex-child-grow">
