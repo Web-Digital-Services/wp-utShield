@@ -20,7 +20,7 @@
 	$UTH_speaker_details = get_post_meta( get_the_ID(), 'speaker_details', true );
 	$UTH_footer_grant_info = get_theme_mod( 'UTH_footer_grant_info');
 	$uth_disable_alamo_footer = get_theme_mod( 'uth_disable_alamo_footer' );
-	$news_events_status = get_post_meta( $post->ID, 'my_key', true ); //my_key is a meta_key. Change it to whatever you want 
+	$news_events_status = get_post_meta( get_the_ID(), 'my_key', true ); //my_key is a meta_key. Change it to whatever you want
 	$uth_enable_related_posts = get_theme_mod( 'uth_enable_related_posts');
 	if ( ( isset( $uth_disable_alamo_footer ) && $uth_disable_alamo_footer == true ) || (is_single() && isset( $uth_enable_related_posts ) && $uth_enable_related_posts == true) ||$disable_alamo_footer_Page_setting == 'yes' || $news_events_status == 'tan-news-events' || $news_events_status == 'colorized-news-events' || $news_events_status == 'news-only-tan' || $news_events_status == 'events-only-tan' || ( is_singular( 'events' ) && !empty( $UTH_speaker_details))) {
 		$uth_disable_alamo_status = true;
