@@ -1,13 +1,13 @@
 <section class="section-testimonials">
     <figure class="section__background"><img
                 src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/background-noise-cyan.jpg"
-                alt="Background"></figure><!-- /.section__background -->
+                alt=""></figure><!-- /.section__background -->
 
     <div class="shell grid-container">
         <div class="section__inner grid-x">
             <figure class="section__element"><img
                         src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/icons/quote-mark.svg"
-                        alt="Quote icon"></figure><!-- /.section__element -->
+                        alt=""></figure><!-- /.section__element -->
 
             <h6 data-aos="fade-up"><?= esc_html( $this->title ); ?></h6>
 
@@ -31,7 +31,7 @@
                                                     <li>
                                                         <figure><img
                                                                     src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/icons/star.svg"
-                                                                    alt="Star icon"></figure>
+                                                                    alt=""></figure>
                                                     </li>
 												<?php endfor; ?>
                                             </ul><!-- /.list-stars -->

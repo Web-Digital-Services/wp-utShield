@@ -1,6 +1,6 @@
 <section class="callout--basic">
-	<figure class="callout__background"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/background-noise-orange.jpg" alt="Background"></figure><!-- /.callout__background -->
-	<figure class="callout__element"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/shield.svg" alt="UT Health Shield"></figure><!-- /.callout__element -->
+	<figure class="callout__background"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/background-noise-orange.jpg" alt=""></figure><!-- /.callout__background -->
+	<figure class="callout__element"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/shield.svg" alt=""></figure><!-- /.callout__element -->
 	<div class="shell shell--alt grid-container">
 		<div class="callout__inner grid-x">
 			<div class="callout__entry cell large-8 medium-8 small-12" data-aos="fade-up">
