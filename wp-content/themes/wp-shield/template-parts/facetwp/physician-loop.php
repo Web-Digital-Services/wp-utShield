@@ -10,7 +10,7 @@
 					$physician_Profile_Url = types_render_field("profile-url-physicians", array('output'=>'raw')); 
 
 					if ( has_post_thumbnail() ) {
-						the_post_thumbnail('medium', array('class' => 'stretch-image'));
+						the_post_thumbnail('large', array('class' => 'stretch-image'));
 					}
 					else {
 						echo '<img alt="This provider does not have a picture" src="' . get_site_url() . '/wp-content/uploads/2021/10/fall-back-location-image.jpg">';
