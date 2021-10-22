@@ -20,9 +20,7 @@
 					<div class="footer__list footer__list--alt">
 						<ul class="list-about">
 							<li>
-								<p><a href="https://www.google.com/maps/place/University+of+Texas+Health+Science+Center+at+San+Antonio+-+UT+Health+San+Antonio/@29.5074701,-98.5775408,17z/data=!3m1!4b1!4m5!3m4!1s0x865c5dfe43732f9d:0x2ea28fbe8a87c202!8m2!3d29.5074654!4d-98.5753521" target="_blank">7703 Floyd Curl Drive</a></p>
-							</li>
-							<li>
+								<p><a href="https://www.google.com/maps/place/University+of+Texas+Health+Science+Center+at+San+Antonio+-+UT+Health+San+Antonio/@29.5074701,-98.5775408,17z/data=!3m1!4b1!4m5!3m4!1s0x865c5dfe43732f9d:0x2ea28fbe8a87c202!8m2!3d29.5074654!4d-98.5753521" target="_blank">7703 Floyd Curl Drive</a><br />
 								<p><a href="https://www.google.com/maps/place/University+of+Texas+Health+Science+Center+at+San+Antonio+-+UT+Health+San+Antonio/@29.5074701,-98.5775408,17z/data=!3m1!4b1!4m5!3m4!1s0x865c5dfe43732f9d:0x2ea28fbe8a87c202!8m2!3d29.5074654!4d-98.5753521" target="_blank">San Antonio, Texas 78229-3900</a></p>
 							</li>
 							<li>
@@ -31,7 +29,10 @@
 							<li class="list__location">
 								<a href="https://www.google.com/maps/place/University+of+Texas+Health+Science+Center+at+San+Antonio+-+UT+Health+San+Antonio/@29.5074701,-98.5775408,17z/data=!3m1!4b1!4m5!3m4!1s0x865c5dfe43732f9d:0x2ea28fbe8a87c202!8m2!3d29.5074654!4d-98.5753521" target="_blank">Map and directions</a>
 							</li>
-
+							<li><a href="https://www.uthscsa.edu/university/campus-status" target="_blank">Campus Status</a>
+							</li>
+							<li><a href="https://www.uthscsa.edu/university/it-operations" target="_blank">IT Operations</a>
+							</li>
 						</ul><!-- /.list-about -->
 					</div><!-- /.footer__list -->
 				</div><!-- /.footer__group -->
