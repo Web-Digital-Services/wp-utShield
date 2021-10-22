@@ -17,6 +17,7 @@ use BrightNucleus\View\Location\FilesystemLocation;
 use EverythingItTakes\Plugin\Application\BlockRandomizer;
 use EverythingItTakes\Plugin\Infrastructure\Blocks;
 use EverythingItTakes\Plugin\Infrastructure\BlocksAssetLoader;
+use EverythingItTakes\Plugin\Infrastructure\BodyClasses;
 use EverythingItTakes\Plugin\Infrastructure\ImageSizes;
 use EverythingItTakes\Plugin\Infrastructure\Menus;
 use EverythingItTakes\Plugin\Infrastructure\Options\FooterOptions;
@@ -62,6 +63,7 @@ final class Plugin {
 		Blocks\Reviews::class,
 
 		// Infrastructure/Options
+		BodyClasses::class,
 		FooterOptions::class,
 		SiteOptions::class,
 
