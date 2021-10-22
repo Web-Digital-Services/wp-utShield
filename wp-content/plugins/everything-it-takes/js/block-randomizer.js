@@ -9,7 +9,7 @@ jQuery(function ($) {
 
     if ( heroes.length !== 0 ) {
         const random_hero = getRandomInt(heroes.length);
-        // heroes[random_hero].style.display = 'block';
+        heroes[random_hero].style.display = 'block';
         heroes[random_hero].style.visibility = 'visible';
         heroes[random_hero].classList.remove('js-random-hero');
 
@@ -21,7 +21,7 @@ jQuery(function ($) {
 
     if ( spotlights.length !== 0 ) {
         const random_spotlight = getRandomInt(spotlights.length);
-        // spotlights[random_spotlight].style.display = 'block';
+        spotlights[random_spotlight].style.display = 'block';
         spotlights[random_spotlight].style.visibility = 'visible';
     }
 
