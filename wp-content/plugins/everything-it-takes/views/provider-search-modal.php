@@ -1,5 +1,5 @@
 <div class="hero__menu">
-	<figure class="hero__menu-background"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/temp/background-noise.jpg" alt="Background"></figure><!-- /.hero__menu-background -->
+	<figure class="hero__menu-background"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/temp/background-noise.jpg" alt=""></figure><!-- /.hero__menu-background -->
 
 	<div class="menu-find js-menu-find">
         <a href="#" class="menu__close js-menu-find-close"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/icons/close.svg" alt="Close"></a>
