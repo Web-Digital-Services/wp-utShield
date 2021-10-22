@@ -6,7 +6,7 @@
  * @since FoundationPress 1.0.0
  */
 
-get_header(); ?>
+load_theme_design('header'); ?>
 
 <?php get_template_part( 'template-parts/featured-image' ); ?>
 <div class="main-container">
@@ -21,4 +21,4 @@ get_header(); ?>
 		<?php get_sidebar(); ?>
 	</div>
 </div>
-<?php get_footer();
+<?php load_theme_design('footer');

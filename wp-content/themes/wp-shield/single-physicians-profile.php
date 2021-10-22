@@ -6,7 +6,7 @@
  * @since FoundationPress 1.0.0
  */
 
-get_header(); ?>
+load_theme_design('header'); ?>
 <main class="hero bleed">
 	<div class="grid-container">
 		<div class="grid-x ">
@@ -130,4 +130,4 @@ get_header(); ?>
 		</div>
 	</div>
 </main>
-<?php get_footer();
+<?php load_theme_design('footer');
