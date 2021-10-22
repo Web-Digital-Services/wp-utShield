@@ -2777,6 +2777,13 @@ Menu
       display: block;
       border-bottom: 0.1rem solid #D4CEC4; }
 
+.eit-non-blocks .menu__search {
+  background: none;
+  border: 0; }
+
+.eit-non-blocks .accordion-menu li:not(.nestedli) {
+  border-bottom: 0; }
+
 /* ------------------------------------------------------------ *\
 Nav
 \* ------------------------------------------------------------ */
@@ -2964,6 +2971,12 @@ Search
       padding: 0 2rem;
       font-size: 1.4rem;
       min-height: 4.8rem; } }
+
+.eit-non-blocks .search__inner {
+  width: 100%; }
+
+.eit-non-blocks .search input {
+  background: none; }
 
 /* ------------------------------------------------------------ *\
 Section events

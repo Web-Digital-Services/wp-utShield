@@ -15,60 +15,60 @@ Menu
   visibility: hidden;
   overflow-y: auto;
   overflow-x: hidden;
-  
+
   .side-menu & {
     width: calc(100% - 8.5rem);
-    
+
     @include breakpoint-down(tablet) {
       left: 7rem;
-      width: calc(100% - 7rem); 
+      width: calc(100% - 7rem);
     }
-    
+
     @include breakpoint-down(mobile) {
       left: 0;
       width: 100%;
     }
   }
-  
+
   .menu__nav, .menu__search, .accordion__section, .menu__socials, .menu__footer {
     opacity: 0;
     transform: translateY(-2rem);
     transition: opacity .3s ease, transform .3s ease;
   }
-  
+
   .accordion__section {
     transform: translateY(-4rem);
   }
-  
+
   &.open {
     visibility: visible;
     opacity: 1;
-    
+
     .menu__nav, .menu__search, .accordion__section, .menu__socials, .menu__footer {
       opacity: 1;
       transform: translateY(0);
     }
-    
+
     .menu__search {
       transition-delay: .1s;
     }
-    
+
     .accordion__section {
       transition-delay: .2s;
-      
+
       &:nth-child(2) {
         transition-delay: .3s;
       }
-      
+
       &:nth-child(3) {
         transition-delay: .4s;
       }
     }
-    
+
     .menu__socials {
       transition-delay: .5s;
     }
-    
+
     .menu__footer {
       transition-delay: .6s;
     }
@@ -196,4 +196,13 @@ Menu
       border-bottom: .1rem solid $c-mediumdarkbeige;
     }
   }
+}
+
+.eit-non-blocks .menu__search {
+  background: none;
+  border: 0;
+}
+
+.eit-non-blocks .accordion-menu li:not(.nestedli) {
+  border-bottom: 0;
 }
