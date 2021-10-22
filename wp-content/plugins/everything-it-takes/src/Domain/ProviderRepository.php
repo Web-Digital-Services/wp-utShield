@@ -33,6 +33,19 @@ final class ProviderRepository implements Repository {
 	 * @return ProviderCollection
 	 */
 	public function find_all(): ProviderCollection {
+//		if ( false !== get_transient( 'nd_provider_repository_find_all' ) ) {
+//			\Kint::dump( get_transient( 'nd_provider_repository_find_all' ) );
+//			die();
+//
+//			return get_transient( 'nd_provider_repository_find_all' );
+//		}
+//
+//		$provider_collection = $this->find_by( [ 'posts_per_page' => 2500 ] );
+//
+//		set_transient( 'nd_provider_repository_find_all', $provider_collection, DAY_IN_SECONDS );
+//
+//		return $provider_collection;
+
 		return $this->find_by( [ 'posts_per_page' => 2500 ] );
 	}
 

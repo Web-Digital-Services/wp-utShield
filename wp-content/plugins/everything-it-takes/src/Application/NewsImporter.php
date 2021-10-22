@@ -22,6 +22,12 @@ final class NewsImporter {
 	}
 
 	private static function get_final_data( array $posts_data ): array {
+		$transient = get_transient( 'nd_news_importer_get_final_data' );
+
+		if ( false !== $transient ) {
+			return $transient;
+		}
+
 		$post_count = 0;
 		$posts      = [];
 
@@ -81,6 +87,8 @@ final class NewsImporter {
 			$final_posts[] = $post;
 
 			if ( 4 === $post_count ) {
+				set_transient( 'nd_news_importer_get_final_data', $final_posts, DAY_IN_SECONDS );
+
 				return $final_posts;
 			}
 		}

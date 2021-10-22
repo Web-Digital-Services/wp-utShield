@@ -25,6 +25,10 @@ final class EventImporter {
 	}
 
 	private static function filter_events( array $events_data ): array {
+		if ( false !== get_transient( 'nd_event_importer_filter_events' ) ) {
+			return get_transient( 'nd_event_importer_filter_events' );
+		}
+
 		$event_count = 0;
 		$events      = [];
 
@@ -58,6 +62,8 @@ final class EventImporter {
 			$final_events[] = $event;
 
 			if ( 3 === $event_count ) {
+				set_transient( 'nd_event_importer_filter_events', $final_events, DAY_IN_SECONDS );
+
 				return $final_events;
 			}
 		}
