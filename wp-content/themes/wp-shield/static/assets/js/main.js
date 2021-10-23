@@ -61,16 +61,27 @@ if ( null !== sliderNext ) {
  * Slider testimonials.
  */
 if (document.querySelectorAll('.js-slider-testimonials').length > 0) {
-  const sliderTestimonial = tns({
-    container: ".js-slider-testimonials",
-    mode: "gallery",
-    controlsContainer: ".slider-controls",
-    navContainer: ".testimonial-slider-nav",
+  $('.slider-testimonials-slider').slick({
     autoplay: true,
-    autoplayButtonOutput: false,
-    autoplayTimeout: 10000,
-    speed: 500
+    autoplaySpeed: 10000,
+    fade: true,
+    arrows: false,
+    dots: true,
+    customPaging : function(slider, i) { 
+      return '<button type="button"><svg class="circle" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="outer-circle" cx="11" cy="11" r="10" stroke="#FFFFFF" stroke-width="2"/><circle class="outer-circle-grow" cx="11" cy="11" r="10" stroke="#FFFFFF" stroke-width="2"/><circle class="inner-circle" cx="11" cy="11" r="4" fill="#FFFFFF"/></svg></button>';
+    },
   });
+  
+//  const sliderTestimonial = tns({
+//    container: ".js-slider-testimonials",
+//    mode: "gallery",
+//    controlsContainer: ".slider-controls",
+//    navContainer: ".testimonial-slider-nav",
+//    autoplay: true,
+//    autoplayButtonOutput: false,
+//    autoplayTimeout: 10000,
+//    speed: 500
+//  });
 }
 
 
@@ -79,25 +90,39 @@ if (document.querySelectorAll('.js-slider-testimonials').length > 0) {
  */
 
 if (document.querySelectorAll('.js-slider-news').length > 0) {
-  const sliderFeed = tns({
-    container: ".js-slider-news",
-    loop: false,
-    nav: false,
-    controlsContainer: ".slider__navigation",
-    gutter: 40,
-    responsive: {
-      500: {
-        items: 1.5
+  $('.slider-news-slider').slick({
+    infinite: false,
+    arrows: true,
+    arrowsPlacement: 'beforeSlides',
+    prevArrow: '<button type="button" class="nav-arrow prev">'
+               + '  <span aria-hidden="true"><img src="../assets/img/svg/ico-arrow-left.svg" alt="Arrow icon"></span>'
+               + '  <span class="sr-only">Previous slide</span>'
+               + '</button>',
+    nextArrow: '<button type="button" class="nav-arrow next">'
+               + '  <span aria-hidden="true"><img src="../assets/img/svg/ico-arrow-right.svg" alt="Arrow icon"></span>'
+               + '  <span class="sr-only">Next slide</span>'
+               + '</button>',
+    slidesToShow: 3,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 2
+        }
       },
-      700: {
-        items: 2
+      {
+        breakpoint: 700,
+        settings: {
+          slidesToShow: 1.5
+        }
       },
-      1200: {
-        items: 3
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 1
+        }
       }
-    },
-    swipeAngle: false,
-    speed: 400
+    ]  
   });
 }
 
@@ -105,18 +130,16 @@ if (document.querySelectorAll('.js-slider-news').length > 0) {
 /**
  * Slider callout.
  */
-
+  
 if (document.querySelectorAll('.js-slider-callout').length > 0) {
-  const sliderFeed = tns({
-    container: ".js-slider-callout",
-    controls: false,
-    items: 1,
-    navContainer: ".callout-slider-nav",
+  $('.callout-slider').slick({
     autoplay: true,
-    autoplayButtonOutput: false,
-    autoplayTimeout: 10000,
-    swipeAngle: false,
-    speed: 500
+    autoplaySpeed: 10000,
+    arrows: false,
+    dots: true,
+    customPaging : function(slider, i) { 
+      return '<button type="button"><svg class="circle" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="outer-circle" cx="11" cy="11" r="10" stroke="#FFFFFF" stroke-width="2"/><circle class="outer-circle-grow" cx="11" cy="11" r="10" stroke="#FFFFFF" stroke-width="2"/><circle class="inner-circle" cx="11" cy="11" r="4" fill="#FFFFFF"/></svg></button>';
+    },
   });
 }
 

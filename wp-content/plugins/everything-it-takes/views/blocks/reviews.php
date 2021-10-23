@@ -12,10 +12,6 @@
             <h6 data-aos="fade-up"><?= esc_html( $this->title ); ?></h6>
 
             <div class="slider-testimonials section__slider cell" data-aos="fade-up">
-                <div class="slider-controls">
-                    <button class="controls-prev" tabindex="-1">prev</button>
-                    <button class="controls-next" tabindex="-1">next</button>
-                </div>
                 <div class="slider-testimonials-slider js-slider-testimonials">
 
 					<?php foreach ( $this->reviews as $review ) : ?>
@@ -45,19 +41,6 @@
 					<?php endforeach; ?>
 
                 </div><!-- /.slider -->
-
-                <ul class="slider-nav testimonial-slider-nav">
-	                <?php foreach ( $this->reviews as $review ) : ?>
-                        <li>
-                            <svg class="circle" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle class="outer-circle" cx="11" cy="11" r="10" stroke="#273252" stroke-width="2"/>
-                                <circle class="outer-circle-grow" cx="11" cy="11" r="10" stroke="#273252" stroke-width="2"/>
-                                <circle class="inner-circle" cx="11" cy="11" r="4" fill="#273252"/>
-                            </svg>
-                        </li>
-                    <?php endforeach; ?>
-                </ul><!-- /.slider-nav -->
-
             </div><!-- /.slider-testimonials -->
         </div><!-- /.section__inner -->
     </div><!-- /.shell -->

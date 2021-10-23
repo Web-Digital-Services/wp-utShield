@@ -28,22 +28,6 @@
 					<?php endforeach; ?>
 
                 </div><!-- /.callout-slider -->
-                <ul class="slider-nav callout-slider-nav">
-
-					<?php foreach ( $this->slides as $slide ) : ?>
-
-                        <li>
-                            <svg class="circle" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle class="outer-circle" cx="11" cy="11" r="10" stroke="#273252" stroke-width="2"/>
-                                <circle class="outer-circle-grow" cx="11" cy="11" r="10" stroke="#273252"
-                                        stroke-width="2"/>
-                                <circle class="inner-circle" cx="11" cy="11" r="4" fill="#273252"/>
-                            </svg>
-                        </li>
-
-					<?php endforeach; ?>
-
-                </ul><!-- /.callout-slider-nav -->
             </div><!-- /.callout__slider-contain -->
 
             <div class="callout__content cell large-6">
