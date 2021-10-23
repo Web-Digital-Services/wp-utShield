@@ -60,7 +60,18 @@ if ( null !== sliderNext ) {
 /**
  * Slider testimonials.
  */
-//if (document.querySelectorAll('.js-slider-testimonials').length > 0) {
+if (document.querySelectorAll('.js-slider-testimonials').length > 0) {
+  $('.slider-testimonials-slider').slick({
+    autoplay: true,
+    autoplaySpeed: 10000,
+    fade: true,
+    arrows: false,
+    dots: true,
+    customPaging : function(slider, i) { 
+      return '<button type="button"><svg class="circle" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="outer-circle" cx="11" cy="11" r="10" stroke="#FFFFFF" stroke-width="2"/><circle class="outer-circle-grow" cx="11" cy="11" r="10" stroke="#FFFFFF" stroke-width="2"/><circle class="inner-circle" cx="11" cy="11" r="4" fill="#FFFFFF"/></svg></button>';
+    },
+  });
+  
 //  const sliderTestimonial = tns({
 //    container: ".js-slider-testimonials",
 //    mode: "gallery",
@@ -71,7 +82,7 @@ if ( null !== sliderNext ) {
 //    autoplayTimeout: 10000,
 //    speed: 500
 //  });
-//}
+}
 
 
 /**
@@ -114,27 +125,6 @@ if (document.querySelectorAll('.js-slider-news').length > 0) {
     ]  
   });
 }
-    
-//  const sliderFeed = tns({
-//    container: ".js-slider-news",
-//    loop: false,
-//    nav: false,
-//    controlsContainer: ".slider__navigation",
-//    gutter: 40,
-//    responsive: {
-//      500: {
-//        items: 1.5
-//      },
-//      700: {
-//        items: 2
-//      },
-//      1200: {
-//        items: 3
-//      }
-//    },
-//    swipeAngle: false,
-//    speed: 400
-//  });
 
 
 /**

@@ -819,12 +819,12 @@ Article news
     transform: rotate(180deg); } }
 
 /* ------------------------------------------------------------ *\
-	Blockquote
+Blockquote
 \* ------------------------------------------------------------ */
 .blockquote {
   font-size: 2.8rem;
   line-height: 1.8;
-  padding-right: 2rem; }
+  padding-right: 3rem; }
   @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
     .blockquote {
       font-size: 2rem; } }
@@ -3592,39 +3592,54 @@ Shell
   .slick-autoplay-toggle-button .slick-play-icon:before {
     content: "▶"; }
 
-.slick-dots li button {
-  position: relative;
-  width: 2.2rem;
-  height: 2.2rem; }
+.slick-dots li {
+  margin: 0 .8rem; }
+  .slick-dots li button {
+    position: relative;
+    width: 2.2rem;
+    height: 2.2rem; }
+  .slick-dots li .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    transition: opacity .5s ease; }
+    .slick-dots li .circle .inner-circle {
+      opacity: .5;
+      transition: opacity .3s ease;
+      fill: #fff; }
+    .slick-dots li .circle .outer-circle, .slick-dots li .circle .outer-circle-grow {
+      stroke-dasharray: 63;
+      stroke-dashoffset: 63;
+      opacity: 0;
+      transition: opacity .3s ease;
+      stroke: #fff; }
+  .slick-dots li.slick-active .circle .inner-circle {
+    opacity: 1; }
+  .slick-dots li.slick-active .circle .outer-circle {
+    opacity: .25;
+    animation: stroke 10s ease-out forwards; }
+  .slick-dots li.slick-active .circle .outer-circle-grow {
+    opacity: 1;
+    animation: strokeSlow 10s ease-out forwards; }
 
-.slick-dots li .circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  opacity: 1;
-  transform: translate(-50%, -50%) rotate(-90deg);
-  transition: opacity .5s ease; }
-  .slick-dots li .circle .inner-circle {
-    opacity: .5;
-    transition: opacity .3s ease;
-    fill: #fff; }
-  .slick-dots li .circle .outer-circle, .slick-dots li .circle .outer-circle-grow {
-    stroke-dasharray: 63;
-    stroke-dashoffset: 63;
-    opacity: 0;
-    transition: opacity .3s ease;
-    stroke: #fff; }
+.slider-testimonials-slider .slick-autoplay-toggle-button {
+  top: 0;
+  right: 0;
+  left: auto;
+  bottom: auto; }
 
-.slick-dots li.slick-active .circle .inner-circle {
-  opacity: 1; }
-
-.slick-dots li.slick-active .circle .outer-circle {
-  opacity: .25;
-  animation: stroke 10s ease-out forwards; }
-
-.slick-dots li.slick-active .circle .outer-circle-grow {
-  opacity: 1;
-  animation: strokeSlow 10s ease-out forwards; }
+.slider-testimonials-slider .slick-dots {
+  top: 5rem;
+  right: 0;
+  left: auto;
+  bottom: auto;
+  width: auto;
+  transform: none; }
+  .slider-testimonials-slider .slick-dots li {
+    display: block;
+    margin: 0 0 .8rem; }
 
 @keyframes stroke {
   0% {

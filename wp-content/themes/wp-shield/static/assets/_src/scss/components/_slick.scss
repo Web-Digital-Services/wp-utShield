@@ -422,6 +422,8 @@ $slick-opacity-not-active: 0.25 !default;
 
 .slick-dots {  
   li {
+    margin: 0 .8rem;
+    
     button {
       position: relative;
       width: 2.2rem;
@@ -466,6 +468,23 @@ $slick-opacity-not-active: 0.25 !default;
           animation: strokeSlow 10s ease-out forwards;
         }
       } 
+    }
+  }
+}
+
+.slider-testimonials-slider {
+  .slick-autoplay-toggle-button {
+    top: 0; right: 0; left: auto; bottom: auto;
+  }
+  
+  .slick-dots { 
+    top: 5rem; right: 0; left: auto; bottom: auto;
+    width: auto;
+    transform: none;
+    
+    li {
+      display: block;
+      margin: 0 0 .8rem;
     }
   }
 }
