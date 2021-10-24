@@ -19,6 +19,7 @@ use EverythingItTakes\Plugin\Infrastructure\Blocks;
 use EverythingItTakes\Plugin\Infrastructure\BlocksAssetLoader;
 use EverythingItTakes\Plugin\Infrastructure\BodyClasses;
 use EverythingItTakes\Plugin\Infrastructure\ImageSizes;
+use EverythingItTakes\Plugin\Infrastructure\InfiniteScroll;
 use EverythingItTakes\Plugin\Infrastructure\Menus;
 use EverythingItTakes\Plugin\Infrastructure\Options\FooterOptions;
 use EverythingItTakes\Plugin\Infrastructure\Options\SiteOptions;
@@ -47,6 +48,7 @@ final class Plugin {
 		Blocks::class,
 		BlocksAssetLoader::class,
 		ImageSizes::class,
+		InfiniteScroll::class,
 		Menus::class,
 		SearchWP::class,
 

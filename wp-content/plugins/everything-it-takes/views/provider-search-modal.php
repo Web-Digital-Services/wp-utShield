@@ -17,7 +17,7 @@
 				</div><!-- /.search -->
 			</div><!-- /.menu__head -->
 
-			<div class="menu__body">
+			<div class="menu__body menu__body__providers">
 				<div class="menu__lists">
 					<div class="accordion-find js-accordion-find">
 						<div class="accordion__section">
@@ -31,7 +31,7 @@
 
 							<div class="accordion__body" style="display: none;">
 								<div class="accordion__content">
-									<ul class="list-persons">
+									<ul class="list-persons list-providers">
                                         <?php foreach ( $this->providers as $provider ) : ?>
                                             <li>
                                                 <a href="<?= esc_url( $provider->get_url() ); ?>" class="person" target="_blank">

@@ -27,14 +27,15 @@ final class ProviderSearchModal implements Registerable {
 	}
 
 	public function render(): void {
-		if ( false !== get_transient( 'nd_provider_search_modal' ) ) {
-			echo get_transient( 'nd_provider_search_modal' );
-			return;
-		}
+//		if ( false !== get_transient( 'nd_provider_search_modal' ) ) {
+//			echo get_transient( 'nd_provider_search_modal' );
+//
+//			return;
+//		}
 
 		$view = Views::render( 'provider-search-modal', $this->get_args() );
 
-		set_transient( 'nd_provider_search_modal', $view, DAY_IN_SECONDS );
+//		set_transient( 'nd_provider_search_modal', $view, DAY_IN_SECONDS );
 
 		echo $view;
 	}
@@ -49,7 +50,7 @@ final class ProviderSearchModal implements Registerable {
 	}
 
 	private function get_provider_data(): ProviderCollection {
-		return ( new ProviderRepository() )->find_all();
+		return ( new ProviderRepository() )->find_by( [ 'posts_per_page' => 20 ] );
 	}
 
 	private function get_specialty_data(): array {
