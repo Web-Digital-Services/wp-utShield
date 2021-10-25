@@ -17,7 +17,7 @@ Callout
     padding: 6.3rem 0;
   }
 
-  h6 {
+  .eyebrow-sub {
     color: $c-darkbeige;
     letter-spacing: 0.2em;
     margin-bottom: 2.2rem;
@@ -29,7 +29,7 @@ Callout
     }
   }
 
-  h2 {
+  .heading-main {
     font-weight: 500;
     line-height: 1;
     letter-spacing: -.03em;
@@ -307,7 +307,7 @@ Callout
     padding: 4.5rem 0 6.5rem;
   }
 
-  h6 {
+  .eyebrow-sub {
     color: $c-extradarkbeige;
 
     @include breakpoint-down(mobile) {
@@ -315,7 +315,7 @@ Callout
     }
   }
 
-  h2 {
+  .heading-main {
     font-size: 4.8rem;
     line-height: 1.15;
     margin-bottom: 0;
@@ -538,7 +538,7 @@ Callout
 }
 
 .callout--nobreak {
-  h2 {
+  .heading-main {
     @include breakpoint-down(tablet) {
       white-space: nowrap;
     }
@@ -561,11 +561,11 @@ Callout
     padding: 4.5rem 0 0;
   }
 
-  h6 {
+  .eyebrow-sub {
     color: $c-extradarkbeige;
   }
 
-  h2 {
+  .heading-main {
     font-size: 4.8rem;
     line-height: 1.15;
     margin: 0;
@@ -688,11 +688,11 @@ Callout
     padding: 10rem 0 5rem;
   }
 
-  h6 {
+  .eyebrow-sub {
     color: $c-extradarkbeige;
   }
 
-  h2 {
+  .heading-main {
     font-size: 6rem;
     line-height: 1;
     margin-bottom: 0;

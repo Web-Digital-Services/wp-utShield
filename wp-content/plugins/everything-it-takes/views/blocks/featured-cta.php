@@ -31,10 +31,10 @@
             </div><!-- /.callout__slider-contain -->
 
             <div class="callout__content cell large-6">
-                <h6 data-aos="fade-up"><?= esc_html( $this->eyebrow ); ?></h6>
+                <h2 class="eyebrow-sub" data-aos="fade-up"><?= esc_html( $this->eyebrow ); ?></h2>
 
                 <div class="callout__heading marker-circle marker-circle--darkorange" data-aos="fade-up">
-                    <h2><?= nl2br( esc_html( $this->title ) ); ?></h2>
+                    <h3 class="heading-main"><?= nl2br( esc_html( $this->title ) ); ?></h3>
                     <figure class="section__heading-circle">
 						<?= Views::render( 'icons/marker-circle' ); ?>
                     </figure><!-- /.callout__heading-figure -->
