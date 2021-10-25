@@ -2,7 +2,7 @@
 	<figure class="hero__menu-background"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/temp/background-noise.jpg" alt=""></figure><!-- /.hero__menu-background -->
 
 	<div class="menu-find js-menu-find">
-        <a href="#" class="menu__close js-menu-find-close"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/icons/close.svg" alt="Close"></a>
+        
 
 		<div class="menu__inner">
 			<div class="menu__head">
@@ -21,13 +21,13 @@
 				<div class="menu__lists">
 					<div class="accordion-find js-accordion-find">
 						<div class="accordion__section">
-							<div class="accordion__head">
+							<a href="#" class="accordion__head">
 								<h6>
 									<span>Browse by name</span>
 									<span>Back to all categories</span>
 								</h6>
 								<figure><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 6L15 11.8571L9 18" stroke="#635853" stroke-width="1.5" stroke-linecap="round"/></svg></figure>
-							</div><!-- /.accordion__head -->
+							</a><!-- /.accordion__head -->
 
 							<div class="accordion__body" style="display: none;">
 								<div class="accordion__content">
@@ -46,13 +46,13 @@
 						</div><!-- /.accordion__section -->
 
 						<div class="accordion__section">
-							<div class="accordion__head">
+							<a href="#" class="accordion__head">
 								<h6>
 									<span>Browse by specialty</span>
 									<span>Back to all categories</span>
 								</h6>
 								<figure><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 6L15 11.8571L9 18" stroke="#635853" stroke-width="1.5" stroke-linecap="round"/></svg></figure>
-							</div><!-- /.accordion__head -->
+							</a><!-- /.accordion__head -->
 
 							<div class="accordion__body">
 								<div class="accordion__content">
@@ -72,14 +72,14 @@
 
 						<?php if ( ! empty( $this->locations ) ) : ?>
                             <div class="accordion__section">
-                                <div class="accordion__head">
+                                <a href="#" class="accordion__head">
                                     <h6>
                                         <span>Browse by location</span>
                                         <span>Back to all categories</span>
                                     </h6>
 
                                     <figure><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 6L15 11.8571L9 18" stroke="#635853" stroke-width="1.5" stroke-linecap="round"/></svg></figure>
-                                </div><!-- /.accordion__head -->
+                                </a><!-- /.accordion__head -->
 
                                 <div class="accordion__body">
                                     <div class="accordion__content">
@@ -100,14 +100,14 @@
 
                         <?php if ( ! empty( $this->conditions ) ) : ?>
 						    <div class="accordion__section">
-                                <div class="accordion__head">
+                                <a href="#" class="accordion__head">
                                     <h6>
                                         <span>Browse by condition</span>
                                         <span>Back to all categories</span>
                                     </h6>
 
                                     <figure><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 6L15 11.8571L9 18" stroke="#635853" stroke-width="1.5" stroke-linecap="round"/></svg></figure>
-                                </div><!-- /.accordion__head -->
+                                </a><!-- /.accordion__head -->
 
                                 <div class="accordion__body">
                                     <div class="accordion__content">
@@ -123,5 +123,7 @@
             <div id="menu__foot" class="menu__foot"></div>
 
 		</div><!-- /.menu__inner -->
+   
+   <a href="#" class="menu__close js-menu-find-close"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/icons/close.svg" alt="Close"></a>
 	</div><!-- /.menu-find -->
 </div><!-- /.hero__menu -->

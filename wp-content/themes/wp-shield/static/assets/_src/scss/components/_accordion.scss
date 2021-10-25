@@ -190,6 +190,7 @@ Accordion find
     padding: 1.6rem .6rem;
     transition: background-color .3s ease, color .3s, padding .3s ease;
     cursor: pointer;
+    border-radius: .8rem;
     
     svg path {
       transition: stroke .3s;
@@ -271,7 +272,6 @@ Accordion find
         color: $c-orange;
         background-color: $c-extralightbeige;
         padding: 1.6rem;
-        border-radius: .8rem;
       }  
     }
     
@@ -279,10 +279,17 @@ Accordion find
       border-top: none;
       
       .accordion__head {
-        border-bottom: .2rem solid $c-beige;
+        position: relative;
         background-color: transparent;
-        border-radius: 0;
         padding: 1.6rem .6rem;
+        
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0; left: 0;
+          width: 100%;
+          border-bottom: .2rem solid $c-beige;
+        }
       }
       
       &:hover {

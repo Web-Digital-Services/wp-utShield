@@ -26,6 +26,20 @@ body {
   }
 }
 
+.wrapper.modal-open {
+  .main__content > * {
+    visibility: hidden;
+  }
+  
+  .main__aside, .hero, .header {
+    visibility: visible;
+    
+    .hero__inner {
+      visibility: hidden;
+    }
+  }
+}
+
 a {
   color: inherit;
   text-decoration: none;

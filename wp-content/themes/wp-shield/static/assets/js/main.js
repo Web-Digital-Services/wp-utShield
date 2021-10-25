@@ -276,19 +276,23 @@ $find.on('keyup', function() {
 })
 
 $findButton.on('click', function(event) {
-    event.preventDefault();
-    $menuButton.removeClass('active');
-    $menu.removeClass('open');
-    $header.removeClass('fixed');
-    $wrapper.removeClass('menu-open');
-    $wrapper.toggleClass('modal-open');
-    $header.toggleClass('modal-open');
+  event.preventDefault();
+  $menuButton.removeClass('active');
+  $menu.removeClass('open');
+  $header.removeClass('fixed');
+  $wrapper.removeClass('menu-open');
+  $wrapper.toggleClass('modal-open');
+  $header.toggleClass('modal-open');
 
-    
+  if ($wrapper.hasClass('modal-open')) {
+    setTimeout(function() {
+      $("#find").focus()
+    }, 300);
+  }
 
-    $hero.toggleClass('menu-open');
-    body.toggleClass('modal-open');
-    body.removeClass('menu-open');
+  $hero.toggleClass('menu-open');
+  body.toggleClass('modal-open');
+  body.removeClass('menu-open');
 })
 
 $menuClose.on('click', function(event) {
