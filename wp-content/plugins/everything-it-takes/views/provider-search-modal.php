@@ -56,7 +56,7 @@
 
 							<div class="accordion__body">
 								<div class="accordion__content">
-                                    <ul class="list-persons">
+                                    <ul class="list-persons list-specialties">
                                         <?php /** @var WP_Term $specialty */ ?>
 										<?php foreach ( $this->specialties as $specialty ) : ?>
                                             <li>

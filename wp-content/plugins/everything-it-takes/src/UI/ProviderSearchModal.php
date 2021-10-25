@@ -54,7 +54,12 @@ final class ProviderSearchModal implements Registerable {
 	}
 
 	private function get_specialty_data(): array {
-		$specialties = get_terms( SpecialtyTaxonomy::SLUG );
+		$specialties = get_terms(
+			[
+				'number'   => 20,
+				'taxonomy' => SpecialtyTaxonomy::SLUG
+			]
+		);
 
 		return is_array( $specialties ) ? $specialties : [];
 	}
