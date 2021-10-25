@@ -9,38 +9,69 @@ Accordion
   @include breakpoint-down(tablet) {
     display: block;
   }
+  
+  div.accordion__head {
+    display: flex;
+    
+    @include breakpoint-down(tablet) {
+      display: none;
+    }
+  }
+  
+  a.accordion__head {
+    display: none;
+    
+    @include breakpoint-down(tablet) {
+      display: flex;
+    }
+  }
 
   .accordion__head {
+    position: relative;
     display: flex;
     margin-bottom: 3.4rem;
+    outline: transparent dotted .2rem;
+    outline-offset: .2rem;
+    border-radius: .4rem;
+
+    &:focus {
+      outline-color: $c-orange; 
+    }
+    
+    h5 {
+      font-size: 2rem;
+      color: $c-orange;
+      margin: 0;  
+    }
+    
+    figure {
+      display: none;
+      transform: rotate(180deg);
+      transition: transform .3s;
+    }
 
     @include breakpoint-down(tablet) {
       padding: 1.2rem 0;
       justify-content: space-between;
       align-items: center;
-      border-bottom: .1rem solid $c-mediumdarkbeige;
       cursor: pointer;
       margin-bottom: 0;
-    }
-  }
-
-  .accordion__head h5 {
-    font-size: 2rem;
-    color: $c-orange;
-    margin: 0;
-
-    @include breakpoint-down(tablet) {
-      font-size: 1.8rem;
-    }
-  }
-
-  .accordion__head figure {
-    display: none;
-    transform: rotate(180deg);
-    transition: transform .3s;
-
-    @include breakpoint-down(tablet) {
-      display: block;
+      
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0; left: 0;
+        width: 100%;
+        border-bottom: .1rem solid $c-mediumdarkbeige;
+      }
+      
+      h5 {
+        font-size: 1.8rem;  
+      }
+      
+      figure {
+        display: block;
+      }
     }
   }
 
@@ -106,10 +137,15 @@ Accordion nav
   }
 
   .accordion__body {
-    padding: 2.4rem 0;
-
-    @include breakpoint-down(mobile) {
-      padding: 2.4rem 0 .5rem;
+    padding: .8rem 0;
+    
+    a {
+      padding: .8rem 0;
+      border-radius: .4rem;
+    }
+    
+    ul li+li {
+      margin-top: .8rem;
     }
   }
 
@@ -117,10 +153,9 @@ Accordion nav
     display: flex;
     height: 100%;
     cursor: pointer;
-
-    @include breakpoint-down(mobile) {
-      justify-content: space-between;
-    }
+    padding: .8rem 0;
+    border-radius: .4rem;
+    justify-content: space-between;
   }
 
   .accordion__head h5 {
@@ -155,6 +190,7 @@ Accordion find
     padding: 1.6rem .6rem;
     transition: background-color .3s ease, color .3s, padding .3s ease;
     cursor: pointer;
+    border-radius: .8rem;
     
     svg path {
       transition: stroke .3s;
@@ -236,7 +272,6 @@ Accordion find
         color: $c-orange;
         background-color: $c-extralightbeige;
         padding: 1.6rem;
-        border-radius: .8rem;
       }  
     }
     
@@ -244,10 +279,17 @@ Accordion find
       border-top: none;
       
       .accordion__head {
-        border-bottom: .2rem solid $c-beige;
+        position: relative;
         background-color: transparent;
-        border-radius: 0;
         padding: 1.6rem .6rem;
+        
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0; left: 0;
+          width: 100%;
+          border-bottom: .2rem solid $c-beige;
+        }
       }
       
       &:hover {
