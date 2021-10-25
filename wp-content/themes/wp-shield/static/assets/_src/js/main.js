@@ -10,9 +10,6 @@ const $body = $('body');
 
 var standardCursor = document.querySelector(".standard-cursor");
 var videoCursor = document.querySelector(".video-cursor");
-var sliderCursor = document.querySelector(".slider-cursor");
-var sliderPrev = document.querySelector(".controls-prev");
-var sliderNext = document.querySelector(".controls-next");
 
 window.addEventListener("mousemove", cursor);
 
@@ -21,8 +18,6 @@ function cursor(e) {
   standardCursor.style.left = e.clientX + "px";
   videoCursor.style.top = e.clientY + "px";
   videoCursor.style.left = e.clientX + "px";
-  sliderCursor.style.top = e.clientY + "px";
-  sliderCursor.style.left = e.clientX + "px";
 }
 
 $(".video-cursor-hover").each(function () {
@@ -35,26 +30,6 @@ $(".video-cursor-hover").each(function () {
     document.body.classList.remove("video-cursor-hover--on");
   });
 });
-
-if ( null !== sliderPrev ) {
-  sliderPrev.addEventListener("mouseover", () => {
-    document.body.classList.add("slider-cursor-hover--on");
-    document.body.classList.add("slider-cursor-prev");
-  });
-  sliderPrev.addEventListener("mouseleave", () => {
-    document.body.classList.remove("slider-cursor-hover--on");
-    document.body.classList.remove("slider-cursor-prev");
-  });
-}
-
-if ( null !== sliderNext ) {
-  sliderNext.addEventListener("mouseover", () => {
-    document.body.classList.add("slider-cursor-hover--on");
-  });
-  sliderNext.addEventListener("mouseleave", () => {
-    document.body.classList.remove("slider-cursor-hover--on");
-  });
-}
 
 
 /**
@@ -71,17 +46,6 @@ if (document.querySelectorAll('.js-slider-testimonials').length > 0) {
       return '<button type="button"><svg class="circle" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="outer-circle" cx="11" cy="11" r="10" stroke="#FFFFFF" stroke-width="2"/><circle class="outer-circle-grow" cx="11" cy="11" r="10" stroke="#FFFFFF" stroke-width="2"/><circle class="inner-circle" cx="11" cy="11" r="4" fill="#FFFFFF"/></svg></button>';
     },
   });
-
-//  const sliderTestimonial = tns({
-//    container: ".js-slider-testimonials",
-//    mode: "gallery",
-//    controlsContainer: ".slider-controls",
-//    navContainer: ".testimonial-slider-nav",
-//    autoplay: true,
-//    autoplayButtonOutput: false,
-//    autoplayTimeout: 10000,
-//    speed: 500
-//  });
 }
 
 
@@ -163,27 +127,30 @@ $(window).on('load resize', function () {
  * @return {void}
  */
 const initAccordions = ($accordion = $('.js-accordion')) => {
-    $(window).on('load resize', function () {
-        if ($(window).width() < 1024) {
-            //Hide the inactive sections
-            $('.accordion__section').not('.is-current').find('.accordion__body').hide()
+  $(window).on('load resize', function () {
+    $(".js-accordion .accordion__head").attr("tabindex", "-1");
+    
+    if ($(window).width() < 1024) {
+      $(".js-accordion .accordion__head").attr("tabindex", "0");
+      
+      //Hide the inactive sections
+      $('.accordion__section').not('.is-current').find('.accordion__body').hide()
 
-            //Handle the show/hide logic
-            $accordion.on('click', '.accordion__head', function (event) {
-                const $accordionSection = $(this).closest('.accordion__section');
-                const $accordionBody = $accordionSection.find('.accordion__body');
+      //Handle the show/hide logic
+      $accordion.on('click', '.accordion__head', function (event) {
+        const $accordionSection = $(this).closest('.accordion__section');
+        const $accordionBody = $accordionSection.find('.accordion__body');
 
-                $accordionBody.stop().slideToggle();
+        $accordionBody.stop().slideToggle();
 
-                $accordionSection.toggleClass('is-current');
+        $accordionSection.toggleClass('is-current');
 
-                $accordionSection.siblings().removeClass('is-current')
-                        .find('.accordion__body').slideUp();
-            });
-        } else {
-            $('.accordion__section').not('.is-current').find('.accordion__body').show()
-        }
-    });
+        $accordionSection.siblings().removeClass('is-current').find('.accordion__body').slideUp();
+      });
+    } else {
+      $('.accordion__section').not('.is-current').find('.accordion__body').show()
+    }
+  });
 }
 
 initAccordions();
@@ -196,23 +163,22 @@ initAccordions();
  * @return {void}
  */
 const initAccordionNav = ($accordionNav = $('.js-accordion-nav')) => {
-    $(window).on('load resize', function () {
-        //Hide the inactive sections
-        $('.js-accordion-nav').find('.accordion__section').not('.is-current').find('.accordion__body').hide()
+  $(window).on('load resize', function () {
+    //Hide the inactive sections
+    $('.js-accordion-nav').find('.accordion__section').not('.is-current').find('.accordion__body').hide()
 
-        //Handle the show/hide logic
-        $accordionNav.on('click', '.accordion__head', function (event) {
-            const $accordionSection = $(this).closest('.accordion__section');
-            const $accordionBody = $accordionSection.find('.accordion__body');
+    //Handle the show/hide logic
+    $accordionNav.on('click', '.accordion__head', function (event) {
+      const $accordionSection = $(this).closest('.accordion__section');
+      const $accordionBody = $accordionSection.find('.accordion__body');
 
-            $accordionBody.stop().slideToggle();
+      $accordionBody.stop().slideToggle();
 
-            $accordionSection.toggleClass('is-current');
+      $accordionSection.toggleClass('is-current');
 
-            $accordionSection.siblings().removeClass('is-current')
-                    .find('.accordion__body').slideUp();
-        });
+      $accordionSection.siblings().removeClass('is-current').find('.accordion__body').slideUp();
     });
+  });
 }
 
 initAccordionNav();

@@ -82,10 +82,10 @@
 						<div class="menu__nav">
 							<div class="accordion-nav js-accordion-nav">
 								<div class="accordion__section">
-									<div class="accordion__head">
+									<a href="#" class="accordion__head">
 										<h5>Patient Care</h5>
 										<figure><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/ico-chevron.svg" alt="Icon"></figure>
-									</div><!-- /.accordion__head -->
+									</a><!-- /.accordion__head -->
 
 									<div class="accordion__body">
 										<div class="accordion__content">

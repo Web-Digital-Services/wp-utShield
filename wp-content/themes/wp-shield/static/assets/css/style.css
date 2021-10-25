@@ -527,31 +527,51 @@ Accordion
   @media (max-width: 1023px) {
     .accordion {
       display: block; } }
+  .accordion div.accordion__head {
+    display: flex; }
+    @media (max-width: 1023px) {
+      .accordion div.accordion__head {
+        display: none; } }
+  .accordion a.accordion__head {
+    display: none; }
+    @media (max-width: 1023px) {
+      .accordion a.accordion__head {
+        display: flex; } }
   .accordion .accordion__head {
+    position: relative;
     display: flex;
-    margin-bottom: 3.4rem; }
+    margin-bottom: 3.4rem;
+    outline: transparent dotted .2rem;
+    outline-offset: .2rem;
+    border-radius: .4rem; }
+    .accordion .accordion__head:focus {
+      outline-color: #C0511B; }
+    .accordion .accordion__head h5 {
+      font-size: 2rem;
+      color: #C0511B;
+      margin: 0; }
+    .accordion .accordion__head figure {
+      display: none;
+      transform: rotate(180deg);
+      transition: transform .3s; }
     @media (max-width: 1023px) {
       .accordion .accordion__head {
         padding: 1.2rem 0;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 0.1rem solid #D4CEC4;
         cursor: pointer;
-        margin-bottom: 0; } }
-  .accordion .accordion__head h5 {
-    font-size: 2rem;
-    color: #C0511B;
-    margin: 0; }
-    @media (max-width: 1023px) {
-      .accordion .accordion__head h5 {
-        font-size: 1.8rem; } }
-  .accordion .accordion__head figure {
-    display: none;
-    transform: rotate(180deg);
-    transition: transform .3s; }
-    @media (max-width: 1023px) {
-      .accordion .accordion__head figure {
-        display: block; } }
+        margin-bottom: 0; }
+        .accordion .accordion__head::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          border-bottom: 0.1rem solid #D4CEC4; }
+        .accordion .accordion__head h5 {
+          font-size: 1.8rem; }
+        .accordion .accordion__head figure {
+          display: block; } }
   .accordion .accordion__section.is-current .accordion__head figure {
     transform: rotate(0); }
   .accordion .accordion__section {
@@ -589,17 +609,19 @@ Accordion nav
   .accordion-nav .accordion__section.is-current .accordion__head figure {
     transform: rotate(0); }
   .accordion-nav .accordion__body {
-    padding: 2.4rem 0; }
-    @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .accordion-nav .accordion__body {
-        padding: 2.4rem 0 .5rem; } }
+    padding: .8rem 0; }
+    .accordion-nav .accordion__body a {
+      padding: .8rem 0;
+      border-radius: .4rem; }
+    .accordion-nav .accordion__body ul li + li {
+      margin-top: .8rem; }
   .accordion-nav .accordion__head {
     display: flex;
     height: 100%;
-    cursor: pointer; }
-    @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .accordion-nav .accordion__head {
-        justify-content: space-between; } }
+    cursor: pointer;
+    padding: .8rem 0;
+    border-radius: .4rem;
+    justify-content: space-between; }
   .accordion-nav .accordion__head h5 {
     font-size: 2rem;
     margin: 0;

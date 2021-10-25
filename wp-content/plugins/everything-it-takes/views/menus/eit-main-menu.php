@@ -1,9 +1,12 @@
 <div class="accordion__section">
-    <div class="accordion__head">
-        <h5><?= esc_html( $this->menu_title ); ?></h5>
-        <figure><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/ico-chevron.svg"
-                     alt=""></figure>
-    </div><!-- /.accordion__head -->
+  <a href="#" class="accordion__head">
+    <h5><?= esc_html( $this->menu_title ); ?></h5>
+    <figure><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/ico-chevron.svg" alt=""></figure>
+  </a><!-- /.accordion__head -->
+
+  <div class="accordion__head">
+    <h5><?= esc_html( $this->menu_title ); ?></h5>
+  </div><!-- /.accordion__head -->
 
     <div class="accordion__body">
         <div class="accordion__content">
