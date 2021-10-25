@@ -229,8 +229,6 @@ const scrollWidth = window.innerWidth - $(document).width()
  * @return {void}
  */
 $menuButton.on('click', function(event) {
-    $wrapper.css('padding-right', 0);
-    $header.css('padding-right', 0);
 	event.preventDefault();
     const $this = $(this);
 	$hero.removeClass('menu-open');
@@ -240,21 +238,21 @@ $menuButton.on('click', function(event) {
     $wrapper.toggleClass('menu-open');
     $header.toggleClass('fixed');
 
-    if ($wrapper.hasClass('menu-open')) {
-        $wrapper.css('padding-right', scrollWidth);
-    } else {
-        $wrapper.css('padding-right', 0);
-    }
-
-    if ($header.hasClass('fixed')) {
-        $header.css('padding-right', scrollWidth);
-    } else {
-        $header.css('padding-right', 0);
-    }
-
     $this.toggleClass('active');
     $menu.toggleClass('open');
     body.toggleClass('menu-open');
+})
+  
+$menuButton.on('click', function(event) {
+  if ($wrapper.hasClass('menu-open')) {
+    setTimeout(function() {
+      $("#search").focus()
+    }, 300);
+  } else {
+    setTimeout(function() {
+      $menuButton.focus()
+    }, 300);
+  }
 })
 
 
@@ -279,8 +277,6 @@ $find.on('keyup', function() {
 })
 
 $findButton.on('click', function(event) {
-    $wrapper.css('padding-right', 0);
-    $header.css('padding-right', 0);
     event.preventDefault();
     $menuButton.removeClass('active');
     $menu.removeClass('open');
@@ -289,17 +285,7 @@ $findButton.on('click', function(event) {
     $wrapper.toggleClass('modal-open');
     $header.toggleClass('modal-open');
 
-    if ($wrapper.hasClass('modal-open')) {
-        $wrapper.css('padding-right', scrollWidth);
-    } else {
-        $wrapper.css('padding-right', 0);
-    }
-
-    if ($header.hasClass('modal-open')) {
-        $header.css('padding-right', scrollWidth);
-    } else {
-        $header.css('padding-right', 0);
-    }
+    
 
     $hero.toggleClass('menu-open');
     body.toggleClass('modal-open');
@@ -316,8 +302,6 @@ $menuClose.on('click', function(event) {
     $header.removeClass('modal-open');
     $wrapper.removeClass('menu-open');
     $wrapper.removeClass('modal-open');
-    $wrapper.css('padding-right', 0);
-    $header.css('padding-right', 0);
 })
 
 

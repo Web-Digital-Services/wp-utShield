@@ -28,55 +28,8 @@
 <div class="wrapper">
 	<div class="main side-menu">
 		<div class="main__content">
-
-			<header class="header js-header">
-				<div class="shell shell--alt">
-					<div class="header__inner">
-						<div class="header__button">
-							<a href="#" class="btn-menu js-burger-button">
-								<span></span>
-								<span></span>
-								<span></span>
-							</a>
-						</div><!-- /.header__button -->
-						<div class="logo header__logo">
-							<?php
-								if ( is_page_template( 'page-templates/hero-secondary.php' ) ) {
-									echo '<a href="' . esc_url( get_site_url() ) . '"><img src="' . esc_url( get_stylesheet_directory_uri() ) . '/dist/assets/images/core/UTHSA_logo_H_Color-White.png" alt="Logo"></a>';
-								}else{
-									echo '<a href="' . esc_url( get_site_url() ) . '"><img src="' . esc_url( get_stylesheet_directory_uri() ) . '/dist/assets/images/core/logo-black.svg" alt="Logo"></a>';
-								}
-								// Dont show page title if not on the home page.
-								if ( is_front_page() ) {
-        							echo'<a href="' . get_the_permalink( get_the_ID() ) . '" class="page__title">' .  get_the_title() . '</a>';
-    							}
-							?>
-						</div>
-						<aside class="header__aside">
-							<?php do_action( 'eit_header_right_menu' ); ?>
-							<?php do_action( 'eit_header_right_cta_menu' ); ?>
-						</aside><!-- /.header__aside -->
-					</div><!-- /.header__inner -->
-				</div><!-- /.shell -->
-			</header><!-- /.header -->
-
-			<aside class="main__aside">
-				<div class="sidebar main__sidebar">
-					<div class="sidebar__button">
-						<a href="#" class="btn-menu js-burger-button">
-							<span></span>
-							<span></span>
-							<span></span>
-							<p class="btn__closed">Menu</p>
-							<p class="btn__open">Close</p>
-						</a>
-					</div><!-- /.sidebar__button -->
-
-					<h6 class="sidebar__title">We Make Lives Better®</h6><!-- /.sidebar__title -->
-				</div><!-- /.sidebar -->
-			</aside><!-- /.main__aside -->
-
-			<div class="menu js-menu">
+    
+    <div class="menu js-menu">
 				<div class="shell shell--alt">
 					<div class="menu__inner">
 						<div class="menu__nav">
@@ -138,3 +91,52 @@
 					</div><!-- /.menu__inner -->
 				</div><!-- /.shell -->
 			</div><!-- /.menu -->
+
+			<header class="header js-header">
+				<div class="shell shell--alt">
+					<div class="header__inner">
+						<div class="header__button">
+							<a href="#" class="btn-menu js-burger-button">
+								<span></span>
+								<span></span>
+								<span></span>
+							</a>
+						</div><!-- /.header__button -->
+						<div class="logo header__logo">
+							<?php
+								if ( is_page_template( 'page-templates/hero-secondary.php' ) ) {
+									echo '<a href="' . esc_url( get_site_url() ) . '" class="page__logo"><img src="' . esc_url( get_stylesheet_directory_uri() ) . '/dist/assets/images/core/UTHSA_logo_H_Color-White.png" alt="Logo"></a>';
+								}else{
+									echo '<a href="' . esc_url( get_site_url() ) . '" class="page__logo"><img src="' . esc_url( get_stylesheet_directory_uri() ) . '/dist/assets/images/core/logo-black.svg" alt="Logo"></a>';
+								}
+								// Dont show page title if not on the home page.
+								if ( is_front_page() ) {
+        							echo'<a href="' . get_the_permalink( get_the_ID() ) . '" class="page__title">' .  get_the_title() . '</a>';
+    							}
+							?>
+						</div>
+						<aside class="header__aside">
+							<?php do_action( 'eit_header_right_menu' ); ?>
+							<?php do_action( 'eit_header_right_cta_menu' ); ?>
+						</aside><!-- /.header__aside -->
+					</div><!-- /.header__inner -->
+				</div><!-- /.shell -->
+			</header><!-- /.header -->
+
+			
+    
+  <aside class="main__aside">
+				<div class="sidebar main__sidebar">
+					<div class="sidebar__button">
+						<a href="#" class="btn-menu js-burger-button">
+							<span></span>
+							<span></span>
+							<span></span>
+							<p class="btn__closed">Menu</p>
+							<p class="btn__open">Close</p>
+						</a>
+					</div><!-- /.sidebar__button -->
+
+					<h6 class="sidebar__title">We Make Lives Better®</h6><!-- /.sidebar__title -->
+				</div><!-- /.sidebar -->
+			</aside><!-- /.main__aside -->
