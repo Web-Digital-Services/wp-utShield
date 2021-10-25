@@ -229,21 +229,15 @@ const scrollWidth = window.innerWidth - $(document).width()
  * @return {void}
  */
 $menuButton.on('click', function(event) {
-	event.preventDefault();
-    const $this = $(this);
-	$hero.removeClass('menu-open');
-    $header.removeClass('modal-open');
-    body.removeClass('modal-open');
-    $wrapper.removeClass('modal-open');
-    $wrapper.toggleClass('menu-open');
-    $header.toggleClass('fixed');
-
-    $this.toggleClass('active');
-    $menu.toggleClass('open');
-    body.toggleClass('menu-open');
-})
+  event.preventDefault();
+  const $this = $(this);
+  $hero.removeClass('menu-open');
+  $header.removeClass('modal-open');
+  body.removeClass('modal-open');
+  $wrapper.removeClass('modal-open');
+  $wrapper.toggleClass('menu-open');
+  $header.toggleClass('fixed');
   
-$menuButton.on('click', function(event) {
   if ($wrapper.hasClass('menu-open')) {
     setTimeout(function() {
       $("#search").focus()
@@ -253,7 +247,12 @@ $menuButton.on('click', function(event) {
       $menuButton.focus()
     }, 300);
   }
+
+  $this.toggleClass('active');
+  $menu.toggleClass('open');
+  body.toggleClass('menu-open');
 })
+
 
 
 const $find = $('.js-find');

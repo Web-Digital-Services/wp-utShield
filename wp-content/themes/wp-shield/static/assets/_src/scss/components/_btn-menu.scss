@@ -39,24 +39,26 @@ Btn menu
     }
   }
 
-  &.active span {
-    transition: background .2s, top .2s, left .2s, opacity .2s, transform .2s .25s;
+  .menu-open & {
+    span {
+      transition: background .2s, top .2s, left .2s, opacity .2s, transform .2s .25s;
 
-    &:nth-child(3),
-    &:nth-child(1) {
-      top: 1.2rem;
-    }
+      &:nth-child(3),
+      &:nth-child(1) {
+        top: 1.2rem;
+      }
 
-    &:nth-child(2) {
-      opacity: 0;
-    }
+      &:nth-child(2) {
+        opacity: 0;
+      }
 
-    &:nth-child(1) {
-      transform: rotate(45deg);
-    }
+      &:nth-child(1) {
+        transform: rotate(45deg);
+      }
 
-    &:nth-child(3) {
-      transform: rotate(-45deg);
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+      }
     }
   }
 
@@ -69,7 +71,7 @@ Btn menu
   }
 }
 
-.btn-menu.active {
+.menu-open .btn-menu {
   .btn__open {
     display: block;
   }

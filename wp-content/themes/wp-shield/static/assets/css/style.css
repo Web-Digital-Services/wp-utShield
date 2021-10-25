@@ -919,25 +919,25 @@ Btn menu
       top: .8rem; }
     .btn-menu span:nth-child(3) {
       top: 1.6rem; }
-  .btn-menu.active span {
+  .menu-open .btn-menu span {
     transition: background .2s, top .2s, left .2s, opacity .2s, transform .2s .25s; }
-    .btn-menu.active span:nth-child(3), .btn-menu.active span:nth-child(1) {
+    .menu-open .btn-menu span:nth-child(3), .menu-open .btn-menu span:nth-child(1) {
       top: 1.2rem; }
-    .btn-menu.active span:nth-child(2) {
+    .menu-open .btn-menu span:nth-child(2) {
       opacity: 0; }
-    .btn-menu.active span:nth-child(1) {
+    .menu-open .btn-menu span:nth-child(1) {
       transform: rotate(45deg); }
-    .btn-menu.active span:nth-child(3) {
+    .menu-open .btn-menu span:nth-child(3) {
       transform: rotate(-45deg); }
   .btn-menu p {
     margin: 2.8rem 0 0; }
   .btn-menu .btn__open {
     display: none; }
 
-.btn-menu.active .btn__open {
+.menu-open .btn-menu .btn__open {
   display: block; }
 
-.btn-menu.active .btn__closed {
+.menu-open .btn-menu .btn__closed {
   display: none; }
 
 .btn-menu:hover {
