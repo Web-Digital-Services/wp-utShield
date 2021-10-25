@@ -23,7 +23,6 @@
 
 <div class="standard-cursor"></div>
 <div class="video-cursor"></div>
-<div class="slider-cursor"></div>
 
 <div class="wrapper">
 	<div class="main side-menu">
