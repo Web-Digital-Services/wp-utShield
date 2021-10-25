@@ -240,7 +240,7 @@ $menuButton.on('click', function(event) {
   
   if ($wrapper.hasClass('menu-open')) {
     setTimeout(function() {
-      $("#search").focus()
+      $("#as_q").focus()
     }, 300);
   } else {
     setTimeout(function() {

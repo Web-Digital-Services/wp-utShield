@@ -68,28 +68,4 @@ a.video-cursor-hover {
       cursor: pointer;
     }
   }
-  
-  .slider-cursor {
-    position: fixed;
-    z-index: 10000;
-    pointer-events: none;
-    width: 8rem; height: 8rem;
-    background: url(../img/svg/slider-hover.svg) no-repeat center;
-    background-size: contain;
-    border-radius: 50%;
-    box-shadow: 0 1em 2.5em -.5em rgba($c-offblack, 0.25);
-    transform: translate(-50%, -50%) scale(.4);
-    opacity: 0;
-    transition: all .02s ease, opacity .3s ease, transform .4s ease;
-
-    .slider-cursor-hover--on & {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
-    }
-
-    .slider-cursor-hover--on.slider-cursor-prev & {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1) rotate(-180deg);
-    }
-  }
 }
