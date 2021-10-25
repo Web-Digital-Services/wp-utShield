@@ -9,7 +9,7 @@
                         src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/svg/icons/quote-mark.svg"
                         alt=""></figure><!-- /.section__element -->
 
-            <h6 data-aos="fade-up"><?= esc_html( $this->title ); ?></h6>
+            <h2 class="eyebrow-sub" data-aos="fade-up"><?= esc_html( $this->title ); ?></h2>
 
             <div class="slider-testimonials section__slider cell" data-aos="fade-up">
                 <div class="slider-testimonials-slider js-slider-testimonials">

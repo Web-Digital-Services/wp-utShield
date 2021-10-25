@@ -3,7 +3,7 @@
 		<div class="section__inner grid-x">
 			<div class="section__head cell">
                 <?php if ( ! empty( $this->eyebrow ) ) : ?>
-				    <h6 data-aos="fade-up"><?= esc_html( $this->eyebrow ); ?></h6>
+				    <h2 class="eyebrow-sub" data-aos="fade-up"><?= esc_html( $this->eyebrow ); ?></h2>
                 <?php endif; ?>
 				<?php if ( ! empty( $this->eyebrow ) ) : ?>
 				    <h3 data-aos="fade-up"><?= nl2br( esc_html( $this->title ) ); ?></h3>

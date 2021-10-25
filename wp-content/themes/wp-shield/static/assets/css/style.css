@@ -155,7 +155,7 @@ a {
 .h1, h1 {
   font-size: 12.8rem; }
 
-.h2, h2 {
+.h2, h2, .heading-main {
   font-size: 6rem; }
 
 .h3, h3 {
@@ -167,7 +167,7 @@ a {
 .h5, h5 {
   font-size: 1.8rem; }
 
-.h6, h6 {
+.h6, h6, .eyebrow-sub {
   font-size: 1.4rem; }
 
 p, ul, ol, dl, hr, table, blockquote {
@@ -1139,16 +1139,16 @@ Callout
   @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
     .callout {
       padding: 6.3rem 0; } }
-  .callout h6 {
+  .callout .eyebrow-sub {
     color: #EFE1CC;
     letter-spacing: 0.2em;
     margin-bottom: 2.2rem;
     text-transform: uppercase; }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .callout h6 {
+      .callout .eyebrow-sub {
         font-size: 1.2rem;
         margin-bottom: 2rem; } }
-  .callout h2 {
+  .callout .heading-main {
     font-weight: 500;
     line-height: 1;
     letter-spacing: -.03em;
@@ -1156,11 +1156,11 @@ Callout
     position: relative;
     z-index: 2; }
     @media (max-width: 1023px) {
-      .callout h2 {
+      .callout .heading-main {
         font-size: 5.2rem;
         letter-spacing: -.05em; } }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .callout h2 {
+      .callout .heading-main {
         font-size: 3.2rem;
         letter-spacing: -.01em; } }
   .callout .callout__heading {
@@ -1352,21 +1352,21 @@ Callout
   @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
     .callout--alt {
       padding: 4.5rem 0 6.5rem; } }
-  .callout--alt h6 {
+  .callout--alt .eyebrow-sub {
     color: #635853; }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .callout--alt h6 {
+      .callout--alt .eyebrow-sub {
         margin-bottom: 1.5rem; } }
-  .callout--alt h2 {
+  .callout--alt .heading-main {
     font-size: 4.8rem;
     line-height: 1.15;
     margin-bottom: 0; }
     @media (max-width: 1023px) {
-      .callout--alt h2 {
+      .callout--alt .heading-main {
         font-size: 4rem;
         letter-spacing: -0.03em; } }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .callout--alt h2 {
+      .callout--alt .heading-main {
         font-size: 3.2rem; } }
   .callout--alt .callout__title {
     position: absolute;
@@ -1523,11 +1523,11 @@ Callout
         margin-bottom: 5rem; } }
 
 @media (max-width: 1023px) {
-  .callout--nobreak h2 {
+  .callout--nobreak .heading-main {
     white-space: nowrap; } }
 
 @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-  .callout--nobreak h2 {
+  .callout--nobreak .heading-main {
     white-space: normal; } }
 
 /* Callout large */
@@ -1539,9 +1539,9 @@ Callout
   @media (max-width: 1023px) {
     .callout--large {
       padding: 4.5rem 0 0; } }
-  .callout--large h6 {
+  .callout--large .eyebrow-sub {
     color: #635853; }
-  .callout--large h2 {
+  .callout--large .heading-main {
     font-size: 4.8rem;
     line-height: 1.15;
     margin: 0; }
@@ -1628,18 +1628,18 @@ Callout
   @media (max-width: 1023px) {
     .callout--reversed {
       padding: 10rem 0 5rem; } }
-  .callout--reversed h6 {
+  .callout--reversed .eyebrow-sub {
     color: #635853; }
-  .callout--reversed h2 {
+  .callout--reversed .heading-main {
     font-size: 6rem;
     line-height: 1;
     margin-bottom: 0; }
     @media (max-width: 1023px) {
-      .callout--reversed h2 {
+      .callout--reversed .heading-main {
         font-size: 5.2rem;
         letter-spacing: -.05em; } }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .callout--reversed h2 {
+      .callout--reversed .heading-main {
         font-size: 3.2rem;
         letter-spacing: -.01em; } }
   .callout--reversed .callout__title {
@@ -2993,14 +2993,14 @@ Section events
 \* ------------------------------------------------------------ */
 .section-events {
   padding: 4rem 0; }
-  .section-events h6 {
+  .section-events .eyebrow-sub {
     color: #635853;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
     font-size: 1.4rem;
     margin-bottom: 2rem; }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .section-events h6 {
+      .section-events .eyebrow-sub {
         font-size: 1.2rem; } }
   .section-events h3 {
     position: relative;
@@ -3081,7 +3081,7 @@ Section news
   @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
     .section-news {
       padding: 6.2rem 0 2.5rem; } }
-  .section-news h6 {
+  .section-news .eyebrow-sub {
     font-size: 1.4rem;
     color: #635853;
     text-transform: uppercase;
@@ -3089,7 +3089,7 @@ Section news
     margin-bottom: 2.6rem;
     letter-spacing: 0.07em; }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .section-news h6 {
+      .section-news .eyebrow-sub {
         font-size: 1.2rem;
         margin-bottom: 2rem; } }
   .section-news h3 {
@@ -3146,7 +3146,7 @@ Section testimonials
   @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
     .section-testimonials {
       padding: 8rem 0; } }
-  .section-testimonials h6 {
+  .section-testimonials .eyebrow-sub {
     position: relative;
     font-size: 1.4rem;
     text-transform: uppercase;
@@ -3154,7 +3154,7 @@ Section testimonials
     letter-spacing: 0.2rem;
     margin-bottom: 4rem; }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .section-testimonials h6 {
+      .section-testimonials .eyebrow-sub {
         font-size: 1.2rem;
         margin-bottom: 2.5rem; } }
   @media (max-width: 1399px) {

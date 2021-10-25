@@ -14,10 +14,10 @@
 			</div><!-- /.callout__images -->
 
 			<div class="callout__content cell large-6 medium-6">
-				<h6 data-aos="fade-up"><?= esc_html( $this->eyebrow ); ?></h6>
+				<h2 class="eyebrow-sub" data-aos="fade-up"><?= esc_html( $this->eyebrow ); ?></h2>
 
 				<div class="callout__heading marker-line marker-line--orange" data-aos="fade-up">
-					<h2><?= nl2br( esc_html( $this->title ) ); ?></h2>
+					<h3 class="heading-main"><?= nl2br( esc_html( $this->title ) ); ?></h3>
 					<figure class="section__heading-line">
                         <?= Views::render( 'icons/marker-line', [ 'block_id' => $this->block_id ] ); ?>
 					</figure><!-- /.callout__heading-figure -->

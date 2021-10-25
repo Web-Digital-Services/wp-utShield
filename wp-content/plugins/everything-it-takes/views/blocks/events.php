@@ -4,7 +4,7 @@
 	<div class="shell shell--alt grid-container">
 		<div class="section__inner grid-x">
 			<div class="section__content cell large-5 medium-6 small-12">
-				<h6 data-aos="fade-up"><?= esc_html( $this->eyebrow ); ?></h6>
+				<h2 class="eyebrow-sub" data-aos="fade-up"><?= esc_html( $this->eyebrow ); ?></h2>
 
 				<div class="section__heading marker-circle" data-aos="fade-up">
 					<h3><?= nl2br( esc_html( $this->title ) ); ?></h3>
