@@ -67,11 +67,11 @@ if (document.querySelectorAll('.js-slider-testimonials').length > 0) {
     fade: true,
     arrows: false,
     dots: true,
-    customPaging : function(slider, i) { 
+    customPaging : function(slider, i) {
       return '<button type="button"><svg class="circle" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="outer-circle" cx="11" cy="11" r="10" stroke="#FFFFFF" stroke-width="2"/><circle class="outer-circle-grow" cx="11" cy="11" r="10" stroke="#FFFFFF" stroke-width="2"/><circle class="inner-circle" cx="11" cy="11" r="4" fill="#FFFFFF"/></svg></button>';
     },
   });
-  
+
 //  const sliderTestimonial = tns({
 //    container: ".js-slider-testimonials",
 //    mode: "gallery",
@@ -95,11 +95,11 @@ if (document.querySelectorAll('.js-slider-news').length > 0) {
     arrows: true,
     arrowsPlacement: 'beforeSlides',
     prevArrow: '<button type="button" class="nav-arrow prev">'
-               + '  <span aria-hidden="true"><img src="../assets/img/svg/ico-arrow-left.svg" alt="Arrow icon"></span>'
+               + '  <span aria-hidden="true"><img src="../wp-content/themes/wp-shield/static/assets/img/svg/ico-arrow-left.svg" alt="Arrow icon"></span>'
                + '  <span class="sr-only">Previous slide</span>'
                + '</button>',
     nextArrow: '<button type="button" class="nav-arrow next">'
-               + '  <span aria-hidden="true"><img src="../assets/img/svg/ico-arrow-right.svg" alt="Arrow icon"></span>'
+               + '  <span aria-hidden="true"><img src="../wp-content/themes/wp-shield/static/assets/img/svg/ico-arrow-right.svg" alt="Arrow icon"></span>'
                + '  <span class="sr-only">Next slide</span>'
                + '</button>',
     slidesToShow: 3,
@@ -122,7 +122,7 @@ if (document.querySelectorAll('.js-slider-news').length > 0) {
           slidesToShow: 1
         }
       }
-    ]  
+    ]
   });
 }
 
@@ -130,14 +130,14 @@ if (document.querySelectorAll('.js-slider-news').length > 0) {
 /**
  * Slider callout.
  */
-  
+
 if (document.querySelectorAll('.js-slider-callout').length > 0) {
   $('.callout-slider').slick({
     autoplay: true,
     autoplaySpeed: 10000,
     arrows: false,
     dots: true,
-    customPaging : function(slider, i) { 
+    customPaging : function(slider, i) {
       return '<button type="button"><svg class="circle" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="outer-circle" cx="11" cy="11" r="10" stroke="#FFFFFF" stroke-width="2"/><circle class="outer-circle-grow" cx="11" cy="11" r="10" stroke="#FFFFFF" stroke-width="2"/><circle class="inner-circle" cx="11" cy="11" r="4" fill="#FFFFFF"/></svg></button>';
     },
   });
@@ -148,7 +148,7 @@ if (document.querySelectorAll('.js-slider-callout').length > 0) {
  * Mobile placeholder text.
  */
 
-$(window).on('load resize', function () {  
+$(window).on('load resize', function () {
   if ($(window).width() < 700) {
     $(".js-find").attr("placeholder", "Browse all Providers");
     } else {
