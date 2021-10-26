@@ -2477,7 +2477,8 @@ Hero
   height: 100vh; }
   .hero.menu-open .hero__menu .menu-find {
     opacity: 1;
-    transform: none; }
+    transform: none;
+    visibility: visible; }
 
 /* ------------------------------------------------------------ *\
 	Icons
@@ -2599,6 +2600,7 @@ Main
 Menu find
 \* ------------------------------------------------------------ */
 .menu-find {
+  visibility: hidden;
   position: relative;
   padding: .8rem;
   background-color: #fff;
@@ -2662,11 +2664,12 @@ Menu find
         .menu-find .menu__close:after {
           display: none; } }
 
-.menu-find.open .menu__body {
-  display: none; }
-
-.menu-find.open .menu__foot {
-  display: block; }
+.menu-find.open {
+  visibility: visible; }
+  .menu-find.open .menu__body {
+    display: none; }
+  .menu-find.open .menu__foot {
+    display: block; }
 
 /* ------------------------------------------------------------ *\
 Menu

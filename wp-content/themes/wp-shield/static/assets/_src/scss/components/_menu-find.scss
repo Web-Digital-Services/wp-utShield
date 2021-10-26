@@ -3,6 +3,7 @@ Menu find
 \* ------------------------------------------------------------ */
 
 .menu-find {
+  visibility: hidden;
   position: relative;
   padding: .8rem;
   background-color: $c-white;
@@ -85,6 +86,8 @@ Menu find
 }
 
 .menu-find.open {
+  visibility: visible;
+  
   .menu__body {
     display: none;
   }
