@@ -2664,12 +2664,11 @@ Menu find
         .menu-find .menu__close:after {
           display: none; } }
 
-.menu-find.open {
-  visibility: visible; }
-  .menu-find.open .menu__body {
-    display: none; }
-  .menu-find.open .menu__foot {
-    display: block; }
+.menu-find.open .menu__body {
+  display: none; }
+
+.menu-find.open .menu__foot {
+  display: block; }
 
 /* ------------------------------------------------------------ *\
 Menu
