@@ -64,6 +64,8 @@ final class NewsImporter {
 				continue;
 			}
 
+			$image_alt = $image_object->alt_text ?: '';
+
 			/**
 			 * Option 2: Include posts without featured image.
 			 * TODO: Use a fallback image instead.
@@ -76,7 +78,7 @@ final class NewsImporter {
 //				$image_url = '';
 //			}
 
-			$posts[] = new Post( $post, $image_url );
+			$posts[] = new Post( $post, $image_url, $image_alt );
 		}
 
 		$final_posts = [];
