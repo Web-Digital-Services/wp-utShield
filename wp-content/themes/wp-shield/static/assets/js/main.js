@@ -42,9 +42,6 @@ if (document.querySelectorAll('.js-slider-testimonials').length > 0) {
     fade: true,
     arrows: false,
     dots: true,
-    customPaging : function(slider, i) {
-      return '<button type="button"><svg class="circle" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="outer-circle" cx="11" cy="11" r="10" stroke="#FFFFFF" stroke-width="2"/><circle class="outer-circle-grow" cx="11" cy="11" r="10" stroke="#FFFFFF" stroke-width="2"/><circle class="inner-circle" cx="11" cy="11" r="4" fill="#FFFFFF"/></svg></button>';
-    },
   });
 }
 
@@ -101,9 +98,6 @@ if (document.querySelectorAll('.js-slider-callout').length > 0) {
     autoplaySpeed: 10000,
     arrows: false,
     dots: true,
-    customPaging : function(slider, i) {
-      return '<button type="button"><svg class="circle" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="outer-circle" cx="11" cy="11" r="10" stroke="#FFFFFF" stroke-width="2"/><circle class="outer-circle-grow" cx="11" cy="11" r="10" stroke="#FFFFFF" stroke-width="2"/><circle class="inner-circle" cx="11" cy="11" r="4" fill="#FFFFFF"/></svg></button>';
-    },
   });
 }
 
