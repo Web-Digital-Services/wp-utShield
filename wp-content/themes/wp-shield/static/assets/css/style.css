@@ -3518,7 +3518,9 @@ Sidebar
     margin: 0 5px;
     padding: 0; }
     .slick-dots li button {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       line-height: 0px;
       font-size: 0px;
       color: transparent;
@@ -3526,6 +3528,8 @@ Sidebar
       background: transparent;
       cursor: pointer;
       border-radius: 2rem; }
+      .slick-dots li button:hover {
+        transform: scale(1.15); }
       .slick-dots li button:hover .slick-dot-icon, .slick-dots li button:focus .slick-dot-icon {
         opacity: 1; }
       .slick-dots li button:focus {
@@ -3533,28 +3537,32 @@ Sidebar
         .slick-dots li button:focus .slick-dot-icon:before {
           color: orange; }
       .slick-dots li button .slick-dot-icon {
-        color: black;
-        opacity: 0.25; }
+        display: block;
+        width: .8rem;
+        height: .8rem;
+        background-color: #fff;
+        opacity: .5;
+        border-radius: 50%;
+        transition: opacity .3s ease, transform .3s ease; }
         .slick-dots li button .slick-dot-icon:before {
+          content: "";
           position: absolute;
           top: 0;
           left: 0;
-          content: "•";
-          font-family: "slick";
-          font-size: 12px;
-          line-height: 1;
-          text-align: center;
+          width: 2.2rem;
+          height: 2.2rem;
+          border-radius: 50%;
+          border: 2px solid #fff;
+          opacity: 0;
           transition: all .05s linear; }
+    .slick-dots li.slick-active button:hover {
+      transform: none; }
     .slick-dots li.slick-active button:focus .slick-dot-icon {
-      color: orange;
       opacity: 1; }
     .slick-dots li.slick-active button .slick-dot-icon {
-      color: black;
       opacity: 1; }
       .slick-dots li.slick-active button .slick-dot-icon:before {
-        margin-top: -3px;
-        margin-left: -2px;
-        font-size: 18px; }
+        opacity: 1; }
 
 /**
  Improved .sr-only class by ffoodd: https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034

@@ -277,7 +277,8 @@ $slick-opacity-not-active: 0.25 !default;
     padding: 0;
 
     button {
-      display: block;
+      display: flex;
+      align-items: center; justify-content: center;
       line-height: 0px;
       font-size: 0px;
       color: transparent;
@@ -287,6 +288,11 @@ $slick-opacity-not-active: 0.25 !default;
       border-radius: 2rem;
 
       // Hover and focus states
+      
+      &:hover {
+        transform: scale(1.15);
+      }
+      
       &:hover,
       &:focus {
         .slick-dot-icon {
@@ -304,19 +310,21 @@ $slick-opacity-not-active: 0.25 !default;
 
       // Inner dot icons
       .slick-dot-icon {
-        color: $slick-dot-color;
-        opacity: $slick-opacity-not-active;
+        display: block;
+        width: .8rem; height: .8rem;
+        background-color: $c-white;
+        opacity: .5;
+        border-radius: 50%;
+        transition: opacity .3s ease, transform .3s ease;
 
         &:before {
+          content: "";
           position: absolute;
-          top: 0;
-          left: 0;
-
-          content: $slick-dot-character;
-          font-family: $slick-font-family;
-          font-size: $slick-dot-size;
-          line-height: 1;
-          text-align: center;
+          top: 0; left: 0;
+          width: 2.2rem; height: 2.2rem;
+          border-radius: 50%;
+          border: 2px solid $c-white;
+          opacity: 0;
 
           transition: all .05s linear;
         }
@@ -326,21 +334,21 @@ $slick-opacity-not-active: 0.25 !default;
     // Active dot
     &.slick-active {
       button {
+        &:hover {
+          transform: none;
+        }
+        
         &:focus {
           .slick-dot-icon {
-            color: orange;
             opacity: 1;
           }
         }
 
         .slick-dot-icon {
-          color: $slick-dot-color-active;
-          opacity: $slick-opacity-active;
+          opacity: 1;
 
           &:before {
-            margin-top: -3px;
-            margin-left: -2px;
-            font-size: 18px;
+            opacity: 1;
           }
         }
       }
