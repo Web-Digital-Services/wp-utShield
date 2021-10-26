@@ -3237,7 +3237,7 @@ Section testimonials
   .section-text h2 {
     padding-left: 16.8rem;
     font-size: 13.6rem;
-    color: #D4CEC4;
+    color: rgba(99, 88, 83, 0.7);
     letter-spacing: -.044em;
     position: absolute;
     right: -150rem;
