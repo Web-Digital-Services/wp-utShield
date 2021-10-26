@@ -28,7 +28,7 @@
 	<div class="main side-menu">
 		<div class="main__content">
     
-    <div class="menu js-menu">
+    <div class="menu js-menu" role="menu">
 				<div class="shell shell--alt">
 					<div class="menu__inner">
 						<div class="menu__nav">
