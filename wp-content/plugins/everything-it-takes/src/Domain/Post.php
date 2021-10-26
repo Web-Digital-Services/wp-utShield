@@ -18,10 +18,12 @@ final class Post {
 
 	private stdClass $post;
 	private string $image_url;
+	private string $image_alt;
 
-	public function __construct( stdClass $post, string $image_url = '' ) {
+	public function __construct( stdClass $post, string $image_url = '', string $image_alt = '' ) {
 		$this->post      = $post;
 		$this->image_url = $image_url;
+		$this->image_alt = $image_alt;
 	}
 
 	public function get_date(): string {
@@ -30,6 +32,10 @@ final class Post {
 
 	public function get_featured_image(): string {
 		return $this->image_url;
+	}
+
+	public function get_featured_image_alt(): string {
+		return $this->image_alt;
 	}
 
 	public function get_title(): string {
