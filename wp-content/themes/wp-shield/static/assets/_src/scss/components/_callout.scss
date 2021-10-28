@@ -8,6 +8,20 @@ Callout
   position: relative;
   border: 0;
   margin: 0;
+  background-image: url(../img/bg-noise.png), linear-gradient($c-lightorange, $c-orange);
+  
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0; right: 0;
+    height: 100%;
+    width: 10.4rem;
+    background: $c-white;
+    
+    @include breakpoint-down(xlarge-desktop) {
+      display: none;
+    }
+  }    
 
   @include breakpoint-down(tablet) {
     padding: 7.2rem 0 19rem;
@@ -91,31 +105,6 @@ Callout
       margin: 0;
       flex-direction: column-reverse;
     }
-  }
-
-  .callout__background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: calc(100% - 9.4rem);
-    height: 100%;
-
-    @include breakpoint-down(xlarge-desktop) {
-      width: calc(100% - 3rem);
-    }
-
-    @include breakpoint-down(tablet) {
-      width: 100%;
-    }
-  }
-
-  .callout__background img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
   
   .callout__slider-contain {
@@ -298,6 +287,10 @@ Callout
   padding: 20.5rem 0 10rem;
   background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(100% 352.75% at 100% 0%, rgba(112, 99, 92, 0) 0%, rgba(112, 99, 92, 0.45) 100%), #F7F5F0;
   color: $c-offblack;
+  
+  &::after {
+    display: none;
+  }
 
   @include breakpoint-down(tablet) {
     padding: 15.5rem 0 2rem;
@@ -554,8 +547,12 @@ Callout
 .callout--large {
   overflow: hidden;
   padding: 4.5rem 0 10rem;
-  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(100% 352.75% at 100% 0%, rgba(112, 99, 92, 0) 0%, rgba(112, 99, 92, 0.45) 100%), #F7F5F0;
+  background: url(../img/bg-noise.png), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(100% 352.75% at 100% 0%, rgba(112, 99, 92, 0) 0%, rgba(112, 99, 92, 0.45) 100%), #F7F5F0;
   color: $c-offblack;
+  
+  &::after {
+    display: none;
+  }
 
   @include breakpoint-down(tablet) {
     padding: 4.5rem 0 0;
@@ -683,6 +680,10 @@ Callout
 .callout--reversed {
   padding: 10rem 0 0;
   color: $c-offblack;
+  
+  &::after {
+    display: none;
+  }
 
   @include breakpoint-down(tablet) {
     padding: 10rem 0 5rem;
