@@ -6,7 +6,9 @@ Hero
   position: relative;
   height: 95.2rem;
   padding-top: 13rem;
-  overflow: hidden;
+  overflow: hidden; 
+  background: url(../img/bg-noise.png), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(100% 352.75% at 0% 0%, rgba(112, 99, 92, 0) 0%, rgba(112, 99, 92, 0.45) 100%), #F0ECE2;
+  transition: height .3s ease;
   
   @include breakpoint-down(tablet) {
     height: 100rem;
@@ -409,6 +411,8 @@ Hero
 }
 
 .hero.menu-open {
+  height: 100vh;
+  
   .hero__menu {
     opacity: 1;
     pointer-events: inherit;

@@ -2,10 +2,6 @@
 
 <section class="callout">
     <div class="shell shell--alt callout__shell grid-container">
-        <figure class="callout__background"><img
-                    src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/background-noise-orange.jpg"
-                    alt=""></figure><!-- /.callout__background -->
-
         <div class="callout__inner grid-x">
             <div class="callout__slider-contain cell large-6">
                 <div class="callout-slider js-slider-callout">

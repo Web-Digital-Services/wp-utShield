@@ -4,8 +4,6 @@
 	<h6 class="callout__title"><?= nl2br( esc_html( $this->title_left ) ); ?></h6><!-- /.callout__title -->
 
 	<div class="shell shell--alt callout__shell grid-container">
-		<figure class="callout__background"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/background-noise.jpg" alt=""></figure><!-- /.callout__background -->
-
 		<div class="callout__inner grid-x">
 			<figure class="callout__image cell large-6 medium-12 small-12"><?= wp_get_attachment_image( $this->image_id, 'eit-featured-cta-large' ); ?></figure><!-- /.callout__image -->
 

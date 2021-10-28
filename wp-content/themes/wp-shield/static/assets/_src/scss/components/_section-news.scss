@@ -4,6 +4,11 @@ Section news
 
 .section-news {
   padding: 12.4rem 0 8rem;
+  transition: opacity .3s ease;
+  
+  .menu-open & {
+    opacity: 0;
+  }
 
   @include breakpoint-down(tablet) {
     padding: 7.2rem 0;

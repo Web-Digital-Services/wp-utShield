@@ -1,6 +1,4 @@
 <div class="hero__menu">
-	<figure class="hero__menu-background"><img src="<?= esc_url( get_stylesheet_directory_uri() ); ?>/static/assets/img/temp/background-noise.jpg" alt=""></figure><!-- /.hero__menu-background -->
-
 	<div class="menu-find js-menu-find" role="searchbox">
         
 
