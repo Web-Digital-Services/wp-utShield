@@ -28,7 +28,7 @@
 		<?php get_template_part( 'template-parts/mobile-off-canvas' ); ?>
 	<?php endif; ?>
 	<header class="title-bar" data-responsive-toggle="regular" style="display: none;">
-		<a href="<?php echo get_option('home'); ?>"><img src='<?php ut_display_logo('mobile'); ?>'></a>
+		<a href="<?php echo get_option('home'); ?>"><img  alt='Mobile Logo in White' src='<?php ut_display_logo('mobile'); ?>'></a>
 		<button class="menu-icon" type="button" data-toggle="regular">Menu</button>
 		</header>
 	<!-- Level 3 Header -->
@@ -40,9 +40,9 @@
 				$part_of_ut_health_url = get_theme_mod( 'part_of_ut_health_url');
 								
 				if (!empty($part_of_ut_health_url) && ($part_of_ut_health_label)){
-					echo '<p><a aria-label="Mobile Breadcrumb to parent site" href="'. $part_of_ut_health_url .'"><i class="fas fa-star"></i> ' . $part_of_ut_health_label . '</p></a>';
+					echo '<p><a aria-label="Mobile Breadcrumb to parent site" href="'. $part_of_ut_health_url .'"><i class="fas fa-star"></i> ' . $part_of_ut_health_label . '</a></p>';
 				}else{
-					echo '<p><a aria-label="Mobile Breadcrumb to parent site" href="https://www.uthscsa.edu/"><i class="fas fa-star"></i> Part of UT Health San Antonio</p></a>';
+					echo '<p><a aria-label="Mobile Breadcrumb to parent site" href="https://www.uthscsa.edu/"><i class="fas fa-star"></i> Part of UT Health San Antonio</a></p>';
 				} 
 			?>
 		</div>
@@ -96,7 +96,7 @@
 				?>
 			</div>
 		</div>
-		<nav class="site-navigation nav-bar" role="navigation" id="<?php foundationpress_mobile_menu_id(); ?>">
+		<nav class="site-navigation nav-bar" id="<?php foundationpress_mobile_menu_id(); ?>">
 			<div class="top-bar">	
 				<div class="top-bar-left">
 					<?php foundationpress_main_menu(); ?>
