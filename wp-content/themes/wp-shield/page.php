@@ -77,13 +77,11 @@ load_theme_design('header'); ?>
 	</section>
 </header>
 <div class="main-container">
-	<div class="main-grid">
-		<main class="page-content">
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php the_content(); ?>
-			<?php endwhile; ?>
-		</main>
-	</div>
+	<main class="page-content">
+		<?php while ( have_posts() ) : the_post(); ?>
+			<?php the_content(); ?>
+		<?php endwhile; ?>
+	</main>
 </div>
 <?php
 load_theme_design('footer');;
