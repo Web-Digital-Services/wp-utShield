@@ -151,18 +151,21 @@ class uth_bleeding_image extends WPBakeryShortCode {
             if ($row_design_options == 'img_bleed_jump_right'){ 
                 $wrapper_open = '<div class="callout jump-right">';
                 $wrapper_close = '</div>';
-
+                $view_Order_left = 'small-order-2 large-order-1';
+                $view_Order_right = 'small-order-1 large-order-2';
             }else{
+                $view_Order_left = '';
+                $view_Order_right = '';
                 $wrapper_open = '';
                 $wrapper_close = '';
             }
             $column_left = '
-                <div class="cell medium-6 large-6">
+                <div class="cell medium-6 large-6 ' . $view_Order_left . '">
                     ' . $wrapper_open . '
                     ' . $content . '
                     ' . $wrapper_close . '
                 </div>';
-            $column_right = '<div class="cell medium-6 large-6">' . $block_image . '</div>';
+            $column_right = '<div class="cell medium-6 large-6 ' . $view_Order_right . '">' . $block_image . '</div>';
         }elseif($row_design_options == 'img_bleed_left' || $row_design_options == 'img_bleed_jump_left' ){
             //Image Left, Panel Right
             $outer_content_wrapper = 'img-bleed-left';
