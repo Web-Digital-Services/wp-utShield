@@ -1,4 +1,4 @@
-name: Deploy to WP Engine (Development)
+name: Deploy to WP Engine (Stage)
 
 on:
   push:
@@ -23,7 +23,7 @@ jobs:
       - name: SSH Deploy to WP Engine
         uses: bowiedev/github-action-wpengine-ssh-deploy@master
         env:
-          WPE_ENV_NAME: devuthealth
+          WPE_ENV_NAME: stageuthp
           WPE_SSHG_KEY_PUBLIC: ${{ secrets.WPENGINE_SSH_KEY_PUBLIC }}
           WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPENGINE_SSH_KEY_PRIVATE }}
           TPO_SRC_PATH: ""
