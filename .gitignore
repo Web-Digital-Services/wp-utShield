@@ -21,8 +21,8 @@ wp-content/themes/**
 # Start editing!
 
 # GitHub Actions
-!.github/workflows/wpengine-production.yml
-!.github/workflows/wpengine-dev.yml
+!.github/workflows/deploy-prod-everythingittakes.yml
+!.github/workflows/deploy-prod-wp.yml
 
 
 # MU Plugins

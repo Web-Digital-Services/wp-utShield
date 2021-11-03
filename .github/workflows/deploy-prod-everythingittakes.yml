@@ -1,9 +1,9 @@
-name: Deploy to WP Engine (Dev)
+name: Deploy to Everythingittakes.org (prod)
 
 on:
   push:
     branches:
-      - dev
+      - master
 
 jobs:
   build:
@@ -20,11 +20,11 @@ jobs:
           npm run build
           rm -r node_modules
         working-directory: wp-content/themes/wp-shield
-      - name: SSH Deploy to DEV Environments
+      - name: SSH Deploy to WP Engine
         uses: bowiedev/github-action-wpengine-ssh-deploy@master
         env:
-          WPE_ENV_NAME: devuthealth
-          WPE_SSHG_KEY_PUBLIC: ${{ secrets.DEPLOYMENT_SSH_KEY_PUBLIC }}
-          WPE_SSHG_KEY_PRIVATE: ${{ secrets.DEPLOYMENT_SSH_KEY_PRIVATE }}
+          WPE_ENV_NAME: utphysicians
+          WPE_SSHG_KEY_PUBLIC: ${{ secrets.WPENGINE_SSH_KEY_PUBLIC }}
+          WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPENGINE_SSH_KEY_PRIVATE }}
           TPO_SRC_PATH: ""
           TPO_PATH: ""
