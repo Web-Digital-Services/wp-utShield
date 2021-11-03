@@ -22,6 +22,8 @@ wp-content/themes/**
 
 # GitHub Actions
 !.github/workflows/wpengine-production.yml
+!.github/workflows/wpengine-dev.yml
+
 
 # MU Plugins
 !wp-content/mu-plugins/wp-kses-svg-ruleset.php
