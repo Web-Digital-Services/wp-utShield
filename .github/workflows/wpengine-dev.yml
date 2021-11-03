@@ -1,4 +1,4 @@
-name: Deploy to WP Engine (Stage)
+name: Deploy to WP Engine (Dev)
 
 on:
   push:
@@ -20,11 +20,11 @@ jobs:
           npm run build
           rm -r node_modules
         working-directory: wp-content/themes/wp-shield
-      - name: SSH Deploy to Stageuthp
+      - name: SSH Deploy to DEV Environments
         uses: bowiedev/github-action-wpengine-ssh-deploy@master
         env:
-          WPE_ENV_NAME: stageuthp
-          WPE_SSHG_KEY_PUBLIC: ${{ secrets.WPENGINE_SSH_KEY_PUBLIC }}
-          WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPENGINE_SSH_KEY_PRIVATE }}
+          WPE_ENV_NAME: devuthealth
+          WPE_SSHG_KEY_PUBLIC: ${{ secrets.DEPLOYMENT_SSH_KEY_PUBLIC }}
+          WPE_SSHG_KEY_PRIVATE: ${{ secrets.DEPLOYMENT_SSH_KEY_PRIVATE }}
           TPO_SRC_PATH: ""
           TPO_PATH: ""
