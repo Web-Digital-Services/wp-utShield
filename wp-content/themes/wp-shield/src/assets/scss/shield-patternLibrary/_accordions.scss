@@ -76,6 +76,10 @@
   border-bottom: rem-calc(1px) solid $light-grey;
 }
 
+.accordion-item:last-child > :last-child {
+  border-radius: rem-calc(0 0 6px 6px);
+  }
+
 .is-active>.accordion-content {
   display: block;
 }

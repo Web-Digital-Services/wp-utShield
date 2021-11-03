@@ -33,6 +33,14 @@
             padding-bottom: rem-calc(15px);
         }
     }
+    .chonky {
+        padding-top: rem-calc(240px);
+        padding-bottom: rem-calc(240px);
+        @media screen and (max-width: 640px) {
+            padding-top: rem-calc(60px);
+            padding-bottom: rem-calc(60px);
+        }
+    }
     
     .bleed {
         color: $off-black;

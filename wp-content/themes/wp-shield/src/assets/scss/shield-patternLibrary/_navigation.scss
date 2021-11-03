@@ -203,11 +203,16 @@ div#level-1 {
     justify-content: center;
     box-shadow: $shadow-2;
 
+    .top-bar, .top-bar ul{
+        background-color: transparent;
+    }
+
     .top-bar {
         padding: 0;
         overflow: hidden;
         position: relative;
         width: $global-width;
+
 
         .top-bar-left {
             ul {
