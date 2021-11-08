@@ -98,8 +98,12 @@ final class NewsImporter {
 		return $final_posts;
 	}
 
+	/**
+	 * @url https://news.uthscsa.edu/category/main/health/
+	 * @return array
+	 */
 	private static function get_raw_data(): array {
-		return json_decode( file_get_contents( 'https://news.uthscsa.edu/wp-json/wp/v2/posts?per_page=20' ) );
+		return json_decode( file_get_contents( 'https://news.uthscsa.edu/wp-json/wp/v2/posts?per_page=20&categories=2' ) );
 	}
 
 	private static function get_featured_image( int $image_id ): ?stdClass {
