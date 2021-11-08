@@ -39,15 +39,17 @@ final class NewsImporter {
 			/**
 			 * Option 1: Skip posts without featured image.
 			 */
-			if ( ! isset( $post->featured_media ) || 0 === $post->featured_media ) {
-				continue;
-			}
+//			if ( ! isset( $post->featured_media ) || 0 === $post->featured_media ) {
+//				continue;
+//			}
 
-			$image_object = self::get_featured_image( $post->featured_media );
+			$image_object = isset( $post->featured_media ) && 0 !== $post->featured_media
+				? self::get_featured_image( $post->featured_media )
+				: null;
 
-			if ( 'application/pdf' === $image_object->mime_type ) {
-				continue;
-			}
+//			if ( 'application/pdf' === $image_object->mime_type ) {
+//				continue;
+//			}
 
 			$image_url = '';
 
@@ -60,9 +62,9 @@ final class NewsImporter {
 				}
 			}
 
-			if ( empty( $image_url ) ) {
-				continue;
-			}
+//			if ( empty( $image_url ) ) {
+//				continue;
+//			}
 
 			$image_alt = $image_object->alt_text ?: '';
 
@@ -103,7 +105,7 @@ final class NewsImporter {
 	 * @return array
 	 */
 	private static function get_raw_data(): array {
-		return json_decode( file_get_contents( 'https://news.uthscsa.edu/wp-json/wp/v2/posts?per_page=20&categories=2' ) );
+		return json_decode( file_get_contents( 'https://news.uthscsa.edu/wp-json/wp/v2/posts?per_page=4&categories=2' ) );
 	}
 
 	private static function get_featured_image( int $image_id ): ?stdClass {
