@@ -66,7 +66,7 @@ final class NewsImporter {
 //				continue;
 //			}
 
-			$image_alt = $image_object->alt_text ?: '';
+			$image_alt = $image_object->alt_text ?? '';
 
 			/**
 			 * Option 2: Include posts without featured image.
