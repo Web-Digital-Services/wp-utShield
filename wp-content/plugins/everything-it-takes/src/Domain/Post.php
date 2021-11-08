@@ -31,11 +31,11 @@ final class Post {
 	}
 
 	public function get_featured_image(): string {
-		return $this->image_url;
+		return $this->image_url ?: get_stylesheet_directory_uri() . '/static/assets/_src/img/placeholder-news.jpg';
 	}
 
 	public function get_featured_image_alt(): string {
-		return $this->image_alt;
+		return $this->image_alt ?: 'UT Health shield logo';
 	}
 
 	public function get_title(): string {
