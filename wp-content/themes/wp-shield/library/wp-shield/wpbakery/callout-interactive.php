@@ -101,7 +101,6 @@ class uth_Panel_link extends WPBakeryShortCode {
                         'type' => 'dropdown',
                         'heading' => esc_html__( 'Icon library', 'js_composer' ),
                         'value' => array(
-                            esc_html__( 'UT Health', 'js_composer' ) => 'uthscsa-icons',
                             esc_html__( 'Font Awesome', 'js_composer' ) => 'fontawesome',
                             esc_html__( 'Open Iconic', 'js_composer' ) => 'openiconic',
                         ),
@@ -143,24 +142,7 @@ class uth_Panel_link extends WPBakeryShortCode {
                             'value' => 'openiconic',
                         ),
                         'description' => esc_html__( 'Select icon from library.', 'js_composer' ),
-                    ),
-                    array(
-                        'type' => 'iconpicker',
-                        'heading' => esc_html__( 'Icon', 'js_composer' ),
-                        'param_name' => 'icon_uthealth',
-                        'value' => 'uthscsa',// default value to backend editor admin_label
-                        'group' => 'Icon Options',
-                        'settings' => array(
-                            'emptyIcon' => false, // default true, display an "EMPTY" icon?
-                            'type' => 'uthscsa-icons',
-                            'iconsPerPage' => 4000, // default 100, how many icons per/page to display
-                        ),
-                        'dependency' => array(
-                            'element' => 'type',
-                            'value' => 'uthscsa-icons',
-                        ),
-                        'description' => esc_html__( 'Select icon from library.', 'js_composer' ),
-                    ),                  
+                    )
                 )
             )
         );                                
@@ -174,13 +156,12 @@ class uth_Panel_link extends WPBakeryShortCode {
                 array(
                     'url'   => '',
                     'text' => '',
-                    'enable_icon' => '',
                     'paragraph_text' => '',
                     'uth_colors' => '',
+                    'enable_icon' => '',
                     'type' => '',
                     'icon_openiconic' => '',
                     'icon_fontawesome' => '',
-                    'icon_uthealth' => '',
                     'equilizer_id' => ''
                 ), 
 
@@ -209,16 +190,16 @@ class uth_Panel_link extends WPBakeryShortCode {
 
         //The first drop down option in dropdown params are always empty.. Adding a the enque 
         if (empty($type)){
-            $type = 'uthscsa-icons';
+            $type = 'fontawesome';
         }
         // Enqueue needed icon font. - Pulled from plugin core - JMO Nov5th. 2019
         vc_icon_element_fonts_enqueue( $type );
-        //Combining all 3 dropdown options into a single icon to display
-        $icon = $icon_openiconic.$icon_fontawesome.$icon_uthealth;
+        //Combining both dropdown options into a single icon to display
+        $icon = $icon_openiconic.$icon_fontawesome;
         
         /** Default to the shield icon if none is selected */
         if (empty($icon)){
-            $icon = 'icon-uth-shield';
+            $icon = 'fa-users';
         }
 
         /** Check to see if the icons and borders need to be disabled **/
@@ -237,22 +218,22 @@ class uth_Panel_link extends WPBakeryShortCode {
         if(empty($uth_colors)){
         	$uth_colors = 'colorized';
         }
-        /** Default to the shield icon if none is selected */
-        if (empty($icon)){
-            $icon = 'icon-uth-shield';
-        }
+
         //If icon is disabled, use RULED Heading class
-        if ($enable_icon == 'false' || empty($enable_icon)){
+        if (($enable_icon == 'false' || empty($enable_icon )) && (!empty($paragraph_text))){
             $ruled = 'class="ruled"';
         }else{
             $ruled = '';
+        }
+        if (!empty($paragraph_text)){
+            $paragraph_text = '<p>' . $paragraph_text . '</p>';
         }
         // Fill $html var with data
         $html = ' 
         <a class="callout panel-mobile text-center ' . $uth_colors . '" href="' . $a_ref . '" title="' . $a_title . '" target="' . $a_target . '" rel="' . $a_rel . '" ' . $equilizer_id . '>
             ' . $render_icon . '
             <h3 ' . $ruled .'>' . $text . '</h3>
-            <p>' . $paragraph_text . '</p>
+            ' . $paragraph_text . '
         </a>';
          
         return $html;
