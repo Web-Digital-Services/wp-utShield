@@ -24,6 +24,9 @@ require_once( 'library/wp-shield/banners/metaboxes-page-banners.php' );
 require_once( 'library/wp-shield/wpbakery/wp-importer.php' );
 require_once( 'library/wp-shield/shortcodes/social_media_footer.php' );
 require_once( 'library/wp-shield/physicians-loop/alter-physician-loop.php' );
+require_once( 'library/wp-shield/events/create-event-loop.php' );
+require_once( 'library/wp-shield/events/events-ics-creator.php' );
+require_once( 'library/wp-shield/events/symposium-child-subnav.php' );
 
 /** MODIFYING CORE FOUNDATION PRESS FILES */
 require_once( 'library/modified-core/navigation.php' );
