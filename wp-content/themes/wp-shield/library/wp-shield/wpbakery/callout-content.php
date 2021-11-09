@@ -93,6 +93,63 @@ class uth_content_Callout extends WPBakeryShortCode {
                         'description' => esc_html__( 'This feature will can be used to match the heights of elements in the row. ', 'wp-shield' ),
                         'value' => __( '', 'wp-shield' ),
                         'group' => 'Match Heights',	
+                    ),
+                    array(
+                        'type' => 'checkbox',
+                        'holder' => '',
+                        'heading' => __( 'Enable Icon', 'wp-shield' ),
+                        'description' => esc_html__( 'Checking this box will disable the featured image field.', 'wp-shield' ),
+                        'param_name' => 'enable_icon',
+                        'value' => __( '', 'wp-shield' ),
+                        'admin_label' => false,
+                        'weight' => 0,
+                        'group' => 'Icon Options',
+                    ),
+                    array(
+                        'type' => 'dropdown',
+                        'heading' => esc_html__( 'Icon library', 'js_composer' ),
+                        'value' => array(
+                            esc_html__( 'Font Awesome', 'js_composer' ) => 'fontawesome',
+                            esc_html__( 'Open Iconic', 'js_composer' ) => 'openiconic',
+                        ),
+                        'admin_label' => true,
+                        'group' => 'Icon Options',
+                        'param_name' => 'type',
+                        'description' => esc_html__( 'Select icon library.', 'js_composer' ),
+                    ),
+                    array(
+                        'type' => 'iconpicker',
+                        'heading' => __( 'Icon', 'js_composer' ),
+                        'param_name' => 'icon_fontawesome',
+                        'value' => 'fa fa-adjust',
+                        'group' => 'Icon Options',
+                        'settings' => array(
+                            'emptyIcon' => false, // default true, display an "EMPTY" icon?
+                            'type' => 'fontawesome',
+                            'iconsPerPage' => 200, // default 100, how many icons per/page to display
+                        ),
+                        'dependency' => array(
+                            'element' => 'type',
+                            'value' => 'fontawesome',
+                        ),
+                        'description' => __( 'Select icon from library', 'js_composer' ),
+                    ),
+                    array(
+                        'type' => 'iconpicker',
+                        'heading' => esc_html__( 'Icon', 'js_composer' ),
+                        'param_name' => 'icon_openiconic',
+                        'value' => 'vc-oi vc-oi-dial',// default value to backend editor admin_label
+                        'group' => 'Icon Options',
+                        'settings' => array(
+                            'emptyIcon' => false, // default true, display an "EMPTY" icon?
+                            'type' => 'openiconic',
+                            'iconsPerPage' => 4000, // default 100, how many icons per/page to display
+                        ),
+                        'dependency' => array(
+                            'element' => 'type',
+                            'value' => 'openiconic',
+                        ),
+                        'description' => esc_html__( 'Select icon from library.', 'js_composer' ),
                     )
                 )
             )
@@ -110,7 +167,11 @@ class uth_content_Callout extends WPBakeryShortCode {
                     'optional_css'   => '',
                     'color_class' => '',
                     'Callout_border' => '',
-                    'equilizer_id' => ''
+                    'equilizer_id' => '',
+                    'enable_icon' => '',
+                    'type' => '',
+                    'icon_openiconic' => '',
+                    'icon_fontawesome' => '',
                 ), 
                 $atts
             )
@@ -123,7 +184,28 @@ class uth_content_Callout extends WPBakeryShortCode {
         /** Additional Logic to render designs **/
         if (empty($uth_callout_styles)){
             $uth_callout_styles = 'callout';
-    }
+        }
+        //The first drop down option in dropdown params are always empty.. Adding a the enque 
+        if (empty($type)){
+            $type = 'fontawesome';
+        }
+        // Enqueue needed icon font. - Pulled from plugin core - JMO Nov5th. 2019
+        vc_icon_element_fonts_enqueue( $type );
+        //Combining both dropdown options into a single icon to display
+        $icon = $icon_openiconic.$icon_fontawesome;
+        
+        /** Default to the shield icon if none is selected */
+        if (empty($icon)){
+            $icon = 'fa-users';
+        }
+        /** Check to see if the icons and borders need to be disabled **/
+        if ($enable_icon == 'true'){
+            $render_icon = '<p class="text-center"><i class="far fa-' . $icon . ' fa-4x"></i></p>';
+        }elseif(!empty($image_id[0])){
+            $render_icon = '<div class="text-center"><img src=' . $image_id[0] . '></div>';
+        }else{
+            $render_icon = '';
+        }
 
         //Combine the border with the color options if needed
         if(!empty($Callout_border)){
@@ -147,6 +229,7 @@ class uth_content_Callout extends WPBakeryShortCode {
         }else{
             $html = '
             <div class="' . $uth_callout_styles . ' ' . $color_class . ' ' . $optional_css . '" ' . $equilizer_id . '>
+                ' . $render_icon . '
                 <p>' . do_shortcode($content) . '</p>
             </div>';
         }
