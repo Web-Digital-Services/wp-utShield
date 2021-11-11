@@ -1,3 +1,4 @@
+/** OVER RIDES TO DSP SPECIFICALLY FOR WP. **/
 /** Define Colors **/
 $orange: #AD4200;
 $dark-orange: #7A0F00;
@@ -80,10 +81,6 @@ nav .current_page_item{
 .card p.colorized .far.fa-circle, .card p.colorized .fa-stack.outline > .fa-stack-1x{
     color: green;
 }
-.card{
-	margin-right:4em;
-	margin-bottom:4em;
-}
 .page-content{
 	min-width:100%
 }
@@ -111,3 +108,4 @@ input.facetwp-autocomplete-update{
 .facetwp-checkbox{
 	font-weight: 600;
 }
+/** END OVER RIDES TO DSP SPECIFICALLY FOR WP. **/
