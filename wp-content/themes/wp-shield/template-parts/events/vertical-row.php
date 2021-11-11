@@ -37,7 +37,7 @@
 <div class="cell small-4 medium-4 large-4">
     <div class="grid-x grid-margin-x">
         <div class="cell small-4 medium-4 large-4">
-            <a href="#">
+            <a href="<?php the_permalink(); ?>">
                 <div class="datebox">
                     <div class="month"><?php $getMonth = new DateTime($eventDate); $shortMonth = $getMonth->format('M'); echo $shortMonth;?></div>
                     <div class="day"><?php $getDay = new DateTime($eventDate); $displayDay = $getDay->format('d'); echo $displayDay;?></div>

@@ -182,7 +182,7 @@ class uth_events_block extends WPBakeryShortCode {
             $template_part = "template-parts/content-types/events/cards/single-event-card";
             $wrapper_closing_class = '</div>';
         }elseif($design_options == 'vertical'){
-            $wrapper_opening_class = '<div><div class="cell small-12 medium-12 large-12 text-center"><h2 class="margin-bottom">' . $feed_title . '</h2>
+            $wrapper_opening_class = '<div class="cell small-12 medium-12 large-12 text-center"><h2 class="margin-bottom">' . $feed_title . '</h2>
             <div class="grid-x grid-margin-x text-left margin-bottom">';
             $template_part = "template-parts/events/vertical-row";
             $wrapper_closing_class = '</div><p><a class="button carat-double" href="' . $all_events_link . '">View upcoming events</a></p></div>';
