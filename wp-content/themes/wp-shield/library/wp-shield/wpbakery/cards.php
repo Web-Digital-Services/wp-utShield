@@ -259,15 +259,13 @@ class uth_card extends WPBakeryShortCode {
                 </div>';
          }elseif($card_style=='interactive'){
             $html ='
-            <div ' . $equilizer_id . '>
-                <a class="card ' . $color_options . '" href="' . $a_ref . '" title="' . $a_title . '" rel="' . $a_rel . '">
+                <a class="card ' . $color_options . '" href="' . $a_ref . '" title="' . $a_title . '" rel="' . $a_rel . '" ' . $equilizer_id . '>
                     ' .  $cardImage . '
                     <div class="card-section">
                         <' . $heading_level . '>' . $card_title .'</' . $heading_level . '>
                         <p>' . $card_copy_text . '</p>
                     </div>                
-                </a>
-            </div>';
+                </a>';
          }elseif($card_style=='nested'){
             $html ='
             <div class="cell nested' . $color_options . '" ' . $equilizer_id . '>
@@ -296,7 +294,7 @@ class uth_card extends WPBakeryShortCode {
             </div>';
          }elseif($card_style=='postcard'){
             $html =
-                '<a class="card postcard cell small-12 large-12" href="' . $a_ref . '" title="' . $a_title . '" rel="' . $a_rel . '">
+                '<a class="card postcard cell small-12 large-12" href="' . $a_ref . '" title="' . $a_title . '" rel="' . $a_rel . '" ' . $equilizer_id . '>
                     ' .  $cardImage . '
                     <div class="card-section">
                         <' . $heading_level . '>' . $card_title .'</' . $heading_level . '>
