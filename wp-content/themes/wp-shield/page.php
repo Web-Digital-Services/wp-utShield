@@ -45,14 +45,10 @@ load_theme_design('header'); ?>
 						}else{
 							the_title('<h1 class="close">', '</h1>');
 						}
-					?>
-					<?php
 						// Checks and displays the retrieved value
 						if( !empty( $banner_byline ) ) {
 							echo '<p class="banner-text">' . $banner_byline, '</p>';
 						}
-					?>
-					<?php 
 						if( !empty( $banner_button_text ) ) {
 							echo '<div class="button-group">';
 							if( !empty( $banner_button_text ) ) { echo '<p><a class="button" href="' . $banner_button_url, '">' . $banner_button_text, '</a></p>'; }
