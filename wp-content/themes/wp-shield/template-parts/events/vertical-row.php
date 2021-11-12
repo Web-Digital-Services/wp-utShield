@@ -34,7 +34,7 @@
         $eventDateFormat = $showMultiDay_FirstDay . ' - ' . $show_MultiDay_LastDay;
     }
 ?>
-<div class="cell small-4 medium-4 large-4">
+<div class="cell small-12 medium-6 large-4 margin-bottom">
     <div class="grid-x grid-margin-x">
         <div class="cell small-4 medium-4 large-4">
             <a href="<?php the_permalink(); ?>">
