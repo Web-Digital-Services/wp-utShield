@@ -76,12 +76,10 @@ load_theme_design('header'); ?>
 		</div>
 	</section>
 </header>
-<div class="grid-container">
-	<main class="grid-x margin-x">
-		<?php while ( have_posts() ) : the_post(); ?>
-			<?php the_content(); ?>
-		<?php endwhile; ?>
-	</main>
-</div>
+<main class="grid-container">
+	<?php while ( have_posts() ) : the_post(); ?>
+		<?php the_content(); ?>
+	<?php endwhile; ?>
+</main>
 <?php
 load_theme_design('footer');;
