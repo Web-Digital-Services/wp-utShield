@@ -344,7 +344,7 @@ a {
         text-decoration: none;
     }
 
-    &:visited:not(.button),
+    &:visited:not(.button, .callout, .card),
     &:focus {
         color: $dark-orange;
     }
@@ -546,9 +546,6 @@ a.highlight {
                 color: $dark-orange;
             }
 
-            &:visited {
-                color: $dark-orange;
-            }
         }
     }
 }
