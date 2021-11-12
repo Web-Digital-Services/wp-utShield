@@ -76,8 +76,8 @@ load_theme_design('header'); ?>
 		</div>
 	</section>
 </header>
-<div class="main-container">
-	<main class="page-content">
+<div class="grid-container">
+	<main class="grid-x margin-x">
 		<?php while ( have_posts() ) : the_post(); ?>
 			<?php the_content(); ?>
 		<?php endwhile; ?>
