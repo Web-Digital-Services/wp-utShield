@@ -54,7 +54,14 @@ $search_results = $searchwp_query->get_results();
 									$post = ( new Provider( $search_result ) );
 									?>
 									<a href="<?= esc_url( $post->get_url() ); ?>" class="person person--alt" target="_blank">
-										<figure><?= wp_kses_post( $post->get_featured_image() ); ?></figure>
+										<?php 
+											if ( !empty( $post->get_featured_image())) {
+												echo '<figure>' . wp_kses_post( $post->get_featured_image()) . '</figure>';
+											}
+											else {
+												echo '<figure><img alt="No image is available for this provider" src="' . get_bloginfo( 'stylesheet_directory' ) . '/dist/assets/images/core/shield.png" /></figure>';
+											}
+										?>
 										<p><?= esc_html( $post->get_title() ); ?> <span>in Physicians</span></p>
 									</a>
 									<?php
@@ -71,9 +78,10 @@ $search_results = $searchwp_query->get_results();
 								wp_reset_postdata();
 								break;
 							case 'SearchWPTermResult': ?>
-								<a href="<?= esc_url( get_site_url() . '/provider-directory/?_' . $search_result->taxonomy . '_filter=' . $search_result->slug ); ?>" class="person person--alt" target="_blank">
-									<p><?= esc_html( $search_result->name ); ?> in <span><?= esc_html( ucfirst( $search_result->taxonomy ) ); ?></span></p>
-								</a>
+								<?php $taxonomy_slug = (str_replace(' ', '_', strtolower($search_result->taxonomy)));?>
+								<a href="<?= esc_url( get_site_url() . '/provider-directory/?_' . $taxonomy_slug . '=' . $search_result->slug ); ?>" class="person person--alt" target="_blank">
+									<p><?= esc_html( $search_result->name ); ?><span> in <?= esc_html( ucfirst( $search_result->taxonomy ) ); ?></span></p>
+								</a> 
 								<?php break; ?>
 							<?php endswitch; ?>
 					</li>
@@ -82,6 +90,7 @@ $search_results = $searchwp_query->get_results();
 			<?php else : ?>
 				<li class="searchwp-live-search-no-results" role="option" class="person person--alt">
 					<p><?php esc_html_e( 'No results found.', 'searchwp-live-ajax-search' ); ?></p>
+					<a class="arrow" href="/provider-directory/">Browse all providers</a>
 				</li>
 			<?php endif; ?>
 
