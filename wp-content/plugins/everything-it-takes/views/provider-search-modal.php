@@ -8,7 +8,7 @@
 					<div class="search__inner">
 						<form action="#" method="get">
 							<label for="find" class="hidden"></label>
-							<input type="text" placeholder="Browse Providers by name, specialty or location" name="find" id="find" value="" class="search__field js-find" data-swplive="true" data-swpparentel="#menu__foot"/>
+							<input type="text" placeholder="Search Providers by name, specialty, location or language" name="find" id="find" value="" class="search__field js-find" data-swplive="true" data-swpparentel="#menu__foot"/>
 							<input type="submit" value="GO" class="search__btn"/>
 						</form>
 					</div><!-- /.search__inner -->
@@ -33,7 +33,13 @@
                                         <?php foreach ( $this->providers as $provider ) : ?>
                                             <li>
                                                 <a href="<?= esc_url( $provider->get_url() ); ?>" class="person" target="_blank">
-                                                    <figure><?= wp_kses_post( $provider->get_featured_image() ); ?></figure>
+													<?php 
+														if ( !empty( $provider->get_featured_image())) {
+															echo '<figure>' . wp_kses_post( $provider->get_featured_image()) . '</figure>';
+														}else{
+															echo '<figure><img src="' . get_bloginfo( 'stylesheet_directory' ) . '/dist/assets/images/core/shield.png" /></figure>';
+														}
+													?>
                                                     <p><?= esc_html( $provider->get_title() ); ?><span>, <?= esc_html( $provider->get_specialty_name() ); ?></span></p>
                                                 </a>
                                             </li>
