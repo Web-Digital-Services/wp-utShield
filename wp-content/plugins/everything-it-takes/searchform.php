@@ -26,6 +26,6 @@ $search_query_or_text = $search_query ?: $search_text;
 <form action="#" method="get" data-swpparentel="#menu__foot">
 	<label for="find" class="hidden"></label>
 <!--	<input type="text" placeholder="Browse Providers by name, specialty or location" name="find" id="find" value="" class="search__field js-find"/>-->
-	<input type="text" placeholder="Browse Providers by name, specialty or location" name="s" id="s" value="<?= esc_attr( $search_query_or_text ); ?>" class="search__field js-find" data-swpparentel="#menu__foot"/>
+	<input type="text" placeholder="Search Providers by name, specialty, location, or language" name="s" id="s" value="<?= esc_attr( $search_query_or_text ); ?>" class="search__field js-find" data-swpparentel="#menu__foot"/>
 	<input type="submit" value="GO" class="search__btn"/>
 </form>
