@@ -4,6 +4,7 @@ register_nav_menus(array(
     'uth_primary_quick_links' => 'Primary Quick Links',
     'uth_secondary_quick_links' => 'Secondary Quick Links',
     'uth_third_quick_links' => 'Third Quick Links',
+    'footer_menu' => 'Footer Menu',
     'subnav_1' => 'SubNav (1)',
     'subnav_2' => 'SubNav (2)',
     'subnav_3' => 'SubNav (3)',
@@ -32,6 +33,18 @@ if ( ! function_exists( 'uth_primary_quick_links' ) ) {
             'menu_class'     => 'vertical menu wp_quicklinks',
             'theme_location' => 'uth_primary_quick_links',
             'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+            'fallback_cb'    => false,
+        ));
+    }
+}
+if ( ! function_exists( 'footer_menu' ) ) {
+    function footer_menu() {
+        wp_nav_menu( array(
+            'container'      => false, // Remove nav container
+            'menu'           => __( 'footer_menu', 'wp-shield' ),
+            'menu_class'     => 'vertical menu wp_quicklinks arrow',
+            'theme_location' => 'footer_menu',
+            'items_wrap'     => '<ul id="%1$s" class="%2$s arrow-list">%3$s</ul>',
             'fallback_cb'    => false,
         ));
     }

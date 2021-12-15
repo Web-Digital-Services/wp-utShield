@@ -99,13 +99,20 @@
                     
                 </div>
                 <div class="cell large-3 medium-4 small-10">
-                    <ul>
+                <?php 
+                    if ( has_nav_menu( 'footer_menu' ) ) {
+                        wp_nav_menu( array( 'theme_location' => 'footer_menu', 'menu_class' => 'arrow-list' ) );
+                    } else {
+                        echo '<ul>
                         <li><a href="https://www.uthscsa.edu/university/about-us" class="arrow">About us</a></li>
                         <li><a href="https://www.uthscsa.edu/university/contact-us" class="arrow">Contact us</a></li>
                         <li><a href="https://directory.uthscsa.edu/" class="arrow">Faculty directory</a></li>
                         <li><a href="https://wp.uthscsa.edu/careers/" class="arrow">Job opernings</a></li>
                         <li><a href="https://news.uthscsa.edu/" class="arrow">Newsroom</a></li>
-                    </ul>
+                    </ul>';
+                    }
+                ?>
+                    
 
                     <div class="social">
                         <?php echo do_shortcode('[UTH_social_links]'); ?>
