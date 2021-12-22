@@ -10,9 +10,18 @@
         --color-8: #257994 !important; /*$blue*/
         --color-9: #3F93AE !important; /*$blue-50*/
         --color-10: #58ACC7 !important; /*$blue-40*/
+
+        .data {
+            color: $off-white;
+            font-weight: 900;
+            text-shadow: 1px 1px $off-black;
+        }
     }
 }
 
+.orange-line {
+    --color-1: #AD4200 !important; /*$orange*/
+}
 .orange {
     .charts-css {
         --color-1: #E07533 !important; /*$orange-40*/
@@ -25,6 +34,25 @@
         --color-8: #AD4200 !important; /*$orange*/
         --color-9: #942900 !important; /*$orange-70*/
         --color-10: #7A0F00 !important; /*$dark-orange*/
+        
+        .data {
+            color: $off-white;
+            font-weight: 900;
+            text-shadow: 1px 1px $off-black;
+        }
+        
+        &.stacked {
+            --color-1: #FFBC5B !important; /*$gold*/
+            --color-2: #72C6E1 !important; /*$blue-30*/
+            --color-3: #D45D00 !important; /*$tangerine*/
+            --color-4: #257994 !important; /*$blue*/ 
+            --color-5: #FA8F4D !important; /*$orange-30*/
+            --color-6: #FFBC5B !important; /*$gold*/
+            --color-7: #72C6E1 !important; /*$blue-30*/
+            --color-8: #D45D00 !important; /*$tangerine*/
+            --color-9: #257994 !important; /*$blue*/ 
+            --color-10: #FA8F4D !important; /*$orange-30*/
+        }
     }
 }
 
