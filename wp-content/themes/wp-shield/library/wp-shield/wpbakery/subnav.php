@@ -234,6 +234,8 @@ class uth_subnav extends WPBakeryShortCode {
         
         //Get the Menu Name
         $menu_name = wp_get_nav_menu_name($uth_menu_id );
+        $aria_menu_name = wp_get_nav_menu_name($uth_menu_id );
+
 
         if (empty($uth_heading_level)){
             $uth_heading_level = 'h2';
@@ -259,11 +261,14 @@ class uth_subnav extends WPBakeryShortCode {
         if ( has_nav_menu( $uth_menu_id ) ) {
             ob_start();
             $menu_render = wp_nav_menu( array(
-                'container'      => false, // Remove nav container
+                'container'      => 'nav', // Remove nav container
+                'container_id'   => 'subnav',
+                'container_class' => $subnav_callout_design,
+                'container_aria_label' => 'Sub navigation for ' . $aria_menu_name,
                 'menu'           => $uth_menu_id, //Get the menu name from the shortcode attributes
                 'menu_class'     => 'subnav',
                 'theme_location' => $uth_menu_id,
-                'items_wrap'     => '<div class="' . $subnav_callout_design . '"><nav aria-label="' . $menu_name . ' sub-navigation" class="collapsible subnav">' . $menu_name_render . '<ul id="%1$s" class="%2$s vertical menu accordion-menu" data-accordion-menu>%3$s</ul></nav></div>',
+                'items_wrap'     => $menu_name_render . '<ul id="%1$s" class="%2$s vertical menu accordion-menu" data-accordion-menu><li>%3$s</li></ul>',
                 'fallback_cb'    => false,
             
             )
