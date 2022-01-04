@@ -22,6 +22,7 @@ wp-content/themes/**
 
 # GitHub Actions
 !.github/workflows/deploy-prod-everythingittakes.yml
+!.github/workflows/deploy-stage-everythingittakes.yml
 !.github/workflows/deploy-prod-wp.yml
 
 
