@@ -126,7 +126,7 @@ input[type=text], input[type=button], input[type=tel], input[type=email], input[
 	Base
 \* ------------------------------------------------------------ */
 html {
-  font-size: 62.5%; }
+  font-size: 11px; }
 
 body {
   min-width: 320px;
