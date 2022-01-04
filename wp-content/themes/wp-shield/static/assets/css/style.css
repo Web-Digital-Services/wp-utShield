@@ -123,7 +123,7 @@ input[type=text], input[type=button], input[type=tel], input[type=email], input[
     scroll-behavior: smooth; } }
 
 /* ------------------------------------------------------------ *\
-	Base
+	Base.
 \* ------------------------------------------------------------ */
 html {
   font-size: 11px; }
