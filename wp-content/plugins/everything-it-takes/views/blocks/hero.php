@@ -5,7 +5,7 @@
 //die();
 ?>
 
-<section class="hero js-hero<?= $this->is_random ? ' js-random-block js-random-hero' : ''; ?>" data-block-type="hero">
+<section class="hero-large js-hero<?= $this->is_random ? ' js-random-block js-random-hero' : ''; ?>" data-block-type="hero">
 	<div class="shell shell--alt grid-container">
 		<div class="hero__inner">
 			<div class="hero__content">

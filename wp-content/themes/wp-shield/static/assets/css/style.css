@@ -123,7 +123,7 @@ input[type=text], input[type=button], input[type=tel], input[type=email], input[
     scroll-behavior: smooth; } }
 
 /* ------------------------------------------------------------ *\
-	Base.
+	Base
 \* ------------------------------------------------------------ */
 html {
   font-size: 11px; }
@@ -2159,7 +2159,7 @@ Header
 /* ------------------------------------------------------------ *\
 Hero
 \* ------------------------------------------------------------ */
-.hero {
+.hero-large {
   position: relative;
   height: 95.2rem;
   padding-top: 13rem;
@@ -2167,203 +2167,203 @@ Hero
   background: url(../img/bg-noise.png), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(100% 352.75% at 0% 0%, rgba(112, 99, 92, 0) 0%, rgba(112, 99, 92, 0.45) 100%), #F0ECE2;
   transition: height .3s ease; }
   @media (max-width: 1023px) {
-    .hero {
+    .hero-large {
       height: 100rem; } }
   @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-    .hero {
+    .hero-large {
       padding-top: 12.4rem;
       height: 82rem; } }
   @media (max-width: 575px) {
-    .hero {
+    .hero-large {
       height: 67rem; } }
-  .hero .shell {
+  .hero-large .shell {
     height: 100%; }
-  .hero h1 {
+  .hero-large h1 {
     font-size: 1.4rem;
     letter-spacing: .2rem;
     margin-bottom: 2.2rem;
     text-transform: uppercase; }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .hero h1 {
+      .hero-large h1 {
         letter-spacing: .05rem;
         font-size: 1.3rem;
         margin-bottom: 1.6rem; } }
-  .hero h2 {
+  .hero-large h2 {
     letter-spacing: -0.05em;
     line-height: 1;
     color: #C0511B;
     font-size: 12.8rem;
     font-weight: 500;
     margin: 0; }
-    .hero h2 sup {
+    .hero-large h2 sup {
       font-size: .095em;
       letter-spacing: 0;
       top: -.75em;
       vertical-align: super; }
-    .hero h2 .final .hero__heading-line {
+    .hero-large h2 .final .hero__heading-line {
       position: absolute;
       top: 50%;
       right: -2rem;
       width: 90%;
       transform: translateY(-57%); }
-      .hero h2 .final .hero__heading-line svg {
+      .hero-large h2 .final .hero__heading-line svg {
         width: 100%; }
     @media (max-width: 1699px) {
-      .hero h2 {
+      .hero-large h2 {
         font-size: 11rem; }
-        .hero h2 .final .hero__heading-line {
+        .hero-large h2 .final .hero__heading-line {
           right: -1.75rem;
           width: 91%;
           transform: translateY(-52%); } }
     @media (max-width: 1399px) {
-      .hero h2 {
+      .hero-large h2 {
         font-size: 8rem; }
-        .hero h2 .final .hero__heading-line {
+        .hero-large h2 .final .hero__heading-line {
           right: -1rem;
           width: 95%;
           transform: translateY(-45%); } }
     @media (max-width: 1023px) {
-      .hero h2 {
+      .hero-large h2 {
         font-size: 10rem; }
-        .hero h2 .final .hero__heading-line {
+        .hero-large h2 .final .hero__heading-line {
           right: -1.5rem;
           width: 92%;
           transform: translateY(-52%); } }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .hero h2 {
+      .hero-large h2 {
         font-size: 7.5rem; }
-        .hero h2 .final .hero__heading-line {
+        .hero-large h2 .final .hero__heading-line {
           right: -1rem;
           width: 100%;
           transform: translateY(-42%); } }
     @media (max-width: 575px) {
-      .hero h2 {
+      .hero-large h2 {
         font-size: 5.5rem; } }
     @media (max-width: 374px) {
-      .hero h2 {
+      .hero-large h2 {
         font-size: 4.5rem; } }
-  .hero h6 {
+  .hero-large h6 {
     letter-spacing: 0.2rem;
     margin-bottom: 2.5rem; }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .hero h6 {
+      .hero-large h6 {
         font-size: 1.2rem;
         letter-spacing: 0.05em;
         margin-bottom: 1.7rem; } }
-  .hero .hero__heading {
+  .hero-large .hero__heading {
     position: relative;
     margin-bottom: 3.2rem; }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .hero .hero__heading {
+      .hero-large .hero__heading {
         margin-bottom: 1.6rem; } }
-  .hero .hero__heading-element {
+  .hero-large .hero__heading-element {
     position: absolute;
     top: 12rem;
     right: 0; }
     @media (max-width: 1399px) {
-      .hero .hero__heading-element {
+      .hero-large .hero__heading-element {
         max-width: 33rem;
         top: 7rem;
         right: 2.5rem; } }
     @media (max-width: 1023px) {
-      .hero .hero__heading-element {
+      .hero-large .hero__heading-element {
         max-width: none;
         top: 12rem;
         left: 0;
         right: auto; } }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .hero .hero__heading-element {
+      .hero-large .hero__heading-element {
         max-width: 20rem;
         top: 4rem; } }
-  .hero .hero__inner {
+  .hero-large .hero__inner {
     display: flex;
     justify-content: space-between;
     position: relative;
     height: 100%; }
     @media (max-width: 1023px) {
-      .hero .hero__inner {
+      .hero-large .hero__inner {
         flex-direction: column;
         padding: 0; } }
-  .hero .hero__menu {
+  .hero-large .hero__menu {
     max-width: 95rem;
     margin: 0 auto;
     position: relative;
     padding: 8.6rem 0; }
-  .hero .hero__background {
+  .hero-large .hero__background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%; }
-  .hero .hero__background img {
+  .hero-large .hero__background img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover; }
-  .hero .hero__image {
+  .hero-large .hero__image {
     width: 160%;
     max-width: 86.8rem;
     margin-left: -8rem; }
     @media (max-width: 1023px) {
-      .hero .hero__image {
+      .hero-large .hero__image {
         width: 130%;
         margin: -18rem -22rem 0 auto;
         max-width: 70rem; } }
     @media (max-width: 899px) {
-      .hero .hero__image {
+      .hero-large .hero__image {
         margin: 0 -14rem 0 auto;
         max-width: 65rem; } }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .hero .hero__image {
+      .hero-large .hero__image {
         width: 100%;
         margin: 0 0 0 auto;
         max-width: 50rem; } }
     @media (max-width: 575px) {
-      .hero .hero__image {
+      .hero-large .hero__image {
         max-width: 40rem; } }
-  .hero .hero__content {
+  .hero-large .hero__content {
     padding: 8.6rem 0 0 5.6rem;
     max-width: 66rem; }
     @media (max-width: 1399px) {
-      .hero .hero__content {
+      .hero-large .hero__content {
         padding: 8.6rem 0 0 3rem;
         max-width: 42rem; } }
     @media (max-width: 1023px) {
-      .hero .hero__content {
+      .hero-large .hero__content {
         max-width: none;
         width: 100%;
         padding: 5rem 0 0;
         max-width: 38rem; } }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .hero .hero__content {
+      .hero-large .hero__content {
         padding: 0; } }
-  .hero .hero__chat {
+  .hero-large .hero__chat {
     position: absolute;
     bottom: 2.5rem;
     right: 2.5rem;
     z-index: 4; }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .hero .hero__chat {
+      .hero-large .hero__chat {
         display: none; } }
-  .hero .hero__entry {
+  .hero-large .hero__entry {
     font-weight: 500;
     font-size: 2rem;
     max-width: 50rem;
     line-height: 1.7; }
     @media (max-width: 1023px) {
-      .hero .hero__entry {
+      .hero-large .hero__entry {
         font-size: 1.5rem;
         margin-bottom: 3rem; } }
-  .hero .hero__actions {
+  .hero-large .hero__actions {
     margin-top: 5rem; }
     @media (max-width: 1023px) {
-      .hero .hero__actions {
+      .hero-large .hero__actions {
         visibility: collapse;
         margin-top: 0; } }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .hero .hero__actions {
+      .hero-large .hero__actions {
         display: block;
         position: fixed;
         bottom: 0;
@@ -2376,10 +2376,10 @@ Hero
         padding: 1.3rem 2rem;
         box-shadow: 0 -0.4rem 0.8rem rgba(23, 23, 23, 0.1); } }
   @media (max-width: 1023px) {
-    .hero .hero__actions a {
+    .hero-large .hero__actions a {
       display: none; } }
   @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-    .hero .hero__actions a {
+    .hero-large .hero__actions a {
       display: inline-block;
       font-size: 1.4rem;
       padding: 1.2rem 2.4rem;
@@ -2389,15 +2389,15 @@ Hero
       background-color: #C0511B;
       border-color: #C0511B; } }
   @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-    .hero .hero__actions a:focus {
+    .hero-large .hero__actions a:focus {
       color: #fff !important; }
-    .hero .hero__actions a:hover {
+    .hero-large .hero__actions a:hover {
       background-color: #7A0F00;
       border-color: #7A0F00; } }
   @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-    .hero .hero__actions a figure {
+    .hero-large .hero__actions a figure {
       display: none; } }
-  .hero .hero__menu {
+  .hero-large .hero__menu {
     position: fixed;
     top: 0;
     left: 0;
@@ -2408,43 +2408,43 @@ Hero
     transition: opacity .2s ease, height .3s .2s ease;
     padding: 13rem 4rem 0;
     max-width: none; }
-    .hero .hero__menu .menu-find {
+    .hero-large .hero__menu .menu-find {
       opacity: 0;
       transform: translateY(-2rem);
       transition: opacity .3s ease, transform .3s ease;
       transition-delay: .1s; }
     @media (max-width: 1199px) {
-      .hero .hero__menu {
+      .hero-large .hero__menu {
         padding: 18rem 4rem 0; } }
     @media (max-width: 1023px) {
-      .hero .hero__menu {
+      .hero-large .hero__menu {
         height: 100rem;
         padding: 18rem 4rem 0; } }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .hero .hero__menu {
+      .hero-large .hero__menu {
         height: 82rem;
         padding: 15rem 2rem 0; } }
     @media (max-width: 575px) {
-      .hero .hero__menu {
+      .hero-large .hero__menu {
         height: 67rem; } }
-  .side-menu .hero .hero__menu {
+  .side-menu .hero-large .hero__menu {
     padding: 13rem 12rem 0 20.5rem; }
     @media (max-width: 1199px) {
-      .side-menu .hero .hero__menu {
+      .side-menu .hero-large .hero__menu {
         padding: 18rem 4rem 0 12.5rem; } }
     @media (max-width: 1023px) {
-      .side-menu .hero .hero__menu {
+      .side-menu .hero-large .hero__menu {
         padding: 18rem 4rem 0 11rem; } }
     @media (max-width: 767px), screen and (max-width: 812px) and (orientation: landscape) {
-      .side-menu .hero .hero__menu {
+      .side-menu .hero-large .hero__menu {
         padding: 15rem 2rem 0 2rem; } }
-  .hero .hero__menu-background {
+  .hero-large .hero__menu-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%; }
-  .hero .hero__menu-background img {
+  .hero-large .hero__menu-background img {
     position: absolute;
     top: 0;
     left: 0;
