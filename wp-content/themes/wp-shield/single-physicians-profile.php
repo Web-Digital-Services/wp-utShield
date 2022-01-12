@@ -17,9 +17,9 @@ load_theme_design('header'); ?>
 						
 						the_title('<h1>','</h1>');
 						if($physician_Accepting_New == 'Accepting New Patients'){
-							'<p class="text-accent bold"> <i class="fas fa-notes-medical"></i> <em>Accepting New Patients</em></p>';
+							echo '<p class="text-accent bold"> <i class="fas fa-notes-medical"></i> <em>Accepting New Patients</em></p>';
 						}else{
-							'<p class="text-accent bold"> <i class="fas fa-notes-medical"></i> <em>Not Accepting New Patients</em></p>';
+							echo '<p class="text-accent bold"> <i class="fas fa-notes-medical"></i> <em>Not Accepting New Patients</em></p>';
 						}
 						?>
 					<div class="grid-x grid-margin-x">
