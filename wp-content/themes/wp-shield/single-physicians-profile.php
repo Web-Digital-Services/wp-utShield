@@ -8,7 +8,7 @@
 
 load_theme_design('header'); ?>
 <main class="hero bleed">
-	<div class="grid-container">
+	<div class="grid-container shell">
 		<div class="grid-x ">
 			<?php while ( have_posts() ) : the_post(); ?>
 				<div class="cell small-12 medium-8 large-9">
