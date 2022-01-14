@@ -15,7 +15,7 @@ load_theme_design('header'); ?>
 					<?php 
 						$physician_Accepting_New = types_render_field("accepting-new-patients", array("output" => "raw")); 
 						
-						the_title('<h1>','</h1>');
+						the_title('<h1 class="close">','</h1>');
 						if($physician_Accepting_New == 'Accepting New Patients'){
 							echo '<p class="text-accent bold"> <i class="fas fa-notes-medical"></i> <em>Accepting New Patients</em></p>';
 						}else{
