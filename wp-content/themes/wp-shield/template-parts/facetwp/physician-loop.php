@@ -18,11 +18,13 @@
 				?>
 				<div class="card-section flex-child-grow">
 					<?php 
-						if (!empty($physician_Profile_Url)){
+						$profile_url = get_permalink( $post->ID );
+						echo '<a href="' . $profile_url . '" title="' . $physician_name . '"><h5 class="close">' . $physician_name . ' </h5></a>';
+						/* if (!empty($physician_Profile_Url)){
 							echo '<a href="' . $physician_Profile_Url . '" title="' . $physician_name . '"><h5 class="close">' . $physician_name . ' </h5></a>';
 						}else{
 							echo '<h5>' . $physician_name . '</h5>';
-						}
+						} */
 					?>
 					<p><strong><?php echo $showSpecialties;?></strong></p>
 					<?php 
@@ -41,6 +43,8 @@
 				</div>
 				<div class="card-section flex-child-shrink">
 					<?php 
+						echo '<a class="button expanded" href="' . $profile_url . '">View Profile</a>';
+					/*
 						if(!empty($physician_Profile_Url)){
 							echo '<a class="button expanded" href="' . $physician_Profile_Url . '">View Profile</a>';
 						}elseif((empty($physician_Profile_Url)) && ($physician_Accepting_New == 'Accepting New Patients')){
@@ -49,6 +53,7 @@
 						}else{
 							//This provider is not accepting new patients
 						}
+						*/
 					?>
 				</div>
 			</div>

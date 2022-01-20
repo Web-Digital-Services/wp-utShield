@@ -39,7 +39,8 @@ load_theme_design('header'); ?>
 									<?php 
 										foreach( $physician_locations as $location ): 
 										// Setup this post for WP functions (variable must be named $post).
-										setup_postdata($location); ?>
+										setup_postdata($location); 
+										if (!empty($location)): ?>
 											<address>
 												<div class="loose-list">
 													<?php 
@@ -56,6 +57,7 @@ load_theme_design('header'); ?>
 													</ul>
 												</div>
 											</address>
+										<?php endif; ?>
 									<?php endforeach; ?>
 									<?php 
 									// Reset the global post object so that the rest of the page works correctly.
