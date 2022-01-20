@@ -125,7 +125,73 @@ load_theme_design('header'); ?>
 						</div>
 					</div>
 				</div>
-			<?php the_content(); ?>
+				<?php 
+					$medical_school = types_render_field( "medical-school"); 
+					$residency = types_render_field( "residency"); 
+					$fellowship = types_render_field( "fellowship"); 
+					$about_provider = types_render_field( "provider-bio"); 
+					//$medical_school = types_render_field( "medical-school");  
+				?>
+				<section class="bleed">
+					<div class="grid-container">
+						<div class="grid-x grid-margin-x ">
+							<div class="cell small-12 medium-12 large-12">
+								<?php if (!empty ($medical_school) || !empty ($residency) || !empty ($fellowship)): ?>
+								<h2 class="h4"> Qualifications</h2>
+								<div class="grid-x grid-margin-x margin-bottom ">
+									<div class="cell small-12 medium-6 large-3">
+										<?php if (!empty($medical_school)){
+											echo '<div>
+												<ul class="no-bullet">
+													<li class="bold">Medical School</li>
+													<li>';
+														echo $medical_school;
+												echo '</li>
+												</ul>
+											</div>';
+										}
+										?>
+									</div>
+									<div class="cell small-12 medium-6 large-3">
+										<div>
+											<ul class="no-bullet">
+												<li class="bold">Residency</li>
+												<li><?php echo $residency; ?></li>
+											</ul>
+										</div>
+									</div>
+									<div class="cell small-12 medium-6 large-3">
+										<div>
+											<ul class="no-bullet">
+												<li class="bold">Fellowships</li>
+												<li><?php echo $fellowship; ?></li>
+											</ul>
+										</div>
+									</div>
+									<div class="cell small-12 medium-6 large-3">
+										<div>
+											<ul class="no-bullet">
+												<li class="bold">Board Certification:</li>
+												<li> Federation Board of Family Medicine</li>
+												<li>Tellarite Board of Obesity Medicine</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<?php 
+									if (!empty($about_provider)){
+										echo '<h2 class="h4"> About Provider</h2>
+										<p>';
+										echo $about_provider;
+										'</p>
+										<p><a class="arrow">Academic Profile</a></p>';
+									}
+								?>
+								<?php endif; ?>
+							</div>
+						</div>
+					</div>
+				</section>
 			<?php endwhile; ?>
 		</div>
 	</div>
