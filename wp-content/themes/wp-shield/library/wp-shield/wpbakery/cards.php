@@ -63,13 +63,25 @@ class uth_card extends WPBakeryShortCode {
                     ),
                     array(
                         'type' => 'vc_link',
-                        'heading' => __( 'URL', 'wp-shield' ),
+                        'heading' => __( 'Primary Call to Action', 'wp-shield' ),
                         'param_name' => 'url',
                         'dependency' => array(
                             'element' => 'link',
                             'value' => __( 'Place Link Here', 'wp-shield' ),
                         ),
-                        'description' => __( 'Select the URL here', 'wp-shield' ),
+                        //'description' => __( 'Select the URL here', 'wp-shield' ),
+                        'admin_label' => false,
+                        'weight' => 0,
+                    ),
+                    array(
+                        'type' => 'vc_link',
+                        'heading' => __( 'Secondary Call to Action', 'wp-shield' ),
+                        'param_name' => 'secondary_link',
+                        'dependency' => array(
+                            'element' => 'link',
+                            'value' => __( 'Secondary Link', 'wp-shield' ),
+                        ),
+                       // 'description' => __( 'Select the URL', 'wp-shield' ),
                         'admin_label' => false,
                         'weight' => 0,
                     ),
@@ -161,6 +173,7 @@ class uth_card extends WPBakeryShortCode {
                     'image_url'   => 'image_url',
                     'enable_border' => '',
                     'url'   => '',
+                    'secondary_link' => '',
                     'card_style' => '',
                     'heading_level' => '',
                     'image_size' => '',
@@ -196,7 +209,22 @@ class uth_card extends WPBakeryShortCode {
             $a_target = '';
             $a_rel = '';
         }
-
+        $href_two = vc_build_link($secondary_link);
+        if ( strlen ( $href_two['url'] ) > 0) {
+            $use_link = true;
+            $sec_url = $href_two['url'];
+            $sec_ref = apply_filters( 'vc_btn_a_href', $sec_url);
+            $sec_title = $href_two['title'];
+            $sec_title = apply_filters( 'vc_btn_a_title', $sec_title);
+            $sec_target = $href_two['target'];
+            $sec_rel = $href_two['rel'];
+        }else{
+            $use_link = '';
+            $sec_ref = '';
+            $sec_title = '';
+            $sec_target = '';
+            $sec_rel = '';
+        }
         /** Default Values if none are selected. **/
         if (empty($card_style)){
             $card_style = "static";
@@ -234,7 +262,7 @@ class uth_card extends WPBakeryShortCode {
         	$cardImage = wp_get_attachment_image($image_url, $image_size, 'alt');
         }
         if (!empty ($a_title)){
-            $featured_link = '<a class="carat-double" href="' . $a_ref . '" title="' . $a_title . '" rel="' . $a_rel . '">' . $a_title . '</a>';
+            $featured_link = 'safasf<a class="carat-double" href="' . $a_ref . '" title="' . $a_title . '" rel="' . $a_rel . '">' . $a_title . '</a>';
         }else{
             $featured_link = '';
         }
@@ -243,10 +271,15 @@ class uth_card extends WPBakeryShortCode {
         /** Start Card Designs **/
         if ($card_style=='static' || $card_style=='popout'){
             //If card is Static, dont wrap in an A tag.
-            if (!empty($a_ref)){
-                $load_link = '<p><a class="arrow" href="' . $a_ref . '" title="' . $a_title . '" rel="' . $a_rel . '">' . $a_title . '</a></p>';
+            if (!empty($a_title) && !empty($sec_url)){
+                $load_primary_link = '<div class="button-group">
+                <p><a class="button" href="' . $a_ref . '" title="' . $a_title . '" rel="' . $a_rel . '">' . $a_title . '</a></p>
+                <p><a class="button ghost" href="' . $sec_url . '" title="' . $sec_title . '" rel="' . $sec_rel . '">' . $sec_title . '</a></p>
+                </div>';
+            }elseif(!empty($a_title) && empty($sec_url)){
+                $load_primary_link = '<p><a class="arrow" href="' . $a_ref . '" title="' . $a_title . '" rel="' . $a_rel . '">' . $a_title . '</a></p>';
             }else{
-                $load_link = '';
+                $load_primary_link = '';
             }
             $html =
                 '<div class="card ' . $card_style . ' ' . $color_options . ' ' . $border . '" ' . $equilizer_id . '>
@@ -254,7 +287,7 @@ class uth_card extends WPBakeryShortCode {
                         ' .  $cardImage . '
                         <' . $heading_level . '>' . $card_title . '</' . $heading_level . '>
                             <p>' . $card_copy_text . '</p>
-                            ' . $load_link . '
+                            ' . $load_primary_link . '
                     </div>
                 </div>';
          }elseif($card_style=='interactive'){
