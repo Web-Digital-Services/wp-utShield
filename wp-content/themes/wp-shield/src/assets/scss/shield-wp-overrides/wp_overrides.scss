@@ -46,10 +46,12 @@ nav#subnav > ul.subnav > li.is-active > ul.submenu.is-active >  li.is-active.is-
 nav#subnav ul {
     margin-left: 0rem;
 }
-nav#subnav.accordion-menu li:not(.nested li) {
-    border-bottom: 0.0625rem #99A3A8 solid;
+nav#subnav ul.accordion-menu li.menu-item{
+    border-bottom: 0.0625rem #99A3A8 solid !important;
 }
-
+nav#subnav ul.accordion-menu li ul.is-accordion-submenu li{
+    border-bottom: none !important;
+}
 //Footer Fixes
 footer a:visited:not(.button), footer a:focus {
     color: $beige !important;

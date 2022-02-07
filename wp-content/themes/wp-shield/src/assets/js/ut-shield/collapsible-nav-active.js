@@ -2,14 +2,17 @@
  * Fixes the default state of submenus with an active menu in the subnav. 
  * Now the page will load with the active subnav already open. 
  */
- $(function () {
-  if ($('nav#subnav ul > li.is-accordion-submenu-parent').hasClass('is-active')){
-    ($(this).find('nav#subnav ul > li').attr("aria-exanded","true"));
-    ($(this).find('nav#subnav ul > li.is-active ul').attr("aria-hidden","false"));
-    ($(this).find('nav#subnav ul > li.is-active ul').toggleClass('display-block'));
+ //nav#subnav ul.accordion-menu li ul.is-accordion-submenu li{
 
-    ($(this).find('nav#subnav ul > li').toggleAttribute("aria-exanded","true"));
-    ($(this).find('nav#subnav ul > li.is-active ul').attoggleAttributetr("aria-hidden","false"));
-    ($(this).find('nav#subnav ul > li.is-active ul').toggleClass('display-block'));
-  }
-})
+  $(function () {
+    if ($('nav#subnav ul.accordion-menu > li').hasClass('is-active')){
+      console.log('Task returned true');
+      ($(this).find('nav#subnav ul.accordion-menu > li').attr("aria-exanded","true"));
+      ($(this).find('nav#subnav ul.accordion-menu > li.is-active ul').attr("aria-hidden","false"));
+      ($(this).find('nav#subnav ul.accordion-menu > li.is-active ul').toggleClass('display-block'));
+  
+      ($(this).find('nav#subnav ul.accordion-menu > li').toggleAttrVal('aria-hidden', "true", "false"));
+      ($(this).find('nav#subnav ul.accordion-menu > li.is-active ul').toggleAttrVal('aria-hidden', "true", "false"));
+      ($(this).find('nav#subnav ul.accordion-menu > li.is-active ul').toggleClass('display-block'));
+    }
+  })
