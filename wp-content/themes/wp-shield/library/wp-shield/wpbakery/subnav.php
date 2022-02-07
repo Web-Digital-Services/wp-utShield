@@ -245,16 +245,16 @@ class uth_subnav extends WPBakeryShortCode {
             $menu_name_render = '';
         }elseif(!empty($menu_title_override)){
             //If custom menu title is filled
-            $menu_name_render = '<' . $uth_heading_level . ' class="colorized-heading close"><i class="' . $icon_render . '"></i>' . $menu_title_override . '</' . $uth_heading_level . '>';
+            $menu_name_render = '<' . $uth_heading_level . ' class="colorized-heading"><i class="' . $icon_render . '"></i>' . $menu_title_override . '</' . $uth_heading_level . '>';
         }elseif(!empty($menu_title_override) && (!empty($icon_render))){
             //If theres a override title and the icon isnt empty
-            $menu_name_render = '<' . $uth_heading_level . ' class="colorized-heading close"></i>' . $menu_title_override . '</' . $uth_heading_level . '>';
+            $menu_name_render = '<' . $uth_heading_level . ' class="colorized-heading"></i>' . $menu_title_override . '</' . $uth_heading_level . '>';
         }elseif (!empty($icon_render)){
             //If there isn't an override title and the icon isn't empty
-            $menu_name_render = '<' . $uth_heading_level . ' class="close"><i class="' . $icon_render . '"></i>' . $menu_name . '</' . $uth_heading_level . '>';
+            $menu_name_render = '<' . $uth_heading_level . '><i class="' . $icon_render . '"></i>' . $menu_name . '</' . $uth_heading_level . '>';
         }else{
             //Load Menu name from wordpress menu system
-            $menu_name_render = '<' . $uth_heading_level . ' class="close">' . $menu_name . '</' . $uth_heading_level . '>';
+            $menu_name_render = '<' . $uth_heading_level . '>' . $menu_name . '</' . $uth_heading_level . '>';
         }
 
 
