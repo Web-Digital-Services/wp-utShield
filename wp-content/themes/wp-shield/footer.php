@@ -107,7 +107,7 @@
                         <li><a href="https://www.uthscsa.edu/university/about-us" class="arrow">About us</a></li>
                         <li><a href="https://www.uthscsa.edu/university/contact-us" class="arrow">Contact us</a></li>
                         <li><a href="https://directory.uthscsa.edu/" class="arrow">Faculty directory</a></li>
-                        <li><a href="https://wp.uthscsa.edu/careers/" class="arrow">Job opernings</a></li>
+                        <li><a href="https://wp.uthscsa.edu/careers/" class="arrow">Job openings</a></li>
                         <li><a href="https://news.uthscsa.edu/" class="arrow">Newsroom</a></li>
                     </ul>';
                     }
