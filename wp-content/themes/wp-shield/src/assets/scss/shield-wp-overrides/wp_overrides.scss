@@ -136,8 +136,19 @@ input.facetwp-autocomplete-update{
 .facetwp-checkbox{
 	font-weight: 600;
 }
-
 .breadcrumbs{
     padding-left: 0px;
 }
+/** Fix css image links **/
+input[type="checkbox"]:checked {
+    background: url(../../assets/images/core/check-solid.svg);
+      background-position-x: 0%;
+      background-position-y: 0%;
+      background-repeat: repeat;
+      background-size: auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 1.125rem;
+}
+
 /** END OVER RIDES TO DSP SPECIFICALLY FOR WP. **/
