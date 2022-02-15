@@ -150,5 +150,10 @@ input[type="checkbox"]:checked {
     background-repeat: no-repeat;
     background-size: 1.125rem;
 }
-
+footer .shield {
+    background-image: url("../../assets/images/core/half-shield.svg");
+    background-repeat: no-repeat;
+    position: relative;
+    background-position: right center;
+  }
 /** END OVER RIDES TO DSP SPECIFICALLY FOR WP. **/
