@@ -18,6 +18,7 @@
         padding-bottom: 0;
     }
 }
+
 /* ==============================
     Padding Helpers
 ============================== */
@@ -179,9 +180,10 @@
 }
 
 //super secret class shhhhhh
-.gradient {
-    background: linear-gradient(to right, $gold 10%, $orange 50%, $dark-orange 75%);;
-}
+/*.gradient {
+    background: linear-gradient(to right, $gold 10%, $orange 50%, $dark-orange 75%);
+    ;
+}*/
 
 .columns {
     -webkit-columns: 2 290px;

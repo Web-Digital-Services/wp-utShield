@@ -21,6 +21,10 @@ cite {
     font-style:italic;
     font-weight: 600;
     font-size:inherit;
+
+    a {
+        font-weight: 700;
+    }
     }
 cite:before {
     content: "\2014";

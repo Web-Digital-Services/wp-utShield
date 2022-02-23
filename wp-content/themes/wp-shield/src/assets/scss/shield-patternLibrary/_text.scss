@@ -129,18 +129,21 @@ body {
     line-height: 1.5;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-    //eyebrow style
-    &.eyebrow{
-        font-size: 18px;
-        margin-bottom: 0 !important;
-        font-family: $serif-font;
+
+//eyebrow style
+p.eyebrow {
+    font-size: 18px;
+    font-family: $serif-font;
+
+    +h2,
+    +h3,
+    +h4,
+    +h5 {
+        margin-top: rem-calc(-18px);
+    }
+
+    @media screen and (max-width: 639px) {
+        font-size: 16px;
     }
 }
 
@@ -236,8 +239,28 @@ h2+.subheader {
     }
 }
 
+.callout {
+
+    &.orange,
+    &.grey {
+        .subheader {
+            color: $off-white;
+        }
+    }
+}
+
 .subheader+.subtext {
     margin-top: rem-calc(-5px);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    &.circle {
+
+    }
 }
 
 // ======= Colorized headings and paragraph text
@@ -248,15 +271,6 @@ h4,
 h5,
 h6,
 p {
-    &.color {
-        color: $blue-70;
-        background-color: transparent !important;
-    }
-
-    &.filled {
-        color: $off-white !important;
-        background-color: $blue-70;
-    }
 
     &.color {
         color: $blue;
@@ -269,8 +283,16 @@ p {
     }
 }
 
-p.light {
-    font-weight: 100;
+p {
+
+    &.light {
+        font-weight: 100;
+    }
+
+    &.large {
+        font-size: 24px;
+        ;
+    }
 }
 
 .ruled {
@@ -525,6 +547,15 @@ a.highlight {
                 }
             }
         }
+
+        cite>a {
+            color: $orange-link;
+
+            &:hover {
+                color: $light-beige;
+            }
+
+        }
     }
 
     &.grey,
@@ -559,6 +590,15 @@ a.highlight {
                     background-color: inherit;
                 }
             }
+        }
+
+        cite>a {
+            color: $grey-link;
+
+            &:hover {
+                color: $off-white;
+            }
+
         }
     }
 
@@ -664,4 +704,3 @@ Tooltip
         }
     }
 }
-

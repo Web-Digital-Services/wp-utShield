@@ -131,7 +131,7 @@ footer {
         }
     
         & hr:after {
-            content: url('../../images/orange-shield.svg');
+            content: url('../images/orange-shield.svg');
             left: 50%;
             position: absolute;
             transform: translateY(-50%) translateX(-50%);
@@ -154,9 +154,9 @@ footer {
             }
         }
         .columns {
-            -webkit-columns: 2 290px;
-            -moz-columns: 2 290px;
-            columns: 2 290px;
+            -webkit-columns: 2 auto;
+            -moz-columns: 2 auto;
+            columns: 2 auto;
         }
 
         .bleed {

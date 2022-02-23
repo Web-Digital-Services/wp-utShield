@@ -15,6 +15,7 @@ fieldset {
         font-weight: 500;
     }
 }
+
 input[type=text],
 input[type=password],
 input[type=checkbox],
@@ -53,15 +54,15 @@ select:focus {
     border: rem-calc(1px) solid $blue;
     background-color: rgba($blue, 0.05);
     transition: none;
-    box-shadow:  0 0 0 5px rgba($blue-50, .25);
+    box-shadow: 0 0 0 5px rgba($blue-50, .25);
 }
 
 input[type=checkbox] {
-   width: rem-calc(25px);
-   height: rem-calc(25px);
-   appearance: none;
-   margin-top: rem-calc(12px);
-   margin-bottom: rem-calc(-5px); //review
+    width: rem-calc(25px);
+    height: rem-calc(25px);
+    appearance: none;
+    margin-top: rem-calc(12px);
+    margin-bottom: rem-calc(-5px); //review
 }
 
 input[type=checkbox]:checked {
@@ -90,7 +91,7 @@ input[type=radio] {
 
 .is-invalid-input[type=text]:focus {
     background-color: #f9ecea;
-    box-shadow:  0 0 0 5px rgba(174, 0, 20, .30);
+    box-shadow: 0 0 0 5px rgba(174, 0, 20, .30);
 }
 
 legend {
@@ -113,10 +114,10 @@ select {
     }
 }*/
 
-.search { 
+.search {
     width: 100%;
     position: relative;
-    display: flex; 
+    display: flex;
     border: rem-calc(1px) solid $off-black;
     border-radius: rem-calc(5px);
     background-color: $off-white;
@@ -124,11 +125,11 @@ select {
     align-items: center;
 
     .search-box {
-        width: 100%; 
+        width: 100%;
         border-right: none;
-        padding: 5px;  
+        padding: 5px;
         outline: none;
-        color: $off-black;  
+        color: $off-black;
         border-top-left-radius: 8px;
         border-bottom-left-radius: 8px;
         margin: 0;
@@ -150,4 +151,4 @@ select {
         border-radius: 0 8px 8px 0;
         cursor: pointer;
     }
-  }
+}

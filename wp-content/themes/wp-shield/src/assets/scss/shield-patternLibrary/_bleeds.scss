@@ -1,7 +1,7 @@
     /* ============================================================
     BLEEDS
 ============================================================ */
-    
+
     .grid-container {
         padding-top: rem-calc(60px);
         padding-bottom: rem-calc(60px);
@@ -15,7 +15,7 @@
             color: $off-white
         }
     }
-    
+
     .roomy {
         padding-top: rem-calc(90px);
         padding-bottom: rem-calc(90px);
@@ -24,7 +24,7 @@
             padding-bottom: rem-calc(10px);
         }
     }
-    
+
     .extra-roomy {
         padding-top: rem-calc(120px);
         padding-bottom: rem-calc(120px);
@@ -34,14 +34,22 @@
         }
     }
     .chonky {
-        padding-top: rem-calc(240px);
-        padding-bottom: rem-calc(240px);
+        padding-top: rem-calc(180px);
+        padding-bottom: rem-calc(180px);
         @media screen and (max-width: 640px) {
-            padding-top: rem-calc(60px);
-            padding-bottom: rem-calc(60px);
+            padding-top: rem-calc(30px);
+            padding-bottom: rem-calc(30px);
         }
     }
-    
+    .godly {
+        padding-top: rem-calc(420px);
+        padding-bottom: rem-calc(420px);
+        @media screen and (max-width: 640px) {
+            padding-top: rem-calc(90px);
+            padding-bottom: rem-calc(90px);
+        }
+    }
+
     .bleed {
         color: $off-black;
         &.light-beige {
@@ -75,7 +83,7 @@
     /* ============================================================
  BLEEDING IMAGES
 ============================================================ */
-    
+
     .img-bleed-right {
         padding: rem-calc(0px);
         &.grid-container {
@@ -105,7 +113,7 @@
             }
         }
     }
-    
+
     .img-bleed-left {
         padding: rem-calc(0px);
         &.grid-container {
@@ -132,7 +140,7 @@
     /* ============================================================
 IMG Fill BLEEDS
 ============================================================ */
-    
+
     .img-fill {
         display: inline-block;
         overflow: hidden;
@@ -147,13 +155,17 @@ IMG Fill BLEEDS
                 padding-right: rem-calc(15px);
             }
         }
-        img {
+        img, video {
             position: absolute;
             width: 100%;
             height: 100%;
             z-index: -1;
             background-color: rgba(23, 2, 0, 0.5);
             object-fit: cover;
+        }
+
+        video {
+            margin-bottom: rem-calc(-9px);
         }
         >.grid-x {
             padding-top: rem-calc(60px);
@@ -168,7 +180,7 @@ IMG Fill BLEEDS
     /* ============================================================
     NEWSLETTER ICON BLEED
 ============================================================ */
-    
+
     .fa-envelope-open-text.fa-10x {
         @media screen and (max-width: 570px) {
             font-size: 1rem;

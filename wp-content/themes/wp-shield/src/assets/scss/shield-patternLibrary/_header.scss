@@ -22,24 +22,31 @@
                 color: $grey-link;
             }
         }
-    } 
+    }
+
     &.quicklinks {
         background-color: $dark-grey;
         color: $off-white;
-        .arrow ul li:before{
+
+        .arrow ul li:before {
             color: $off-white;
         }
-        
+
         a {
             color: $off-white;
         }
-        h2,h3,h4,h5,h6 {
+
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             overflow-wrap: break-word;
             word-wrap: break-word;
             hyphens: auto;
             color: $gold;
         }
-        
+
         .search {
             margin-bottom: rem-calc(15px);
         }
@@ -104,29 +111,28 @@ header {
     &.title-bar {
         @media screen and (max-width:770px) {
             background-color: $orange;
-            display: flex !important;
+            display: flex;
             align-items: center;
             justify-content: space-between;
             position: sticky;
-            position: -webkit-sticky;
             top: 0;
             padding: rem-calc(15px 12px);
             //box-shadow: rem-calc(0px 2px 5px 0) rgba(23, 23, 23, 0.5);
             z-index: 1;
-            margin-bottom: rem-calc(-33px);
+            //margin-bottom: rem-calc(-33px);
 
             .menu-icon {
                 color: $off-white;
                 font-weight: 900;
                 width: unset;
             }
-    
+
             .menu-icon::before {
-                font-family: "Font Awesome 5 Free solid";
+                font-family: "Font Awesome 5 Free";
                 content: "\f0c9";
                 margin-right: rem-calc(7px);
             }
-    
+
             .menu-icon::after {
                 content: unset;
             }
@@ -153,25 +159,30 @@ header {
     }
 
     &#regular {
+        position: sticky;
+
         @media screen and (max-width:770px) {
             display: block;
             //padding: rem-calc(15px);
             margin-bottom: 0;
             background: $orange;
             top: 100px;
-            position: sticky;
+
             position: -webkit-sticky;
             z-index: 1;
+
         }
-        
+
         .group {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin: rem-calc(30px 0px);
+            //margin: rem-calc(30px 0px);
             max-width: rem-calc(1440px); //%
             margin-right: auto;
             margin-left: auto;
+            margin-bottom: rem-calc(30px);
+
 
             /*@media print, screen and (min-width: 40em) {
                 padding-right: 0.9375rem;
@@ -182,6 +193,7 @@ header {
                 margin-bottom: 0;
                 justify-content: center;
             }
+
             /*@media screen and (max-width:770px) {
                 display: block;
                 padding: rem-calc(15px);
@@ -194,36 +206,38 @@ header {
             }*/
 
             .right {
+
                 @media screen and (max-width:770px) {
                     padding: rem-calc(15px) 0;
                 }
             }
         }
-        
+
         .logo {
             display: flex;
             align-items: baseline;
 
             &.pipe {
                 img {
-                padding-right: rem-calc(30px);
-                border-right: rem-calc(2px) solid $dark-grey;
+                    padding-right: rem-calc(30px);
+                    border-right: rem-calc(2px) solid $dark-grey;
                 }
 
                 p {
                     padding-left: rem-calc(30px);
                     font-weight: 700;
-                    font-size: rem-calc(26px);
+                    font-size: 24px;
                 }
             }
-            
+
             @media screen and (max-width:770px) {
                 display: none;
             }
         }
-        
+
         .search {
             margin: rem-calc(30px 0px);
+
             @media screen and (max-width:770px) {
                 margin: 0 0 rem-calc(20px) 0;
             }
@@ -233,7 +247,7 @@ header {
             //width: rem-calc(400px);
             text-align: right;
 
-            a:first-child {
+            a {
                 margin-right: rem-calc(30px);
             }
 
@@ -251,12 +265,146 @@ header {
                     color: $off-white;
 
                     span.fa-stack {
-                        .fa-stack-2x, .fa-stack-1x {
+
+                        .fa-stack-2x,
+                        .fa-stack-1x {
                             color: $off-white;
                         }
                     }
                 }
             }
+        }
+    }
+
+    //DSP Revise Jan 2022
+    &#new {
+
+        z-index: 6;
+        border-top: 3px solid $orange;
+        padding-bottom: rem-calc(15px);
+        //margin: rem-calc(0 15px 0 15px); //Meant to add the 15px margins to the sides but hard to implement. Used justify-content: space-around
+
+        .group {
+
+            display: flex;
+            justify-content: space-between;
+            max-height: rem-calc(155px);
+            padding-left: rem-calc(15px);
+
+            &:last-child {
+                padding-right: rem-calc(15px);
+            }
+
+            .logo {
+                margin-top: rem-calc(15px);
+                display: flex;
+                align-items: baseline;
+
+                &.pipe {
+                    img {
+                        padding-right: rem-calc(20px);
+                        border-right: rem-calc(2px) solid $dark-grey;
+                    }
+
+                    p {
+                        padding-left: rem-calc(20px);
+                        font-weight: 700;
+                        font-size: 24px;
+                    }
+                }
+            }
+
+
+            .right {
+                display: flex;
+                margin-top: rem-calc(15px);
+                align-items: center;
+
+                .circle-icons {
+                    text-align: center;
+                    display: flex;
+
+                    a {
+                        margin-right: rem-calc(15px);
+                    }
+
+                    .fa-search {
+                        color: $off-white;
+                    }
+
+                }
+
+            }
+        }
+
+
+
+        @media screen and (max-width:770px) {
+            display: none;
+            border-top: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+            background: $orange;
+            top: 70px;
+            position: sticky;
+            z-index: 1;
+
+            .group {
+                .logo {
+                    display: none;
+                }
+
+                .right {
+                    padding: rem-calc(15px) 0;
+                    flex-wrap: wrap-reverse;
+                    justify-content: center;
+                    margin-top: 0;
+
+                    .circle-icons {
+                        justify-content: space-evenly;
+
+                        a:first-child {
+                            margin-right: rem-calc(15px);
+                        }
+
+                        a {
+                            color: $off-white;
+
+                            span.fa-stack {
+
+                                .fa-stack-2x,
+                                .fa-stack-1x {
+                                    color: $off-white;
+
+                                    &.fa-search {
+                                        color: $orange
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .search {
+                    margin: 0 0 rem-calc(20px) 0;
+                }
+
+            }
+
+        }
+
+
+
+        &.super-hero {
+
+            @media screen and (min-width:850px) {
+                position: absolute;
+                top: 0;
+                background: rgba(255, 255, 255, 0.8); //set opacity
+                width: 100%;
+
+            }
+
         }
     }
 }

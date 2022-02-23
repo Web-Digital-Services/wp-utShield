@@ -111,6 +111,7 @@
 
 #subnav {
     margin-bottom: rem-calc(30px);
+
     .nested.vertical.submenu {
         border-left: rem-calc(4px) solid $gold;
         margin-top: rem-calc(6px);
@@ -122,6 +123,7 @@
         }
     }
 }
+
 .accordion-menu li:not(.nested li) {
     border-bottom: rem-calc(1px) $grey-40 solid;
 }
@@ -156,7 +158,7 @@
 // ======= Mission Nav
 div#level-1 {
     nav {
-        ul.menu > li {
+        ul.menu>li {
             a {
                 font-size: rem-calc(30px);
             }
@@ -173,6 +175,7 @@ div#level-1 {
 
                 li {
                     border-bottom: rem-calc(1.75px) solid $grey-10;
+
                     &:hover {
                         background: $off-white !important;
                     }
@@ -180,6 +183,7 @@ div#level-1 {
                     a {
                         color: $off-white;
                         font-size: rem-calc(22px);
+
                         &:hover {
                             color: $orange !important;
                         }
@@ -188,24 +192,108 @@ div#level-1 {
             }
         }
     }
+
     @media screen and (max-width:770px) {
         display: block !important;
-        width:100%;
+        width: 100%;
     }
 }
 
 // ======= Navbar
 
 .nav-bar {
-    background-image: linear-gradient(to right, $orange, $orange 40%, $dark-orange 70%, $dark-orange);
+
+    &#new-full {
+        //background-image: linear-gradient(to right, $orange, $orange 40%, $dark-orange 70%, $dark-orange);
+        position: sticky;
+        top: 0;
+        z-index: 6;
+        display: flex;
+        justify-content: center;
+        border-top: 2px solid $grey-40;
+        border-bottom: 2px solid $orange;
+        box-shadow: $shadow-2;
+        background: $light-grey;
+
+
+
+        .top-bar {
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+            width: $global-width;
+
+
+            .top-bar-left {
+
+                ul {
+                    background: transparent; //This is so the color doesn't get overrided by the old nav styles. DELETE LATER
+                    justify-content: space-evenly;
+
+                    li {
+
+                        &:hover {
+                            background: transparent; //This is so the color doesn't get overrided by the old nav styles. DELETE LATER
+                        }
+
+                        a,
+                        a:after {
+                            transition: .3s;
+                        }
+
+                        a {
+
+                            position: relative;
+                            z-index: 1;
+                            color: $orange;
+                            //expand click area
+                            padding-top: rem-calc(22px);
+                            padding-bottom: rem-calc(22px);
+
+                            //Hover animation - Hide orange fill and show on hover
+                            &:after {
+                                display: block;
+                                position: absolute;
+                                //top: 0;
+                                left: 0;
+                                bottom: 0;
+                                right: 0;
+                                margin: auto;
+                                width: 100%;
+                                height: 0px;
+                                content: '.';
+                                color: transparent;
+                                background: $orange;
+                                visibility: visible;
+                                opacity: 1;
+                                z-index: -1;
+                            }
+
+                            &:hover {
+                                color: $off-white;
+
+                                &:after {
+                                    height: 100%; //expands pseudo fill container to height of container
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    //OLD NAV DESIGN
+
+    //background-image: linear-gradient(to right, $orange, $orange 40%, $dark-orange 70%, $dark-orange);
     display: flex;
-    justify-content: space-between;
     justify-content: center;
     box-shadow: $shadow-2;
+    background: $orange;
 
-    .top-bar, .top-bar ul{
-        background-color: transparent;
-    }
+
+
 
     .top-bar {
         padding: 0;
@@ -215,19 +303,25 @@ div#level-1 {
 
 
         .top-bar-left {
+
+
             ul {
                 background: $orange;
 
                 li {
                     transition: .3s ease-in-out;
-                }
 
-                li:hover {
-                    background: $dark-orange;
+                    &:hover {
+                        background: $dark-orange;
+                    }
                 }
 
                 li a {
                     color: $off-white;
+
+                    &:hover {
+                        color: $off-white;
+                    }
                 }
             }
         }
@@ -298,6 +392,35 @@ div#level-1 {
 
 @media screen and (max-width:770px) {
     .nav-bar {
+        &#new {
+
+            .top-bar {
+                background-color: $dark-grey;
+                border-top: rem-calc(6px) solid $gold;
+
+
+                ul {
+                    background-color: $dark-grey;
+                    li {
+                        border-bottom: rem-calc(1.75px) solid $grey-10;
+                        &:last-child {
+                            border-bottom: none;
+                        }
+
+                        a {
+
+                            &:hover {
+                                color: $orange;
+                                background: $off-white;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+        }
+
         .top-bar {
             background-color: $dark-grey !important;
             border-top: rem-calc(6px) solid $gold;
@@ -309,6 +432,7 @@ div#level-1 {
 
                 li {
                     border-bottom: rem-calc(1.75px) solid $grey-10;
+
                     &:hover {
                         background: $off-white !important;
                     }
@@ -325,9 +449,38 @@ div#level-1 {
             .top-bar-right {
                 border-left: none !important;
 
-                ul > li:last-child {
+                ul>li:last-child {
                     border-bottom: none;
                 }
+            }
+        }
+
+        //Hide full nav on mobile
+        &#new-full {
+            display: none;
+        }
+    }
+}
+
+@media screen and (min-width:770px) {
+
+    //Hide mobile nav on large screens
+    nav#new {
+        display: none;
+    }
+}
+
+header.super-hero+.hero.mission+nav#new-full {
+
+    ul.menu {
+
+        justify-content: space-evenly;
+        li {
+            font-size: rem-calc(24px);
+            margin-right: rem-calc(60px);
+
+            &:last-child {
+                margin-right: 0;
             }
         }
     }
