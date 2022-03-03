@@ -139,9 +139,12 @@ input.facetwp-autocomplete-update{
 .breadcrumbs{
     padding-left: 0px;
 }
+main.grid-container{
+    margin-bottom: 0em !important;
+}
 /** Fix css image links **/
 input[type="checkbox"]:checked {
-    background: url(../../assets/images/core/check-solid.svg);
+    background: url("../../assets/images/core/check-solid.svg");
       background-position-x: 0%;
       background-position-y: 0%;
       background-repeat: repeat;
