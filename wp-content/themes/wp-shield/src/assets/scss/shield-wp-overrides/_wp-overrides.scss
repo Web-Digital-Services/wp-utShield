@@ -144,7 +144,7 @@ main.grid-container{
 }
 /** Fix css image links **/
 input[type="checkbox"]:checked {
-    background: url("../../assets/images/core/check-solid.svg");
+    background: url("../assets/images/core/check-solid.svg");
       background-position-x: 0%;
       background-position-y: 0%;
       background-repeat: repeat;
@@ -153,10 +153,5 @@ input[type="checkbox"]:checked {
     background-repeat: no-repeat;
     background-size: 1.125rem;
 }
-footer .shield {
-    background-image: url("../../assets/images/core/half-shield.svg");
-    background-repeat: no-repeat;
-    position: relative;
-    background-position: right center;
-  }
+
 /** END OVER RIDES TO DSP SPECIFICALLY FOR WP. **/
