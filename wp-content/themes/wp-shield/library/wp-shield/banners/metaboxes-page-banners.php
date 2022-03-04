@@ -31,9 +31,10 @@ function utPress_full_width_callback( $post ) {
         <?php $banner_design = get_post_meta( $post->ID, 'banner_design_key', true ); ?>
             <label for="banner_design"><?php _e( "<strong>Banner Design:</strong>", 'wp-shield' ); ?>
                 <br />  
-                <input type="radio" name="banner_design" checked="checked" value="default-bleed" <?php checked( $banner_design, 'default-bleed' ); ?>>Default Banner<br>
+                <input type="radio" name="banner_design" checked="checked" value="default-bleed" <?php checked( $banner_design, 'default-bleed' ); ?>>Default (Beige)<br>
                 <input type="radio" name="banner_design" value="hero-banner" <?php checked( $banner_design, 'hero-banner' ); ?>>Hero Banner<br>
                 <input type="radio" name="banner_design" value="super-hero-banner" <?php checked( $banner_design, 'super-hero-banner' ); ?>>Super Hero Banner<br>
+                <input type="radio" name="banner_design" value="basic-page" <?php checked( $banner_design, 'basic-page' ); ?>>Basic Page (Child)<br>
                 <input type="radio" name="banner_design" value="video-banner" <?php checked( $banner_design, 'video-banner' ); ?>>Video Banner<br>
         </label>
     </p>
