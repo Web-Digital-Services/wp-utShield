@@ -23,6 +23,9 @@
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
+	<div class="skip-link" role="navigation" aria-label="Skip to main content">
+   			<a href="#main-content" class="element-focusable element-invisible" id="skip-link">Skip to main content</a>
+  		</div>
 	<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) : ?>
 		<?php get_template_part( 'template-parts/mobile-off-canvas' ); ?>
 	<?php endif; ?>
@@ -77,14 +80,8 @@
 							<span>' . $UTH_contact_phone_number . '</span>
 						</a>';
 					}
-					echo '                <a href="#" data-toggle="offCanvasRight" aria-expanded="false" aria-controls="offCanvasRight">
-                    <span class="fa-stack outline">
-                        <i class="fas fa-circle fa-stack-2x"></i>
-                        <i class="fas fa-search fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <span>Search/Quicklinks</span>
-                </a>
-					</div>';
+					shield_offCanvas_search();
+					echo '</div>';
 				?>
             </div>
         </div>

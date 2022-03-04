@@ -75,15 +75,22 @@ if ( ! function_exists( 'uth_third_quick_links' ) ) {
 }
 
 /** Register Button that activates the quick links menu */
-function UTH_register_quick_links(){
+function shield_offCanvas_search(){
+   echo' <a href="#" data-toggle="offCanvasRight" aria-expanded="false" aria-controls="offCanvasRight">
+                    <span class="fa-stack outline">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fas fa-search fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <span>Search/Quicklinks</span>
+                </a>';
     if (has_nav_menu('uth_primary_quick_links')){
         $primary_menu_name = 'uth_primary_quick_links';
         $locations = get_nav_menu_locations();
         $primary_menu_id = $locations[ $primary_menu_name ] ;
         $primary_quicklinks_menu_object = wp_get_nav_menu_object($primary_menu_id);
-        if (($primary_quicklinks_menu_object->count) > 0){
+        //if (($primary_quicklinks_menu_object->count) > 0){
             echo '<p><a href="#" data-close="offCanvasLeft"><i class="fas fa-times"></i> ' .  $primary_quicklinks_menu_object->name . '</a></p>';
-        }
+        //}
     }
 }
 /** Display all sidebar items in a quicklinks panel pop out */
