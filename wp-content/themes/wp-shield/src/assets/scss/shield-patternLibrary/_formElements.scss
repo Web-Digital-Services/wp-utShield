@@ -66,7 +66,7 @@ input[type=checkbox] {
 }
 
 input[type=checkbox]:checked {
-    background: url(../../images/check-solid.svg);
+    background: url(../images/check-solid.svg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: rem-calc(18px);
@@ -99,7 +99,7 @@ legend {
 }
 
 select {
-    background-image: url(../../images/angle-down-solid.svg);
+    background-image: url(../images/angle-down-solid.svg);
     background-size: rem-calc(13px 16px);
 }
 
