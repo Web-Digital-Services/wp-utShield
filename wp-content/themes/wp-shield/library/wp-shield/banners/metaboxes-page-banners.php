@@ -26,22 +26,32 @@ add_action( 'add_meta_boxes', 'ut_homepage_banner_meta_box' );
 function utPress_full_width_callback( $post ) {
 	wp_nonce_field( basename( __FILE__ ), 'wp_shield_nonce' );
     $utPress_full_width_stored_meta = get_post_meta( $post->ID );
-
-    echo '<p><strong>How to Use:</strong> This section is for editing the page banner. <br>';
-
-
-    $pageTemplate = get_post_meta($post->ID, '_wp_page_template', true);
-        if($pageTemplate == 'page-templates/hero-banner-page.php'){
-            echo '<strong>Image Size:</strong> 1550px by 700px. (Set as the featured image for the page)<br></p>';
-            echo 'Example of the Hero Banner can be seen below<br></p>';
-            $example_image = '/dist/assets/images/core/banner-example-hero-full-width.jpg';
-        }else{
-            echo '<strong>Image Size:</strong> 500px by 350px. (Set as the featured image for the page)<br></p>';
-            echo 'Example of the default page banner can be seen below<br></p>';
-            $example_image = '/dist/assets/images/core/default-page-banner.jpg';
-        }
     ?>
-	<img src="<?php echo get_bloginfo('template_directory') . $example_image ?>">
+    <p>
+        <?php $banner_design = get_post_meta( $post->ID, 'banner_design_key', true ); ?>
+            <label for="banner_design"><?php _e( "<strong>Banner Design:</strong>", 'wp-shield' ); ?>
+                <br />  
+                <input type="radio" name="banner_design" checked="checked" value="default-bleed" <?php checked( $banner_design, 'default-bleed' ); ?>>Default Banner<br>
+                <input type="radio" name="banner_design" value="hero-banner" <?php checked( $banner_design, 'hero-banner' ); ?>>Hero Banner<br>
+                <input type="radio" name="banner_design" value="super-hero-banner" <?php checked( $banner_design, 'super-hero-banner' ); ?>>Super Hero Banner<br>
+                <input type="radio" name="banner_design" value="video-banner" <?php checked( $banner_design, 'video-banner' ); ?>>Video Banner<br>
+        </label>
+    </p>
+    <?php 
+    // echo '<p><strong>How to Use:</strong> This section is for editing the page banner. <br>';
+    // $pageTemplate = get_post_meta($post->ID, '_wp_page_template', true);
+    //     if($pageTemplate == 'page-templates/hero-banner-page.php'){
+    //         echo '<strong>Image Size:</strong> 1550px by 700px. (Set as the featured image for the page)<br></p>';
+    //         echo 'Example of the Hero Banner can be seen below<br></p>';
+    //         $example_image = '/dist/assets/images/core/banner-example-hero-full-width.jpg';
+    //     }else{
+    //         echo '<strong>Image Size:</strong> 500px by 350px. (Set as the featured image for the page)<br></p>';
+    //         echo 'Example of the default page banner can be seen below<br></p>';
+    //         $example_image = '/dist/assets/images/core/default-page-banner.jpg';
+    //     }
+    ?>
+	<!-- <img src="<?php //echo get_bloginfo('template_directory') . $example_image ?>"> -->
+
 	<hr>
     <p>
     	<label for="banner-title" class="utPress-row-title close"><?php _e( '<strong>Featured Title</strong>', 'wp-shield' )?><br>
@@ -81,21 +91,6 @@ function utPress_full_width_callback( $post ) {
             </label>
         </p>
         <p>
-            <?php $news_events_status = get_post_meta( $post->ID, 'my_key', true ); //my_key is a meta_key. ?>
-            <label for="news_events_options"><?php _e( "<strong>News and Events Options:</strong>", 'wp-shield' ); ?>
-                <br />  
-                <input type="radio" name="news_events_options" checked="checked" value="disable-news" <?php checked( $news_events_status, 'disable-news' ); ?>>Disable News & Events<br>
-                <input type="radio" name="news_events_options" value="news-events" <?php checked( $news_events_status, 'news-events' ); ?>>News & Events (White Background)<br>
-                <input type="radio" name="news_events_options" value="tan-news-events" <?php checked( $news_events_status, 'tan-news-events' ); ?>>News & Events (Tan)<br>
-                <input type="radio" name="news_events_options" value="colorized-news-events" <?php checked( $news_events_status, 'colorized-news-events' ); ?>>News & Events (Colorized)<br>
-                <input type="radio" name="news_events_options" value="news-only" <?php checked( $news_events_status, 'news-only' ); ?>>News Only (Colorized Theme)<br>
-                <input type="radio" name="news_events_options" value="news-only-tan" <?php checked( $news_events_status, 'news-only-tan' ); ?>>News Only (Tan)<br>
-                <input type="radio" name="news_events_options" value="events-only" <?php checked( $news_events_status, 'events-only' ); ?>>Events Only (Colorized Theme)<br>
-                <input type="radio" name="news_events_options" value="events-only-tan" <?php checked( $news_events_status, 'events-only-tan' ); ?>>Events Only (Tan)<br>
-
-            </label>
-        </p>
-        <p>
             <?php $banner_grid_layout_meta = get_post_meta( $post->ID, 'banner_grid_layout_key', true ); //banner_grid_layout_key is a meta_key. ?>
             <label for="banner_grid_layout"><?php _e( "<strong>Banner Layout (Grid Sizes)</strong>", 'wp-shield' ); ?>
                 <br />  
@@ -103,7 +98,7 @@ function utPress_full_width_callback( $post ) {
                 <input type="radio" name="banner_grid_layout" value="75" <?php checked( $banner_grid_layout_meta, '75' ); ?>>7/5<br>
             </label>
         </p>
-    <?php if($pageTemplate == 'page-templates/hero-banner-page.php'): ?>
+    <?php if($banner_design == 'hero-banner' || $banner_design == 'super-hero-banner' ): ?>
         <!-- Load Only on the Homepage Banner Template Pages -->
         <p>
             <label for="callout_color_options"><?php _e( "<strong>Callout Color:</strong>", 'wp-shield' ); ?><br>
@@ -196,8 +191,8 @@ function UTH_save_full_width_meta( $post_id ) {
 	if ( isset( $_REQUEST['callout_color_selection'] ) ) {
 		update_post_meta( $post_id, 'callout_color_key', sanitize_text_field( $_POST['callout_color_selection'] ) );
     }
-    if ( isset( $_REQUEST['news_events_options'] ) ) {
-		update_post_meta( $post_id, 'my_key', sanitize_text_field( $_POST['news_events_options'] ) );
+    if ( isset( $_REQUEST['banner_design'] ) ) {
+		update_post_meta( $post_id, 'banner_design_key', sanitize_text_field( $_POST['banner_design'] ) );
 	}
     if ( isset( $_REQUEST['banner_grid_layout'] ) ) {
 		update_post_meta( $post_id, 'banner_grid_layout_key', sanitize_text_field( $_POST['banner_grid_layout'] ) );

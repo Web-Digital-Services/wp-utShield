@@ -16,14 +16,14 @@ header#regular .search {
     min-width: 287px;
 }
 //Menu Fixes
-.nav-bar .top-bar .top-bar-left ul.desktop-menu li.current_page_item, .nav-bar .top-bar .top-bar-left ul.desktop-menu li.current-page-ancestor{
-	background: $dark-orange !important;
-}
-@media only screen and (max-width: $mobile)  {
-    .desktop-menu, .site-navigation .top-bar-left {
-        display: block !important;
-    }
-}
+// .nav-bar .top-bar .top-bar-left ul.desktop-menu li.current_page_item, .nav-bar .top-bar .top-bar-left ul.desktop-menu li.current-page-ancestor{
+// 	background: $dark-orange !important;
+// }
+// @media only screen and (max-width: $mobile)  {
+//     .desktop-menu, .site-navigation .top-bar-left {
+//         display: block !important;
+//     }
+// }
 //Submenu Fixes
 nav#subnav ul .is-accordion-submenu {
     border-left: 0.25rem solid #FFBC5B;
@@ -52,6 +52,10 @@ nav#subnav ul.accordion-menu li.menu-item{
 nav#subnav ul.accordion-menu li ul.is-accordion-submenu li{
     border-bottom: none !important;
 }
+/** Main Menu */
+.nav-bar#new-full .top-bar .top-bar-left ul li.is-active a, .nav-bar#new-full .top-bar .top-bar-left ul li a:active{
+    color: white !important;
+  }
 //Footer Fixes
 footer a:visited:not(.button), footer a:focus {
     color: $beige !important;
@@ -99,10 +103,6 @@ color: #171717 !important;
 div.form-group{
 	padding-bottom:1.2em;
 }
-
-nav .current_page_item{
-	background:#7a0f00;
-}
 .stretch-image, picture.stretch-image img{
 	min-width:100%
 }
@@ -115,7 +115,9 @@ nav .current_page_item{
 .image-spread{
 	min-width:100%
 }
-
+nav .current_page_item{
+	background:#7a0f00;
+}
 /** Locations Page **/
 select#toolset-maps-distance{
 	max-width:4em;
