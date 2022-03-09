@@ -156,5 +156,11 @@ input[type="checkbox"]:checked {
     background-repeat: no-repeat;
     background-size: 1.125rem;
 }
-
+.element-invisible {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
+    height: 1px;
+  }
 /** END OVER RIDES TO DSP SPECIFICALLY FOR WP. **/

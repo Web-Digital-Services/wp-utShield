@@ -32,27 +32,13 @@ function utPress_full_width_callback( $post ) {
             <label for="banner_design"><?php _e( "<strong>Banner Design:</strong>", 'wp-shield' ); ?>
                 <br />  
                 <input type="radio" name="banner_design" checked="checked" value="default-bleed" <?php checked( $banner_design, 'default-bleed' ); ?>>Default (Beige)<br>
+                <input type="radio" name="banner_design" value="basic-page" <?php checked( $banner_design, 'basic-page' ); ?>>Basic Page (Child)<br>
                 <input type="radio" name="banner_design" value="hero-banner" <?php checked( $banner_design, 'hero-banner' ); ?>>Hero Banner<br>
                 <input type="radio" name="banner_design" value="super-hero-banner" <?php checked( $banner_design, 'super-hero-banner' ); ?>>Super Hero Banner<br>
-                <input type="radio" name="banner_design" value="basic-page" <?php checked( $banner_design, 'basic-page' ); ?>>Basic Page (Child)<br>
+                <input type="radio" name="banner_design" value="gradient-banner" <?php checked( $banner_design, 'gradient-banner' ); ?>>Gradient Banner<br>
                 <input type="radio" name="banner_design" value="video-banner" <?php checked( $banner_design, 'video-banner' ); ?>>Video Banner<br>
         </label>
     </p>
-    <?php 
-    // echo '<p><strong>How to Use:</strong> This section is for editing the page banner. <br>';
-    // $pageTemplate = get_post_meta($post->ID, '_wp_page_template', true);
-    //     if($pageTemplate == 'page-templates/hero-banner-page.php'){
-    //         echo '<strong>Image Size:</strong> 1550px by 700px. (Set as the featured image for the page)<br></p>';
-    //         echo 'Example of the Hero Banner can be seen below<br></p>';
-    //         $example_image = '/dist/assets/images/core/banner-example-hero-full-width.jpg';
-    //     }else{
-    //         echo '<strong>Image Size:</strong> 500px by 350px. (Set as the featured image for the page)<br></p>';
-    //         echo 'Example of the default page banner can be seen below<br></p>';
-    //         $example_image = '/dist/assets/images/core/default-page-banner.jpg';
-    //     }
-    ?>
-	<!-- <img src="<?php //echo get_bloginfo('template_directory') . $example_image ?>"> -->
-
 	<hr>
     <p>
     	<label for="banner-title" class="utPress-row-title close"><?php _e( '<strong>Featured Title</strong>', 'wp-shield' )?><br>
@@ -99,33 +85,22 @@ function utPress_full_width_callback( $post ) {
                 <input type="radio" name="banner_grid_layout" value="75" <?php checked( $banner_grid_layout_meta, '75' ); ?>>7/5<br>
             </label>
         </p>
-    <?php if($banner_design == 'hero-banner' || $banner_design == 'super-hero-banner' ): ?>
-        <!-- Load Only on the Homepage Banner Template Pages -->
+    <?php if($banner_design == 'hero-banner' || $banner_design == 'super-hero-banner' || $banner_design == 'gradient-banner'  ): ?>
+        <p>
+            <label for="title_box_alignment_options"><?php _e( "<strong>Title Box Alignment:</strong>", 'wp-shield' ); ?><br>
+                <?php $title_box_alignment = get_post_meta( $post->ID, 'title_box_key', true ); ?> 
+                    <input type="radio" name="titlebox_alignment_selection" checked="checked" value="right-aligned" <?php checked( $title_box_alignment, 'right-aligned' ); ?>> Right Aligned<br>
+                    <input type="radio" name="titlebox_alignment_selection" value="left-aligned" <?php checked( $title_box_alignment, 'left-aligned' ); ?>> Left Aligned<br>
+            </label>
+        </p>
+    <?php endif; ?>
+    <?php if($banner_design == 'hero-banner' || $banner_design == 'super-hero-banner'): ?>
         <p>
             <label for="callout_color_options"><?php _e( "<strong>Callout Color:</strong>", 'wp-shield' ); ?><br>
                 <?php $callout_color = get_post_meta( $post->ID, 'callout_color_key', true ); ?> 
                     <input type="radio" name="callout_color_selection" checked="checked" value="grey" <?php checked( $callout_color, 'grey' ); ?>> Grey<br>
                     <input type="radio" name="callout_color_selection" value="orange" <?php checked( $callout_color, 'orange' ); ?>> Orange<br>
                     <input type="radio" name="callout_color_selection" value="white" <?php checked( $callout_color, 'white' ); ?>> White<br>
-            </label>
-        </p>
-        <p>
-            <label for="colorized" class="utPress-row-title"><?php _e( '<strong>Enable Colorized Background Image Overlay</strong><br>', 'wp-shield' )?>
-                <?php $UTH_colorized_banner = get_post_meta( $post->ID ); ?>
-                <input type="checkbox" name="colorized" id="colorized" value="yes" <?php if ( isset ( $UTH_colorized_banner['colorized'] ) ) checked( $UTH_colorized_banner['colorized'][0], 'yes');?> />
-            </label>
-        </p>
-        <p>
-            <label for="extra-roomy-button" class="utPress-row-title"><?php _e( '<strong>Enable Extra Roomy Padding on Page</strong><br>', 'wp-shield' )?>
-                <input type="checkbox" name="extraroomy" id="extraroomy" value="yes" <?php if ( isset ( $utPress_full_width_stored_meta['extraroomy'] ) ) checked( $utPress_full_width_stored_meta['extraroomy'][0], 'yes');?> />
-            </label>
-        </p>
-        <p>
-            <label for="title_box_alignment_options"><?php _e( "<strong>Title Box Alignment:</strong>", 'wp-shield' ); ?><br>
-                <?php $title_box_alignment = get_post_meta( $post->ID, 'title_box_key', true ); ?> 
-                    <input type="radio" name="titlebox_alignment_selection" checked="checked" value="right-aligned" <?php checked( $title_box_alignment, 'right-aligned' ); ?>> Right Aligned<br>
-                    <input type="radio" name="titlebox_alignment_selection" value="center-aligned" <?php checked( $title_box_alignment, 'center-aligned' ); ?>> Centered<br>
-                    <input type="radio" name="titlebox_alignment_selection" value="left-aligned" <?php checked( $title_box_alignment, 'left-aligned' ); ?>> Left Aligned<br>
             </label>
         </p>
     <?php endif; ?>
@@ -173,16 +148,6 @@ function UTH_save_full_width_meta( $post_id ) {
         update_post_meta( $post_id, 'colorized', 'yes' );
     } else {
         update_post_meta( $post_id, 'colorized', 'no' );
-    }
-    if( isset( $_POST[ 'large-text-toggle' ] ) ) {
-        update_post_meta( $post_id, 'large-text-toggle', 'yes' );
-    } else {
-        update_post_meta( $post_id, 'large-text-toggle', 'no' );
-    }
-    if( isset( $_POST[ 'extraroomy' ] ) ) {
-        update_post_meta( $post_id, 'extraroomy', 'yes' );
-    } else {
-        update_post_meta( $post_id, 'extraroomy', 'no' );
     }
     //Save Callout Alignment
 	if ( isset( $_REQUEST['titlebox_alignment_selection'] ) ) {

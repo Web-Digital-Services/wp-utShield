@@ -95,6 +95,8 @@
 			get_template_part( 'template-parts/banners/hero' );
 		}elseif($banner_design == 'video-banner'){
 			get_template_part( 'template-parts/banners/video' );
+		}elseif($banner_design == 'gradient-banner'){
+			get_template_part( 'template-parts/banners/gradient' );
 		}else{
 			//No Banner
 		}
