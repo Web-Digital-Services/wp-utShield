@@ -12,7 +12,7 @@ function shield_quicklinks_view(){
     echo '<p><a href="#" data-close="offCanvasRight" aria-expanded="true" aria-controls="offCanvasRight"><i class="fas fa-times"></i> Quicklinks</a></p>';
     echo '<form method="get" class="search" action="' . $action_root . '/">
             <label for="desktop-search" class="element-invisible">Desktop Search</label>
-            <input class="search-box" type="search" size="5" name="s" id="desktop-search" placeholder="search" value="Search" onfocus="if(this.value==this.defaultValue)this.value="";" onblur="if(this.value=="")this.value=this.defaultValue;"/>
+            <input class="search-box" type="search" size="5" name="s" id="desktop-search" placeholder="search" value="" onfocus="if(this.value==this.defaultValue)this.value="";" onblur="if(this.value=="")this.value=this.defaultValue;"/>
             <button type="submit">
                 <i class="fa fa-search"></i>
             </button>
