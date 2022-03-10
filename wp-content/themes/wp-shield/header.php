@@ -80,7 +80,13 @@
 							<span>' . $UTH_contact_phone_number . '</span>
 						</a>';
 					}
-					shield_offCanvas_search();
+					echo '<a href="#" data-toggle="offCanvasRight">
+					<span class="fa-stack outline">
+						<i class="fas fa-circle fa-stack-2x"></i>
+						<i class="fas fa-search fa-stack-1x fa-inverse"></i>
+					</span>
+					<span>Search/Quicklinks</span>
+				</a>';
 					echo '</div>';
 				?>
             </div>
