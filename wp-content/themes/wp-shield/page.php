@@ -14,7 +14,7 @@ load_theme_design('header');
 $banner_design = get_post_meta( $post->ID, 'banner_design_key', true );
 ?>
 <!-- Start building tha page template banner -->
-<main class="grid-container">
+<main id="main-content" class="grid-container">
 	<?php 
 		if ($banner_design == 'basic-page'){
 			if ( function_exists('yoast_breadcrumb') ) { 
