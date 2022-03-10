@@ -92,7 +92,6 @@
             </div>
         </div>
 	</header>
-
 	<?php 
 		//Get Banner content from the DB and assign to variables
 		if ($banner_design == 'default-bleed' || empty($banner_design)){
