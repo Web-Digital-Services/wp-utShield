@@ -194,3 +194,37 @@
         break-inside: avoid;
     }
 }
+
+.brush-circle {
+    mask path {
+        fill: none;
+        stroke: white;
+        stroke-width: 40;
+        stroke-dasharray: 325 325;
+        stroke-dashoffset: 325;
+        animation: brush .5s linear forwards;
+    }
+
+    @keyframes brush {
+        0% {
+            stroke-dashoffset: 325;
+        }
+
+        20% {
+            stroke-dashoffset: 325;
+        }
+
+        80% {
+            stroke-dashoffset: 0;
+        }
+
+        100% {
+            stroke-dashoffset: 0;
+        }
+    }
+
+    .circle-red {
+        fill: $dark-orange;
+    }
+}
+

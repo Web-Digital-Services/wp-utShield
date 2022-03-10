@@ -80,16 +80,21 @@
 							<span>' . $UTH_contact_phone_number . '</span>
 						</a>';
 					}
-					shield_offCanvas_search();
+					echo '<a href="#" data-toggle="offCanvasRight">
+					<span class="fa-stack outline">
+						<i class="fas fa-circle fa-stack-2x"></i>
+						<i class="fas fa-search fa-stack-1x fa-inverse"></i>
+					</span>
+					<span>Search/Quicklinks</span>
+				</a>';
 					echo '</div>';
 				?>
             </div>
         </div>
 	</header>
-
 	<?php 
 		//Get Banner content from the DB and assign to variables
-		if ($banner_design == 'default-bleed' || empty($banner_design)){
+		if ( $banner_design == 'default-bleed' || (empty($banner_design) && is_page()) ){
 			get_template_part( 'template-parts/banners/default' );
 		}elseif($banner_design == 'hero-banner' || $banner_design == 'super-hero-banner'){
 			get_template_part( 'template-parts/banners/hero' );
