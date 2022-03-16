@@ -56,6 +56,9 @@ nav#subnav ul.accordion-menu li ul.is-accordion-submenu li{
 .nav-bar#new-full .top-bar .top-bar-left ul li.is-active a, .nav-bar#new-full .top-bar .top-bar-left ul li a:active{
     color: white !important;
   }
+.menu .is-active > a {
+    background: #7a0f00;
+}
 //Footer Fixes
 footer a:visited:not(.button), footer a:focus {
     color: $beige !important;

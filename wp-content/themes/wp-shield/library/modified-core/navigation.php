@@ -45,6 +45,7 @@ if ( ! function_exists( 'foundationpress_mobile_nav' ) ) {
 			array(
 				'container'      => 'nav',
 				'container_class' => 'nav-bar',
+				'container_id' => 'new',
 				'menu'           => __( 'mobile-nav', 'foundationpress' ),
 				'menu_class'     => 'vertical menu',
 				'theme_location' => 'mobile-nav',
