@@ -88,7 +88,7 @@ header.super-hero+.hero {
 .hero {
     &.img-fill {
         background-color: transparent !important;
-        overflow: clip; //Hidden produces a strange margin between hero area and new nav design. Clip accomplishes the same effect with no extra margins
+        overflow: initial; //Hidden produces a strange margin between hero area and new nav design. Clip accomplishes the same effect with no extra margins
     }
 
     & .callout {

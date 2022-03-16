@@ -276,6 +276,16 @@ div#level-1 {
                                     height: 100%; //expands pseudo fill container to height of container
                                 }
                             }
+
+                            &:active {
+                                background: $orange;
+                                color: $off-white;
+                            }
+
+                            &:focus {
+                                background: $grey;
+                                color: $off-white;
+                            }
                         }
                     }
                 }

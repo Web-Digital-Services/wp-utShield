@@ -253,16 +253,6 @@ h2+.subheader {
     margin-top: rem-calc(-5px);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-    &.circle {
-
-    }
-}
-
 // ======= Colorized headings and paragraph text
 h1,
 h2,
@@ -439,6 +429,25 @@ a.external {
         font-family: "Font Awesome 5 Free";
         font-weight: 900;
         content: "\f35d";
+        color: $orange;
+        margin-left: .3rem;
+        transition: .5s ease-out;
+        //transform: rotate(-45deg);
+    }
+
+    &:hover:after {
+        color: $dark-orange;
+        transform: translate(.1rem, -.1rem);
+
+    }
+}
+
+a.file {
+    &:after {
+        display: inline-block;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f56d";
         color: $orange;
         margin-left: .3rem;
         transition: .5s ease-out;
