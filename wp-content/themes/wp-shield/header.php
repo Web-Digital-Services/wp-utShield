@@ -29,19 +29,19 @@
 	<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) : ?>
 		<?php get_template_part( 'template-parts/mobile-off-canvas' ); ?>
 	<?php endif; ?>
-	<header class="title-bar" data-responsive-toggle="regular" style="display: none;">
+	<header id="Mobile Header" class="title-bar" data-responsive-toggle="new">
 		<a href="<?php echo get_option('home'); ?>"><img  alt='Mobile Logo in White' src='<?php ut_display_logo('mobile'); ?>'></a>
-		<button class="menu-icon" type="button" data-toggle="regular">Menu</button>
-		</header>
-		<?php 
-			$banner_design = get_post_meta( $post->ID, 'banner_design_key', true );
+		<button class="menu-icon" type="button" data-toggle="new">Menu</button>
+	</header>
+	<?php 
+		$banner_design = get_post_meta( $post->ID, 'banner_design_key', true );
 
-			if ($banner_design == 'super-hero-banner'){
-			$super_hero = ' super-hero';
-			}else{
-				$super_hero = '';
-			}
-		?>
+		if ($banner_design == 'super-hero-banner'){
+		$super_hero = ' super-hero';
+		}else{
+			$super_hero = '';
+		}
+	?>
 	<header class="off-canvas-content<?php echo $super_hero; ?>" id="new" data-off-canvas-content="" style="display: block;">
 		<div class="group">
 			<?php 
@@ -91,6 +91,7 @@
 				?>
             </div>
         </div>
+		<?php foundationpress_mobile_nav(); ?>
 	</header>
 	<?php 
 		//Get Banner content from the DB and assign to variables
