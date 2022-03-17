@@ -18,6 +18,7 @@ function vc_before_init_actions() {
     require_once( get_template_directory().'/library/wp-shield/wpbakery/icons-ut-health-map.php' );
     require_once( get_template_directory().'/library/wp-shield/wpbakery/quickfacts-vertical.php' );
     require_once( get_template_directory().'/library/wp-shield/wpbakery/subnav.php' );
+    require_once( get_template_directory().'/library/wp-shield/wpbakery/video-embed.php' );
 
 
     //Add a custom field to inner row 
