@@ -85,6 +85,18 @@ function utPress_full_width_callback( $post ) {
                 <input type="radio" name="banner_grid_layout" value="75" <?php checked( $banner_grid_layout_meta, '75' ); ?>>7/5<br>
             </label>
         </p>
+    <br>
+    <span style="font-size:1.5em;">Video Banner:</span><br>
+    <p>
+        <span for="ut_featured_video_url"><?php _e( '<strong class="utPress-row-title">Video URL:</strong><br>Enter the full URL of a video that you would like embeded. If no video is selected the featured image will be shown instead. <br> The URL should start with https://youtu.be/ or https://vimeo.com/ <strong>(optional)</strong>', 'utPress-textdomain' )?></span> 
+        <br>
+        <input type="text" size=65 name="ut_featured_video_url" value="<?php if ( isset ( $utPress_full_width_stored_meta['ut_featured_video_url'] ) ) echo $utPress_full_width_stored_meta['ut_featured_video_url'][0]; ?>" />  
+    </p>
+    <p>
+        <span for="ut_featured_video_title"><?php _e( '<strong class="utPress-row-title">Video Title:</strong>', 'utPress-textdomain' )?></span> 
+        <br>
+        <input type="text" size=65 name="ut_featured_video_title" value="<?php if ( isset ( $utPress_full_width_stored_meta['ut_featured_video_title'] ) ) echo $utPress_full_width_stored_meta['ut_featured_video_title'][0]; ?>" />  
+    </p>
     <?php if($banner_design == 'hero-banner' || $banner_design == 'super-hero-banner' || $banner_design == 'gradient-banner'  ): ?>
         <p>
             <label for="title_box_alignment_options"><?php _e( "<strong>Title Box Alignment:</strong>", 'wp-shield' ); ?><br>
@@ -163,5 +175,12 @@ function UTH_save_full_width_meta( $post_id ) {
     if ( isset( $_REQUEST['banner_grid_layout'] ) ) {
 		update_post_meta( $post_id, 'banner_grid_layout_key', sanitize_text_field( $_POST['banner_grid_layout'] ) );
 	}
+    //Video
+    if ( isset( $_POST[ 'ut_featured_video_url' ] ) ) {
+        update_post_meta( $post_id, 'ut_featured_video_url', sanitize_text_field( $_POST[ 'ut_featured_video_url' ] ) );
+    }
+    if ( isset( $_POST[ 'ut_featured_video_title' ] ) ) {
+        update_post_meta( $post_id, 'ut_featured_video_title', sanitize_text_field( $_POST[ 'ut_featured_video_title' ] ) );
+    }
 }
 add_action( 'save_post_page', 'UTH_save_full_width_meta', 10, 3 );

@@ -61,7 +61,7 @@
 						} elseif ( has_post_thumbnail() ){
 							the_post_thumbnail();
 						}else{
-							echo '<p class="white-text">Please install UT Featured Video Plugin</p>';
+							//No featured Media
 						}
 					?>
 				</div>
