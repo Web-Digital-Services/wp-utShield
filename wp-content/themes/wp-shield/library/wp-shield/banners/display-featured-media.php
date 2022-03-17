@@ -6,7 +6,7 @@
  * 
  **/
 
-function display_featured_media( $thumbnail_size ){
+function load_featured_media( $thumbnail_size ){
 	$ut_featured_video_url = get_post_meta( get_the_ID(), 'ut_featured_video_url', true ); 
 	$ut_featured_video_title = get_post_meta( get_the_ID(), 'ut_featured_video_title', true ); 
   

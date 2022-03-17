@@ -56,8 +56,8 @@
 				</div>
 				<div class="<?php echo $column_right_css; ?>">          
 					<?php
-						if (function_exists('display_featured_media')) {
-							display_featured_media('large', 'close');
+						if (function_exists('load_featured_media')) {
+							load_featured_media('large', 'close');
 						} elseif ( has_post_thumbnail() ){
 							the_post_thumbnail();
 						}else{
