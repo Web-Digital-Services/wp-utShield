@@ -16,38 +16,38 @@
  */
 
 get_header(); ?>
+<div class="grid-container">
+	<div class="grid-x grid-margin-x">
+	<main id="main-content" class="main-content cell large-8">
+		<div class="lines">
+			<ul>
+				<?php if ( have_posts() ) : ?>
+					<?php /* Start the Loop */ ?>
+					<?php while ( have_posts() ) : the_post(); ?>
+						<?php get_template_part( 'template-parts/snippet', 'news' ); ?>
+					<?php endwhile; ?>
+					<?php else : ?>
+						<?php echo '<p>There is no news at this time. Please check back later.</p>' ?>
+					<?php endif; // End have_posts() check. ?>
 
-<div class="main-container">
-	<div class="main-grid">
-		<main class="main-content">
-		<?php if ( have_posts() ) : ?>
-
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
-			<?php endwhile; ?>
-
-			<?php else : ?>
-				<?php get_template_part( 'template-parts/content', 'none' ); ?>
-
-			<?php endif; // End have_posts() check. ?>
-
-			<?php /* Display navigation to next/previous pages when applicable */ ?>
-			<?php
-			if ( function_exists( 'foundationpress_pagination' ) ) :
-				foundationpress_pagination();
-			elseif ( is_paged() ) :
-			?>
-				<nav id="post-nav">
-					<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'foundationpress' ) ); ?></div>
-					<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
-				</nav>
-			<?php endif; ?>
-
-		</main>
+					<?php /* Display navigation to next/previous pages when applicable */ ?>
+					<?php
+					if ( function_exists( 'foundationpress_pagination' ) ) :
+						foundationpress_pagination();
+					elseif ( is_paged() ) :
+					?>
+						<nav id="post-nav">
+							<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'foundationpress' ) ); ?></div>
+							<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
+						</nav>
+				<?php endif; ?>
+			</ul>
+		</div>
+	</main>
+	<div class="cell large-4">
 		<?php get_sidebar(); ?>
-
 	</div>
-</div>
+	</div>
 
+</div>
 <?php get_footer();
