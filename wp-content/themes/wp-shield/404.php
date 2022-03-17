@@ -40,7 +40,7 @@ load_theme_design('header'); ?>
 				</div>
 			</article>
 		</main>
-		<?php get_sidebar(); ?>
+		<?php //get_sidebar(); ?>
 	</div>
 </div>
 <?php load_theme_design('footer');
