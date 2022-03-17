@@ -28,4 +28,4 @@ $banner_design = get_post_meta( $post->ID, 'banner_design_key', true );
 	<?php endwhile; ?>
 </main>
 <?php
-load_theme_design('footer');;
+load_theme_design('footer');
