@@ -8,7 +8,6 @@
  * @package FoundationPress
  * @since FoundationPress 1.0.0
  */
-
 ?>	
 <header>
 	<section class="bleed hero">
@@ -17,9 +16,10 @@
 				<div class="cell large-12">
 					<?php         
 						if(is_category()){
-							single_cat_title('<h2>Category: ', '</h2>');
+							echo '<p class="eyebrow">Category</p>';
+							single_cat_title('<h2>', '</h2>');
 						}else{
-							the_title('<h1 class="close">', '</h1>');
+							the_title('<h1>', '</h1>');
 						}
 					?>
 			</div>
