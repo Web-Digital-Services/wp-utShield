@@ -230,6 +230,13 @@ div#level-1 {
                     background: transparent; //This is so the color doesn't get overrided by the old nav styles. DELETE LATER
                     justify-content: space-evenly;
 
+                    .is-active {
+                        > a {
+                            background: $orange;
+                            color: $off-white;
+                        }
+                    }
+
                     li {
 
                         &:hover {

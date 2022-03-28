@@ -30,19 +30,19 @@
     color: $off-white;
     background-color: $blue;
     &.orange {
-        background-color: $orange;
+        background-color: $orange !important;
     }
     &.darken {
-        background-color: $dark-orange;
+        background-color: $dark-orange !important;
     }
     &.grey {
-        background-color: $grey;
+        background-color: $grey !important;
     }
     &.dark-grey {
-        background-color: $dark-grey;
+        background-color: $dark-grey !important;
     }
     &.blue {
-        background-color: $blue;
+        background-color: $blue !important;
     }
 }
 

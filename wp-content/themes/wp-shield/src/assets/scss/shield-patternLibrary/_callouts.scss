@@ -142,6 +142,15 @@ a.callout {
             color: rgba(241, 245, 247, 0.35);
         }
     }
+    
+    &.noise {
+        background: $orange url(../images/noise-texture.png);
+    }
+      
+    &.rocky {
+        background: $orange url(../images/rockywall-texture.png);
+    }
+
     &.special {
         text-align: left;
         background: linear-gradient(to bottom, $off-white 0%, $off-white 25%, $off-white 50%, $off-white 75%, $gold 75.1%, $gold 78%, $dark-grey 78.1%, $dark-grey 100%);
@@ -173,20 +182,27 @@ a.callout:hover {
     .fa-circle {
         color: rgba(241, 245, 247, 0.35);
     }
+    &.noise {
+        background: $dark-orange url(../images/noise-texture.png) !important;
+    }
+      
+    &.rocky {
+        background: $dark-orange url(../images/rockywall-texture.png) !important;
+    }
     &.darken {
-        background-color: $orange;
+        background-color: $orange !important;
     }
     &.blue {
-        background-color: $blue-80;
+        background-color: $blue-80 !important;
     }
     &.grey {
-        background-color: $dark-grey;
+        background-color: $dark-grey !important;
         .fa-circle {
             color: rgba(241, 245, 247, 0.35);
         }
     }
     &.dark-grey {
-        background-color: $grey;
+        background-color: $grey !important;
     }
     &.special {
         background: none;

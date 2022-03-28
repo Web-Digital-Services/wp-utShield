@@ -48,7 +48,7 @@ footer {
         color: $grey-link;
         font-weight: 900 !important;
 
-        &:hover {
+        &:hover, &:focus, &:active {
             color: $grey-link;
         }
 
@@ -126,7 +126,7 @@ footer {
         margin-top: rem-calc(-45px);
 
         & hr {
-            margin: rem-calc(50px 0);
+            margin: rem-calc(60px 0);
             max-width: none;
         }
     
@@ -142,7 +142,7 @@ footer {
         a {
             color: $orange;
             &:hover {
-                color: $dark-orange !important;
+                color: $dark-orange;
             }
         }
 
@@ -157,16 +157,13 @@ footer {
             -webkit-columns: 2 auto;
             -moz-columns: 2 auto;
             columns: 2 auto;
-        }
-
-        .bleed {
-            background-color: $orange;
-            color: $off-white;
-
-            a {
-                color: $off-white;
+            @media screen and (max-width:1024px) {
+                -webkit-columns: 1 auto;
+                -moz-columns: 1 auto;
+                columns: 1 auto;
             }
         }
+
     }
 
     @media screen and (max-width:639px) { 

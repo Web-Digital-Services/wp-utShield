@@ -32,8 +32,25 @@
             color: $off-white;
         }
 
+        p>a {
+            background-image: none;
+        }
+
         a {
+            //background-image: linear-gradient($grey-link, $grey-link);
             color: $off-white;
+            //@extend %link-underline;
+
+            &:hover {
+                color: $grey-link;
+                //@extend %link-underline-hover
+            }
+
+            &:focus,
+            &:active {
+                color: $grey-link;
+            }
+
         }
 
         h2,
