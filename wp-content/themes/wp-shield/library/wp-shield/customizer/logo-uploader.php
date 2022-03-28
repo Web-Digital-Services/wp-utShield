@@ -27,9 +27,9 @@ function ut_display_logo($media = 'desktop'){
     //If you dont have a mobile image uploaded, then the fallback images will automatically be used.
     if(empty(esc_url( get_theme_mod( 'uth_logo_mobile')))){    
         if ($media == 'desktop'){
-            echo  get_template_directory_uri() . '/dist/assets/images/core/UTHSA_logo_H_Full-Color.png';
+            echo  get_template_directory_uri() . '/dist/assets/images/UTHSA_logo_H_Full-Color.png';
         }else{
-            echo  get_template_directory_uri() . '/dist/assets/images/core/UTHSA_logo_H_Full-White.png';
+            echo  get_template_directory_uri() . '/dist/assets/images/UTHSA_logo_H_Full-White.png';
         }
     }else{
         if($media == "desktop"){
