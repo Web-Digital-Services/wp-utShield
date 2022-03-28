@@ -150,7 +150,7 @@ main.grid-container{
 }
 /** Fix css image links **/
 input[type="checkbox"]:checked {
-    background: url("../assets/images/core/check-solid.svg");
+    background: url("../images/check-solid.svg");
       background-position-x: 0%;
       background-position-y: 0%;
       background-repeat: repeat;
@@ -159,6 +159,12 @@ input[type="checkbox"]:checked {
     background-repeat: no-repeat;
     background-size: 1.125rem;
 }
+footer .shield {
+    background-image: url("../images/half-shield.svg");
+    background-repeat: no-repeat;
+    position: relative;
+    background-position: right center;
+  }
 .element-invisible {
     position: absolute !important;
     clip: rect(1px 1px 1px 1px);
