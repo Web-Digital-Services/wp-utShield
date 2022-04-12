@@ -31,7 +31,7 @@
 	<?php endif; ?>
 	<header id="Mobile Header" class="title-bar" data-responsive-toggle="header">
 		<a href="<?php echo get_option('home'); ?>"><img  alt='Mobile Logo in White' src='<?php ut_display_logo('mobile'); ?>'></a>
-		<button class="menu-icon" type="button" data-toggle="new">Menu</button>
+		<button class="menu-icon" type="button" data-toggle="header">Menu</button>
 	</header>
 	<?php 
 		$banner_design = get_post_meta( $post->ID, 'banner_design_key', true );
