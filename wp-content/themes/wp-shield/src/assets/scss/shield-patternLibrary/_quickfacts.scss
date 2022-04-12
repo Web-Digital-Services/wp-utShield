@@ -18,7 +18,7 @@ HORIZONTAL
         }
 
         .fa-5x {
-            @media screen and (max-width: 639px) {
+            @media screen and (max-width: $small-screen) {
                 font-size: 3.5rem;
             }
         }
@@ -84,7 +84,7 @@ VERTICAL
                     border-bottom: $off-white rem-calc(1px) solid;
                 }
 
-                
+
             }
         }
     }

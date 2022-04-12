@@ -19,7 +19,7 @@
     .roomy {
         padding-top: rem-calc(90px);
         padding-bottom: rem-calc(90px);
-        @media screen and (max-width: 640px) {
+        @media screen and (max-width: $small-screen) {
             padding-top: rem-calc(10px);
             padding-bottom: rem-calc(10px);
         }
@@ -28,7 +28,7 @@
     .extra-roomy {
         padding-top: rem-calc(120px);
         padding-bottom: rem-calc(120px);
-        @media screen and (max-width: 640px) {
+        @media screen and (max-width: $small-screen) {
             padding-top: rem-calc(15px);
             padding-bottom: rem-calc(15px);
         }
@@ -36,17 +36,17 @@
     .chonky {
         padding-top: rem-calc(180px);
         padding-bottom: rem-calc(180px);
-        @media screen and (max-width: 640px) {
+        @media screen and (max-width: $small-screen) {
             padding-top: rem-calc(30px);
             padding-bottom: rem-calc(30px);
         }
     }
     .godly {
-        padding-top: rem-calc(420px);
-        padding-bottom: rem-calc(420px);
-        @media screen and (max-width: 640px) {
-            padding-top: rem-calc(90px);
-            padding-bottom: rem-calc(90px);
+        padding-top: rem-calc(210px);
+        padding-bottom: rem-calc(210px);
+        @media screen and (max-width: $small-screen) {
+            padding-top: rem-calc(40px);
+            padding-bottom: rem-calc(40px);
         }
     }
 
@@ -83,7 +83,7 @@
         &.noise {
             background: url(../images/noise-texture.png);
         }
-          
+
         &.rocky {
             background: url(../images/rockywall-texture.png);
         }
@@ -104,13 +104,7 @@
                 color: $dark-grey;
             }
         }
-        /*@media screen and (max-width: 568px) {
-            padding: rem-calc(10px);
-            &.grid-container {
-                padding-right: rem-calc(10px);
-            }
-        }*/
-        @media screen and (max-width: 910px) {
+        @media screen and (max-width: $medium-screen) {
             .cell {
                 padding-left: rem-calc(15px);
                 padding-right: rem-calc(15px);
@@ -134,7 +128,7 @@
                 color: $dark-grey;
             }
         }
-        @media screen and (max-width: 910px) {
+        @media screen and (max-width: $medium-screen) {
             .cell {
                 padding-left: rem-calc(15px);
                 padding-right: rem-calc(15px);
@@ -191,7 +185,7 @@ IMG Fill BLEEDS
 ============================================================ */
 
     .fa-envelope-open-text.fa-10x {
-        @media screen and (max-width: 570px) {
+        @media screen and (max-width: $small-screen) {
             font-size: 1rem;
             visibility: hidden;
         }

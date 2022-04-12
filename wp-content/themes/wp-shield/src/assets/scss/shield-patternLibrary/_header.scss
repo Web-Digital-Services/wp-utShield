@@ -93,7 +93,7 @@
 }
 
 
-@media screen and (max-width:770px) {
+@media screen and (max-width:$small-screen) {
     .title-bar.global-bar {
         display: none !important;
     }
@@ -120,13 +120,13 @@ header {
     img {
         width: rem-calc(300px);
 
-        @media screen and (max-width:770px) {
+        @media screen and (max-width:$small-screen) {
             width: rem-calc(145px);
         }
     }
 
     &.title-bar {
-        @media screen and (max-width:770px) {
+        @media screen and (max-width:$small-screen) {
             background-color: $orange;
             display: flex;
             align-items: center;
@@ -165,7 +165,7 @@ header {
         margin-right: auto;
         margin-left: auto;
 
-        @media screen and (max-width:770px) {
+        @media screen and (max-width:$small-screen) {
             margin-bottom: 0;
             justify-content: center;
 
@@ -178,7 +178,7 @@ header {
     &#regular {
         position: sticky;
 
-        @media screen and (max-width:770px) {
+        @media screen and (max-width:$small-screen) {
             display: block;
             //padding: rem-calc(15px);
             margin-bottom: 0;
@@ -206,12 +206,12 @@ header {
                 padding-left: 0.9375rem;
             }*/
 
-            @media screen and (max-width:770px) {
+            @media screen and (max-width:$small-screen) {
                 margin-bottom: 0;
                 justify-content: center;
             }
 
-            /*@media screen and (max-width:770px) {
+            /*@media screen and (max-width:$small-screen) {
                 display: block;
                 padding: rem-calc(15px);
                 margin-bottom: 0;
@@ -224,7 +224,7 @@ header {
 
             .right {
 
-                @media screen and (max-width:770px) {
+                @media screen and (max-width:$small-screen) {
                     padding: rem-calc(15px) 0;
                 }
             }
@@ -247,7 +247,7 @@ header {
                 }
             }
 
-            @media screen and (max-width:770px) {
+            @media screen and (max-width:$small-screen) {
                 display: none;
             }
         }
@@ -255,7 +255,7 @@ header {
         form.search {
             margin: rem-calc(30px 0px);
 
-            @media screen and (max-width:770px) {
+            @media screen and (max-width:$small-screen) {
                 margin: 0 0 rem-calc(20px) 0;
             }
         }
@@ -268,7 +268,7 @@ header {
                 margin-right: rem-calc(30px);
             }
 
-            @media screen and (max-width:770px) {
+            @media screen and (max-width:$small-screen) {
                 text-align: center;
                 //width: auto;
                 align-items: center;
@@ -294,7 +294,7 @@ header {
     }
 
     //DSP Revise Jan 2022
-    &#new {
+    &#header {
 
         z-index: 6;
         border-top: 3px solid $orange;
@@ -305,7 +305,6 @@ header {
 
             display: flex;
             justify-content: space-between;
-            max-height: rem-calc(155px);
             padding-left: rem-calc(15px);
 
             &:last-child {
@@ -356,7 +355,7 @@ header {
 
 
 
-        @media screen and (max-width:770px) {
+        @media screen and (max-width:$small-screen) {
             display: none;
             border-top: none;
             padding-bottom: 0;
@@ -414,7 +413,7 @@ header {
 
         &.super-hero {
 
-            @media screen and (min-width:850px) {
+            @media screen and (min-width:$small-screen) {
                 position: absolute;
                 top: 0;
                 background: rgba(255, 255, 255, 0.8); //set opacity

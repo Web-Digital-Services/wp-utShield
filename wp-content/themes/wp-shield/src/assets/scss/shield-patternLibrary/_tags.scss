@@ -3,7 +3,8 @@
 ============================================================ */
 
     .tags {
-        padding-bottom: rem-calc(30px);
+        //padding-bottom: rem-calc(30px);
+        margin-top: rem-calc(30px);
 
         @media screen and (max-width: 355px) {
             margin-bottom: rem-calc(30px);

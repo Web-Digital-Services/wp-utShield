@@ -29,7 +29,7 @@ img.float-right {
     @media screen and (max-width: 568px) {
         margin: 15px .25rem;
         padding: 0;
-        width: 100%; 
+        width: 100%;
     }
 }
 
@@ -63,7 +63,7 @@ img.float-right {
 img.logo {
     width: rem-calc(300px);
 
-    @media screen and (max-width:770px) {
+    @media screen and (max-width:$small-screen) {
         width: rem-calc(145px);
     }
 }

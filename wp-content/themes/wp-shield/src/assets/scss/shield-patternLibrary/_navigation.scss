@@ -35,7 +35,7 @@
     font-size: rem-calc(18px);
 }
 
-@media screen and (max-width:639px) {
+@media screen and (max-width:$small-screen) {
     .breadcrumbs {
         padding-left: rem-calc(10px);
         padding-right: rem-calc(10px);
@@ -164,7 +164,7 @@ div#level-1 {
             }
         }
 
-        @media screen and (max-width:770px) {
+        @media screen and (max-width:$small-screen) {
             background-color: $dark-grey !important;
             border-top: rem-calc(6px) solid $gold;
 
@@ -193,7 +193,7 @@ div#level-1 {
         }
     }
 
-    @media screen and (max-width:770px) {
+    @media screen and (max-width:$small-screen) {
         display: block !important;
         width: 100%;
     }
@@ -203,7 +203,7 @@ div#level-1 {
 
 .nav-bar {
 
-    &#new-full {
+    &#nav-bar-full {
         //background-image: linear-gradient(to right, $orange, $orange 40%, $dark-orange 70%, $dark-orange);
         position: sticky;
         top: 0;
@@ -407,9 +407,9 @@ div#level-1 {
     }
 }
 
-@media screen and (max-width:770px) {
+@media screen and (max-width:$small-screen) {
     .nav-bar {
-        &#new {
+        &#nav-bar-mobile {
 
             .top-bar {
                 background-color: $dark-grey;
@@ -473,21 +473,21 @@ div#level-1 {
         }
 
         //Hide full nav on mobile
-        &#new-full {
+        &#nav-bar-full {
             display: none;
         }
     }
 }
 
-@media screen and (min-width:770px) {
+@media screen and (min-width:$small-screen) {
 
     //Hide mobile nav on large screens
-    nav#new {
+    nav#nav-bar-mobile {
         display: none;
     }
 }
 
-header.super-hero+.hero.mission+nav#new-full {
+header.super-hero+.hero.mission+nav#nav-bar-full {
 
     ul.menu {
 

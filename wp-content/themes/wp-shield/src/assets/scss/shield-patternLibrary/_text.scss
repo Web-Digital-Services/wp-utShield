@@ -20,12 +20,12 @@ h1,
     font-size: 54px;
 
     /*---- MEDIUM or TABLET----*/
-    @media screen and (max-width: 1023px) {
+    @media screen and (max-width: $medium-screen) {
         font-size: 45px;
     }
 
     /*---- SMALL or MOBILE----*/
-    @media screen and (max-width: 639px) {
+    @media screen and (max-width: $small-screen) {
         font-size: 34px;
     }
 
@@ -36,12 +36,12 @@ h2,
     font-size: 45px;
 
     /*---- MEDIUM or TABLET----*/
-    @media screen and (max-width: 1023px) {
+    @media screen and (max-width: $medium-screen) {
         font-size: 37px;
     }
 
     /*---- SMALL or MOBILE----*/
-    @media screen and (max-width: 639px) {
+    @media screen and (max-width: $small-screen) {
         font-size: 28px;
     }
 
@@ -52,12 +52,12 @@ h3,
     font-size: 36px;
 
     /*---- MEDIUM or TABLET----*/
-    @media screen and (max-width: 1023px) {
+    @media screen and (max-width: $medium-screen) {
         font-size: 32px;
     }
 
     /*---- SMALL or MOBILE----*/
-    @media screen and (max-width: 639px) {
+    @media screen and (max-width: $small-screen) {
         font-size: 26px;
     }
 
@@ -68,12 +68,12 @@ h4,
     font-size: 32px;
 
     /*---- MEDIUM or TABLET----*/
-    @media screen and (max-width: 1023px) {
+    @media screen and (max-width: $medium-screen) {
         font-size: 26px;
     }
 
     /*---- SMALL or MOBILE----*/
-    @media screen and (max-width: 639px) {
+    @media screen and (max-width: $small-screen) {
         font-size: 23px;
     }
 }
@@ -83,12 +83,12 @@ h5,
     font-size: 27px;
 
     /*---- MEDIUM or TABLET----*/
-    @media screen and (max-width: 1023px) {
+    @media screen and (max-width: $medium-screen) {
         font-size: 20px;
     }
 
     /*---- SMALL or MOBILE----*/
-    @media screen and (max-width: 639px) {
+    @media screen and (max-width: $small-screen) {
         font-size: 20px;
     }
 }
@@ -102,12 +102,12 @@ h6,
     font-size: 80px;
 
     /*---- MEDIUM or TABLET----*/
-    @media screen and (max-width: 1023px) {
+    @media screen and (max-width: $medium-screen) {
         font-size: 54px;
     }
 
     /*---- SMALL or MOBILE----*/
-    @media screen and (max-width: 639px) {
+    @media screen and (max-width: $small-screen) {
         font-size: 38px;
     }
 }
@@ -140,7 +140,7 @@ p.eyebrow {
         margin-top: rem-calc(-18px);
     }
 
-    @media screen and (max-width: 639px) {
+    @media screen and (max-width: $small-screen) {
         font-size: 16px;
     }
 }
