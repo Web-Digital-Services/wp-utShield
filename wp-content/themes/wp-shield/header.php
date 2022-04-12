@@ -29,7 +29,7 @@
 	<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) : ?>
 		<?php get_template_part( 'template-parts/mobile-off-canvas' ); ?>
 	<?php endif; ?>
-	<header id="Mobile Header" class="title-bar" data-responsive-toggle="new">
+	<header id="Mobile Header" class="title-bar" data-responsive-toggle="header">
 		<a href="<?php echo get_option('home'); ?>"><img  alt='Mobile Logo in White' src='<?php ut_display_logo('mobile'); ?>'></a>
 		<button class="menu-icon" type="button" data-toggle="new">Menu</button>
 	</header>
@@ -42,7 +42,7 @@
 			$super_hero = '';
 		}
 	?>
-	<header class="off-canvas-content<?php echo $super_hero; ?>" id="new" data-off-canvas-content="" style="display: block;">
+	<header class="off-canvas-content<?php echo $super_hero; ?>" id="header" data-off-canvas-content="" style="display: block;">
 		<div class="group">
 			<?php 
 				$site_title = get_bloginfo ( 'description' );
@@ -110,7 +110,7 @@
 		}
 	?>
 	<header id="">
-		<nav class="nav-bar" id="new-full">
+		<nav class="nav-bar" id="nav-bar-full">
 			<div class="top-bar">	
 				<div class="top-bar-left">
 					<?php foundationpress_main_menu(); ?>
