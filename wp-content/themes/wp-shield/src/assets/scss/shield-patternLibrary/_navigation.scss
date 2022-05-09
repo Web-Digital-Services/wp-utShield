@@ -231,7 +231,7 @@ div#level-1 {
                     justify-content: space-evenly;
 
                     .is-active {
-                        > a {
+                        >a {
                             background: $orange;
                             color: $off-white;
                         }
@@ -300,6 +300,80 @@ div#level-1 {
 
         }
     }
+
+    &#mission-nav {
+
+        background: none;
+        box-shadow: none;
+        margin-right: rem-calc(30px);
+
+        .top-bar {
+            background-color: unset;
+            width: auto;
+
+
+            .top-bar-left {
+
+                ul {
+                    background-color: transparent; //This is so the color doesn't get overrided by the old nav styles. DELETE LATER
+                    justify-content: space-evenly;
+
+                    .is-active {
+                        >a {
+                            background: $orange;
+                            color: $off-white;
+                        }
+                    }
+
+                    li {
+
+                        &:hover {
+                            background: transparent; //This is so the color doesn't get overrided by the old nav styles. DELETE LATER
+                        }
+
+                        a,
+                        a:after {
+                            transition: .3s;
+                        }
+
+                        a {
+
+                            position: relative;
+                            z-index: 1;
+                            color: $orange;
+                            font-size: 24px;
+                            //expand click area
+                            padding-top: rem-calc(22px);
+                            padding-bottom: rem-calc(22px);
+
+
+                            &:hover {
+                                color: $dark-orange;
+
+                                &:after {
+                                    height: 100%; //expands pseudo fill container to height of container
+                                }
+                            }
+
+                            &:active {
+                                background: $orange;
+                                color: $off-white;
+                            }
+
+                            &:focus {
+                                background: $grey;
+                                color: $off-white;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+
+
 
     //OLD NAV DESIGN
 
@@ -407,6 +481,25 @@ div#level-1 {
     }
 }
 
+header {
+
+    .nav-bar {
+
+        &#nav-bar-full {
+
+            .top-bar {
+
+                .top-bar-left {
+
+                    ul {
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width:$small-screen) {
     .nav-bar {
         &#nav-bar-mobile {
@@ -418,8 +511,10 @@ div#level-1 {
 
                 ul {
                     background-color: $dark-grey;
+
                     li {
                         border-bottom: rem-calc(1.75px) solid $grey-10;
+
                         &:last-child {
                             border-bottom: none;
                         }
@@ -492,6 +587,7 @@ header.super-hero+.hero.mission+nav#nav-bar-full {
     ul.menu {
 
         justify-content: space-evenly;
+
         li {
             font-size: rem-calc(24px);
             margin-right: rem-calc(60px);

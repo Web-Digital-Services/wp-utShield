@@ -146,8 +146,13 @@ header {
 
             .menu-icon::before {
                 font-family: "Font Awesome 5 Free";
-                content: "\f0c9";
                 margin-right: rem-calc(7px);
+                content: attr(data-content) "\f0c9";
+
+            }
+
+            .menu-icon.menu-open::before {
+                content: attr(data-content) "\f00d";
             }
 
             .menu-icon::after {
@@ -330,6 +335,16 @@ header {
                 }
             }
 
+            .nav {
+                margin-top: rem-calc(15px);
+                display: flex;
+                align-items: center;
+
+                a {
+                    font-weight: 800;
+                }
+            }
+
 
             .right {
                 display: flex;
@@ -344,8 +359,79 @@ header {
                         margin-right: rem-calc(15px);
                     }
 
-                    .fa-search {
-                        color: $off-white;
+                    .expand-search {
+
+                        //margin-right: rem-calc(15px);
+                        display: flex;
+                        justify-content: center;
+                        position: relative;
+                        bottom:2px;
+
+                        &:hover {
+                            input {
+                                width: 200px;
+                                cursor: text;
+                                padding-left: 15px;
+                                color: $off-black;
+                                border: 4px solid $orange;
+                                box-shadow: none;
+                            }
+                        }
+
+                        input {
+                            margin-top: 2px;
+                            width: 30px;
+                            height: 30px;
+                            border: 4px solid $orange;
+                            border-radius: 20px;
+                            padding: 14px;
+                            background-color: unset;
+                            //outline: 4px auto $orange;
+                            //transition-duration: 500ms;
+                            transition: 400ms ease-in-out;
+                            cursor: pointer;
+                            color: unset;
+                            //z-index: 1;
+
+                        }
+
+                        input:focus,
+                        input:active,
+                        input:hover {
+                            width: 200px;
+                            cursor: text;
+                            padding-left: 15px;
+                            color: $off-black;
+                            border: 4px solid $orange;
+                            box-shadow: none;
+                        }
+
+                        input:focus-visible {
+                            outline-offset: unset;
+                        }
+
+                        button {
+                            cursor: pointer;
+                            //z-index: 1;
+                            position: relative;
+                            right: 26px;
+                            bottom: 5px;
+
+                            i {
+                                color: $orange;
+                            }
+                        }
+
+                        /*button:before {
+                            position: relative;
+                            right: 25px;
+                            content: "\f002";
+                            font-family: 'Font Awesome 5 Free';
+                            font-size: 20px;
+                            font-weight: 900;
+                            color: $orange;
+                        }*/
+
                     }
 
                 }
@@ -366,7 +452,13 @@ header {
             z-index: 1;
 
             .group {
+                justify-content: center;
+
                 .logo {
+                    display: none;
+                }
+
+                .nav {
                     display: none;
                 }
 
@@ -378,6 +470,22 @@ header {
 
                     .circle-icons {
                         justify-content: space-evenly;
+
+                        .expand-search {
+                            input {
+                                background-color: $pure-white;
+                                border: none;
+                                width: 200px;
+                                height: 32px;
+
+                                &:hover,
+                                &:active,
+                                &:focus {
+                                    border:none;
+                                }
+                            }
+
+                        }
 
                         a:first-child {
                             margin-right: rem-calc(15px);
@@ -423,4 +531,8 @@ header {
 
         }
     }
+}
+
+.mission-header {
+    padding: 0;
 }

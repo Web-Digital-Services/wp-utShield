@@ -40,7 +40,6 @@ div.cell.nested {
 a.card {
     padding: 0 !important; //Overrides the bleed padding for <a>
     border-radius: rem-calc(6px) !important;
-    font-weight: 600 !important;
     border: 0;
     @extend %jump-base;
     position: relative;
@@ -49,6 +48,10 @@ a.card {
     &:hover {
         @extend %jump-hover;
         color: $off-black !important;
+    }
+
+    img{
+        object-fit: cover;
     }
 
     .card-section {

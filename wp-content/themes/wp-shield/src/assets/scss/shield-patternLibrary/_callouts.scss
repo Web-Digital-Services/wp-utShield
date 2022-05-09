@@ -88,7 +88,13 @@
                 color: $dark-grey;
             }
         }
+
+        p, figcaption, blockquote {
+            color: $off-black !important;
+        }
+
     }
+
 }
 
 .sidecar {
@@ -219,7 +225,7 @@ a.callout {
 }
 
 a.callout:hover {
-    background-color: $dark-orange;
+    background-color: $dark-orange !important;
     color: $off-white !important;
     @extend %jump-hover;
 

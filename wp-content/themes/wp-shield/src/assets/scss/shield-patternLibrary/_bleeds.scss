@@ -56,7 +56,7 @@
             background-color: $light-beige !important;
         }
         &.hero:not(.img-fill) {
-            background-color: $light-beige !important;
+            background-color: $beige !important;
         }
         &.beige {
             background-color: $beige !important;
@@ -86,6 +86,14 @@
 
         &.rocky {
             background: url(../images/rockywall-texture.png);
+        }
+
+        .shield {
+            background-image: url(../images/shield-transparent.svg);
+            background-repeat: no-repeat;
+            background-position: left;
+            position: relative;
+            padding: rem-calc(215px) 0;
         }
 
     }
