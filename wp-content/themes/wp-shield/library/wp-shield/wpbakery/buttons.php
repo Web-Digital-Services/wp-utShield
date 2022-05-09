@@ -30,16 +30,27 @@ class uth_button_group extends WPBakeryShortCode {
                 'params' => array(   
                     array(
                         'type' => 'vc_link',
-                        'heading' => __( 'URL (Required)', 'wp-shield' ),
+                        'heading' => __( 'First Button (Required)', 'wp-shield' ),
                         'param_name' => 'url',
                         'dependency' => array(
                             'element' => 'link',
                             'value' => __( 'Place Link Here', 'wp-shield' ),
                         ),
-                        'description' => __( 'Select the URL here', 'wp-shield' ),
+                        //'description' => __( 'Select the URL here', 'wp-shield' ),
                         'admin_label' => false,
                         'weight' => 0,
-                        'group' => 'Button Link',
+                    ),
+                    array(
+                        'type' => 'vc_link',
+                        'heading' => __( 'Second Button (Optional)', 'wp-shield' ),
+                        'param_name' => 'url_two',
+                        'dependency' => array(
+                            'element' => 'link',
+                            'value' => __( 'Place Link Here', 'wp-shield' ),
+                        ),
+                        //'description' => __( 'Select the URL here', 'wp-shield' ),
+                        'admin_label' => false,
+                        'weight' => 0,
                     ),
                     array(
                         'type'       => 'dropdown',
@@ -65,78 +76,60 @@ class uth_button_group extends WPBakeryShortCode {
             shortcode_atts(
                 array(
                     'url'   => '',
-                    'text' => '',
+                    'url_two'   => '',
                     'uth_button_style' => ''
                 ), 
 
                 $atts
             )
         );
-        if (!empty($equilizer_id)){
-            $equilizer_id = 'data-equalizer-watch="' . $equilizer_id . '"';
-            $css_equilizer = 'equilizer-activated';
-        }else{
-            $equilizer_id = '';
-            $css_equilizer ='no-equilizer';
-        }
         //Seperating the URL Link parameter by its sub traits
         $use_link = false;
-        $href = vc_build_link($url);
-        if ( strlen ( $href['url'] ) > 0) {
+        $button_one = vc_build_link($url);
+        if ( strlen ( $button_one['url'] ) > 0) {
             $use_link = true;
-            $a_ref = $href['url'];
+            $a_ref = $button_one['url'];
             $a_ref = apply_filters( 'vc_btn_a_href', $a_ref);
-            $a_title = $href['title'];
+            $a_title = $button_one['title'];
             $a_title = apply_filters( 'vc_btn_a_title', $a_title);
-            $a_target = $href['target'];
-            $a_rel = $href['rel'];
+            $a_target = $button_one['target'];
+            $a_rel = $button_one['rel'];
+            
+            $button_one_html = '<a class="button ' . $uth_button_style . '" href="' . $a_ref . '" title="' . $a_title . '" target="' . $a_target . '" rel="' . $a_rel . '">
+            ' . $a_title . '
+            </a>';
         }
+        $button_two = vc_build_link($url_two);
+        if ( strlen ( $button_two['url'] ) > 0) {
+            $use_link = true;
+            $a_ref_two = $button_two['url'];
+            $a_ref_two = apply_filters( 'vc_btn_a_href', $a_ref_two);
+            $a_title_two = $button_two['title'];
+            $a_title_two = apply_filters( 'vc_btn_a_title', $a_title_two);
+            $a_target_two = $button_two['target'];
+            $a_rel_two = $button_two['rel'];
 
-        //The first drop down option in dropdown params are always empty.. Adding a the enque 
-        if (empty($type)){
-            $type = 'uthscsa-icons';
+            $button_two_html = '<a class="button ghost ' . $uth_button_style . '" href="' . $a_ref_two . '" title="' . $a_title_two . '" target="' . $a_target_two . '" rel="' . $a_rel_two . '">
+            ' . $a_title_two . '
+            </a>';
         }
-        // Enqueue needed icon font. - Pulled from plugin core - JMO Nov5th. 2019
-        vc_icon_element_fonts_enqueue( $type );
-        //Combining all 3 dropdown options into a single icon to display
-        $icon = $icon_openiconic.$icon_fontawesome.$icon_uthealth;
-        
-        /** Default to the shield icon if none is selected */
-        if (empty($icon)){
-            $icon = 'icon-uth-shield';
-        }
+        if (!empty($button_two_html))
+        {
+            $wrapper = '<div class="button-group">';
+            $end_wrapper = '</div>';
 
-        /** Check to see if the icons and borders need to be disabled **/
-        if ($enable_icon == 'true'){
-            $render_icon = '<span class="fa-stack fa-2x">
-            <i class="fas fa-circle fa-stack-2x"></i>
-            <i class="fas fa-' . $icon . ' fa-stack-1x fa-inverse"></i>
-            </span>';
-        }elseif(!empty($image_id[0])){
-            $render_icon = '<div class="text-center"><img src=' . $image_id[0] . '></div>';
         }else{
-            $render_icon = '';
-        }
-
-        //The first drop down option in dropdown params are always empty. Adding to make sure option 1 is colorized. 
-        if(empty($uth_colors)){
-        	$uth_colors = 'colorized';
-        }
-        /** Default to the shield icon if none is selected */
-        if (empty($icon)){
-            $icon = 'icon-uth-shield';
-        }
-        //If icon is disabled, use RULED Heading class
-        if ($enable_icon == 'false' || empty($enable_icon)){
-            $ruled = 'class="ruled"';
-        }else{
-            $ruled = '';
+            $wrapper ='<p>';
+            $button_two_html = '';
+            $end_wrapper = '</p>';
         }
         // Fill $html var with data
         $html = ' 
-        <a class="button ' . $uth_button_style . '" href="' . $a_ref . '" title="' . $a_title . '" target="' . $a_target . '" rel="' . $a_rel . '" ' . $equilizer_id . '>
-        ' . $a_title . '
-        </a>';
+            ' . $wrapper . '
+                ' . $button_one_html . '
+                ' . $button_two_html . '
+            ' . $end_wrapper . '
+        ';
          
         return $html;
     }
