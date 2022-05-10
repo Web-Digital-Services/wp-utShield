@@ -67,3 +67,16 @@ img.logo {
         width: rem-calc(145px);
     }
 }
+
+// figcaption
+
+figcaption.camera::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f030";
+    font-weight: 900;
+    font-style: normal; 
+    display: inline-block;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
