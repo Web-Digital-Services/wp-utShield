@@ -25,6 +25,8 @@ wp-content/themes/**
 !.github/workflows/deploy-stage-everythingittakes.yml
 !.github/workflows/deploy-prod-wp.yml
 !.github/workflows/deploy-prod-newsroom.yml
+!.github/workflows/deploy-prod-magazines.yml
+
 
 # MU Plugins
 !wp-content/mu-plugins/wp-kses-svg-ruleset.php
