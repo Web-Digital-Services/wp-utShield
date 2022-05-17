@@ -25,6 +25,7 @@ wp-content/themes/**
 !.github/workflows/deploy-stage-everythingittakes.yml
 !.github/workflows/deploy-prod-wp.yml
 !.github/workflows/deploy-prod-newsroom.yml
+!.github/workflows/deploy-stage-newsroom.yml
 !.github/workflows/deploy-prod-magazines.yml
 
 
