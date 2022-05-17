@@ -20,6 +20,16 @@
 		}
 	?>
 		<?php foundationpress_entry_meta(); ?>
+		<?php
+			if (function_exists('display_featured_media')) {
+				display_featured_media('large', 'far', 'true');
+			} else {
+				echo '<figure>';
+				the_post_thumbnail('large', array( 'class' => 'featured-image-post' ));
+				echo '<figcaption><?php the_post_thumbnail_caption();?></figcaption>';
+				echo'</figure>';
+			}
+		?>
 	</header>
 	<div class="entry-content">
 		<?php the_content(); ?>

@@ -14,7 +14,7 @@ load_theme_design('header'); ?>
 	echo '<meta http-equiv="refresh" content="0;url=' . $post_extlink . '" />';
 	}
 ?>
-<?php get_template_part( 'template-parts/featured-image' ); ?>
+<?php //get_template_part( 'template-parts/featured-image' ); ?>
 <div class="main-container">
 	<div class="main-grid">
 		<main class="main-content">
