@@ -359,6 +359,12 @@ header {
                         margin-right: rem-calc(15px);
                     }
 
+                    .fa-stack.outline {
+                        .fa-search {
+                            color: $off-white;
+                        }
+                    }
+
                     .expand-search {
 
                         //margin-right: rem-calc(15px);

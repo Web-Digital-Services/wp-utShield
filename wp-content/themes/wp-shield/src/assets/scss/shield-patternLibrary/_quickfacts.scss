@@ -5,8 +5,15 @@ HORIZONTAL
     &.factoids {
         padding: .5rem;
 
-        i {
+        p > i {
             color: $blue;
+        }
+
+        &.grey {
+
+            p > i {
+                color: $dark-grey;
+            }
         }
 
         .supersize,
@@ -32,7 +39,7 @@ HORIZONTAL
 
 .bleed.color {
     .factoids {
-        i {
+        p > i {
             color: $off-white;
         }
     }
