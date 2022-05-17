@@ -109,13 +109,5 @@
 			//No Banner
 		}
 	?>
-	<!-- <header id=""> -->
-		<nav class="nav-bar" id="nav-bar-full">
-			<div class="top-bar">	
-				<div class="top-bar-left">
-					<?php foundationpress_main_menu(); ?>
-				</div>
-			</div>
-		</nav>
-	<!-- </header> -->
+	<?php foundationpress_main_menu(); ?>
 	<!-- END Level 3 Header -->

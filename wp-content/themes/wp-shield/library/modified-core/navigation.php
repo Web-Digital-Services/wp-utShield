@@ -25,9 +25,11 @@ if ( ! function_exists( 'foundationpress_main_menu' ) ) {
 	function foundationpress_main_menu() {
 		wp_nav_menu(
 			array(
-				'container'      => false,
+				'container'      => 'nav',
+				'container_class' => 'nav-bar',
+				'container_id' => 'nav-bar-full',
 				'menu_class'     => 'dropdown menu desktop-menu',
-				'items_wrap'     => '<ul id="%1$s" class="%2$s" data-dropdown-menu>%3$s</ul>',
+				'items_wrap'     => '<div class="top-bar"><div class="top-bar-left"><ul id="%1$s" class="%2$s" data-dropdown-menu>%3$s</ul></div></div>',
 				'theme_location' => 'main-menu',
 				'depth'          => 3,
 				'fallback_cb'    => false,
