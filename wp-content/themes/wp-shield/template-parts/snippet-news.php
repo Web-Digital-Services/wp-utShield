@@ -22,7 +22,7 @@
 	<?php if ( has_post_thumbnail()): ?>
 		<div class="grid-x grid-margin-x">
 			<div class="cell large-7 medium-7 small-12 large-order-1 medium-order-2 small-order-2">
-				<h2 class="h3 close"><a href="<?php echo $uth_post_detail_url; ?>"><?php the_title();?></a></h2>
+				<a href="<?php echo $uth_post_detail_url; ?>"><h2 class="h3 close"><?php the_title();?></h2></a>
 				<strong><p><?php echo get_the_date('F j, Y'); ?></p></strong>
 				<?php the_excerpt(); ?>
 			</div>
@@ -35,7 +35,7 @@
 		<?php else: ?>
 			<div class="grid-x grid-margin-x">
 			<div class="less-roomy cell large-12">
-				<h2 class="h3 close"><a href="<?php echo $uth_post_detail_url; ?>"><?php the_title();?></a></h2>
+				<a href="<?php echo $uth_post_detail_url; ?>"><h2 class="h3 close"><?php the_title();?></h2></a>
 				<strong><p><?php echo get_the_date('F j, Y'); ?></p></strong>
 				<?php the_excerpt(); ?>
 			</div>
