@@ -18,7 +18,7 @@
 		$uth_post_detail_url = get_permalink();
 	}
 ?>
-<li>
+<article>
 	<?php if ( has_post_thumbnail()): ?>
 		<div class="grid-x grid-margin-x">
 			<div class="cell large-7 medium-7 small-12 large-order-1 medium-order-2 small-order-2">
@@ -33,7 +33,7 @@
 			<br>
 		</div>
 		<?php else: ?>
-			<div class="grid-x">
+			<div class="grid-x grid-margin-x">
 			<div class="less-roomy cell large-12">
 				<h2 class="h3 close"><a href="<?php echo $uth_post_detail_url; ?>"><?php the_title();?></a></h2>
 				<strong><p><?php echo get_the_date('F j, Y'); ?></p></strong>
@@ -42,4 +42,5 @@
 		</div>
 	<?php endif ?> 
 	<?php edit_post_link( __( '(Edit this post)', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
-</li>
+</article>
+<hr>
