@@ -27,6 +27,7 @@ wp-content/themes/**
 !.github/workflows/deploy-prod-newsroom.yml
 !.github/workflows/deploy-stage-newsroom.yml
 !.github/workflows/deploy-prod-magazines.yml
+!.github/workflows/deploy-prod-labs.yml
 
 
 # MU Plugins
