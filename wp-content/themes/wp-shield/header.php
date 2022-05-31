@@ -18,9 +18,8 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css" rel="stylesheet"> 
-		<link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet"> 
-		<link href="https://fonts.googleapis.com/css2?family=Lora&family=Nunito+Sans:wght@300;400;900&display=swap" rel="stylesheet"> 
-		<?php wp_head(); ?>
+		<!-- <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">  -->
+		<link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
 	<div class="skip-link" role="navigation" aria-label="Skip to main content">
