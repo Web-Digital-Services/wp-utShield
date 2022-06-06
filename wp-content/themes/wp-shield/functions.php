@@ -35,6 +35,7 @@ require_once( 'library/wp-shield/events/symposium-child-subnav.php' );
 require_once( 'library/modified-core/navigation.php' );
 require_once( 'library/modified-core/class-foundationpress-top-bar-walker.php' );
 require_once( 'library/modified-core/class-foundationpress-utility-nav-walker.php' );
+require_once( 'library/modified-core/entry-meta.php' );
 
 /** Various clean up functions */
 require_once( 'library/cleanup.php' );
@@ -50,9 +51,6 @@ require_once( 'library/class-foundationpress-mobile-walker.php' );
 
 /** Create widget areas in sidebar and footer */
 require_once( 'library/widget-areas.php' );
-
-/** Return entry meta information for posts */
-require_once( 'library/entry-meta.php' );
 
 /** Enqueue scripts */
 require_once( 'library/enqueue-scripts.php' );
