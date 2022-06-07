@@ -13,8 +13,6 @@ load_theme_design('header'); ?>
 		<header>
 			<h1 class="entry-title"><?php _e( 'Search Results for', 'foundationpress' ); ?> "<?php echo get_search_query(); ?>"</h1>
 		</header>
-		<div class="lines">
-			<ul>
 			<?php if ( have_posts() ) : ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 					<?php get_template_part( 'template-parts/search', get_post_format() ); ?>
@@ -27,8 +25,6 @@ load_theme_design('header'); ?>
 				foundationpress_pagination();
 			elseif ( is_paged() ) :
 			?>
-			</ul>
-		</div>
 			<nav id="post-nav">
 				<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'foundationpress' ) ); ?></div>
 				<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
