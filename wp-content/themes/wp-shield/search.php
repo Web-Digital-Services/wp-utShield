@@ -15,7 +15,7 @@ load_theme_design('header'); ?>
 		</header>
 			<?php if ( have_posts() ) : ?>
 				<?php while ( have_posts() ) : the_post(); ?>
-					<?php get_template_part( 'template-parts/search', get_post_format() ); ?>
+					<?php get_template_part( 'template-parts/news', 'listing' ); ?>
 				<?php endwhile; ?>
 				<?php else : ?>
 					<?php get_template_part( 'template-parts/search', 'none' ); ?>
