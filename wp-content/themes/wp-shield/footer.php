@@ -53,28 +53,30 @@
 				<?php dynamic_sidebar( 'footer-widgets' ); ?>
 
                 <div class="cell large-3 medium-4 small-10">
+                    <?php 
+                        if (!empty($uth_footer_phone)){
+                            echo '
+                                <div class="contact">
+                                    <a href="tel:' . $uth_footer_phone . '" class="fa-stack">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fas fa-phone fa-stack-1x fa-inverse"></i>
+                                    </a>
+                                    <a href="tel:' . $uth_footer_phone . '">' . $uth_footer_phone . '</a>
+                                </div>';
+                        }
+                    ?>    
                     <div class="contact">
-                        <a href="#" class="fa-stack">
-                            <i class="fas fa-circle fa-stack-2x"></i>
-                            <i class="fas fa-phone fa-stack-1x fa-inverse"></i>
-                        </a>
-                        <?php if (empty($uth_footer_phone)){
-                            echo '<a href="tel:210-450-0000">210-450-0000</a>';
-                        }else{
-                            echo '<a href="tel:' . $uth_footer_phone . '">' . $uth_footer_phone . '</a>';
-                        }?>
-                        
-                    </div>
-                    <div class="contact">
-                        <a href="#" class="fa-stack">
+                        <?php if (empty($uth_footer_map)){
+                                $map_url = 'https://www.uthscsa.edu/university/campus-maps';
+                            }else{
+                                $map_url = $uth_footer_map;
+                            }
+                        ?>
+                        <a href="<?php echo $map_url; ?>" class="fa-stack">
                             <i class="fas fa-circle fa-stack-2x"></i>
                             <i class="fas fa-map-marker-alt fa-stack-1x fa-inverse"></i>
                         </a> 
-                        <?php if (empty($uth_footer_map)){
-                            $map_url = 'https://www.uthscsa.edu/university/campus-maps';
-                        }else{
-                            $map_url = $uth_footer_map;
-                        }
+                        <?php 
                         if (empty($uth_footer_address)){
                             echo '<address>7703 Floyd Curl Drive<br>San Antonio, TX 78229<br>
                             <a href="' . $map_url . '" class="arrow">Map and directions</a>
@@ -88,7 +90,7 @@
                     </div>
                     <?php if(!empty($uth_footer_email)) {
                     echo '<div class="contact">
-                        <a href="#" class="fa-stack">
+                        <a href="mailto:' . $uth_footer_email . '" class="fa-stack">
                             <i class="fas fa-circle fa-stack-2x"></i>
                             <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
                         </a>
@@ -120,7 +122,7 @@
                 </div>
                 <div class="cell large-5 medium-4 small-10">
                     <p class="large-text">We make lives better ®</p>
-                    <p>The University of Texas Health Science Center at San Antonio, also called <a href="#">UT Health San Antonio</a>, is a leading academic health center with a mission to make lives better through excellence in <a href="#">advanced academics</a>, <a href="#">life-saving research</a> and comprehensive clinical care including <a href="#">health</a>, <a href="#">dental</a> and <a href="#">cancer services</a>.</p>
+                    <p>The University of Texas Health Science Center at San Antonio, also called <a href="https://uthscsa.edu">UT Health San Antonio</a>, is a leading academic health center with a mission to make lives better through excellence in <a href="https://uthscsa.edu/academics/">advanced academics</a>, <a href="https://www.uthscsa.edu/research/">life-saving research</a> and comprehensive clinical care including <a href="https://everythingittakes.org/">health</a>, <a href="https://www.uthscsa.edu/patient-care/dental">dental</a> and <a href="https://cancer.uthscsa.edu/">cancer services</a>.</p>
                 </div>
                 <div class="cell large-1 medium-0 small-0"></div>
             </div>    
@@ -130,7 +132,7 @@
         <div class="grid-container">
             <div class="grid-x">
                 <div class="cell">
-                    <p><strong><a href="#">Web Privacy</a></strong> | Links from websites affiliated with UT Health's website (uthscsa.edu) to other websites do not constitute or imply university endorsement of those sites, their content, or products and services associated with those sites. The content on this website is intended to be used for informational purposes only. Health information on this site is not meant to be used to diagnose or treat conditions. Consult a health care provider if you are in need of treatment.</p>
+                    <p><strong><a href="https://uthscsa.edu/university/web-privacy">Web Privacy</a></strong> | Links from websites affiliated with UT Health's website (uthscsa.edu) to other websites do not constitute or imply university endorsement of those sites, their content, or products and services associated with those sites. The content on this website is intended to be used for informational purposes only. Health information on this site is not meant to be used to diagnose or treat conditions. Consult a health care provider if you are in need of treatment.</p>
                 </div>
             </div>
         </div>
