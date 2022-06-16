@@ -28,7 +28,7 @@
 	<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) : ?>
 		<?php get_template_part( 'template-parts/mobile-off-canvas' ); ?>
 	<?php endif; ?>
-	<header id="nav-bar-mobile" class="title-bar" data-responsive-toggle="header">
+	<header class="title-bar" data-responsive-toggle="header">
 		<a href="<?php echo get_option('home'); ?>"><img  alt='Mobile Logo in White' src='<?php ut_display_logo('mobile'); ?>'></a>
 		<button class="menu-icon" type="button" data-toggle="header">Menu</button>
 	</header>
