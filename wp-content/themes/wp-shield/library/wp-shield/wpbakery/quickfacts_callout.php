@@ -1,23 +1,21 @@
 <?php
 /*a
-Element Description: Quickfacts Vertical
+Element Description: Quickfacts (Callout)
 Documentation: http://www.wpelixir.com/how-to-create-new-element-in-visual-composer/
 */
  
 // Element Class 
-class uth_quickfact_vertical extends WPBakeryShortCode {
+class uth_quickfact_callout extends WPBakeryShortCode {
      
     
     // Element Init
     function __construct() {
-        add_action( 'init', array( $this, 'vertical_quickfacts_mapping' ), 12 );
-        add_shortcode( 'vertical_quickfacts', array( $this, 'vertical_quickfacts_html' ) );
+        add_action( 'init', array( $this, 'quickfacts_callout_mapping' ), 12 );
+        add_shortcode( 'quickfacts_callout', array( $this, 'quickfacts_callout_html' ) );
     }
     // Element Mapping
 
-    public function vertical_quickfacts_mapping() {
-             
-        
+    public function quickfacts_callout_mapping() {
         // Stop all if VC is not enabled
         if ( !defined( 'WPB_VC_VERSION' ) ) {
                 return;
@@ -27,7 +25,7 @@ class uth_quickfact_vertical extends WPBakeryShortCode {
       
             array(
                 'name' => __('Quickfacts (Vertical Callout)', 'wp-shield'),
-                'base' => 'vertical_quickfacts',
+                'base' => 'quickfacts_callout',
                 'description' => __('A callout that shows quick facts', 'wp-shield'), 
                 'category' => __('UT Health Designs', 'wp-shield'),   
                 'icon' => get_template_directory_uri().'/dist/assets/images/core/shield.png',            
@@ -152,7 +150,7 @@ class uth_quickfact_vertical extends WPBakeryShortCode {
             
     }
     // Element HTML
-    public function vertical_quickfacts_html( $atts, $content ) {
+    public function quickfacts_callout_html( $atts, $content ) {
          
         // Params extraction
         extract(
@@ -242,4 +240,4 @@ class uth_quickfact_vertical extends WPBakeryShortCode {
 } // End Element Class
  
 // Element Class Init
-new uth_quickfact_vertical();    
+new uth_quickfact_callout();    
