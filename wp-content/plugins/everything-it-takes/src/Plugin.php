@@ -55,7 +55,7 @@ final class Plugin {
 		// Infrastructure/Blocks
 		Blocks\CareSpotlightProvider::class,
 		Blocks\CareSpotlightService::class,
-		Blocks\Events::class,
+		//Blocks\Events::class,
 		Blocks\FeaturedCTA::class,
 		Blocks\FeaturedCTABasic::class,
 		Blocks\FullWidthImage::class,
