@@ -58,3 +58,55 @@ function uth_create_footer_settings($wp_customize) {
         ) 
     );
 }
+// 2. Social Media Links
+function UTH_social_links_customizer($wp_customize) {
+    // add a setting for the site logo
+    $wp_customize->add_setting('UTH_social_facebook');
+    $wp_customize->add_setting('UTH_social_twitter');
+    $wp_customize->add_setting('UTH_social_instagram');
+    $wp_customize->add_setting('UTH_social_youtube');
+    $wp_customize->add_setting('UTH_social_linkedin');
+
+    // Add a control to upload the logo
+    $wp_customize->add_control( 
+        'UTH_social_facebook_control',
+        array(
+        'label' => 'Facebook URL',
+        'type' => 'text',
+        'section' => 'uth_footer',
+        'settings' => 'UTH_social_facebook',
+        ) );
+    $wp_customize->add_control( 
+        'UTH_social_twitter_control',
+        array(
+        'label' => 'Twitter URL',
+        'type' => 'text',
+        'section' => 'uth_footer',
+        'settings' => 'UTH_social_twitter',
+        ) );
+    $wp_customize->add_control( 
+        'UTH_social_instagram_control',
+        array(
+        'label' => 'Instagram URL',
+        'type' => 'text',
+        'section' => 'uth_footer',
+        'settings' => 'UTH_social_instagram',
+        ) );
+    $wp_customize->add_control( 
+        'UTH_social_youtube_control',
+        array(
+        'label' => 'YouTube URL',
+        'type' => 'text',
+        'section' => 'uth_footer',
+        'settings' => 'UTH_social_youtube',
+        ) );
+        $wp_customize->add_control( 
+            'UTH_social_linkedin_control',
+            array(
+            'label' => 'Linked In URL',
+            'type' => 'text',
+            'section' => 'uth_footer',
+            'settings' => 'UTH_social_linkedin',
+        ) );
+}
+add_action('customize_register', 'UTH_social_links_customizer');

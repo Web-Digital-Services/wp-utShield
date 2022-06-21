@@ -60,7 +60,47 @@
 					$UTH_add_give_button_setting = get_theme_mod( 'UTH_add_give_button_setting'); 
 					$UTH_contact_phone_number = get_theme_mod( 'UTH_contact_phone_number'); 
 					$UTH_contact_url = get_theme_mod( 'UTH_contact_url'); 
+
+					$UTH_featured_link_text = get_theme_mod( 'featured_link_text'); 
+					$UTH_featured_link_url = get_theme_mod( 'featured_link_url'); 
+					$UTH_featured_link_icon = get_theme_mod( 'featured_link_icon'); 
+					$UTH_featured_link_text_two = get_theme_mod( 'featured_link_text_two'); 
+					$UTH_featured_link_url_two = get_theme_mod( 'featured_link_url_two'); 
+					$UTH_featured_link_icon_two = get_theme_mod( 'featured_link_icon_two'); 
+
 					echo '<div class="circle-icons">';
+					if (!empty($UTH_featured_link_url) && !empty($UTH_featured_link_text)){
+
+						if (empty($UTH_featured_link_icon)){
+							$icon_code = 'fa-external-link-alt';
+						}else{
+							$icon_code = $UTH_featured_link_icon;
+						}
+
+						echo '<a href="' . $UTH_featured_link_url . '">
+						<span class="fa-stack outline">
+							<i class="far fa-circle fa-stack-2x"></i>
+							<i class="fas ' . $icon_code . ' fa-stack-1x fa-inverse"></i>
+						</span>
+						<span>' . $UTH_featured_link_text . '</span>
+					</a>';
+					}
+					if (!empty($UTH_featured_link_url_two) && !empty($UTH_featured_link_text_two)){
+
+						if (empty($UTH_featured_link_icon_two)){
+							$icon_code_two = 'fa-external-link-alt';
+						}else{
+							$icon_code_two = $UTH_featured_link_icon_two;
+						}
+
+						echo '<a href="' . $UTH_featured_link_url_two . '">
+						<span class="fa-stack outline">
+							<i class="far fa-circle fa-stack-2x"></i>
+							<i class="fas ' . $icon_code_two . ' fa-stack-1x fa-inverse"></i>
+						</span>
+						<span>' . $UTH_featured_link_text_two . '</span>
+					</a>';
+					}
 					if (!empty($UTH_contact_url)){
 						echo '<a href="' . $UTH_contact_url . '">
 							<span class="fa-stack outline">

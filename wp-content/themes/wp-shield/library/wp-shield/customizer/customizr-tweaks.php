@@ -3,38 +3,78 @@
 **/
     function ut_health_register_header_button_settings($wp_customize) {
     // 1. Add a settings for all elements
-    $wp_customize->add_setting('part_of_ut_health_label');
-    $wp_customize->add_setting('part_of_ut_health_url');
+    $wp_customize->add_setting('featured_link_text');
+    $wp_customize->add_setting('featured_link_url');
+    $wp_customize->add_setting('featured_link_icon');
+    $wp_customize->add_setting('featured_link_text_two');
+    $wp_customize->add_setting('featured_link_url_two');
+    $wp_customize->add_setting('featured_link_icon_two');
     $wp_customize->add_setting('UTH_add_give_button_setting');
     $wp_customize->add_setting('UTH_contact_phone_number');
     $wp_customize->add_setting('UTH_contact_url');
 
     //2. We are using a defaut section so we dont No need for step 2 to create a new section. 
-
+    $wp_customize->add_section( 'UTH_header_config' , array(
+        'title'       => __('Header','UT-Health'),
+        'description' => 'All customization features for the header',
+        'priority'    => 20,
+    ) );
     //3. Add a control
         //Documentation: https://codex.wordpress.org/Class_Reference/WP_Customize_Manager/add_control
     $wp_customize->add_control( 
-        'ut_health_header_replacement_label',
+        'featured_link_text_label',
         array(
-        'label' => 'Part of (UT Health) Replacement Label',
+        'label' => 'Featured Link Text',
         'type' => 'text',
-        'section' => 'title_tagline',
-        'settings' => 'part_of_ut_health_label',
+        'section' => 'UTH_header_config',
+        'settings' => 'featured_link_text',
         ) );
     $wp_customize->add_control( 
-        'ut_health_header_replacement_url',
+        'featured_link_url_label',
         array(
-        'label' => 'Part of (UT Health) Replacement URL',
+        'label' => 'Featured Link URL',
         'type' => 'text',
-        'section' => 'title_tagline',
-        'settings' => 'part_of_ut_health_url',
+        'section' => 'UTH_header_config',
+        'settings' => 'featured_link_url',
+        ) );
+    $wp_customize->add_control( 
+        'featured_link_icon_label',
+        array(
+        'label' => 'Featured Icon',
+        'type' => 'text',
+        'section' => 'UTH_header_config',
+        'settings' => 'featured_link_icon',
+        ) );
+    $wp_customize->add_control( 
+        'featured_link_text_two_label',
+        array(
+        'label' => 'Featured Link Text (2)',
+        'type' => 'text',
+        'section' => 'UTH_header_config',
+        'settings' => 'featured_link_text_two',
+        ) );
+    $wp_customize->add_control( 
+        'featured_link_url_two_label',
+        array(
+        'label' => 'Featured Link URL (2)',
+        'type' => 'text',
+        'section' => 'UTH_header_config',
+        'settings' => 'featured_link_url_two',
+        ) );
+    $wp_customize->add_control( 
+        'featured_link_icon_two_label',
+        array(
+        'label' => 'Featured Icon (2)',
+        'type' => 'text',
+        'section' => 'UTH_header_config',
+        'settings' => 'featured_link_icon_two',
         ) );
     $wp_customize->add_control( 
         'UTH_add_give_button_control',
         array(
         'label' => 'Giving Donation Link',
         'type' => 'text',
-        'section' => 'title_tagline',
+        'section' => 'UTH_header_config',
         'settings' => 'UTH_add_give_button_setting',
         ) );
     $wp_customize->add_control( 
@@ -42,7 +82,7 @@
         array(
         'label' => 'Contact Phone Number',
         'type' => 'text',
-        'section' => 'title_tagline',
+        'section' => 'UTH_header_config',
         'settings' => 'UTH_contact_phone_number',
         ) );
     $wp_customize->add_control( 
@@ -50,70 +90,11 @@
         array(
         'label' => 'Contact Us Page URL',
         'type' => 'text',
-        'section' => 'title_tagline',
+        'section' => 'UTH_header_config',
         'settings' => 'UTH_contact_url',
         ) );
 }
 add_action('customize_register', 'ut_health_register_header_button_settings');
-// 2. Social Media Links
-function UTH_social_links_customizer($wp_customize) {
-    // add a setting for the site logo
-    $wp_customize->add_setting('UTH_social_facebook');
-    $wp_customize->add_setting('UTH_social_twitter');
-    $wp_customize->add_setting('UTH_social_instagram');
-    $wp_customize->add_setting('UTH_social_youtube');
-    //$wp_customize->add_setting('UTH_social_vimeo_setting');
-    $wp_customize->add_setting('UTH_social_linkedin');
-
-    $wp_customize->add_section( 'UTH_social_media' , array(
-        'title'       => __('Social Media Links','UT-Health'),
-        'description' => 'Please copy and paste your social media handles here. These will be overwrite the links in the footer for the social media buttons.',
-        'priority'    => 100,
-    ) );
-
-    // Add a control to upload the logo
-    $wp_customize->add_control( 
-        'UTH_social_facebook_control',
-        array(
-        'label' => 'Facebook URL',
-        'type' => 'text',
-        'section' => 'UTH_social_media',
-        'settings' => 'UTH_social_facebook',
-        ) );
-    $wp_customize->add_control( 
-        'UTH_social_twitter_control',
-        array(
-        'label' => 'Twitter URL',
-        'type' => 'text',
-        'section' => 'UTH_social_media',
-        'settings' => 'UTH_social_twitter',
-        ) );
-    $wp_customize->add_control( 
-        'UTH_social_instagram_control',
-        array(
-        'label' => 'Instagram URL',
-        'type' => 'text',
-        'section' => 'UTH_social_media',
-        'settings' => 'UTH_social_instagram',
-        ) );
-    $wp_customize->add_control( 
-        'UTH_social_youtube_control',
-        array(
-        'label' => 'YouTube URL',
-        'type' => 'text',
-        'section' => 'UTH_social_media',
-        'settings' => 'UTH_social_youtube',
-        ) );
-        $wp_customize->add_control( 
-            'UTH_social_linkedin_control',
-            array(
-            'label' => 'Linked In URL',
-            'type' => 'text',
-            'section' => 'UTH_social_media',
-            'settings' => 'UTH_social_linkedin',
-        ) );
-}
-add_action('customize_register', 'UTH_social_links_customizer');
 
 //3. Global Contact Info
 function UTH_contact_info_customizer($wp_customize) {
@@ -131,7 +112,7 @@ function UTH_contact_info_customizer($wp_customize) {
     $wp_customize->add_section( 'UTH_global_contact_info' , array(
         'title'       => __('Global Contact Info','UT-Health'),
         'description' => 'Please add your site-wide contact info here. <br> <a class="carat-double" href="https://uthscsa.teamdynamix.com/TDClient/KB/ArticleDet?ID=78484" target="_blank">Learn about this feature</a>',
-        'priority'    => 20,
+        'priority'    => 60,
     ) );
 
     $wp_customize->add_control( 
