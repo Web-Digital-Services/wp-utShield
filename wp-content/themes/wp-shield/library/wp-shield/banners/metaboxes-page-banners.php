@@ -115,6 +115,11 @@ function utPress_full_width_callback( $post ) {
                     <input type="radio" name="callout_color_selection" value="white" <?php checked( $callout_color, 'white' ); ?>> White<br>
             </label>
         </p>
+        <p>
+            <label for="banner-classes" class="utPress-row-title"><?php _e( '<strong>Additional CSS Class for Banner Spacing</strong><br> *This feature is optional, leave blank if not needed', 'wp-shield' )?><br>
+                <input type="text" size=65 name="banner-classes" value="<?php if ( isset ( $utPress_full_width_stored_meta['banner-classes'] ) ) echo $utPress_full_width_stored_meta['banner-classes'][0]; ?>" />
+            </label> 
+        </p>
     <?php endif; ?>
     <?php
 }
@@ -181,6 +186,9 @@ function UTH_save_full_width_meta( $post_id ) {
     }
     if ( isset( $_POST[ 'ut_featured_video_title' ] ) ) {
         update_post_meta( $post_id, 'ut_featured_video_title', sanitize_text_field( $_POST[ 'ut_featured_video_title' ] ) );
+    }
+    if ( isset( $_POST[ 'banner-classes' ] ) ) {
+        update_post_meta( $post_id, 'banner-classes', sanitize_text_field( $_POST[ 'banner-classes' ] ) );
     }
 }
 add_action( 'save_post_page', 'UTH_save_full_width_meta', 10, 3 );

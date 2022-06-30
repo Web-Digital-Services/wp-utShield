@@ -21,6 +21,7 @@
 	$banner_button_url = get_post_meta( get_the_ID(), 'banner-button-url', true ); 
 	$banner_button_text2 = get_post_meta( get_the_ID(), 'banner-button-text2', true ); 
 	$banner_button_url2 = get_post_meta( get_the_ID(), 'banner-button-url2', true ); 
+	$spacing_classes = get_post_meta( get_the_ID(), 'banner-classes', true ); 
 	$title_box_alignment = get_post_meta( $post->ID, 'title_box_key', true ); 
 	$callout_color = get_post_meta( $post->ID, 'callout_color_key', true ); 
 	$extra_roomy_status = get_post_meta( get_the_ID(), 'extraroomy', true );
@@ -43,7 +44,7 @@
 ?>
 <header class="hero bleed img-fill">
 	<img alt="<?php echo $imgAlt; ?>" src="<?php echo $thumb['0'];?>">
-	<div class="grid-container<?php if ($banner_design == 'super-hero-banner'){ echo ' extra-roomy'; }else{ echo '';} ?>">
+	<div class="grid-container<?php echo ' ' . $spacing_classes;?><?php if ($banner_design == 'super-hero-banner'){ echo ' extra-roomy'; }else{ echo '';} ?>">
 		<div class="grid-x margin-x">
       		<?php 
       			if (empty($banner_title) && empty($banner_byline) && empty($banner_button_text)){
