@@ -215,7 +215,14 @@ h1+.subheader+.subheader+.subheader {
     color: $off-black;
     font-size: rem-calc(32px);
     margin-top: rem-calc(-10px);
-    //margin-bottom: 0;
+
+    &.small {
+        font-size: rem-calc(25px);
+
+        @media screen and (max-width: 569px) {
+            font-size: rem-calc(22px);
+        }
+    }
 
     @media screen and (max-width: 569px) {
         font-size: rem-calc(22px);
@@ -231,6 +238,14 @@ h2+.subheader {
     font-family: $sans-serif-font;
     color: $off-black;
     margin-top: rem-calc(-24px);
+
+    &.small {
+        font-size: rem-calc(25px);
+
+        @media screen and (max-width: 569px) {
+            font-size: rem-calc(20px);
+        }
+    }
 
     @media screen and (max-width: 569px) {
         font-size: rem-calc(20px);
@@ -620,6 +635,96 @@ a.highlight {
 
         }
     }
+
+    .white {
+
+        //Use default link styles on white backgrounds like callouts or cards
+        p {
+            >a:not(.button) {
+                position: relative;
+                text-decoration: none;
+                font-weight: $black-font-weight;
+                font-size: 18.7px;
+                @extend %link-underline;
+
+                &:hover {
+                    @extend %link-underline-hover;
+                    background-color: unset;
+                }
+            }
+
+            a.no-underline {
+                background-image: none;
+            }
+        }
+
+        a.arrow {
+            &:after {
+                display: inline-block;
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                content: "\f105";
+                color: $orange !important;
+                margin-left: .3rem;
+                transition: .5s ease-out;
+            }
+
+            &:hover:after {
+                color: $dark-orange !important;
+                transform: translatex(.2rem);
+            }
+        }
+
+        a.external {
+            &:after {
+                display: inline-block;
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                content: "\f35d";
+                color: $orange;
+                margin-left: .3rem;
+                transition: .5s ease-out;
+                //transform: rotate(-45deg);
+            }
+
+            &:hover:after {
+                color: $dark-orange;
+                transform: translate(.1rem, -.1rem);
+
+            }
+        }
+
+        a.file {
+            &:after {
+                display: inline-block;
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                content: "\f56d";
+                color: $orange;
+                margin-left: .3rem;
+                transition: .5s ease-out;
+                //transform: rotate(-45deg);
+            }
+
+            &:hover:after {
+                color: $dark-orange;
+                transform: translate(.1rem, -.1rem);
+
+            }
+        }
+
+        //Highlighter Links
+        a.highlight {
+            background-color: $orange;
+            color: $off-white;
+            background-image: linear-gradient(transparent, transparent), linear-gradient($dark-orange, $dark-orange) !important;
+
+            &:hover {
+                color: $dark-orange;
+                background-color: inherit;
+            }
+        }
+    }
 }
 
 
@@ -641,6 +746,98 @@ a.highlight {
             &:hover {
                 color: $grey-link !important;
                 background-color: transparent !important;
+            }
+        }
+    }
+
+    .white {
+
+        //Use default link styles on white backgrounds like callouts or cards
+        p {
+            >a:not(.button) {
+                color: $orange;
+                position: relative;
+                text-decoration: none;
+                font-weight: $black-font-weight;
+                font-size: 18.7px;
+                @extend %link-underline;
+
+                &:hover {
+                    @extend %link-underline-hover;
+                    color: $dark-orange;
+                    background-color: unset;
+                }
+            }
+
+            a.no-underline {
+                background-image: none;
+            }
+        }
+
+        a.arrow {
+            &:after {
+                display: inline-block;
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                content: "\f105";
+                color: $orange !important;
+                margin-left: .3rem;
+                transition: .5s ease-out;
+            }
+
+            &:hover:after {
+                color: $dark-orange !important;
+                transform: translatex(.2rem);
+            }
+        }
+
+        a.external {
+            &:after {
+                display: inline-block;
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                content: "\f35d";
+                color: $orange;
+                margin-left: .3rem;
+                transition: .5s ease-out;
+                //transform: rotate(-45deg);
+            }
+
+            &:hover:after {
+                color: $dark-orange;
+                transform: translate(.1rem, -.1rem);
+
+            }
+        }
+
+        a.file {
+            &:after {
+                display: inline-block;
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                content: "\f56d";
+                color: $orange;
+                margin-left: .3rem;
+                transition: .5s ease-out;
+                //transform: rotate(-45deg);
+            }
+
+            &:hover:after {
+                color: $dark-orange;
+                transform: translate(.1rem, -.1rem);
+
+            }
+        }
+
+        //Highlighter Links
+        a.highlight {
+            background-color: $orange;
+            color: $off-white;
+            background-image: linear-gradient(transparent, transparent), linear-gradient($dark-orange, $dark-orange) !important;
+
+            &:hover {
+                color: $dark-orange;
+                background-color: inherit;
             }
         }
     }

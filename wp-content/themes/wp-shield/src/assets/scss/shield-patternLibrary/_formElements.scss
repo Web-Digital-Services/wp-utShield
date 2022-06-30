@@ -26,6 +26,14 @@ select {
     border-radius: rem-calc(5px);
     background-color: $off-white;
     font-size: rem-calc(18px);
+
+    @media (prefers-color-scheme: dark) {
+
+        &:focus {
+            background-color: $off-white !important;
+            color: $off-black;
+        }
+    }
 }
 
 input[type=checkbox],
