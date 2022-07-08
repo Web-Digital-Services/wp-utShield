@@ -30,6 +30,7 @@ require_once( 'library/wp-shield/physicians-loop/alter-physician-loop.php' );
 require_once( 'library/wp-shield/events/create-event-loop.php' );
 require_once( 'library/wp-shield/events/events-ics-creator.php' );
 require_once( 'library/wp-shield/events/symposium-child-subnav.php' );
+require_once( 'library/wp-shield/wp-block-editor/block-editor-supports.php' );
 
 /** MODIFYING CORE FOUNDATION PRESS FILES */
 require_once( 'library/modified-core/navigation.php' );
