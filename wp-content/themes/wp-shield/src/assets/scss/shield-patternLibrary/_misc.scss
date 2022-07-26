@@ -195,6 +195,21 @@
     }
 }
 
+@media screen and (min-width: 1024px) {
+    div.multi-column-list-2 ul {
+        column-count: 2;
+    }
+
+    div.multi-column-list-3 ul {
+        column-count: 3;
+    }
+
+    div.multi-column-list-2 ul>li,
+    .multi-column-list-3 ul>li {
+        break-inside: avoid;
+    }
+}
+
 .brush-circle {
     mask path {
         fill: none;
@@ -227,4 +242,3 @@
         fill: $dark-orange;
     }
 }
-

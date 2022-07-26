@@ -48,13 +48,16 @@ footer {
         color: $grey-link;
         font-weight: 900 !important;
 
-        &:hover, &:focus, &:active {
+        &:hover,
+        &:focus,
+        &:active {
             color: $grey-link;
         }
 
         &.arrow::after {
             color: $grey-link;
         }
+
         &.arrow:hover:after {
             color: $grey-link;
         }
@@ -110,7 +113,8 @@ footer {
         position: relative;
         background-position: right center;
 
-        @media screen and (max-width:1159px) { //temporary solution
+        @media screen and (max-width:1159px) {
+            //temporary solution
             background: none;
         }
     }
@@ -141,7 +145,18 @@ footer {
 
         a {
             color: $orange;
-            &:hover {
+
+            &:hover,
+            &:focus,
+            &:active {
+                color: $dark-orange;
+            }
+
+            &.arrow::after {
+                color: $orange;
+            }
+
+            &.arrow:hover:after {
                 color: $dark-orange;
             }
         }
@@ -158,10 +173,12 @@ footer {
                 }
             }
         }
+
         .columns {
             -webkit-columns: 2 auto;
             -moz-columns: 2 auto;
             columns: 2 auto;
+
             @media screen and (max-width:$medium-screen) {
                 -webkit-columns: 1 auto;
                 -moz-columns: 1 auto;

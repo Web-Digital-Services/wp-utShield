@@ -76,6 +76,10 @@
     &.position-left {
         width: rem-calc(300px);
     }
+
+    &.position-right {
+        width: rem-calc(350px);
+    }
 }
 
 .js-off-canvas-overlay {
@@ -371,7 +375,7 @@ header {
                         display: flex;
                         justify-content: center;
                         position: relative;
-                        bottom:2px;
+                        bottom: 2px;
 
                         &:hover {
                             input {
@@ -487,7 +491,7 @@ header {
                                 &:hover,
                                 &:active,
                                 &:focus {
-                                    border:none;
+                                    border: none;
                                 }
                             }
 
@@ -526,6 +530,13 @@ header {
 
 
         &.super-hero {
+
+            .logo.mission {
+
+                img {
+                    width: 12rem;
+                }
+            }
 
             @media screen and (min-width:$small-screen) {
                 position: absolute;
