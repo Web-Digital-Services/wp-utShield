@@ -281,6 +281,8 @@ class uth_card extends WPBakeryShortCode {
             }else{
                 $load_primary_link = '';
             }
+
+            //Views start below
             $html =
                 '<div class="card ' . $card_style . ' ' . $color_options . ' ' . $border . '" ' . $equilizer_id . '>
                     <div class="card-section">
