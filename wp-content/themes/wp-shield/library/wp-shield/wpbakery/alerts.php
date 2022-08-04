@@ -56,7 +56,20 @@ class uth_alert_banner extends WPBakeryShortCode {
                             'Page Alert (Blue)'  => '',
                             'Page Alert (Grey)'  => ' grey',
                             'Site Wide Alerts (Yellow)'  => ' sitewide',
-                            'Closable'  => ' closable'
+                            'Closable'  => 'closable'
+                        )
+                    ),
+                    array(
+                        'type'       => 'dropdown',
+                        'class'      => '',
+                        'heading'    => 'Sticky Options',
+                        'description' => esc_html__( 'Do you want this alert to stick to the top or bottom of this window?.', 'wp-shield' ),
+                        'param_name' => 'sticky',
+                        'group' => 'Design Options',
+                        'value'      => array(
+                            'Not sticky (Default, placed in WP Bakery)'  => '',
+                            'Stick to top'  => 'top',
+                            'Stick to bottom'  => 'bottom',
                         )
                     ),
                     //Single line text field. 
@@ -83,7 +96,8 @@ class uth_alert_banner extends WPBakeryShortCode {
             shortcode_atts(
                 array(
                     'optional_css'   => '',
-                    'alert_style' => ''
+                    'alert_style' => '',
+                    'sticky' => ''
                 ), 
                 $atts
             )
@@ -94,16 +108,26 @@ class uth_alert_banner extends WPBakeryShortCode {
         
         // RENDER THE HTML
 
-        if($alert_style == ' closable'){
-            $html = '<div class="callout alert sticky" data-closable data-sticky data-stick-to="bottom">
-            <button class="close-button" aria-label="Close alert" type="button" data-close>
-              <span aria-hidden="true"><i class="fas fa-times"></i></span>
-            </button>
-            <p>' . do_shortcode($content) . '</p>
-          </div>';
+        if($alert_style == 'closable'){
+            if($sticky == 'top' || $sticky == 'bottom') {
+                $html = '<div class="callout alert" data-closable data-sticky data-stick-to="' . $sticky . '">
+                    <button class="close-button" aria-label="Close alert" type="button" data-close>
+                    <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <p>' . do_shortcode($content) . '</p>
+                    </div>';
+
+            }else{
+                $html = '<div class="callout alert" data-closable>
+                    <button class="close-button" aria-label="Close alert" type="button" data-close>
+                    <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <p>' . do_shortcode($content) . '</p>
+                    </div>';
+            }
         }else{
             $html = '<section class="alert' . $alert_style . '">
-                <p>' . do_shortcode($content) . '</p>
+                <p>' . do_shortcode($content) . '</p><p> sticky is: ' . $sticky . '</p>
             </section>';
         }
         return $html; 

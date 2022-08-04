@@ -229,4 +229,11 @@ footer .shield {
 .has-dark-gray-color {
     color: #333D42!important;
 }
+.grid-container {
+    .callout {
+        &.alert {
+            background-color: #7A0F00!important;
+        }
+    }
+}
 //** End of Overrrides **/

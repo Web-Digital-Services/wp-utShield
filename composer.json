@@ -36,7 +36,10 @@
     "platform": {
       "php": "7.4"
     },
-    "vendor-dir": "wp-content/vendor"
+    "vendor-dir": "wp-content/vendor",
+    "allow-plugins": {
+      "composer/installers": true
+    }
   },
   "extra": {
     "installer-paths": {
