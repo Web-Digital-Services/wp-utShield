@@ -19,8 +19,7 @@ load_theme_design('header'); ?>
     <div class="grid-container">
         <div class="grid-x grid-margin-x">
 			<?php while ( have_posts() ) : the_post(); ?>
-				<?php custom_breadcrumbs(); ?>
-				<?php get_template_part( 'template-parts/content-page', '' ); ?>
+				<?php get_template_part( 'template-parts/content', '' ); ?>
 				<?php //the_post_navigation(); ?>
 				<?php //comments_template(); ?>
 			<?php endwhile; ?>
