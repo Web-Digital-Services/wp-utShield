@@ -15,6 +15,7 @@
 	$imgID  = get_post_thumbnail_id($post->ID); 
 	$imgAlt = get_post_meta($imgID,'_wp_attachment_image_alt', true);
 	$banner_byline = get_post_meta( get_the_ID(), 'banner-byline', true );
+	$banner_eyebrow = get_post_meta( get_the_ID(), 'banner-eyebrow', true);
 	$banner_title = get_post_meta( get_the_ID(), 'banner-title', true );
 	$banner_button_text = get_post_meta( get_the_ID(), 'banner-button-text', true ); 
 	$banner_button_url = get_post_meta( get_the_ID(), 'banner-button-url', true ); 
@@ -57,6 +58,9 @@
       			//Load only if there is a Title and the other boxes are empty
 				elseif (($title_box_alignment == 'center-aligned' ) && (!empty($banner_title))){
 					echo '<div class="extra-roomy cell small-9 small-centered text-center">';
+					if( !empty( $banner_eyebrow ) ) {
+							echo '<p class="eyebrow">' . $banner_eyebrow, '</p>';
+					} 
 						echo '<h1>' . $banner_title, '</h1>';
 						echo '<p style="color: white !important;" class="large-text white-text">' . $banner_byline, '</p>';
 						echo '<div class="button-group">';
@@ -82,6 +86,9 @@
 				elseif(!empty($banner_title) || !empty($banner_byline) || !empty($banner_button_text)){
 					//If these boxes are not empty load the banner box and push left of right depending on status
 					echo '<div class="cell large-5 medium-6 small-12 ' . $alignment_status, '"><div class="callout ' . $callout_color . '">';
+					if( !empty( $banner_eyebrow ) ) {
+							echo '<p class="eyebrow">' . $banner_eyebrow, '</p>';
+					} 
 					echo '<h1>' . $banner_title, '</h1>';
 					echo '<p>'. $banner_byline, '</p>';
 					//Callback and Display the Featured Buttons

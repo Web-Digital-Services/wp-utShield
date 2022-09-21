@@ -15,6 +15,7 @@
 	$banner_button_url = get_post_meta( get_the_ID(), 'banner-button-url', true ); 
 	$banner_button_text2 = get_post_meta( get_the_ID(), 'banner-button-text2', true ); 
 	$banner_button_url2 = get_post_meta( get_the_ID(), 'banner-button-url2', true ); 
+	$banner_eyebrow = get_post_meta( get_the_ID(), 'banner-eyebrow', true);
 	$banner_title = get_post_meta( get_the_ID(), 'banner-title', true);
 	$banner_byline = get_post_meta( get_the_ID(), 'banner-byline', true );
 	$banner_byline = get_post_meta( get_the_ID(), 'banner-byline', true );
@@ -36,7 +37,10 @@
 		<div class="grid-container">
 			<div class="grid-x margin-x">
 				<div class="<?php echo $column_left_css; ?>">
-					<?php         
+					<?php 
+						if( !empty( $banner_eyebrow ) ) {
+							echo '<p class="eyebrow">' . $banner_eyebrow, '</p>';
+						}        
 						if( !empty( $banner_title ) ) {
 							echo '<h1 class="close">' . $banner_title, '</h1>';
 						}else{

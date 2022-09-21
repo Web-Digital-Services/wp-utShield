@@ -42,6 +42,11 @@ function utPress_full_width_callback( $post ) {
     </p>
 	<hr>
     <p>
+        <label for="banner-eyebrow" class="utPress-row-title close"><?php _e( '<strong>Banner eyebrow (optional)</strong>', 'wp-shield' )?><br>
+            <input type="text" size=100 name="banner-eyebrow" value="<?php if ( isset ( $utPress_full_width_stored_meta['banner-eyebrow'] ) ) echo $utPress_full_width_stored_meta['banner-eyebrow'][0]; ?>" />
+        </label> 
+    </p>
+    <p>
     	<label for="banner-title" class="utPress-row-title close"><?php _e( '<strong>Featured Title</strong>', 'wp-shield' )?><br>
 		    <input type="text" size=100 name="banner-title" value="<?php if ( isset ( $utPress_full_width_stored_meta['banner-title'] ) ) echo $utPress_full_width_stored_meta['banner-title'][0]; ?>" />
         </label> 
@@ -138,6 +143,9 @@ function UTH_save_full_width_meta( $post_id ) {
 		return;
 	}
     //Save Text Fields
+    if ( isset( $_POST[ 'banner-eyebrow' ] ) ) {
+        update_post_meta( $post_id, 'banner-eyebrow', sanitize_text_field( $_POST[ 'banner-eyebrow' ] ) );
+    }
     if ( isset( $_POST[ 'banner-title' ] ) ) {
         update_post_meta( $post_id, 'banner-title', sanitize_text_field( $_POST[ 'banner-title' ] ) );
     }
