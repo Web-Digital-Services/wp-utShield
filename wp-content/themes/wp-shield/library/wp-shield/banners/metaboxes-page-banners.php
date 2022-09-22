@@ -38,9 +38,15 @@ function utPress_full_width_callback( $post ) {
                 <input type="radio" name="banner_design" value="gradient-banner" <?php checked( $banner_design, 'gradient-banner' ); ?>>Gradient Banner<br>
                 <input type="radio" name="banner_design" value="grey-gradient-banner" <?php checked( $banner_design, 'grey-gradient-banner' ); ?>>Grey Gradient Banner<br>
                 <input type="radio" name="banner_design" value="video-banner" <?php checked( $banner_design, 'video-banner' ); ?>>Video Banner<br>
+                <input type="radio" name="banner_design" value="filters-banner" <?php checked( $banner_design, 'filters-banner' ); ?>>Views Filters (must enter view shortcode below)<br>
         </label>
     </p>
 	<hr>
+            <p>
+            <label for="banner-views" class="utPress-row-title close"><?php _e( "<strong>View shortcode</strong><br> Use only with Views Filters banner option. Example:[wpv-form-view name='your_view']", 'wp-shield' )?><br>
+                <input type="text" size=100 name="banner-views" value="<?php if ( isset ( $utPress_full_width_stored_meta['banner-views'] ) ) echo $utPress_full_width_stored_meta['banner-views'][0]; ?>" />
+            </label> 
+        </p>
     <p>
         <label for="banner-eyebrow" class="utPress-row-title close"><?php _e( '<strong>Banner eyebrow (optional)</strong>', 'wp-shield' )?><br>
             <input type="text" size=100 name="banner-eyebrow" value="<?php if ( isset ( $utPress_full_width_stored_meta['banner-eyebrow'] ) ) echo $utPress_full_width_stored_meta['banner-eyebrow'][0]; ?>" />
@@ -145,6 +151,9 @@ function UTH_save_full_width_meta( $post_id ) {
     //Save Text Fields
     if ( isset( $_POST[ 'banner-eyebrow' ] ) ) {
         update_post_meta( $post_id, 'banner-eyebrow', sanitize_text_field( $_POST[ 'banner-eyebrow' ] ) );
+    }
+    if ( isset( $_POST[ 'banner-views' ] ) ) {
+        update_post_meta( $post_id, 'banner-views', sanitize_text_field( $_POST[ 'banner-views' ] ) );
     }
     if ( isset( $_POST[ 'banner-title' ] ) ) {
         update_post_meta( $post_id, 'banner-title', sanitize_text_field( $_POST[ 'banner-title' ] ) );
