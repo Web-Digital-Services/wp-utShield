@@ -22,6 +22,7 @@ function vc_before_init_actions() {
     require_once( get_template_directory().'/library/wp-shield/wpbakery/subnav.php' );
     require_once( get_template_directory().'/library/wp-shield/wpbakery/video-embed.php' );
     require_once( get_template_directory().'/library/wp-shield/wpbakery/author-quote.php' );
+    require_once( get_template_directory().'/library/wp-shield/wpbakery/heading.php' );
 
 
     //Add a custom field to inner row 
