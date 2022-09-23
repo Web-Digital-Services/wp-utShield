@@ -63,7 +63,18 @@ class uth_button_group extends WPBakeryShortCode {
                             'White'  => 'white',
                             //'Ghost or Sheer'  => 'ghost'                        
                         )
-                    ),                 
+                    ),
+                    array(
+                        'type' => 'checkbox',
+                        'holder' => '',
+                        'heading' => __( 'Center Buttons', 'wp-shield' ),
+                        'description' => esc_html__( 'Checking this box will center the buttons.', 'wp-shield' ),
+                        'param_name' => 'uth_center_buttons',
+                        'value' => __( '', 'wp-shield' ),
+                        'admin_label' => false,
+                        'weight' => 0,
+                        'group' => 'Design Options',
+                    ),                
                 )
             )
         );                                
@@ -77,7 +88,8 @@ class uth_button_group extends WPBakeryShortCode {
                 array(
                     'url'   => '',
                     'url_two'   => '',
-                    'uth_button_style' => ''
+                    'uth_button_style' => '',
+                    'uth_center_buttons' => ''
                 ), 
 
                 $atts
@@ -115,13 +127,23 @@ class uth_button_group extends WPBakeryShortCode {
         }
         if (!empty($button_two_html))
         {
-            $wrapper = '<div class="button-group">';
-            $end_wrapper = '</div>';
-
+            if ($uth_center_buttons == 'true') {
+                $wrapper = '<div class="button-group align-center">';
+                $end_wrapper = '</div>';
+            }else{
+                $wrapper = '<div class="button-group">';
+                $end_wrapper = '</div>';
+            }
         }else{
-            $wrapper ='<p>';
-            $button_two_html = '';
-            $end_wrapper = '</p>';
+            if ($uth_center_buttons == 'true') {
+                $wrapper ='<p class="text-center">';
+                $button_two_html = '';
+                $end_wrapper = '</p>';
+            }else{
+                $wrapper ='<p>';
+                $button_two_html = '';
+                $end_wrapper = '</p>';
+            }
         }
         // Fill $html var with data
         $html = ' 
