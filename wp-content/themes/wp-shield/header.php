@@ -144,6 +144,8 @@
 			get_template_part( 'template-parts/banners/gradient' );
 		}elseif($banner_design == 'grey-gradient-banner'){
 			get_template_part( 'template-parts/banners/gradient-grey' );
+		}elseif($banner_design == 'filters-banner'){
+			get_template_part( 'template-parts/banners/filters-banner' );
 		}elseif(empty($banner_design) && is_category()){
 			get_template_part( 'template-parts/banners/category-archive' );
 		}else{
