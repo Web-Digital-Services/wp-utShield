@@ -53,6 +53,17 @@ class uth_Panel_link extends WPBakeryShortCode {
                         'admin_label' => false,
                         'weight' => 0,
                         'group' => 'Panel Content',
+                    ), 
+                    array(
+                        'type' => 'checkbox',
+                        'holder' => '',
+                        'heading' => __( 'Smaller Panel Title (Optional)', 'wp-shield' ),
+                        'description' => esc_html__( 'Display the title heading in a smaller font size. H3 heading will display as h5 style.', 'wp-shield' ),
+                        'param_name' => 'smaller_heading',
+                        'value' => __( '', 'wp-shield' ),
+                        'admin_label' => false,
+                        'weight' => 0,
+                        'group' => 'Panel Content',
                     ),    
                     array(
                         'type' => 'textfield',
@@ -156,6 +167,7 @@ class uth_Panel_link extends WPBakeryShortCode {
                 array(
                     'url'   => '',
                     'text' => '',
+                    'smaller_heading'   => '',
                     'paragraph_text' => '',
                     'uth_colors' => '',
                     'enable_icon' => '',
@@ -218,10 +230,16 @@ class uth_Panel_link extends WPBakeryShortCode {
         if(empty($uth_colors)){
         	$uth_colors = 'colorized';
         }
+        //If smaller heading is checked, add h5 class to heading
+        if($smaller_heading == 'true'){
+            $heading_size = 'h5';
+        }else{
+            $heading_size = '';
+        }
 
         //If icon is disabled, use RULED Heading class
         if (($enable_icon == 'false' || empty($enable_icon )) && (!empty($paragraph_text))){
-            $ruled = 'class="ruled"';
+            $ruled = 'ruled';
         }else{
             $ruled = '';
         }
@@ -232,7 +250,7 @@ class uth_Panel_link extends WPBakeryShortCode {
         $html = ' 
         <a class="callout panel-mobile text-center ' . $uth_colors . '" href="' . $a_ref . '" title="' . $a_title . '" target="' . $a_target . '" rel="' . $a_rel . '" ' . $equilizer_id . '>
             ' . $render_icon . '
-            <h3 ' . $ruled .'>' . $text . '</h3>
+            <h3 class="' . $heading_size . ' ' . $ruled . '">' . $text . '</h3>
             ' . $paragraph_text . '
         </a>';
          
