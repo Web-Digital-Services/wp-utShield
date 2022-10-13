@@ -27,14 +27,17 @@ class uth_icons extends WPBakeryShortCode {
                 'icon' => get_template_directory_uri().'/assets/images/core/shield.png',            
                 'params' => array(
                     array(
-                        'type' => 'checkbox',
-                        'holder' => '',
-                        'heading' => __( 'Enable Circle Icon', 'wp-shield' ),
+                        'type'       => 'dropdown',
+                        'class'      => '',
+                        'heading'    => 'Icon Style',
                         'param_name' => 'enable_circle_icon',
-                        'value' => __( '', 'wp-shield' ),
-                        'admin_label' => false,
+                        'value'      => array(
+                            'Default'  => '',
+                            'Circle'  => 'true',
+                            'Square (social)'  => 'square'
+                        ),
                         'weight' => 0,
-                    ),
+                    ), 
                     array(
                         'type' => 'dropdown',
                         'heading' => esc_html__( 'Icon library', 'js_composer' ),
@@ -135,8 +138,10 @@ class uth_icons extends WPBakeryShortCode {
                         'heading'    => 'Heading Level',
                         'param_name' => 'heading_level',
                         'group' => __( 'Title Options', 'wp-shield' ),
+                        'description' => esc_html__( 'Select Inline for square/social icons.', 'wp-shield' ),
                         'value'      => array(
                             'Select a heading level'  => '',
+                            'Inline - no heading'  => 'span',
                             'Heading 2'  => 'h2',
                             'Heading 3'  => 'h3',
                             'Heading 4'  => 'h4',
@@ -173,6 +178,7 @@ class uth_icons extends WPBakeryShortCode {
                     'enable_circle_icon' => '',
                     'uth_icon_size' => '',
                     'icon_title' => '',
+                    'heading_level' => '',
                     'url'   => '',
                 ), 
                 $atts
@@ -237,6 +243,17 @@ class uth_icons extends WPBakeryShortCode {
             }else{
                 $opening_wrapper = '<span class="fa-stack ' . $wrapper_size . '"><i class="fas fa-circle fa-stack-2x"></i>';
                 $closing_wrapper= '</span>';
+            }
+        }elseif($enable_circle_icon == 'square'){
+            $wrapper_size = $uth_icon_size;
+            $uth_icon_size = 'no-size';
+            $stack_class = 'fa-stack-1x fa-inverse';
+            if (!empty($a_ref)){
+                $opening_wrapper = '<div class="social"><ul><li><a href="' . $a_ref . '" title="' . $a_title . '" target="' . $a_target . '" rel="' . $a_rel . '"><span class="fa-stack ' . $wrapper_size . '"><i class="fas fa-square fa-stack-2x"></i>';
+                $closing_wrapper= '</span>' . $render_title . '</a></li></ul></div>';
+            }else{
+                $opening_wrapper = '<div class="social"><ul><li><span class="fa-stack ' . $wrapper_size . '"><i class="fas fa-square fa-stack-2x"></i>';
+                $closing_wrapper= '</span></li></ul></div>';
             }
         }else{
             $single_icon_color = $uth_colors;
