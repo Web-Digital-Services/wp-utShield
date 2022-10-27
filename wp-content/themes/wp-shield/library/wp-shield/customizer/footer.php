@@ -8,6 +8,7 @@ function uth_create_footer_settings($wp_customize) {
     $wp_customize->add_setting('uth_footer_phone');
     $wp_customize->add_setting('uth_footer_address');
     $wp_customize->add_setting('uth_footer_email');
+    $wp_customize->add_setting('uth_footer_email_title');
     $wp_customize->add_setting('uth_footer_map');
 
     //2. Add Section
@@ -36,6 +37,16 @@ function uth_create_footer_settings($wp_customize) {
         'type' => 'text',
         'section' => 'uth_footer',
         'settings' => 'uth_footer_email',
+        ) 
+    );
+    $wp_customize->add_control( 
+        'uth_footer_email_title_control',
+        array(
+        'label' => 'Contact Email Title',
+        'type' => 'text',
+        'section' => 'uth_footer',
+        'description' => 'Optional title field for contact email (use if email address is too long to display.)',
+        'settings' => 'uth_footer_email_title',
         ) 
     );
     $wp_customize->add_control( 

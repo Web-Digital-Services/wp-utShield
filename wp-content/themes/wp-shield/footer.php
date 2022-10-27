@@ -12,6 +12,7 @@
     $uth_footer_phone = get_theme_mod( 'uth_footer_phone' );
     $uth_footer_address = get_theme_mod( 'uth_footer_address' );
     $uth_footer_email = get_theme_mod( 'uth_footer_email' );
+    $uth_footer_email_title = get_theme_mod( 'uth_footer_email_title' );
     $uth_footer_map = get_theme_mod( 'uth_footer_map' );
     
     $site_title = get_bloginfo ( 'description' );
@@ -88,7 +89,15 @@
                         }
                         ?>
                     </div>
-                    <?php if(!empty($uth_footer_email)) {
+                    <?php if(!empty($uth_footer_email) and !empty($uth_footer_email_title)) {
+                    echo '<div class="contact">
+                        <a href="mailto:' . $uth_footer_email . '" class="fa-stack">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                        </a>
+                        <a href="mailto:' . $uth_footer_email . '">' . $uth_footer_email_title . '</a> 
+                    </div>';
+                    } elseif(!empty($uth_footer_email)) {
                     echo '<div class="contact">
                         <a href="mailto:' . $uth_footer_email . '" class="fa-stack">
                             <i class="fas fa-circle fa-stack-2x"></i>
