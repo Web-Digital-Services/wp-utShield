@@ -337,6 +337,13 @@ header {
                         font-size: 24px;
                     }
                 }
+
+                &.small {
+
+                    img {
+                        width: 12rem;
+                    }
+                }
             }
 
             .nav {
@@ -531,12 +538,7 @@ header {
 
         &.super-hero {
 
-            .logo.mission {
 
-                img {
-                    width: 12rem;
-                }
-            }
 
             @media screen and (min-width:$small-screen) {
                 position: absolute;

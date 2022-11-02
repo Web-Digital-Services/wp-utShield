@@ -166,7 +166,7 @@ IMG Fill BLEEDS
                 padding-right: rem-calc(15px);
             }
         }
-        img, video {
+        >img, >video {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -175,7 +175,7 @@ IMG Fill BLEEDS
             object-fit: cover;
         }
 
-        video {
+        >video {
             margin-bottom: rem-calc(-9px);
         }
         >.grid-x {
