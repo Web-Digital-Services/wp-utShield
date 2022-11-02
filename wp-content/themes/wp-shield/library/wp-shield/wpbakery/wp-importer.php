@@ -11,6 +11,7 @@ function vc_before_init_actions() {
     require_once( get_template_directory().'/library/wp-shield/wpbakery/buttons.php' );
     require_once( get_template_directory().'/library/wp-shield/wpbakery/cards.php' );
     require_once( get_template_directory().'/library/wp-shield/wpbakery/contact.php' );
+    require_once( get_template_directory().'/library/wp-shield/wpbakery/directory-listing.php' );
     require_once( get_template_directory().'/library/wp-shield/wpbakery/events.php' );
     require_once( get_template_directory().'/library/wp-shield/wpbakery/callout-content.php' );
     require_once( get_template_directory().'/library/wp-shield/wpbakery/callout-interactive.php' );
