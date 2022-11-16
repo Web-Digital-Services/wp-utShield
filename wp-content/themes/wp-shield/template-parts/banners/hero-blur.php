@@ -59,7 +59,7 @@
 	<section class="hero bleed blur img-fill full <?php echo $banner_extra_classes; ?>">
 		<img alt="<?php echo $imgAlt; ?>" src="<?php echo $thumb['0'];?>">
 		<div class="grid-container">
-			<div class="grid-x margin-x">
+			<div class="grid-x grid-margin-x">
 				<div class="<?php echo $column_left_css; ?>">
 					<?php 
 						if( !empty( $banner_eyebrow ) ) {
