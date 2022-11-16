@@ -11,6 +11,7 @@
 
 ?>
 <?php /** Localize Metafield Values as Variables **/
+	$banner_extra_classes = get_post_meta( get_the_ID(), 'banner-extra-classes', true ); 
 	$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
 	$imgID  = get_post_thumbnail_id($post->ID); 
 	$imgAlt = get_post_meta($imgID,'_wp_attachment_image_alt', true);
@@ -41,7 +42,7 @@
 	elseif ($colorized == 'yes'){ $colorized_status = 'alpha'; }
 	else{ $colorized_status = 'null'; }
 ?>
-<header class="hero bleed img-fill full <?php if ($extra_roomy_status == 'yes'){ echo 'extra-roomy'; }else{ echo '';} ?>">
+<header class="hero bleed img-fill full <?php echo $banner_extra_classes; ?> <?php if ($extra_roomy_status == 'yes'){ echo 'extra-roomy'; }else{ echo '';} ?>">
 	<img alt="<?php echo $imgAlt; ?>" src="<?php echo $thumb['0'];?>">
 	<div class="grid-container">
 		<div class="grid-x margin-x">

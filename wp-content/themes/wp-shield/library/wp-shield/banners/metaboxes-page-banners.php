@@ -34,6 +34,7 @@ function utPress_full_width_callback( $post ) {
                 <input type="radio" name="banner_design" checked="checked" value="default-bleed" <?php checked( $banner_design, 'default-bleed' ); ?>>Default (Beige)<br>
                 <input type="radio" name="banner_design" value="basic-page" <?php checked( $banner_design, 'basic-page' ); ?>>Basic Page (Child)<br>
                 <input type="radio" name="banner_design" value="hero-banner" <?php checked( $banner_design, 'hero-banner' ); ?>>Hero Banner<br>
+                <input type="radio" name="banner_design" value="hero-blur" <?php checked( $banner_design, 'hero-blur' ); ?>>Hero Blur<br>
                 <input type="radio" name="banner_design" value="super-hero-banner" <?php checked( $banner_design, 'super-hero-banner' ); ?>>Super Hero Banner<br>
                 <input type="radio" name="banner_design" value="gradient-banner" <?php checked( $banner_design, 'gradient-banner' ); ?>>Gradient Banner<br>
                 <input type="radio" name="banner_design" value="grey-gradient-banner" <?php checked( $banner_design, 'grey-gradient-banner' ); ?>>Grey Gradient Banner<br>
@@ -45,6 +46,11 @@ function utPress_full_width_callback( $post ) {
             <p>
             <label for="banner-views" class="utPress-row-title close"><?php _e( "<strong>View shortcode</strong><br> Use only with Views Filters banner option. Example:[wpv-form-view name='your_view']", 'wp-shield' )?><br>
                 <input type="text" size=100 name="banner-views" value="<?php if ( isset ( $utPress_full_width_stored_meta['banner-views'] ) ) echo $utPress_full_width_stored_meta['banner-views'][0]; ?>" />
+            </label> 
+        </p>
+            <p>
+            <label for="banner-extra-classes" class="utPress-row-title close"><?php _e( "<strong>Extra classes on banner</strong>", 'wp-shield' )?><br>
+                <input type="text" size=100 name="banner-extra-classes" value="<?php if ( isset ( $utPress_full_width_stored_meta['banner-extra-classes'] ) ) echo $utPress_full_width_stored_meta['banner-extra-classes'][0]; ?>" />
             </label> 
         </p>
     <p>
@@ -109,7 +115,7 @@ function utPress_full_width_callback( $post ) {
         <br>
         <input type="text" size=65 name="ut_featured_video_title" value="<?php if ( isset ( $utPress_full_width_stored_meta['ut_featured_video_title'] ) ) echo $utPress_full_width_stored_meta['ut_featured_video_title'][0]; ?>" />  
     </p>
-    <?php if($banner_design == 'hero-banner' || $banner_design == 'super-hero-banner' || $banner_design == 'gradient-banner' || $banner_design == 'grey-gradient-banner'  ): ?>
+    <?php if($banner_design == 'hero-banner' || banner_design == 'hero-blur' || $banner_design == 'super-hero-banner' || $banner_design == 'gradient-banner' || $banner_design == 'grey-gradient-banner'  ): ?>
         <p>
             <label for="title_box_alignment_options"><?php _e( "<strong>Title Box Alignment:</strong>", 'wp-shield' ); ?><br>
                 <?php $title_box_alignment = get_post_meta( $post->ID, 'title_box_key', true ); ?> 
@@ -118,7 +124,7 @@ function utPress_full_width_callback( $post ) {
             </label>
         </p>
     <?php endif; ?>
-    <?php if($banner_design == 'hero-banner' || $banner_design == 'super-hero-banner'): ?>
+    <?php if($banner_design == 'hero-banner' || banner_design == 'hero-blur' || $banner_design == 'super-hero-banner'): ?>
         <p>
             <label for="callout_color_options"><?php _e( "<strong>Callout Color:</strong>", 'wp-shield' ); ?><br>
                 <?php $callout_color = get_post_meta( $post->ID, 'callout_color_key', true ); ?> 
@@ -154,6 +160,9 @@ function UTH_save_full_width_meta( $post_id ) {
     }
     if ( isset( $_POST[ 'banner-views' ] ) ) {
         update_post_meta( $post_id, 'banner-views', sanitize_text_field( $_POST[ 'banner-views' ] ) );
+    }
+    if ( isset( $_POST[ 'banner-extra-classes' ] ) ) {
+        update_post_meta( $post_id, 'banner-extra-classes', sanitize_text_field( $_POST[ 'banner-extra-classes' ] ) );
     }
     if ( isset( $_POST[ 'banner-title' ] ) ) {
         update_post_meta( $post_id, 'banner-title', sanitize_text_field( $_POST[ 'banner-title' ] ) );

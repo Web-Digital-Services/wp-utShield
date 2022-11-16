@@ -11,6 +11,7 @@
 
 ?>
 <?php /** Localize Metafield Values as Variables **/
+	$banner_extra_classes = get_post_meta( get_the_ID(), 'banner-extra-classes', true ); 
 	$banner_design = get_post_meta( $post->ID, 'banner_design_key', true );
 	$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
 	$imgID  = get_post_thumbnail_id($post->ID); 
@@ -43,7 +44,7 @@
 	elseif ($colorized == 'yes'){ $colorized_status = 'alpha'; }
 	else{ $colorized_status = 'null'; }
 ?>
-<header class="hero bleed img-fill">
+<header class="hero bleed img-fill <?php echo $banner_extra_classes; ?>">
 	<img alt="<?php echo $imgAlt; ?>" src="<?php echo $thumb['0'];?>">
 	<div class="grid-container<?php echo ' ' . $spacing_classes;?><?php if ($banner_design == 'super-hero-banner'){ echo ' extra-roomy'; }else{ echo '';} ?>">
 		<div class="grid-x margin-x">

@@ -10,17 +10,40 @@
  */
 
 ?>	
-<?php 
+<?php /** Localize Metafield Values as Variables **/
 	$banner_extra_classes = get_post_meta( get_the_ID(), 'banner-extra-classes', true ); 
+	$banner_design = get_post_meta( $post->ID, 'banner_design_key', true );
+	$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
+	$imgID  = get_post_thumbnail_id($post->ID); 
+	$imgAlt = get_post_meta($imgID,'_wp_attachment_image_alt', true);
+	$banner_byline = get_post_meta( get_the_ID(), 'banner-byline', true );
+	$banner_eyebrow = get_post_meta( get_the_ID(), 'banner-eyebrow', true);
+	$banner_title = get_post_meta( get_the_ID(), 'banner-title', true );
 	$banner_button_text = get_post_meta( get_the_ID(), 'banner-button-text', true ); 
 	$banner_button_url = get_post_meta( get_the_ID(), 'banner-button-url', true ); 
 	$banner_button_text2 = get_post_meta( get_the_ID(), 'banner-button-text2', true ); 
 	$banner_button_url2 = get_post_meta( get_the_ID(), 'banner-button-url2', true ); 
-	$banner_eyebrow = get_post_meta( get_the_ID(), 'banner-eyebrow', true);
-	$banner_title = get_post_meta( get_the_ID(), 'banner-title', true);
-	$banner_byline = get_post_meta( get_the_ID(), 'banner-byline', true );
-	$banner_byline = get_post_meta( get_the_ID(), 'banner-byline', true );
+	$spacing_classes = get_post_meta( get_the_ID(), 'banner-classes', true ); 
+	$title_box_alignment = get_post_meta( $post->ID, 'title_box_key', true ); 
+	$callout_color = get_post_meta( $post->ID, 'callout_color_key', true ); 
+	$extra_roomy_status = get_post_meta( get_the_ID(), 'extraroomy', true );
 
+	if ($title_box_alignment == 'right-aligned'){
+		$alignment_status = 'large-offset-7 medium-offset-6 small-offset-0';
+	}elseif($title_box_alignment == 'center-aligned'){
+		$alignment_status = 'null';
+	}elseif($title_box_alignment == 'left-aligned'){
+		$alignment_status = 'null';
+	}else{
+		$alignment_status = 'large-offset-7 medium-offset-6 small-offset-0';
+	}
+
+	$colorized = get_post_meta( get_the_ID(), 'colorized', true ); 
+	if ($title_box_alignment == 'center-aligned'){ $colorized_status = 'alpha-darker'; }
+	elseif($colorized == 'yes' && (empty($banner_title) && !empty($banner_byline) && empty($banner_button_text))){ $colorized_status = 'alpha-darker'; }
+	elseif ($colorized == 'yes'){ $colorized_status = 'alpha'; }
+	else{ $colorized_status = 'null'; }
+	
 	$grid_layout = get_post_meta( $post->ID, 'banner_grid_layout_key', true );
 	if (empty($grid_layout) || ($grid_layout == '84')){
 		$column_left_css = 'cell large-8 medium-8 small-12 ';
@@ -33,8 +56,8 @@
 		$column_right_css = 'cell large-4 medium-4 small-12';
 	}
 ?>
-<header>
-	<section class="hero bleed <?php echo $banner_extra_classes; ?>">
+	<section class="hero bleed blur img-fill full <?php echo $banner_extra_classes; ?>">
+		<img alt="<?php echo $imgAlt; ?>" src="<?php echo $thumb['0'];?>">
 		<div class="grid-container">
 			<div class="grid-x margin-x">
 				<div class="<?php echo $column_left_css; ?>">
@@ -73,4 +96,3 @@
 			</div>
 		</div>
 	</section>
-</header>

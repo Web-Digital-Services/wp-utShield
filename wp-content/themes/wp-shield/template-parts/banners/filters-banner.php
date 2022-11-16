@@ -11,6 +11,7 @@
 
 ?>	
 <?php 
+	$banner_extra_classes = get_post_meta( get_the_ID(), 'banner-extra-classes', true ); 
 	$banner_views = get_post_meta( get_the_ID(), 'banner-views', true ); 
 	$banner_button_text = get_post_meta( get_the_ID(), 'banner-button-text', true ); 
 	$banner_button_url = get_post_meta( get_the_ID(), 'banner-button-url', true ); 
@@ -34,7 +35,7 @@
 	}
 ?>
 <header>
-	<section class="hero bleed">
+	<section class="hero bleed <?php echo $banner_extra_classes; ?>">
 		<div class="grid-container">
 			<div class="grid-x grid-margin-x">
 				<div class="<?php echo $column_left_css; ?>">

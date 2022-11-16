@@ -142,6 +142,8 @@
 			get_template_part( 'template-parts/banners/video' );
 		}elseif($banner_design == 'gradient-banner'){
 			get_template_part( 'template-parts/banners/gradient' );
+		}elseif($banner_design == 'hero-blur'){
+			get_template_part( 'template-parts/banners/hero-blur' );
 		}elseif($banner_design == 'grey-gradient-banner'){
 			get_template_part( 'template-parts/banners/gradient-grey' );
 		}elseif($banner_design == 'filters-banner'){

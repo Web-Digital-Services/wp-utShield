@@ -12,6 +12,7 @@
 ?>
 <?php 
 	/** Localize Metafield Values as Variables **/
+	$banner_extra_classes = get_post_meta( get_the_ID(), 'banner-extra-classes', true ); 
 	$banner_design = get_post_meta( $post->ID, 'banner_design_key', true );
 	$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
 	$imgID  = get_post_thumbnail_id($post->ID); 
@@ -37,7 +38,7 @@
 		$text_position = ' left';
 	}
 ?>
-<header class="hero gradient white bleed img-fill<?php echo $text_position; ?>">
+<header class="hero gradient white bleed img-fill <?php echo $banner_extra_classes; ?> <?php echo $text_position; ?>">
 	<img alt="<?php echo $imgAlt; ?>" src="<?php echo $thumb['0'];?>">
 	<div class="grid-container">
 		<div class="grid-x margin-x">
