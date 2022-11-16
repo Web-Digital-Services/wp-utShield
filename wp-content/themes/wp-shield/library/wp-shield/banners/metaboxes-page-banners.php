@@ -115,7 +115,7 @@ function utPress_full_width_callback( $post ) {
         <br>
         <input type="text" size=65 name="ut_featured_video_title" value="<?php if ( isset ( $utPress_full_width_stored_meta['ut_featured_video_title'] ) ) echo $utPress_full_width_stored_meta['ut_featured_video_title'][0]; ?>" />  
     </p>
-    <?php if($banner_design == 'hero-banner' || banner_design == 'hero-blur' || $banner_design == 'super-hero-banner' || $banner_design == 'gradient-banner' || $banner_design == 'grey-gradient-banner'  ): ?>
+    <?php if($banner_design == 'hero-banner' || $banner_design == 'hero-blur' || $banner_design == 'super-hero-banner' || $banner_design == 'gradient-banner' || $banner_design == 'grey-gradient-banner'  ): ?>
         <p>
             <label for="title_box_alignment_options"><?php _e( "<strong>Title Box Alignment:</strong>", 'wp-shield' ); ?><br>
                 <?php $title_box_alignment = get_post_meta( $post->ID, 'title_box_key', true ); ?> 
@@ -124,7 +124,7 @@ function utPress_full_width_callback( $post ) {
             </label>
         </p>
     <?php endif; ?>
-    <?php if($banner_design == 'hero-banner' || banner_design == 'hero-blur' || $banner_design == 'super-hero-banner'): ?>
+    <?php if($banner_design == 'hero-banner' || $banner_design == 'hero-blur' || $banner_design == 'super-hero-banner'): ?>
         <p>
             <label for="callout_color_options"><?php _e( "<strong>Callout Color:</strong>", 'wp-shield' ); ?><br>
                 <?php $callout_color = get_post_meta( $post->ID, 'callout_color_key', true ); ?> 
