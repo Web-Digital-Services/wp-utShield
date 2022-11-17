@@ -110,6 +110,15 @@
 							<span>Contact</span>
 						</a>';
 					}
+					if(!empty($UTH_add_give_button_setting)) {
+						echo '<a title="Give" aria-label="Give" target=_blank href="' . $UTH_add_give_button_setting . '">
+      						<span class="fa-stack outline">
+        					<i class="far fa-circle fa-stack-2x"></i>
+        					<i class="fas fa-hand-holding-heart fa-stack-1x fa-inverse"></i>
+      						</span>
+      						<span>Give</span>
+    						</a>';
+					}
 					if(!empty($UTH_contact_phone_number)) {
 						echo '<a href="#">
 							<span class="fa-stack outline">
