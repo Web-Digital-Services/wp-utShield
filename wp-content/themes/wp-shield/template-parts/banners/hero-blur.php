@@ -43,7 +43,7 @@
 	elseif($colorized == 'yes' && (empty($banner_title) && !empty($banner_byline) && empty($banner_button_text))){ $colorized_status = 'alpha-darker'; }
 	elseif ($colorized == 'yes'){ $colorized_status = 'alpha'; }
 	else{ $colorized_status = 'null'; }
-	
+
 	$grid_layout = get_post_meta( $post->ID, 'banner_grid_layout_key', true );
 	if (empty($grid_layout) || ($grid_layout == '84')){
 		$column_left_css = 'cell large-8 medium-8 small-12 ';
@@ -66,13 +66,13 @@
 							echo '<p class="eyebrow">' . $banner_eyebrow, '</p>';
 						}        
 						if( !empty( $banner_title ) ) {
-							echo '<h1 class="close">' . $banner_title, '</h1>';
+							echo '<h1>' . $banner_title, '</h1>';
 						}else{
 							the_title('<h1 class="close">', '</h1>');
 						}
 						// Checks and displays the retrieved value
 						if( !empty( $banner_byline ) ) {
-							echo '<p class="banner-text">' . $banner_byline, '</p>';
+							echo '<p>' . $banner_byline, '</p>';
 						}
 						if( !empty( $banner_button_text ) ) {
 							echo '<div class="button-group">';
