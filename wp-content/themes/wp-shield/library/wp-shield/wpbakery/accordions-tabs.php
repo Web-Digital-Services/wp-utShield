@@ -36,6 +36,17 @@ class uth_tab_content extends WPBakeryShortCode {
                 //That params defines the field types to be used and the settings for eachf field           
                 'params' => array(
                     array(
+                        'type' => 'checkbox',
+                        'holder' => '',
+                        'heading' => __( 'Close all tabs.', 'wp-shield' ),
+                        'description' => esc_html__( 'By default the first tab is expanded. Check this box to keep all closed.', 'wp-shield' ),
+                        'param_name' => 'close_all_tabs',
+                        'group' => 'Design Options',
+                        'value' => __( '', 'wp-shield' ),
+                        'admin_label' => false,
+                        'weight' => 0,
+                    ),
+                    array(
                         'type'       => 'dropdown',
                         'class'      => '',
                         'heading'    => 'Select Display',
@@ -78,6 +89,7 @@ class uth_tab_content extends WPBakeryShortCode {
             shortcode_atts(
                 array(
                     'uth_accord_or_pills'   => '',
+                    'close_all_tabs' => '',
                     'color_class'    => ''
                 ), 
                 $atts
@@ -124,7 +136,7 @@ class uth_tab_content extends WPBakeryShortCode {
                 $tab_title = types_render_field( "tab-title", array( "output" => "normal", "id" => $child_post ));
                 $tab_id = 'tab_id_' . $i++;
                 
-                if ($tab_id == 'tab_id_0'){
+                if ($tab_id == 'tab_id_0' && !($close_all_tabs == 'true')){
                     $active = 'is-active';
                 }else{
                     $active = '';
@@ -145,7 +157,7 @@ class uth_tab_content extends WPBakeryShortCode {
                 $tab_content = types_render_field( "tab-content", array( "output" => "normal", "id" => $child_post ));
                 $tab_id = 'tab_id_' . $b++;
                 
-                if ($tab_id == 'tab_id_0'){
+                if ($tab_id == 'tab_id_0' && !($close_all_tabs == 'true')){
                     $if_active = ' is-active';
                 }else{
                     $if_active = '';
@@ -169,7 +181,7 @@ class uth_tab_content extends WPBakeryShortCode {
                 $tab_content = types_render_field( "tab-content", array( "output" => "normal", "id" => $child_post ));
                 $accordion_id = 'accordion_id_' . $c++;
                 
-                if ($accordion_id == 'accordion_id_0'){
+                if ($accordion_id == 'accordion_id_0' && !($close_all_tabs == 'true')){
                     $active = 'is-active';
                 }else{
                     $active = '';
