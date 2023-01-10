@@ -39,7 +39,7 @@ load_theme_design('header'); ?>
             <blockquote class="fancy">
                 <?php 
                   if (!empty ($spotlight_featured_quote)){ 
-                    echo '<p>' . $spotlight_featured_quote  . '</p>';
+                    echo $spotlight_featured_quote;
                   }
                 ?>
 
