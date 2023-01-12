@@ -229,4 +229,10 @@ footer .shield {
 .has-dark-gray-color {
     color: #333D42!important;
 }
+@media only screen and (max-width: $mobile)  {
+    .swap-on-mobile{
+        display: flex !important;
+        flex-direction: column-reverse;
+    }
+}
 //** End of Overrrides **/
