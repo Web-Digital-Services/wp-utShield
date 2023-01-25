@@ -8,7 +8,8 @@
 
 load_theme_design('header'); ?>
 <?php 
-  $training_date = types_render_field("training-date");
+  $training_date = types_render_field("training-date", array('format'=>'F j, Y g:ia','style'=>'text'));
+  $training_end_date = types_render_field("training-event-end-time", array('format'=>'g:ia','style'=>'text'));
   $training_location = types_render_field("location");
   $training_event_link = types_render_field("training-event-link", array( 'output' => 'raw'));
 ?>
@@ -64,7 +65,7 @@ load_theme_design('header'); ?>
                                     </span>
                                     <?php 
                                       if (!empty ($training_date)){ 
-                                        echo '<p>' . $training_date . '</p>';
+                                        echo '<p>' . $training_date . ' - ' . $training_end_date . '</p>';
                                       }
                                     ?>
                                 </li>
@@ -83,7 +84,10 @@ load_theme_design('header'); ?>
                                 </li>
 
                             </ul>
-                        </div>
+                                                    <p>
+                            <a class="arrow" href="<?php echo get_feed_link('training-calendar'); ?>?id=<?php echo get_the_ID(); ?>"> Add to Calendar</a>
+                        </p>
+
 
                     </div>
                 </div>
