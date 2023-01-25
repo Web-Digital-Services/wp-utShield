@@ -33,8 +33,8 @@ if (strlen($string) >= $length) {
 function add_calendar_feed2(){
     add_feed('training-calendar', 'export_ics2');
     // Only uncomment these 2 lines the first time you load this script, to update WP rewrite rules, or in case you see a 404
-    global $wp_rewrite;
-    $wp_rewrite->flush_rules( false );
+    /*global $wp_rewrite;
+    $wp_rewrite->flush_rules( false );*/
 }
 add_action('init', 'add_calendar_feed2');
 
