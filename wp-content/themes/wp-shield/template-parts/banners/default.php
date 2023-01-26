@@ -20,6 +20,9 @@
 	$banner_title = get_post_meta( get_the_ID(), 'banner-title', true);
 	$banner_byline = get_post_meta( get_the_ID(), 'banner-byline', true );
 	$banner_byline = get_post_meta( get_the_ID(), 'banner-byline', true );
+	$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
+	$imgID  = get_post_thumbnail_id($post->ID); 
+	$imgAlt = get_post_meta($imgID,'_wp_attachment_image_alt', true);
 	$title_box_alignment = get_post_meta( $post->ID, 'title_box_key', true ); 
 
 	if ($title_box_alignment == 'right-aligned'){
@@ -39,10 +42,9 @@
 		$column_right_css = 'cell large-4 medium-4 small-12';
 	}
 ?>
-<header>
 	<section class="hero bleed <?php echo $banner_extra_classes; ?>">
 		<div class="grid-container">
-			<div class="grid-x margin-x">
+			<div class="grid-x grid-margin-x">
 				<div class="<?php echo $column_left_css; ?> <?php echo $text_box_order; ?>">
 					<?php 
 						if( !empty( $banner_eyebrow ) ) {
@@ -65,18 +67,11 @@
 						} 
 					?>
 				</div>
-				<div class="<?php echo $column_right_css; ?>">          
-					<?php
-						if (function_exists('load_featured_media')) {
-							load_featured_media('large', 'close');
-						} elseif ( has_post_thumbnail() ){
-							the_post_thumbnail();
-						}else{
-							//No featured Media
-						}
-					?>
+				<?php if( !empty( $thumb ) ): ?>
+				<div class="<?php echo $column_right_css; ?>">        
+					<img alt="<?php echo $imgAlt; ?>" src="<?php echo $thumb['0'];?>">
 				</div>
+				<?php endif ?>
 			</div>
 		</div>
 	</section>
-</header>
