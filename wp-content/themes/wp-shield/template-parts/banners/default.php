@@ -20,6 +20,12 @@
 	$banner_title = get_post_meta( get_the_ID(), 'banner-title', true);
 	$banner_byline = get_post_meta( get_the_ID(), 'banner-byline', true );
 	$banner_byline = get_post_meta( get_the_ID(), 'banner-byline', true );
+	$title_box_alignment = get_post_meta( $post->ID, 'title_box_key', true ); 
+
+	if ($title_box_alignment == 'right-aligned'){
+		$text_box_order = 'small-order-2 medium-order-2 large-order-2';
+	}
+
 
 	$grid_layout = get_post_meta( $post->ID, 'banner_grid_layout_key', true );
 	if (empty($grid_layout) || ($grid_layout == '84')){
@@ -37,7 +43,7 @@
 	<section class="hero bleed <?php echo $banner_extra_classes; ?>">
 		<div class="grid-container">
 			<div class="grid-x margin-x">
-				<div class="<?php echo $column_left_css; ?>">
+				<div class="<?php echo $column_left_css; ?> <?php echo $text_box_order; ?>">
 					<?php 
 						if( !empty( $banner_eyebrow ) ) {
 							echo '<p class="eyebrow">' . $banner_eyebrow, '</p>';

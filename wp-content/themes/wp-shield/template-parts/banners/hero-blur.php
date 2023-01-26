@@ -29,13 +29,7 @@
 	$extra_roomy_status = get_post_meta( get_the_ID(), 'extraroomy', true );
 
 	if ($title_box_alignment == 'right-aligned'){
-		$alignment_status = 'large-offset-7 medium-offset-6 small-offset-0';
-	}elseif($title_box_alignment == 'center-aligned'){
-		$alignment_status = 'null';
-	}elseif($title_box_alignment == 'left-aligned'){
-		$alignment_status = 'null';
-	}else{
-		$alignment_status = 'large-offset-7 medium-offset-6 small-offset-0';
+		$text_box_order = 'small-order-2 medium-order-2 large-order-2';
 	}
 
 	$colorized = get_post_meta( get_the_ID(), 'colorized', true ); 
@@ -60,7 +54,7 @@
 		<img alt="<?php echo $imgAlt; ?>" src="<?php echo $thumb['0'];?>">
 		<div class="grid-container">
 			<div class="grid-x grid-margin-x">
-				<div class="<?php echo $column_left_css; ?>">
+				<div class="<?php echo $column_left_css; ?> <?php echo $text_box_order; ?>">
 					<?php 
 						if( !empty( $banner_eyebrow ) ) {
 							echo '<p class="eyebrow">' . $banner_eyebrow, '</p>';
