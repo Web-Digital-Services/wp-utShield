@@ -12,8 +12,8 @@ if ( 'provider-directory' === $post->post_name ) {
 
 	<?php foreach ( $this->menu_items as $menu_item ) : ?>
 		<?php if ( is_page_template( 'page-templates/blocks.php' ) ) {
-			$menu_item->url  = '#';
-			$menu_item_class .= ' js-button-find';
+			$menu_item->url  = 'https://providers.uthscsa.edu/';
+			$menu_item_class .= '';
 		} ?>
         <a href="<?= esc_url( $menu_item->url ); ?>"
            target="<?= esc_attr( $menu_item->target ); ?>"
