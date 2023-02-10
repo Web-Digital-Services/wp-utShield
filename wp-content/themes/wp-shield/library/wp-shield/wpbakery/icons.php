@@ -231,7 +231,7 @@ class uth_icons extends WPBakeryShortCode {
                 $closing_wrapper= $render_title . '</a>';
             }else{
                 $opening_wrapper = '';
-                $closing_wrapper= '';
+                $closing_wrapper= $render_title;
             }
         }elseif($enable_circle_icon == 'true'){
             $wrapper_size = $uth_icon_size;
