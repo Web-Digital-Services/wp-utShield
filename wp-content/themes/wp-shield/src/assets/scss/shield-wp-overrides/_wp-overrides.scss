@@ -41,7 +41,7 @@ nav#subnav li.is-active.is-accordion-submenu-parent > a {
 }
 nav#subnav > ul.subnav > li.is-active > ul.submenu.is-active >  li.is-active.is-submenu-item a{
     color:#7A0F00;
-	background: none;
+	background: none !important;
 }
 nav#subnav ul {
     margin-left: 0rem;
