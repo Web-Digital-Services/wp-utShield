@@ -41,7 +41,7 @@ nav#subnav li.is-active.is-accordion-submenu-parent > a {
 }
 nav#subnav > ul.subnav > li.is-active > ul.submenu.is-active >  li.is-active.is-submenu-item a{
     color:#7A0F00;
-	background: none !important;
+	background: transparent !important;
 }
 nav#subnav ul {
     margin-left: 0rem;
@@ -51,6 +51,9 @@ nav#subnav ul.accordion-menu li.menu-item{
 }
 nav#subnav ul.accordion-menu li ul.is-accordion-submenu li{
     border-bottom: none !important;
+}
+nav#subnav .current_page_item {
+    background: none;
 }
 /** Main Menu */
 .nav-bar#new-full .top-bar .top-bar-left ul li.is-active a, .nav-bar#new-full .top-bar .top-bar-left ul li a:active{
