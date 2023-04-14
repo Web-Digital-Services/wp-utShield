@@ -37,11 +37,11 @@ nav#subnav ul.vertical.menu .is-accordion-submenu {
 }
 nav#subnav li.is-active.is-accordion-submenu-parent > a {
     background: none;
-    color: black;
+    color:#7A0F00;
 }
 nav#subnav > ul.subnav > li.is-active > ul.submenu.is-active >  li.is-active.is-submenu-item a{
-    color: white;
-	background:#7A0F00 !important;
+    color:#7A0F00;
+	background: none;
 }
 nav#subnav ul {
     margin-left: 0rem;
@@ -57,7 +57,8 @@ nav#subnav ul.accordion-menu li ul.is-accordion-submenu li{
     color: white !important;
   }
 .menu .is-active > a {
-    background: #7a0f00;
+    background: #fff !important;
+    color:#7A0F00;
 }
 //Footer Fixes
 footer a:visited:not(.button), footer a:focus {
