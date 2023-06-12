@@ -114,7 +114,7 @@ function utPress_full_width_callback( $post ) {
             <br>
     <span style="font-size:1.5em;">Video Banner:</span><br>
     <p>
-        <span for="ut_featured_video_url"><?php _e( '<strong class="utPress-row-title">Video URL:</strong><br>Enter the full URL of a video that you would like embeded. If no video is selected the featured image will be shown instead. <br> The URL should start with https://youtu.be/ or https://vimeo.com/ <strong>(optional)</strong>', 'utPress-textdomain' )?></span> 
+        <span for="ut_featured_video_url"><?php _e( '<strong class="utPress-row-title">Video URL:</strong><br>Enter the full URL of a video that you would like embedded. If no video is selected the featured image will be shown instead. To add a video to the Hero Blur banner type you must have a featured image and the video url.<br> The URL should start with https://youtu.be/ or https://vimeo.com/ <strong>(optional)</strong>', 'utPress-textdomain' )?></span> 
         <br>
         <input type="text" size=65 name="ut_featured_video_url" value="<?php if ( isset ( $utPress_full_width_stored_meta['ut_featured_video_url'] ) ) echo $utPress_full_width_stored_meta['ut_featured_video_url'][0]; ?>" />  
     </p>
