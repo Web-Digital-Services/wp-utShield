@@ -138,6 +138,11 @@ function utPress_full_width_callback( $post ) {
                 <input type="text" size=65 name="banner-classes" value="<?php if ( isset ( $utPress_full_width_stored_meta['banner-classes'] ) ) echo $utPress_full_width_stored_meta['banner-classes'][0]; ?>" />
             </label> 
         </p>
+        <p>
+            <label for="align-center-middle" class="utPress-row-title"><?php _e( '<strong>Check this box to add the align-center-middle class to the grid-x div</strong><br>', 'wp-shield' )?>
+                <input type="checkbox" name="align-center-middle" id="align-center-middle" value="yes" <?php if ( isset ( $utPress_full_width_stored_meta['align-center-middle'] ) ) checked( $utPress_full_width_stored_meta['align-center-middle'][0], 'yes');?> /><br>
+            </label>
+        </p>
     <?php endif; ?>
     <?php
 }
@@ -192,6 +197,11 @@ function UTH_save_full_width_meta( $post_id ) {
         update_post_meta( $post_id, 'colorized', 'yes' );
     } else {
         update_post_meta( $post_id, 'colorized', 'no' );
+    }
+    if( isset( $_POST[ 'align-center-middle' ] ) ) {
+        update_post_meta( $post_id, 'align-center-middle', 'yes' );
+    } else {
+        update_post_meta( $post_id, 'align-center-middle', 'no' );
     }
     //Save Callout Alignment
 	if ( isset( $_REQUEST['titlebox_alignment_selection'] ) ) {
