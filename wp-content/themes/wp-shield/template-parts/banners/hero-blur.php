@@ -29,6 +29,7 @@
 	$extra_roomy_status = get_post_meta( get_the_ID(), 'extraroomy', true );
 	$video_url = get_post_meta( get_the_ID(), 'ut_featured_video_url', true );
 	$video_title = get_post_meta( get_the_ID(), 'ut_featured_video_title', true );
+	$formatted_text = get_post_meta( get_the_ID(), 'wpcf-featured-text-paragraphs', false );
 
 	if ($title_box_alignment == 'right-aligned'){
 		$text_box_order = 'small-order-2 medium-order-2 large-order-2';
@@ -51,11 +52,17 @@
 		$column_left_css = 'cell large-8 medium-8 small-12';
 		$column_right_css = 'cell large-4 medium-4 small-12';
 	}
+	$align_center = get_post_meta( get_the_ID(), 'align-center-middle', true );
+	if ( $align_center == 'yes'){
+		$align_center_middle = 'align-center-middle';
+	}else{
+		$align_center_middle = '';
+	}
 ?>
 	<section class="hero bleed blur img-fill full <?php echo $banner_extra_classes; ?>">
 		<img alt="<?php echo $imgAlt; ?>" src="<?php echo $thumb['0'];?>">
 		<div class="grid-container">
-			<div class="grid-x grid-margin-x">
+			<div class="grid-x grid-margin-x <?php echo $align_center_middle; ?>">
 				<div class="<?php echo $column_left_css; ?> <?php echo $text_box_order; ?>">
 					<?php 
 						if( !empty( $banner_eyebrow ) ) {
@@ -70,6 +77,13 @@
 						if( !empty( $banner_byline ) ) {
 							echo '<p>' . $banner_byline, '</p>';
 						}
+						//Print multivalue text field in paragraph tags
+						$i = 0;
+						while($i < count($formatted_text))
+							{
+								echo '<p>' . $formatted_text[$i] . '</p>';
+								$i++;
+							}
 						if( !empty( $banner_button_text ) ) {
 							echo '<div class="button-group">';
 							if( !empty( $banner_button_text ) ) { echo '<p><a class="button" href="' . $banner_button_url, '">' . $banner_button_text, '</a></p>'; }
