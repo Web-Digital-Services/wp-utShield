@@ -1,0 +1,37 @@
+name: Deploy to wp.uthscsa.edu (stage)
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x, 20.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install project dependencies
+        run: composer install --no-dev --optimize-autoloader
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: npm
+        run: |
+          npm install
+          npm run build
+          rm -r node_modules
+        working-directory: wp-content/themes/wp-shield
+      - name: SSH Deploy to WPEngine
+        uses: bowiedev/github-action-wpengine-ssh-deploy@master
+        env:
+          WPE_ENV_NAME: stageuthealth
+          WPE_SSHG_KEY_PUBLIC: ${{ secrets.DEPLOYMENT_SSH_KEY_PUBLIC }}
+          WPE_SSHG_KEY_PRIVATE: ${{ secrets.DEPLOYMENT_SSH_KEY_PRIVATE }}
+          TPO_SRC_PATH: ""
+          TPO_PATH: ""
