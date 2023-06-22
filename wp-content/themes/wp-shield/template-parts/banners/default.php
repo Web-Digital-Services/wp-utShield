@@ -12,6 +12,8 @@
 ?>	
 <?php 
 	$banner_extra_classes = get_post_meta( get_the_ID(), 'banner-extra-classes', true ); 
+	$spacing_classes = get_post_meta( get_the_ID(), 'banner-classes', true ); 
+	$gridx_classes = get_post_meta( get_the_ID(), 'banner-gridx-classes', true ); 
 	$banner_button_text = get_post_meta( get_the_ID(), 'banner-button-text', true ); 
 	$banner_button_url = get_post_meta( get_the_ID(), 'banner-button-url', true ); 
 	$banner_button_text2 = get_post_meta( get_the_ID(), 'banner-button-text2', true ); 
@@ -43,8 +45,8 @@
 	}
 ?>
 	<section class="hero bleed <?php echo $banner_extra_classes; ?>">
-		<div class="grid-container">
-			<div class="grid-x grid-margin-x">
+		<div class="grid-container<?php echo ' ' . $spacing_classes;?>">
+			<div class="grid-x grid-margin-x<?php echo ' ' . $gridx_classes;?>">
 				<div class="<?php echo $column_left_css; ?> <?php echo $text_box_order; ?>">
 					<?php 
 						if( !empty( $banner_eyebrow ) ) {

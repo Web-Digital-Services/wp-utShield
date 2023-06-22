@@ -12,6 +12,8 @@
 ?>
 <?php /** Localize Metafield Values as Variables **/
 	$banner_extra_classes = get_post_meta( get_the_ID(), 'banner-extra-classes', true ); 
+	$spacing_classes = get_post_meta( get_the_ID(), 'banner-classes', true ); 
+	$gridx_classes = get_post_meta( get_the_ID(), 'banner-gridx-classes', true ); 
 	$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
 	$imgID  = get_post_thumbnail_id($post->ID); 
 	$imgAlt = get_post_meta($imgID,'_wp_attachment_image_alt', true);
@@ -44,8 +46,8 @@
 ?>
 <header class="hero bleed img-fill full <?php echo $banner_extra_classes; ?> <?php if ($extra_roomy_status == 'yes'){ echo 'extra-roomy'; }else{ echo '';} ?>">
 	<img alt="<?php echo $imgAlt; ?>" src="<?php echo $thumb['0'];?>">
-	<div class="grid-container">
-		<div class="grid-x margin-x">
+	<div class="grid-container<?php echo ' ' . $spacing_classes;?>">
+		<div class="grid-x margin-x<?php echo ' ' . $gridx_classes;?>">
       		<?php 
       			if (empty($banner_title) && empty($banner_byline) && empty($banner_button_text)){
 					echo '<div class="cell large-5 medium-6 small-12 ' . $alignment_status, '"><div class="callout ' . $callout_color . '">';

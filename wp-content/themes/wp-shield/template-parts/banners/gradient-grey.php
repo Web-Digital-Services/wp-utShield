@@ -13,6 +13,8 @@
 <?php 
 	/** Localize Metafield Values as Variables **/
 	$banner_extra_classes = get_post_meta( get_the_ID(), 'banner-extra-classes', true ); 
+	$spacing_classes = get_post_meta( get_the_ID(), 'banner-classes', true ); 
+	$gridx_classes = get_post_meta( get_the_ID(), 'banner-gridx-classes', true ); 
 	$banner_design = get_post_meta( $post->ID, 'banner_design_key', true );
 	$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
 	$imgID  = get_post_thumbnail_id($post->ID); 
@@ -40,8 +42,8 @@
 ?>
 <header class="hero gradient grey bleed <?php echo $banner_extra_classes; ?> img-fill<?php echo $text_position; ?>">
 	<img alt="<?php echo $imgAlt; ?>" src="<?php echo $thumb['0'];?>">
-	<div class="grid-container">
-		<div class="grid-x margin-x">
+	<div class="grid-container<?php echo ' ' . $spacing_classes;?>">
+		<div class="grid-x margin-x<?php echo ' ' . $gridx_classes;?>">
       		<?php  
       			if (empty($banner_title) && empty($banner_byline) && empty($banner_button_text)){
 					echo '<div class="cell large-5 medium-6 small-12 ' . $alignment_status, '"><div class="callout grey">';
