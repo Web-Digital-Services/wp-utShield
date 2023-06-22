@@ -149,6 +149,8 @@
 			get_template_part( 'template-parts/banners/hero' );
 		}elseif($banner_design == 'video-banner'){
 			get_template_part( 'template-parts/banners/video' );
+		}elseif($banner_design == 'secondary-logo'){
+			get_template_part( 'template-parts/banners/secondary-logo' );
 		}elseif($banner_design == 'gradient-banner'){
 			get_template_part( 'template-parts/banners/gradient' );
 		}elseif($banner_design == 'hero-blur'){

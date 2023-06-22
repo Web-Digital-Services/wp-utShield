@@ -12,6 +12,8 @@
 ?>	
 <?php /** Localize Metafield Values as Variables **/
 	$banner_extra_classes = get_post_meta( get_the_ID(), 'banner-extra-classes', true ); 
+	$spacing_classes = get_post_meta( get_the_ID(), 'banner-classes', true ); 
+	$gridx_classes = get_post_meta( get_the_ID(), 'banner-gridx-classes', true ); 
 	$banner_design = get_post_meta( $post->ID, 'banner_design_key', true );
 	$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
 	$imgID  = get_post_thumbnail_id($post->ID); 
@@ -23,7 +25,6 @@
 	$banner_button_url = get_post_meta( get_the_ID(), 'banner-button-url', true ); 
 	$banner_button_text2 = get_post_meta( get_the_ID(), 'banner-button-text2', true ); 
 	$banner_button_url2 = get_post_meta( get_the_ID(), 'banner-button-url2', true ); 
-	$spacing_classes = get_post_meta( get_the_ID(), 'banner-classes', true ); 
 	$title_box_alignment = get_post_meta( $post->ID, 'title_box_key', true ); 
 	$callout_color = get_post_meta( $post->ID, 'callout_color_key', true ); 
 	$extra_roomy_status = get_post_meta( get_the_ID(), 'extraroomy', true );
@@ -61,8 +62,8 @@
 ?>
 	<section class="hero bleed blur img-fill full <?php echo $banner_extra_classes; ?>">
 		<img alt="<?php echo $imgAlt; ?>" src="<?php echo $thumb['0'];?>">
-		<div class="grid-container">
-			<div class="grid-x grid-margin-x <?php echo $align_center_middle; ?>">
+		<div class="grid-container<?php echo ' ' . $spacing_classes;?>">
+			<div class="grid-x grid-margin-x <?php echo $align_center_middle; ?><?php echo ' ' . $gridx_classes;?>">
 				<div class="<?php echo $column_left_css; ?> <?php echo $text_box_order; ?>">
 					<?php 
 						if( !empty( $banner_eyebrow ) ) {
