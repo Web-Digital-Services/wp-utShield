@@ -20,7 +20,7 @@
 	$banner_button_url2 = get_post_meta( get_the_ID(), 'banner-button-url2', true ); 
 	$banner_eyebrow = get_post_meta( get_the_ID(), 'banner-eyebrow', true);
 	$banner_title = get_post_meta( get_the_ID(), 'banner-title', true);
-	$banner_byline = get_post_meta( get_the_ID(), 'banner-byline', true );
+	$banner_subhead = get_post_meta( get_the_ID(), 'banner-subhead', true );
 	$banner_byline = get_post_meta( get_the_ID(), 'banner-byline', true );
 	$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
 	$imgID  = get_post_thumbnail_id($post->ID); 
@@ -57,6 +57,9 @@
 						}else{
 							the_title('<h1 class="close">', '</h1>');
 						}
+						if( !empty( $banner_subhead ) ) {
+							echo '<p class="subheader">' . $banner_subhead, '</p>';
+						} 
 						// Checks and displays the retrieved value
 						if( !empty( $banner_byline ) ) {
 							echo '<p class="banner-text">' . $banner_byline, '</p>';

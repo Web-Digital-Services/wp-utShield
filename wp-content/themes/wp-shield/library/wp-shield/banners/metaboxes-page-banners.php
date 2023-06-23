@@ -56,6 +56,11 @@ function utPress_full_width_callback( $post ) {
         </label> 
     </p>
     <p>
+        <label for="banner-subhead" class="utPress-row-title close"><?php _e( '<strong>Banner subhead (optional)</strong>', 'wp-shield' )?><br>
+            <input type="text" size=100 name="banner-subhead" value="<?php if ( isset ( $utPress_full_width_stored_meta['banner-subhead'] ) ) echo $utPress_full_width_stored_meta['banner-subhead'][0]; ?>" />
+        </label> 
+    </p>
+    <p>
         <label for="banner-byline" class="utPress-row-title"><?php _e( '<strong>Featured Text</strong>', 'wp-shield' )?></label><br>
         <textarea cols="100" rows="2" name="banner-byline" id="banner-byline"><?php if ( isset ( $utPress_full_width_stored_meta['banner-byline'] ) ) echo $utPress_full_width_stored_meta['banner-byline'][0]; ?></textarea>
     </p>
@@ -176,6 +181,9 @@ function UTH_save_full_width_meta( $post_id ) {
     //Save Text Fields
     if ( isset( $_POST[ 'banner-eyebrow' ] ) ) {
         update_post_meta( $post_id, 'banner-eyebrow', sanitize_text_field( $_POST[ 'banner-eyebrow' ] ) );
+    }
+    if ( isset( $_POST[ 'banner-subhead' ] ) ) {
+        update_post_meta( $post_id, 'banner-subhead', sanitize_text_field( $_POST[ 'banner-subhead' ] ) );
     }
     if ( isset( $_POST[ 'banner-views' ] ) ) {
         update_post_meta( $post_id, 'banner-views', sanitize_text_field( $_POST[ 'banner-views' ] ) );

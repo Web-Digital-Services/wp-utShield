@@ -22,7 +22,7 @@
 	$banner_eyebrow = get_post_meta( get_the_ID(), 'banner-eyebrow', true);
 	$banner_title = get_post_meta( get_the_ID(), 'banner-title', true);
 	$banner_byline = get_post_meta( get_the_ID(), 'banner-byline', true );
-	$banner_byline = get_post_meta( get_the_ID(), 'banner-byline', true );
+	$banner_subhead = get_post_meta( get_the_ID(), 'banner-subhead', true );
 	$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
 	$imgID  = get_post_thumbnail_id($post->ID); 
 	$imgAlt = get_post_meta($imgID,'_wp_attachment_image_alt', true);
@@ -60,6 +60,9 @@
 						if( !empty( $banner_title ) ) {
 							echo '<h1 class="close">' . $banner_title, '</h1>';
 						}
+						if( !empty( $banner_subhead ) ) {
+							echo '<p class="subheader">' . $banner_subhead, '</p>';
+						}  
 						// Checks and displays the retrieved value
 						if( !empty( $banner_byline ) ) {
 							echo '<p class="banner-text">' . $banner_byline, '</p>';

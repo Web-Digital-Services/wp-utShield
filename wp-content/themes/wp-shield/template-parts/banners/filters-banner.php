@@ -22,7 +22,7 @@
 	$banner_eyebrow = get_post_meta( get_the_ID(), 'banner-eyebrow', true);
 	$banner_title = get_post_meta( get_the_ID(), 'banner-title', true);
 	$banner_byline = get_post_meta( get_the_ID(), 'banner-byline', true );
-	$banner_byline = get_post_meta( get_the_ID(), 'banner-byline', true );
+	$banner_subhead = get_post_meta( get_the_ID(), 'banner-subhead', true );
 
 	$grid_layout = get_post_meta( $post->ID, 'banner_grid_layout_key', true );
 	if (empty($grid_layout) || ($grid_layout == '84')){
@@ -50,6 +50,9 @@
 						}else{
 							the_title('<h1>', '</h1>');
 						} 
+						if( !empty( $banner_subhead ) ) {
+							echo '<p class="subheader">' . $banner_subhead, '</p>';
+						}   
 						// Checks and displays the retrieved value
 						if( !empty( $banner_byline ) ) {
 							echo '<p class="banner-text">' . $banner_byline, '</p>';

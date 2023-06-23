@@ -22,6 +22,7 @@
 	$banner_byline = get_post_meta( get_the_ID(), 'banner-byline', true );
 	$banner_eyebrow = get_post_meta( get_the_ID(), 'banner-eyebrow', true);
 	$banner_title = get_post_meta( get_the_ID(), 'banner-title', true );
+	$banner_subhead = get_post_meta( get_the_ID(), 'banner-subhead', true);
 	$banner_button_text = get_post_meta( get_the_ID(), 'banner-button-text', true ); 
 	$banner_button_url = get_post_meta( get_the_ID(), 'banner-button-url', true ); 
 	$banner_button_text2 = get_post_meta( get_the_ID(), 'banner-button-text2', true ); 
@@ -58,6 +59,9 @@
 							echo '<p class="eyebrow">' . $banner_eyebrow, '</p>';
 					} 
 					echo '<h1>' . $banner_title, '</h1>';
+					if( !empty( $banner_subhead ) ) {
+							echo '<p class="subheader" style="color:#171717 !important;">' . $banner_subhead, '</p>';
+					} 
 					echo '<p>'. $banner_byline, '</p>';
 					//Callback and Display the Featured Buttons
 					echo '<div class="button-group">';
