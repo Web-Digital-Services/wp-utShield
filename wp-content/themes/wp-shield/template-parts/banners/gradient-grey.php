@@ -21,6 +21,7 @@
 	$imgAlt = get_post_meta($imgID,'_wp_attachment_image_alt', true);
 	$banner_byline = get_post_meta( get_the_ID(), 'banner-byline', true );
 	$banner_eyebrow = get_post_meta( get_the_ID(), 'banner-eyebrow', true);
+	$banner_subhead = get_post_meta( get_the_ID(), 'banner-subhead', true);
 	$banner_title = get_post_meta( get_the_ID(), 'banner-title', true );
 	$banner_button_text = get_post_meta( get_the_ID(), 'banner-button-text', true ); 
 	$banner_button_url = get_post_meta( get_the_ID(), 'banner-button-url', true ); 
@@ -51,6 +52,9 @@
 							echo '<p class="eyebrow">' . $banner_eyebrow, '</p>';
 					} 
 					echo the_title('<h1>','</h1>');
+					if( !empty( $banner_subhead ) ) {
+							echo '<p class="subheader">' . $banner_subhead, '</p>';
+					} 
 					echo '</div></div>';
 				}
       			//Load if the banner title, byline or button text has content. Only 1 is needed to qualify for the else if statement. 
@@ -61,6 +65,9 @@
 							echo '<p class="eyebrow">' . $banner_eyebrow, '</p>';
 					} 
 					echo '<h1>' . $banner_title, '</h1>';
+					if( !empty( $banner_subhead ) ) {
+							echo '<p class="subheader">' . $banner_subhead, '</p>';
+					} 
 					echo '<p>'. $banner_byline, '</p>';
 					//Callback and Display the Featured Buttons
 					echo '<div class="button-group">';

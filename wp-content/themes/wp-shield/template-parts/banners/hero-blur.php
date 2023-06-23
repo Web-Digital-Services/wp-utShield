@@ -21,6 +21,7 @@
 	$banner_byline = get_post_meta( get_the_ID(), 'banner-byline', true );
 	$banner_eyebrow = get_post_meta( get_the_ID(), 'banner-eyebrow', true);
 	$banner_title = get_post_meta( get_the_ID(), 'banner-title', true );
+	$banner_subhead = get_post_meta( get_the_ID(), 'banner-subhead', true);
 	$banner_button_text = get_post_meta( get_the_ID(), 'banner-button-text', true ); 
 	$banner_button_url = get_post_meta( get_the_ID(), 'banner-button-url', true ); 
 	$banner_button_text2 = get_post_meta( get_the_ID(), 'banner-button-text2', true ); 
@@ -74,6 +75,9 @@
 						}else{
 							the_title('<h1 class="close">', '</h1>');
 						}
+						if( !empty( $banner_subhead ) ) {
+							echo '<p class="subheader" style="color:inherit;">' . $banner_subhead, '</p>';
+						} 
 						// Checks and displays the retrieved value
 						if( !empty( $banner_byline ) ) {
 							echo '<p>' . $banner_byline, '</p>';
