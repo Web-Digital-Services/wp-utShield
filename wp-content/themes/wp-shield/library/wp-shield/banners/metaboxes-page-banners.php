@@ -105,7 +105,7 @@ function utPress_full_width_callback( $post ) {
         </p>
             <br>
     <span style="font-size:1.5em;">Secondary Logo:</span><br>    <p>
-        <span for="ut-secondary-logo"><?php _e( '<strong class="utPress-row-title">Image URL:</strong><br>Enter the full URL of a secondary logo.f', 'utPress-textdomain' )?></span> 
+        <span for="ut-secondary-logo"><?php _e( '<strong class="utPress-row-title">Image URL:</strong><br>Enter the full URL of a secondary logo.', 'utPress-textdomain' )?></span> 
         <br>
         <input type="text" size=65 name="ut-secondary-logo" value="<?php if ( isset ( $utPress_full_width_stored_meta['ut-secondary-logo'] ) ) echo $utPress_full_width_stored_meta['ut-secondary-logo'][0]; ?>" />
     </p>

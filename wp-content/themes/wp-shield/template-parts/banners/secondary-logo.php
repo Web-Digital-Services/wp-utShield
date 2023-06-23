@@ -50,7 +50,7 @@
 		<img alt="<?php echo $imgAlt; ?>" src="<?php echo $thumb['0'];?>">
 		<div class="grid-container<?php echo ' ' . $spacing_classes;?>">
 			<div class="grid-x grid-margin-x<?php echo ' ' . $gridx_classes;?>">
-				<div class="<?php echo $column_left_css; ?> <?php echo $text_box_order; ?>">
+				<div class="<?php echo $column_right_css; ?> <?php echo $text_box_order; ?>">
 					<div class="callout <?php echo $callout_color; ?>">
 					<img alt="<?php the_title(); ?>" src="<?php echo $secondary_logo;?>">
 					<?php 
