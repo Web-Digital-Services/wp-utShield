@@ -31,15 +31,14 @@ function utPress_full_width_callback( $post ) {
         <?php $banner_design = get_post_meta( $post->ID, 'banner_design_key', true ); ?>
             <label for="banner_design"><?php _e( "<strong>Banner Design:</strong>", 'wp-shield' ); ?>
                 <br />  
-                <input type="radio" name="banner_design" checked="checked" value="default-bleed" <?php checked( $banner_design, 'default-bleed' ); ?>>Default (Beige)<br>
+                <input type="radio" name="banner_design" checked="checked" value="default-bleed" <?php checked( $banner_design, 'default-bleed' ); ?>>Default (Beige) (Can use a video with this banner type.)<br>
                 <input type="radio" name="banner_design" value="basic-page" <?php checked( $banner_design, 'basic-page' ); ?>>Basic Page (Child)<br>
                 <input type="radio" name="banner_design" value="hero-banner" <?php checked( $banner_design, 'hero-banner' ); ?>>Hero Banner<br>
-                <input type="radio" name="banner_design" value="hero-blur" <?php checked( $banner_design, 'hero-blur' ); ?>>Hero Blur<br>
+                <input type="radio" name="banner_design" value="hero-blur" <?php checked( $banner_design, 'hero-blur' ); ?>>Hero Blur (To add a video to the Hero Blur banner type, you must have a featured image and the video url.)<br>
                 <input type="radio" name="banner_design" value="super-hero-banner" <?php checked( $banner_design, 'super-hero-banner' ); ?>>Super Hero Banner<br>
                 <input type="radio" name="banner_design" value="gradient-banner" <?php checked( $banner_design, 'gradient-banner' ); ?>>Gradient Banner<br>
                 <input type="radio" name="banner_design" value="grey-gradient-banner" <?php checked( $banner_design, 'grey-gradient-banner' ); ?>>Grey Gradient Banner<br>
                 <input type="radio" name="banner_design" value="secondary-logo" <?php checked( $banner_design, 'secondary-logo' ); ?>>Secondary Logo<br>
-                <input type="radio" name="banner_design" value="video-banner" <?php checked( $banner_design, 'video-banner' ); ?>>Video Banner<br>
                 <input type="radio" name="banner_design" value="filters-banner" <?php checked( $banner_design, 'filters-banner' ); ?>>Views Filters (must enter view shortcode below)<br>
         </label>
     </p>
@@ -113,18 +112,6 @@ function utPress_full_width_callback( $post ) {
         <span for="ut-secondary-logo"><?php _e( '<strong class="utPress-row-title">Image URL:</strong><br>Enter the full URL of a secondary logo.', 'utPress-textdomain' )?></span> 
         <br>
         <input type="text" size=65 name="ut-secondary-logo" value="<?php if ( isset ( $utPress_full_width_stored_meta['ut-secondary-logo'] ) ) echo $utPress_full_width_stored_meta['ut-secondary-logo'][0]; ?>" />
-    </p>
-
-    <span style="font-size:1.5em;">Video Banner:</span><br>
-    <p>
-        <span for="ut_featured_video_url"><?php _e( '<strong class="utPress-row-title">Video URL:</strong><br>Enter the full URL of a video that you would like embedded. If no video is selected the featured image will be shown instead. To add a video to the Hero Blur banner type you must have a featured image and the video url.<br> The URL should start with https://youtu.be/ or https://vimeo.com/ <strong>(optional)</strong>', 'utPress-textdomain' )?></span> 
-        <br>
-        <input type="text" size=65 name="ut_featured_video_url" value="<?php if ( isset ( $utPress_full_width_stored_meta['ut_featured_video_url'] ) ) echo $utPress_full_width_stored_meta['ut_featured_video_url'][0]; ?>" />  
-    </p>
-    <p>
-        <span for="ut_featured_video_title"><?php _e( '<strong class="utPress-row-title">Video Title:</strong>', 'utPress-textdomain' )?></span> 
-        <br>
-        <input type="text" size=65 name="ut_featured_video_title" value="<?php if ( isset ( $utPress_full_width_stored_meta['ut_featured_video_title'] ) ) echo $utPress_full_width_stored_meta['ut_featured_video_title'][0]; ?>" />  
     </p>
     <span style="font-size:1.5em;">Admin Customizations:</span><br>
             <p>
@@ -248,12 +235,6 @@ function UTH_save_full_width_meta( $post_id ) {
     //Media
     if ( isset( $_POST[ 'ut-secondary-logo' ] ) ) {
         update_post_meta( $post_id, 'ut-secondary-logo', sanitize_text_field( $_POST[ 'ut-secondary-logo' ] ) );
-    }
-    if ( isset( $_POST[ 'ut_featured_video_url' ] ) ) {
-        update_post_meta( $post_id, 'ut_featured_video_url', sanitize_text_field( $_POST[ 'ut_featured_video_url' ] ) );
-    }
-    if ( isset( $_POST[ 'ut_featured_video_title' ] ) ) {
-        update_post_meta( $post_id, 'ut_featured_video_title', sanitize_text_field( $_POST[ 'ut_featured_video_title' ] ) );
     }
     if ( isset( $_POST[ 'banner-classes' ] ) ) {
         update_post_meta( $post_id, 'banner-classes', sanitize_text_field( $_POST[ 'banner-classes' ] ) );
