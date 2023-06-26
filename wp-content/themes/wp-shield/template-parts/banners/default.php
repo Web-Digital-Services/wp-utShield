@@ -26,6 +26,8 @@
 	$imgID  = get_post_thumbnail_id($post->ID); 
 	$imgAlt = get_post_meta($imgID,'_wp_attachment_image_alt', true);
 	$title_box_alignment = get_post_meta( $post->ID, 'title_box_key', true ); 
+	$video_url = get_post_meta( get_the_ID(), 'ut_featured_video_url', true );
+	$video_title = get_post_meta( get_the_ID(), 'ut_featured_video_title', true );
 
 	if ($title_box_alignment == 'right-aligned'){
 		$text_box_order = 'small-order-2 medium-order-2 large-order-2';
@@ -74,7 +76,21 @@
 				</div>
 				<?php if( !empty( $thumb ) ): ?>
 				<div class="<?php echo $column_right_css; ?>">        
-					<img alt="<?php echo $imgAlt; ?>" src="<?php echo $thumb['0'];?>">
+					<?php 
+						if( !empty( $video_url )) {
+							if( !empty( $video_title ) ) {
+								echo '<div class="responsive-embed">
+	                        	<iframe width="560" height="315" src="' . $video_url . '" title="'. $video_title . '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+	                      		</div>';
+							}else{
+								echo '<div class="responsive-embed">
+	                        <iframe width="560" height="315" src="' . $video_url . '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+	                      </div>';
+							}
+						}else{
+						echo '<img alt="' . $imgAlt . '" src="' . $thumb['0'] . '">';
+						}
+					?>
 				</div>
 				<?php endif ?>
 			</div>
