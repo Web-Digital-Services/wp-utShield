@@ -74,7 +74,7 @@
 						} 
 					?>
 				</div>
-				<?php if( !empty( $thumb ) ): ?>
+				<?php if( !empty( $thumb ) || !empty( $video_url ) ): ?>
 				<div class="<?php echo $column_right_css; ?>">        
 					<?php 
 						if( !empty( $video_url )) {
