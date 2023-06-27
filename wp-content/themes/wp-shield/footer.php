@@ -14,6 +14,10 @@
     $uth_footer_email = get_theme_mod( 'uth_footer_email' );
     $uth_footer_email_title = get_theme_mod( 'uth_footer_email_title' );
     $uth_footer_map = get_theme_mod( 'uth_footer_map' );
+    $uth_footer_hide_address = get_theme_mod( 'uth_hide_address', '' );
+    $uth_footer_logo = get_theme_mod( 'uth_custom_logo' );
+    $footer_logo_id = attachment_url_to_postid($uth_footer_logo);
+    $image1_alt = get_post_meta( $footer_logo_id, '_wp_attachment_image_alt', true );
     
     $site_title = get_bloginfo ( 'description' );
 
@@ -67,17 +71,18 @@
                         }
                     ?>    
                     <div class="contact">
-                        <?php if (empty($uth_footer_map)){
+                        <?php if ($uth_footer_hide_address == '') {
+                         if (empty($uth_footer_map)){
                                 $map_url = 'https://www.uthscsa.edu/university/campus-maps';
                             }else{
                                 $map_url = $uth_footer_map;
                             }
-                        ?>
-                        <a href="<?php echo $map_url; ?>" class="fa-stack">
+                        
+                        echo '<a href="' . $map_url . '" class="fa-stack">
                             <i class="fas fa-circle fa-stack-2x"></i>
                             <i class="fas fa-map-marker-alt fa-stack-1x fa-inverse"></i>
-                        </a> 
-                        <?php 
+                        </a>'; 
+                         
                         if (empty($uth_footer_address)){
                             echo '<address>7703 Floyd Curl Drive<br>San Antonio, TX 78229<br>
                             <a href="' . $map_url . '" class="arrow">Map and directions</a>
@@ -87,8 +92,15 @@
                             <a href="' . $map_url . '" class="arrow">Map and directions</a>
                         </address>';
                         }
+                    }
                         ?>
                     </div>
+                    <?php if (!empty($uth_footer_logo)) {
+                    echo '<div class="contact">
+                        <img src="' . $uth_footer_logo . '" alt="' . $image1_alt . '"></div>';
+                    
+                    }
+                    ?>
                     <?php if(!empty($uth_footer_email) and !empty($uth_footer_email_title)) {
                     echo '<div class="contact">
                         <a href="mailto:' . $uth_footer_email . '" class="fa-stack">
