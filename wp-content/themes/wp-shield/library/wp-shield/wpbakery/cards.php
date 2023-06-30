@@ -3,7 +3,6 @@
 Element Description: Card (Image Grouping)
 Documentation: http://www.wpelixir.com/how-to-create-new-element-in-visual-composer/
 */
- 
 // Element Class 
 class uth_card extends WPBakeryShortCode {
      
@@ -116,13 +115,14 @@ class uth_card extends WPBakeryShortCode {
                         'group' => __( 'Design Options', 'wp-shield' ),
                         'value'      => array(
                             'Default (White)'  => 'white',
-                            'Blue'  => ' color',
-                            'Light Beige (Interactive)'  => ' light-beige',
+                            'Blue'  => 'color',
+                            'Light Beige (Interactive)'  => 'light-beige',
                             'Beige'  => ' color beige',
-                            'Light Grey'  => ' color light-grey',
-                            'Dark Grey'  => ' color dark-grey',
-                            'Orange' => ' color orange',
-                            'Darken (Red)'  => ' color darken'
+                            'Light Grey'  => 'color light-grey',
+                            'Grey'  => 'color grey',
+                            'Dark Grey'  => 'color dark-grey',
+                            'Orange' => 'color orange',
+                            'Darken (Red)'  => 'color darken',
                         )
                     ),
                     array(
@@ -148,6 +148,14 @@ class uth_card extends WPBakeryShortCode {
                             'Heading 3'  => 'h3',
                             'Heading 4'  => 'h4',
                         )
+                    ),
+                    array(
+                        'type' => 'textfield',
+                        'heading' => __( 'Header classes', 'wp-shield' ),
+                        'param_name' => 'header_classes',
+                        'description' => esc_html__( 'Add class(es) to the heading element. ', 'wp-shield' ),
+                        'value' => __( '', 'wp-shield' ),
+                        'group' => __( 'Design Options', 'wp-shield' ), 
                     ),
                     array(
                         'type' => 'textfield',
@@ -179,7 +187,8 @@ class uth_card extends WPBakeryShortCode {
                     'heading_level' => '',
                     'image_size' => '',
                     'color_options' => '',
-                    'equilizer_id' => ''
+                    'equilizer_id' => '',
+                    'header_classes' => '',
                 ), 
                 $atts
             )
@@ -191,7 +200,10 @@ class uth_card extends WPBakeryShortCode {
         }else{
             $equilizer_id = '';
         }
-        
+        #Set header class variable
+        if (!empty($header_classes)) {
+            $class = ' class="' . $header_classes . '"';
+        }
         #If interactive, load link details, else, zero out the variables in use. 
         $use_link = false;
         $href = vc_build_link($url);
@@ -288,7 +300,7 @@ class uth_card extends WPBakeryShortCode {
                 '<div class="card ' . $card_style . ' ' . $color_options . ' ' . $border . '" ' . $equilizer_id . '>
                     <div class="card-section">
                         ' .  $cardImage . '
-                        <' . $heading_level . '>' . $card_title . '</' . $heading_level . '>
+                        <' . $heading_level . $class . '>' . $card_title . '</' . $heading_level . '>
                             <p>' . $card_copy_text . '</p>
                             ' . $load_primary_link . '
                     </div>
@@ -298,17 +310,17 @@ class uth_card extends WPBakeryShortCode {
                 <a class="card ' . $color_options . '" href="' . $a_ref . '" title="' . $a_title . '" rel="' . $a_rel . '" ' . $equilizer_id . '>
                     ' .  $cardImage . '
                     <div class="card-section">
-                        <' . $heading_level . '>' . $card_title .'</' . $heading_level . '>
+                        <' . $heading_level . $class . '>' . $card_title .'</' . $heading_level . '>
                         <p>' . $card_copy_text . '</p>
                     </div>                
                 </a>';
          }elseif($card_style=='nested'){
             $html ='
-            <div class="cell nested' . $color_options . '" ' . $equilizer_id . '>
+            <div class="cell nested flex-container ' . $color_options . '" ' . $equilizer_id . '>
                 <a class="card" href="' . $a_ref . '" title="' . $a_title . '" rel="' . $a_rel . '">
                     ' .  $cardImage . '
                     <div class="card-section">
-                        <' . $heading_level . '>' . $card_title .'</' . $heading_level . '>
+                        <' . $heading_level . $class . '>' . $card_title .'</' . $heading_level . '>
                     </div>                
                 </a>
             </div>';
@@ -322,7 +334,7 @@ class uth_card extends WPBakeryShortCode {
                                 ' .  $cardImage . '
                             </div>
                             <div class="small-5 cell">
-                                <' . $heading_level . '>' . $card_title .'</' . $heading_level . '>
+                                <' . $heading_level . $class . '>' . $card_title .'</' . $heading_level . '>
                             </div>
                         </div>
                     </a>
@@ -333,7 +345,7 @@ class uth_card extends WPBakeryShortCode {
                 '<a class="card postcard cell small-12 large-12" href="' . $a_ref . '" title="' . $a_title . '" rel="' . $a_rel . '" ' . $equilizer_id . '>
                     ' .  $cardImage . '
                     <div class="card-section">
-                        <' . $heading_level . '>' . $card_title .'</' . $heading_level . '>
+                        <' . $heading_level . $class . '>' . $card_title .'</' . $heading_level . '>
                         <p>' . $card_copy_text . '</p>
                     </div>
                 </a>';
