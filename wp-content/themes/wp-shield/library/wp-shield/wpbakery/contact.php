@@ -119,11 +119,34 @@ class uth_contact_us extends WPBakeryShortCode {
                         'admin_label' => false,
                         'weight' => 0,
                         'group' => 'Callout Content',
-                    ),                      
+                    ),    
+                    array(
+                    //Single Line Text Field Type
+                        'type' => 'textfield',
+                        'holder' => 'p',
+                        'class' => 'text-class',
+                        'heading' => __( 'Facebook Handle', 'wp-shield' ),
+                        'param_name' => 'facebook_contact',
+                        'value' => __( '', 'wp-shield' ),
+                        'admin_label' => false,
+                        'weight' => 0,
+                        'group' => 'Callout Content',
+                    ),   
+                    array(
+                    //Single Line Text Field Type
+                        'type' => 'textfield',
+                        'holder' => 'p',
+                        'class' => 'text-class',
+                        'heading' => __( 'Twitter Handle', 'wp-shield' ),
+                        'param_name' => 'twitter_contact',
+                        'value' => __( '', 'wp-shield' ),
+                        'admin_label' => false,
+                        'weight' => 0,
+                        'group' => 'Callout Content',
+                    ),                   
                 )
             )
-        );                                
-            
+        );                                     
     }
     // Element HTML
     public function vc_contact_us_html( $atts, $content ) {
@@ -138,6 +161,8 @@ class uth_contact_us extends WPBakeryShortCode {
                     'phone' => '',
                     'fax' => '',
                     'email' => '',
+                    'facebook_contact' => '',
+                    'twitter_contact' => '',
                     'load_global' => '',
 
                 ), 
@@ -214,6 +239,38 @@ class uth_contact_us extends WPBakeryShortCode {
             }else{
             $email = '';
         }
+        if (!empty($facebook_contact)){
+            $facebook_contact = '
+            <li>
+                <a>
+                    <span class="fa-li">
+                        <span class="fa-stack">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </span>
+                    <span class=""><a href="https://facebook.com/' . $facebook_contact . '">' . $facebook_contact . '</a></span>
+                </a>
+            </li>';
+            }else{
+            $facebook_contact = '';
+        }
+        if (!empty($twitter_contact)){
+            $twitter_contact = '
+            <li>
+                <a>
+                    <span class="fa-li">
+                        <span class="fa-stack">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </span>
+                    <span class=""><a href="https://twitter.com/' . $twitter_contact . '">@' . $twitter_contact . '</a></span>
+                </a>
+            </li>';
+            }else{
+            $twitter_contact = '';
+        }
         // RENDER THE HTML
         $html = '
             <div class="callout contact outline">
@@ -222,9 +279,11 @@ class uth_contact_us extends WPBakeryShortCode {
                 ' . $program_center . '
                 ' . $render_address . '
             <ul class="fa-ul">
-              ' . $phone . '
               ' . $email . '
+              ' . $phone . '
               ' . $fax . '
+              ' . $facebook_contact . '
+              ' . $twitter_contact . '
             </ul>
             </div>';
          
