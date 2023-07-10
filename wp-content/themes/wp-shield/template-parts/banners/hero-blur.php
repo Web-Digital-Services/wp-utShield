@@ -18,6 +18,7 @@
 	$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
 	$imgID  = get_post_thumbnail_id($post->ID); 
 	$imgAlt = get_post_meta($imgID,'_wp_attachment_image_alt', true);
+	$banner_featured_class = get_post_meta( get_the_ID(), 'featured-text-class', true );
 	$banner_byline = get_post_meta( get_the_ID(), 'banner-byline', true );
 	$banner_eyebrow = get_post_meta( get_the_ID(), 'banner-eyebrow', true);
 	$banner_title = get_post_meta( get_the_ID(), 'banner-title', true );
@@ -80,7 +81,10 @@
 						} 
 						// Checks and displays the retrieved value
 						if( !empty( $banner_byline ) ) {
-							echo '<p>' . $banner_byline, '</p>';
+							if ( !empty($banner_featured_class) ) {
+								$class = ' class="' . $banner_featured_class . '"';
+							} 
+							echo '<p' . $class . '>' . $banner_byline, '</p>';
 						}
 						//Print multivalue text field in paragraph tags
 						$i = 0;

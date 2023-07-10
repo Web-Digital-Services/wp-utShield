@@ -21,6 +21,7 @@
 	$banner_button_url2 = get_post_meta( get_the_ID(), 'banner-button-url2', true ); 
 	$banner_eyebrow = get_post_meta( get_the_ID(), 'banner-eyebrow', true);
 	$banner_title = get_post_meta( get_the_ID(), 'banner-title', true);
+	$banner_featured_class = get_post_meta( get_the_ID(), 'featured-text-class', true );
 	$banner_byline = get_post_meta( get_the_ID(), 'banner-byline', true );
 	$banner_subhead = get_post_meta( get_the_ID(), 'banner-subhead', true );
 	$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
@@ -62,10 +63,13 @@
 						}
 						if( !empty( $banner_subhead ) ) {
 							echo '<p class="subheader">' . $banner_subhead, '</p>';
-						}  
+						} 
+						if ( !empty($banner_featured_class) ) {
+							$class = ' ' . $banner_featured_class;
+						} 
 						// Checks and displays the retrieved value
 						if( !empty( $banner_byline ) ) {
-							echo '<p class="banner-text">' . $banner_byline, '</p>';
+							echo '<p class="banner-text' . $class . '">' . $banner_byline, '</p>';
 						}
 						if( !empty( $banner_button_text ) ) {
 							echo '<div class="button-group">';

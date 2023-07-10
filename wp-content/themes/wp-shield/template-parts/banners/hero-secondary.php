@@ -14,6 +14,7 @@
 	$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
 	$imgID  = get_post_thumbnail_id($post->ID); 
 	$imgAlt = get_post_meta($imgID,'_wp_attachment_image_alt', true);
+	$banner_featured_class = get_post_meta( get_the_ID(), 'featured-text-class', true );
 	$banner_byline = get_post_meta( get_the_ID(), 'banner-byline', true );
 	$banner_eyebrow = get_post_meta( get_the_ID(), 'banner-eyebrow', true);
 	$banner_title = get_post_meta( get_the_ID(), 'banner-title', true );
@@ -62,7 +63,10 @@
 							echo '<p class="eyebrow">' . $banner_eyebrow, '</p>';
 					} 
 						echo '<h1>' . $banner_title, '</h1>';
-						echo '<p style="color: white !important;" class="large-text white-text">' . $banner_byline, '</p>';
+						if ( !empty($banner_featured_class) ) {
+							$class = ' ' . $banner_featured_class;
+						}
+						echo '<p style="color: white !important;" class="large-text white-text'. $class . '">' . $banner_byline, '</p>';
 						echo '<div class="button-group">';
 						if( !empty( $banner_button_text ) ) { echo '<p><a class="button" href="' . $banner_button_url, '">' . $banner_button_text, '</a></p>';}
 						if( !empty( $banner_button_text2 ) ) { echo '<p><a class="button ghost" href="' . $banner_button_url2, '">' . $banner_button_text2, '</a></p>';

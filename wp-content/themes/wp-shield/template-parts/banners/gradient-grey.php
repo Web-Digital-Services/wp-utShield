@@ -19,6 +19,7 @@
 	$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
 	$imgID  = get_post_thumbnail_id($post->ID); 
 	$imgAlt = get_post_meta($imgID,'_wp_attachment_image_alt', true);
+	$banner_featured_class = get_post_meta( get_the_ID(), 'featured-text-class', true );
 	$banner_byline = get_post_meta( get_the_ID(), 'banner-byline', true );
 	$banner_eyebrow = get_post_meta( get_the_ID(), 'banner-eyebrow', true);
 	$banner_subhead = get_post_meta( get_the_ID(), 'banner-subhead', true);
@@ -59,6 +60,9 @@
 				}
       			//Load if the banner title, byline or button text has content. Only 1 is needed to qualify for the else if statement. 
 				elseif(!empty($banner_title) || !empty($banner_byline) || !empty($banner_button_text)){
+					if ( !empty($banner_featured_class) ) {
+						$class = ' class="' . $banner_featured_class . '"';
+					}
 					//If these boxes are not empty load the banner box and push left of right depending on status
 					echo '<div class="cell large-5 medium-6 small-12 ' . $alignment_status, '"><div class="callout grey">';
 					if( !empty( $banner_eyebrow ) ) {
@@ -68,7 +72,7 @@
 					if( !empty( $banner_subhead ) ) {
 							echo '<p class="subheader">' . $banner_subhead, '</p>';
 					} 
-					echo '<p>'. $banner_byline, '</p>';
+					echo '<p' . $class . '>'. $banner_byline, '</p>';
 					//Callback and Display the Featured Buttons
 					echo '<div class="button-group">';
 					if( !empty( $banner_button_text ) ) { echo '<p><a class="button" href="' . $banner_button_url, '">' . $banner_button_text, '</a></p>';}

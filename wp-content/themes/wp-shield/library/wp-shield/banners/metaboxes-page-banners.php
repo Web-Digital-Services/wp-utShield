@@ -59,6 +59,10 @@ function utPress_full_width_callback( $post ) {
             <input type="text" size=100 name="banner-subhead" value="<?php if ( isset ( $utPress_full_width_stored_meta['banner-subhead'] ) ) echo $utPress_full_width_stored_meta['banner-subhead'][0]; ?>" />
         </label> 
     </p>
+        <label for="featured-text-class" class="utPress-row-title"><?php _e( '<strong>Featured Text Class</strong><br> Optionally add a class to the featured text paragraph', 'wp-shield' )?><br>
+		    <input type="text" size=65 name="featured-text-class" value="<?php if ( isset ( $utPress_full_width_stored_meta['featured-text-class'] ) ) echo $utPress_full_width_stored_meta['featured-text-class'][0]; ?>" />
+        </label> 
+    </p>
     <p>
         <label for="banner-byline" class="utPress-row-title"><?php _e( '<strong>Featured Text</strong>', 'wp-shield' )?></label><br>
         <textarea cols="100" rows="2" name="banner-byline" id="banner-byline"><?php if ( isset ( $utPress_full_width_stored_meta['banner-byline'] ) ) echo $utPress_full_width_stored_meta['banner-byline'][0]; ?></textarea>
@@ -201,6 +205,9 @@ function UTH_save_full_width_meta( $post_id ) {
     }
     if ( isset( $_POST[ 'banner-gridx-classes' ] ) ) {
         update_post_meta( $post_id, 'banner-gridx-classes', sanitize_text_field( $_POST[ 'banner-gridx-classes' ] ) );
+    }
+    if ( isset( $_POST[ 'featured-text-class' ] ) ) {
+        update_post_meta( $post_id, 'featured-text-class', sanitize_text_field( $_POST[ 'featured-text-class' ] ) );
     }
     //Save Checkboxes
     if( isset( $_POST[ 'disable_alamo_footer' ] ) ) {
