@@ -24,6 +24,7 @@ require_once( 'library/wp-shield/customizer/footer.php' );
 require_once( 'library/wp-shield/banners/metaboxes-page-banners.php' );
 require_once( 'library/wp-shield/banners/display-featured-media.php' );
 require_once( 'library/wp-shield/news/external-news.php' );
+require_once( 'library/wp-shield/news/yoast-get-primary-term.php' );
 require_once( 'library/wp-shield/wpbakery/wp-importer.php' );
 require_once( 'library/wp-shield/shortcodes/social_media_footer.php' );
 require_once( 'library/wp-shield/physicians-loop/alter-physician-loop.php' );
