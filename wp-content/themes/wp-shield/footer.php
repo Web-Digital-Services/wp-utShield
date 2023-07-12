@@ -124,7 +124,15 @@
                 <div class="cell large-3 medium-4 small-10">
                 <?php 
                     if ( has_nav_menu( 'footer_menu' ) ) {
-                        wp_nav_menu( array( 'theme_location' => 'footer_menu', 'menu_class' => 'arrow-list' ) );
+                        //wp_nav_menu( array( 'theme_location' => 'footer_menu', 'menu_class' => 'arrow-list' ) );
+                        echo '<ul id="menu-footer-links" class="arrow-list">';
+                        $menuLocations = get_nav_menu_locations();
+                        $menuID = $menuLocations['footer_menu'];
+                        $items_in_menu = wp_get_nav_menu_items($menuID);
+                        foreach ($items_in_menu as $menu_item) {
+                            echo '<li><a class="arrow" href="' . $menu_item -> url . '">' . $menu_item -> title . '</a></li>';
+                        }
+                        echo '</ul>';
                     } else {
                         echo '<ul>
                         <li><a href="https://www.uthscsa.edu/university/about-us" class="arrow">About us</a></li>
