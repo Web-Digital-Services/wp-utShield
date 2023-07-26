@@ -4,6 +4,8 @@ register_nav_menus(array(
     'uth_primary_quick_links' => 'Primary Quick Links',
     'uth_secondary_quick_links' => 'Secondary Quick Links',
     'uth_third_quick_links' => 'Third Quick Links',
+    'uth_fourth_quick_links' => 'Fourth Quick Links',
+    'uth_fifth_quick_links' => 'Fifth Quick Links',
     'footer_menu' => 'Footer Menu',
     'subnav_1' => 'SubNav (1)',
     'subnav_2' => 'SubNav (2)',
@@ -68,6 +70,30 @@ if ( ! function_exists( 'uth_third_quick_links' ) ) {
             'menu'           => __( 'uth_third_quick_links', 'foundationpress' ),
             'menu_class'     => 'vertical menu wp_quicklinks',
             'theme_location' => 'uth_third_quick_links',
+            'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+            'fallback_cb'    => false,
+        ));
+    }
+}
+if ( ! function_exists( 'uth_fourth_quick_links' ) ) {
+    function uth_fourth_quick_links() {
+        wp_nav_menu( array(
+            'container'      => false, // Remove nav container
+            'menu'           => __( 'uth_fourth_quick_links', 'foundationpress' ),
+            'menu_class'     => 'vertical menu wp_quicklinks',
+            'theme_location' => 'uth_fourth_quick_links',
+            'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+            'fallback_cb'    => false,
+        ));
+    }
+}
+if ( ! function_exists( 'uth_fifth_quick_links' ) ) {
+    function uth_fifth_quick_links() {
+        wp_nav_menu( array(
+            'container'      => false, // Remove nav container
+            'menu'           => __( 'uth_fifth_quick_links', 'foundationpress' ),
+            'menu_class'     => 'vertical menu wp_quicklinks',
+            'theme_location' => 'uth_fifth_quick_links',
             'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
             'fallback_cb'    => false,
         ));

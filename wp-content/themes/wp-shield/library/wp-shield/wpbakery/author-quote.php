@@ -62,7 +62,17 @@ class uth_author_quote extends WPBakeryShortCode {
                         'value' => __( '', 'ut-health' ),
                         'admin_label' => false,
                         'weight' => 0,
-                    ),/*
+                    ),
+                    array(
+                        'type' => 'textfield',
+                        'heading' => __( 'Additional class', 'ut-health' ),
+                        'param_name' => 'addl_class',
+                        'description' => __( 'Add a class to the paragraph tag surrounding the quote text.', 'ut-health' ),
+                        'value' => __( '', 'ut-health' ),
+                        'admin_label' => false,
+                        'weight' => 0,
+                    ),
+                    /*
                     array(
                         'type' => 'vc_link',
                         'heading' => __( 'URL', 'ut-health' ),
@@ -151,6 +161,7 @@ class uth_author_quote extends WPBakeryShortCode {
                     //'image_url'   => 'image_url',
                     'author_name' => '',
                     'quote_text'   => '',
+                    'addl_class'   => '',
                     //'quote_size' => '',
                     //'color_options' => '',
                     //'equilizer_id' => '',
@@ -223,8 +234,11 @@ class uth_author_quote extends WPBakeryShortCode {
         //        break;        
         //}
         // RENDER THE HTML
+        if (!empty($addl_class)){
+            $class = ' class="' . $addl_class . '"';
+        }
         $html = '
-            <blockquote class="' . $quote_size . '"><p>' . $quote_text . ' 
+            <blockquote class="' . $quote_size . '"><p' . $class . '>' . $quote_text . ' 
                     </p><cite>' . $author_name . '</cite>
                     </blockquote>';
          

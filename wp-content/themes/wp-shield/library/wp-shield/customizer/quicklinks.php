@@ -40,6 +40,20 @@ function shield_quicklinks_view(){
             echo '<h4>' . $third_quicklinks_menu_object->name . '</h4>';
             uth_third_quick_links();
         }
+        if ( has_nav_menu( 'uth_fourth_quick_links' ) ) {
+            $fourth_menu_name = 'uth_fourth_quick_links';
+            $fourth_menu_id = $locations[ $fourth_menu_name ] ;
+            $fourth_quicklinks_menu_object = wp_get_nav_menu_object($fourth_menu_id);
+            echo '<h4>' . $fourth_quicklinks_menu_object->name . '</h4>';
+            uth_fourth_quick_links();
+        }
+        if ( has_nav_menu( 'uth_fifth_quick_links' ) ) {
+            $fifth_menu_name = 'uth_fifth_quick_links';
+            $fifth_menu_id = $locations[ $fifth_menu_name ] ;
+            $fifth_quicklinks_menu_object = wp_get_nav_menu_object($fifth_menu_id);
+            echo '<h4>' . $fifth_quicklinks_menu_object->name . '</h4>';
+            uth_fifth_quick_links();
+        }
         echo '</div>';
         echo '</div>';
         echo '</div>';
