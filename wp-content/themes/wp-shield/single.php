@@ -24,11 +24,12 @@ load_theme_design('header'); ?>
 				<?php //comments_template(); ?>
 				<?php if (is_singular('post')){
 						echo '<section class="less-roomy"><strong>Categories: </strong><br>';
+						$post_slug = get_site_url();
 						$id = get_the_ID();
 						$categories =  get_the_category($id);
 						echo '<ul class="tags">';
 						foreach  ($categories as $category) {
-						echo '<li><a href="/category/' . $category->slug . '">'. $category->cat_name .'</a></li>';
+						echo '<li><a href="' . $post_slug . '/category/' . $category->slug . '">'. $category->cat_name .'</a></li>';
 						}
 						echo '</ul>';
 						echo '</section>';
