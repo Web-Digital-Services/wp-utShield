@@ -19,6 +19,10 @@ load_theme_design('header'); ?>
 	<div class="main-grid">
 		<main class="main-content">
 			<?php while ( have_posts() ) : the_post(); ?>
+				<?php if ( function_exists('yoast_breadcrumb') ) { 
+					yoast_breadcrumb( '<p id="breadcrumbs">','</p>' ); 
+				}
+					?>
 				<?php get_template_part( 'template-parts/content', '' ); ?>
 				<?php //the_post_navigation(); ?>
 				<?php //comments_template(); ?>

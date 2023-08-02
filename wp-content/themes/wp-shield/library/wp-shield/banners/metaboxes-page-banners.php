@@ -96,6 +96,11 @@ function utPress_full_width_callback( $post ) {
             </label>
         </p>
         <p>
+            <label for="add_breadcrumbs" class="utPress-row-title"><?php _e( '<strong>Add breadcrumbs (Only available for Default (Beige) banner  </strong><br>', 'wp-shield' )?>
+                <input type="checkbox" name="add_breadcrumbs" id="add_breadcrumbs" value="yes" <?php if ( isset ( $utPress_full_width_stored_meta['add_breadcrumbs'] ) ) checked( $utPress_full_width_stored_meta['add_breadcrumbs'][0], 'yes');?> /><br>
+            </label>
+        </p>
+        <p>
             <?php $banner_grid_layout_meta = get_post_meta( $post->ID, 'banner_grid_layout_key', true ); //banner_grid_layout_key is a meta_key. ?>
             <label for="banner_grid_layout"><?php _e( "<strong>Banner Layout (Grid Sizes)</strong>", 'wp-shield' ); ?>
                 <br />  
@@ -214,6 +219,11 @@ function UTH_save_full_width_meta( $post_id ) {
         update_post_meta( $post_id, 'disable_alamo_footer', 'yes' );
     } else {
         update_post_meta( $post_id, 'disable_alamo_footer', 'no' );
+    }
+    if( isset( $_POST[ 'add_breadcrumbs' ] ) ) {
+        update_post_meta( $post_id, 'add_breadcrumbs', 'yes' );
+    } else {
+        update_post_meta( $post_id, 'add_breadcrumbs', 'no' );
     }
     if( isset( $_POST[ 'colorized' ] ) ) {
         update_post_meta( $post_id, 'colorized', 'yes' );
