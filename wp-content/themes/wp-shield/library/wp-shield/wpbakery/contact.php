@@ -226,7 +226,7 @@ class uth_contact_us extends WPBakeryShortCode {
         if (!empty($email)){
             $email = '
             <li>
-                <a>
+                <a href="mailto:' . $email . '">
                     <span class="fa-li">
                         <span class="fa-stack">
                         <i class="fas fa-circle fa-stack-2x"></i>
