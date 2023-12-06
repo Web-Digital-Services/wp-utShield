@@ -105,8 +105,15 @@ class uth_contact_card extends WPBakeryShortCode {
                         'admin_label' => false,
                         'weight' => 0,
                         'group' => 'Design Options',
+                    ),
+                    array(
+                        'type' => 'textfield',
+                        'heading' => __( 'Equilizer ID', 'wp-shield' ),
+                        'param_name' => 'equilizer_id',
+                        'description' => esc_html__( 'This feature will can be used to match the heights of elements in the row. ', 'wp-shield' ),
+                        'value' => __( '', 'wp-shield' ),
+                        'group' => 'Match Heights', 
                     )
-
                 )
             )
         );                                
@@ -125,7 +132,8 @@ class uth_contact_card extends WPBakeryShortCode {
                     'phone'   => '',
                     'email'   => '',
                     'address'   => '',
-                    'optional_css'   => ''
+                    'optional_css'   => '',
+                    'equilizer_id' => ''
                 ), 
                 $atts
             )
@@ -176,12 +184,18 @@ if (!empty($email)){
 }else{
     $email_display = '';
 }
+#Load Equilizer To Match Heights
+if (!empty($equilizer_id)){
+    $equilizer_id = 'data-equalizer-watch="' . $equilizer_id . '"';
+}else{
+    $equilizer_id = '';
+}
 
         $content = wpautop($content);
         
         // RENDER THE HTML
         if (!empty($img_url)){
-            $html = '<div class="cell card">
+            $html = '<div class="cell card"' . $equilizer_id . '>
             <div class="grid-x grid-padding-x grid-padding-y align-middle">
                 <div class="cell small-12 medium-4">'
                     . wp_get_attachment_image($img_url, 'width=100%', 'height=auto') .
@@ -198,7 +212,7 @@ if (!empty($email)){
             </div>
         </div>';
         }else{
-            $html = '<div class="cell card">
+            $html = '<div class="cell card"' . $equilizer_id . '>
             <div class="grid-x grid-padding-x grid-padding-y align-middle">
                 <div class="cell small-12 medium-12">
                     <address>'
