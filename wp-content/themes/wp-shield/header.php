@@ -120,7 +120,8 @@
     						</a>';
 					}
 					if(!empty($UTH_contact_phone_number)) {
-						echo '<a href="#">
+						$tel = str_replace(str_split('-()'), '', $UTH_contact_phone_number);
+						echo '<a href="tel:' . $tel . '">
 							<span class="fa-stack outline">
 								<i class="far fa-circle fa-stack-2x"></i>
 								<i class="fas fa-phone-alt fa-stack-1x fa-inverse"></i>
