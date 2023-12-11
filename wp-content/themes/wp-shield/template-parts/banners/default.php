@@ -29,6 +29,7 @@
 	$title_box_alignment = get_post_meta( $post->ID, 'title_box_key', true ); 
 	$video_url = get_post_meta( get_the_ID(), 'ut_featured_video_url', true );
 	$video_title = get_post_meta( get_the_ID(), 'ut_featured_video_title', true );
+	$formatted_text = get_post_meta( get_the_ID(), 'wpcf-featured-text-paragraphs', false );
 
 	if ($title_box_alignment == 'right-aligned'){
 		$text_box_order = 'small-order-2 medium-order-2 large-order-2';
@@ -67,6 +68,15 @@
 						if( !empty( $banner_byline ) ) {
 							echo '<p class="banner-text ' . $banner_featured_class . '">' . $banner_byline, '</p>';
 						}
+						//Print multivalue text field in paragraph tags
+						$i = 0;
+						while($i < count($formatted_text))
+							{
+								if( !empty( $formatted_text[$i] ))	{
+									echo '<p>' . $formatted_text[$i] . '</p>';
+								}
+								$i++;
+							}
 						if( !empty( $banner_button_text ) ) {
 							echo '<div class="button-group">';
 							if( !empty( $banner_button_text ) ) { echo '<p><a class="button" href="' . $banner_button_url, '">' . $banner_button_text, '</a></p>'; }
