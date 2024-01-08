@@ -32,6 +32,7 @@ require_once( 'library/wp-shield/events/events-ics-creator.php' );
 require_once( 'library/wp-shield/events/training-events-ics-creator.php' );
 require_once( 'library/wp-shield/events/symposium-child-subnav.php' );
 require_once( 'library/wp-shield/wp-block-editor/block-editor-supports.php' );
+require_once( 'library/wp-shield/various-tweaks/content-entry-guides.php' );
 
 /** MODIFYING CORE FOUNDATION PRESS FILES */
 require_once( 'library/modified-core/navigation.php' );
