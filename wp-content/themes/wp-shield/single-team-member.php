@@ -44,7 +44,10 @@ load_theme_design('header'); ?>
 				<?php if (!empty ($mail)){
 					echo '<p>' . $mail . '</p>';
 				}
-				echo '</div>';
+				?>
+				<?php if (!empty ($phone) || !empty ($mail)){
+					echo '</div>';
+				}
 				?>
 				<?php 
 					$child_posts = toolset_get_related_posts( get_the_ID(), 'dept-division-links', array( 'query_by_role' => 'parent', 'return' => 'post_object' ) );
