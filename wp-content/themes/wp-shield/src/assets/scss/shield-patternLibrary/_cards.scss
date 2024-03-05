@@ -2,9 +2,9 @@
     CARDS
 ============================================================ */
 
-//Similar to .nested but .framed is placed on parent div
+
 div.cell.nested {
-    border-radius: rem-calc(6px) !important;
+    border-radius: rem-calc(6px) !important; //test to remove
     background-color: $beige;
 
     &.color {
@@ -38,19 +38,21 @@ div.cell.nested {
 }
 
 a.card {
-    padding: 0 !important; //Overrides the bleed padding for <a>
-    border-radius: rem-calc(6px) !important;
+    //importants override the orange font color
+
+    padding: 0 !important; //Overrides the bleed padding for <a> //test to remove
+    border-radius: rem-calc(6px) !important; //test to remove
     border: 0;
     @extend %jump-base;
     position: relative;
-    color: $off-black !important;
+    color: $off-black !important; //test to remove
 
     &:hover {
         @extend %jump-hover;
-        color: $off-black !important;
+        color: $off-black !important; //test to remove
     }
 
-    img{
+    img {
         object-fit: cover;
     }
 
@@ -72,6 +74,7 @@ a.card {
         }
     }
 
+    //importants should be tested for removal
     &.color {
         color: $off-white !important;
 
@@ -101,6 +104,8 @@ a.card {
     }
 
     .grid-x {
+
+        //This is for the icon in the longcard component
         &:after {
             position: absolute;
             display: block;
@@ -169,13 +174,29 @@ a.card {
             }
         }
     }
+
+
 }
 
-@media screen and (max-width:450px) {
+@media screen and (max-width: $small-screen) {
 
     a.card.postcard {
         p {
             display: none;
+        }
+    }
+
+    .card.tile {
+        .card-section { //Needs !important to override desktop styles
+            background: darken(rgba(23, 23, 23, 0.7), 25%) !important;
+
+            >div {
+                transform: none !important;
+
+                p {
+                    opacity: 1 !important;
+                }
+            }
         }
     }
 }
@@ -209,6 +230,69 @@ a.card {
     &.popout.border.orange img {
         border-top: solid 1rem $orange;
     }
+
+    &.tile {
+        position: relative;
+
+        img {
+            transform: scale(1);
+            transition: .4s ease-in-out;
+        }
+
+        .card-section {
+            position: absolute;
+            bottom: 0;
+            background: rgba(23, 23, 23, 0.43);
+            color: $off-white;
+            width: 100%;
+            height: 100%;
+            padding: rem-calc(30px);
+            margin-bottom: 0;
+            opacity: 100%;
+            transition: .4s ease-in-out;
+            text-align: center;
+            display: flex;
+
+            >div {
+                width: 100%;
+                align-self: flex-end;
+                transform: translateY(calc(100% - 4.5rem));
+                transition: .7s cubic-bezier(0.19, 1, 0.22, 1);
+
+                p {
+                    opacity: 0;
+                    transition: 0.3s cubic-bezier(.65, .05, .36, 1);
+                }
+            }
+
+            &:after {
+                display: none;
+            }
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            .card-section {
+                background: darken(rgba(23, 23, 23, 0.7), 25%);
+
+                >div {
+                    width: 100%;
+                    align-self: flex-end;
+                    transform: translateY(0);
+
+                    p {
+                        opacity: 100;
+                    }
+                }
+
+            }
+
+            img {
+                transform: scale(1.05);
+            }
+        }
+    }
 }
 
 .hero {
@@ -219,7 +303,7 @@ a.card {
 
         img {
             margin-bottom: 0;
-            width:100%;
+            width: 100%;
             height: auto;
         }
 
