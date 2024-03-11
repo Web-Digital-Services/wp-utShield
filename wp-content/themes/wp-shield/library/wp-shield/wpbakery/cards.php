@@ -97,6 +97,7 @@ class uth_card extends WPBakeryShortCode {
                         'class'      => '',
                         'heading'    => 'Card Design',
                         'param_name' => 'card_style',
+                        'description' => esc_html__( 'Use the Primary Call to Action field if you are using the Tile card style.', 'wp-shield' ),
                         'group' => __( 'Design Options', 'wp-shield' ),
                         'value'      => array(
                             'Static Card'  => 'static',
@@ -105,7 +106,7 @@ class uth_card extends WPBakeryShortCode {
                             'Nested Card'  => 'nested',
                             'Long Card'  => 'long',
                             'Post Card'  => 'postcard',
-                        )
+                            'Tile Card' => 'tile',                        )
                     ),
                     array(
                         'type'       => 'dropdown',
@@ -349,6 +350,17 @@ class uth_card extends WPBakeryShortCode {
                         <p>' . $card_copy_text . '</p>
                     </div>
                 </a>';
+         }elseif($card_style=='tile') {
+            $html = 
+                '<div class="card tile cell small-12"' . $equilizer_id . '>' . $cardImage .
+                '<div class="card-section">
+                    <div>
+                        <' . $heading_level . $class . '>' . $card_title . '</' . $heading_level . '>
+                        <p>' . $card_copy_text . '</p>
+                        <p><a href="' . $a_ref . '" class="button">' . $a_title . '</a></p>
+                    </div>
+                </div>
+            </div>';
          }else{
              echo 'Error: Please select a design style for this card';
          }
