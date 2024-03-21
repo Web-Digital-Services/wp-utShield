@@ -64,6 +64,7 @@ load_theme_design('header'); ?>
 						echo '<p class="subheader">' . $position . '</p>';
 					}
 						?>
+					<?php the_content(); ?>
 					<?php if($statement){
 						echo $statement;
 					}
