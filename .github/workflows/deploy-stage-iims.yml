@@ -1,4 +1,4 @@
-name: Deploy to iims stage
+name: Deploy to iims stage (stage)
 on:
   push:
     branches:
