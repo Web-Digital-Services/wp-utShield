@@ -1,25 +1,30 @@
 name: Deploy to iims stage (stage)
+
 on:
   push:
     branches:
-      - main
+      - master
+
 jobs:
   build:
+
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v3
-    - name: Install project dependencies
-      uses: actions/setup-node@v3
-      with:
-        node-version: '14.17.4'
-    - name: npm
-      run: |
+      - uses: actions/checkout@v3
+      - name: Install project dependencies
+        run: composer install --no-dev --optimize-autoloader
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14.17.4'
+      - name: npm
+        run: |
           npm install
           npm run build
           rm -r node_modules
-      working-directory: wp-content/themes/wp-shield
-    - name: GitHub Action Deploy to WP Engine
-      uses: wpengine/github-action-wpe-site-deploy@v3
-      with:
-        WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
-        WPE_ENV: iimsstg
+        working-directory: wp-content/themes/wp-shield
+      - name: GitHub Action Deploy to WP Engine
+        uses: wpengine/github-action-wpe-site-deploy@v3
+        with:
+            WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
+            WPE_ENV: iimsstg
