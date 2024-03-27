@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - master
+    paths-ignore:
+      - 'wp-content/vendor/tenadams/everything-it-takes**'
 
 jobs:
   build:
@@ -19,7 +21,7 @@ jobs:
         run: composer install --no-dev --optimize-autoloader
       - uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 14.17.4
       - name: npm
         run: |
           npm install
