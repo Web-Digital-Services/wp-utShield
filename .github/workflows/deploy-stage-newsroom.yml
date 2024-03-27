@@ -31,7 +31,7 @@ jobs:
         uses: wpengine/github-action-wpe-site-deploy@v3
         env:
           WPE_ENV_NAME: stageutnews
-          WPE_SSHG_KEY_PUBLIC: ${{ secrets.DEPLOYMENT_SSH_KEY_PUBLIC }}
-          WPE_SSHG_KEY_PRIVATE: ${{ secrets.DEPLOYMENT_SSH_KEY_PRIVATE }}
+          WPE_SSHG_KEY_PUBLIC: ${{ secrets.BENS_DEPLOYMENT_SSH_KEY_PUBLIC }}
+          WPE_SSHG_KEY_PRIVATE: ${{ secrets.BENS_DEPLOYMENT_SSH_KEY_PRIVATE }}
           TPO_SRC_PATH: ""
           TPO_PATH: ""
