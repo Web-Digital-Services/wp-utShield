@@ -29,9 +29,6 @@ jobs:
         working-directory: wp-content/themes/wp-shield
       - name: SSH Deploy to WPEngine
         uses: wpengine/github-action-wpe-site-deploy@v3
-        env:
+        with:
           WPE_ENV: stageutnews
-          WPE_SSHG_KEY_PUBLIC: ${{ secrets.BENS_DEPLOYMENT_SSH_KEY_PUBLIC }}
-          WPE_SSHG_KEY_PRIVATE: ${{ secrets.BENS_DEPLOYMENT_SSH_KEY_PRIVATE }}
-          TPO_SRC_PATH: ""
-          TPO_PATH: ""
+          WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
