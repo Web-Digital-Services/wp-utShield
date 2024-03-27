@@ -1,4 +1,4 @@
-name: Deploy to Newsroom (stage)
+name: Deploy to Newsroom(stage)
 
 on:
   push:
