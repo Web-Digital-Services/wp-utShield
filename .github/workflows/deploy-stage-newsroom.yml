@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x, 20.x]
+        node-version: [14.x]
 
     steps:
       - uses: actions/checkout@v3
@@ -28,7 +28,7 @@ jobs:
           rm -r node_modules
         working-directory: wp-content/themes/wp-shield
       - name: SSH Deploy to WPEngine
-        uses: bowiedev/github-action-wpengine-ssh-deploy@master
+        uses: wpengine/github-action-wpe-site-deploy@v3
         env:
           WPE_ENV_NAME: stageutnews
           WPE_SSHG_KEY_PUBLIC: ${{ secrets.DEPLOYMENT_SSH_KEY_PUBLIC }}
