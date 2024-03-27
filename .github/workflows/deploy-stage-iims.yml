@@ -5,15 +5,12 @@ on:
     branches:
       - master
     paths-ignore:
-      - 'wp-content/vendor/tenadams/everything-it-takes**'
+      - 'wp-content/vendor/tenadams/everything-it-takes'
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
-    strategy:
-        matrix:
-          node-version: [14.x, 16.x, 18.x, 20.x]
 
     steps:
       - uses: actions/checkout@v3
@@ -31,5 +28,5 @@ jobs:
       - name: GitHub Action Deploy to WP Engine
         uses: wpengine/github-action-wpe-site-deploy@v3
         with:
-            WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPENGINE_SSH_KEY_PRIVATE }}
+            WPE_SSHG_KEY_PRIVATE: ${{ secrets.DEPLOYMENT_SSH_KEY_PRIVATE }}
             WPE_ENV: iimsstg
