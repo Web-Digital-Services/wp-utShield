@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - master
-    paths-ignore:
-      - 'wp-content/vendor/tenadams/everything-it-takes'
 
 jobs:
   build:
