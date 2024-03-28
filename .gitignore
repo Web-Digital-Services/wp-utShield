@@ -12,8 +12,6 @@ wp-content/**
 wp-content/mu-plugins/**
 wp-content/plugins/**
 wp-content/themes/**
-!wp-content/vendor/tenadams/everything-it-takes
-wp-content/vendor/tenadams/everything-it-takes/**
 
 # Add two rules for each Theme or Plugin you want to include:
 # 1. !folder-name/    <-- includes the Plugin and top level files
