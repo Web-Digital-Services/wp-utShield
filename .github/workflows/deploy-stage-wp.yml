@@ -10,28 +10,22 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [16.x, 18.x, 20.x]
-
     steps:
       - uses: actions/checkout@v3
       - name: Install project dependencies
         run: composer install --no-dev --optimize-autoloader
       - uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: '14.17.4'
       - name: npm
         run: |
           npm install
           npm run build
           rm -r node_modules
         working-directory: wp-content/themes/wp-shield
-      - name: SSH Deploy to WPEngine
-        uses: bowiedev/github-action-wpengine-ssh-deploy@master
-        env:
-          WPE_ENV_NAME: stageuthealth
-          WPE_SSHG_KEY_PUBLIC: ${{ secrets.DEPLOYMENT_SSH_KEY_PUBLIC }}
-          WPE_SSHG_KEY_PRIVATE: ${{ secrets.DEPLOYMENT_SSH_KEY_PRIVATE }}
-          TPO_SRC_PATH: ""
-          TPO_PATH: ""
+      - name: GitHub Action Deploy to WP Engine
+        uses: wpengine/github-action-wpe-site-deploy@v3
+        with:
+            WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPENGINE_SSH_KEY_PRIVATE }}
+            WPE_ENV: stageuthealth
+
