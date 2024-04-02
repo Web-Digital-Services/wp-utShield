@@ -26,10 +26,8 @@ load_theme_design('header'); ?>
 
 <div class="grid-container">
 	<div class="grid-x grid-margin-x">
-
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<aside class="cell small-12 medium-4 large-4 small-order-2 medium-order-1">
+		<?php while ( have_posts() ) : the_post(); ?>
+			<aside class="cell small-12 medium-4 large-4 small-order-2 medium-order-1">
 				<?php if ( has_post_thumbnail()) : ?>
         			<?php the_post_thumbnail('large', array('class'=> 'img-margin')); ?>
 				<?php endif; ?>
@@ -57,9 +55,9 @@ load_theme_design('header'); ?>
 						echo '<p><a href="' . types_render_field( "link-url", array( "id"=> "$child_post->ID" )) . '">' . types_render_field( "link-title", array( "id"=> "$child_post->ID" )) . '</a></p>'; 
 					}
 				} ?>
-				</aside>
-				<main class="cell small-12 medium-8 large-8 small-order-1 medium-order-2">
-					<?php the_title('<h1>','</h1>'); ?>
+			</aside>
+			<main class="cell small-12 medium-8 large-8 small-order-1 medium-order-2">
+				<?php the_title('<h1>','</h1>'); ?>
 					<?php if($position){
 						echo '<p class="subheader">' . $position . '</p>';
 					}
@@ -104,9 +102,8 @@ load_theme_design('header'); ?>
 						echo $members;
 					}
 					?>
-				</main>
-
-			<?php endwhile; ?>
+			</main>
+		<?php endwhile; ?>
 	</div>
 </div>
 <?php load_theme_design('footer');

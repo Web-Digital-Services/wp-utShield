@@ -3,7 +3,7 @@ name: Deploy to Everythingittakes.org (stage)
 on:
   push:
     branches:
-      - stage
+      - master
 
 jobs:
   build:
@@ -11,23 +11,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Install project dependencies
         run: composer install --no-dev --optimize-autoloader
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
-          node-version: '14.17.4'
+          node-version: 14.17.4
       - name: npm
         run: |
           npm install
           npm run build
           rm -r node_modules
         working-directory: wp-content/themes/wp-shield
-      - name: SSH Deploy to WP Engine
-        uses: bowiedev/github-action-wpengine-ssh-deploy@master
-        env:
-          WPE_ENV_NAME: stageuthp
-          WPE_SSHG_KEY_PUBLIC: ${{ secrets.WPENGINE_SSH_KEY_PUBLIC }}
-          WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPENGINE_SSH_KEY_PRIVATE }}
-          TPO_SRC_PATH: ""
-          TPO_PATH: ""
+      - name: GitHub Action Deploy to WP Engine
+        uses: wpengine/github-action-wpe-site-deploy@v3
+        with:
+            WPE_SSHG_KEY_PRIVATE: ${{ secrets.DEPLOYMENT_SSH_KEY_PRIVATE }}
+            WPE_ENV: stageuthp
+            FLAGS: --copy-dirlinks
