@@ -28,4 +28,4 @@ jobs:
         with:
             WPE_SSHG_KEY_PRIVATE: ${{ secrets.DEPLOYMENT_SSH_KEY_PRIVATE }}
             WPE_ENV: stageuthp
-            FLAGS: --copy-dirlinks
+            FLAGS: '-azvr --inplace --exclude=".*" --copy-dirlinks'
