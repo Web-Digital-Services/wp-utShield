@@ -36,12 +36,12 @@ class uth_directory_listing extends WPBakeryShortCode {
                 //That params defines the field types to be used and the settings for eachf field           
                 'params' => array(
                     array(
-                        //Single Line Text Field Type
-                        'type' => 'textfield',
+                        //Checkbox
+                        'type' => 'checkbox',
                         'holder' => 'h2',
                         'class' => 'text-class',
-                        'heading' => __( 'Name', 'wp-shield' ),
-                        'param_name' => 'directory_name',
+                        'heading' => __( 'Display Vertically', 'wp-shield' ),
+                        'param_name' => 'vertical_display',
                         'value' => __( '', 'wp-shield' ),
                         'admin_label' => false,
                         'weight' => 1,
@@ -49,10 +49,10 @@ class uth_directory_listing extends WPBakeryShortCode {
                     array(
                         //Single Line Text Field Type
                         'type' => 'textfield',
-                        'holder' => 'stream_context_get_default()',
+                        'holder' => 'h2',
                         'class' => 'text-class',
-                        'heading' => __( 'Title', 'wp-shield' ),
-                        'param_name' => 'directory_title',
+                        'heading' => __( 'Name', 'wp-shield' ),
+                        'param_name' => 'directory_name',
                         'value' => __( '', 'wp-shield' ),
                         'admin_label' => false,
                         'weight' => 2,
@@ -66,7 +66,7 @@ class uth_directory_listing extends WPBakeryShortCode {
                         'param_name' => 'email',
                         'value' => __( '', 'wp-shield' ),
                         'admin_label' => false,
-                        'weight' => 3,
+                        'weight' => 4,
                     ), 
                     array(
                         //Single Line Text Field Type
@@ -77,7 +77,7 @@ class uth_directory_listing extends WPBakeryShortCode {
                         'param_name' => 'phone',
                         'value' => __( '', 'wp-shield' ),
                         'admin_label' => false,
-                        'weight' => 4,
+                        'weight' => 5,
                     ),
                     array(
                         //Wizywig Editor
@@ -89,7 +89,7 @@ class uth_directory_listing extends WPBakeryShortCode {
                         'value' => __( '', 'wp-shield' ),
                         'description' => __( 'Bio', 'wp-shield' ),
                         //'admin_label' => false,
-                        'weight' => 5,
+                        'weight' => 6,
                     ),    
                     array(
                         'type' => 'attach_image',
@@ -99,7 +99,18 @@ class uth_directory_listing extends WPBakeryShortCode {
                         'param_name' => 'image_url',
                         'value' => __( '', 'wp-shield' ),
                         'description' => __( 'Image', 'wp-shield' ),
-                        'weight' => 5,
+                        'weight' => 7,
+                    ),
+                    array(
+                        //Single Line Text Field Type
+                        'type' => 'textfield',
+                        'holder' => 'h2',
+                        'class' => 'text-class',
+                        'heading' => __( 'Optional Link', 'wp-shield' ),
+                        'param_name' => 'directory_link',
+                        'value' => __( '', 'wp-shield' ),
+                        'admin_label' => false,
+                        'weight' => 8,
                     ),                  
                 )
             )
@@ -115,15 +126,60 @@ class uth_directory_listing extends WPBakeryShortCode {
                 array(
                     'image_url'   => 'image_url',
                     'directory_name'  => '',
-                    'directory_title' => '',
-                    'bio' => '',
+                    'bio' => $content,
                     'phone' => '',
                     'email' => '',
-
+                    'vertical_display' => '',
+                    'directory_link' => '',
                 ), 
                 $atts
             )
         );
+        if($vertical_display == 'true'){
+            if (!empty($directory_name)){
+                $directory_name = '<h3 class="h4 margin-top">' . $directory_name . '</h3>';
+            }else{
+                $directory_name = '';
+            }
+            if (!empty($directory_link)){
+                $directory_name = '<a href="'. $directory_link . '"><h3 class="h4 margin-top">' . $directory_name . '</h3></a>';
+            }
+            if (!empty($bio)){
+                $bio = '<p>' . $bio . '</p>';
+            }else{
+                $bio = '';
+            }
+            if (!empty($email)){
+                $email = '
+                <li>
+                    <a href="mailto:' . $email . '">
+                        <span class="fa-li">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <span>' . $email . '</span>
+                    </a>
+                </li>';
+                }else{
+                $email = '';
+            }
+            if (!empty($phone)){
+                $phone = '
+                <li>
+                     <a href="tel:' . $phone . '">
+                             <span class="fa-li">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-phone-alt fa-stack-1x fa-inverse"></i>
+                             </span>
+                         <span class="">' . $phone . '</span>
+                     </a>
+                 </li>';
+             }else{
+                 $phone = '';
+             }
+            $html = wp_get_attachment_image($image_url, 'full', 'alt') . '<br>' . $directory_name . '<ul class="fa-ul">' . $email . $phone . '</ul><br>' . $bio;
+
+        }else{
         if (!empty($image_url)){
             $image_display = '<div class="cell small-12 medium-4 large-4">'
              . wp_get_attachment_image($image_url, 'full', 'alt') . '</div>';
@@ -150,7 +206,7 @@ class uth_directory_listing extends WPBakeryShortCode {
            $phone = '
            <li>
                 <a href="tel:' . $phone . '">
-                        <span class="fa-stack">
+                        <span class="fa-li">
                            <i class="fas fa-circle fa-stack-2x"></i>
                            <i class="fas fa-phone-alt fa-stack-1x fa-inverse"></i>
                         </span>
@@ -163,14 +219,12 @@ class uth_directory_listing extends WPBakeryShortCode {
         if (!empty($email)){
             $email = '
             <li>
-                <a>
+                <a href="mailto:' . $email . '">
                     <span class="fa-li">
-                        <span class="fa-stack">
                         <i class="fas fa-circle fa-stack-2x"></i>
                         <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
-                        </span>
                     </span>
-                    <span class="">' . $email . '</span>
+                    <span>' . $email . '</span>
                 </a>
             </li>';
             }else{
@@ -183,13 +237,13 @@ class uth_directory_listing extends WPBakeryShortCode {
             <div class="cell small-12 medium-8 large-8">
                 ' . $directory_name . '
                 ' . $directory_title . '
-            <div class="grid-x grid-margin-x"><div class="cell medium-12 large-12"><address><div class="loose-list"><ul class="fa-ul loose-list inline">
+            <div class="grid-x grid-margin-x"><div class="cell medium-12 large-12"><address><div class="loose-list"><ul class="fa-ul">
             ' . $email . '
               ' . $phone . '
             </ul></div></address></div></div>
             ' . $bio . '
             </div></div>';
-         
+    }
         return $html;
          
     }
