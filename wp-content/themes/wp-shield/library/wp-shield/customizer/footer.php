@@ -12,6 +12,12 @@ function uth_create_footer_settings($wp_customize) {
     $wp_customize->add_setting('uth_footer_map');
     $wp_customize->add_setting('uth_hide_address');
     $wp_customize->add_setting('uth_custom_logo');
+    $wp_customize->add_setting('uth_hide_social_links');
+    $wp_customize->add_setting('uth_hide_web_privacy');
+    $wp_customize->add_setting('uth_hide_make_lives_better_section');
+    $wp_customize->add_setting('uth_hide_ut_sa_title');
+    $wp_customize->add_setting('uth_display_footer_menu_only');
+    $wp_customize->add_setting('uth_menu_header');
 
     //2. Add Section
     $wp_customize->add_section( 'uth_footer' , array(
@@ -52,12 +58,67 @@ function uth_create_footer_settings($wp_customize) {
         ) 
     );
     $wp_customize->add_control( 
-        'uth_footer_hide_address',
+        'uth_footer_uth_menu_header',
+        array(
+        'label' => 'Menu links header',
+        'type' => 'text',
+        'section' => 'uth_footer',
+        'description' => 'Optional title to display above the footer links.',
+        'settings' => 'uth_menu_header',
+        ) 
+    );
+    $wp_customize->add_control( 
+        'uth_footer_hide_address_control',
         array(
         'label' => 'Check this box to hide the address and map',
         'type' => 'checkbox',
         'section' => 'uth_footer',
         'settings' => 'uth_hide_address',
+        ) 
+    );
+    $wp_customize->add_control( 
+        'uth_hide_social_links_control',
+        array(
+        'label' => 'Check this box to hide the social media links',
+        'type' => 'checkbox',
+        'section' => 'uth_footer',
+        'settings' => 'uth_hide_social_links',
+        ) 
+    );
+    $wp_customize->add_control( 
+        'uth_hide_web_privacy_control',
+        array(
+        'label' => 'Check this box to hide the web privacy statement',
+        'type' => 'checkbox',
+        'section' => 'uth_footer',
+        'settings' => 'uth_hide_web_privacy',
+        ) 
+    );
+    $wp_customize->add_control( 
+        'uth_hide_make_lives_better_section_control',
+        array(
+        'label' => 'Check this box to hide the we make lives better section',
+        'type' => 'checkbox',
+        'section' => 'uth_footer',
+        'settings' => 'uth_hide_make_lives_better_section',
+        ) 
+    );
+    $wp_customize->add_control( 
+        'uth_hide_ut_sa_title_control',
+        array(
+        'label' => 'Check this box to hide the title UT Health San Antonio and display the site title (tagline)',
+        'type' => 'checkbox',
+        'section' => 'uth_footer',
+        'settings' => 'uth_hide_ut_sa_title',
+        ) 
+    );
+    $wp_customize->add_control( 
+        'uth_display_footer_menu_only_control',
+        array(
+        'label' => 'If you choose this option only the footer menu will show up, aligned to the left. No other footer option other than the site title will be visible.',
+        'type' => 'checkbox',
+        'section' => 'uth_footer',
+        'settings' => 'uth_display_footer_menu_only',
         ) 
     );
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'uth_custom_logo', array(

@@ -13,11 +13,17 @@
     $uth_footer_address = get_theme_mod( 'uth_footer_address' );
     $uth_footer_email = get_theme_mod( 'uth_footer_email' );
     $uth_footer_email_title = get_theme_mod( 'uth_footer_email_title' );
+    $uth_footer_menu_header = get_theme_mod( 'uth_menu_header' );
     $uth_footer_map = get_theme_mod( 'uth_footer_map' );
     $uth_footer_hide_address = get_theme_mod( 'uth_hide_address', '' );
     $uth_footer_logo = get_theme_mod( 'uth_custom_logo' );
     $footer_logo_id = attachment_url_to_postid($uth_footer_logo);
     $image1_alt = get_post_meta( $footer_logo_id, '_wp_attachment_image_alt', true );
+    $uth_footer_hide_web_privacy = get_theme_mod( 'uth_hide_web_privacy', '' );
+    $uth_footer_hide_social_links = get_theme_mod( 'uth_hide_social_links', '' );
+    $uth_footer_hide_make_lives_better_section = get_theme_mod( 'uth_hide_make_lives_better_section', '' );
+    $uth_footer_hide_ut_sa_title = get_theme_mod( 'uth_hide_ut_sa_title', '' );
+    $uth_footer_display_footer_menu_only = get_theme_mod( 'uth_display_footer_menu_only', '' );
     
     $site_title = get_bloginfo ( 'description' );
 
@@ -45,14 +51,20 @@
 <footer <?php echo $footer_class;?>>
 	<?php echo $alamo_code; ?>
     <div class="shield">
+    <?php if ( $uth_footer_display_footer_menu_only != 'true'): ?>
         <section class="grid-container">
             <div class="grid-x grid-margin-x align-center">
                 <div class="cell large-12">
-                    <h2>UT Health San Antonio</h2>
-                    <?php 
+                    <?php if ( $uth_footer_hide_ut_sa_title != 'true' ){
+                        echo '<h2>UT Health San Antonio</h2>';
                         if (!empty($site_title)){
                             echo '<h3>' . $site_title . '</h3>';
                         }
+                    }else{
+                        if (!empty($site_title)){
+                            echo '<h2>' . $site_title . '</h2>';
+                        }
+                    }
                     ?>
                 </div>
 				<?php dynamic_sidebar( 'footer-widgets' ); ?>
@@ -122,6 +134,10 @@
                     
                 </div>
                 <div class="cell large-3 medium-4 small-10">
+                    <?php if (!empty($uth_footer_menu_header)){
+                        echo '<h3 class="close">' . $uth_footer_menu_header . '</h3>';
+                    }
+                    ?>
                 <?php 
                     if ( has_nav_menu( 'footer_menu' ) ) {
                         //wp_nav_menu( array( 'theme_location' => 'footer_menu', 'menu_class' => 'arrow-list' ) );
@@ -144,28 +160,74 @@
                     }
                 ?>
                     
-
-                    <div class="social">
-                        <?php echo do_shortcode('[UTH_social_links]'); ?>
-                    </div>
+                    <?php if ( $uth_footer_hide_social_links != 'true' ){
+                        echo '<div class="social">' .  do_shortcode('[UTH_social_links]') . '</div>';
+                    }
+                    ?>
+                    
                 </div>
                 <div class="cell large-5 medium-4 small-10">
-                    <p class="large-text">We make lives better ®</p>
-                    <p>The University of Texas Health Science Center at San Antonio, also called <a href="https://uthscsa.edu">UT Health San Antonio</a>, is a leading academic health center with a mission to make lives better through excellence in <a href="https://uthscsa.edu/academics/">advanced academics</a>, <a href="https://www.uthscsa.edu/research/">life-saving research</a> and comprehensive clinical care including <a href="https://everythingittakes.org/">health</a>, <a href="https://www.uthscsa.edu/patient-care/dental">dental</a> and <a href="https://cancer.uthscsa.edu/">cancer services</a>.</p>
+                    <?php if ( $uth_footer_hide_make_lives_better_section != 'true' ){
+                        echo '<p class="large-text">We make lives better ®</p>
+                        <p>The University of Texas Health Science Center at San Antonio, also called <a href="https://uthscsa.edu">UT Health San Antonio</a>, is a leading academic health center with a mission to make lives better through excellence in <a href="https://uthscsa.edu/academics/">advanced academics</a>, <a href="https://www.uthscsa.edu/research/">life-saving research</a> and comprehensive clinical care including <a href="https://everythingittakes.org/">health</a>, <a href="https://www.uthscsa.edu/patient-care/dental">dental</a> and <a href="https://cancer.uthscsa.edu/">cancer services</a>.</p>';
+                    }
+                    ?>
+                    
                 </div>
                 <div class="cell large-1 medium-0 small-0"></div>
             </div>    
         </section>
     </div>
-    <section class="bleed">
+    <?php if ( $uth_footer_hide_web_privacy != 'true' ){
+    echo '<section class="bleed">
         <div class="grid-container">
             <div class="grid-x">
                 <div class="cell">
-                    <p><strong><a href="https://uthscsa.edu/university/web-privacy">Web Privacy</a></strong> | Links from websites affiliated with UT Health's website (uthscsa.edu) to other websites do not constitute or imply university endorsement of those sites, their content, or products and services associated with those sites. The content on this website is intended to be used for informational purposes only. Health information on this site is not meant to be used to diagnose or treat conditions. Consult a health care provider if you are in need of treatment.</p>
+                    <p><strong><a href="https://uthscsa.edu/university/web-privacy">Web Privacy</a></strong> | Links from websites affiliated with UT ' . "Health's" . ' website (uthscsa.edu) to other websites do not constitute or imply university endorsement of those sites, their content, or products and services associated with those sites. The content on this website is intended to be used for informational purposes only. Health information on this site is not meant to be used to diagnose or treat conditions. Consult a health care provider if you are in need of treatment.</p>
                 </div>
             </div>
         </div>
+    </section>';
+    }
+    ?>
+    <?php else: ?>
+        <section class="grid-container">
+            <div class="grid-x grid-margin-x align-center">
+            <?php if ( $uth_footer_hide_ut_sa_title != 'true' ){
+                        echo '<div class="cell large-12 margin-bottom"><h2>UT Health San Antonio</h2>';
+                        if (!empty($site_title)){
+                            echo '<h3>' . $site_title . '</h3>';
+                        }
+                        echo '</div>';
+                    }else{
+                        if (!empty($site_title)){
+                            echo '<div class="cell large-12 margin-bottom"><h2>' . $site_title . '</h2>';
+                        }
+                    }
+                    echo '</div>';
+                    ?>
+                <div class="cell large-12">
+                <?php if (!empty($uth_footer_menu_header)){
+                        echo '<h3 class="close">' . $uth_footer_menu_header . '</h3>';
+                    }
+                    ?>
+               <?php if ( has_nav_menu( 'footer_menu' ) ) {
+                        //wp_nav_menu( array( 'theme_location' => 'footer_menu', 'menu_class' => 'arrow-list' ) );
+                        echo '<ul id="menu-footer-links" class="arrow-list">';
+                        $menuLocations = get_nav_menu_locations();
+                        $menuID = $menuLocations['footer_menu'];
+                        $items_in_menu = wp_get_nav_menu_items($menuID);
+                        foreach ($items_in_menu as $menu_item) {
+                            echo '<li><a class="arrow" href="' . $menu_item -> url . '">' . $menu_item -> title . '</a></li>';
+                        }
+                        echo '</ul>';
+                    }
+                        ?>
+    </div>
+    </div>
+    </div>
     </section>
+<?php endif; ?>
     <?php shield_quicklinks_view(); ?>
 </footer>
 <?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) : ?>
