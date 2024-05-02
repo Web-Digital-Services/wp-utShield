@@ -50,8 +50,8 @@
 ?>
 <footer <?php echo $footer_class;?>>
 	<?php echo $alamo_code; ?>
-    <div class="shield">
     <?php if ( $uth_footer_display_footer_menu_only != 'true'): ?>
+    <div class="shield">
         <section class="grid-container">
             <div class="grid-x grid-margin-x align-center">
                 <div class="cell large-12">
@@ -191,6 +191,7 @@
     }
     ?>
     <?php else: ?>
+        <div>
         <section class="grid-container">
             <div class="grid-x grid-margin-x align-center">
             <?php if ( $uth_footer_hide_ut_sa_title != 'true' ){
@@ -227,6 +228,7 @@
     </div>
     </div>
     </section>
+                </div>
 <?php endif; ?>
     <?php shield_quicklinks_view(); ?>
 </footer>
