@@ -49,6 +49,16 @@ class uth_contact_card extends WPBakeryShortCode {
                     array(
                         'type' => 'textfield',
                         'holder' => 'div',
+                        'heading' => __( 'Header', 'wp-shield' ),
+                        'param_name' => 'header',
+                        'value' => __( '', 'wp-shield' ),
+                        'admin_label' => false,
+                        'weight' => 0,
+                    ),
+                    //Single line text field. 
+                    array(
+                        'type' => 'textfield',
+                        'holder' => 'div',
                         'heading' => __( 'Name', 'wp-shield' ),
                         'param_name' => 'name',
                         'value' => __( '', 'wp-shield' ),
@@ -81,6 +91,16 @@ class uth_contact_card extends WPBakeryShortCode {
                         'holder' => 'div',
                         'heading' => __( 'Email', 'wp-shield' ),
                         'param_name' => 'email',
+                        'value' => __( '', 'wp-shield' ),
+                        'admin_label' => false,
+                        'weight' => 0,
+                    ),
+                    //Single line text field. 
+                    array(
+                        'type' => 'textfield',
+                        'holder' => 'div',
+                        'heading' => __( 'Fax', 'wp-shield' ),
+                        'param_name' => 'fax',
                         'value' => __( '', 'wp-shield' ),
                         'admin_label' => false,
                         'weight' => 0,
@@ -127,10 +147,12 @@ class uth_contact_card extends WPBakeryShortCode {
             shortcode_atts(
                 array(
                     'img_url'   => '',
+                    'header'   => '',
                     'name'   => '',
                     'title'   => '',
                     'phone'   => '',
                     'email'   => '',
+                    'fax'     => '',
                     'address'   => '',
                     'optional_css'   => '',
                     'equilizer_id' => ''
@@ -139,6 +161,11 @@ class uth_contact_card extends WPBakeryShortCode {
             )
         );
 
+if (!empty($header)){
+    $header_display = '<h3>' . $header . '</h3><br>';
+}else{
+    $header_display = '';
+}        
 if (!empty($name)){
     $name_display = '<strong>' . $name . '</strong><br>';
 }else{
@@ -184,6 +211,22 @@ if (!empty($email)){
 }else{
     $email_display = '';
 }
+//third field added, fax
+if (!empty($fax)){
+    $fax_display = '<li>
+    <a>
+        <span class="fa-li">
+            <span class="fa-stack">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-fax fa-stack-1x fa-inverse"></i>
+            </span>
+        </span>
+        <span>' . $fax . '</span>
+    </a>
+</li>';
+}else{
+    $fax_display = '';
+}
 #Load Equilizer To Match Heights
 if (!empty($equilizer_id)){
     $equilizer_id = 'data-equalizer-watch="' . $equilizer_id . '"';
@@ -200,13 +243,14 @@ if (!empty($equilizer_id)){
                 <div class="cell small-12 medium-4">'
                     . wp_get_attachment_image($img_url, 'width=100%', 'height=auto') .
                 '</div>
-                <div class="cell small-12 medium-8">
-                <address>'
+                <div class="cell small-12 medium-8">' 
+                    . $header_display .
+                '<address>'
                     . $name_display . $title_display . $address_display . '</address>
                 <ul class="fa-ul">' . 
                     $phone_display .
-                    $email_display
-                    
+                    $email_display . 
+                    $fax_display
                 . '</ul>
                 </div>
             </div>
@@ -214,14 +258,16 @@ if (!empty($equilizer_id)){
         }else{
             $html = '<div class="cell card"' . $equilizer_id . '>
             <div class="grid-x grid-padding-x grid-padding-y align-middle">
-                <div class="cell small-12 medium-12">
-                    <address>'
+                <div class="cell small-12 medium-12">'
+                    . $header_display .
+                    '<address>'
                     . $name_display . $title_display .
                     $address_display
                 . '</address>
                 <ul class="fa-ul">' .
                 $phone_display .
-                $email_display
+                $email_display . 
+                $fax_display
                 . '</ul>
                 </div>
             </div>
