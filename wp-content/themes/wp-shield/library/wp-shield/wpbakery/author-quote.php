@@ -3,263 +3,250 @@
 Element Description: Author Quote block type
 Documentation: http://www.wpelixir.com/how-to-create-new-element-in-visual-composer/
 */
- 
+
 // Element Class 
-class uth_author_quote extends WPBakeryShortCode {
-     
+class uth_author_quote extends WPBakeryShortCode
+{
+
     // Element Init
-    function __construct() {
-        add_action( 'init', array( $this, 'vc_author_quote_mapping' ), 12 );
-        add_shortcode( 'vc_author_quote', array( $this, 'vc_author_quote_html' ) );
+    function __construct()
+    {
+        add_action('init', array($this, 'vc_author_quote_mapping'), 12);
+        add_shortcode('vc_author_quote', array($this, 'vc_author_quote_html'));
     }
     // Element Mapping
 
-    public function vc_author_quote_mapping() {       
-        
+    public function vc_author_quote_mapping()
+    {
+
         // Stop all if VC is not enabled
-        if ( !defined( 'WPB_VC_VERSION' ) ) {
-                return;
-        }  
+        if (!defined('WPB_VC_VERSION')) {
+            return;
+        }
         // Map the block with vc_map()
-        vc_map( 
-      
+        vc_map(
+
             array(
                 //This defines how the block appears in the element selection menu. 
                 //Define the name and description 
                 'name' => __('Block Quote', 'ut-health'),
                 'base' => 'vc_author_quote',
-                'description' => __('Another simple VC box', 'ut-health'), 
-                'category' => __('UT Health Designs', 'ut-health'),   
-                'icon' => get_template_directory_uri().'/assets/images/core/shield.png', 
-                //That params defines the field types to be used and the settings for eachf field           
+                'description' => __('A callout section with a quote, with options for an image and/or a link', 'ut-health'),
+                'category' => __('UT Health Designs', 'ut-health'),
+                'icon' => get_template_directory_uri() . '/assets/images/core/shield.png',
                 'params' => array(
-                    //array(
-                    //    'type' => 'attach_image',
-                    //    'holder' => 'img',
-                    //    'class' => '',
-                    //    'heading' => __( 'Author Image', 'ut-health' ),
-                    //   'param_name' => 'image_url',
-                    //    'value' => __( '', 'ut-health' ),
-                    //    'description' => __( 'Featured image for the author', 'ut-health' ),
-                    //),    
+                    array(
+                        'type' => 'attach_image',
+                        'holder' => 'img',
+                        'class' => '',
+                        'heading' => __('Author Image', 'ut-health'),
+                        'param_name' => 'image_url',
+                        'value' => __('', 'ut-health'),
+                        'description' => __('Featured image for the author', 'ut-health'),
+                        'group' => 'Content',
+                    ),
                     array(
                         'type' => 'textfield',
                         'holder' => 'h2',
                         'class' => 'text-class',
-                        'heading' => __( 'Author Name', 'ut-health' ),
+                        'heading' => __('Author Name', 'ut-health'),
                         'param_name' => 'author_name',
-                        'description' => __( 'Use the name of the person this is quoted from. You can also include credentials or titles.', 'ut-health' ),
-                        'value' => __( '', 'ut-health' ),
+                        'description' => __('Use the name of the person this is quoted from. You can also include credentials or titles.', 'ut-health'),
+                        'value' => __('', 'ut-health'),
                         'admin_label' => false,
                         'weight' => 0,
+                        'group' => 'Content',
                     ),
                     array(
                         'type' => 'textarea',
                         //'holder' => 'p',
                         'class' => 'text-class',
-                        'heading' => __( 'Quote Text', 'ut-health' ),
+                        'heading' => __('Quote Text', 'ut-health'),
                         'param_name' => 'quote_text',
-                        'value' => __( '', 'ut-health' ),
+                        'value' => __('', 'ut-health'),
                         'admin_label' => false,
                         'weight' => 0,
+                        'group' => 'Content',
                     ),
-                    array(
-                        'type' => 'textfield',
-                        'heading' => __( 'Additional class', 'ut-health' ),
-                        'param_name' => 'addl_class',
-                        'description' => __( 'Add a class to the paragraph tag surrounding the quote text.', 'ut-health' ),
-                        'value' => __( '', 'ut-health' ),
-                        'admin_label' => false,
-                        'weight' => 0,
-                    ),
-                    array(
-                        'type' => 'textfield',
-                        'heading' => __( 'Additional class on blockquote', 'ut-health' ),
-                        'param_name' => 'addl_quote_class',
-                        'description' => __( 'Add a class to the blockquote tag surrounding the quote text.', 'ut-health' ),
-                        'value' => __( '', 'ut-health' ),
-                        'admin_label' => false,
-                        'weight' => 0,
-                    ),
-                    /*
                     array(
                         'type' => 'vc_link',
-                        'heading' => __( 'URL', 'ut-health' ),
+                        'heading' => __('URL', 'wp-shield'),
                         'param_name' => 'url',
                         'dependency' => array(
                             'element' => 'link',
-                            'value' => __( 'Place Link Here', 'ut-health' ),
+                            'value' => __('Place Link Here', 'wp-shield'),
                         ),
-                        'description' => __( 'Select the URL here', 'ut-health' ),
+                        'description' => __('Select the URL here', 'wp-shield'),
                         'admin_label' => false,
                         'weight' => 0,
-                    ), 
+                        'group' => 'Content',
+                    ),
+                    array(
+                        'type' => 'vc_link',
+                        'heading' => __('Button', 'wp-shield'),
+                        'param_name' => 'button_url',
+                        'dependency' => array(
+                            'element' => 'link',
+                            'value' => __('Place Link Here', 'wp-shield'),
+                        ),
+                        'description' => __( 'Add a button as a link', 'wp-shield' ),
+                        'admin_label' => false,
+                        'weight' => 0,
+                        'group' => 'Content',
+                    ),
+                    array(
+                        'type' => 'dropdown',
+                        'class' => '',
+                        'heading' => 'Design Options',
+                        'param_name' => 'row_design_options',
+                        'group' => 'Design Options',
+                        'value' => array(
+                            'Bleeding Image Left' => 'img_bleed_left',
+                            'Bleeding Image Right' => 'img_bleed_right'
+                        )
+                    ),
+                    array(
+                        'type' => 'dropdown',
+                        'class' => '',
+                        'heading' => 'Button Styles',
+                        'param_name' => 'uth_button_style',
+                        'group' => 'Design Options',
+                        'value' => array(
+                            'Orange' => 'color orange',
+                            'White' => 'white'                      
+                        )
+                    ),
                     array(
                         'type' => 'textfield',
-                        'heading' => __( 'Image Size', 'ut-health' ),
-                        'param_name' => 'image_size',
-                        'description' => esc_html__( 'Copy and paste one of the following thumbnail sizes "thumbnail", "medium", "large", "full" (thumbnail is the default),  ', 'ut-health' ),
-                        'value' => __( '', 'ut-health' ),
-                        //'group' => 'Content',
-                    ),  */
-                    //array(
-                    //    'type'       => 'dropdown',
-                    //    'class'      => '',
-                    //    'heading'    => 'Block Design',
-                    //    'param_name' => 'block_design',
-                    //    'group' => __( 'Design options', 'ut-health' ),
-                    //    'value'      => array(
-                    //        'Select a quote design'  => '',
-                    //        'Panel Quote'  => 'panel_design',
-                    //        'Full Row Design'  => 'full_row',
-                    //        'Panel Alpha (Advanced)'  => 'panel_alpha',
-                    //
-                    //    )
-                    //),
-                    //array(
-                    //    'type'       => 'dropdown',
-                    //    'class'      => '',
-                    //    'heading'    => 'Color Options',
-                    //    'param_name' => 'color_options',
-                    //    'group' => __( 'Design options', 'ut-health' ),
-                    //    'value'      => array(
-                    //        'Select a color'  => '',
-                    //        'Theme Color'  => 'theme_color',
-                    //        'Theme Color (Darken)'  => 'theme_darken',
-                    //        'Academics (Green)'  => 'green',
-                    //        'Institutional (Purple)'  => 'purple',
-                    //        'Patient Care (Blue)'  => 'blue',
-                    //        'Research (Brown)' => 'brown',
-                    //        'Orange'  => 'orange',
-                            //'White'  => 'white-background',
-                    //    )
-                    //),
-                    //array(
-                    //    'type'       => 'dropdown',
-                    //    'class'      => '',
-                    //    'heading'    => 'Text Size',
-                    //    'param_name' => 'quote_size',
-                    //    'group' => __( 'Design options', 'ut-health' ),
-                    //    'value'      => array(
-                    //        'Select quote size'  => '',
-                    //        'Small'  => 'small',
-                    //        'Average Size'  => 'average',
-                    //    )
-                    //),
-                    //array(
-                    //    'type' => 'textfield',
-                    //    'heading' => __( 'Equilizer ID', 'ut-health' ),
-                    //    'param_name' => 'equilizer_id',
-                    //    'description' => esc_html__( 'This feature will can be used to match the heights of elements in the row. ', 'ut-health' ),
-                    //    'value' => __( '', 'ut-health' ),
-                    //    'group' => 'Match Heights', 
-                    //)
+                        'heading' => __('Additional class', 'ut-health'),
+                        'param_name' => 'addl_class',
+                        'description' => __('Add a class to the paragraph tag surrounding the quote text.', 'ut-health'),
+                        'value' => __('', 'ut-health'),
+                        'admin_label' => false,
+                        'weight' => 0,
+                        'group' => 'Design Options',
+                    ),
+                    array(
+                        'type' => 'textfield',
+                        'heading' => __('Additional class on blockquote', 'ut-health'),
+                        'param_name' => 'addl_quote_class',
+                        'description' => __('Add a class to the blockquote tag surrounding the quote text.', 'ut-health'),
+                        'value' => __('', 'ut-health'),
+                        'admin_label' => false,
+                        'weight' => 0,
+                        'group' => 'Design Options',
+                    ),
                 )
             )
-        );                                
-            
+        );
+
     }
 
     // Element HTML
-    public function vc_author_quote_html( $atts, $content ) {
-         
+    public function vc_author_quote_html($atts, $content)
+    {
+
         // Params extraction
         extract(
             shortcode_atts(
                 array(
-                    //'image_url'   => 'image_url',
+                    'image_url' => 'image_url',
                     'author_name' => '',
-                    'quote_text'   => '',
-                    'addl_class'   => '',
-                    'addl_quote_class'   => '',
-                    //'quote_size' => '',
-                    //'color_options' => '',
-                    //'equilizer_id' => '',
-                    //'block_design' => ''
-                    //'url'   => '',
-                    //'image_size' => '',
-                ), 
+                    'quote_text' => '',
+                    'url' => '',
+                    'button_url' => '',
+                    'row_design_options' => '',
+                    'uth_button_style' => '',
+                    'addl_class' => '',
+                    'addl_quote_class' => ''
+                ),
                 $atts
             )
         );
-        /** Define Image Options */
-        //if (!empty ($image_url)){
-        //    $cardImage = wp_get_attachment_image($image_url, 'medium', 'alt');
-        //}else{
-        //    $cardImage = '';
-        //}
-        /** Define Text Size Options */
-        //if ($quote_size =="small"){
-        //    $quote_size="small";
-        //}else{
-        //    $quote_size="large";
-        //}
-        /** Define Block Type Designs */
-        //if ($block_design == 'panel_design'){
-        //    $quote_styles = 'panel far-notso';
-        //    $image_wrapper = 'class="bleed"'; 
-        //}elseif($block_design == 'full_row'){
-        //    $quote_styles = '';
-        //    $image_wrapper = ''; 
-        //}elseif($block_design='panel_alpha'){
-        //    $quote_styles = 'panel colorized alpha';
-        //    $image_wrapper = ''; 
-        //}else{
-        //    $quote_styles = 'panel colorized colorized-theme far-notso';
-        //    $image_wrapper = ''; 
-        //}
+        // Define Image Options 
+        if (!empty($image_url)) {
+            $cardImage = wp_get_attachment_image($image_url, 'medium', 'alt');
+        } else {
+            $cardImage = '';
+        }
 
-        /** Define Colors */
-        //switch ($color_options){
-        //	case 'theme_color':
-        //        $background_color = 'colorized colorized-theme';
-        //        break;
-            
-        //    case 'theme_darken':
-        //        $background_color = 'colorized colorized-theme-darken';
-        //        break;
-                
-        //    case 'purple':
-        //        $background_color = 'colorized colorized-institutional';
-        //        break;
+        // Image location functionality, dropdown to add classes
+        // By default lets set the row_design_options to use image_bleed_left
+        if (empty($row_design_options)) {
+            $row_design_options = 'img_bleed_left';
+        }
 
-        //    case 'blue':
-        //        $background_color = 'colorized colorized-patientcare';
-        //        break;
+        // Logic for switching image location, needed to be image_bleed_left to work here
+        if ($row_design_options == 'img_bleed_left') {
+            $image_order_class = 'small-order-1 medium-order-2';
+            $content_order_class = 'small-order-1 medium-order-2';
+        } else {
+            $image_order_class = 'small-order-1 medium-order-2';
+            $content_order_class = 'small-order-2 medium-order-1';
+        }
 
-        //    case 'green':
-        //        $background_color = 'colorized colorized-academics';
-        //        break;
-            
-        //    case 'brown':
-        //        $background_color = 'colorized colorized-research';
-        //        break;
-            
-        //    case 'orange':
-        //        $background_color = 'colorized';
-        //        break;
-            
-        //    case '':
-        //        $background_color = '';
-        //        break;        
-        //}
-        // RENDER THE HTML
-        if (!empty($addl_class)){
+        // Additional classes 
+        if (!empty($addl_class)) {
             $class = ' class="' . $addl_class . '"';
         }
-        if (!empty($addl_quote_class)){
+        if (!empty($addl_quote_class)) {
             $quoteclass = ' class="' . $addl_quote_class . '"';
         }
+
+        // Link for blockquote
+        if (!empty($url)) {
+            $link = vc_build_link($url);
+            $href = $link['url'];
+            $title = !empty($link['title']) ? $link['title'] : '';
+            $url = '<p style="margin-top: 0.5rem;"><a href="' . $href . '" title="' . $title . '" class="arrow">'. $title .'</a></p>';
+        } else {
+            $url = '';
+        }
+
+        // Option for cite tag to be link?
+
+
+        // Button option
+        $use_link = false;
+        $button_one = vc_build_link($button_url);
+        if (strlen($button_one['url']) > 0) {
+            $use_link = true;
+            $a_ref = $button_one['url'];
+            $a_ref = apply_filters('vc_btn_a_href', $a_ref);
+            $a_title = $button_one['title'];
+            $a_title = apply_filters('vc_btn_a_title', $a_title);
+            $a_target = $button_one['target'];
+            $a_rel = $button_one['rel'];
+
+            $button_one_html = '<a style="margin-top: 0.5rem;" class="button ' . $uth_button_style . '" href="' . $a_ref . '" title="' . $a_title . '" target="' . $a_target . '" rel="' . $a_rel . '">
+            ' . $a_title . '
+            </a>';
+        }
+
+        // RENDER THE HTML
         $html = '
-            <blockquote' . $quoteclass . '><p' . $class . '>' . $quote_text . ' 
-                    </p><cite>' . $author_name . '</cite>
-                    </blockquote>';
-         
+            <div class="grid-container">
+                <div class="grid-x grid-margin-x align-center-middle">
+                    <div class="cell small-12 medium-4 large-3 ' . $image_order_class . '">
+                        ' . $cardImage . '
+                    </div>
+                    <div class="cell small-12 medium-6 large-8 margin-top ' . $content_order_class . '">
+                        <blockquote class="' . $quoteclass . '">
+                            <p class="' . $class . '">' . $quote_text . '</p>
+                            <cite>' . $author_name . '</cite>
+                        </blockquote>
+                        ' . $url . ' 
+                        ' . $button_one_html . ' 
+                    </div>
+                </div>
+            </div>
+        ';
+
         return $html;
-         
+
     }
-     
+
 } // End Element Class
- 
+
 // Element Class Init
-new uth_author_quote();    
+new uth_author_quote();
