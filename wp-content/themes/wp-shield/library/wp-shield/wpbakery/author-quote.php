@@ -150,7 +150,7 @@ class uth_author_quote extends WPBakeryShortCode
         extract(
             shortcode_atts(
                 array(
-                    'image_url' => 'image_url',
+                    'image_url' => '',
                     'author_name' => '',
                     'quote_text' => '',
                     'url' => '',
@@ -163,15 +163,28 @@ class uth_author_quote extends WPBakeryShortCode
                 $atts
             )
         );
-        // Define Image Options 
-        if (!empty($image_url)) {
-            $cardImage = wp_get_attachment_image($image_url, 'medium', 'alt');
+
+
+        // Conditionally add CSS class to hide image, and fill content area if no image is selected
+        $cardImage = '';
+        $image_column_class = '';
+        $content_column_class = 'cell small-12 medium-6 large-8 margin-top';
+
+        if (empty($image_url)) {
+            // If no custom image is selected, hide the default image, apply class to fill space for empty image
+            $cardImage = '<img src="" class="margin-bottom" style="display: none;" alt="">';
+            $content_column_class = 'cell small-12 medium-10 large-11 margin-top';
+        } elseif ($image_url === 'image_url') {
+            // If the default image is selected, hide it using style attribute, apply class to fill space for empty image
+            $cardImage = wp_get_attachment_image($image_url, 'large', 'alt', array('class' => 'margin-bottom', 'style' => 'display: none;'));
+            $content_column_class = 'cell small-12 medium-10 large-11 margin-top';
         } else {
-            $cardImage = '';
+            // If a custom image is selected, render it normally, apply class to compensate for image size
+            $cardImage = wp_get_attachment_image($image_url, 'large', 'alt', array('class' => 'margin-bottom'));
+            $image_column_class = 'cell small-12 medium-4 large-3';
         }
 
         // Image location functionality, dropdown to add classes
-        // By default lets set the row_design_options to use image_bleed_left
         if (empty($row_design_options)) {
             $row_design_options = 'img_bleed_left';
         }
@@ -223,14 +236,17 @@ class uth_author_quote extends WPBakeryShortCode
             </a>';
         }
 
+        /*
+            Check if we have an image, if we do create a div with image classes, classes for mobile order and add the actual image
+            If we do not have an image, omit the div with classes for the image and the image itself
+        */ 
+
         // RENDER THE HTML
         $html = '
             <div class="grid-container">
                 <div class="grid-x grid-margin-x align-center-middle">
-                    <div class="cell small-12 medium-4 large-3 ' . $image_order_class . '">
-                        ' . $cardImage . '
-                    </div>
-                    <div class="cell small-12 medium-6 large-8 margin-top ' . $content_order_class . '">
+                    ' . (!empty($image_url) ? '<div class="' . $image_column_class . ' ' . $image_order_class . '">' . $cardImage . '</div>' : '') . '
+                    <div class="' . $content_column_class . ' ' . $content_order_class . '">
                         <blockquote class="' . $quoteclass . '">
                             <p class="' . $class . '">' . $quote_text . '</p>
                             <cite>' . $author_name . '</cite>
