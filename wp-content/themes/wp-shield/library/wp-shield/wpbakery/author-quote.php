@@ -241,14 +241,6 @@ class uth_author_quote extends WPBakeryShortCode
             If we do not have an image, omit the div with classes for the image and the image itself
         */
 
-        // Additional classes 
-        if (!empty($addl_class)) {
-            $class = ' class="' . $addl_class . '"';
-        }
-        if (!empty($addl_quote_class)) {
-            $quoteclass = ' class="' . $addl_quote_class . '"';
-        }
-
         // RENDER THE HTML
         $html = '
             <div class="grid-container">
