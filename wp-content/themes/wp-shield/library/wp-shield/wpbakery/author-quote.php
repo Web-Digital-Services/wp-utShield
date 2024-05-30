@@ -239,7 +239,15 @@ class uth_author_quote extends WPBakeryShortCode
         /*
             Check if we have an image, if we do create a div with image classes, classes for mobile order and add the actual image
             If we do not have an image, omit the div with classes for the image and the image itself
-        */ 
+        */
+
+        // Additional classes 
+        if (!empty($addl_class)) {
+            $class = ' class="' . $addl_class . '"';
+        }
+        if (!empty($addl_quote_class)) {
+            $quoteclass = ' class="' . $addl_quote_class . '"';
+        }
 
         // RENDER THE HTML
         $html = '
@@ -247,8 +255,8 @@ class uth_author_quote extends WPBakeryShortCode
                 <div class="grid-x grid-margin-x align-center-middle">
                     ' . (!empty($image_url) ? '<div class="' . $image_column_class . ' ' . $image_order_class . '">' . $cardImage . '</div>' : '') . '
                     <div class="' . $content_column_class . ' ' . $content_order_class . '">
-                        <blockquote class="' . $quoteclass . '">
-                            <p class="' . $class . '">' . $quote_text . '</p>
+                        <blockquote ' . $quoteclass . '>
+                            <p ' . $class . '>' . $quote_text . '</p>
                             <cite>' . $author_name . '</cite>
                         </blockquote>
                         ' . $url . ' 
