@@ -1,6 +1,6 @@
 <?php 
 /*
-Element Description: Author Quote block type
+Element Description: Block Quote (Orbit)
 Documentation: http://www.wpelixir.com/how-to-create-new-element-in-visual-composer/
 */
 
