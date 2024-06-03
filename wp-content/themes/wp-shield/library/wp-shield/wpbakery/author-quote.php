@@ -29,11 +29,11 @@ class uth_author_quote extends WPBakeryShortCode
             array(
                 //This defines how the block appears in the element selection menu. 
                 //Define the name and description 
-                'name' => __('Block Quote', 'ut-health'),
+                'name' => __('Block Quote', 'wp-shield'),
                 'base' => 'vc_author_quote',
-                'description' => __('A callout section with a quote, with options for an image and/or a link', 'ut-health'),
-                'category' => __('UT Health Designs', 'ut-health'),
-                'icon' => get_template_directory_uri() . '/assets/images/core/shield.png',
+                'description' => __('A callout section with a quote, with options for an image and/or a link', 'wp-shield'),
+                'category' => __('UT Health Designs', 'wp-shield'),
+                'icon' => get_template_directory_uri().'/dist/assets/images/core/shield.png',
                 'params' => array(
                     array(
                         'type' => 'attach_image',
