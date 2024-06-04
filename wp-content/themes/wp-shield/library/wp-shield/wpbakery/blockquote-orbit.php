@@ -31,7 +31,7 @@ class uth_blockquote_orbit extends WPBakeryShortCode
                 //Define the name and description 
                 'name' => __('Block Quote (Orbit)', 'wp-shield'),
                 'base' => 'vc_blockquote_orbit',
-                'description' => __('A block quote section with a slideshow of quotes', 'wp-shield'),
+                'description' => __('Add up to 4 quotes with authors in a slide show', 'wp-shield'),
                 'category' => __('UT Health Designs', 'wp-shield'),
                 'icon' => get_template_directory_uri() . '/dist/assets/images/core/shield.png',
                 'params' => array(
@@ -169,57 +169,105 @@ class uth_blockquote_orbit extends WPBakeryShortCode
             $class = ' class="' . $addl_class . '"';
         }
 
-        //checks for author_name and quote_text if they exist
-        //should we use a function to populate 2-4 blockquotes based on user input, dropdown?
+        //checks for author_name and quote_text if they exist, if they do display blockquote and add link to side of slide show
+        $listItemBlock1 = '';
+        $listItemBlock2 = '';
+        $listItemBlock3 = '';
+        $listItemBlock4 = '';
+
+        $bullet1 = '';
+        $bullet2 = '';
+        $bullet3 = '';
+        $bullet4 = '';
+
+        if (!empty($author_name1) && !empty($quote_text1)) {
+            $listItemBlock1 = '
+                <li class="is-active orbit-slide">
+                    <blockquote>
+                        <p ' . $class . '>' . $quote_text1 . '</p>
+                        <cite>' . $author_name1 . '</cite>
+                    </blockquote>
+                </li>
+            ';
+
+            $bullet1 = '
+                <li><button class="is-active cell small-4" data-slide="0"><span class="show-for-sr">First slide
+                    details.</span><span class="show-for-sr">Current Slide</span></button></li>
+            ';
+        } 
+        
+        if(!empty($author_name2) && !empty($quote_text2)) {
+            $listItemBlock2 = '
+                <li class="orbit-slide">
+                    <blockquote>
+                        <p ' . $class . '>' . $quote_text2 . '</p>
+                        <cite>' . $author_name2 . '</cite>
+                    </blockquote>
+                </li>
+            ';
+
+            $bullet2 = '
+                <li><button class="cell small-4" data-slide="1"><span class="show-for-sr">Second slide
+                    details.</span></button></li>
+            ';
+        } 
+        
+        if(!empty($author_name3) && !empty($quote_text3)) {
+            $listItemBlock3 = '
+                <li class="orbit-slide">
+                    <blockquote>
+                        <p ' . $class . '>' . $quote_text3 . '</p>
+                        <cite>' . $author_name3 . '</cite>
+                    </blockquote>
+                <li>
+            ';
+
+            $bullet3 = '
+                <li><button class="cell small-4" data-slide="2"><span class="show-for-sr">Third slide
+                    details.</span></button></li>
+            ';
+        }  
+        
+        if(!empty($author_name4) && !empty($quote_text4)) {
+            $listItemBlock4 = '
+                <li class="orbit-slide">
+                    <blockquote>
+                        <p ' . $class . '>' . $quote_text4 . '</p>
+                        <cite>' . $author_name4 . '</cite>
+                    </blockquote>
+                </li>
+            ';
+
+            $bullet4 = '
+                <li><button class="cell small-4" data-slide="3"><span class="show-for-sr">Fourth slide
+                    details.</span></button></li>
+            ';
+        }
 
         // RENDER THE HTML
         $html = '       
             <div class="bleed color grey pullquote">
                 <div class="grid-container">
-                    <div class="orbit" role="region" aria-label="Favorite Text Ever" data-orbit>
+                    <div class="orbit" role="region" aria-label="Slide show of quotes" data-orbit>
                         <div class="grid-x align-center-middle">
-                        <div class="cell small-10">
-                            <ul class="orbit-container">
-                                <li class="is-active orbit-slide">
-                                    <blockquote>
-                                        <p ' . $class . '>' . $quote_text1 . '</p>
-                                        <cite>' . $author_name1 . '</cite>
-                                    </blockquote>
-                                </li>
-                                <li class="orbit-slide">
-                                    <blockquote>
-                                        <p ' . $class . '>' . $quote_text2 . '</p>
-                                        <cite>' . $author_name2 . '</cite>
-                                    </blockquote>
-                                </li>
-                                <li class="orbit-slide">
-                                    <blockquote>
-                                        <p ' . $class . '>' . $quote_text3 . '</p>
-                                        <cite>' . $author_name3 . '</cite>
-                                    </blockquote>
-                                </li>
-                                <li class="orbit-slide">
-                                    <blockquote>
-                                        <p ' . $class . '>' . $quote_text4 . '</p>
-                                        <cite>' . $author_name4 . '</cite>
-                                    </blockquote>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="cell small-1">
-                            <nav class="orbit-bullets">
-                            <ul class="no-bullet">
-                                <li><button class="is-active cell small-4" data-slide="0"><span class="show-for-sr">First slide
-                                    details.</span><span class="show-for-sr">Current Slide</span></button></li>
-                                <li><button class="cell small-4" data-slide="1"><span class="show-for-sr">Second slide
-                                    details.</span></button></li>
-                                <li><button class="cell small-4" data-slide="2"><span class="show-for-sr">Third slide
-                                    details.</span></button></li>
-                                <li><button class="cell small-4" data-slide="3"><span class="show-for-sr">Fourth slide
-                                    details.</span></button></li>
-                            </ul>
-                            </nav>
-                        </div>
+                            <div class="cell small-10">
+                                <ul class="orbit-container">
+                                    ' . $listItemBlock1 . '
+                                    ' . $listItemBlock2 . '
+                                    ' . $listItemBlock3 . '
+                                    ' . $listItemBlock4 . '
+                                </ul>
+                            </div>
+                            <div class="cell small-1">
+                                <nav class="orbit-bullets">
+                                    <ul class="no-bullet">
+                                        ' . $bullet1 . '
+                                        ' . $bullet2 . '
+                                        ' . $bullet3 . '
+                                        ' . $bullet4 . '
+                                    </ul>
+                                </nav>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -228,8 +276,6 @@ class uth_blockquote_orbit extends WPBakeryShortCode
 
         return $html;
     }
-
-
 }
 
 // Element Class Init
