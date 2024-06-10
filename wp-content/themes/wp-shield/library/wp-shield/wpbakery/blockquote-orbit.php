@@ -36,6 +36,7 @@ class uth_blockquote_orbit extends WPBakeryShortCode
                 'icon' => get_template_directory_uri() . '/dist/assets/images/core/shield.png',
                 'params' => array(
                     //do we want to just hard code 4 sets of author names/quotes?
+                    // need to break up into 5 tabs 
                     array(
                         'type' => 'textfield',
                         'holder' => 'h2',
@@ -46,7 +47,7 @@ class uth_blockquote_orbit extends WPBakeryShortCode
                         'value' => __('', 'wp-shield'),
                         'admin_label' => false,
                         'weight' => 0,
-                        'group' => 'Content',
+                        'group' => '1st Quote',
                     ),
                     array(
                         'type' => 'textarea',
@@ -56,7 +57,20 @@ class uth_blockquote_orbit extends WPBakeryShortCode
                         'value' => __('', 'wp-shield'),
                         'admin_label' => false,
                         'weight' => 0,
-                        'group' => 'Content',
+                        'group' => '1st Quote',
+                    ),
+                    array(
+                        'type' => 'vc_link',
+                        'heading' => __('Button 1', 'wp-shield'),
+                        'param_name' => 'button1',
+                        'dependency' => array(
+                            'element' => 'link',
+                            'value' => __('Place Link Here', 'wp-shield'),
+                        ),
+                        'description' => __('Add a button as a link', 'wp-shield'),
+                        'admin_label' => false,
+                        'weight' => 0,
+                        'group' => '1st Quote',
                     ),
                     //second set of blockquote data
                     array(
@@ -69,7 +83,7 @@ class uth_blockquote_orbit extends WPBakeryShortCode
                         'value' => __('', 'wp-shield'),
                         'admin_label' => false,
                         'weight' => 0,
-                        'group' => 'Content',
+                        'group' => '2nd Quote',
                     ),
                     array(
                         'type' => 'textarea',
@@ -79,7 +93,20 @@ class uth_blockquote_orbit extends WPBakeryShortCode
                         'value' => __('', 'wp-shield'),
                         'admin_label' => false,
                         'weight' => 0,
-                        'group' => 'Content',
+                        'group' => '2nd Quote',
+                    ),
+                    array(
+                        'type' => 'vc_link',
+                        'heading' => __('Button 2', 'wp-shield'),
+                        'param_name' => 'button2',
+                        'dependency' => array(
+                            'element' => 'link',
+                            'value' => __('Place Link Here', 'wp-shield'),
+                        ),
+                        'description' => __('Add a button as a link', 'wp-shield'),
+                        'admin_label' => false,
+                        'weight' => 0,
+                        'group' => '2nd Quote',
                     ),
                     //third set of blockquote data
                     array(
@@ -92,7 +119,7 @@ class uth_blockquote_orbit extends WPBakeryShortCode
                         'value' => __('', 'wp-shield'),
                         'admin_label' => false,
                         'weight' => 0,
-                        'group' => 'Content',
+                        'group' => '3rd Quote',
                     ),
                     array(
                         'type' => 'textarea',
@@ -102,7 +129,20 @@ class uth_blockquote_orbit extends WPBakeryShortCode
                         'value' => __('', 'wp-shield'),
                         'admin_label' => false,
                         'weight' => 0,
-                        'group' => 'Content',
+                        'group' => '3rd Quote',
+                    ),
+                    array(
+                        'type' => 'vc_link',
+                        'heading' => __('Button 3', 'wp-shield'),
+                        'param_name' => 'button3',
+                        'dependency' => array(
+                            'element' => 'link',
+                            'value' => __('Place Link Here', 'wp-shield'),
+                        ),
+                        'description' => __('Add a button as a link', 'wp-shield'),
+                        'admin_label' => false,
+                        'weight' => 0,
+                        'group' => '3rd Quote',
                     ),
                     //fourth set of blockquote data
                     array(
@@ -115,7 +155,7 @@ class uth_blockquote_orbit extends WPBakeryShortCode
                         'value' => __('', 'wp-shield'),
                         'admin_label' => false,
                         'weight' => 0,
-                        'group' => 'Content',
+                        'group' => '4th Quote',
                     ),
                     array(
                         'type' => 'textarea',
@@ -125,18 +165,44 @@ class uth_blockquote_orbit extends WPBakeryShortCode
                         'value' => __('', 'wp-shield'),
                         'admin_label' => false,
                         'weight' => 0,
-                        'group' => 'Content',
+                        'group' => '4th Quote',
                     ),
+                    array(
+                        'type' => 'vc_link',
+                        'heading' => __('Button 4', 'wp-shield'),
+                        'param_name' => 'button4',
+                        'dependency' => array(
+                            'element' => 'link',
+                            'value' => __('Place Link Here', 'wp-shield'),
+                        ),
+                        'description' => __('Add a button as a link', 'wp-shield'),
+                        'admin_label' => false,
+                        'weight' => 0,
+                        'group' => '4th Quote',
+                    ),
+                    //design options
                     array(
                         'type' => 'textfield',
                         'heading' => __('Additional class', 'wp-shield'),
                         'param_name' => 'addl_class',
-                        'description' => __('Add a class to the paragraph tag surrounding the quote text.', 'wp-shield'),
+                        'description' => __('Add a class like "large" to alter the paragraph text.', 'wp-shield'),
                         'value' => __('', 'wp-shield'),
                         'admin_label' => false,
                         'weight' => 0,
                         'group' => 'Design Options',
-                    )
+                    ),
+                    //Doesnt seem to work on this element, styles dont switch out correctly
+                    // array(
+                    //     'type' => 'dropdown',
+                    //     'class' => '',
+                    //     'heading' => 'Button Styles',
+                    //     'param_name' => 'uth_button_style',
+                    //     'group' => 'Design Options',
+                    //     'value' => array(
+                    //         'Orange' => 'color orange',
+                    //         'White' => 'white',
+                    //     )
+                    // ),
                 )
             )
         );
@@ -153,13 +219,18 @@ class uth_blockquote_orbit extends WPBakeryShortCode
                 array(
                     'author_name1' => '',
                     'quote_text1' => '',
+                    'button1' => '',
                     'author_name2' => '',
                     'quote_text2' => '',
+                    'button2' => '',
                     'author_name3' => '',
                     'quote_text3' => '',
+                    'button3' => '',
                     'author_name4' => '',
                     'quote_text4' => '',
+                    'button4' => '',
                     'addl_class' => ''
+                    // 'uth_button_style' => ''
                 ),
                 $atts
             )
@@ -169,7 +240,76 @@ class uth_blockquote_orbit extends WPBakeryShortCode
             $class = ' class="' . $addl_class . '"';
         }
 
-        //checks for author_name and quote_text if they exist, if they do display blockquote and add link to side of slide show
+        // Image check
+
+
+        // Button options
+        $use_link1 = false;
+        $button_one = vc_build_link($button1);
+        if (strlen($button_one['url']) > 0) {
+            $use_link1 = true;
+            $a_ref1 = $button_one['url'];
+            $a_ref1 = apply_filters('vc_btn_a_href', $a_ref1);
+            $a_title1 = $button_one['title'];
+            $a_title1 = apply_filters('vc_btn_a_title', $a_title1);
+            $a_target1 = $button_one['target'];
+            $a_rel1 = $button_one['rel'];
+
+            $button_one_html = '<a style="margin-top: 0.5rem;" class="button' . $uth_button_style . '" href="' . $a_ref1 . '" title="' . $a_title1 . '" target="' . $a_target1 . '" rel="' . $a_rel1 . '">
+            ' . $a_title1 . '
+            </a>';
+        }
+        
+        $use_link2 = false;
+        $button_two = vc_build_link($button2);
+        if (strlen($button_two['url']) > 0) {
+            $use_link2 = true;
+            $a_ref2 = $button_two['url'];
+            $a_ref2 = apply_filters('vc_btn_a_href', $a_ref2);
+            $a_title2 = $button_two['title'];
+            $a_title2 = apply_filters('vc_btn_a_title', $a_title2);
+            $a_target2 = $button_two['target'];
+            $a_rel2 = $button_two['rel'];
+
+            $button_two_html = '<a style="margin-top: 0.5rem;" class="button ' . $uth_button_style . '" href="' . $a_ref2 . '" title="' . $a_title2 . '" target="' . $a_target2 . '" rel="' . $a_rel2 . '">
+            ' . $a_title2 . '
+            </a>';
+        }
+
+        $use_link3 = false;
+        $button_three = vc_build_link($button3);
+        if (strlen($button_three['url']) > 0) {
+            $use_link3 = true;
+            $a_ref3 = $button_three['url'];
+            $a_ref3 = apply_filters('vc_btn_a_href', $a_ref3);
+            $a_title3 = $button_three['title'];
+            $a_title3 = apply_filters('vc_btn_a_title', $a_title3);
+            $a_target3 = $button_three['target'];
+            $a_rel3 = $button_three['rel'];
+
+            $button_three_html = '<a style="margin-top: 0.5rem;" class="button ' . $uth_button_style . '" href="' . $a_ref3 . '" title="' . $a_title3 . '" target="' . $a_target3 . '" rel="' . $a_rel3 . '">
+            ' . $a_title3 . '
+            </a>';
+        }
+
+        $use_link4 = false;
+        $button_four = vc_build_link($button4);
+        if (strlen($button_four['url']) > 0) {
+            $use_link4 = true;
+            $a_ref4 = $button_four['url'];
+            $a_ref4 = apply_filters('vc_btn_a_href', $a_ref4);
+            $a_title4 = $button_four['title'];
+            $a_title4 = apply_filters('vc_btn_a_title', $a_title4);
+            $a_target4 = $button_four['target'];
+            $a_rel4 = $button_four['rel'];
+
+            $button_four_html = '<a style="margin-top: 0.5rem;" class="button ' . $uth_button_style . '" href="' . $a_ref4 . '" title="' . $a_title4 . '" target="' . $a_target4 . '" rel="' . $a_rel4 . '">
+            ' . $a_title4 . '
+            </a>';
+        }
+
+
+        // Checks for author_name and quote_text if they exist, if they do display blockquote and add link to side of slide show
         $listItemBlock1 = '';
         $listItemBlock2 = '';
         $listItemBlock3 = '';
@@ -187,6 +327,7 @@ class uth_blockquote_orbit extends WPBakeryShortCode
                         <p ' . $class . '>' . $quote_text1 . '</p>
                         <cite>' . $author_name1 . '</cite>
                     </blockquote>
+                    ' . $button_one_html . '
                 </li>
             ';
 
@@ -203,6 +344,7 @@ class uth_blockquote_orbit extends WPBakeryShortCode
                         <p ' . $class . '>' . $quote_text2 . '</p>
                         <cite>' . $author_name2 . '</cite>
                     </blockquote>
+                    ' . $button_two_html . '
                 </li>
             ';
 
@@ -219,6 +361,7 @@ class uth_blockquote_orbit extends WPBakeryShortCode
                         <p ' . $class . '>' . $quote_text3 . '</p>
                         <cite>' . $author_name3 . '</cite>
                     </blockquote>
+                    ' . $button_three_html . '
                 <li>
             ';
 
@@ -235,6 +378,7 @@ class uth_blockquote_orbit extends WPBakeryShortCode
                         <p ' . $class . '>' . $quote_text4 . '</p>
                         <cite>' . $author_name4 . '</cite>
                     </blockquote>
+                    ' . $button_four_html . '
                 </li>
             ';
 
@@ -244,6 +388,8 @@ class uth_blockquote_orbit extends WPBakeryShortCode
             ';
         }
 
+
+        // Need to add section for image and link
         // RENDER THE HTML
         $html = '       
             <div class="bleed color grey pullquote">
