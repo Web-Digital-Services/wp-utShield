@@ -255,7 +255,7 @@ class uth_blockquote_orbit extends WPBakeryShortCode
             $a_target1 = $button_one['target'];
             $a_rel1 = $button_one['rel'];
 
-            $button_one_html = '<a style="margin-top: 0.5rem;" class="button' . $uth_button_style . '" href="' . $a_ref1 . '" title="' . $a_title1 . '" target="' . $a_target1 . '" rel="' . $a_rel1 . '">
+            $button_one_html = '<a style="margin-top: 0.5rem;" class="button ' . $uth_button_style . '" href="' . $a_ref1 . '" title="' . $a_title1 . '" target="' . $a_target1 . '" rel="' . $a_rel1 . '">
             ' . $a_title1 . '
             </a>';
         }
