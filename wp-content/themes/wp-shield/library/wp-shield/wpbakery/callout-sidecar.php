@@ -245,7 +245,7 @@ class uth_content_Sidecar_Callout extends WPBakeryShortCode {
         }
         
             $html = '
-         <div class="grid-x ' . $color_class . '">
+         <div class="grid-x margin-bottom ' . $color_class . '">
             <div class="cell medium-12 large-6 flex-container">
                <div class="callout outline flex-child-auto">'
                . $header_left .
