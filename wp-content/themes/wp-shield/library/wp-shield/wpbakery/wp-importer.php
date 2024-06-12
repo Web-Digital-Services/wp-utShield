@@ -15,6 +15,7 @@ function vc_before_init_actions() {
     require_once( get_template_directory().'/library/wp-shield/wpbakery/directory-listing.php' );
     require_once( get_template_directory().'/library/wp-shield/wpbakery/events.php' );
     require_once( get_template_directory().'/library/wp-shield/wpbakery/callout-content.php' );
+    require_once( get_template_directory().'/library/wp-shield/wpbakery/callout-sidecar.php' );
     require_once( get_template_directory().'/library/wp-shield/wpbakery/callout-interactive.php' );
     require_once( get_template_directory().'/library/wp-shield/wpbakery/icons.php' );
     require_once( get_template_directory().'/library/wp-shield/wpbakery/icons-ut-health-map.php' );
