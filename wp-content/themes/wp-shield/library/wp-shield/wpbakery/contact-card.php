@@ -51,6 +51,7 @@ class uth_contact_card extends WPBakeryShortCode {
                         'holder' => 'div',
                         'heading' => __( 'Header', 'wp-shield' ),
                         'param_name' => 'header',
+                        'description' => esc_html__('Headers will be an h3 by default.', 'wp-shield'),
                         'value' => __( '', 'wp-shield' ),
                         'admin_label' => false,
                         'weight' => 0,
@@ -114,7 +115,33 @@ class uth_contact_card extends WPBakeryShortCode {
                         'value' => __( '', 'wp-shield' ),
                         'admin_label' => false,
                         'weight' => 0,
-                    ), 
+                    ),
+                    array(
+                        'type' => 'dropdown',
+                        'class' => '',
+                        'heading' => 'Header Size',
+                        'param_name' => 'header_size',
+                        'description' => esc_html__('h2 will be the largest header size, h5 is the smallest.', 'wp-shield'),
+                        'group' => 'Design Options',
+                        'value' => array(
+                            'Select a header size' => 'h3',
+                            'h2' => 'h2',
+                            'h3' => 'h3',
+                            'h4' => 'h4',
+                            'h5' => 'h5',
+                        )
+                    ),
+                    array(
+                        'type' => 'checkbox',
+                        'holder' => '',
+                        'heading' => __('Center Content', 'wp-shield'),
+                        'description' => esc_html__('Checking this box will center the content.', 'wp-shield'),
+                        'param_name' => 'center_element',
+                        'value' => __('', 'wp-shield'),
+                        'admin_label' => false,
+                        'weight' => 0,
+                        'group' => 'Design Options',
+                    ),
                     //Single line text field. 
                     array(
                         'type' => 'textfield',
@@ -154,6 +181,8 @@ class uth_contact_card extends WPBakeryShortCode {
                     'email'   => '',
                     'fax'     => '',
                     'address'   => '',
+                    'header_size' => '',
+                    'center_element' => '',
                     'optional_css'   => '',
                     'equilizer_id' => ''
                 ), 
@@ -161,117 +190,162 @@ class uth_contact_card extends WPBakeryShortCode {
             )
         );
 
-if (!empty($header)){
-    $header_display = '<h3>' . $header . '</h3><br>';
-}else{
-    $header_display = '';
-}        
-if (!empty($name)){
-    $name_display = '<strong>' . $name . '</strong><br>';
-}else{
-    $name_display = '';
-}
-if (!empty($title)){
-    $title_display = '<em>' . $title . '</em><br>';
-}else{
-    $title_display = '';
-}
-if (!empty($address)){
-    $address_display = $address;
-}else{
-    $address_display = '';
-}
-if (!empty($phone)){
-    $phone_display = '<li>
-    <a>
-        <span class="fa-li">
-            <span class="fa-stack">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fas fa-phone-alt fa-stack-1x fa-inverse"></i>
-            </span>
-        </span>
-        <span>' . $phone . '</span>
-    </a>
-</li>';
-}else{
-    $phone_display = '';
-}
-if (!empty($email)){
-    $email_display = '<li>
-    <a>
-        <span class="fa-li">
-            <span class="fa-stack">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
-            </span>
-        </span>
-        <span>' . $email . '</span>
-    </a>
-</li>';
-}else{
-    $email_display = '';
-}
-//third field added, fax
-if (!empty($fax)){
-    $fax_display = '<li>
-    <a>
-        <span class="fa-li">
-            <span class="fa-stack">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fas fa-fax fa-stack-1x fa-inverse"></i>
-            </span>
-        </span>
-        <span>' . $fax . '</span>
-    </a>
-</li>';
-}else{
-    $fax_display = '';
-}
-#Load Equilizer To Match Heights
-if (!empty($equilizer_id)){
-    $equilizer_id = 'data-equalizer-watch="' . $equilizer_id . '"';
-}else{
-    $equilizer_id = '';
-}
+        // Check if we have a header, if we do then choose the size
+        $header_display = '';
+        if (!empty($header)) {
+            switch($header_size) {
+                case 'h2':
+                    $header_display = '<h2>' . $header . '</h2><br>';
+                    break;
+                case 'h3':
+                    $header_display = '<h3>' . $header . '</h3><br>';
+                    break;
+                case 'h4':
+                    $header_display = '<h4>' . $header . '</h4><br>';
+                    break;
+                case 'h5':
+                    $header_display = '<h5>' . $header . '</h5><br>';
+                    break;
+                default:
+                    $header_display = '<h3>' . $header . '</h3><br>';
+                    break;
+            }
+        }
+
+        if (!empty($name)){
+            $name_display = '<strong>' . $name . '</strong><br>';
+        }else{
+            $name_display = '';
+        }
+
+        if (!empty($title)){
+            $title_display = '<em>' . $title . '</em><br>';
+        }else{
+            $title_display = '';
+        }
+        
+        if (!empty($address)){
+            $address_display = $address;
+        }else{
+            $address_display = '';
+        }
+
+        // Center content with checkbox
+        if ($center_element == 'true') {
+            $wrapper = '<div class="grid-x grid-padding-x grid-padding-y text-center" style="margin: 0 auto;">';
+            $contact_item_styles = 'display: flex; margin-left: 1rem;';
+            $contact_text_styles = 'display: inline-block;';
+            $end_wrapper = '</div>';
+        } else {
+            $wrapper = '<div class="grid-x grid-padding-x grid-padding-y align-middle">';
+            $contact_item_styles = '';
+            $contact_text_styles = '';
+            $end_wrapper = '</div>';
+        }
+
+        if (!empty($phone)){
+            $phone_display = 
+                '<li ' . $contact_item_styles . '>
+                    <a>
+                        <span class="fa-li">
+                            <span class="fa-stack">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-phone-alt fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </span>
+                        <span ' . $contact_text_styles . '>' . $phone . '</span>
+                    </a>
+                </li>';
+        } else {
+            $phone_display = '';
+        }
+
+        if (!empty($email)){
+            $email_display =
+                '<li ' . $contact_item_styles . '>
+                    <a>
+                        <span class="fa-li">
+                            <span class="fa-stack">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </span>
+                        <span ' . $contact_text_styles . '>' . $email . '</span>
+                    </a>
+                </li>';
+        } else {
+            $email_display = '';
+        }
+
+        //third field added, fax
+        if (!empty($fax)){
+            $fax_display =
+                '<li ' . $contact_item_styles . '>
+                    <a>
+                        <span class="fa-li">
+                            <span class="fa-stack">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-fax fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </span>
+                        <span ' . $contact_text_styles . '>' . $fax . '</span>
+                    </a>
+                </li>';
+        } else {
+            $fax_display = '';
+        }
+
+        #Load Equilizer To Match Heights
+        if (!empty($equilizer_id)){
+            $equilizer_id = 'data-equalizer-watch="' . $equilizer_id . '"';
+        }else{
+            $equilizer_id = '';
+        }
 
         $content = wpautop($content);
         
         // RENDER THE HTML
         if (!empty($img_url)){
-            $html = '<div class="cell card"' . $equilizer_id . '>
-            <div class="grid-x grid-padding-x grid-padding-y align-middle">
-                <div class="cell small-12 medium-4">'
-                    . wp_get_attachment_image($img_url, 'width=100%', 'height=auto') .
-                '</div>
-                <div class="cell small-12 medium-8">' 
-                    . $header_display .
-                '<address>'
-                    . $name_display . $title_display . $address_display . '</address>
-                <ul class="fa-ul">' . 
-                    $phone_display .
-                    $email_display . 
-                    $fax_display
-                . '</ul>
-                </div>
-            </div>
-        </div>';
-        }else{
-            $html = '<div class="cell card"' . $equilizer_id . '>
-            <div class="grid-x grid-padding-x grid-padding-y align-middle">
-                <div class="cell small-12 medium-12">'
-                    . $header_display .
-                    '<address>'
-                    . $name_display . $title_display .
-                    $address_display
-                . '</address>
-                <ul class="fa-ul">' .
-                $phone_display .
-                $email_display . 
-                $fax_display
-                . '</ul>
-                </div>
-            </div>
-        </div>';
+            $html = '
+                <div class="cell card"' . $equilizer_id . '>
+                    ' . $wrapper . '
+                        <div class="cell small-12 medium-4">'
+                            . wp_get_attachment_image($img_url, 'width=100%', 'height=auto') .
+                        '</div>
+                        <div class="cell small-12 medium-8">' 
+                                . $header_display .
+                            '<address>' . 
+                                $name_display . 
+                                $title_display . 
+                                $address_display . 
+                            '</address>
+                            <ul class="fa-ul">' . 
+                                $phone_display .
+                                $email_display . 
+                                $fax_display . 
+                            '</ul>
+                        </div>
+                    ' . $end_wrapper . '
+                </div>';
+        } else {
+            $html = '
+                <div class="cell card"' . $equilizer_id . '>
+                    ' . $wrapper . '
+                        <div class="cell small-12 medium-12">'
+                                . $header_display .
+                            '<address>' . 
+                                $name_display . 
+                                $title_display . 
+                                $address_display . 
+                            '</address>
+                            <ul class="fa-ul">' .
+                                $phone_display .
+                                $email_display . 
+                                $fax_display . 
+                            '</ul>
+                        </div>
+                    ' . $end_wrapper . '
+                </div>';
         }
 
         return $html; 
