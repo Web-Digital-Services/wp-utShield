@@ -61,6 +61,17 @@ class uth_heading extends WPBakeryShortCode {
                         'weight' => 0,
                         'group' => 'General',
                     ),
+                    //Single line text field. 
+                    array(
+                        'type' => 'textfield',
+                        'holder' => '',
+                        'heading' => __( 'Optional URL', 'ut-health' ),
+                        'param_name' => 'uth_opt_url',
+                        'value' => __( '', 'ut-health' ),
+                        'admin_label' => false,
+                        'weight' => 0,
+                        'group' => 'General',
+                    ),
                     array(
                         'type'       => 'dropdown',
                         'class'      => '',
@@ -89,7 +100,8 @@ class uth_heading extends WPBakeryShortCode {
                     'uth_heading_size'   => '',
                     'uth_heading_text'   => '',
                     'uth_addl_classes' => '',
-                    'uth_eyebrow_text' => ''
+                    'uth_eyebrow_text' => '',
+                    'uth_opt_url' => ''
                 ), 
 
                 $atts
@@ -102,10 +114,18 @@ class uth_heading extends WPBakeryShortCode {
             $eyebrow = '<p class="eyebrow">' . $uth_eyebrow_text . '</p>';
         }
         if (!empty($uth_heading_size)){
-            $html = $eyebrow . '<' . $uth_heading_size . $classes . '>' . $uth_heading_text . '</' . $uth_heading_size . '>';
+            if (!empty($uth_opt_url)){
+                $html = $eyebrow . '<a href="' . $uth_opt_url . '"><' . $uth_heading_size . $classes . '>' . $uth_heading_text . '</' . $uth_heading_size . '></a>';     
+            }else{
+                $html = $eyebrow . '<' . $uth_heading_size . $classes . '>' . $uth_heading_text . '</' . $uth_heading_size . '>';
+            }
         }else{
-            $html = $eyebrow . '<h2' . $classes . '>' . $uth_heading_text . '</h2>';
-        }  
+            if (!empty($uth_opt_url)){
+                $html = $eyebrow . '<a href="' . $uth_opt_url . '"><h2' . $classes . '>' . $uth_heading_text . '</h2></a>';     
+            }else{
+                $html = $eyebrow . '<h2' . $classes . '>' . $uth_heading_text . '</h2>';
+                } 
+            }
          
         return $html;
     }
