@@ -72,6 +72,17 @@ class uth_contact_card extends WPBakeryShortCode {
                         'holder' => 'div',
                         'heading' => __( 'Title', 'wp-shield' ),
                         'param_name' => 'title',
+                        'description' => esc_html__('Title field.', 'wp-shield'),
+                        'value' => __( '', 'wp-shield' ),
+                        'admin_label' => false,
+                        'weight' => 0,
+                    ),
+                    array(
+                        'type' => 'textfield',
+                        'holder' => 'div',
+                        'heading' => __( 'Secondary Title', 'wp-shield' ),
+                        'param_name' => 'italicized_title',
+                        'description' => esc_html__('Title field in italics.', 'wp-shield'),
                         'value' => __( '', 'wp-shield' ),
                         'admin_label' => false,
                         'weight' => 0,
@@ -176,7 +187,8 @@ class uth_contact_card extends WPBakeryShortCode {
                     'img_url'   => '',
                     'header'   => '',
                     'name'   => '',
-                    'title'   => '',
+                    'title' => '',
+                    'italicized_title' => '',
                     'phone'   => '',
                     'email'   => '',
                     'fax'     => '',
@@ -224,9 +236,15 @@ class uth_contact_card extends WPBakeryShortCode {
         }
 
         if (!empty($title)){
-            $title_display = '<em>' . $title . '</em><br>';
+            $title_display = $title . '<br>';
         }else{
             $title_display = '';
+        }
+
+        if (!empty($italicized_title)){
+            $italicized_title_display = '<em>' . $italicized_title . '</em><br>';
+        }else{
+            $italicized_title_display = '';
         }
         
         if (!empty($address)){
@@ -329,6 +347,7 @@ class uth_contact_card extends WPBakeryShortCode {
                             '<address>' . 
                                 $name_display . 
                                 $title_display . 
+                                $italicized_title_display . 
                                 $address_display . 
                             '</address>
                             <ul class="fa-ul" style="text-align: left;">' . 
@@ -348,6 +367,7 @@ class uth_contact_card extends WPBakeryShortCode {
                             '<address>' . 
                                 $name_display . 
                                 $title_display . 
+                                $italicized_title_display . 
                                 $address_display . 
                             '</address>
                             <ul class="fa-ul" style="text-align: left;">' .
