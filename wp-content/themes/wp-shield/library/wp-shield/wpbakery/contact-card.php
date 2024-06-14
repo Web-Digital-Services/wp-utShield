@@ -72,7 +72,7 @@ class uth_contact_card extends WPBakeryShortCode {
                         'holder' => 'div',
                         'heading' => __( 'Title', 'wp-shield' ),
                         'param_name' => 'title',
-                        'description' => esc_html__('Title field.', 'wp-shield'),
+                        'description' => esc_html__('Title field in italics.', 'wp-shield'),
                         'value' => __( '', 'wp-shield' ),
                         'admin_label' => false,
                         'weight' => 0,
@@ -81,8 +81,8 @@ class uth_contact_card extends WPBakeryShortCode {
                         'type' => 'textfield',
                         'holder' => 'div',
                         'heading' => __( 'Secondary Title', 'wp-shield' ),
-                        'param_name' => 'italicized_title',
-                        'description' => esc_html__('Title field in italics.', 'wp-shield'),
+                        'param_name' => 'non_italics_title',
+                        'description' => esc_html__('Title field in regular font.', 'wp-shield'),
                         'value' => __( '', 'wp-shield' ),
                         'admin_label' => false,
                         'weight' => 0,
@@ -188,7 +188,7 @@ class uth_contact_card extends WPBakeryShortCode {
                     'header'   => '',
                     'name'   => '',
                     'title' => '',
-                    'italicized_title' => '',
+                    'non_italics_title' => '',
                     'phone'   => '',
                     'email'   => '',
                     'fax'     => '',
@@ -236,15 +236,15 @@ class uth_contact_card extends WPBakeryShortCode {
         }
 
         if (!empty($title)){
-            $title_display = $title . '<br>';
+            $title_display = '<em>' . $title . '</em><br>';
         }else{
             $title_display = '';
         }
 
-        if (!empty($italicized_title)){
-            $italicized_title_display = '<em>' . $italicized_title . '</em><br>';
+        if (!empty($non_italics_title)){
+            $non_italics_title_display = $non_italics_title . '<br>';
         }else{
-            $italicized_title_display = '';
+            $non_italics_title_display = '';
         }
         
         if (!empty($address)){
@@ -347,7 +347,7 @@ class uth_contact_card extends WPBakeryShortCode {
                             '<address>' . 
                                 $name_display . 
                                 $title_display . 
-                                $italicized_title_display . 
+                                $non_italics_title_display . 
                                 $address_display . 
                             '</address>
                             <ul class="fa-ul" style="text-align: left;">' . 
@@ -367,7 +367,7 @@ class uth_contact_card extends WPBakeryShortCode {
                             '<address>' . 
                                 $name_display . 
                                 $title_display . 
-                                $italicized_title_display . 
+                                $non_italics_title_display . 
                                 $address_display . 
                             '</address>
                             <ul class="fa-ul" style="text-align: left;">' .
