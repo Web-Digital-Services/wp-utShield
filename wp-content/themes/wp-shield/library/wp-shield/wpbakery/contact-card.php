@@ -190,24 +190,29 @@ class uth_contact_card extends WPBakeryShortCode {
             )
         );
 
+        $classes = '';
+        if (!empty($optional_css)) {
+            $classes = ' class="' . esc_attr($optional_css) . '"';
+        }
+
         // Check if we have a header, if we do then choose the size
         $header_display = '';
         if (!empty($header)) {
-            switch($header_size) {
+            switch ($header_size) {
                 case 'h2':
-                    $header_display = '<h2>' . $header . '</h2><br>';
+                    $header_display = '<h2' . $classes . '>' . esc_html($header) . '</h2><br>';
                     break;
                 case 'h3':
-                    $header_display = '<h3>' . $header . '</h3><br>';
+                    $header_display = '<h3' . $classes . '>' . esc_html($header) . '</h3><br>';
                     break;
                 case 'h4':
-                    $header_display = '<h4>' . $header . '</h4><br>';
+                    $header_display = '<h4' . $classes . '>' . esc_html($header) . '</h4><br>';
                     break;
                 case 'h5':
-                    $header_display = '<h5>' . $header . '</h5><br>';
+                    $header_display = '<h5' . $classes . '>' . esc_html($header) . '</h5><br>';
                     break;
                 default:
-                    $header_display = '<h3>' . $header . '</h3><br>';
+                    $header_display = '<h3' . $classes . '>' . esc_html($header) . '</h3><br>';
                     break;
             }
         }
@@ -243,11 +248,18 @@ class uth_contact_card extends WPBakeryShortCode {
             $end_wrapper = '</div>';
         }
 
+        /* 
+        This is to override the absolute positioning font-awesome uses for icons, 
+        only applied if center checkbox is checked or true
+        */
+        $unset_style = $center_element == true ? 'style="position: unset;"' : '';
+
+
         if (!empty($phone)){
             $phone_display = 
                 '<li ' . $contact_item_styles . '>
                     <a>
-                        <span class="fa-li">
+                        <span class="fa-li" ' . $unset_style . '>
                             <span class="fa-stack">
                                 <i class="fas fa-circle fa-stack-2x"></i>
                                 <i class="fas fa-phone-alt fa-stack-1x fa-inverse"></i>
@@ -264,7 +276,7 @@ class uth_contact_card extends WPBakeryShortCode {
             $email_display =
                 '<li ' . $contact_item_styles . '>
                     <a>
-                        <span class="fa-li">
+                        <span class="fa-li" ' . $unset_style . '>
                             <span class="fa-stack">
                                 <i class="fas fa-circle fa-stack-2x"></i>
                                 <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
@@ -282,7 +294,7 @@ class uth_contact_card extends WPBakeryShortCode {
             $fax_display =
                 '<li ' . $contact_item_styles . '>
                     <a>
-                        <span class="fa-li">
+                        <span class="fa-li" ' . $unset_style . '>
                             <span class="fa-stack">
                                 <i class="fas fa-circle fa-stack-2x"></i>
                                 <i class="fas fa-fax fa-stack-1x fa-inverse"></i>
@@ -319,7 +331,7 @@ class uth_contact_card extends WPBakeryShortCode {
                                 $title_display . 
                                 $address_display . 
                             '</address>
-                            <ul class="fa-ul">' . 
+                            <ul class="fa-ul" style="text-align: left;">' . 
                                 $phone_display .
                                 $email_display . 
                                 $fax_display . 
@@ -338,7 +350,7 @@ class uth_contact_card extends WPBakeryShortCode {
                                 $title_display . 
                                 $address_display . 
                             '</address>
-                            <ul class="fa-ul">' .
+                            <ul class="fa-ul" style="text-align: left;">' .
                                 $phone_display .
                                 $email_display . 
                                 $fax_display . 
