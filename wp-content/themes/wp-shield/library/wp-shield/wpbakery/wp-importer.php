@@ -19,6 +19,7 @@ function vc_before_init_actions() {
     require_once( get_template_directory().'/library/wp-shield/wpbakery/callout-interactive.php' );
     require_once( get_template_directory().'/library/wp-shield/wpbakery/icons.php' );
     require_once( get_template_directory().'/library/wp-shield/wpbakery/icons-ut-health-map.php' );
+    require_once( get_template_directory().'/library/wp-shield/wpbakery/links.php' );
     require_once( get_template_directory().'/library/wp-shield/wpbakery/lists.php' );
     require_once( get_template_directory().'/library/wp-shield/wpbakery/quickfacts_callout.php' );
     require_once( get_template_directory().'/library/wp-shield/wpbakery/quickfacts-row.php' );
