@@ -203,13 +203,13 @@ class uth_content_Sidecar_Callout extends WPBakeryShortCode {
         }
 
         if ((!empty($button_left_link)) && (!empty($button_text_left))){
-            $button_left = '<p><a class="button" href=">' . $button_left_link . '">' . $button_text_left . '</a></p>';
+            $button_left = '<p><a class="button" href="' . $button_left_link . '">' . $button_text_left . '</a></p>';
         }else{
             $button_left = '';
         }
 
         if ((!empty($second_button_left_link)) && (!empty($second_button_text_left))){
-            $second_button_left = '<p><a class="button ghost" href=">' . $second_button_left_link . '">' . $second_button_text_left . '</a></p>';
+            $second_button_left = '<p><a class="button ghost" href="' . $second_button_left_link . '">' . $second_button_text_left . '</a></p>';
         }else{
             $second_button_left = '';
         }
@@ -221,13 +221,13 @@ class uth_content_Sidecar_Callout extends WPBakeryShortCode {
         }
         
         if ((!empty($button_right_link)) && (!empty($button_text_right))){
-            $button_right = '<p><a class="button" href=">' . $button_right_link . '">' . $button_text_right . '</a></p>';
+            $button_right = '<p><a class="button" href="' . $button_right_link . '">' . $button_text_right . '</a></p>';
         }else{
             $button_right = '';
         }
         
         if ((!empty($second_button_right_link)) && (!empty($second_button_text_right))){
-            $second_button_right = '<p><a class="button ghost" href=">' . $second_button_right_link . '">' . $second_button_text_right . '</a></p>';
+            $second_button_right = '<p><a class="button ghost" href="' . $second_button_right_link . '">' . $second_button_text_right . '</a></p>';
         }else{
             $second_button_right = '';
         }
