@@ -45,6 +45,52 @@ class uth_content_Callout extends WPBakeryShortCode {
                         'value' => __( '', 'wp-shield' ),
                         'group' => 'Content',
                     ),
+                    //Single line text field. 
+                    array(
+                        'type' => 'textfield',
+                        'holder' => '',
+                        'heading' => __( 'Heading Text', 'ut-health' ),
+                        'param_name' => 'uth_heading_text',
+                        'value' => __( '', 'ut-health' ),
+                        'admin_label' => false,
+                        'weight' => 0,
+                        'group' => 'Content',
+                    ),
+                    //Single line text field. 
+                    array(
+                        'type' => 'textfield',
+                        'holder' => '',
+                        'heading' => __( 'Additional Classes', 'ut-health' ),
+                        'param_name' => 'uth_addl_classes',
+                        'value' => __( '', 'ut-health' ),
+                        'admin_label' => false,
+                        'weight' => 0,
+                        'group' => 'Content',
+                    ),
+                    //Single line text field. 
+                    array(
+                        'type' => 'textfield',
+                        'holder' => '',
+                        'heading' => __( 'Optional Link for Heading', 'ut-health' ),
+                        'param_name' => 'uth_opt_link',
+                        'value' => __( '', 'ut-health' ),
+                        'admin_label' => false,
+                        'weight' => 0,
+                        'group' => 'Content',
+                    ),
+                    array(
+                        'type'       => 'dropdown',
+                        'class'      => '',
+                        'heading'    => 'Heading size',
+                        'param_name' => 'uth_heading_size',
+                        'group' => 'Design Options',
+                        'value'      => array(
+                            'H2'  => 'h2',
+                            'H3'  => 'h3',
+                            'H4'  => 'h4',
+                            'H5' => 'h5'                     
+                        )
+                    ),
                     array(
                         'type'       => 'dropdown',
                         'class'      => '',
@@ -172,10 +218,37 @@ class uth_content_Callout extends WPBakeryShortCode {
                     'type' => '',
                     'icon_openiconic' => '',
                     'icon_fontawesome' => '',
+                    'uth_heading_text' => '',
+                    'uth_addl_classes' => '',
+                    'uth_heading_size' => '',
+                    'uth_opt_link' => '',
                 ), 
                 $atts
             )
         );
+        
+        if (!empty($uth_heading_size)){
+            $heading_size = $uth_heading_size;
+        }else{
+            $heading_size = 'h2';
+        }
+        if (!empty($uth_addl_classes)){
+            $heading_classes = 'class="' . $uth_addl_classes . '"';
+        }else{
+            $heading_classes = '';
+        }
+        if (!empty($uth_opt_link)){
+            $opt_link = $uth_opt_link;
+        }else{
+            $opt_link = '';
+        }
+        if (!empty($uth_heading_text)) {
+            if (!empty($opt_link)){
+                $heading = '<a href="' . $opt_link . '"><' . $heading_size . ' ' . $heading_classes . '>' . $uth_heading_text . '</' . $heading_size . '></a>';
+            }else{
+                $heading = '<' . $heading_size . ' ' . $heading_classes . '>' . $uth_heading_text . '</' . $heading_size . '>';
+            }
+        }
         if (!empty($equilizer_id)){
             $equilizer_id = 'data-equalizer-watch="' . $equilizer_id . '"';
         }else{
@@ -222,14 +295,14 @@ class uth_content_Callout extends WPBakeryShortCode {
                             <span class="mid-icon"><i class="mega-icon  ' . $icon . ' "></i></span>
                         </div>
                         <div class="columns large-10 medium-10 small-10">
-                            ' . $content . '
+                            ' . $heading . $content . '
                         </div>
                     </div>
                 </div>';
         }else{
             $html = '
             <div class="' . $uth_callout_styles . ' ' . $color_class . ' ' . $optional_css . '" ' . $equilizer_id . '>
-                ' . $render_icon . '
+                    ' . $render_icon . $heading . '
                 <p>' . do_shortcode($content) . '</p>
             </div>';
         }
