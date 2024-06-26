@@ -56,18 +56,23 @@ class uth_link_group extends WPBakeryShortCode {
                         'admin_label' => false,
                         'weight' => 0,
                     ),
+                    */
                     array(
                         'type' => 'dropdown',
-                        'class' => '',
-                        'heading' => 'Link Styles',
-                        'param_name' => 'uth_link_style',
+                        'holder' => '',
+                        'heading' => __('Class for link', 'wp-shield'),
+                        'param_name' => 'link_class',
                         'group' => 'Design Options',
                         'value' => array(
-                            'Orange' => '',
-                            'White' => '',                      
+                            'Default' => '',
+                            'Non-Bold' => 'coward',
+                            'No Underline' => 'no-underline',
+                            'Arrow' => 'a',
+                            'Highlighted' => 'highlight',
+                            'External' => 'external',
+                            'File' => 'file'
                         )
                     ),
-                    */
                     array(
                         'type' => 'checkbox',
                         'holder' => '',
@@ -77,9 +82,8 @@ class uth_link_group extends WPBakeryShortCode {
                         'value' => __('', 'wp-shield'),
                         'admin_label' => false,
                         'weight' => 0,
-                        // 'group' => 'Design Options',
-                    ),
-
+                        'group' => 'Design Options'
+                    )
                 )
             )
         );
@@ -94,13 +98,24 @@ class uth_link_group extends WPBakeryShortCode {
             shortcode_atts(
                 array(
                     'url_one' => '',
-                    'url_two' => '',
-                    'uth_link_styles' => '',
+                    // 'url_two' => '',
                     'uth_center_links' => '',
+                    'link_class' => ''
                 ),
                 $atts
             )
         );
+
+        // link styling
+        // assigning arrow class this way since there is a weird bug that moves the dropdown with value 'arrow'
+        $link_style = '';
+
+        if ($link_class == 'a' || $link_class == '') {
+            $link_style = $link_class == 'a' ? 'arrow' : '';
+        } else {
+            $link_style = $link_class;
+        }
+        
 
         $use_link = false;
         $link_one = vc_build_link($url_one);
@@ -113,7 +128,7 @@ class uth_link_group extends WPBakeryShortCode {
             $a_target = $link_one['target'];
             $a_rel = $link_one['rel'];
 
-            $link_one_html = '<a class="' . $uth_link_style . '" href="' . $a_ref . '" title="' . $a_title . '" target="' . $a_target . '" rel="' . $a_rel . '">
+            $link_one_html = '<a class="' . $link_style . '" href="' . $a_ref . '" title="' . $a_title . '" target="' . $a_target . '" rel="' . $a_rel . '">
             ' . $a_title . '
             </a>';
         }
@@ -128,7 +143,7 @@ class uth_link_group extends WPBakeryShortCode {
             $a_target_two = $link_two['target'];
             $a_rel_two = $link_two['rel'];
 
-            $link_two_html = '<a class="' . $uth_link_style . '" href="' . $a_ref_two . '" title="' . $a_title_two . '" target="' . $a_target_two . '" rel="' . $a_rel_two . '">
+            $link_two_html = '<a class="' . $link_style . '" href="' . $a_ref_two . '" title="' . $a_title_two . '" target="' . $a_target_two . '" rel="' . $a_rel_two . '">
             ' . $a_title_two . '
             </a>';
         }
