@@ -72,6 +72,17 @@ require_once( 'library/responsive-images.php' );
 
 /** Gutenberg editor support */
 require_once( 'library/gutenberg.php' );
+// Deregister popper on WP Bakery pages.
+add_action( 'admin_init', function() {
+    if ( ! FrmAppHelper::get_param( 'vc_action' ) ) {
+        return;
+    }
+
+    global $wp_scripts;
+    if ( array_key_exists( 'popper', $wp_scripts->registered ) ) {
+        wp_deregister_script( 'popper' );
+    }
+}, 12 );
 
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/class-foundationpress-protocol-relative-theme-assets.php' );
