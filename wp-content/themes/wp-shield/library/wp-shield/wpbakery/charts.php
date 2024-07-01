@@ -61,7 +61,7 @@ class uth_chart extends WPBakeryShortCode {
                         'class' => '',
                         'heading' => 'Chart Orientation',
                         'param_name' => 'chart_orientation',
-                        'description' => esc_html__('Vertical or horizontal direction for the chart.', 'wp-shield'),
+                        'description' => esc_html__('Vertical or horizontal chart. Horizontal is recommended for anything less than a full row.', 'wp-shield'),
                         'value' => array(
                             'Select a direction' => '',
                             'Horizontal' => 'bar',
