@@ -190,19 +190,7 @@ class uth_blockquote_orbit extends WPBakeryShortCode
                         'admin_label' => false,
                         'weight' => 0,
                         'group' => 'Design Options',
-                    ),
-                    //Doesnt seem to work on this element, styles dont switch out correctly
-                    // array(
-                    //     'type' => 'dropdown',
-                    //     'class' => '',
-                    //     'heading' => 'Button Styles',
-                    //     'param_name' => 'uth_button_style',
-                    //     'group' => 'Design Options',
-                    //     'value' => array(
-                    //         'Orange' => 'color orange',
-                    //         'White' => 'white',
-                    //     )
-                    // ),
+                    )
                 )
             )
         );
@@ -230,7 +218,6 @@ class uth_blockquote_orbit extends WPBakeryShortCode
                     'quote_text4' => '',
                     'button4' => '',
                     'addl_class' => ''
-                    // 'uth_button_style' => ''
                 ),
                 $atts
             )
@@ -244,6 +231,7 @@ class uth_blockquote_orbit extends WPBakeryShortCode
 
 
         // Button options
+        $button_one_html = '';
         $use_link1 = false;
         $button_one = vc_build_link($button1);
         if (strlen($button_one['url']) > 0) {
@@ -255,11 +243,12 @@ class uth_blockquote_orbit extends WPBakeryShortCode
             $a_target1 = $button_one['target'];
             $a_rel1 = $button_one['rel'];
 
-            $button_one_html = '<a style="margin-top: 0.5rem;" class="button ' . $uth_button_style . '" href="' . $a_ref1 . '" title="' . $a_title1 . '" target="' . $a_target1 . '" rel="' . $a_rel1 . '">
+            $button_one_html = '<a style="margin-top: 0.5rem;" class="button" href="' . $a_ref1 . '" title="' . $a_title1 . '" target="' . $a_target1 . '" rel="' . $a_rel1 . '">
             ' . $a_title1 . '
             </a>';
         }
         
+        $button_two_html = '';
         $use_link2 = false;
         $button_two = vc_build_link($button2);
         if (strlen($button_two['url']) > 0) {
@@ -271,11 +260,12 @@ class uth_blockquote_orbit extends WPBakeryShortCode
             $a_target2 = $button_two['target'];
             $a_rel2 = $button_two['rel'];
 
-            $button_two_html = '<a style="margin-top: 0.5rem;" class="button ' . $uth_button_style . '" href="' . $a_ref2 . '" title="' . $a_title2 . '" target="' . $a_target2 . '" rel="' . $a_rel2 . '">
+            $button_two_html = '<a style="margin-top: 0.5rem;" class="button" href="' . $a_ref2 . '" title="' . $a_title2 . '" target="' . $a_target2 . '" rel="' . $a_rel2 . '">
             ' . $a_title2 . '
             </a>';
         }
 
+        $button_three_html = '';
         $use_link3 = false;
         $button_three = vc_build_link($button3);
         if (strlen($button_three['url']) > 0) {
@@ -287,11 +277,12 @@ class uth_blockquote_orbit extends WPBakeryShortCode
             $a_target3 = $button_three['target'];
             $a_rel3 = $button_three['rel'];
 
-            $button_three_html = '<a style="margin-top: 0.5rem;" class="button ' . $uth_button_style . '" href="' . $a_ref3 . '" title="' . $a_title3 . '" target="' . $a_target3 . '" rel="' . $a_rel3 . '">
+            $button_three_html = '<a style="margin-top: 0.5rem;" class="button" href="' . $a_ref3 . '" title="' . $a_title3 . '" target="' . $a_target3 . '" rel="' . $a_rel3 . '">
             ' . $a_title3 . '
             </a>';
         }
 
+        $button_four_html = '';
         $use_link4 = false;
         $button_four = vc_build_link($button4);
         if (strlen($button_four['url']) > 0) {
@@ -303,7 +294,7 @@ class uth_blockquote_orbit extends WPBakeryShortCode
             $a_target4 = $button_four['target'];
             $a_rel4 = $button_four['rel'];
 
-            $button_four_html = '<a style="margin-top: 0.5rem;" class="button ' . $uth_button_style . '" href="' . $a_ref4 . '" title="' . $a_title4 . '" target="' . $a_target4 . '" rel="' . $a_rel4 . '">
+            $button_four_html = '<a style="margin-top: 0.5rem;" class="button" href="' . $a_ref4 . '" title="' . $a_title4 . '" target="' . $a_target4 . '" rel="' . $a_rel4 . '">
             ' . $a_title4 . '
             </a>';
         }
