@@ -29,14 +29,14 @@ class uth_link_group extends WPBakeryShortCode {
                 //Define the name and description 
                 'name' => __('Links', 'wp-shield'),
                 'base' => 'vc_links',
-                'description' => __('Individual or Grouped Links', 'wp-shield'), 
+                'description' => __('Individual link', 'wp-shield'), 
                 'category' => __('UT Health Designs', 'wp-shield'),   
                 'icon' => get_template_directory_uri().'/dist/assets/images/core/shield.png',                      
                 'params' => array(
                     array(
                         'type' => 'vc_link',
-                        'heading' => __('First Link (Required)', 'wp-shield'),
-                        'param_name' => 'url_one',
+                        'heading' => __('Link', 'wp-shield'),
+                        'param_name' => 'url',
                         'dependency' => array(
                             'element' => 'link',
                             'value' => __('Place Link Here', 'wp-shield'),
@@ -44,19 +44,6 @@ class uth_link_group extends WPBakeryShortCode {
                         'admin_label' => false,
                         'weight' => 0,
                     ),
-                    /* Need to debug this some more
-                    array(
-                        'type' => 'vc_link',
-                        'heading' => __('Second Link (Link)', 'wp-shield'),
-                        'param_name' => 'url_two',
-                        'dependency' => array(
-                            'element' => 'link',
-                            'value' => __('Place Link Here', 'wp-shield'),
-                        ),
-                        'admin_label' => false,
-                        'weight' => 0,
-                    ),
-                    */
                     array(
                         'type' => 'dropdown',
                         'holder' => '',
@@ -76,9 +63,9 @@ class uth_link_group extends WPBakeryShortCode {
                     array(
                         'type' => 'checkbox',
                         'holder' => '',
-                        'heading' => __('Center Links', 'wp-shield'),
-                        'description' => esc_html__('Checking this box will center the links.', 'wp-shield'),
-                        'param_name' => 'uth_center_links',
+                        'heading' => __('Center Link', 'wp-shield'),
+                        'description' => esc_html__('Checking this box will center the link.', 'wp-shield'),
+                        'param_name' => 'uth_center_link',
                         'value' => __('', 'wp-shield'),
                         'admin_label' => false,
                         'weight' => 0,
@@ -97,9 +84,8 @@ class uth_link_group extends WPBakeryShortCode {
         extract(
             shortcode_atts(
                 array(
-                    'url_one' => '',
-                    // 'url_two' => '',
-                    'uth_center_links' => '',
+                    'url' => '',
+                    'uth_center_link' => '',
                     'link_class' => ''
                 ),
                 $atts
@@ -118,60 +104,33 @@ class uth_link_group extends WPBakeryShortCode {
         
 
         $use_link = false;
-        $link_one = vc_build_link($url_one);
-        if (strlen($link_one['url']) > 0) {
+        $link = vc_build_link($url);
+        if (strlen($link['url']) > 0) {
             $use_link = true;
-            $a_ref = $link_one['url'];
+            $a_ref = $link['url'];
             $a_ref = apply_filters('vc_btn_a_href', $a_ref);
-            $a_title = $link_one['title'];
+            $a_title = $link['title'];
             $a_title = apply_filters('vc_btn_a_title', $a_title);
-            $a_target = $link_one['target'];
-            $a_rel = $link_one['rel'];
+            $a_target = $link['target'];
+            $a_rel = $link['rel'];
 
-            $link_one_html = '<a class="' . $link_style . '" href="' . $a_ref . '" title="' . $a_title . '" target="' . $a_target . '" rel="' . $a_rel . '">
+            $link_html = '<a class="' . $link_style . '" href="' . $a_ref . '" title="' . $a_title . '" target="' . $a_target . '" rel="' . $a_rel . '">
             ' . $a_title . '
             </a>';
         }
 
-        $link_two = vc_build_link($url_two);
-        if (strlen($link_two['url']) > 0) {
-            $use_link = true;
-            $a_ref_two = $link_two['url'];
-            $a_ref_two = apply_filters('vc_btn_a_href', $a_ref_two);
-            $a_title_two = $link_two['title'];
-            $a_title_two = apply_filters('vc_btn_a_title', $a_title_two);
-            $a_target_two = $link_two['target'];
-            $a_rel_two = $link_two['rel'];
-
-            $link_two_html = '<a class="' . $link_style . '" href="' . $a_ref_two . '" title="' . $a_title_two . '" target="' . $a_target_two . '" rel="' . $a_rel_two . '">
-            ' . $a_title_two . '
-            </a>';
-        }
-        if (!empty($link_two_html)) {
-            if ($uth_center_links == 'true') {
-                $wrapper = '<div class="align-center">';
-                $end_wrapper = '</div>';
-            } else {
-                $wrapper = '<div>';
-                $end_wrapper = '</div>';
-            }
+        if ($uth_center_link == 'true') {
+            $wrapper = '<p class="text-center">';
+            $end_wrapper = '</p>';
         } else {
-            if ($uth_center_links == 'true') {
-                $wrapper = '<p class="text-center">';
-                $link_two_html = '';
-                $end_wrapper = '</p>';
-            } else {
-                $wrapper = '<p>';
-                $link_two_html = '';
-                $end_wrapper = '</p>';
-            }
+            $wrapper = '<p>';
+            $end_wrapper = '</p>';
         }
 
         // RENDER THE HTML
         $html = ' 
             ' . $wrapper . '
-                ' . $link_one_html . '
-                ' . $link_two_html . '
+                ' . $link_html . '
             ' . $end_wrapper . '
         ';
 
