@@ -103,6 +103,7 @@ class uth_link_group extends WPBakeryShortCode {
         }
         
 
+        $link_html = '';
         $use_link = false;
         $link = vc_build_link($url);
         if (strlen($link['url']) > 0) {
