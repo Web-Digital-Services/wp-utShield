@@ -33,7 +33,7 @@ function UTH_social_media_links(){
 		$social_media_link_html .= '<li><a aria-label="Visit the UT Health Facebook" href="https://www.facebook.com/UTHealthSA"><i class="fab fa-facebook-square fa-2x"></i></a></li>';
 		$social_media_link_html .= '<li><a aria-label="Visit the UT Health Instagram" href="https://www.instagram.com/uthealthsa/"><i class="fab fa-instagram-square fa-2x"></i></a></li>';
 		$social_media_link_html .= '<li><a aria-label="Visit the UT Health Linkedin" href="https://www.linkedin.com/school/uthealthsa/"><i class="fab fa-linkedin fa-2x"></i></a></li>';
-		$social_media_link_html .= '<li><a aria-label="Visit the UT Health Twitter" href="https://twitter.com/uthealthsa"><i class="fab fa-twitter-square fa-2x"></i></a></li>';
+		$social_media_link_html .= '<li><a aria-label="Visit the UT Health Twitter" href="https://twitter.com/uthealthsa"><i class="fa-brands fa-x-twitter fa-2x"></i></a></li>';
 		$social_media_link_html .= '<li><a aria-label="Visit the UT Health YouTube" href="https://www.youtube.com/uthscsa/"><i class="fab fa-youtube-square fa-2x"></i></a></li>';
 		$social_media_link_html .= '</ul>';
 
