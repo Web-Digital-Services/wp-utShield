@@ -14,7 +14,7 @@ function UTH_social_media_links(){
 			$social_media_link_html .= '<li><a aria-label="Visit the UT Health Facebook" href="' . $UTH_social_facebook .'"><i class="fab fa-facebook-square fa-2x"></i></a></li>';
 		}
 		if(!empty($UTH_social_twitter)){ 
-			$social_media_link_html .= '<li><a aria-label="Visit the UT Health Twitter" href="' . $UTH_social_twitter .'"><i class="fab fa-twitter-square fa-2x"></i></a></li>';
+			$social_media_link_html .= '<li><a aria-label="Visit the UT Health Twitter" href="' . $UTH_social_twitter .'"><i class="fa-brands fa-x-twitter fa-2x"></i></a></li>';
 		}
 		if(!empty($UTH_social_linkedin)){ 
 			$social_media_link_html .= '<li><a aria-label="Visit the UT Health Linkedin" href="'. $UTH_social_linkedin .'"><i class="fab fa-linkedin fa-2x"></i></a></li>';
