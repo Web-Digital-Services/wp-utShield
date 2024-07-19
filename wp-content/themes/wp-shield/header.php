@@ -33,7 +33,7 @@
 		<button class="menu-icon" type="button" data-toggle="header">Menu</button>
 	</header>
 	<?php 
-		$banner_design = get_post_meta( $post->ID, 'banner_design_key', true );
+		$banner_design = get_post_meta( get_queried_object_id(), 'banner_design_key', true );
 
 		if ($banner_design == 'super-hero-banner'){
 		$super_hero = ' super-hero';
