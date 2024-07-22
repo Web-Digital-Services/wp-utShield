@@ -204,6 +204,8 @@ class uth_card extends WPBakeryShortCode {
         #Set header class variable
         if (!empty($header_classes)) {
             $class = ' class="' . $header_classes . '"';
+         }else{
+            $class= "";
         }
         #If interactive, load link details, else, zero out the variables in use. 
         $use_link = false;

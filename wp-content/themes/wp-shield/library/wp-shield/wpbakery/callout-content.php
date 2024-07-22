@@ -248,6 +248,8 @@ class uth_content_Callout extends WPBakeryShortCode {
             }else{
                 $heading = '<' . $heading_size . ' ' . $heading_classes . '>' . $uth_heading_text . '</' . $heading_size . '>';
             }
+        }else{
+            $heading = "";
         }
         if (!empty($equilizer_id)){
             $equilizer_id = 'data-equalizer-watch="' . $equilizer_id . '"';
