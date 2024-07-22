@@ -109,9 +109,13 @@ class uth_heading extends WPBakeryShortCode {
         );
         if(!empty($uth_addl_classes)){
             $classes = ' class="' . $uth_addl_classes . '"';
+        }else{
+            $classes = "";
         }
         if(!empty($uth_eyebrow_text)){
             $eyebrow = '<p class="eyebrow">' . $uth_eyebrow_text . '</p>';
+        }else{
+            $eyebrow = "";
         }
         if (!empty($uth_heading_size)){
             if (!empty($uth_opt_url)){
