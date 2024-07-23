@@ -33,6 +33,8 @@
 
 	if ($title_box_alignment == 'right-aligned'){
 		$text_box_order = 'small-order-2 medium-order-2 large-order-2';
+	}else{
+		$text_box_order = "";
 	}
 
 
