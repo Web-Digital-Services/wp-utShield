@@ -83,6 +83,8 @@
 						if( !empty( $banner_byline ) ) {
 							if ( !empty($banner_featured_class) ) {
 								$class = ' class="' . $banner_featured_class . '"';
+							}else{
+								$class = "";
 							} 
 							echo '<p' . $class . '>' . $banner_byline, '</p>';
 						}
