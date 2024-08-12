@@ -297,14 +297,14 @@ class uth_content_Callout extends WPBakeryShortCode {
                             <span class="mid-icon"><i class="mega-icon  ' . $icon . ' "></i></span>
                         </div>
                         <div class="columns large-10 medium-10 small-10">
-                            ' . $heading . $content . '
+                            ' . $heading . do_shortcode($content) . '
                         </div>
                     </div>
                 </div>';
         }else{
             $html = '
             <div class="' . $uth_callout_styles . ' ' . $color_class . ' ' . $optional_css . '" ' . $equilizer_id . '>
-                    ' . $render_icon . $heading . $content . '</div>';
+                    ' . $render_icon . $heading . do_shortcode($content) . '</div>';
         }
 
         return $html; 
