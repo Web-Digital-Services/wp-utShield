@@ -260,7 +260,7 @@ class uth_Panel_link extends WPBakeryShortCode {
         }
         // Fill $html var with data
         $html = ' 
-        <a class="callout panel-mobile text-center ' . $uth_colors . '" href="' . $a_ref . '"' . $a_title . $a_target . $a_rel .  $equilizer_id . '>
+        <a class="callout panel-mobile text-center ' . $uth_colors . '" href="' . $a_ref . '"' . $a_title . $a_target . $a_rel . ' ' . $equilizer_id . '>
             ' . $render_icon . '
             <h3 class="' . $heading_size . ' ' . $ruled . '">' . $text . '</h3>
             ' . $paragraph_text . '
