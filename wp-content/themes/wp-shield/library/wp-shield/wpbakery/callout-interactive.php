@@ -194,10 +194,22 @@ class uth_Panel_link extends WPBakeryShortCode {
             $use_link = true;
             $a_ref = $href['url'];
             $a_ref = apply_filters( 'vc_btn_a_href', $a_ref);
-            $a_title = $href['title'];
-            $a_title = apply_filters( 'vc_btn_a_title', $a_title);
-            $a_target = $href['target'];
-            $a_rel = $href['rel'];
+            if (strlen ( $href['title'] ) > 0){
+                $a_title = ' title="' . $href['title'] . '"';
+                $a_title = apply_filters( 'vc_btn_a_title', $a_title);
+            }else{
+                $a_title = "";
+            }
+            if (strlen ( $href['target'] ) > 0){
+                $a_target = ' target="' . $href['target'] . '"';
+            }else{
+                $a_target = "";
+            }
+            if (strlen ( $href['rel'] ) > 0){
+                $a_rel = ' rel="' . $href['rel'] . '"';
+            }else{
+                $a_rel = "";
+            }
         }
 
         //The first drop down option in dropdown params are always empty.. Adding a the enque 
@@ -248,7 +260,7 @@ class uth_Panel_link extends WPBakeryShortCode {
         }
         // Fill $html var with data
         $html = ' 
-        <a class="callout panel-mobile text-center ' . $uth_colors . '" href="' . $a_ref . '" title="' . $a_title . '" target="' . $a_target . '" rel="' . $a_rel . '" ' . $equilizer_id . '>
+        <a class="callout panel-mobile text-center ' . $uth_colors . '" href="' . $a_ref . '"' . $a_title . $a_target . $a_rel .  $equilizer_id . '>
             ' . $render_icon . '
             <h3 class="' . $heading_size . ' ' . $ruled . '">' . $text . '</h3>
             ' . $paragraph_text . '

@@ -304,9 +304,7 @@ class uth_content_Callout extends WPBakeryShortCode {
         }else{
             $html = '
             <div class="' . $uth_callout_styles . ' ' . $color_class . ' ' . $optional_css . '" ' . $equilizer_id . '>
-                    ' . $render_icon . $heading . '
-                <p>' . do_shortcode($content) . '</p>
-            </div>';
+                    ' . $render_icon . $heading . $content . '</div>';
         }
 
         return $html; 
