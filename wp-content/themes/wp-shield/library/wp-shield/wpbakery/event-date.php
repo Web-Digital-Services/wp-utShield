@@ -30,8 +30,7 @@ class uth_event_date extends WPBakeryShortCode {
                 'base' => 'vc_event_date',
                 'description' => __('Creates a Date callout for an event', 'wp-shield'), 
                 'category' => __('UT Health Designs', 'wp-shield'),   
-                'icon' => get_template_directory_uri().'/assets/images/core/shield.png', 
-                //That params defines the field types to be used and the settings for eachf field           
+                'icon' => get_template_directory_uri().'/dist/assets/images/core/shield.png',        
                 'params' => array(   
                     array(
                         'type' => 'textfield',

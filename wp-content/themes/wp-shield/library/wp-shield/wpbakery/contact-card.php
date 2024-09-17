@@ -26,16 +26,12 @@ class uth_contact_card extends WPBakeryShortCode {
         vc_map( 
       
             array(
-                //This defines how the block appears in the element selection menu. 
-                //Define the name and description 
                 'name' => __('Contact Card', 'wp-shield'),
                 'base' => 'vc_contact_card',
                 'description' => __('Card to display contact info and image', 'wp-shield'), 
                 'category' => __('UT Health Designs', 'wp-shield'),   
-                'icon' => get_template_directory_uri().'/dist/assets/images/core/shield.png',            
-                //That params defines the field types to be used and the settings for eachf field           
+                'icon' => get_template_directory_uri().'/dist/assets/images/core/shield.png',         
                 'params' => array(
-                    //Image field
                     array(
                         'type' => 'attach_image',
                         'holder' => 'img',
@@ -45,7 +41,6 @@ class uth_contact_card extends WPBakeryShortCode {
                         'value' => __( '', 'wp-shield' ),
                         'description' => __( 'Featured image for the card', 'wp-shield' ),
                     ),
-                    //Single line text field. 
                     array(
                         'type' => 'textfield',
                         'holder' => 'div',
@@ -56,7 +51,6 @@ class uth_contact_card extends WPBakeryShortCode {
                         'admin_label' => false,
                         'weight' => 0,
                     ),
-                    //Single line text field. 
                     array(
                         'type' => 'textfield',
                         'holder' => 'div',
@@ -66,7 +60,6 @@ class uth_contact_card extends WPBakeryShortCode {
                         'admin_label' => false,
                         'weight' => 0,
                     ),
-                    //Single line text field. 
                     array(
                         'type' => 'textfield',
                         'holder' => 'div',
@@ -87,7 +80,6 @@ class uth_contact_card extends WPBakeryShortCode {
                         'admin_label' => false,
                         'weight' => 0,
                     ),
-                    //Single line text field. 
                     array(
                         'type' => 'textfield',
                         'holder' => 'div',
@@ -97,7 +89,6 @@ class uth_contact_card extends WPBakeryShortCode {
                         'admin_label' => false,
                         'weight' => 0,
                     ),
-                    //Single line text field. 
                     array(
                         'type' => 'textfield',
                         'holder' => 'div',
@@ -107,7 +98,6 @@ class uth_contact_card extends WPBakeryShortCode {
                         'admin_label' => false,
                         'weight' => 0,
                     ),
-                    //Single line text field. 
                     array(
                         'type' => 'textfield',
                         'holder' => 'div',
@@ -117,7 +107,6 @@ class uth_contact_card extends WPBakeryShortCode {
                         'admin_label' => false,
                         'weight' => 0,
                     ),
-                    //Single line text field. 
                     array(
                         'type' => 'textarea',
                         'holder' => 'div',
@@ -153,7 +142,6 @@ class uth_contact_card extends WPBakeryShortCode {
                         'weight' => 0,
                         'group' => 'Design Options',
                     ),
-                    //Single line text field. 
                     array(
                         'type' => 'textfield',
                         'holder' => 'div',

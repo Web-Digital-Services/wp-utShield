@@ -29,8 +29,8 @@ class uth_video_embed extends WPBakeryShortCode {
                 'name' => __('Video Embed', 'wp-shield'),
                 'base' => 'vc_video_embed',
                 'description' => __('Embed Youtube or Vimeo Videos', 'wp-shield'), 
-                'category' => __('UT Health Designs', 'wp-shield'),   
-                'icon' => get_template_directory_uri().'/assets/images/core/shield.png',            
+                'category' => __('UT Health Designs', 'wp-shield'),
+                'icon' => get_template_directory_uri().'/dist/assets/images/core/shield.png',           
                 'params' => array(
                     array(
                         'type' => 'textfield',

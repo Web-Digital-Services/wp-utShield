@@ -23,8 +23,8 @@ class uth_icons extends WPBakeryShortCode {
                 'name' => __('Icons', 'wp-shield'),
                 'base' => 'vc_icons',
                 'description' => __('Add Icons to a page', 'wp-shield'), 
-                'category' => __('UT Health Designs', 'wp-shield'),   
-                'icon' => get_template_directory_uri().'/assets/images/core/shield.png',            
+                'category' => __('UT Health Designs', 'wp-shield'),
+                'icon' => get_template_directory_uri().'/dist/assets/images/core/shield.png',            
                 'params' => array(
                     array(
                         'type'       => 'dropdown',

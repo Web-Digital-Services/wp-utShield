@@ -24,8 +24,8 @@ class uth_subnav extends WPBakeryShortCode {
                 'name' => __('Subnav', 'wp-shield'),
                 'base' => 'vc_subnav',
                 'description' => __('Optional banner design for child pages', 'wp-shield'), 
-                'category' => __('UT Health Designs', 'wp-shield'),   
-                'icon' => get_template_directory_uri().'dist/assets/images/core/shield.png',            
+                'category' => __('UT Health Designs', 'wp-shield'),
+                'icon' => get_template_directory_uri().'/dist/assets/images/core/shield.png',           
                 'params' => array(   
                     array(
                         'type'       => 'dropdown',
