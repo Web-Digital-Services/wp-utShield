@@ -579,6 +579,21 @@ a.highlight {
             }
 
         }
+        //If link is in a white card/callout, use default link style
+        .card,
+        .callout {
+            a:not(.button) {
+                color: $orange;
+
+                &:hover {
+                    color: $dark-orange;
+                }
+        }
+        p>a:not(.button) {
+            background-image: linear-gradient($orange-underline, $orange-underline);
+            color: $orange;
+        }
+    }
     }
 
     &.grey,
