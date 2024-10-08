@@ -99,6 +99,18 @@ if ( ! function_exists( 'uth_fifth_quick_links' ) ) {
         ));
     }
 }
+/** Register Button that activates the quick links menu */
+function UTH_register_quick_links(){
+    if (has_nav_menu('uth_primary_quick_links')){
+        $primary_menu_name = 'uth_primary_quick_links';
+        $locations = get_nav_menu_locations();
+        $primary_menu_id = $locations[ $primary_menu_name ] ;
+        $primary_quicklinks_menu_object = wp_get_nav_menu_object($primary_menu_id);
+        if (($primary_quicklinks_menu_object->count) > 0){
+            echo '<p><a href="#" data-close="offCanvasLeft"><i class="fas fa-times"></i> ' .  $primary_quicklinks_menu_object->name . '</a></p>';
+        }
+    }
+}
 /** Display all sidebar items in a quicklinks panel pop out */
 function UTH_render_quick_links_menu(){
     if ( has_nav_menu( 'uth_primary_quick_links' ) ) {
