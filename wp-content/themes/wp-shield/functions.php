@@ -72,7 +72,9 @@ require_once( 'library/responsive-images.php' );
 
 /** Gutenberg editor support */
 require_once( 'library/gutenberg.php' );
-
-
+function wp_nav_menu_remove_attributes( $menu ){
+    return $menu = preg_replace('/ class=\"vertical menu wp_quicklinks"/', 'vertical wp_quicklinks', $menu );
+}
+add_filter( 'wp_nav_menu', 'wp_nav_menu_remove_attributes' );
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/class-foundationpress-protocol-relative-theme-assets.php' );
