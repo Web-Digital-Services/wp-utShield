@@ -119,7 +119,7 @@ class uth_card extends WPBakeryShortCode {
                             'Blue'  => 'color',
                             'Light Beige (Interactive)'  => 'light-beige',
                             'Beige'  => ' color beige',
-                            'Light Grey'  => 'color light-grey',
+                            'Light Grey'  => 'light-grey',
                             'Grey'  => 'color grey',
                             'Dark Grey'  => 'color dark-grey',
                             'Orange' => 'color orange',
