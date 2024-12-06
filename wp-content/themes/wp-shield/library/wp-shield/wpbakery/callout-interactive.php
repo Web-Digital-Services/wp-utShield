@@ -44,11 +44,35 @@ class uth_Panel_link extends WPBakeryShortCode {
                         )
                     ),
                     array(
+                        'type'       => 'dropdown',
+                        'class'      => '',
+                        'heading'    => 'Heading size',
+                        'param_name' => 'heading',
+                        'group' => 'Panel Content',
+                        'value'      => array(
+                            'Select a heading size' => '',
+                            'h2'  => 'h2',
+                            'h3'  => 'h3',
+                            'h4'  => 'h4',
+                            'h5'  => 'h5',
+                            'p'  => 'p'
+                        )
+                    ),
+                    array(
                         'type' => 'textfield',
                         'holder' => 'div',
                         'class' => 'text-class',
                         'heading' => __( 'Panel Title (Required)', 'wp-shield' ),
                         'param_name' => 'text',
+                        'value' => __( '', 'wp-shield' ),
+                        'admin_label' => false,
+                        'weight' => 0,
+                        'group' => 'Panel Content',
+                    ),
+                    array(
+                        'type' => 'textfield',
+                        'heading' => __( 'Extra classes', 'wp-shield' ),
+                        'param_name' => 'extra_classes',
                         'value' => __( '', 'wp-shield' ),
                         'admin_label' => false,
                         'weight' => 0,
@@ -174,7 +198,9 @@ class uth_Panel_link extends WPBakeryShortCode {
                     'type' => '',
                     'icon_openiconic' => '',
                     'icon_fontawesome' => '',
-                    'equilizer_id' => ''
+                    'equilizer_id' => '',
+                    'heading' => '',
+                    'extra_classes' => ''
                 ), 
 
                 $atts
@@ -248,6 +274,16 @@ class uth_Panel_link extends WPBakeryShortCode {
         }else{
             $heading_size = '';
         }
+        if(!empty($heading)){
+            $heading_tag = $heading;
+        }else{
+            $heading_tag = 'h3';
+        }
+        if(!empty($extra_classes)){
+            $classes = $extra_classes;
+        }else{
+            $classes = '';
+        }
 
         //If icon is disabled, use RULED Heading class
         if (($enable_icon == 'false' || empty($enable_icon )) && (!empty($paragraph_text))){
@@ -261,9 +297,8 @@ class uth_Panel_link extends WPBakeryShortCode {
         // Fill $html var with data
         $html = ' 
         <a class="callout panel-mobile text-center ' . $uth_colors . '" href="' . $a_ref . '"' . $a_title . $a_target . $a_rel . ' ' . $equilizer_id . '>
-            ' . $render_icon . '
-            <h3 class="' . $heading_size . ' ' . $ruled . '">' . $text . '</h3>
-            ' . $paragraph_text . '
+            ' . $render_icon . 
+            '<' . $heading_tag . ' class="' . $ruled . ' ' . $classes . '">' . $text . '</' . $heading_tag . '>' . $paragraph_text . '
         </a>';
          
         return $html;
