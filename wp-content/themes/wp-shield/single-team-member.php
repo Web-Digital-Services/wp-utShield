@@ -22,6 +22,8 @@ load_theme_design('header'); ?>
 	$news = types_render_field("news");
 	$pubs = types_render_field("publications");
 	$departments = types_render_field("dept-division-links");
+	$research_profile = types_render_field("research-profile");
+	$provider_profile = types_render_field("provider-profile-url");
  ?>
 
 <div class="grid-container">
@@ -41,6 +43,14 @@ load_theme_design('header'); ?>
 				?>
 				<?php if (!empty ($mail)){
 					echo '<p>' . $mail . '</p>';
+				}
+				?>
+				<?php if (!empty($research_profile)){
+					echo '<p><a class="coward" href="' . $research_profile . '">Research Profile</a></p>';
+				}
+				?>
+				<?php if (!empty($provider_profile)){
+					echo '<p><a class="coward" href="' . $provider_profile . '">Provider Profile</a></p>';
 				}
 				?>
 				<?php if (!empty ($phone) || !empty ($mail)){
@@ -87,9 +97,9 @@ load_theme_design('header'); ?>
 						echo $affiliations;
 					}
 					?>
-					<?php if($publications){
+					<?php if($pubs){
 						echo '<h2 class="sans-serif h5 bold">Publications</h2>';
-						echo $publications;
+						echo $pubs;
 					}
 					?>
 					<?php if($news){
