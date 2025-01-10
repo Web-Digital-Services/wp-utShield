@@ -24,6 +24,8 @@ load_theme_design('header'); ?>
 	$departments = types_render_field("dept-division-links");
 	$research_profile = types_render_field("research-profile");
 	$provider_profile = types_render_field("provider-profile-url");
+	$local_profile_url = types_render_field("profiles-uthscsa-link"); 
+	$position = types_render_field("position"); 
  ?>
 
 <div class="grid-container">
@@ -77,43 +79,54 @@ load_theme_design('header'); ?>
 						echo $statement;
 					}
 					?>
-					<?php if($education){
-						echo '<h2 class="sans-serif h5 bold">Education</h2>';
-						echo $education;
-					}
-					?>
-					<?php if($awards){
-						echo '<h2 class="sans-serif h5 bold">Awards</h2>';
-						echo $awards;
-					}
-					?>
-					<?php if($research){
-						echo '<h2 class="sans-serif h5 bold">Research</h2>';
-						echo $research;
-					}
-					?>
-					<?php if($affiliations){
-						echo '<h2 class="sans-serif h5 bold">Professional Affiliations</h2>';
-						echo $affiliations;
-					}
-					?>
-					<?php if($pubs){
-						echo '<h2 class="sans-serif h5 bold">Publications</h2>';
-						echo $pubs;
-					}
-					?>
-					<?php if($news){
-						echo '<h2 class="sans-serif h5 bold">News</h2>';
-						echo $news;
-					}
-					?>
-					<?php if($members){
-						echo '<h2 class="sans-serif h5 bold">Lab Members</h2>';
-						echo $members;
-					}
-					?>
+					
+				<?php if (!empty($education) || !empty($awards) || !empty($research) || !empty($affiliations) || !empty($pubs) || !empty($news) || !empty($members)): ?>
+					<div class="grid-x">
+						
+						<div class="cell large-12">
+						<ul class="accordion orange" data-accordion data-allow-all-closed="true">
+					<?php if (!empty($education)){
+						echo '<li class="accordion-item" data-accordion-item><a href="#" class="accordion-title">Education</a>';
+						echo '<div class="accordion-content" data-tab-content>'
+                    			 . $education . '</div></li>';
+					}?>
+					<?php if (!empty($awards)){
+						echo '<li class="accordion-item" data-accordion-item><a href="#" class="accordion-title">Awards</a>';
+						echo '<div class="accordion-content" data-tab-content>'
+                    			 . $awards . '</div></li>';
+					}?>
+					<?php if (!empty($research)){
+						echo '<li class="accordion-item" data-accordion-item><a href="#" class="accordion-title">Research</a>';
+						echo '<div class="accordion-content" data-tab-content>'
+                    			 . $research . '</div></li>';
+					}?>
+					<?php if (!empty($affiliations)){
+						echo '<li class="accordion-item" data-accordion-item><a href="#" class="accordion-title">Affiliations</a>';
+						echo '<div class="accordion-content" data-tab-content>'
+                    			 . $affiliations . '</div></li>';
+					}?>
+					<?php if (!empty($pubs)){
+						echo '<li class="accordion-item" data-accordion-item><a href="#" class="accordion-title">Publications</a>';
+						echo '<div class="accordion-content" data-tab-content>'
+                    			 . $pubs . '</div></li>';
+					}?>
+					<?php if (!empty($news)){
+						echo '<li class="accordion-item" data-accordion-item><a href="#" class="accordion-title">News</a>';
+						echo '<div class="accordion-content" data-tab-content>'
+                    			 . $news . '</div></li>';
+					}?>
+					<?php if (!empty($members)){
+						echo '<li class="accordion-item" data-accordion-item><a href="#" class="accordion-title">Lab Members</a>';
+						echo '<div class="accordion-content" data-tab-content>'
+                    			 . $members . '</div></li>';
+					}?>
+			
+		 		</ul></div></div>
+			<?php endif ?>
+				
 			</main>
 		<?php endwhile; ?>
 	</div>
 </div>
+
 <?php load_theme_design('footer');

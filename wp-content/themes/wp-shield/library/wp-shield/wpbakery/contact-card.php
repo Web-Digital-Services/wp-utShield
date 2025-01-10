@@ -264,7 +264,7 @@ class uth_contact_card extends WPBakeryShortCode {
         if (!empty($phone)){
             $phone_display = 
                 '<li ' . $contact_item_styles . '>
-                    <a>
+                    <a href="tel:' . $phone . '">
                         <span class="fa-li" ' . $unset_style . '>
                             <span class="fa-stack">
                                 <i class="fas fa-circle fa-stack-2x"></i>
@@ -281,7 +281,7 @@ class uth_contact_card extends WPBakeryShortCode {
         if (!empty($email)){
             $email_display =
                 '<li ' . $contact_item_styles . '>
-                    <a>
+                    <a href="mailto:' . $email . '">
                         <span class="fa-li" ' . $unset_style . '>
                             <span class="fa-stack">
                                 <i class="fas fa-circle fa-stack-2x"></i>
