@@ -15,5 +15,5 @@ jobs:
         uses: wpengine/github-action-wpe-site-deploy@v3
         with:
           WPE_ENV: iimsstg
-          WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
+          WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPENGINE_SSH_KEY_PRIVATE }}
           REMOTE_PATH: "wp-content/themes/wp-shield"
