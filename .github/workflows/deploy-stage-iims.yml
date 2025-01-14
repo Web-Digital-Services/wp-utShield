@@ -14,7 +14,7 @@ jobs:
       - name: GitHub Action Deploy to WP Engine
         uses: wpengine/github-action-wpe-site-deploy@v3
         with:
-          SRC_PATH: "wp-content/themes/wp-shield/"
-          REMOTE_PATH: "wp-content/themes/wp-shield/"
-          WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPENGINE_SSH_KEY_PRIVATE }}
           WPE_ENV: iimsstg
+          WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPENGINE_SSH_KEY_PRIVATE }}
+          REMOTE_PATH: "wp-content/themes/wp-shield/"
+          FLAGS: '-azvr --inplace --exclude=".*" --copy-dirlinks'
