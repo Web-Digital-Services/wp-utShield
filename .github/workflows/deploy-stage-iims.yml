@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - name: GitHub Action Deploy to WP Engine
-        uses: wpengine/github-action-wpe-site-deploy@v3
-        with:
-          WPE_ENV: iimsstg
-          WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPENGINE_SSH_KEY_PRIVATE }}
-          REMOTE_PATH: "wp-content/themes/wp-shield/"
+    - uses: actions/checkout@v3
+    - name: GitHub Action Deploy to WP Engine
+      uses: wpengine/github-action-wpe-site-deploy@v3
+      with:
+        WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPENGINE_SSH_KEY_PRIVATE }}
+        WPE_ENV: iimsstg
+        REMOTE_PATH: "wp-content/themes/wp-shield/"
