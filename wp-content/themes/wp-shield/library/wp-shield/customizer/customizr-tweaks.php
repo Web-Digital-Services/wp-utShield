@@ -259,3 +259,24 @@ function uth_customizer_related_posts($wp_customize) {
         ) );
 }
 add_action('customize_register', 'uth_customizer_related_posts');
+function UTH_customizr_additional_info($wp_customize) {
+    // add a setting
+    $wp_customize->add_setting('UTH_additional_info');
+    
+    //Add Section
+    $wp_customize->add_section( 'UTH_addl_info' , array(
+        'title'       => __('Additional Info','UT-Health'),
+        'description' => 'Use this field to display information that will appear at the bottom of ALL posts',
+        'priority'    => 200,
+    ) );
+    $wp_customize->add_control( 
+        'UTH_footer_grant_info_control',
+            array(
+                'label' => 'Additional Info',
+                'type' => 'textarea',
+                'section' => 'UTH_addl_info',
+                'settings' => 'UTH_additional_info',
+            ) 
+        );
+}
+add_action('customize_register', 'UTH_customizr_additional_info');
