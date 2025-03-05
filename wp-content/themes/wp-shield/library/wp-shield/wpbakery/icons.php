@@ -204,7 +204,7 @@ class uth_icons extends WPBakeryShortCode {
             $uth_icon_size = 'fa-6x';
         }
         if (empty ($single_icon_color)){
-            $single_icon_color = 'null';
+            $single_icon_color = '';
         }
         if (!empty($heading_level) && !empty($icon_title)){
             $render_title = '<' . $heading_level . '>' . $icon_title . '</' . $heading_level . '>';
@@ -213,6 +213,9 @@ class uth_icons extends WPBakeryShortCode {
             $render_title = '<h3>' . $icon_title . '</h3>';
         }else{
             $render_title = '';
+        }
+        if (empty($type)){
+            $type = 'fontawesome';
         }
         // Enqueue needed icon font. - Pulled from plugin core - JMO Nov5th. 2019
         vc_icon_element_fonts_enqueue( $type );
