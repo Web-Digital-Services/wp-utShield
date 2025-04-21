@@ -265,7 +265,7 @@ class uth_events_block extends WPBakeryShortCode {
         else:
             // If no posts match this query, output this text in black.
         ?>	<p class="text-center black-text">
-                <?php echo pl__('There are no events at this time. Please check back later.'); ?> 
+                <?php echo 'There are no events at this time. Please check back later.'; ?> 
             </p>	
             <?php 
         endif;
