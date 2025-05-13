@@ -56,13 +56,12 @@ class uth_button_group extends WPBakeryShortCode {
                         'type'       => 'dropdown',
                         'class'      => '',
                         'heading'    => 'Button Styles',
-                        'description' => esc_html__( 'If you add 2 buttons the second one will always be ghost.', 'wp-shield' ),
                         'param_name' => 'uth_button_style',
                         'group' => 'Design Options',
                         'value'      => array(
                             'Orange'  => 'color orange',
                             'White'  => 'white',
-                            'Ghost'  => 'ghost'                        
+                            //'Ghost or Sheer'  => 'ghost'                        
                         )
                     ),
                     array(

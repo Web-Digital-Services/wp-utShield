@@ -13,6 +13,11 @@
 		'theme_design', 
 		'default' => 'theme1'
 		)
+	);
+	$wp_customize->add_setting('wp_breadcrumb_theme_switch_control', array(
+		'breadcrumb_design', 
+		'default' => 'double'
+		)
 	);	 
 	$wp_customize->add_section('wp_shield_theme_selector_section', array(
 		'title' => __('Theme Design Options', 'wp-shield'),
@@ -31,14 +36,28 @@
 				'standard' => 'Standard Theme',
 				'mission' => 'Mission Theme',
 				'tenadams' => 'Ten Adams Theme',
-			)
-		)
-	);
+			))
+		);
+
+	$wp_customize->add_control(
+	 	'breadcrumb_design', 
+		array(
+			'type' => 'radio',
+			'label' => 'Breadcrumb Options',
+			'section' => 'wp_shield_theme_selector_section',
+			'settings' => 'wp_breadcrumb_theme_switch_control',
+			'choices' => array(
+				'single' => 'Single Carat',
+				'double' => 'Double Carat',
+			) )
+		);
+
 }
 add_action ('customize_register', 'wp_shield_register_theme_switch');
 function load_theme_design($header_or_footer){
 	
 	$load_theme_design_selection = get_theme_mod( 'wp_shield_theme_switch_control' );
+	$load_breadcrumb_design_selection = get_theme_mod( 'wp_breadcrumb_theme_switch_control');
     
 	if (empty($load_theme_design_selection)){
 		$load_theme_design_selection = 'standard';

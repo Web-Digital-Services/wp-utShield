@@ -43,11 +43,6 @@ load_theme_design('header'); ?>
 						}
 					?>
 			<?php endwhile; ?>
-			<?php $uth_additional_info = get_theme_mod( 'UTH_additional_info'); ?>
-					<?php if (!empty($uth_additional_info)){
-						echo '<br>' . $uth_additional_info;
-					}
-					?>
 		</main>
 		<?php get_sidebar(); ?>
 	</div>

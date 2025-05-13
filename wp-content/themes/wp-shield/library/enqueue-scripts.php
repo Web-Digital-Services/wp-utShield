@@ -40,8 +40,10 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		}
 
 		// Enqueue the main Stylesheet.
-		wp_enqueue_style( 'main-stylesheet', get_stylesheet_directory_uri() . '/dist/assets/css/' . foundationpress_asset_path( 'app.css' ), array(), '2.10.4', 'all' );
-
+		//wp_enqueue_style( 'main-stylesheet', get_stylesheet_directory_uri() . '/css/' . foundationpress_asset_path( 'main.css' ), array(), '2.10.4', 'all' );
+		wp_enqueue_style( 'main', get_template_directory_uri() . '/css/main.css', false, '1.1', 'all');
+		// Enqueue the overrides.
+		wp_enqueue_style( 'overrides', get_template_directory_uri() . '/css/wp-overrides.css', false, '1.1', 'all');
 		// Deregister the jquery version bundled with WordPress.
 		wp_deregister_script( 'jquery' );
 
@@ -58,7 +60,13 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		// wp_enqueue_script( 'jquery-migrate' );
 
 		// Enqueue Foundation scripts
-		wp_enqueue_script( 'foundation', get_stylesheet_directory_uri() . '/dist/assets/js/' . foundationpress_asset_path( 'app.js' ), array( 'jquery' ), '2.10.4', true );
+		//wp_enqueue_script( 'foundation', get_stylesheet_directory_uri() . '/dist/assets/js/' . foundationpress_asset_path( 'app.js' ), array( 'jquery' ), '2.10.4', true );
+		wp_enqueue_script( 'foundation', get_template_directory_uri() . '/js/vendor/foundation/foundation.min.js');
+		wp_enqueue_script( 'fontawesome', get_template_directory_uri() . '/assets/fonts/fontawesome-free/js/fontawesome.js');
+		wp_enqueue_script( 'what-input', get_template_directory_uri() . '/js/vendor/what-input/what-input.min.js');
+		wp_enqueue_script( 'app', get_template_directory_uri() . '/js/app.js', false, '1.1', 'all');
+		wp_enqueue_script( 'shield', get_template_directory_uri() . '/js/shield.min.js', false, '1.1', 'all');
+		wp_enqueue_script( 'mobile', get_template_directory_uri() . '/js/mobile.js', false, '1.1', 'all');
 
 		// Enqueue FontAwesome from CDN. Uncomment the line below if you need FontAwesome.
 		//wp_enqueue_script( 'fontawesome', 'https://use.fontawesome.com/5016a31c8c.js', array(), '4.7.0', true );

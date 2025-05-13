@@ -1,0 +1,269 @@
+.wpb_row {
+    min-width: 100%
+}
+
+header#regular .search {
+    min-width: 287px
+}
+
+nav#subnav ul .is-accordion-submenu {
+    border-left: .25rem solid #ffbc5b;
+    margin-top: .375rem;
+    margin-bottom: 1.125rem;
+    list-style-type: none
+}
+
+nav#subnav ul.vertical.menu .is-accordion-submenu {
+    margin-right: 0;
+    margin-left: 1rem
+}
+
+nav#subnav li.is-active.is-accordion-submenu-parent>a {
+    background: 0 0;
+    color: #7a0f00
+}
+
+nav#subnav>ul.subnav>li.is-active>ul.submenu.is-active>li.is-active.is-submenu-item a {
+    color: #7a0f00;
+    background: 0 0 !important;
+    font-weight: 900
+}
+
+nav#subnav ul {
+    margin-left: 0
+}
+
+nav#subnav ul.accordion-menu li.menu-item {
+    border-bottom: .0625rem #99a3a8 solid !important
+}
+
+nav#subnav ul.accordion-menu li ul.is-accordion-submenu li {
+    border-bottom: none !important
+}
+
+nav#subnav .current_page_item {
+    background: 0 0
+}
+
+.nav-bar#new-full .top-bar .top-bar-left ul li a:active,
+.nav-bar#new-full .top-bar .top-bar-left ul li.is-active a {
+    color: #fff !important
+}
+
+.menu .is-active>a {
+    background: 0 0;
+    color: #7a0f00
+}
+
+footer a:focus,
+footer a:visited:not(.button) {
+    color: #f0ece2 !important
+}
+
+footer[role=contentinfo] {
+    margin-top: 0 !important
+}
+
+@media only screen and (max-width:600px) {
+    .filters {
+        display: none
+    }
+
+    .filters.active {
+        display: block
+    }
+}
+
+body.theme-tenadams .hero__secondary {
+    min-height: 600px
+}
+
+.chonky {
+    padding-top: 25rem
+}
+
+body.theme-tenadams a.button {
+    font-size: 1.7rem !important
+}
+
+body.theme-tenadams .card h5 {
+    font-size: 1.5em
+}
+
+body.page-template-hero-secondary.theme-tenadams nav.header__nav a {
+    color: #fff !important
+}
+
+.hidden {
+    display: none
+}
+
+div.form-group {
+    padding-bottom: 1.2em
+}
+
+.stretch-image,
+picture.stretch-image img {
+    min-width: 100%
+}
+
+.card p.colorized .fa-stack.outline>.fa-stack-1x,
+.card p.colorized .far.fa-circle {
+    color: green
+}
+
+.page-content {
+    min-width: 100%
+}
+
+.image-spread {
+    min-width: 100%
+}
+
+nav .current_page_item {
+    background: #7a0f00
+}
+
+select#toolset-maps-distance {
+    max-width: 4em
+}
+
+#toolset-maps-distance-center {
+    width: 100%
+}
+
+.btn.js-toolset-maps-distance-current-location {
+    display: none
+}
+
+select option {
+    color: #0a0a0a;
+    background: #f1f5f7
+}
+
+input.facetwp-autocomplete-update {
+    display: none
+}
+
+.facetwp-checkbox {
+    font-weight: 600
+}
+
+.breadcrumbs {
+    margin: 0 auto -1.875rem auto !important;
+    padding-left: 0
+}
+
+main.grid-container {
+    padding-bottom: 0 !important
+}
+
+input[type=checkbox]:checked {
+    background: url(../images/check-solid.svg);
+    background-position-x: 0;
+    background-position-y: 0;
+    background-repeat: repeat;
+    background-size: auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 1.125rem
+}
+
+footer .shield {
+    background-image: url(../images/half-shield.svg);
+    background-repeat: no-repeat;
+    position: relative;
+    background-position: right center
+}
+
+.element-invisible {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
+    height: 1px
+}
+
+.has-tangerine-background-color {
+    background-color: #d45d00 !important
+}
+
+.has-tangerine-color {
+    color: #d45d00 !important
+}
+
+.has-blue-background-color {
+    background-color: #27829e !important;
+    color: #fff
+}
+
+.has-blue-color {
+    color: #27829e !important
+}
+
+.has-gold-background-color {
+    background-color: #ffbc5b !important
+}
+
+.has-gold-color {
+    color: #ffbc5b !important
+}
+
+.has-light-beige-background-color {
+    background-color: #f7f5f0 !important
+}
+
+.has-light-beige-color {
+    color: #f7f5f0 !important
+}
+
+.has-beige-background-color {
+    background-color: #f0ece2 !important
+}
+
+.has-beige-color {
+    color: #f0ece2 !important
+}
+
+.has-dark-beige-background-color {
+    background-color: #efe1cc !important
+}
+
+.has-dark-beige-color {
+    color: #efe1cc !important
+}
+
+.has-light-gray-background-color {
+    background-color: #e0e5e6 !important
+}
+
+.has-light-gray-color {
+    color: #e0e5e6 !important
+}
+
+.has-grey-background-color {
+    background-color: #667075 !important
+}
+
+.has-grey-color {
+    color: #667075 !important
+}
+
+.has-dark-gray-background-color {
+    background-color: #333d42 !important
+}
+
+.has-dark-gray-color {
+    color: #333d42 !important
+}
+
+@media only screen and (max-width:600px) {
+    .swap-on-mobile {
+        display: -webkit-flex !important;
+        display: -ms-flexbox !important;
+        display: flex !important;
+        -webkit-flex-direction: column-reverse;
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse
+    }
+}

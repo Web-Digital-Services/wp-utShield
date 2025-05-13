@@ -129,7 +129,6 @@ add_filter( 'vc_iconpicker-type-uthscsa-icons', 'uthscsa_icon_array' );
 function vc_iconpicker_ut_health_register_css() {
 	// Vc Icon picker fonts:
 	wp_register_style( 'uthscsa-icons', get_template_directory_uri() . '/assets/fonts/iconstyles.css', false );
-    wp_enqueue_style( 'uthscsa-icons' );
 }
 function vc_iconpicker_uthealth() {
 	// Fonts
