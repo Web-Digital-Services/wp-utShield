@@ -16,5 +16,5 @@ jobs:
       with:
         WPE_SSHG_KEY_PRIVATE: ${{ secrets.DEPLOYMENT_SSH_KEY_PRIVATE }}
         WPE_ENV: iimsstg
-        REMOTE_PATH: "wp-shield/"
+        REMOTE_PATH: "wp-content/themes/wp-shield/"
         FLAGS: '-azvr --inplace --exclude=".*" --copy-dirlinks'
