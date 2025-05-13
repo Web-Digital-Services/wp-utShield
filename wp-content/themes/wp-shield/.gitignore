@@ -9,4 +9,3 @@ config.yml
 *.swp
 packaged/
 wpcs/
-vendor/
