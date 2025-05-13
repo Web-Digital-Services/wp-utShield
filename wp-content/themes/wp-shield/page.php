@@ -32,6 +32,7 @@ $add_breadcrumbs = get_post_meta( $post->ID, 'add_breadcrumbs', true );
 	}
 	?>
 	<?php while ( have_posts() ) : the_post(); ?>
+		<?php echo 'test'; ?>
 		<?php the_content(); ?>
 	<?php endwhile; ?>
 </main>
