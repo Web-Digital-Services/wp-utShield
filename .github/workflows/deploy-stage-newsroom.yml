@@ -7,28 +7,16 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.x]
-
     steps:
-      - uses: actions/checkout@v3
-      - name: Install project dependencies
-        run: composer install --no-dev --optimize-autoloader
-      - uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: npm
-        run: |
-          npm install
-          npm run build
-          rm -r node_modules
-        working-directory: wp-content/themes/wp-shield
-      - name: SSH Deploy to WPEngine
-        uses: wpengine/github-action-wpe-site-deploy@v3
-        with:
-          WPE_ENV: stageutnews
-          WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
+    - uses: actions/checkout@v3
+    - name: GitHub Action Deploy to WP Engine
+      uses: wpengine/github-action-wpe-site-deploy@v3
+      with:
+        WPE_SSHG_KEY_PRIVATE: ${{ secrets.DEPLOYMENT_SSH_KEY_PRIVATE }}
+        WPE_ENV: stageutnews
+        SRC_PATH: "wp-content/themes/wp-shield/"
+        REMOTE_PATH: "wp-content/themes/wp-shield/"
+        FLAGS: '-azvr --inplace --exclude=".*" --copy-dirlinks'
+
