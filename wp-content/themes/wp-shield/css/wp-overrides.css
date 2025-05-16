@@ -256,7 +256,8 @@ footer .shield {
 .has-dark-gray-color {
     color: #333d42 !important
 }
-
+.alignleft{float: left; margin-right: 5px;}
+.alignright{float: right; margin-left: 5px;}
 @media only screen and (max-width:600px) {
     .swap-on-mobile {
         display: -webkit-flex !important;
