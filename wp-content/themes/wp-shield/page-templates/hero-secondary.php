@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Hero (Secondonary)
+Template Name: Hero (Secondary)
 */
 load_theme_design('header'); ?>
 <?php get_template_part( 'template-parts/banners/hero-secondary', get_post_format() ); ?>
