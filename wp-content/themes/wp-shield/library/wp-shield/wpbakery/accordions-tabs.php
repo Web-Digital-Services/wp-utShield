@@ -32,7 +32,7 @@ class uth_tab_content extends WPBakeryShortCode {
                 'base' => 'vc_tab_content',
                 'description' => __('Tab or Accordions', 'wp-shield'), 
                 'category' => __('UT Health Designs', 'wp-shield'),   
-                'icon' => get_template_directory_uri().'/dist/assets/images/core/shield.png',            
+                'icon' => get_template_directory_uri().'/dist/assets/images/shield.png',            
                 //That params defines the field types to be used and the settings for eachf field           
                 'params' => array(
                     array(
