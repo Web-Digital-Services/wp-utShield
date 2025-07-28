@@ -27,7 +27,7 @@ class uth_bleeding_image extends WPBakeryShortCode {
                 'base' => 'vc_bleeding_image',
                 'description' => __('This design splits the image in half of the row', 'wp-shield'), 
                 'category' => __('UT Health Designs', 'wp-shield'),   
-                'icon' => get_template_directory_uri().'/dist/assets/images/core/shield.png',            
+                'icon' => get_template_directory_uri().'/images/shield.png',            
                 'params' => array(   
                     array(
                         'type' => 'attach_image',

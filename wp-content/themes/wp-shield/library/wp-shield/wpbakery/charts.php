@@ -29,7 +29,7 @@ class uth_chart extends WPBakeryShortCode {
                 'base' => 'vc_chart',
                 'description' => __('Chart to visually represent data', 'wp-shield'), 
                 'category' => __('UT Health Designs', 'wp-shield'),   
-                'icon' => get_template_directory_uri().'/dist/assets/images/core/shield.png',            
+                'icon' => get_template_directory_uri().'/images/shield.png',            
                 'params' => array(   
                     // orange/blue color dropdown for div
                     // title option for table header

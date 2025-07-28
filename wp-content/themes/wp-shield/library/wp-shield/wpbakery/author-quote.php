@@ -33,7 +33,7 @@ class uth_author_quote extends WPBakeryShortCode
                 'base' => 'vc_author_quote',
                 'description' => __('A callout section with a quote, with options for an image and/or a link', 'wp-shield'),
                 'category' => __('UT Health Designs', 'wp-shield'),
-                'icon' => get_template_directory_uri().'/dist/assets/images/core/shield.png',
+                'icon' => get_template_directory_uri().'/images/shield.png',
                 'params' => array(
                     array(
                         'type' => 'attach_image',

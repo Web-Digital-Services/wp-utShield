@@ -28,7 +28,7 @@ class uth_quickfact_row extends WPBakeryShortCode {
                 'base' => 'vertical_quickfacts_row',
                 'description' => __('A row of quick facts', 'wp-shield'), 
                 'category' => __('UT Health Designs', 'wp-shield'),   
-                'icon' => get_template_directory_uri().'/dist/assets/images/core/shield.png',            
+                'icon' => get_template_directory_uri().'/images/shield.png',            
                 'params' => array(   
                     array(
                         'type' => 'textfield',

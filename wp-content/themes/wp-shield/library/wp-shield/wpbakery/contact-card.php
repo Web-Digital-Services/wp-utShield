@@ -30,7 +30,7 @@ class uth_contact_card extends WPBakeryShortCode {
                 'base' => 'vc_contact_card',
                 'description' => __('Card to display contact info and image', 'wp-shield'), 
                 'category' => __('UT Health Designs', 'wp-shield'),   
-                'icon' => get_template_directory_uri().'/dist/assets/images/core/shield.png',         
+                'icon' => get_template_directory_uri().'/images/shield.png',         
                 'params' => array(
                     array(
                         'type' => 'attach_image',

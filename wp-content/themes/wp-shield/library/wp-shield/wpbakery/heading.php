@@ -26,7 +26,7 @@ class uth_heading extends WPBakeryShortCode {
                 'base' => 'vc_heading',
                 'description' => __('Heading - Heading with optional eyebrow', 'wp-shield'), 
                 'category' => __('UT Health Designs', 'wp-shield'),   
-                'icon' => get_template_directory_uri().'/dist/assets/images/core/shield.png',            
+                'icon' => get_template_directory_uri().'/images/shield.png',            
                 'params' => array(  
                     //Single line text field. 
                     array(
