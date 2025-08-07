@@ -30,7 +30,7 @@ class uth_contact_card_multiple extends WPBakeryShortCode {
                 'base' => 'vc_contact_card_multiple',
                 'description' => __('Card to display multiple contacts info', 'wp-shield'),
                 'category' => __('UT Health Designs', 'wp-shield'),
-                'icon' => get_template_directory_uri().'/dist/assets/images/core/shield.png',
+                'icon' => get_template_directory_uri().'/images/shield.png',
                 'params' => array(
                     // Lets have design options first, since we only want one header for all contacts
                     array(

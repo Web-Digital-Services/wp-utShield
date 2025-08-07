@@ -32,7 +32,7 @@ class uth_directory_listing extends WPBakeryShortCode {
                 'base' => 'vc_directory_listing',
                 'description' => __('A directory listing of photo, name, title, phone/email, and bio', 'wp-shield'), 
                 'category' => __('UT Health Designs', 'wp-shield'),   
-                'icon' => get_template_directory_uri().'/dist/assets/images/core/shield.png',            
+                'icon' => get_template_directory_uri().'/images/shield.png',            
                 //That params defines the field types to be used and the settings for eachf field           
                 'params' => array(
                     array(

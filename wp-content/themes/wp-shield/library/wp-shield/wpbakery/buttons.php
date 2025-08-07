@@ -26,7 +26,7 @@ class uth_button_group extends WPBakeryShortCode {
                 'base' => 'vc_buttons',
                 'description' => __('Individual or Grouped Buttons', 'wp-shield'), 
                 'category' => __('UT Health Designs', 'wp-shield'),   
-                'icon' => get_template_directory_uri().'/dist/assets/images/core/shield.png',            
+                'icon' => get_template_directory_uri().'/images/shield.png',            
                 'params' => array(   
                     array(
                         'type' => 'vc_link',

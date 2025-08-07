@@ -28,7 +28,7 @@ class uth_content_lists extends WPBakeryShortCode {
                 'base' => 'vc_content_lists',
                 'description' => __('Add a lists with various styles', 'wp-shield'), 
                 'category' => __('UT Health Designs', 'wp-shield'),   
-                'icon' => get_template_directory_uri().'/dist/assets/images/core/shield.png',            
+                'icon' => get_template_directory_uri().'/images/shield.png',            
                 //That params defines the field types to be used and the settings for eachf field           
                 'params' => array(
                     // Dropwdown Field

@@ -32,7 +32,7 @@ class uth_events_block extends WPBakeryShortCode {
                 'base' => 'vc_events_block',
                 'description' => __('Load WordPress Events', 'ut-health'), 
                 'category' => __('UT Health Designs', 'ut-health'),   
-                'icon' => get_template_directory_uri().'/assets/images/core/shield.png', 
+                'icon' => get_template_directory_uri().'/images/shield.png', 
                 //That params defines the field types to be used and the settings for eachf field           
                 'params' => array(
                     array(

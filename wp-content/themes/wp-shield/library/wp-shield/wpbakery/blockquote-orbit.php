@@ -33,7 +33,7 @@ class uth_blockquote_orbit extends WPBakeryShortCode
                 'base' => 'vc_blockquote_orbit',
                 'description' => __('Add up to 4 quotes with authors in a slide show', 'wp-shield'),
                 'category' => __('UT Health Designs', 'wp-shield'),
-                'icon' => get_template_directory_uri() . '/dist/assets/images/core/shield.png',
+                'icon' => get_template_directory_uri().'/images/shield.png',
                 'params' => array(
                     //do we want to just hard code 4 sets of author names/quotes?
                     // need to break up into 5 tabs 
