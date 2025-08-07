@@ -6,6 +6,7 @@ add_action('customize_register', 'uth_create_footer_settings');
 function uth_create_footer_settings($wp_customize) {
     // 1. Add a settings for all elements
     $wp_customize->add_setting('uth_footer_phone');
+    $wp_customize->add_setting('uth_footer_title');
     $wp_customize->add_setting('uth_footer_address');
     $wp_customize->add_setting('uth_footer_email');
     $wp_customize->add_setting('uth_footer_email_title');
@@ -36,6 +37,16 @@ function uth_create_footer_settings($wp_customize) {
         'type' => 'text',
         'section' => 'uth_footer',
         'settings' => 'uth_footer_phone',
+        ) 
+    );
+    $wp_customize->add_control( 
+        'uth_footer_title_control',
+        array(
+        'label' => 'Alternate title for footer',
+        'type' => 'text',
+        'section' => 'uth_footer',
+        'description' => 'Use this field to display a title other than UT Health San Antonio',
+        'settings' => 'uth_footer_title',
         ) 
     );
     $wp_customize->add_control( 

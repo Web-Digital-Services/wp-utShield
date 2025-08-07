@@ -10,6 +10,7 @@
 ?>
 <?php 
     $uth_footer_phone = get_theme_mod( 'uth_footer_phone' );
+    $uth_footer_title = get_theme_mod( 'uth_footer_title' );
     $uth_footer_address = get_theme_mod( 'uth_footer_address' );
     $uth_footer_email = get_theme_mod( 'uth_footer_email' );
     $uth_footer_email_title = get_theme_mod( 'uth_footer_email_title' );
@@ -56,7 +57,11 @@
             <div class="grid-x grid-margin-x align-center">
                 <div class="cell large-12">
                     <?php if ( $uth_footer_hide_ut_sa_title != 'true' ){
+                        if ( !empty($uth_footer_title)) {
+                            echo '<h2>' . $uth_footer_title . '</h2>';
+                        }else{
                         echo '<h2>UT Health San Antonio</h2>';
+                    }
                         if (!empty($site_title)){
                             echo '<h3>' . $site_title . '</h3>';
                         }
