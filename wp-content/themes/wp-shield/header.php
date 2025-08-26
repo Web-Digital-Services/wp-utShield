@@ -26,6 +26,14 @@
 		<link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
+	<?php
+		$UTH_show_utsa_topbar = get_theme_mod( 'UTH_show_utsa_topbar'); 
+		 if ($UTH_show_utsa_topbar == 'true') {
+		 	echo '<div class="utsa-bar">
+      <a href="https://www.utsa.edu/"><img src="wp-content/themes/wp-shield/images/ut-san-antonio-logo-white.svg" alt="UT San Antonio"></a>
+  </div>';
+		 }
+	?>
 	<div class="skip-link" role="navigation" aria-label="Skip to main content">
    			<a href="#main-content" class="element-focusable element-invisible" id="skip-link">Skip to main content</a>
   		</div>

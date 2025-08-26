@@ -12,6 +12,7 @@
     $wp_customize->add_setting('UTH_add_give_button_setting');
     $wp_customize->add_setting('UTH_contact_phone_number');
     $wp_customize->add_setting('UTH_contact_url');
+    $wp_customize->add_setting('UTH_show_utsa_topbar');
 
     //2. We are using a defaut section so we dont No need for step 2 to create a new section. 
     $wp_customize->add_section( 'UTH_header_config' , array(
@@ -21,6 +22,14 @@
     ) );
     //3. Add a control
         //Documentation: https://codex.wordpress.org/Class_Reference/WP_Customize_Manager/add_control
+    $wp_customize->add_control( 'uth_show_utsa_topbar_checkbox', array(
+        'type' => 'checkbox',
+        'section' => 'UTH_header_config', // Add a default or your own section
+        'settings' => 'UTH_show_utsa_topbar',
+        'label' => ( 'Show UTSA blue topbar' ),
+        'description' => ( 'This should only be used on academic sites.' ),
+        )
+    );
     $wp_customize->add_control( 
         'featured_link_text_label',
         array(
