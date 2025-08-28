@@ -193,7 +193,7 @@
         <div class="grid-container">
             <div class="grid-x">
                 <div class="cell">
-                    <p><strong><a href="https://uthscsa.edu/university/web-privacy">Web Privacy</a></strong> | Links from websites affiliated with UT ' . "Health's" . ' website (uthscsa.edu) to other websites do not constitute or imply university endorsement of those sites, their content, or products and services associated with those sites. The content on this website is intended to be used for informational purposes only. Health information on this site is not meant to be used to diagnose or treat conditions. Consult a health care provider if you are in need of treatment.</p>
+                    <p><strong><a href="https://uthscsa.edu/university/web-privacy">Web Privacy</a></strong> | Links from websites affiliated with UT Health San ' . "Antonio’s" . ' website (uthscsa.edu) to other websites do not constitute or imply university endorsement of those sites, their content or products and services associated with those sites. The content on this website is intended to be used for informational purposes only. Health information on this site is not meant to be used to diagnose or treat conditions. Consult a healthcare provider if you are in need of treatment.</p>
                 </div>
             </div>
         </div>
