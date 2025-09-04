@@ -30,7 +30,7 @@
 		$UTH_show_utsa_topbar = get_theme_mod( 'UTH_show_utsa_topbar'); 
 		 if ($UTH_show_utsa_topbar == 'true') {
 		 	echo '<div class="utsa-bar">
-      <a href="https://www.utsa.edu/"><img src="wp-content/themes/wp-shield/images/ut-san-antonio-logo-white.svg" alt="UT San Antonio"></a>
+      <a href="https://www.utsa.edu/"><img src="https://wp.uthscsa.edu/wp-content/themes/wp-shield/images/ut-san-antonio-logo-white.svg" alt="UT San Antonio"></a>
   </div>';
 		 }
 	?>
