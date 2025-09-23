@@ -7,9 +7,9 @@
  */
 
 load_theme_design('header'); ?>
-<div class="main-container">
-	<div class="main-grid grid-x">
-		<main id="main-content" class="cell large-8">
+<div class="grid-container">
+	<div class="grid-x grid-margin-x">
+		<main id="main-content" class="cell large-12">
 		<header>
 			<h1 class="entry-title"><?php _e( 'Search Results for', 'foundationpress' ); ?> "<?php echo get_search_query(); ?>"</h1>
 		</header>
