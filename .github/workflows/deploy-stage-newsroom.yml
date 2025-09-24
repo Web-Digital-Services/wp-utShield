@@ -3,7 +3,7 @@ name: Deploy to Newsroom (stage)
 on:
   push:
     branches:
-      - master
+      - env/stg
 
 jobs:
   build:
