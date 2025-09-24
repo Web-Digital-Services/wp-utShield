@@ -3,7 +3,7 @@ name: Deploy to wp.uthscsa.edu (stage)
 on:
   push:
     branches:
-      - master
+      - env/stg
 
 jobs:
   build:
