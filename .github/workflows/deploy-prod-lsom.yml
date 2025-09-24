@@ -3,7 +3,7 @@ name: Deploy to lsom.uthscsa.edu (prod)
 on:
   push:
     branches:
-      - master
+      - env/prod
 
 jobs:
   build:
