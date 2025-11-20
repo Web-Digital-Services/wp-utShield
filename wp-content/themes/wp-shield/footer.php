@@ -178,7 +178,7 @@
                             echo $uth_footer_statement;
                         }else{
                         echo '<p class="large-text">We make lives better ®</p>
-                        <p>The University of Texas Health Science Center at San Antonio, also called <a href="https://uthscsa.edu">UT Health San Antonio</a>, is a leading academic health center with a mission to make lives better through excellence in <a href="https://uthscsa.edu/academics/">advanced academics</a>, <a href="https://www.uthscsa.edu/research/">life-saving research</a> and comprehensive clinical care including <a href="https://everythingittakes.org/">health</a>, <a href="https://www.uthscsa.edu/patient-care/dental">dental</a> and <a href="https://cancer.uthscsa.edu/">cancer services</a>.</p>';
+                        <p>UT San Antonio Health Science Center is the academic health center of The University of Texas at San Antonio. It includes schools of medicine, dentistry, nursing, health professions, graduate biomedical sciences and public health, and a clinical enterprise called UT Health San Antonio, which conducts 2.5 million patient visits yearly.</p>';
                         }
                     }
                     ?>
