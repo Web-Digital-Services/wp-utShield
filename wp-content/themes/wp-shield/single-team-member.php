@@ -34,6 +34,8 @@ load_theme_design('header'); ?>
 			<aside class="cell small-12 medium-4 large-4 small-order-2 medium-order-1">
 				<?php if ( has_post_thumbnail()) : ?>
         			<?php the_post_thumbnail('large', array('class'=> 'img-margin')); ?>
+        		<?php else : ?>
+        			<?php echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/images/headshot-fallback.png" />'; ?>
 				<?php endif; ?>
 				<?php if (!empty ($phone) || !empty ($mail)){
 					echo '<div class="margin-bottom"><h2 class="sans-serif h5 bold close">Contact</h2>';
