@@ -12,13 +12,13 @@ load_theme_design('header'); ?>
 	$UTH_investigator = types_render_field("rs-investigator");
 	$UTH_conditions = types_render_field("rs-conditions"); 
 	$UTH_purpose = types_render_field("rs-purpose");
-	$UTH_inclusion = (types_render_field( "rs-inclusion"));
-	$UTH_exclusion = (types_render_field( "rs-exclusion"));
-    $contact_title = (types_render_field( "rs-contact-title"));
-    $contact_address = (types_render_field( "rs-contact-address"));
-    $contact_email = (types_render_field( "rs-contact-email"));
-    $contact_phone = (types_render_field( "rs-contact-phone"));
-    $contact_fax = (types_render_field( "rs-contact-fax"));
+	$UTH_inclusion = types_render_field( "rs-inclusion");
+	$UTH_exclusion = types_render_field( "rs-exclusion");
+    $contact_title = types_render_field( "rs-contact-title");
+    $contact_address = types_render_field( "rs-contact-address");
+    $contact_email = types_render_field( "rs-contact-email");
+    $contact_phone = types_render_field( "rs-contact-phone");
+    $contact_fax = types_render_field( "rs-contact-fax");
 ?>
 <div class="grid-container">
     <div class="grid-x grid-margin-x">
