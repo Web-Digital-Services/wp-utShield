@@ -80,11 +80,11 @@
                         if (!empty($uth_footer_phone)){
                             echo '
                                 <div class="contact">
-                                    <a href="tel:' . $uth_footer_phone . '" class="fa-stack">
+                                    <a href="tel:' . $uth_footer_phone . '" class="fa-stack" alt="Telephone contact icon">
                                         <i class="fas fa-circle fa-stack-2x"></i>
                                         <i class="fas fa-phone fa-stack-1x fa-inverse"></i>
                                     </a>
-                                    <a href="tel:' . $uth_footer_phone . '">' . $uth_footer_phone . '</a>
+                                    <a href="tel:' . $uth_footer_phone . '" alt="Telephone contact number">' . $uth_footer_phone . '</a>
                                 </div>';
                         }
                     ?>    
@@ -96,18 +96,18 @@
                                 $map_url = $uth_footer_map;
                             }
                         
-                        echo '<a href="' . $map_url . '" class="fa-stack">
+                        echo '<a href="' . $map_url . '" class="fa-stack" alt="Map and directions icon">
                             <i class="fas fa-circle fa-stack-2x"></i>
                             <i class="fas fa-map-marker-alt fa-stack-1x fa-inverse"></i>
                         </a>'; 
                          
                         if (empty($uth_footer_address)){
                             echo '<address>7703 Floyd Curl Drive<br>San Antonio, TX 78229<br>
-                            <a href="' . $map_url . '" class="arrow">Map and directions</a>
+                            <a href="' . $map_url . '" class="arrow" alt="Map and directions">Map and directions</a>
                         </address>';
                         }else{
                             echo '<address>' . $uth_footer_address . '<br>
-                            <a href="' . $map_url . '" class="arrow">Map and directions</a>
+                            <a href="' . $map_url . '" class="arrow" alt="Map and directions">Map and directions</a>
                         </address>';
                         }
                     }
@@ -121,19 +121,19 @@
                     ?>
                     <?php if(!empty($uth_footer_email) and !empty($uth_footer_email_title)) {
                     echo '<div class="contact">
-                        <a href="mailto:' . $uth_footer_email . '" class="fa-stack">
+                        <a href="mailto:' . $uth_footer_email . '" class="fa-stack" alt="E-mail contact icon">
                             <i class="fas fa-circle fa-stack-2x"></i>
                             <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
                         </a>
-                        <a href="mailto:' . $uth_footer_email . '">' . $uth_footer_email_title . '</a> 
+                        <a href="mailto:' . $uth_footer_email . '" alt="E-mail contact information">' . $uth_footer_email_title . '</a> 
                     </div>';
                     } elseif(!empty($uth_footer_email)) {
                     echo '<div class="contact">
-                        <a href="mailto:' . $uth_footer_email . '" class="fa-stack">
+                        <a href="mailto:' . $uth_footer_email . '" class="fa-stack" alt="E-mail contact icon">
                             <i class="fas fa-circle fa-stack-2x"></i>
                             <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
                         </a>
-                        <a href="mailto:' . $uth_footer_email . '">' . $uth_footer_email . '</a> 
+                        <a href="mailto:' . $uth_footer_email . '" alt="E-mail contact information">' . $uth_footer_email . '</a> 
                     </div>';
                     }
                     ?>
