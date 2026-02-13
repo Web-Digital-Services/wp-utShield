@@ -80,11 +80,11 @@
                         if (!empty($uth_footer_phone)){
                             echo '
                                 <div class="contact">
-                                    <a href="tel:' . $uth_footer_phone . '" class="fa-stack" alt="Telephone contact icon">
+                                    <a href="tel:' . $uth_footer_phone . '" class="fa-stack" aria-label="Telephone contact icon">
                                         <i class="fas fa-circle fa-stack-2x"></i>
                                         <i class="fas fa-phone fa-stack-1x fa-inverse"></i>
                                     </a>
-                                    <a href="tel:' . $uth_footer_phone . '" alt="Telephone contact number">' . $uth_footer_phone . '</a>
+                                    <a href="tel:' . $uth_footer_phone . '" aria-label="Telephone contact number">' . $uth_footer_phone . '</a>
                                 </div>';
                         }
                     ?>    
@@ -96,18 +96,18 @@
                                 $map_url = $uth_footer_map;
                             }
                         
-                        echo '<a href="' . $map_url . '" class="fa-stack" alt="Map and directions icon">
+                        echo '<a href="' . $map_url . '" class="fa-stack" aria-label="Map and directions icon">
                             <i class="fas fa-circle fa-stack-2x"></i>
                             <i class="fas fa-map-marker-alt fa-stack-1x fa-inverse"></i>
                         </a>'; 
                          
                         if (empty($uth_footer_address)){
                             echo '<address>7703 Floyd Curl Drive<br>San Antonio, TX 78229<br>
-                            <a href="' . $map_url . '" class="arrow" alt="Map and directions">Map and directions</a>
+                            <a href="' . $map_url . '" class="arrow" aria-label="Map and directions">Map and directions</a>
                         </address>';
                         }else{
                             echo '<address>' . $uth_footer_address . '<br>
-                            <a href="' . $map_url . '" class="arrow" alt="Map and directions">Map and directions</a>
+                            <a href="' . $map_url . '" class="arrow" aria-label="Map and directions">Map and directions</a>
                         </address>';
                         }
                     }
@@ -121,19 +121,19 @@
                     ?>
                     <?php if(!empty($uth_footer_email) and !empty($uth_footer_email_title)) {
                     echo '<div class="contact">
-                        <a href="mailto:' . $uth_footer_email . '" class="fa-stack" alt="E-mail contact icon">
+                        <a href="mailto:' . $uth_footer_email . '" class="fa-stack" aria-label="E-mail contact icon">
                             <i class="fas fa-circle fa-stack-2x"></i>
                             <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
                         </a>
-                        <a href="mailto:' . $uth_footer_email . '" alt="E-mail contact information">' . $uth_footer_email_title . '</a> 
+                        <a href="mailto:' . $uth_footer_email . '" aria-label="E-mail contact information">' . $uth_footer_email_title . '</a> 
                     </div>';
                     } elseif(!empty($uth_footer_email)) {
                     echo '<div class="contact">
-                        <a href="mailto:' . $uth_footer_email . '" class="fa-stack" alt="E-mail contact icon">
+                        <a href="mailto:' . $uth_footer_email . '" class="fa-stack" aria-label="E-mail contact icon">
                             <i class="fas fa-circle fa-stack-2x"></i>
                             <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
                         </a>
-                        <a href="mailto:' . $uth_footer_email . '" alt="E-mail contact information">' . $uth_footer_email . '</a> 
+                        <a href="mailto:' . $uth_footer_email . '" aria-label="E-mail contact information">' . $uth_footer_email . '</a> 
                     </div>';
                     }
                     ?>
@@ -152,16 +152,16 @@
                         $menuID = $menuLocations['footer_menu'];
                         $items_in_menu = wp_get_nav_menu_items($menuID);
                         foreach ($items_in_menu as $menu_item) {
-                            echo '<li><a class="arrow" href="' . $menu_item -> url . '">' . $menu_item -> title . '</a></li>';
+                            echo '<li><a class="arrow" aria-label="More links about UT Health San Antonio" href="' . $menu_item -> url . '">' . $menu_item -> title . '</a></li>';
                         }
                         echo '</ul>';
                     } else {
                         echo '<ul>
-                        <li><a href="https://www.uthscsa.edu/university/about-us" class="arrow">About us</a></li>
-                        <li><a href="https://www.uthscsa.edu/university/contact-us" class="arrow">Contact us</a></li>
-                        <li><a href="https://directory.uthscsa.edu/" class="arrow">Faculty directory</a></li>
-                        <li><a href="https://wp.uthscsa.edu/careers/" class="arrow">Job openings</a></li>
-                        <li><a href="https://news.uthscsa.edu/" class="arrow">Newsroom</a></li>
+                        <li><a href="https://www.uthscsa.edu/university/about-us" class="arrow" aria-label="About us">About us</a></li>
+                        <li><a href="https://www.uthscsa.edu/university/contact-us" class="arrow" aria-label="Contact us">Contact us</a></li>
+                        <li><a href="https://directory.uthscsa.edu/" class="arrow" aria-label="Faculty directory">Faculty directory</a></li>
+                        <li><a href="https://wp.uthscsa.edu/careers/" class="arrow" aria-label="Job openings">Job openings</a></li>
+                        <li><a href="https://news.uthscsa.edu/" class="arrow" aria-label="Newsroom">Newsroom</a></li>
                     </ul>';
                     }
                 ?>
@@ -193,7 +193,7 @@
         <div class="grid-container">
             <div class="grid-x">
                 <div class="cell">
-                    <p><strong><a href="https://uthscsa.edu/university/web-privacy">Web Privacy</a></strong> | Links from websites affiliated with UT Health San ' . "Antonio’s" . ' website (uthscsa.edu) to other websites do not constitute or imply university endorsement of those sites, their content or products and services associated with those sites. The content on this website is intended to be used for informational purposes only. Health information on this site is not meant to be used to diagnose or treat conditions. Consult a healthcare provider if you are in need of treatment.</p>
+                    <p><strong><a href="https://uthscsa.edu/university/web-privacy" aria-label="Web Privacy">Web Privacy</a></strong> | Links from websites affiliated with UT Health San ' . "Antonio’s" . ' website (uthscsa.edu) to other websites do not constitute or imply university endorsement of those sites, their content or products and services associated with those sites. The content on this website is intended to be used for informational purposes only. Health information on this site is not meant to be used to diagnose or treat conditions. Consult a healthcare provider if you are in need of treatment.</p>
                 </div>
             </div>
         </div>
@@ -229,7 +229,7 @@
                         $menuID = $menuLocations['footer_menu'];
                         $items_in_menu = wp_get_nav_menu_items($menuID);
                         foreach ($items_in_menu as $menu_item) {
-                            echo '<li><a class="arrow" href="' . $menu_item -> url . '">' . $menu_item -> title . '</a></li>';
+                            echo '<li><a class="arrow" aria-label="More links about UT Health San Antonio" href="' . $menu_item -> url . '">' . $menu_item -> title . '</a></li>';
                         }
                         echo '</ul>';
                     }
