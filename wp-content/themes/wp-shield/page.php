@@ -19,7 +19,7 @@ $add_breadcrumbs = get_post_meta( $post->ID, 'add_breadcrumbs', true );
 	<?php 
 		if ($banner_design == 'basic-page' ){
 			if ( function_exists('yoast_breadcrumb') ) { 
-				yoast_breadcrumb('<ul class="breadcrumbs" id="breadcrumbs">','</ul><br><br>'); 
+				yoast_breadcrumb('<nav class="breadcrumbs" id="breadcrumbs" aria-label="Breadcrumb">','</nav><br><br>'); 
 			}
 			the_title('<h1>', '</h1>');
 		}
@@ -27,7 +27,7 @@ $add_breadcrumbs = get_post_meta( $post->ID, 'add_breadcrumbs', true );
 	<?php 
 		if ($banner_design == 'default-bleed' and $add_breadcrumbs == 'yes'){
 			if ( function_exists('yoast_breadcrumb') ) { 
-				yoast_breadcrumb('<ul class="breadcrumbs" id="breadcrumbs">','</ul><br><br>'); 
+				yoast_breadcrumb('<nav class="breadcrumbs" id="breadcrumbs" aria-label="Breadcrumb">','</nav><br><br>'); 
 		}
 	}
 	?>
