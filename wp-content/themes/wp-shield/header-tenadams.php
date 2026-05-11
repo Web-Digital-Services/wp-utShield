@@ -20,7 +20,14 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-
+	<?php
+		$UTH_show_utsa_topbar = get_theme_mod( 'UTH_show_utsa_topbar'); 
+		 if ($UTH_show_utsa_topbar == 'true') {
+		 	echo '<div class="utsa-bar">
+      <a href="https://www.utsa.edu/"><img src="https://wp.uthscsa.edu/wp-content/themes/wp-shield/images/ut-san-antonio-logo-white.svg" alt="UT San Antonio"></a>
+  </div>';
+		 }
+	?>
 <div class="standard-cursor"></div>
 <div class="video-cursor"></div>
 
