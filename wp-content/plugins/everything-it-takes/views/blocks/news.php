@@ -18,7 +18,7 @@
 
                             <div class="slider__slide">
                                 <article class="article-news">
-                                    <a href="<?= esc_url( $post->get_url() ); ?>" class="article__link" target="_blank"></a>
+                                    <a aria-label="<?= esc_html( $post->get_title() ); ?>" href="<?= esc_url( $post->get_url() ); ?>" class="article__link" target="_blank"></a>
                                     <figure class="article__image"><img src="<?= esc_url( $post->get_featured_image() ); ?>" alt="<?= esc_attr( $post->get_featured_image_alt() ); ?>"></figure><!-- /.article__image -->
                                     <h5><?= esc_html( $post->get_title() ); ?></h5>
                                     <span class="article__meta"><?= esc_html( $post->get_date() ); ?></span>
