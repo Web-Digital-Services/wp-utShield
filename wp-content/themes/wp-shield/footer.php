@@ -80,11 +80,11 @@
                         if (!empty($uth_footer_phone)){
                             echo '
                                 <div class="contact">
-                                    <a href="tel:' . $uth_footer_phone . '" class="fa-stack" aria-label="Telephone contact icon">
+                                    <a href="tel:' . $uth_footer_phone . '" class="fa-stack" aria-label="' . $uth_footer_phone . '">
                                         <i class="fas fa-circle fa-stack-2x"></i>
                                         <i class="fas fa-phone fa-stack-1x fa-inverse"></i>
                                     </a>
-                                    <a href="tel:' . $uth_footer_phone . '" aria-label="Telephone contact number">' . $uth_footer_phone . '</a>
+                                    <a href="tel:' . $uth_footer_phone . '" aria-label="' . $uth_footer_phone . '">' . $uth_footer_phone . '</a>
                                 </div>';
                         }
                     ?>    
@@ -96,7 +96,7 @@
                                 $map_url = $uth_footer_map;
                             }
                         
-                        echo '<a href="' . $map_url . '" class="fa-stack" aria-label="Map and directions icon">
+                        echo '<a href="' . $map_url . '" class="fa-stack" aria-label="Map and directions">
                             <i class="fas fa-circle fa-stack-2x"></i>
                             <i class="fas fa-map-marker-alt fa-stack-1x fa-inverse"></i>
                         </a>'; 
@@ -121,19 +121,19 @@
                     ?>
                     <?php if(!empty($uth_footer_email) and !empty($uth_footer_email_title)) {
                     echo '<div class="contact">
-                        <a href="mailto:' . $uth_footer_email . '" class="fa-stack" aria-label="E-mail contact icon">
+                        <a href="mailto:' . $uth_footer_email . '" class="fa-stack" aria-label="' . $uth_footer_email_title . '">
                             <i class="fas fa-circle fa-stack-2x"></i>
                             <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
                         </a>
-                        <a href="mailto:' . $uth_footer_email . '" aria-label="E-mail contact information">' . $uth_footer_email_title . '</a> 
+                        <a href="mailto:' . $uth_footer_email . '" aria-label="' . $uth_footer_email_title . '">' . $uth_footer_email_title . '</a> 
                     </div>';
                     } elseif(!empty($uth_footer_email)) {
                     echo '<div class="contact">
-                        <a href="mailto:' . $uth_footer_email . '" class="fa-stack" aria-label="E-mail contact icon">
+                        <a href="mailto:' . $uth_footer_email . '" class="fa-stack" aria-label="' . $uth_footer_email . '">
                             <i class="fas fa-circle fa-stack-2x"></i>
                             <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
                         </a>
-                        <a href="mailto:' . $uth_footer_email . '" aria-label="E-mail contact information">' . $uth_footer_email . '</a> 
+                        <a href="mailto:' . $uth_footer_email . '" aria-label="' . $uth_footer_email . '">' . $uth_footer_email . '</a> 
                     </div>';
                     }
                     ?>
