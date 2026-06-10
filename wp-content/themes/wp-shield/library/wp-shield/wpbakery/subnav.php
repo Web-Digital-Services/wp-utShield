@@ -268,7 +268,7 @@ class uth_subnav extends WPBakeryShortCode {
                 'menu'           => $uth_menu_id, //Get the menu name from the shortcode attributes
                 'menu_class'     => 'subnav',
                 'theme_location' => $uth_menu_id,
-                'items_wrap'     => $menu_name_render . '<ul id="%1$s" class="%2$s vertical menu accordion-menu" data-accordion-menu>%3$s</ul>',
+                'items_wrap'     => $menu_name_render . '<ul id="%1$s" class="%2$s vertical menu drilldown" data-drilldown>%3$s</ul>',
                 'fallback_cb'    => false,
             )
         );
