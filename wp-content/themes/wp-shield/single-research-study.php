@@ -131,9 +131,12 @@ load_theme_design('header'); ?>
                             </li>
                         <?php endif; ?>
                     </ul>
-
                 </div>
             <?php endif; ?>
+            <a class="callout panel-mobile text-center colorized" href="https://lsom.uthscsa.edu/ccid/contact/" aria-label="Contact us about this study">
+                <span class="fa-stack fa-2x"><i class="fas fa-circle fa-stack-2x"></i><i class="fas fa-fa fa-solid fa-envelope fa-stack-1x fa-inverse"></i></span>
+                <h4 class=" ">Contact us about this study</h4>
+            </a>
         </aside>
     </div>
 </div>
