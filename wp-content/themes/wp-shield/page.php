@@ -36,4 +36,8 @@ $add_breadcrumbs = get_post_meta( $post->ID, 'add_breadcrumbs', true );
 	<?php endwhile; ?>
 </main>
 <?php
+if ( function_exists( 'uth_render_core_research_service_news_feed' ) ) {
+	uth_render_core_research_service_news_feed();
+}
+
 load_theme_design('footer');
