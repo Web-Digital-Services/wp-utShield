@@ -36,4 +36,5 @@ $add_breadcrumbs = get_post_meta( $post->ID, 'add_breadcrumbs', true );
 	<?php endwhile; ?>
 </main>
 <?php
+
 load_theme_design('footer');
