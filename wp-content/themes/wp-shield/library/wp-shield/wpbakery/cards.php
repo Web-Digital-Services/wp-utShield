@@ -278,9 +278,23 @@ class uth_card extends WPBakeryShortCode {
         	$cardImage = wp_get_attachment_image($image_url, $image_size, 'alt');
         }
         if (!empty ($a_title)){
-            $featured_link = 'safasf<a class="carat-double" href="' . $a_ref . '" title="' . $a_title . '" rel="' . $a_rel . '">' . $a_title . '</a>';
+            $featured_link = '<a class="carat-double" href="' . $a_ref . '" title="' . $a_title . '" rel="' . $a_rel . '">' . $a_title . '</a>';
+            $tile_featured_link = '<p><a href="' . $a_ref . '" class="button">' . $a_title . '</a></p>';
         }else{
             $featured_link = '';
+            $tile_featured_link = '';
+        }
+        // Wrap Card Title with Header Tag if Card Title is not empty
+        if (!empty($card_title)) {
+        $heading_html = '<' . $heading_level . $class . '>' . $card_title . '</' . $heading_level . '>';
+        }else{
+            $heading_html = "";
+        }
+        // Wrap Body Text in P Tag if not empty
+        if (!empty($card_copy_text)) {
+        $body_html = '<p>' . $card_copy_text . '</p>';
+        }else{
+            $body_html ="";
         }
         // Fill $html var with data
 
@@ -302,29 +316,28 @@ class uth_card extends WPBakeryShortCode {
             $html =
                 '<div class="card ' . $card_style . ' ' . $color_options . ' ' . $border . '" ' . $equilizer_id . '>
                     <div class="card-section">
-                        ' .  $cardImage . '
-                        <' . $heading_level . $class . '>' . $card_title . '</' . $heading_level . '>
-                            <p>' . $card_copy_text . '</p>
-                            ' . $load_primary_link . '
+                        ' .  $cardImage . $heading_html . 
+                            $body_html
+                             . $load_primary_link . '
                     </div>
                 </div>';
          }elseif($card_style=='interactive'){
             $html ='
                 <a class="card ' . $color_options . '" href="' . $a_ref . '" title="' . $a_title . '" rel="' . $a_rel . '" ' . $equilizer_id . '>
                     ' .  $cardImage . '
-                    <div class="card-section">
-                        <' . $heading_level . $class . '>' . $card_title .'</' . $heading_level . '>
-                        <p>' . $card_copy_text . '</p>
-                    </div>                
+                    <div class="card-section">' . 
+                        $heading_html . 
+                        $body_html . 
+                    '</div>                
                 </a>';
          }elseif($card_style=='nested'){
             $html ='
             <div class="cell nested flex-container ' . $color_options . '" ' . $equilizer_id . '>
                 <a class="card" href="' . $a_ref . '" title="' . $a_title . '" rel="' . $a_rel . '">
                     ' .  $cardImage . '
-                    <div class="card-section">
-                        <' . $heading_level . $class . '>' . $card_title .'</' . $heading_level . '>
-                    </div>                
+                    <div class="card-section">' . 
+                        $heading_html . $body_html . 
+                    '</div>                
                 </a>
             </div>';
          }elseif($card_style=='long'){
@@ -336,9 +349,9 @@ class uth_card extends WPBakeryShortCode {
                             <div class="cell small-5">
                                 ' .  $cardImage . '
                             </div>
-                            <div class="small-5 cell">
-                                <' . $heading_level . $class . '>' . $card_title .'</' . $heading_level . '>
-                            </div>
+                            <div class="small-5 cell">' . 
+                                $heading_html . $body_html . 
+                            '</div>
                         </div>
                     </a>
                 </div>
@@ -347,20 +360,20 @@ class uth_card extends WPBakeryShortCode {
             $html =
                 '<a class="card postcard cell small-12 large-12" href="' . $a_ref . '" title="' . $a_title . '" rel="' . $a_rel . '" ' . $equilizer_id . '>
                     ' .  $cardImage . '
-                    <div class="card-section">
-                        <' . $heading_level . $class . '>' . $card_title .'</' . $heading_level . '>
-                        <p>' . $card_copy_text . '</p>
-                    </div>
+                    <div class="card-section">' . 
+                        $heading_html . 
+                        $body_html . 
+                    '</div>
                 </a>';
          }elseif($card_style=='tile') {
             $html = 
                 '<div class="card tile cell small-12"' . $equilizer_id . '>' . $cardImage .
                 '<div class="card-section">
-                    <div>
-                        <' . $heading_level . $class . '>' . $card_title . '</' . $heading_level . '>
-                        <p>' . $card_copy_text . '</p>
-                        <p><a href="' . $a_ref . '" class="button">' . $a_title . '</a></p>
-                    </div>
+                    <div>' . 
+                        $heading_html . 
+                        $body_html . 
+                        $tile_featured_link . 
+                    '</div>
                 </div>
             </div>';
          }else{
