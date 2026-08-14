@@ -152,7 +152,7 @@
                         $menuID = $menuLocations['footer_menu'];
                         $items_in_menu = wp_get_nav_menu_items($menuID);
                         foreach ($items_in_menu as $menu_item) {
-                            echo '<li><a class="arrow" aria-label="More links about UT Health San Antonio" href="' . $menu_item -> url . '">' . $menu_item -> title . '</a></li>';
+                            echo '<li><a class="arrow" aria-label="' . $menu_item -> title . '" href="' . $menu_item -> url . '">' . $menu_item -> title . '</a></li>';
                         }
                         echo '</ul>';
                     } else {
@@ -229,7 +229,7 @@
                         $menuID = $menuLocations['footer_menu'];
                         $items_in_menu = wp_get_nav_menu_items($menuID);
                         foreach ($items_in_menu as $menu_item) {
-                            echo '<li><a class="arrow" aria-label="More links about UT Health San Antonio" href="' . $menu_item -> url . '">' . $menu_item -> title . '</a></li>';
+                            echo '<li><a class="arrow" aria-label="' . $menu_item -> title . '" href="' . $menu_item -> url . '">' . $menu_item -> title . '</a></li>';
                         }
                         echo '</ul>';
                     }
