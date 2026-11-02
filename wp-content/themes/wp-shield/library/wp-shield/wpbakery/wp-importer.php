@@ -32,6 +32,7 @@ function vc_before_init_actions() {
     require_once( get_template_directory().'/library/wp-shield/wpbakery/blockquote-orbit.php');
     require_once( get_template_directory().'/library/wp-shield/wpbakery/heading.php' );
     require_once( get_template_directory().'/library/wp-shield/wpbakery/event-date.php' );
+    require_once( get_template_directory().'/library/wp-shield/wpbakery/rows/background-image-cta.php' );
     
 
 
